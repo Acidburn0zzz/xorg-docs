@@ -5,10 +5,10 @@
 
 <title>Notes on Rebuilding X11R&relvers;/OS2 from Scratch
 <author>Holger Veit
-<and>Document updated for X.Org's X11R&relvers; by Jim Gettys
 <date>Last modified March 8th, 2000
 
 <ident>
+$Id$ 
 $XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/OS2Notes.sgml,v 1.1 2001/06/04 13:50:15 dawes Exp $
 </ident>
 
