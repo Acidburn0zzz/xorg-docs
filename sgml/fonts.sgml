@@ -17,7 +17,7 @@
 
 <p>This document describes the support for fonts in X11R&relvers;.  <ref
 id="sec:installing" name="Installing fonts"> is aimed at the 
-casual user wishing to install fonts in X11R&relvers; or XFree86; the rest of the
+casual user wishing to install fonts in X11R&relvers; the rest of the
 document describes the font support in more detail.
 
 We assume some familiarity with digital fonts.  If anything is not
@@ -30,7 +30,7 @@ information.
 <p>X includes two font systems: the original core X11 fonts system, which
 is present in all implementations of X11, and the Xft fonts system,
 which may not be distributed with implementations of X11 that
-are not based on X11&relvers; but will hopefully be included by them in
+are not based on X11R&relvers; but will hopefully be included by them in
 the future
 
 The core X11 fonts system is directly derived from the fonts system
@@ -136,7 +136,7 @@ Anti-aliasing can be disabled for all fonts by the following incantation:
 &lt;/match&gt;
 </verb></tscreen>
 
-Xft supports sub-pixel rasterisation on LCD displays.  X11R67 should
+Xft supports sub-pixel rasterisation on LCD displays.  X11R&relvers; should
 automatically enable this feature on laptops and when using an LCD
 monitor connected with a DVI cable; you can check whether this was
 done by typing
@@ -408,7 +408,7 @@ this doesn't help, it is quite possible that you are trying to use a
 font in a format that is not supported by your server.
 
 X11R&relvers; supports the BDF, PCF, SNF, Type 1, Speedo, TrueType, OpenType
-and CIDFont font formats.  However, not all X11R&relvers; or XFree86 servers 
+and CIDFont font formats.  However, not all X11R&relvers; servers
 come with all the font backends configured in.
 
 On most platforms, the X11R&relvers; servers are <it/modular/: the font
@@ -666,12 +666,9 @@ font re-encoding.  This allows these backends to share their encoding
 data, and allows simple configuration of new locales independently of
 font type.
 
-<it/Please note:/ the X-TrueType (X-TT) backend does not use the
-<it/fontenc/ layer, but instead uses its own method for font
-reencoding.  If you are only interested in X-TT you may want to skip
-to <ref id="sec:symbol-fonts" name="Using Symbol Fonts">, as
-the intervening information does not apply to X-TT.  X-TT itself is
-described in more detail in <ref id="sec:X-TT" name="X-TrueType">.
+<it/Please note:/ the X-TrueType (X-TT) backend is not included
+in X11R&relvers;.  That functionality has been merged into the FreeType
+backend.>
 
 In the <it/fontenc/ layer, an encoding is defined by a name (such as
 <tt/iso8859-1/), possibly a number of aliases (alternate names), and

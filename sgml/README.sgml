@@ -13,7 +13,7 @@
 
 <title>README for X11R&relvers;
 <author>The X.Org Foundation
-<date>6 April 2004
+<date>&reldate;
 
 <ident>
 $Id$.
@@ -24,10 +24,8 @@ $Id$.
 X11R&relvers; is an Open Source version of the X Window System that supports
 many UNIX(R) and UNIX-like operating systems (such as Linux, FreeBSD,
 NetBSD, OpenBSD and Solaris x86) on Intel and other platforms.  This
-version is compatible with X11R6.6, 
-and is based on the XFree86 4.4.0RC2 code base, which,
-in turn was based on the X Consortium X11R6.6 and earlier sample implementations.
-
+version is compatible with X11R6.7 and other X window system implementations
+which support the X11R6 standard.
 
 </abstract>
 
@@ -39,7 +37,7 @@ in turn was based on the X Consortium X11R6.6 and earlier sample implementations
 X11R&relvers; is the &whichupdaterel; update to X11R&fullrelvers;,
 the &whichfullrel; full release in the
 <![ %earlyrel; [new]]>
-X11R6.7 series.
+X11R&relvers; series.
 
 
 Update releases are taken from a stable/maintenance branch.  They are
@@ -50,9 +48,9 @@ stability.
 ]]>
 
 <![ %fullrel [
-X11R&relvers; is the &whichfullrel; full release in the
+X11R&fullrelvers; is the &whichfullrel; full release in the
 <![ %earlyrel; [new]]>
-X11R6.7 series.
+X11R&relvers; series.
 ]]>
 
 <![ %snapshot [
@@ -72,11 +70,8 @@ X11R&relvers; is a feature-complete snapshot of X11R&fullrelvers;.
 ]]> 
 
 <p>
-X11R6.7 is the current X.Org Foundation release series, based on the
-XFree86 4.x code base.
-The first release in
-the XFree86 4.x  series was in early 2000.  
-The core of X11R6.7 is a modular X server.
+X11R&relvers; is the current X.Org Foundation release series.
+The core of X11R&relvers. is a modular X server.
 <![ %fullrel [The &relvers; version is a new release that includes
 additional hardware support, functional enhancements and bug fixes.]]>
 <![ %haverelnotes [
@@ -100,17 +95,11 @@ Applications for Membership are now being accepted,
 and active participants in the further development of the X Window 
 Technology are invited to complete a
 <url url="http://www.x.org/XOrg_Foundation_Membership.html" name="membership application">.
-The X11R&relvers; codebase is based on the codebase found in XFree86&trade 4.4RC2,
-which in turn was based on the original X Window System sample implementation
-from the X Consortium and it's successors.
+The X11R&relvers; codebase forms the second X window system release since
+the formation of the X.org foundataion and includes code from the X
+Consortium, the Open Group and the XFree86&trade; project.
 This release is dedicated to the greater X community, developers
 and users alike.
-
-
-XFree86&trade; is produced by The XFree86 Project, Inc through the work
-of a group of volunteer independent developers.  The XFree86 Project is
-a non-commercial organisation and XFree86 would not exist without the
-invaluable development contributions of volunteers from around the world.
 
 <![ %snapshot [
 <sect>Redistribution of Snapshots

@@ -48,19 +48,6 @@ We encourage you to submit bug fixes and enhancements to bugzilla.freedesktop.or
 using the xorg product, and discussions on this server take
 place on <email>xorg@freedesktop.org</email>.
 
-<sect>Introduction to the XFree86 4.x Release Series
-<p>
-XFree86 4.0 was the first official release of the new XFree86 4 series.
-It was based on X11R6.4.
-<p>
-XFree86
-4 represents a significant redesign of the XFree86 X server.  Not all
-of the hardware drivers from 3.3.x have been ported to 4.x yet, but
-conversely, 4.x has support for a lot of hardware that is not supported
-in 3.3.x.  Our <htmlurl name="Driver Status document" url="Status.html">
-summarizes how the hardware driver support compares between &legacyvers;
-and &relvers;.  
-
 X11R&relvers; comes with a graphical configuration tool called 
 "<tt>xorgcfg</tt>",
 which also has a text mode interface and can be used to create an initial
@@ -179,14 +166,14 @@ update the screen.
 <tag>Composite (experimental)</tag>
 
 The Composite extension allows a client to request that all drawing to
-window is redirected to off-screen buffer. Though the Damage extension
-the client, called a 'compositing manager', can know which areas of a
-window is modified and render the windows on screen. By making use of
-the drawing requests from the RENDER extension, the compositing
-manager can create special effects, such as translucennt windows.
+window is redirected to off-screen buffer. Though the Damage extension the
+client, called a 'compositing manager', can know which areas of a window is
+modified and render the windows on screen. By making use of the drawing
+requests from both the core protocol and the RENDER extension, the
+compositing manager can create special effects, such as translucennt windows.
 
-    The Composite extension is considered experimental in X11R and is
-by default turned off.
+    The Composite extension is considered experimental in X11R&relvers; and is
+turned off by default.
 
 <tag>XEvIE (X Event Interception Extension) (experimental)</tag>
 
@@ -195,7 +182,8 @@ input It allows consumation, modification or synthesis of input events
 before these are sent to their final destination (i.e., interested
 clients). This feature is required by the GNOME accessibility project.
 
-The XEvIE extension is considered experimental in X11R and is by default turned off.
+The XEvIE extension is considered experimental in X11R&relvers; and is
+turned off by default.
 
 </descrip>
 
@@ -212,13 +200,14 @@ EndSection
 Xprint updates
 <p>
 <itemize>
-  <item> Integrated various fixes from xprint.mozdev.org (more or less the whole codebase has been merged)
+  <item>Integrated various fixes from xprint.mozdev.org (more or less the whole codebase has been merged)
   <item>Integrated various fixes from Sun Microsystems
   <item>OpenGL is now supported for printing
   <item>New set of maintenance tools for the Xprint server (xplsprinters, xprehashprinterlist, etc.)
   <item>Added new XprintUtils client library to make the usage off Xprint easier
   <item>Various other features and fixes integrated
-  <item>Athena toolkit now has print support (XawPrintShell)
+  <item>Athena toolkit now has print support (XawPrintShell) which is included
+        in a separate version of that library (Xaw8)
   <item>Various applications/tools like xman, xedit, xlogo, etc. now have
         print support
 </itemize>
@@ -449,9 +438,9 @@ X11R&relvers; includes the following input drivers:
 
 Drivers marked with (*) are available for Linux only.
 
-<sect>Overview of X11R6.8.x
+<sect>Overview of X11R&relvers;
 <p>
-On most platforms, X11R6.8.x has a single X server binary called <tt>Xorg</tt>.
+On most platforms, X11R&relvers; has a single X server binary called <tt>Xorg</tt>.
 This binary can either have one or more video and input drivers linked in
 statically, or more usually, dynamically, and in that manner load the
 video drivers, input drivers, and other modules that are needed.
@@ -533,8 +522,8 @@ servers or its own.
 
 <sect1>Multi-head
 <p>
-Some multi-head configurations are supported in XFree86 4.x and
-X11R6.x, primarily with multiple PCI/AGP cards.
+Some multi-head configurations are supported in 
+X11R&relvers;, primarily with multiple PCI/AGP cards.
 
 One of the main problems is with drivers not sufficiently initialising
 cards that were not initialised at boot time.  This has been improved
@@ -557,8 +546,7 @@ an 8-bit screen together with a 16-bit screen in Xinerama mode.
 Xinerama is not enabled by default, and can be enabled with the
 <tt>+xinerama</tt> command line option for the X server.
 
-Xinerama was included with X11R6.4.  The version included in X11R6.7.x
-and XFree86 4.x
+Xinerama was included with X11R6.4.  The version included in X11R&relvers;
 was completely rewritten for improved performance and correctness.
 
 Known problems:
@@ -678,9 +666,9 @@ file is included in the <htmlurl name="Xft(3)" url="Xft.3.man"> man page.
 <sect2>Application Support For Anti-Aliased Text
 <p>
 
-Only three applications have been modified in X11R&relvers; to work 
+Only four applications have been modified in X11R&relvers; to work 
 with the Render extension and the Xft and FreeType libraries to provide 
-anti-aliased text: xterm, xditview and x11perf.  Migration of other 
+anti-aliased text: xterm, xditview, x11perf and xclock.  Migration of other 
 applications may occur in future releases.
 
 <p>
@@ -698,6 +686,10 @@ includes tests to measure the performance of text rendered in three ways,
 anti-aliased, anti-aliased with sub-pixel sampling and regular chunky 
 text, but through the Render extension, a path which is currently somewhat
 slower than core text.
+<p>
+Xclock uses the Render extension to draw the analog face and shares the -fa
+option and faceName resources with xterm to select a font for the digital
+mode.
 </sect2>
 
 <sect1>Other extensions
@@ -731,6 +723,7 @@ Xedit has several new features, including:
   <item>Flexible search/replace interface that allows regex matches.
   <item>Please refer to <tt><htmlurl name="xedit(1)" url="xedit.1.html"></tt>
 	for more details.
+  <item>XPrint support.
 </itemize>
 
 <!--
@@ -747,18 +740,16 @@ in the <htmlurl name="README.fonts" url="fonts.html"> document.
 <sect1>TrueType support
 <p>
 
-X11R6.7.x and XFree86 4.x comes with two TrueType backends, known as
-"FreeType" backend (the <tt>"freetype"</tt> module) and `X-TrueType'
-(the <tt>"xtt"</tt> module).  Both of these backends are based on the
-FreeType library.  The functionality of X-TrueType has been merged into
-the FreeType backend by the After X-TT Project for XFree86 4.4.
-Consequently, the old X-TrueType backend will be dropped 
-in the next major release.
+X11R6.7 came with two TrueType backends.  The functionality from the
+`X-TrueType' backend has been integrated into the `FreeType' backend which
+is designed to transparently support all of the functionality from the
+`X-TrueType' backend with the exception of the font encoding libraries; the
+`FreeType' backend uses only the fontenc-based encoding system .
 
 <sect1>CID font support
 <p>
 
-Support for CID-keyed fonts is included in X11R&relvers;.x.
+Support for CID-keyed fonts is included in X11R&relvers;
 The CID-keyed font format was designed by <url name="Adobe Systems"
 url="http://www.adobe.com"> for fonts with large character sets.  The
 CID-keyed font support in X11R&relvers; was donated by <url name="SGI"
@@ -769,13 +760,10 @@ License.
 <sect1>Internationalisation of the scalable font backends
 <p>
 
-X11R6.7.x has a ``fontenc'' layer to allow the scalable font backends
-to use a common method of font re-encoding.  This re-encoding makes it
-possible to uses fonts in encodings other than their their native
-encoding.  This layer is used by the Type1 and Speedo backends and the
-`xfsft' version of the TrueType backend.  The `X-TrueType' version of
-the TrueType backend uses a different re-encoding method based on loadable
-encoding modules.
+X11R&relvers; has a ``fontenc'' layer to allow the scalable font backends to
+use a common method of font re-encoding.  This re-encoding makes it possible
+to uses fonts in encodings other than their their native encoding.  This
+layer is used by the Type1, Speedo and FreeType backends.
 
 <sect1>Large font optimisation
 <p>
@@ -787,7 +775,7 @@ transmitted in a compressed format.
 
 <sect1>Unicode/ISO 10646 support
 <p>
-What is included in X11R6.7.x
+What is included in X11R&relvers;
 
 <itemize>
   <item>All ``-misc-fixed-*'' BDF fonts are now available in the
@@ -820,8 +808,7 @@ What is included in X11R6.7.x
   <item>ISO 10646/Unicode UTF-8 Level 1 support added to xterm
 	(enabled with the <tt>-u8</tt> option).
 
-  <item>Both the xfsft (the <tt>"freetype"</tt> module) and the X-TrueType
-	(the <tt>"xtt"</tt> module) TrueType font backends support
+  <item>The Freetype backend (the <tt>"freetype"</tt> module) supports
 	Unicode-encoded fonts.
 
 </itemize>
@@ -830,7 +817,7 @@ What is included in X11R6.7.x
 <p>
 
 A more flexible Compose file processing system was added to Xlib in
-X11R6.7.0.  The compose file is searched for in 
+X11R&relvers;.  The compose file is searched for in 
 the following order:
 
 <enum>
@@ -871,6 +858,20 @@ result of the composition is always the letter with the "\300" code.
 But if the rule is:
 <tscreen><verb><dead_grave> <A> : Agrave</verb></tscreen>the
 result depends on how Agrave is mapped in the current locale.
+
+<sect1>Bitstream Vera fonts <label id="vera">
+<p>
+
+X11R&relvers; includes the Bitstream Vera family of typefaces in TrueType
+format.  This family includes the ``Bitstream Vera Sans'', ``Bitstream
+Vera Sans Mono'' and ``Bitstream Vera Serif'' in Roman and Bold varients
+as well as the ``Bitstream Vera Sans'' and ``Bitstream Vera Sans Mono''
+in Oblique and Bold Oblique.
+These fonts include all of the glyphs needed for ISO&nbsp; 8859 parts 1 9
+and 15.
+
+The license terms for the Vera fonts are inclued in the file
+<tt/COPYRIGHT.Vera/>.
 
 <sect1>Luxi fonts from Bigelow and Holmes <label id="luxi">
 <p>

@@ -42,7 +42,7 @@ line to be drawn.
 
 <p>This document does not aim at teaching programming with DPS; it is
 only a summary description of the DPS support code included with
-X11&relvers;.  More information about DPS, including a DPS bibliography, is
+X11R&relvers;.  More information about DPS, including a DPS bibliography, is
 available from
 <url url="http://dps.sourceforge.net" name="the DPS extension site">.
 
@@ -68,7 +68,7 @@ more information.
 
 <p>The DPS client side consists of four libraries and a number of
 basic tools for programming and configuration; these are all included
-with X11&relvers;.
+with X11R&relvers;.
 
 <sect1>Libraries
 
