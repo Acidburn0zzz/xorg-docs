@@ -7,11 +7,10 @@
 <title>Release Notes for X11R&relvers;
 <author>The X.org Foundation
 <and>The XFree86 Project, Inc.
-<date>29 March 2004
+<date>31 March 2004
 
 <ident>
-$Id$
-Based on: $XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/RELNOTES.sgml,v 1.115 2004/02/24 03:41:40 dawes Exp $
+$ Id: RELNOTES.sgml,v 1.1.4.4.2.2.4.3 2004/03/30 03:55:47 jg Exp $
 </ident>
 
 <abstract>
@@ -418,7 +417,19 @@ X11R&relvers; supports IPv6, based on the code contributed by Sun
 Microsystems, Inc. to X.Org. See <url name="X.org's document"
 url="http://www.x.org/IPV6_Specific_Changes.html"> for a detailed list
 of what these changes are and how your system is affected by them.
-
+<p>
+Note that in most environments script kiddies have generated sniffer
+scripts that will easily grab passwords on a network. By default,
+therefore, many software vendors now ship X with remote access disabled.
+<p>
+Unless you are confident of your network, direct use of IPv6 (or, for
+that matter, IPv4) over the network to your X server is not
+recommended; instead, we recommend the use of ssh ("ssh -X -C") to
+provide strong cryptography (and possibly compression) for network
+transparent use of X.  Work is beginning to address this with a more
+fully integrated encryption scheme that would avoid the extra process
+context switches and improve performance over ssh (how much is
+unknown).
 <sect2>Protocol names and aliases. 
 <p>
 <itemize>
