@@ -44,7 +44,7 @@ Mappings used in this DocBook document:
     Version: 0.9.1
   </para>
   <para>
-    Last-Modified: 2004/05/16 08:15:16
+    Last-Modified: 2004/06/14 08:15:16
   </para>
   <para>
     Maintained-by:
@@ -906,6 +906,11 @@ Mappings used in this DocBook document:
         </listitem>
         <listitem>
           <para>
+            Xedit, Xman, Xmore, etc. (starting with X.org release 6.7.1)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
             <ulink url="http://www.opengroup.org/cde/">Common Desktop Environment (CDE) 2.x</ulink>
           </para>
         </listitem>
@@ -947,15 +952,19 @@ Mappings used in this DocBook document:
   </question>
   <answer>
     <para>
-      No, Xprint is a general-purpose print API based on the X11 API used by
-      many applications (<ulink url="http://www.mozdev.org/">mozdev.org</ulink> is just
-      hosting the development area, but this does not mean the project is limited to mozilla...
-      <literal>:)</literal>).
+      No, Xprint is a general-purpose print API based on X11 used by
+      many applications - <ulink url="http://www.mozdev.org/">mozdev.org</ulink> is just
+      one of the hosting places (others are
+      <ulink url="http://xprint.freedesktop.org/">http://xprint.freedesktop.org/</ulink> (bugzilla, CVS)
+      and <ulink url="http://www.sourceforge.net/projects/xprint/">http://www.sourceforge.net/projects/xprint/</ulink> (download area))
+      hosting the development area, <ulink url="http://xprint.mozdev.org/docs/">documentation</ulink> and
+      <ulink url="http://xprint.mozdev.org/list.html">mailinglist</ulink>.
+      <literal>:)</literal>.
     </para>
   </answer>
 </qandaentry>
 
-<qandaentry>
+<qandaentry id="xprint_license">
   <question>
     <para>
       Under which license is the source code from xprint.mozdev.org distributed under ?
@@ -963,7 +972,7 @@ Mappings used in this DocBook document:
   </question>
   <answer>
     <para>
-      That's the plain "MIT" license, the same as used by Xfree86.org and X.org:
+      That's the plain "MIT" license, the same as used by Xfree86.org &lt; V4.4.0 and X.org:
 <programlisting>
 Copyright (c) &lt;year&gt; &lt;copyright holders&gt;
 
@@ -1014,7 +1023,7 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
       <qandadiv id="faq_usage">
 <title>Usage</title>
 
-<qandaentry>
+<qandaentry id="how_to_configure_xprint_clients">
   <question>
     <para>
       How do I configure Xprint on the client side ?
@@ -1051,38 +1060,9 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
         <listitem>
           <para>
             The env variable <envar>${XPRINTER}</envar> defines the default printer used by print
-            applications. The syntax is either &lt;printername&gt; or
-            &lt;printername&gt;@&lt;display&gt;
-
-            <orderedlist>
-              <title>Examples:</title>
-              <listitem>
-                <para>
-<screen>
-  % <userinput>export XPRINTER=ps003</userinput>
-</screen>
-                  tells an application to look for the first printer named "ps003" on
-                  all Xprt servers.
-                </para>
-              </listitem>
-              <listitem>
-                <para>
-<screen>
-  % <userinput>export XPRINTER="hplaser19@littlecat:80"</userinput>
-</screen>
-                  tells an application to look for the printer "hplaser19" on the Xprt
-                  display "littlecat:80".
-                </para>
-              </listitem>
-            </orderedlist>
-            <note>
-              <title>Note:</title>
-              <para>
-                If <envar>${XPRINTER}</envar> is not set the applications will examine the values of
-                the <envar>${PDPRINTER}</envar>, <envar>${LPDEST}</envar>, and
-                <envar>${PRINTER}</envar> env vars (in that order).
-              </para>
-            </note>
+            applications.
+            The details can be found in the FAQ item
+            <link linkend="configure_default_printer">How do I change the default printer used by Xprint applications ?</link> ...
           </para>
         </listitem>
       </orderedlist>
@@ -1306,7 +1286,7 @@ printer: david_dj01@jason:5</computeroutput>
 <screen>
 % <userinput>xplsprinters -printer ps002 -l</userinput>
 <computeroutput>printer: ps002@castor:18
-        comment=
+        description=
         model-identifier=HPDJ1600C
         default-medium=iso-a4
         default-input-tray=
@@ -1647,7 +1627,52 @@ Set remote XPSERVERLIST with % export XPSERVERLIST="localhost:100 localhost:101 
 <qandadiv id="faq_configuration">
 <title>Configuration</title>
 
-<qandaentry>
+<qandaentry id="configure_default_printer">
+  <question>
+    <para>
+      How do I change the default printer used by Xprint applications ?
+    </para>
+  </question>
+  <answer>
+    <para>
+      The env variable <envar>${XPRINTER}</envar> defines the default printer used by print
+      applications. The syntax is either &lt;printername&gt; or
+      &lt;printername&gt;@&lt;display&gt;
+
+      <orderedlist>
+        <title>Examples:</title>
+        <listitem>
+          <para>
+<screen>
+  % <userinput>export XPRINTER=ps003</userinput>
+</screen>
+          tells an application to look for the first printer named "ps003" on
+          all Xprt servers.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+<screen>
+  % <userinput>export XPRINTER="hplaser19@littlecat:80"</userinput>
+</screen>
+            tells an application to look for the printer "hplaser19" on the Xprt
+            display "littlecat:80".
+          </para>
+        </listitem>
+      </orderedlist>
+      <note>
+        <title>Note:</title>
+        <para>
+          If <envar>${XPRINTER}</envar> is not set the applications will examine the values of
+          the <envar>${PDPRINTER}</envar>, <envar>${LPDEST}</envar>, and
+          <envar>${PRINTER}</envar> env vars (in that order).
+        </para>
+      </note>
+    </para>
+  </answer>
+</qandaentry>
+
+<qandaentry id="configure_default_plex">
   <question>
     <para>
       How do I change the defaults for double-sided/single-sided/etc.
@@ -1724,7 +1749,7 @@ Set remote XPSERVERLIST with % export XPSERVERLIST="localhost:100 localhost:101 
   </answer>
 </qandaentry>
 
-<qandaentry>
+<qandaentry id="configure_default_papersize">
   <question>
     <para>
       I am in America and I don't have any ISO A4 paper. How do I change the
@@ -1892,7 +1917,7 @@ Set remote XPSERVERLIST with % export XPSERVERLIST="localhost:100 localhost:101 
   </answer>
 </qandaentry>
 
-<qandaentry>
+<qandaentry id="configure_default_resolution">
   <question>
     <para>
       How do I change the default printer resolution ?
@@ -2008,7 +2033,7 @@ Set remote XPSERVERLIST with % export XPSERVERLIST="localhost:100 localhost:101 
   </answer>
 </qandaentry>
 
-<qandaentry>
+<qandaentry id="configure_default_orientation">
   <question>
     <para>
       How do I change the default settings for "portrait"/"landscape"/"seascape" (=page orientation) ?
@@ -2085,7 +2110,7 @@ Set remote XPSERVERLIST with % export XPSERVERLIST="localhost:100 localhost:101 
   </answer>
 </qandaentry>
 
-<qandaentry>
+<qandaentry id="how_to_prevent_usage_of_bitmap_fonts">
   <question>
     <para>
       How can I prevent Xprt from using any bitmap(=gfx) fonts ?
@@ -2564,7 +2589,7 @@ Printer hplaser6
   </answer>
 </qandaentry>
 
-<qandaentry>
+<qandaentry id="where_can_i_get_more_model_configs_from">
   <question>
     <para>
       Where can I get more model-configs from ?
@@ -2573,10 +2598,10 @@ Printer hplaser6
   <answer>
     <para>
       If you miss a model-config for your printer please open a bug/RFE at
-      <ulink url="http://xprint.freedesktop.org/bugzilla/enter_bug.cgi?product=xprint&amp;component=Server%3A+Config%3A+model-configs">
-      http://xprint.freedesktop.org/bugzilla/enter_bug.cgi?product=xprint&amp;component=Server%3A+Config%3A+model-configs</ulink>
+      <ulink url="http://xprint.freedesktop.org/bugzilla/enter_bug.cgi?product=xprint&amp;component=Server%3A%20Config%3A%20model-configs">
+      http://xprint.freedesktop.org/bugzilla/enter_bug.cgi?product=xprint&amp;component=Server%3A%20Config%3A%20model-configs</ulink>
       (e.g. <ulink url="http://xprint.freedesktop.org/bugzilla/enter_bug.cgi">http://xprint.freedesktop.org/bugzilla/enter_bug.cgi</ulink>, product "Xprint", component
-      "Server Config: model-configs").
+      "Server: Config: model-configs").
     </para>
   </answer>
 </qandaentry>
@@ -4038,7 +4063,7 @@ Xp Extension: Can't load driver XP-RASTER
   </answer>
 </qandaentry>
 
-<qandaentry>
+<qandaentry id="why_does_xprt_not_support_mitshm">
   <question>
     <para>
       Why does Xprt not offer the MIT-SHM protocol extension ?
