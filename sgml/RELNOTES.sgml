@@ -136,6 +136,15 @@ render extensions when compiled with gcc 3.4 on the i386 architecture.
 <item>Software mouse cursor is now based on the Damage extension
 <item>A new keyboard driver is enabled by default. The old driver is disabled unless explicitly compiled in by defining the macro USE_DEPRECATED_KEYBOARD_DRIVER
 <item>Extensions can be enabled/disabled from the configuration file and from the command line
+<item>Mac OS X updates:
+	<itemize>
+         <item>Support dynamic screen configuration changes in rootless mode
+         <item>Added option to always use Mac command key equivalents
+         <item>Interpret scroll wheel mouse events correctly when shift is held down
+         <item>Added trivial Xinput support
+         <item>Fixed launch of X clients from Finder with a space in their path
+         <item>Fixed some GLX rendering problems on Mac OS X 10.2 and earlier
+	</itemize>
 </itemize>
 
 <sect1>New X extensions
