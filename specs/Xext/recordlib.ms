@@ -2,6 +2,7 @@
 .\" Use -ms and macros.t
 .\" edited for DP edits and code consistency w/ core protocol/xlib 4/1/96
 .\" $Xorg: recordlib.ms,v 1.3 2000/08/17 19:42:36 cpqbld Exp $
+.\" $XdotOrg: xc/doc/specs/Xext/recordlib.ms,v 1.1.10.1 2004/03/25 04:56:41 alanc Exp $
 .\" -----------------------------------------------
 .de Ip
 .IP \(bu 5
@@ -41,7 +42,7 @@
 .sp
 \fBX Consortium Standard\fP
 .sp
-\fBX Version 11, Release 6.4\fP
+\fBX Version 11, Release 6.7\fP
 .sp 6
 Martha Zimet
 Network Computing Devices, Inc.
@@ -100,8 +101,8 @@ from the X Consortium.
 .nr LT 6.5i
 .nr FL 6.5i
 .ll 6.5i
-.EH '\fBX Record Extension Library, Version 1.13\fP''\fBX11, Release 6.4\fP'
-.OH '\fBX11, Release 6.4\fP''\fBX Record Extension Library, Version 1.13\fP'
+.EH '\fBX Record Extension Library, Version 1.13\fP''\fBX11, Release 6.7\fP'
+.OH '\fBX11, Release 6.7\fP''\fBX Record Extension Library, Version 1.13\fP'
 .bp 1
 .EF ''\fB\\\\n(PN\fP''
 .OF ''\fB\\\\n(PN\fP''

@@ -1,5 +1,5 @@
 .\" Use -ms and macros.t
-.\" $XFree86$
+.\" $XDotOrg$
 .EH ''''
 .OH ''''
 .EF ''''
@@ -17,7 +17,7 @@
 .ce 3
 Version 1.0
 X Project Team Standard
-X Version 11, Release 6.4
+X Version 11, Release 6.7
 .sp 6
 .ce 4
 Rob Lembree
@@ -56,7 +56,7 @@ This extension provides X Protocol control over the VESA Display
 Power Management Signaling (DPMS) characteristics of video boards
 under control of the X Window System.
 .FS
-1. \fIX Window System\fP is a trademark of X Consortium, Inc.
+1. \fIX Window System\fP is a trademark of The Open Group.
 .FE
 .LP
 Traditionally, the X Window System has provided for both blanking and

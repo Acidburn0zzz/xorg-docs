@@ -1,5 +1,5 @@
 /* $Xorg: registry,v 1.7 2001/06/01 18:55:58 coskrey Exp $ */
-/* $XdotOrg: xc/registry,v 1.1.4.2.6.2.2.1 2004/03/13 18:48:39 alanc Exp $ */
+/* $XdotOrg: xc/registry,v 1.1.4.2.6.4 2004/03/24 00:59:58 alanc Exp $ */
 
 				  X Registry
 
@@ -1694,8 +1694,8 @@ REFERENCES
 	Markus G. Kuhn
 	University of Cambridge
 	Computer Laboratory
-	New Museums Site, Pembroke Street
-	Cambridge CB2 3QG
+	15 JJ Thomson Avenue
+	Cambridge CB3 0FD
 	United Kingdom
 
 [134]   In R6.6 X.Org is reserving the string UTF8_STRING for use as an ICCCM
