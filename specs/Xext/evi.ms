@@ -1,6 +1,6 @@
 .\" Use -ms and macros.t
 .\" $Xorg: evi.ms,v 1.3 2000/08/17 19:42:31 cpqbld Exp $
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/Xext/evi.ms,v 1.3 2004/09/03 16:18:21 kem Exp $
 .\"
 .\"
 .\"
@@ -22,7 +22,7 @@
 .ce 3
 Version 1.0
 X Project Team Standard
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 .sp 6
 .ce 4
 Peter Daifuku

@@ -5,10 +5,9 @@
 <article>
 <title>README for X11R&relvers; on LynxOS
 <author>Thomas Mueller
-<date>25 February 2000
+<date>25 August 2004
 
 <ident>
-$Id$ 
 </ident>
 
 <toc>
@@ -23,16 +22,12 @@ and performance improvements as well as many bug fixes.
 
 See the <htmlurl url="COPYRIGHT.html" name="Copyright Notice">.
 
-Building of this X11R&relvers; version has never been tested on LynxOS.
+Building of this X11R&relvers; version has been tested on
+`LynxOS 3.1.0a i386' and `LynxOS 4.0.0 i386'.
 
-This release contains preliminary build support for `LynxOS 3.1.0'.
-Since this OS release was not available long enough for serious testing
-`LynxOS 3.1.0' support has to be considered to be in `alpha state'.
-
-X11R&relvers; supports LynxOS on the x86 and on
-the PowerPC platform. X servers are currently available only on the
-x86 platform. The X server may work with some PowerPC platforms
-supported by LynxOS though this has not (yet) been thoroughly tested.
+Previous releases of X11R&relvers; supported LynxOS on the x86 and on
+the PowerPC platform. Building on PowerPC platforms has not been
+tested recently.
 
 <sect>Installing X11R&relvers;
 <p>
@@ -40,8 +35,9 @@ Please refer to the <htmlurl name="Installation Document"
 url="Install.html"> for detailed installation instructions.
 
 It may be necessary to increase the process stack limit in order to
-run X11R&relvers; on your system. Edit <tt>/etc/startab</tt> and reboot your
-system to make the changes active before you begin the installation.
+build X11R&relvers; and run X11R&relvers; on your system. Edit
+<tt>/etc/startab</tt> and reboot your system to make the changes
+active before you begin the installation.
 
 Also, be sure to include <tt>/usr/X11R6/bin</tt> in your PATH
 environment variable.
@@ -71,7 +67,7 @@ your hardware.
 <sect2>Tunable parameters<p>
 To reasonably run X11R&relvers; you may have to adjust a few system parameters.
 
-On LynxOS 2.5.x and 3.0.x include a line
+On LynxOS 3.1.0 and 4.0.0 include a line
 <verb>
 #define X_WINDOWS
 </verb>
@@ -80,9 +76,9 @@ in <tt>/sys/lynx.os/uparam.h</tt>.
 
 <sect2>Adjustment for "nv" driver for NVidia graphics cards<p>
 
-If you're using the "nv" driver (Riva 128, nVidia TNT, TNT2, GeForce),
-you will have to increase the value of the SMEMS parameter in
-<tt>/sys/lynx.os/uparam.h</tt> from 10 to 20.
+If you're using the "nv" driver (Riva 128, nVidia TNT, TNT2, GeForce)
+on LynxOS `3.1.0', you will have to increase the value of the SMEMS
+parameter in <tt>/sys/lynx.os/uparam.h</tt> from 10 to 20.
 
 <sect2>Increase number of ptys<p>
 
@@ -97,8 +93,7 @@ CPU you might want to install the MTRR device driver. This driver
 enables the X11R&relvers; X server to manipulate the CPU memory type range
 registers which may improve performance on certain systems.
 
-To install the driver (on LynxOS x86 2.5.0 systems an higher) follow
-these steps:
+To install the driver follow these steps:
 
 <tscreen><verb>
   # cd /
@@ -136,14 +131,45 @@ LynxOS.
 <sect1>PS/2 mouse drivers<p>
 
 LynxOS x86 comes with a PS/2 mouse driver. If it is not currently
-installed on your system install it with
-<tt>/usr/bin/Install.ps2mouse</tt>. Older versions of this driver
-contained code to translate the PS/2 mouse protocol to the format of a 
-serial mouse, thus you'll have to specify "Microsoft" as the mouse
-protocol format. The mouse driver contained in LynxOS x86 patchlevel
-015 (and higher) does no longer perform the protocol translation an
-therefore can be defined as "PS/2" protocol format.
+installed on your system, install it with
+<tt>/usr/bin/Install.ps2mouse</tt>. 
   
+<!--
+On `LynxOS 3.1.0a' some versions of this driver contained code to
+translate the PS/2 mouse protocol to the format of a serial mouse,
+thus you'll have to specify "Microsoft" as the mouse protocol
+format. The mouse driver contained in LynxOS x86 patchlevel 015 (and
+higher) does no longer perform the protocol translation an therefore
+can be defined as "PS/2" protocol format.
+-->
+
+The LynxOS PS/2 mouse driver is not always able to properly handle
+the mouse initialization performed by the X server. If your mouse is
+not responding after the X server has started up, modify the PS/2
+mouse driver as follows:
+
+  <tscreen><verb>
+  --- /sys/drivers/ps2mouse/mousedrvr.c.orig      Wed Aug 25 09:51:02 2004
+  +++ /sys/drivers/ps2mouse/mousedrvr.c   Wed Aug 25 09:50:54 2004
+  @@ -261,6 +261,7 @@
+   int mousewrite(struct statics *s, struct file *f, char *buff, int count)
+   {
+          int i;
+  +       return 0;
+   #ifdef DEBUG
+          kkprintf("Mouse: write %d %x\n", count, buff[0] & 0x0FF);
+   #endif
+  </verb></tscreen>
+
+Then rebuild both the mouse driver and the kernel:
+
+  <tscreen><verb>
+     # cd /sys/drivers/ps2mouse
+     # make
+     # cd /sys/lynx.os
+     # make install
+     # reboot
+  </verb></tscreen>
 
 <sect1> ATC console driver and VT switching<p>
 
@@ -171,7 +197,7 @@ terminals in <tt>/etc/ttys</tt>, e.g. <tt>/dev/atc3</tt>:
 
 Output made by the X11R&relvers; X on its stdout or stderr will be lost
 after the server switches to graphics mode. The X11R&relvers;
-server stores its output in <tt>/usr/adm/X11R&relvers;.n.log</tt> (where
+server stores its output in <tt>/usr/adm/Xorg.n.log</tt> (where
 <tt>n</tt> is the screen number).
 
 When the X server is running output made to other consoles will be
@@ -263,25 +289,27 @@ modified to work with X11R&relvers;. In every reference to
 <!-- out of date
 Before trying to rebuild X11R&relvers; from source read <htmlurl url="BUILD.html"
 name="Building X11R&relvers;"> for a detailed description of the build
-process. -->The next sections contain LynxOS specific notes with
-respect to the build process.
+process. -->
+
+The next sections contain LynxOS specific notes with respect to the
+build process.
 
 <sect1>Disk space requirements<p>
 Currently there is no support for shared libraries in the LynxOS
-X11R&relvers; port. A complete binary installation along with manual pages
-will require approximately 100 MBytes of disk space. To compile
-the system you will need at least 250 MBytes of free disk space.
+X11R&relvers; port. A complete binary installation along with manual
+pages will require approximately 250 MBytes of disk space. To compile
+the system you will need at least 350 MBytes of free disk space.
 
 <sect1>Changes to system environment (LynxOS x86)<p>
 Before compiling the X11R&relvers; distribution you will have to make a
 few little adjustments to your system:
 
 <itemize>
-<item>If not already installed on your system create a shell script
-named <tt>/lib/cpp</tt> as follows:
+<item>If not already installed, on your `LynxOS 3.1.0a' system create
+a shell script named <tt>/lib/cpp</tt> as follows:
 <tscreen><verb>
   #!/bin/sh
-  /usr/lib/gcc-lib/i386-unknown-lynxos2.5/2.7-96q1/cpp \
+  /usr/lib/gcc-lib/i386-coff-lynxos/2.9-gnupro-98r2/cpp \
      -traditional "$@"
 </verb></tscreen>
 On other platforms than the x86 the paths for the compiler support
@@ -295,8 +323,8 @@ to find out the correct path. Set the file mode of <tt>/lib/cpp</tt> with
   # chmod 755 /lib/cpp
 </verb></tscreen>
 
-<item>Modify <tt>/lib/liblynx.a</tt>. The X servers need the
-<tt>smem_create()</tt> system call to map the frame buffer into their
+<item>Modify <tt>/lib/liblynx.a</tt>. On `LynxOS 3.1.0a' the X servers
+need the <tt>smem_create()</tt> system call to map the frame buffer into their
 address space. The system call is in <tt>liblynx</tt> library along
 with other Lynx proprietary calls which (unfortunately) overlap with
 calls in <tt>libc</tt>. To reduce confusion you should modify
@@ -309,6 +337,7 @@ calls in <tt>libc</tt>. To reduce confusion you should modify
   # ar rv /lib/liblynx.a *smem*
   # ranlib /lib/liblynx.a
 </verb></tscreen>
+
 </itemize>
 
 <sect1> make World<p>
@@ -332,7 +361,7 @@ You may then issue a
      make World
   </verb></tscreen>
 
-to compile X11R&relvers;. After a few hours (and hopefully a successful
+to compile X11R&relvers;. After some time (and hopefully a successful
 build of the X11R&relvers; system) you can install the software using
 
   <tscreen><verb>
@@ -342,9 +371,11 @@ build of the X11R&relvers; system) you can install the software using
 You must be logged in as super-user (root) when you invoke `make
 install'.
 
+<!--
 On LynxOS x86 2.5.0 you may encounter problems with <tt>make</tt> in
 deeply nested subdirectories (eg core dumps, hangups). In this case
 update to GNU make version 3.75 or higher.
+-->
 
 <sect1>Installing X11R&relvers; manual pages<p><label id="installman">
 

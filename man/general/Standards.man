@@ -1,5 +1,5 @@
 .\" $Xorg: Standards.cpp,v 1.3 2000/08/17 19:42:04 cpqbld Exp $
-.\" $XdotOrg: xc/doc/man/general/Standards.man,v 1.1.10.2 2004/03/16 02:44:56 alanc Exp $
+.\" $XdotOrg: xc/doc/man/general/Standards.man,v 1.3 2004/09/03 16:18:18 kem Exp $
 .\" Copyright (c) 1993, 1994, 1996, 2004 The Open Group
 .\"
 .\" All rights reserved.
@@ -52,94 +52,94 @@ basis for portions of The Open Group's various CAE
 specifications.
 .PP
 The status of various standards, specifications, and
-the software in the X11R6.7 distribution, is explained below.
+the software in the X11R6.8 distribution, is explained below.
 .SH STANDARDS
 The following documents are X Window System standards:
 .nf
 
 X Window System Protocol
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Robert W. Scheifler
 
 Xlib \- C Language X Interface
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 James Gettys, Robert W. Scheifler, Ron Newman
 
 X Toolkit Intrinsics \- C Language Interface
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Joel McCormack, Paul Asente, Ralph R. Swick, Donna Converse
 
 Bitmap Distribution Format
 Version 2.1
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 
 Inter-Client Communication Conventions Manual
 Version 2.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 David Rosenthal, Stuart W. Marks
 
 Compound Text Encoding
 Version 1.1
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Robert W. Scheifler
 
 X Logical Font Description Conventions
 Version 1.5
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Jim Flowers, Stephen Gildea
 
 X Display Manager Control Protocol
 Version 1.1
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Keith Packard
 
 X11 Nonrectangular Window Shape Extension
 Version 1.0.1
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Keith Packard
 
 X11 Input Extension Protocol Specification
 Version 1.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 George Sachs, Mark Patrick
 
 X11 Input Extension Library Specification
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Mark Patrick, George Sachs
 
 The X Font Service Protocol
 Version 2.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Jim Fulton
 
 Inter-Client Exchange (ICE) Protocol
 Version 1.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Robert Scheifler, Jordan Brown
 
 Inter-Client Exchange (ICE) Library
 Version 1.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Ralph Mor
 
 X Session Management Protocol
 Version 1.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Mike Wexler
 
 X Session Management Library
 Version 1.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Ralph Mor
 
 The Input Method Protocol
 Version 1.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Masahiko Narita, Hideki Hiura
 
 X Synchronization Extension
 Version 3.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Tim Glauert, Dave Carver, Jim Gettys, David P. Wiggins
 
 XTEST Extension
@@ -148,12 +148,12 @@ Kieron Drake
 
 Big Requests Extension
 Version 2.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Bob Scheifler
 
 XC-MISC Extension
 Version 1.1
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Bob Scheifler, Dave Wiggins
 
 Double Buffer Extension
@@ -169,41 +169,41 @@ Version 1.13
 Martha Zimet, Stephen Gildea
 
 X Keyboard Extension Protocol
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Erik Fortune
 
 X Keyboard Extension Library
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Amber J. Benson, Gary Aitken, Erik Fortune, Donna Converse,
 George Sachs, and Will Walker
 
 X Print Extension Protocol
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 
 X Print Extension Library
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 
 X Application Group Extension Protocol and Library
 Version 1.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Kaleb Keithley
 
 X Security Extension Protocol and Library
 Version 4.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Dave Wiggins
 
 X Proxy Manager Protocol
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Ralph Swick
 
 LBX Extension Protocol and Library
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Keith Packard, Dave Lemke, Donna Converse, Ralph Mor, Ray Tice
 
 Remote Execution MIME Type
 Version 1.0
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 Arnaud Le Hors
 .fi
 .SH SPECIFICATIONS
@@ -396,13 +396,13 @@ Signaling Extension specification.
 .fi
 
 .SH "NON STANDARDS"
-The X11R6.7 distribution contains \fIsample\fP implementations, not
+The X11R6.8 distribution contains \fIsample\fP implementations, not
 \fIreference\fP implementations.  Although much of the code is believed
 to be correct, the code should be assumed to be in error wherever it
 conflicts with the specification.
 .PP
 The only X Window System standards are the ones listed above.
-No other documents, include files, or software in X11R6.7 carry special
+No other documents, include files, or software in X11R6.8 carry special
 status within the X Window System.  For example, none of the following
 are standards:
 internal interfaces of the sample server;
@@ -412,8 +412,8 @@ the Xmu library;
 the Xau library;
 the RGB database;
 the X Locale database;
-the fonts distributed with X11R6.7;
-the applications distributed with X11R6.7;
+the fonts distributed with X11R6.8;
+the applications distributed with X11R6.8;
 the include files <X11/XWDFile.h>, <X11/Xfuncproto.h>, <X11/Xfuncs.h>,
 <X11/Xosdefs.h>, <X11/Xos.h>, <X11/Xos_r.h>, <X11/Xwinsock.h>, and
 <X11/Xthreads.h>;

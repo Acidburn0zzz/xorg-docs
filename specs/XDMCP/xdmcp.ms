@@ -1,6 +1,7 @@
 .\" Use eqn, tbl, and -ms
 .\" $Xorg: xdmcp.ms,v 1.3 2000/08/17 19:42:20 cpqbld Exp $
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/XDMCP/xdmcp.ms,v 1.3 2004/09/03 16:18:20 kem Exp $
+.\" $Xorg: xdmcp.ms,v 1.3 2000/08/17 19:42:20 cpqbld Exp $
 .EQ
 delim @@
 define oc % "\\fR{\\fP" %
@@ -21,7 +22,7 @@ define cc % "\\fR}\\fP" %
 
 X.Org Standard
 
-X Version 11, Release 6.7\fP\s-1
+X Version 11, Release 6.8\fP\s-1
 .sp 4
 .ce 5
 \s-1Keith Packard

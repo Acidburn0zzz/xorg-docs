@@ -10,7 +10,7 @@
 <date>14 February 2003
 
 <ident>
-$Id$ 
+$XdotOrg: xc/programs/Xserver/hw/xfree86/doc/sgml/SCO.sgml,v 1.3 2004/09/03 18:48:11 keithp Exp $
 </ident>
 
 <!-- Table of contents -->
@@ -67,7 +67,7 @@ X11R&relvers, the following conditions must be met:
 
 </itemize>
 
-<sect>Compiling X11&relvers;<p>
+<sect>Compiling X11R&relvers;<p>
 
 Using the GNU Development System, compiling the distribution should be fairly
 straightforward.  Before attempting to compile the system though, you

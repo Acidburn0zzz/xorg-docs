@@ -1,5 +1,4 @@
 .\" Use -ms and macros.t
-.\" $XDotOrg$
 .EH ''''
 .OH ''''
 .EF ''''
@@ -17,7 +16,7 @@
 .ce 3
 Version 1.0
 X Project Team Standard
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 .sp 6
 .ce 4
 Rob Lembree

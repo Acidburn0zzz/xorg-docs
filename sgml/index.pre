@@ -8,7 +8,7 @@
 <!-- Title information -->
 <title>Documentation for the X Window System Version 11 Release &relvers; (X11R&relvers;)
 <author>The X.Org Foundation
-<date>6 April 2004
+<date>&reldate;
 
 <!--
 $XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/index.pre,v 1.23 2004/02/15 02:16:49 dawes Exp $ 

@@ -11,12 +11,11 @@ Mark  Weaver,
 Matthieu Herrb
 
 <ident>
-$Id$ 
 </ident>
 <toc>
 
 
-<sect>What and Where is X11R6.7?
+<sect>What and Where is X11R&relvers;?
 
 <p>
 X11R&relvers; is an Open Source version of the X Window System that supports

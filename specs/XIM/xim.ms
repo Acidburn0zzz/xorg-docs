@@ -1,7 +1,6 @@
 .\" $Xorg: xim.ms,v 1.3 2000/08/17 19:42:21 cpqbld Exp $
 .\" To print this out, type tbl macros.t ThisFile | troff -ms
 .\" $XFree86: xc/doc/specs/XIM/xim.ms,v 1.2 2000/12/14 17:48:58 dawes Exp $
-.\" $XdotOrg: xc/doc/specs/XIM/xim.ms,v 1.1.4.1.6.2 2004/03/25 04:56:41 alanc Exp $
 .EH ''''
 .OH ''''
 .EF ''''
@@ -17,7 +16,7 @@
 .sp
 \fBX Consortium Standard\fP
 .sp
-\fBX Version 11, Release 6.7\fP
+\fBX Version 11, Release 6.8\fP
 .sp 3
 .AU
 Masahiko Narita
@@ -98,8 +97,8 @@ This documentation is provided as is without express or implied warranty.
 .ps 11
 .nr PS 11
 .bp 1
-.EH '\fBX Input Method Protocol\fP''\fBX11, Release 6.7\fP'
-.OH '\fBX Input Method Protocol\fP''\fBX11, Release 6.7\fP'
+.EH '\fBX Input Method Protocol\fP''\fBX11, Release 6.8\fP'
+.OH '\fBX Input Method Protocol\fP''\fBX11, Release 6.8\fP'
 .EF ''\fB % \fP''
 .OF ''\fB % \fP''
 .NH 1

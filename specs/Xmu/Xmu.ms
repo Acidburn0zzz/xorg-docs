@@ -1,11 +1,11 @@
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/Xmu/Xmu.ms,v 1.3 2004/09/03 16:18:22 kem Exp $
 .\" $XFree86$
 .\"
 .sp 8
 .ce 2
 \s+2\fBXmu Library\fP\s-2
 .sp 6p
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 .sp 1
 .ce 1
 ``\fIDon't ask.\fP''

@@ -7,11 +7,7 @@
 <title>Release Notes for X11R&relvers;
 <author>The X.Org Foundation
 <and>The XFree86 Project, Inc.
-<date>31 March 2004
-
-<ident>
-$ Id: RELNOTES.sgml,v 1.1.4.4.2.2.4.3 2004/03/30 03:55:47 jg Exp $
-</ident>
+<date>&reldate;
 
 <abstract>
 
@@ -26,7 +22,7 @@ as noted below.
 <toc>
 
 <p>
-<sect>Introduction to the X11R6.7 Release Series
+<sect>Introduction to the X11R&relvers Release
 <p>
 The release numbering is based on the original MIT X numbering system.
 X11 refers to the version of the network protocol that the X Window
@@ -39,36 +35,18 @@ The MIT X Consortium and its successors, the X Consortium, the Open Group
 X Project Team, and the X.Org Group released versions X11R3 through X11R6.6,
 before the founding of the X.Org Foundation.
 <p>
-X11R&relvers; is based on the merger of the X11R6.6 and XFree86 4.4RC2 
-codebases, with significant updates, noted below.
+There will be future maintenance releases in the X11R6.8.x series.
+However, efforts are well underway to split the X distribution into its
+modular components to allow for easier maintenance and independent
+updates.  We expect a transitional period while both X11R6.8 releases
+are being fielded and the modular release completed and deployed while
+both will be available as different consumers of X technology have
+different constraints on deployment. We have not yet decided how the
+modular X releases will be numbered.
 <p>
-There will be future maintenance releases in the X11R6.7.x series.
-However, efforts are well underway to split the X distribution into
-its modular components to allow for easier maintenance and independent
-updates. We expect a transitional period while both X11R6.7 releases
-are being fielded and the modular release completed and deployed while both
-will be available as different consumers of X technology have different
-constraints on deployment. We have not yet decided how the modular
-X releases will be numbered.
-<p>
-Due to the new XFree86 1.1 license introduced in XFree86 4.4 (final),
-later additions to XFree86 may not be incorporated into our codebase.
 We encourage you to submit bug fixes and enhancements to bugzilla.freedesktop.org
 using the xorg product, and discussions on this server take
 place on <email>xorg@freedesktop.org</email>.
-
-<sect>Introduction to the XFree86 4.x Release Series
-<p>
-XFree86 4.0 was the first official release of the new XFree86 4 series.
-It was based on X11R6.4.
-<p>
-XFree86
-4 represents a significant redesign of the XFree86 X server.  Not all
-of the hardware drivers from 3.3.x have been ported to 4.x yet, but
-conversely, 4.x has support for a lot of hardware that is not supported
-in 3.3.x.  Our <htmlurl name="Driver Status document" url="Status.html">
-summarizes how the hardware driver support compares between &legacyvers;
-and &relvers;.  
 
 X11R&relvers; comes with a graphical configuration tool called 
 "<tt>xorgcfg</tt>",
@@ -105,7 +83,7 @@ as well as what is new in the latest full release (&fullrelvers;).
 ]]>
 <![ %fullrel [
 The next section describes what is new in the latest version (&relvers;)
-compared with the previous full release (&prevfullrelvers).
+compared with the previous full release (&prevrelvers;).
 ]]>
 The other sections below describe some of the new features and changes
 between 3.3.x and 4.0.  There are lots of new features, and we definitely
@@ -120,592 +98,223 @@ don't have enough space to cover them all here.
 </sect>
 ]]>
 
-<sect>Summary of new features in &fullrelvers;.
-<p>
-
-This is a sampling of the new features in X11R&fullrelvers;.  A more
-complete list of changes can be found in the CHANGELOG that is part of
+<sect>Summary of new features in X11R&relvers;
+<P>
+This is a sampling of the new features in X11R&relvers;.  A more
+complete list of changes can be found in the ChangeLog file that is part of
 the X source tree.
-<sect1>Enhancements in X11R&relvers; beyond XFree86 4.4RC2
 <p>
+
 <itemize>
+<item>Freetype was updated to version 2.1.8. But installing freetype
+from X distributions would often or usually result in the replacement
+or use of "stale" versions of freetype. On Linux, FreeBSD, Solaris 10,
+and SCO5, therefore, X11R&relvers; will by default use the version
+of freetype2 that is installed on the system. If your system doesn't
+come with an installed freetype2 and you wish to use the version
+supplied with this distribution, please add:
 
-<item>The final version of the X11R6.7 versions of the X Window System
-       standards and specification documents are included.  Updates since
-       X11R6.6 include a small correction to the numbering of requests in
-       the Shape Extension Protocol specification; the addition of IPv6
-       support to the X11 Protocol, Xlib, XDMCP, and Session Manager
-       specifications; and the addition of the ServerInterpreted Host family
-       to the X11 Protocol and Xlib specifications.
+  #define HasFreetype2 NO 
 
-<item>IPv6 support updated to the final X11R6.7 versions of the standards, 
-       including the addition of the ServerInterpreted Host family for xhost 
-       style authentication.  See the IPv6 section below for further details.
+to config/cf/host.def.
 
-<item>Only files without the new XFree86 1.1 license are included in the
-       X11R&relvers; release. Additionally, X.Org will be attempting,
-       when possible, to contact copyright holders of 
-       material in the distribution when those
-       copyrights do not follow the Debian Free Software guidelines
-       to see if they can be relicensed to adhere to those standards.
-
-<item>Trademark law requires that there be no ambiguity about
-       the use of a trademark,
-       so the documentation, error message, name of the X executable,
-       configuration file name, etc., have all been changed to
-       avoid confusion of X.Org's implementation with the XFree86&trade; 
-       trademarked implementation. Some of the changes made include:
-       <itemize>
-          <item> The name of the X server is Xorg, rather than XFree86.
-          <item> The name of the X server configuration file is 
-              /etc/X11/xorg.conf rather than /etc/X11/XF86Config.
-              If xorg.conf does not exist, the server will look
-              for the old name.
-          <item>The config file and servername in xorg.cf is build
-                time configurable.
-          <item>The vendor string was updated to "X.Org Foundation".
-          <item>The X server's log file name was changed to
-                Xorg.?.log.
-          <item>xf86cfg was renamed xorgcfg.
-          <item>xf86config was renamed xorgconfig.
-          <item>All messages emitted by the server in the log were
-                updated to reflect the change in name.
-          <item>The module loader was modified to accept either
-                XFree86 generated modules or X.Org generated modules.
-          <item>Manual pages and other documentation was updated.
-       </itemize>
-<item>Projective affine transforms and
-       the trapezoid primitives were implemented in XFree86 4.3
-       with suboptimal performance.  Work is underway to accelerate
-       these primitives. The render extension and render library in 
-       XFree86 4.4 are stale and
-       were updated to version 0.8.4 in X11R&relvers; to fix a number of bugs, by a backport
-       from the modular X window system tree.  
-       The bugs fixed include checks for
-       X servers not implementing render properly (e.g. Solaris
-       X servers which advertized support for render but failed
-       to support 1, 4, 8, 24, 32 depth pixmaps.) and eliminating
-       an unneeded dependence on libXext.
-
-<item>Fontconfig will no longer be installed by default since that
-       has often/usually resulted in overwriting more recent versions.
-       The fontconfig version 2.2.2 shipped in X11R&relvers;
-       needs to be built to allow programs in the tree to build that
-       depend on it, but those programs will run fine using installed
-       versions of fontconfig. If you do want to install the version
-       shipped in X11R&relvers; add:
-       <tscreen><verb> #define InstallFontconfigLibrary YES</verb></tscreen> to your host.def. We recommend instead if you need
-       to install a current fontconfig version, to get the current version
-       from <url name="fontconfig.org" url="http://www.fontconfig.org">.
-
-<item>Freetype was updated to version 2.1.7. 
-       But installing freetype from X distributions would often or
-       usually result in the replacement or use of "stale" versions 
-       of freetype. On Linux, FreeBSD, Solaris 10, and SCO5, therefore, X11R&relvers;
-       will by default use the version of freetype2 that is installed
-       on the system. If your system doesn't come with an installed
-       freetype2 and you wish to use the version supplied with this
-       distribution, please add:
-       <tscreen><verb>  #define HasFreetype2 NO </verb></tscreen> to config/cf/host.def. Additonally, the default font
-       renderer for TrueType that is loaded by the X server was changed
-       to freetype.
-
-<item>During the build, the version of expat that is
-       installed on the system is used by default on Microsoft
-       Windows, FreeBSD, Linux and SCO5.
-       If your system doesn't come with an installed expat and you wish to 
-       use the version supplied with this tree please add:
-       <tscreen><verb> #define HasExpat NO </verb></tscreen> to 
-       config/cf/host.def. <url name="Libexpat's" 
-            url="http://www.libexpat.org"> web site has current versions.
-
-<item>During build the version of zlib that is installed on the system
-        is used by default on OpenBSD, FreeBSD, Mac OS (Darwin), 
-        Microsoft Windows (Cygwin), Linux, Sun Solaris, and SCO5. 
-	If your system doesn't come with an installed zlib and you wish to 
-        use the version supplied with this tree please add:
-        <tscreen><verb>#define HasZlib NO </verb></tscreen> to 
-        config/cf/host.def.
-        <url name="Zlib's" url="http://www.gzip.org/zlib/"> web site
-        has current versions of zlib.
-
-<item>You are likely to need the ncurses and libpng libraries including
-       the development header files. Builds will also require
-       groff, flex, and optionally, perl5.
-
-<item>The TinyX (kdrive) driver was removed entirely from the tree
-       in X11R&relvers;. The version in XFree86 4.4 was 15 
-       months out of date as of XFree86 4.4's release in February 2004, 
-       and is not supported in the monolithic Xorg X server tree. 
-       Please turn to
-       <url name="freedesktop.org's X Server project" 
-        url="http://xserver.freedesktop.org"> for
-       current kdrive support, including the new composite,
-       damage, and X fixes extension under development.
-
-<item>Xft was updated to version 2.1.5, to fix bugs with Freetype
-       compatibility.
-
-<item>The remains of XIE and PEX extensions were removed completely.
-       Similarly, libxml2's remains were removed, as it is not used
-       at all in the distribution.
-
-<item>The new fonttosfnt utility to convert .bdf/.pcf fonts to .ttf
-       format was removed as it is not yet ready and working.
-       Please turn to
-       <url name="freedesktop.org's X Applications"
-        url="http://xapps.freedesktop.org"> for a newer version.
-
-<item>Allow left and right modifier keys to be distinguished on Mac OS X 
-       10.3. (Does not work on earlier versions.)
-
- </itemize>
-
-<sect1>Summary of new features in Cygwin/X
-<p>
-This is a sampling of the new features in Cygwin/X in X11R&fullrelvers;.
-<sect2>Cygwin/X Notes
-<p>
-Cygwin/X has continued its rapid pace of development that it has
-sustained since Spring 2001 and this release shows it, we now have: a
-stable and fast multi-window mode, seamless clipboard integration, a
-configurable tray menu icon, popups on error messages pointing users
-to the log file and our mailing list, the beginnings of indirect 3D
-acceleration for OpenGL applications, improved non-US keyboard and
-clipboard support, and only a handful of bugs that continue to be
-reported.
-<p>
-Between the XFree86 4.3.0 release and the X.Org X116.7 release the
-Cygwin/XFree86 project broke away from The XFree86 Project, Inc. due
-to a lack of support from the XFree86 project.  As such, the Cygwin/XFree86
-project was renamed to the Cygwin/X project and the upstream source
-code tree that Cygwin/X pulls from and pushes to is now the tree
-managed by the X.Org Foundation.  The Cygwin/X project has seen a rush
-of development and interest in the project since the split; one metric
-showing this is that the number of CVS committers we have has gone
-from zero to six.
-<sect2>Cygwin/X-specific Changes
-<p>
-[Note: This list is by no means complete and covers issues that were
-either specific to the Cygwin/X DDX or were reported as problems by a
-number of Cygwin/X users, thus creating an interest in such a problem
-being fixed.  The complete <url name="Cygwin/X-specific change logs"
- url="http://x.cygwin.com/devel/server/changelog-full.html"> can be seen
-at http://x.cygwin.com/devel/server/changelog-full.html]
-<itemize>
-<item>Major multi-window mode performance improvements and bug fixes. (Takuma Murakami, Earle F. Philhower III)
-
-<item>Initial version of indirect 3D acceleration by mapping GLX to Win32's
-       OpenGL implementation. (Alexander Gottwald, Harold L Hunt II)
-
-<item>Allow clipboard integration to work seamlessly with Xdmcp. (Harold L Hunt II)
-
-<item>Fix clipboard integration to stop stealing ownership of the selection
-       X (caused text to be unhighlighted in emacs, xterm, etc.). (Harold L
-       Hunt II)
-
-<item>Improved Japanese keyboard and clipboard support.(Kensuke Matsuzaki,
-       Takuma Murakami, Alexander Gottwald)
-
-<item>Customizable tray menu icon allowing shortcuts to start programs,
-       etc.(Earle F. Philhower III)
-
-<item>Add an About Cygwin/X dialog box to the tray icon menu. (Harold L Hunt II)
-
-<item>Fix crash with 24 bpp icons. (Fabrizio Gennari)
-
-<item>Improve window positioning in multi-window mode.(Earle F. Philhower III)
-
-<item>Allow overriding the tray icon in the .XWinrc preferences file.(Earle F. Philhower III)
-
-<item>New icons.(Jehan Bing, Michael Bax, Benjamin Rienfenstahl)
-
-<item>Fix some multi-monitor problems.(Takuma Murakami)
-
-<item>Prevent multiple instances of XWin.exe listening on the same display
-       number. (Takuma Murakami, Harold L Hunt II)
-
-<item>Present user with a dialog box containing useful information when
-       FatalError is called. (Harold L Hunt II)
-
-<item>Make the multi-window mode window manager detectable by other window
-       managers such as twm. (Takuma Murakami)
-
-<item>Center dialog boxes in the desktop window. (Earle F. Philhower III)
-
-<item>Fix multi-window mode crashes when there were multiple instances of
-       XWin.exe. (Kensuke Matsuzaki)
-
-<item>Don't send localhost and 0.0.0.0 when making Xdmcp connections.
-       (Matthieu Herrb, Harold L Hunt II)
-
-<item>Fix repeated key strokes. (Ivan Pascal)
-
-<item>Fix synchronization of mode key states between X and Win32.  
-       (Takuma Murakami)
-
-<item>Enable remapping of mouse buttons. (Takuma Murakami)
-
-<item>Enable copying and pasting of non-ascii characters in Windows
-       95/98/Me. (Kensuke Matsuzaki)
-
-<item>Fix multiple crashes in the clipboard code. (Kensuke Matsuzaki,
-       Harold L Hunt II)
-
-<item>Automatic keyboard layouts for the most frequently used keyboard
-       layouts. (Alexander Gottwald)
-
-<item>Fix problem with TweakUI's focus-follows-mouse behavior. (Harold L Hunt II)
-
-<item>Fix problem with TweakUI's and the AltGr key. (Harold L Hunt II)
-
-<item>Built in SHM support with detection of the SHM engine (cygserver).
-       (Ralf Habacker, Harold L Hunt II)
-
-<item>expat, freetype2, fontconfig, libXft, and xterm are now built and
-       distributed separately from the monolithic packages. (Gerrit
-       P. Haase, Harold L Hunt II, Alexander Gottwald, Nicholas Wourms)
-
-<item>Merged in work on the NativeGDI engine. (Alan Hourihane)
-</itemize>
-<sect1>Video Driver Enhancements
-
-<p>
-<itemize>
-<item>Several stability issues with the support for the Intel 830M,
-	845G, 852GM, 855GM and 865G integrated graphics chipsets have been
-	fixed.  Some limitations related to the driver's use of the video
-	BIOS remain, especially for some laptops.
-
-<item>The nv driver for NVIDIA cards has been updated as follows:
+<item> The XTT font module and FreeType1 have been retired because FreeType2 subsumes 
+their functionality
+<item> Retire old PS Type1 font rasterizer (except for CID font usage) since the FreeType2 rasterizer now handles PS Type1 (*.pfa, *.pfb)
+<item>Render implementation fixes
+<item>Updated x86emu and resynced with upstream at Scitech
+<item>Updated SiS driver
+<item>Render acceleration for ATI's R100 and R200-series cards
+<item>Substantial speedups in the software implementation of the
+render extensions when compiled with gcc 3.4 on the i386 architecture.
+<item>Infrastructure for rotation support in drivers
+<item>New Trapezoid specification for the Render extension
 	<itemize>
-	<item>Support added to the nv driver for the GeForce FX 5700,
-		which didn't work with XFree86 4.3.
-
-	<item>The driver now does a much better job of auto-detecting
-		which connector of dual output cards the monitor is
-		attached to, and this should reduce or eliminate the
-		need for manual xorg.conf overrides.
-
-	<item>The 2D acceleration for TNT and GeForce has been completely
-		rewritten and its performance should be substantially
-		improved.
-
-	<item>TNT and GeForce cards have a new Xv PutImage adaptor which
-		does scaled YUV bit blits.
-
+          <item>Respecify Render to include only 'normal' traps
+          <item>Allow backward compatibility but internally covert to new format
 	</itemize>
-<item>The SiS driver has seen major updates, including:
+<item>Software mouse cursor is now based on the Damage extension
+<item>A new keyboard driver is enabled by default. The old driver is disabled unless explicitly compiled in by defining the macro USE_DEPRECATED_KEYBOARD_DRIVER
+<item>Extensions can be enabled/disabled from the configuration file and from the command line
+<item>Mac OS X updates:
 	<itemize>
-	<item>Support for 661/741/760 and support for 330 (Xabre).
-
-	<item>Merged Framebuffer mode.
-
-	<item>Support for DVI, and much more.
-
-	<item>DRI for 300 series (300/305, 540, 630, 730) is supported
-		again.
-
+         <item>Support dynamic screen configuration changes in rootless mode
+         <item>Added option to always use Mac command key equivalents
+         <item>Interpret scroll wheel mouse events correctly when shift is held down
+         <item>Added trivial Xinput support
+         <item>Fixed launch of X clients from Finder with a space in their path
+         <item>Fixed some GLX rendering problems on Mac OS X 10.2 and earlier
 	</itemize>
-<item>A new driver for several VIA integrated graphics chipsets has been added.
-
-<item>Various updates and bug fixes have been made to most other drivers.
-
 </itemize>
 
-<sect1>Input Driver Enhancements
+<sect1>New X extensions
+<P>
+X11R&relvers; includes four new extensions:
 
-<p>
+<descrip>
+
+<tag>XFixes</tag> 
+
+The XFixes extension is a collection of improvements for deficiencies
+in the core protocol, including
+
 <itemize>
-<item>The mouse driver has some support on Linux and FreeBSD for
-	auto-detecting which device node to use. This makes it unnecessary
-	to supply this information in the xorg.conf file in most cases.
-
+<item>Notification when a selection changes <item>Server-side region
+objects
+<item>Allow clients to track the cursor image
 </itemize>
 
-<sect1>IPv6 support
+<tag>Damage</tag>
+
+The Damage extension allows a client to be notified whenever something
+is drawn to a window. This feature is useful for VNC servers, for
+screen magnifiers, and for clients using the Composite extension to
+update the screen.
+
+<tag>Composite (experimental)</tag>
+
+The Composite extension allows a client to request that all drawing to
+window is redirected to off-screen buffer. Though the Damage extension the
+client, called a 'compositing manager', can know which areas of a window is
+modified and render the windows on screen. By making use of the drawing
+requests from both the core protocol and the RENDER extension, the
+compositing manager can create special effects, such as translucennt windows.
+
+    The Composite extension is considered experimental in X11R&relvers; and is
+turned off by default.
+
+<tag>XEvIE (X Event Interception Extension) (experimental)</tag>
+
+XEvIE is an extension to intercept core keyboard and pointing device
+input It allows consumation, modification or synthesis of input events
+before these are sent to their final destination (i.e., interested
+clients). This feature is required by the GNOME accessibility project.
+
+The XEvIE extension is considered experimental in X11R&relvers; and is
+turned off by default.
+
+</descrip>
+
+As noted above, some extensions are disabled by default.  They can be
+enabled either in the <tt>xorg.conf</tt> configuration file or on the
+<tt>Xorg</tt> command-line.  For example, to enable the Composite
+extension, you could include a section like the following in the
+<tt>xorg.conf</tt> file:
+
+<verb>
+Section "Extensions"
+        Option "Composite" "Enable"
+EndSection
+</verb>
+
+or you could put <tt>+extension Composite</tt> on your command line.
+
+
+<sect1>
+Distributed Multihead X (DMX)
 <p>
-X11R&relvers; supports IPv6, based on the code contributed by Sun
-Microsystems, Inc. to X.Org. See <url name="X.Org's document"
-url="http://www.x.org/IPV6_Specific_Changes.html"> for a detailed list
-of what these changes are and how your system is affected by them.
+X11R&relvers; includes a new X server, called <tt>Xdmx</tt>, that allows
+users to create a single unified desktop from multiple running X
+servers.  It works by creating a local screen on each of these running X
+servers, which can be distributed across a network, and then presents
+that set of screens to the user.  When combined with Xinerama, a unified
+workspace, ranging from large display walls to small two display
+enviroments, can be created.
 <p>
-Note that in most environments script kiddies have generated sniffer
-scripts that will easily grab passwords on a network. By default,
-therefore, many software vendors now ship X with remote access disabled.
-<p>
-Unless you are confident of your network, direct use of IPv6 (or, for
-that matter, IPv4) over the network to your X server is not
-recommended; instead, we recommend the use of ssh ("ssh -X -C") to
-provide strong cryptography (and possibly compression) for network
-transparent use of X.  Work is beginning to address this with a more
-fully integrated encryption scheme that would avoid the extra process
-context switches and improve performance over ssh (how much is
-unknown).
-<sect2>Protocol names and aliases. 
-<p>
-<itemize>
-<item>tcp is an alias for both IPv6 and IPv4 transports.
-<item>inet specifies IPv4 only. 
-<item>inet6 specifies IPv6 only.
-</itemize>
-<p>
-You can force the X server to only listen to IPv4 connections with the
-<tt>X -nolisten inet6 </tt> command or you can force a IPv6 connection
-by setting <bf>DISPLAY</bf> to <tt>inet6/host:0</tt>.
+More information about DMX can be found on the <url name="DMX Project's
+web site" url="http://dmx.sf.net/">, including how to configure and use
+<tt>Xdmx</tt>.
 
-<sect2>XDM
-<p>
-The IPv6 XDMCP code is not enabled by default on platforms that don't 
-support binding a IPv6 socket to a IPv4 address. 
-<p>
-The XDM-AUTHORIZATION-1 authentication scheme does not support IPv6
-addresses but a new release of the protocol, XDM-AUTHORIZATION-2 has
-been designed; this though is yet to be  implemented.  By default 
-builds do not enable the XDM-AUTHORIZATION-1 code.
-
-<sect2>ServerInterpreted host authentication
-<p>
-The ServerInterpreted host family was added in response to comments received
-during the X11 over IPv6 standards public review period.  This family allows
-registration of new subtypes and implementation of them by modifications 
-solely to the X server, without having to modify clients such as xhost or the
-Xlib or X protocol standards.  In the initial X11R6.7.0 release, two
-subtypes are supported - "hostname" for hostnames resolved by the 
-server at connection time to better support dynamic DNS &amp; mobile 
-IP, and "ipv6" to allow IPv6 literal addresses, including in the future,
-scoped addresses.  For more information on these features, see the
-xhost manual page, X11 Protocol and Xlib standards, and the documents
-in xc/doc/specs/SIAddresses.
-
-<sect1>X Server and Extension Updates
-
-<p>
-<itemize>
-
-<item>The Mesa version used for OpenGL&reg; 1.3 and DRI driver support
-	has been updated to 5.0.2.
-
-</itemize>
-
-<sect1>Client and Library Updates
-
-<p>
-<sect2>Xterm
-<p>
-
-The user-visible changes to xterm since XFree86 4.3 are:
-
-	Bug Fixes:
-	<itemize>
-	<item>Make signalInhibit resource work, i.e., disable the menu
-		entries that would send signals to, or exit xterm.
-
-	<item>Make cursor definition in tek4014 emulation work as originally
-		implemented.
-
-	<item>Modify translations for scrollbar so that one can use
-		shifted pageup, wheel mouse, etc., while the mouse
-		pointer is over the scrollbar.
-
-	<item>Correct initialization of G1 character set mapping.
-
-	</itemize>
-
-	New Features:
-	<itemize>
-	<item>Modify the predictable version of the generated logfile
-		name to append the process-id rather than a random value.
-
-	<item>Modify scroll-back and scroll-forw actions to accept an
-		adjustment value, e.g.,
-		<tscreen><verb>scroll-back(1, page-2)</verb></tscreen> to 
-                 scroll back by 2 lines less than a page.
-		
-	<item>Add visualBellDelay resource to modify the length of
-		time used for visual bell, for very slow displays or
-		very fast computers.
-
-	</itemize>
-
-	Improved Locale Support:
-	<itemize>
-	<item>modify uxterm script to strip modifiers such as "@euro" from the
-		locale setting before adding ".UTF-8".
-
-	<item>Add logic to wide-character support which attempts to
-		load fonts specified by utf8Fonts subresources at startup.
-		The subresources have the same names as the fonts which
-		they replace, e.g., font, font1, etc., so that the
-		ISO-10646-1 fonts can be specified in the XTerm
-		app-defaults file.
-
-	<item>Improved performance with chinput application.
-
-	</itemize>
-
-	Improved Font Handling:
-	<itemize>
-	<item>Document in xterm's manual page how to use XFree86 ":unscaled"
-		keyword to suppress scaling of bold fonts.
-
-	<item>Improved logic for deriving bold fontname from normal
-		fontname.
-
-	<item>Make double-width characters work with -u8 option.
-
-	<item>Updated table of Unicode line-drawing characters.
-
-	<item>Several fixes for rendering using Xft (option -fa):
-		<itemize>
-		<item>Make height of TrueType fonts match ascent+descent.
-
-		<item>Translate Unicode values (from UTF-8 output to
-			xterm) for line-drawing to xterm's internal
-			code, etc., since TrueType fonts generally do
-			not have either set of line-drawing glyphs.
-			xterm can draw these directly.
-
-		<item>Pass 16-bit values rather than 8-bit values to
-			xtermXftDrawString() to allow for wide-characters.
-
-		<item>Use built-in line-drawing characters for Xft fonts.
-
-		<item>Implement underlining.
-		</itemize>
-	<item>Implement boldMode for wide-characters.
-
-	<item>Modified to work with CJK double-width (bi-width/monospace)
-		fonts.
-
-	</itemize>
-
-	Workarounds for Special Applications:
-	<itemize>
-	<item>Add option -k8 and resource allowC1Printable to allow
-		users of non-VTxxx character sets such as KOI-8 to treat
-		the C1 control area (character codes 128-159) as printable
-		rather than control characters.
-
-	<item>Add configure option --enable-broken-st and resource
-		brokenStringTerm to allow user to revert one part of
-		the parsing table corrections.
-
-	<item>Add configure option --enable-broken-osc and resource
-		brokenLinuxOSC to accommodate scripts which do not
-		distinguish between running in the Linux console and
-		running in X.  Linux console recognizes malformed control
-		strings which start with an OSC, but are fixed-length,
-		with no terminator.
-
-	<item>Add configure option --enable-pty-handshake to allow
-		one to compile-in support for the pty handshaking logic,
-		and resource ptyHandshake to enable or disable it.  This
-		feature is normally enabled.
-
-	</itemize>
-
-	Modified Resources:
-	<itemize>
-	<item>Change color4 to "dodger blue", since this provides
-		better contrast.
-
-	<item>Remove color resources from XTerm.ad, leaving them only
-		in XTerm-col.ad
-
-	<item>Modify UXTerm.ad resource file to include "XTerm-color"
-		rather than "XTerm", in case the latter file contains
-		no color resource definitions.
-
-	<item>Changed class of veryBoldColors to VeryBoldColors, since
-		ColorMode is associated with boolean resources.
-
-	<item>Changed classes of colorBDMode and similar resources
-		that override colors when a video attribute is set to
-		ColorAttrMode, to make them distinct from ColorMode.
-		This avoids an unexpected rendering of reverse video,
-		for example.
-
-	</itemize>
-
-	Modified terminfo/termcap entries:
-	<itemize>
-	<item>Add indp and rin to terminfo entry.
-
-	<item>Add le to termcap xterm-basic entry.  Though missing
-		from older termcaps for xterm, some applications check
-		for it.
-
-	<item>Correct AF/AB strings in termcap for xterm-256color and
-		xterm-88color entries.
-
-	</itemize>
-
-<sect1>I18N and Font Updates
-
+<sect1>
+Xprint updates
 <p>
 <itemize>
-<item>The "freetype" X server font backend has been updated by the
-	<url name="After X-TT Project" url="http://x-tt.sourceforge.jp/"> to
-	include the functionality previously provided by the "xtt" backend,
-	and to fix some bugs.  The "xtt" backend will be dropped in the
-	next release in favour of the updated unified "freetype" backend.
-	<itemize>
-	<item>The new "freetype" backend has the improved "very lazy" metric
-		calculation method which enables super-fast loading of
-		proportional CJKV fonts.
-
-	<item>All of the servers, including xfs, Xnest, Xprt, Xvfb, the
-		Cygwin-X server (as well as the Xorg server)
-		can handle the perfect TTCap options.
-
-	</itemize>
-
-<item>The Compose file processing mechanism has been improved and made
-	more flexible.  See the <ref id="compose" name="Xlib Compose
-	file support and extensions section below">.
-
-<item>The Bitstream Vera TrueType fonts that Bitstream, Inc donated to
-	the GNOME Foundation have been included with this release.
-
+  <item>Integrated various fixes from xprint.mozdev.org (more or less the whole codebase has been merged)
+  <item>Integrated various fixes from Sun Microsystems
+  <item>OpenGL is now supported for printing
+  <item>New set of maintenance tools for the Xprint server (xplsprinters, xprehashprinterlist, etc.)
+  <item>Added new XprintUtils client library to make the usage off Xprint easier
+  <item>Various other features and fixes integrated
+  <item>Athena toolkit now has print support (XawPrintShell) which is included
+        in a separate version of that library (Xaw8)
+  <item>Various applications/tools like xman, xedit, xlogo, etc. now have
+        print support
 </itemize>
 
-<sect1>OS Support Updates
+<sect1>Updated Mesa and DRI from upstream sources
+<P>	
+	<itemize>
+          <item>More OpenGL extensions
+          <item>MergedFB for Radeon (Dualhead DRI support on these cards)
+          <item>Many GLX fixes
+          <item>Working SiS DRI driver
+          <item>Major Radeon and R200 DRI driver updates
+          <item>fbconfigs support
+          <item>Beginnings of pbuffer support (indirect only, and only in specific circumstances).
+          <item>Merge Mach64 DRI support (Eric Anholt, July 23)
+	</itemize>
 
+<sect1>Video driver enhancements
 <p>
 <itemize>
-<item>On Mac OS X, the appropriate backend drawing code is now dynamically
-	loaded at runtime which reduces the X server's memory footprint.
-	In rootless mode, Apple's Xplugin library is used where available.
-	(Xplugin is included as part of Mac OS X on Panther.) With Xplugin,
-	XDarwin provides identical performance to Apple's X11, including
-	the following improvements over 4.3:
+   <item>SiS driver updates include
 	<itemize>
-	<item>Added direct GLX rendering with thread support.
-	<item>Faster 2-D drawing.
-	<item>Added support for the Apple-WM extension so XDarwin interoperates
-		with quartz-wm.
+         <item>output device hotplugging
+         <item>lots of fixes for 661, 741, 760
+         <item>extended interface for SiSCtrl?
+         <item>extended LCD handling (allow more modes)
+         <item>HDTV support (480p, 480i, 720p. 1080i; 315/330 series)
+         <item>Added video blitter Xv adapter (315/330 series)
+         <item>extended RENDER acceleration
 	</itemize>
-<item>On Darwin, IOKit mode now uses shadowfb for much faster drawing.
+   <item>Radeon driver updates:
+	<itemize>
+         <item>Merged Framebuffer support (dualhead with DRI)
+         <item>DynamicClocks option (reduced power usage)
+         <item>Render acceleration (r100, r200 chips only)
+         <item>Support for new ATI chips (R420/M18, R423, RV370/M22, RV380/M24, RS300)
+         <item>DRI support for IGP chips
+         <item>Xv gamma correction
+         <item>Updated 3D drivers
+         <item>Many other small fixes
+	</itemize>
+   <item>Neomagic driver updates
+	<itemize>
+         <item>Support for Xv on pre-nm2160 chips
+         <item>Pseudocolor overlay mode
+         <item>Improved support for lowres double scan modes
+	</itemize>
+   <item>MGA driver updates
+	<itemize>
+         <item>Support for DDC and DPMS on second head on G400
+         <item>Updated 3D driver
+	</itemize>
+   <item>i810 driver updates
+	<itemize>
+         <item>Dualhead support (i830+)
+         <item>i915 support
+         <item>New 3D driver (i830+)
+	</itemize>
+   <item>Savage driver updates
+	<itemize>
+         <item>Pseudocolor overlay mode
+	</itemize>
+   <item>S3 driver updates
+	<itemize>
+         <item>Support for additional IBM RAMDACS
+	</itemize>
+   <item>Chips driver update
+	<itemize>
+         <item>Improved BE support
+	</itemize>
+   <item>New Voodoo driver (Alan Cox)
+        <itemize>
+         <item>Provides native (glide-less) acceleration and mode setup for voodoo/voodoo2 boards
+        </itemize>
+  </itemize>
 
-<item>Various GNU/Hurd support updates.
-
-<item>Experimental support added for GNU/KFreeBSD and GNU/KNetBSD systems.
-
-<item>SCO OpenServer support updates.  X11R6.7 now works on Release
-5.0.7 with Maintenance Pack 1, or on prior releases through Release
-5.0.4.  Please consult the <htmlurl name="README.SCO" url="SCO.html">
-file for details.
-
-</itemize>
-
-<!--
-<sect>Summary of new features in &prevrelvers;.
-<p>
--->
-
-<sect>Drivers<label id="drivertables">
-<p>
+<sect>Drivers
+<P>
 
 <sect1>Video Drivers
 <p>
@@ -862,39 +471,9 @@ X11R&relvers; includes the following input drivers:
 
 Drivers marked with (*) are available for Linux only.
 
-<sect>Known Problems
+<sect>Overview of X11R&relvers;
 <p>
-
-<itemize>
-<item>Known issues with this version of the SiS driver:	<itemize>
-	<item>The driver will not work with upcoming laptops/notebooks
-	with 661/741/760 and 30xLV bridges as regards LCD output. This
-	is due folks at SiS at the very moment writing an entirely new
-	VBIOS for such machines whose data layout is not decided yet.
-	(This might affect machines with 650/740 as well within the next
-	year.)
-
-	<item>Xv does not work correctly in TV NTSC 1024x768 mode, if
-	the overlay is very large (or full screen). The effect are
-	flickering lines on the screen. This is a hardware problem. Do
-	not use this mode for video.
-
-	<item>YPbPr 720p output is blurry (at least at 1024x768; unknown
-	for other modes). This is a driver problem; solution currently
-	unknown.
-
-	</itemize>
-
-<item>We have received a late report that enabling DPMS support with
-the radeon driver can damage some Viewsonic monitors.  DPMS is usually
-disabled by default.  You can verify whether or not DPMS is enabled by
-running 'xset q' from within your X session.
-
-</itemize>
-
-<sect>Overview of X11R6.7.x
-<p>
-On most platforms, X11R6.7.x has a single X server binary called <tt>Xorg</tt>.
+On most platforms, X11R&relvers; has a single X server binary called <tt>Xorg</tt>.
 This binary can either have one or more video and input drivers linked in
 statically, or more usually, dynamically, and in that manner load the
 video drivers, input drivers, and other modules that are needed.
@@ -902,8 +481,7 @@ video drivers, input drivers, and other modules that are needed.
 X11R&relvers; has X server support for most UNIX&reg; and UNIX-like
 operating systems on Intel/x86 platforms, plus support for Linux and
 some BSD OSs on Alpha, PowerPC, IA-64, AMD64, Sparc, and Mips platforms,
-and for Darwin on PowerPC.  Support for additional architectures
-and operating systems is in progress and is planned for future releases.
+and for Darwin on PowerPC.
 
 <sect1>Loader and Modules
 <p>
@@ -935,7 +513,7 @@ releases.
 
 <bf>Note about module security</bf>
 <quote>
-	The X server runs with root privileges, i.e. 
+	The X server runs with root privileges, i.e., 
 	the X server loadable modules also run with these privileges.
 	For this reason we recommend that all users be careful to only
 	use loadable modules from reliable sources,  otherwise the
@@ -977,8 +555,8 @@ servers or its own.
 
 <sect1>Multi-head
 <p>
-Some multi-head configurations are supported in XFree86 4.x and
-X11R6.x, primarily with multiple PCI/AGP cards.
+Some multi-head configurations are supported in 
+X11R&relvers;, primarily with multiple PCI/AGP cards.
 
 One of the main problems is with drivers not sufficiently initialising
 cards that were not initialised at boot time.  This has been improved
@@ -1001,8 +579,7 @@ an 8-bit screen together with a 16-bit screen in Xinerama mode.
 Xinerama is not enabled by default, and can be enabled with the
 <tt>+xinerama</tt> command line option for the X server.
 
-Xinerama was included with X11R6.4.  The version included in X11R6.7.x
-and XFree86 4.x
+Xinerama was included with X11R6.4.  The version included in X11R&relvers;
 was completely rewritten for improved performance and correctness.
 
 Known problems:
@@ -1091,7 +668,7 @@ This allows the client greater control over text rendering and complete
 access to the available font information while still providing hardware
 acceleration.  The Xft library provides font access for
 Render applications.
-
+	
 <sect2>The Xft Library
 <p>
 
@@ -1122,9 +699,9 @@ file is included in the <htmlurl name="Xft(3)" url="Xft.3.man"> man page.
 <sect2>Application Support For Anti-Aliased Text
 <p>
 
-Only three applications have been modified in X11R&relvers; to work 
+Only four applications have been modified in X11R&relvers; to work 
 with the Render extension and the Xft and FreeType libraries to provide 
-anti-aliased text: xterm, xditview and x11perf.  Migration of other 
+anti-aliased text: xterm, xditview, x11perf and xclock.  Migration of other 
 applications may occur in future releases.
 
 <p>
@@ -1142,6 +719,10 @@ includes tests to measure the performance of text rendered in three ways,
 anti-aliased, anti-aliased with sub-pixel sampling and regular chunky 
 text, but through the Render extension, a path which is currently somewhat
 slower than core text.
+<p>
+Xclock uses the Render extension to draw the analog face and shares the -fa
+option and faceName resources with xterm to select a font for the digital
+mode.
 </sect2>
 
 <sect1>Other extensions
@@ -1175,6 +756,7 @@ Xedit has several new features, including:
   <item>Flexible search/replace interface that allows regex matches.
   <item>Please refer to <tt><htmlurl name="xedit(1)" url="xedit.1.html"></tt>
 	for more details.
+  <item>XPrint support.
 </itemize>
 
 <!--
@@ -1191,18 +773,16 @@ in the <htmlurl name="README.fonts" url="fonts.html"> document.
 <sect1>TrueType support
 <p>
 
-X11R6.7.x and XFree86 4.x comes with two TrueType backends, known as
-"FreeType" backend (the <tt>"freetype"</tt> module) and `X-TrueType'
-(the <tt>"xtt"</tt> module).  Both of these backends are based on the
-FreeType library.  The functionality of X-TrueType has been merged into
-the FreeType backend by the After X-TT Project for XFree86 4.4.
-Consequently, the old X-TrueType backend will be dropped 
-in the next major release.
+X11R6.7 came with two TrueType backends.  The functionality from the
+`X-TrueType' backend has been integrated into the `FreeType' backend which
+is designed to transparently support all of the functionality from the
+`X-TrueType' backend with the exception of the font encoding libraries; the
+`FreeType' backend uses only the fontenc-based encoding system .
 
 <sect1>CID font support
 <p>
 
-Support for CID-keyed fonts is included in X11R&relvers;.x.
+Support for CID-keyed fonts is included in X11R&relvers;
 The CID-keyed font format was designed by <url name="Adobe Systems"
 url="http://www.adobe.com"> for fonts with large character sets.  The
 CID-keyed font support in X11R&relvers; was donated by <url name="SGI"
@@ -1213,13 +793,10 @@ License.
 <sect1>Internationalisation of the scalable font backends
 <p>
 
-X11R6.7.x has a ``fontenc'' layer to allow the scalable font backends
-to use a common method of font re-encoding.  This re-encoding makes it
-possible to uses fonts in encodings other than their their native
-encoding.  This layer is used by the Type1 and Speedo backends and the
-`xfsft' version of the TrueType backend.  The `X-TrueType' version of
-the TrueType backend uses a different re-encoding method based on loadable
-encoding modules.
+X11R&relvers; has a ``fontenc'' layer to allow the scalable font backends to
+use a common method of font re-encoding.  This re-encoding makes it possible
+to uses fonts in encodings other than their their native encoding.  This
+layer is used by the Type1, Speedo and FreeType backends.
 
 <sect1>Large font optimisation
 <p>
@@ -1231,7 +808,7 @@ transmitted in a compressed format.
 
 <sect1>Unicode/ISO 10646 support
 <p>
-What is included in X11R6.7.x
+What is included in X11R&relvers;
 
 <itemize>
   <item>All ``-misc-fixed-*'' BDF fonts are now available in the
@@ -1264,8 +841,7 @@ What is included in X11R6.7.x
   <item>ISO 10646/Unicode UTF-8 Level 1 support added to xterm
 	(enabled with the <tt>-u8</tt> option).
 
-  <item>Both the xfsft (the <tt>"freetype"</tt> module) and the X-TrueType
-	(the <tt>"xtt"</tt> module) TrueType font backends support
+  <item>The Freetype backend (the <tt>"freetype"</tt> module) supports
 	Unicode-encoded fonts.
 
 </itemize>
@@ -1274,7 +850,7 @@ What is included in X11R6.7.x
 <p>
 
 A more flexible Compose file processing system was added to Xlib in
-X11R6.7.0.  The compose file is searched for in 
+X11R&relvers;.  The compose file is searched for in 
 the following order:
 
 <enum>
@@ -1316,6 +892,20 @@ But if the rule is:
 <tscreen><verb><dead_grave> <A> : Agrave</verb></tscreen>the
 result depends on how Agrave is mapped in the current locale.
 
+<sect1>Bitstream Vera fonts <label id="vera">
+<p>
+
+X11R&relvers; includes the Bitstream Vera family of typefaces in TrueType
+format.  This family includes the ``Bitstream Vera Sans'', ``Bitstream
+Vera Sans Mono'' and ``Bitstream Vera Serif'' in Roman and Bold varients
+as well as the ``Bitstream Vera Sans'' and ``Bitstream Vera Sans Mono''
+in Oblique and Bold Oblique.
+These fonts include all of the glyphs needed for ISO&nbsp; 8859 parts 1 9
+and 15.
+
+The license terms for the Vera fonts are inclued in the file
+<tt/COPYRIGHT.Vera/>.
+
 <sect1>Luxi fonts from Bigelow and Holmes <label id="luxi">
 <p>
 
@@ -1350,43 +940,150 @@ please contact
 <url name="URW++ web site" url="http://www.urwpp.de">.
 
 
-<!--
 <sect>Miscellaneous
 <p>
--->
+This section describes other items of note for the X11R&relvers;
+release.
 
-<sect>Credits
+<sect1>Legacy keyboard driver phase-out
 <p>
+The legacy keyboard driver is no longer compiled into the X server by
+default on certain platforms (including Linux).  The newer <tt>kbd</tt>
+driver replaces the older built-in driver.  It is suggested that, if the
+X server says that it cannot load the keyboard driver, then the
+<tt>xorg.conf</tt> file should be updated to use the new <tt>kbd</tt>
+driver, which can be done by changing the <tt>Driver</tt> line in the
+<tt>InputDevice</tt> section.  For example,
+
+<verb>
+Section "InputDevice"
+        Identifier  "Keyboard0"
+        Driver      "kbd"
+EndSection
+</verb>
+Note that the driver name is case-sensitive.
+
+<sect1>Socket directory ownership and permissions
+<p>
+The socket directories created in <tt>/tmp</tt> are now required to be
+owned by root and have their sticky-bit set.  If the premissions are not
+set correctly, the component using this directory will print an error
+message and fail to start.  Common socket directories that are known to
+be affected include:
+<verb>
+/tmp/.font-unix
+/tmp/.ICE-unix
+/tmp/.X11-unix
+</verb>
+These directories are used by the font server, <tt>xfs</tt>,
+applications using the Inter-Client Exchange protocol (ICE) and the X
+server, respectively.
+<p>
+There are several solutions to the problem of when to create these
+directories.  They could be created at install time by the system's
+installer if the <tt>/tmp</tt> dir is persistent.  They could be created
+at boot time by the system's boot scripts (e.g., the <tt>init.d</tt>
+scripts).  Or, they could be created by PAM modules at service startup
+or user login time.
+<p>
+The solution chosen is platform dependent, and the system administrator
+should be able to handle creating those directories on any systems that
+do not have the correct ownership or permissions.
+
+<sect1>Composite exposes extra visuals
+<p>
+When the Composite extension is enabled via <tt>xorg.conf</tt> or the
+command line, a new visual is created.  This visual is different from
+the other visuals used by X applications in that it includes an alpha
+component.  It is used by the compositing manager and other Composite
+aware applications.
+<p>
+Most X applications ignore this visual since it is not useful to them;
+however some applications mistakenly try to use it, which will cause
+them to fail.  An environment variable, <tt>XLIB_SKIP_ARGB_VISUALS</tt>,
+was added to the X11 library to hide this visual from applications that
+mistakenly try to use it.  If an application fails only when the
+Composite is enabled, try setting this environment variable before
+starting the application.
+<p>
+Since Composite is not enabled by default, it is not expected that this
+issue will be visible to most users.
+
+<sect>Attributions/Acknowledgements/Credits
+
+This section lists the credits for the X11R&relvers; release.  For a more
+detailed breakdown, refer to the ChangeLog file in the X.Org source
+tree, the ChangeLog's in <url name="the xorg product in
+freedesktop.org's CVS"
+url="http://freedesktop.org/cgi-bin/viewcvs.cgi/xorg/xc/Attic/"> or
+the 'cvs log' information for individual source files.
 
 <![ %snapshot [
-<bf>THIS IS A DRAFT OF THE X11R&fullrelvers; CREDITS SECTION.</bf>
+<bf>THIS IS A DRAFT OF THE X11R&relvers; CREDITS SECTION.</bf>
 If you find missing credits, incorrect attributions, or other errors, please
 send details to <email>xorg@freedesktop.org</email>.
 ]]>
 
-This section lists the credits for the X11R6.7; release and
-is in addition to the credits for the XFree86 4.4 release
-credits below.  
-For a more detailed breakdown, refer to the CHANGELOG file in the X.Org
-source tree, the CHANGELOG's
-in <url name="the xorg product in freedesktop.org's CVS"
-url="http://freedesktop.org/cgi-bin/viewcvs.cgi/xorg/xc/Attic/">
-or the 'cvs log' information for individual source files.
-
+<P>
 <descrip>
-<tag>New Features, Enhancements and Updates:</tag>
-  <descrip>
-  <tag>Mac OS X enhancements:</tag>Torrey T. Lyons, John Harper.
-  <tag>Cygwin/X enhancements:</tag>Harold L Hunt II,
-  <tag>IPv6 and ServerInterpreted enhancements:</tag>Alan Coopersmith
-  <tag>Release Engineering:</tag>Egbert Eich
-  <tag>Documentation updates:</tag>Jim Gettys, Keith Packard
-  <tag>Updated render:</tag>Keith Packard
-  <tag>Updated Xft:</tag>Keith Packard
-  <tag>Updated fontconfig:</tag>Keith Packard
-  </descrip>
-Note: the list below does not contain acknowlegements to those working on the new modular X release as their work is not present in this release.
-Patches and other submissions (in alphabetical order):
+<tag>These people contributed in some way to X11R&relvers;</tag>
+Paul Anderson, 
+Eric Anholt, 
+Daniel Berrange, 
+Russ Blaine, 
+Ryan Breen, 
+Alan Coopersmith, 
+Michel Daenzer, 
+David Dawes,
+Alex Deucher, 
+Stefan Dirsch, 
+Egbert Eich, 
+Rik Faith,
+Jim Gettys, 
+Alexander Gottwald, 
+Mike A. Harris, 
+John Harper, 
+John Heasley, 
+Matthieu Herrb, 
+Alan Hourihane, 
+Kristian H&oslash;sberg, 
+Harold L. Hunt II, 
+Adam Jackson, 
+Deron Johnson, 
+Ivan Kokshaysky, 
+Stuart Kreitman, 
+Peter Kunzman, 
+Nolan Leake,
+Ryan Lortie, 
+Andreas Luik, 
+Torrey T. Lyons, 
+Roland Mainz, 
+Guy Martin, 
+Kevin E. Martin, 
+Keith Packard, 
+Greg Parker, 
+Aaron Plattner, 
+S&oslash;ren Sandmann,
+Ty Sarna, 
+Yu Shao, 
+Bryan Stine, 
+Owen Taylor, 
+Travis Tilley, 
+Ryan Underwood, 
+Ronny Vindenes, 
+Chisato Yamauchi
+</descrip>
+
+<p>
+The X Window System has been a collaborative effort from its inception. 
+Our apologies for anyone or organization inadvertently overlooked.
+Many individuals (including major contributors) who worked on X are
+represented by their employers in this list.
+<p>
+<descrip>
+
+<tag>This product includes software developed by: </tag>
+
 Paul Anderson,
 Michael Bax,
 Jehan Bing,
@@ -1408,7 +1105,8 @@ Kaleb Keithley,
 Stuart Kreitman,
 Andreas Luik,
 Torrey Lyons,
-Roland Minz,
+Roland Mainz,
+Kevin E. Martin, 
 Takuma Murakami,
 Kensuke Matsuzaki,
 Keith Packard,
@@ -1418,542 +1116,313 @@ Benjamin Rienfenstahl,
 Leon Shiman,
 Toshimitsu Tanaka,
 Nicholas Wourms.
-<p> 
 
-<tag>Release Engineering:</tag>Egbert Eich, Kaleb S. Keithley
-
-<tag>Webmaster:</tag>Daniel Stone, Keith Packard, Jim Gettys
-
-<tag>Tinderbox setup:</tag>Jim Gettys, John Dennis
-
-<tag>X.Org Hosting:</tag><url name="The Open Group"
-url="http://www.tog.org/">.
-
-<tag>Freedesktop.org Hosting:</tag><url name="Portland State University"
-url="http://www.pdx.edu">.
-
-<tag>Organization:</tag>Howard Greenwell
-
-</descrip>
-
-This section lists the credits for the XFree86 4.4; release.  For
-a more detailed breakdown, refer to the CHANGELOG file in the XFree86
-source tree, the <url name="cvs-commit archives"
-url="http://www.mail-archive.com/cvs-commit@xfree86.org/maillist.html">,
-or the 'cvs log' information for individual source files.
-
-<descrip>
-<tag>New Features, Enhancements and Updates:</tag>
-  <descrip>
-  <tag>IPv6 support:</tag>Alan Coopersmith, Fabio Massimo Di Nitto,
-	Marc Aurele La France, Matthieu Herrb, David H. Dawes.
-  <tag>NVIDIA 'nv' driver rewrite:</tag>Mark Vojkovich.
-  <tag>SiS driver development:</tag>Thomas Winischhofer.
-  <tag>New VIA video driver:</tag>VIA, Alan Cox, Luc Verhaegen, Thomas
-	Hellstr&ouml;m.
-  <tag>Intel 'i810' driver fixes and stability improvements:</tag>Egbert Eich,
-	David H. Dawes, Christian Zietz
-  <tag>Improved and more flexible Compose system:</tag>Ivan Pascal.
-  <tag>Automatic configuration for the XFree86 server:</tag>David H. Dawes.
-  <tag>Reworked FreeType font backend module:</tag>Chisato Yamauchi and
-	the After X-TT Project.
-  <tag>Xterm fixes, maintenance and enhancements:</tag>Thomas E. Dickey.
-  <tag>Mac OS X enhancements:</tag>Torrey T. Lyons, John Harper.
-  <tag>GNU/Hurd updates and preliminary GNU/KFreeBSD and GNU/KNetBSD support:</tag>Robert Millan.
-  <tag>SCO support updates:</tag>Kean Johnston.
-  <tag>Bitstream Vera fonts:</tag>Bitstream, Inc, and the GNOME Foundation.
-  </descrip>
-<tag>Integration:</tag>
-  <descrip>
-  <tag>General Integration of Submissions:</tag>Egbert Eich, David H. Dawes,
-	Ivan Pascal, Alan Hourihane, Matthieu Herrb.
-  <tag>DRI Integration:</tag>Alan Hourihane.
-  </descrip>
-<tag>Release Engineering:</tag>David H. Dawes.
-
-<tag>Patches and other submissions (in alphabetical order):</tag>
-Roi a Torkilsheyggi,
-Dave Airlie,
-Andrew Aitchison,
-Marco Antonio Alvarez,
-Alexandr Andreev,
-Jack Angel,
-Eric Anholt,
-Ani,
-Juuso &Aring;berg,
-Sergey Babkin,
-Alexey Baj,
-Bang Jun-Young,
-Uberto Barbini,
-Matthew W. S. Bell,
-Vano Beridze,
-Hiroyuki Bessho,
-Andrew Bevitt,
-Christian Biere,
-Martin Birgmeier,
-Jakub Bogusz,
-Le Hong Boi,
-Paul Bolle,
-Charl Botha,
-Stanislav Brabec,
-Eric Branlund,
-Rob Braun,
-Peter Breitenlohner,
-Michael Breuer,
-Kevin Brosius,
-Frederick Bruckman,
-Oswald Buddenhagen,
-Nilg&uuml;n Belma Bug&uuml;ner,
-Julian Cable,
-Yukun Chen,
-Ping Cheng,
-Juliusz Chroboczek,
-Fred Clift,
-Alan Coopersmith,
-Martin Costabel,
-Alan Cox,
-Michel D&auml;nzer,
-David Dawes,
-Leif Delgass,
-Richard Dengler,
-John Dennis,
-Thomas Dickey,
-Randy Dunlap,
-Chris Edgington,
-Paul Eggert,
-Paul Elliott,
-Emmanuel,
-Visanu Euarchukiati,
-Mike Fabian,
-Rik Faith,
-Brian Feldman,
-Wu Jian Feng,
-Kevin P. Fleming,
-Jose Fonseca,
-Hugues Fournier,
-Miguel Freitas,
-Quentin Garnier,
-B&oslash;rre Gaup,
-Michael Geddes,
-Frank Giessler,
-Hansruedi Glauser,
-Wolfram Gloger,
-Alexander Gottwald,
-Guido Guenther,
-Ralf Habacker,
-Bruno Haible,
-Lindsay Haigh,
-John Harper,
-James Harris,
-Mike A. Harris,
-Bryan W. Headley,
-John Heasley,
-Thomas Hellstr&ouml;m,
-Matthieu Herrb,
-Jonathan Hough,
-Alan Hourihane,
-Joel Ray Holveck,
-Harold L Hunt II,
-Ricardo Y. Igarashi,
-Mutsumi ISHIKAWA ,
-Tsuyoshi ITO,
-Kean Johnston,
-Nicolas JOLY,
-Phil Jones,
-Roman Kagan,
-Theppitak Karoonboonyanan,
-Etsushi Kato,
-Koike Kazuhiko,
-Aidan Kehoe,
-Juergen Keil,
-Andreas Kies,
-Thomas Klausner,
-Mario Klebsch,
-Egmont Koblinger,
-Vlatko Kosturjak,
-Kusanagi Kouichi,
-Mel Kravitz,
-Peter Kunzmann,
-Nick Kurshev,
-Mashrab Kuvatov,
-Marc La France,
-Radics Laszlo,
-Zarick Lau,
-Nolan Leake,
-Michel Lespinasse,
-Noah Levitt,
-Dave Love,
-H.J. Lu,
-Lubos Lunak,
-Sven Luther,
-Torrey T. Lyons,
-Calum Mackay,
-Paul Mackerras,
-Roland Mainz,
-Kevin Martin,
-Michal Maruska,
-Kensuke Matsuzaki,
-maxim,
-Stephen McCamant,
-Ferris McCormick,
-Luke Mewburn,
-Nicholas Miell,
-Robert Millan,
-Hisashi MIYASHITA,
-Gregory Mokhin,
-Patrik Montgomery,
-Joe Moss,
-Josselin Mouette,
-Frank Murphy,
-Reiko Nakajima,
-Paul Nasrat,
-Dan Nelson,
-Bastien Nocera,
-Alexandre Oliva,
-Hideki ONO,
-Peter Osterlund,
-Sergey V. Oudaltsov,
-S&eacute;amus &Oacute; Ciardhu&aacute;in,
-Bob Paauwe,
-Paul Pacheco,
-Tom Pala,
-Ivan Pascal,
-T. M. Pederson,
-Earle F. Philhower III,
-Nils Philippsen,
-Manfred Pohler,
-Alexander Pohoyda,
-Alain Poirier,
-Arnaud Quette,
-Jim Radford,
-Dale Rahn,
-Lucas Correia Villa Real,
-Ren&eacute; Rebe,
-Tyler Retzlaff,
-Sebastian Rittau,
-Tim Roberts,
-Alastair M. Robinson,
-Branden Robinson,
-Daniel Rock,
-Ian Romanick,
-Bernhard Rosenkraenzer,
-M&aring;ns Rullg&aring;rd,
-Andriy Rysin,
-Supphachoke Santiwichaya,
-Pablo Saratxaga,
-Matthias Scheler,
-Jens Schweikhardt,
-Danilo Segan,
-Shantonu Sen,
-Stas Sergeev,
-Jungshik Shin,
-Nikola Smolenski,
-Andreas Stenglein,
-Paul Stewart,
-Alexander Stohr,
-Alan Strohm,
-Will Styles,
-James Su,
-Mike Sulivan,
-Ville Syrjala,
-Slava Sysoltsev,
-Akira TAGOH,
-Toshimitsu Tanaka,
-Akira Taniguchi,
-Owen Taylor,
-Neil Terry,
-Jonathan Thambidurai,
-John Tillman,
-Adam Tlalka,
-Linus Torvalds,
-Christian Tosta,
-Warren Turkal,
-Stephen J. Turnbull,
-Ted Unangst,
-Mike Urban,
-Simon Vallet,
-Thuraiappah Vaseeharan,
-Luc Verhaegen,
-Yann Vernier,
-Michail Vidiassov,
-Sebastiano Vigna,
-Mark Vojkovich,
-Stephane Voltz,
-Boris Weissman,
-Keith Whitwell,
-Thomas Winischhofer,
-Eric Wittry,
-Kim Woelders,
-Roy Wood,
-Jason L. Wright,
-Joerg Wunsch,
-Chisato Yamauchi,
-Hui Yu.
-  
-<tag>Docbook/XML conversion:</tag>John Himpel and the XFree86 documentation
-team.
-
-<tag>XFree86 Webmaster:</tag>Georgina O. Economou
-
-<tag>XFree86 Hosting:</tag><url name="Internet Systems Consortium, Inc"
-url="http://www.isc.org/">.
-
-</descrip>
-
-<sect>Attributions/Acknowledgements
-<p>
-The X Window System has been a collaborative effort from its inception. 
-Our apologies for anyone or organization inadvertently overlooked.
-Many individuals (including major contributors) who worked on X are
-represented by their employers in this list.
-<p>
-<descrip>
-<tag>This product includes software developed by: </tag>
-2d3d Inc.,
-Adam de Boor,
+2d3d Inc., 
+Aaron Plattner, 
+Adam de Boor, 
+Adam Jackson, 
 Adobe Systems Inc., 
-After X-TT Project,
-AGE Logic Inc.,
-Alan Hourihane,
-Andreas Monitzer,
-Andrew C Aitchison,
-Andy Ritger,
-Ani Joshi,
-Anton Zioviev,
+After X-TT Project, 
+AGE Logic Inc., 
+Alan Coopersmith, 
+Alan Cox, 
+Alan Hourihane, 
+Alexander Gottwald, 
+Alex Deucher, 
+Andreas Luik, 
+Andreas Monitzer, 
+Andrew C Aitchison, 
+Andy Ritger, 
+Ani Joshi, 
+Anton Zioviev, 
 Apollo Computer Inc., 
-Apple Computer Inc.,
-Ares Software Corp.,
-ATI Technologies Inc.,
-AT&amp;T Inc.,
-Bigelow and Holmes,
-Bill Reynolds,
+Apple Computer Inc., 
+Ares Software Corp., 
+AT&amp;T Inc., 
+ATI Technologies Inc., 
+Benjamin Rienfenstahl, 
+Bigelow and Holmes, 
+Bill Reynolds, 
 Bitstream Inc., 
-Brian Fundakowski Feldman,
-Brian Goines,
-Brian Paul,
+Bitstream, 
+Inc, 
+Brian Fundakowski Feldman, 
+Brian Goines, 
+Brian Paul, 
 Bruno Haible, 
-Charles Murcko,
-Chen Xiangyang,
-Chris Constello,
-Cognition Corp.,
-Compaq Computer Corporation,
-Concurrent Computer Corporation,
-Conectiva S.A.,
-Corin Anderson,
-Craig Struble,
-Daewoo Electronics Co. Ltd.,
-Dale Schumacher,
-Damien Miller,
+Bryan Stine, 
+Charles Murcko, 
+Chen Xiangyang, 
+Chisato Yamauchi, 
+Chris Constello, 
+Christian Zietz, 
+Cognition Corp., 
+Compaq Computer Corporation, 
+Concurrent Computer Corporation, 
+Conectiva S.A., 
+Corin Anderson, 
+Craig Struble, 
+Daewoo Electronics Co. Ltd., 
+Dale Schumacher, 
+Damien Miller, 
+Daniel Berrange, 
+Daniel Stone, 
 Daniver Limited, 
-Daryll Strauss,
-Data General Corporation,
-David Bateman,
-David Dawes,
-David E. Wexelblat,
-David Holland,
-David J. McKay,
-David McCullough,
-David Mosberger-Tang,
-David S. Miller,
-Davor Matic,
-Digital Equipment Corporation,
-Dirk Hohndel,
-Doug Anson,
-Edouard TISSERANT,
-Eduardo Horvath,
-Egbert Eich,
-Eric Anholt,
-Eric Fortune,
-Eric Sunshine,
-Erik Fortune,
-Erik Nygren,
-Evans & Sutherland Computer Corporation,
-Finn Thoegersen,
-Frederic Lepied,
-Free Software Foundation Inc.,
-Fujitsu Limited,
-Fujitsu Open Systems Solutions Inc.,
-Fuji Xerox Co. Ltd.,
-Geert Uytterhoeven,
-Gerrit Jan Akkerman,
-Gerry Toll,
-Glenn G. Lai,
-Go Watanabe,
-Gregory Mokhin,
-Greg Parker,
-GROUPE BULL,
-Hans Oey,
-Harald Koenig,
-Harm Hanemaayer,
-Harry Langenbacher,
-Henry A. Worth,
+Daryll Strauss, 
+Data General Corporation, 
+David Bateman, 
+David Dawes, 
+David E. Wexelblat, 
+David Holland, 
+David J. McKay, 
+David McCullough, 
+David Mosberger-Tang, 
+David S. Miller, 
+Davor Matic, 
+Deron Johnson, 
+Digital Equipment Corporation, 
+Dirk Hohndel, 
+Doug Anson, 
+Earle F. Philhower III, 
+Edouard TISSERANT, 
+Eduardo Horvath, 
+Egbert Eich, 
+Elliot Lee, 
+Eric Anholt, 
+Eric Fortune, 
+Eric Sunshine, 
+Erik Fortune, 
+Erik Nygren, 
+Evans & Sutherland Computer Corporation, 
+Fabio Massimo Di Nitto Fabrizio Gennari, 
+Finn Thoegersen, 
+Frederic Lepied, 
+Free Software Foundation Inc., 
+Fujitsu Limited, 
+Fujitsu Open Systems Solutions Inc., 
+Fuji Xerox Co. Ltd., 
+Geert Uytterhoeven, 
+Gerrit Jan Akkerman, 
+Gerry Toll, 
+Glenn G. Lai, 
+GNOME Foundation, 
+Go Watanabe, 
+Gregory Mokhin, 
+Greg Parker, 
+GROUPE BULL, 
+Guy Martin, 
+Hans Oey, 
+Harald Koenig, 
+Harm Hanemaayer, 
+Harold L Hunt II, 
+Harry Langenbacher, 
+Henry A. Worth, 
 Hewlett-Packard Company, 
-Hitachi Ltd,
-Holger Veit,
-Hummingbird Communications Ltd.,
-IBM Corporation,
-Intel Corporation,
-INTERACTIVE Systems Corporation,
-International Business Machines Corp.,
-Itai Nahshon,
-Jakub Jelinek,
-James Tsillas,
-Jason Bacon,
-Jean-loup Gailly,
-Jeff Kirk,
-Jeffrey Hsu,
-Jim Tsillas,
-J. Kean Johnston,
-Jon Block,
-Jon Tombs,
-Jorge Delgado,
-Joseph Friedman,
-Joseph V. Moss,
-Juliusz Chroboczek,
-Jyunji Takagi,
-Kaleb S. Keithley,
-Kazushi (Jam) Marukawa,
-Kazuyuki (ikko-) Okamoto,
-Keith Packard,
-Keith Whitwell,
-Kevin E. Martin,
-Larry Wall,
-Lawrence Berkeley Laboratory,
-Lennart Augustsson,
-Lexmark International Inc.,
-Linus Torvalds,
-Machine Vision Holdings Inc.,
-Manfred Brands,
-Marc Aurele La France,
-Mark Adler,
-Mark J. Kilgard,
-Mark Leisher,
-Mark Smulders,
-Massachusetts Institute Of Technology,
-Matrox Graphics,
-Matthew Grossman,
-Matthieu Herrb,
-Metro Link Inc.,
-Michael H. Schimek,
-Michael P. Marking,
-Michael Schimek,
-Michael Smith,
-Ming Yu,
-MIPS Computer Systems Inc.,
-National Semiconductor,
-NCR Corporation Inc.,
-Netscape Communications Corporation,
-Network Computing Devices Inc.,
-Noah Levitt,
-Novell Inc.,
-Nozomi YTOW,
-NTT Software Corporation,
-Number Nine Computer Corp.,
-Number Nine Visual Technologies,
-NVIDIA Corp.,
-Oivier Danet,
-Oki Technosystems Laboratory Inc.,
-OMRON Corporation,
-Open Software Foundation,
-Orest Zborowski,
-Pablo Saratxaga,
-Panacea Inc.,
-Panagiotis Tsirigotis,
-Paolo Severini,
-Pascal Haible,
-Patrick Lecoanet,
-Patrick Lerda,
-Paul Elliott,
-Peter Kunzmann,
-Peter Trattler,
-Philip Homburg,
-Precision Insight Inc.,
-Prentice Hall,
+Hitachi Ltd, 
+Holger Veit, 
+Howard Greenwell, 
+Hummingbird Communications Ltd., 
+IBM Corporation, 
+Intel Corporation, 
+INTERACTIVE Systems Corporation, 
+International Business Machines Corp., 
+Itai Nahshon, 
+Ivan Kokshaysky, 
+Ivan Pascal, 
+Jakub Jelinek, 
+James Tsillas, 
+Jason Bacon, 
+Jean-loup Gailly, 
+Jeff Kirk, 
+Jeffrey Hsu, 
+Jehan Bing, 
+Jeremy Katz, 
+Jim Gettys, 
+Jim Tsillas, 
+J. Kean Johnston, 
+John Dennis, 
+John Harper, 
+John Heasley, 
+Jon Block, 
+Jon Tombs, 
+Jorge Delgado, 
+Joseph Friedman, 
+Joseph V. Moss, 
+Juliusz Chroboczek, 
+Jyunji Takagi, 
+Kaleb Keithley, 
+Kaleb S. Keithley, 
+Kazushi (Jam) Marukawa, 
+Kazuyuki (ikko-) Okamoto, 
+Kean Johnston. Keith Packard, 
+Keith Packard, 
+Keith Whitwell, 
+Kensuke Matsuzaki, 
+Kristian H&oslash;gsberg, 
+Larry Wall, 
+Lawrence Berkeley Laboratory, 
+Lennart Augustsson, 
+Leon Shiman, 
+Lexmark International Inc., 
+Linus Torvalds, 
+Luc Verhaegen, 
+Machine Vision Holdings Inc., 
+Manfred Brands, 
+Marc Aurele La France Mark Adler, 
+Mark J. Kilgard, 
+Mark Leisher, 
+Mark Smulders, 
+Mark Vojkovich, 
+Massachusetts Institute Of Technology, 
+Matrox Graphics, 
+Mattheiu Herrb Matthew Grossman, 
+Matthieu Herrb, 
+Metro Link Inc., 
+Michael Bax, 
+Michael H. Schimek, 
+Michael P. Marking, 
+Michael Schimek, 
+Michael Smith, 
+Michel Daenzer, 
+Mike A. Harris, 
+Mike Harris, 
+Ming Yu, 
+MIPS Computer Systems Inc., 
+National Semiconductor, 
+NCR Corporation Inc., 
+Netscape Communications Corporation, 
+Network Computing Devices Inc., 
+Nicholas Wourms, 
+Noah Levitt, 
+Nolan Leake, 
+Novell Inc., 
+Nozomi YTOW, 
+NTT Software Corporation, 
+Number Nine Computer Corp., 
+Number Nine Visual Technologies, 
+NVIDIA Corp., 
+Oivier Danet, 
+Oki Technosystems Laboratory Inc., 
+OMRON Corporation, 
+Open Software Foundation, 
+Orest Zborowski, 
+Owen Taylor, 
+Pablo Saratxaga, 
+Panacea Inc., 
+Panagiotis Tsirigotis, 
+Paolo Severini, 
+Pascal Haible, 
+Patrick Lecoanet, 
+Patrick Lerda, 
+Paul Anderson, 
+Paul Elliott, 
+Peter Breitenlohner, 
+Peter Kunzmann, 
+Peter Trattler, 
+Philip Homburg, 
+Precision Insight Inc., 
+Prentice Hall, 
 Quarterdeck Office Systems, 
-Randy Hendry,
-Ranier Keller,
-Red Hat Inc.,
-Regents of the University of California,
-Rene Cougnenc,
-Regis Cridlig,
-Richard A. Hecker,
-Richard Burdick,
-Rich Murphey,
-Rickard E. Faith,
-Robert Baron,
-Robert Chesler,
-Robert V. Baron,
-Robin Cutshaw,
-S3 Graphics Inc.,
-Sam Leffler,
-SciTech Software,
-Scott Laird,
-Sebastien Marineau,
-Shigehiro Nomura,
-ShoGraphics Inc.,
-Shunsuke Akiyama,
-Silicon Graphics Computer Systems Inc.,
-Silicon Integrated Systems Corp Inc.,
-Silicon Motion Inc.,
-Simon P. Cooper,
-Snitily Graphics Consulting Services,
-Sony Corporation,
-SRI,
-Stanislav Brabec,
-Stephan Dirsch,
-Stephan Lang,
-Steven Lang,
-Sun Microsystems Inc.,
-SunSoft Inc.,
-SuSE Inc.,
-Sven Luther,
-Takis Psarogiannakopoulos,
-Takuya SHIOZAKI,
-Tektronix Inc.,
-The DOS-EMU-Development-Team,
-The Institute of Software Academia Sinica,
-The NetBSD Foundation,
-Theo de Raadt,
-Theodore Ts'o,
+Ralf Habacker Randy Hendry, 
+Ranier Keller, 
+Red Hat Inc., 
+Regents of the University of California, 
+Regis Cridlig, 
+Rene Cougnenc, 
+Richard A. Hecker, 
+Richard Burdick, 
+Rich Murphey, 
+Rickard E. Faith, 
+Rik Faith, 
+Robert Baron, 
+Robert Chesler, 
+Robert Millan. Robert V. Baron, 
+Robin Cutshaw, 
+Roland Mainz, 
+Ronny Vindenes, 
+Russ Blaine, 
+Ryan Breen, 
+Ryan Lortie, 
+Ryan Underwood, 
+S3 Graphics Inc., 
+Sam Leffler, 
+SciTech Software, 
+Scott Laird, 
+Sebastien Marineau, 
+Shigehiro Nomura, 
+ShoGraphics Inc., 
+Shunsuke Akiyama, 
+Silicon Graphics Computer Systems Inc., 
+Silicon Integrated Systems Corp Inc., 
+Silicon Motion Inc., 
+Simon P. Cooper, 
+Snitily Graphics Consulting Services, 
+Sony Corporation, 
+S&oslash;ren Sandmann, 
+SRI, 
+Stanislav Brabec, 
+Stefan Dirsch, 
+Stephan Dirsch, 
+Stephan Lang, 
+Steven Lang, 
+Stuart Kreitman, 
+Sun Microsystems Inc., 
+SunSoft Inc., 
+SuSE Inc, 
+Sven Luther, 
+Takis Psarogiannakopoulos, 
+Takuma Murakami, 
+Takuya SHIOZAKI, 
+Tektronix Inc., 
+The DOS-EMU-Development-Team, 
+The Institute of Software Academia Sinica, 
+The NetBSD Foundation, 
+Theo de Raadt, 
+Theodore Ts'o, 
 The Open Group, 
-The Open Software Foundation,
-The Regents of the University of California,
-The Santa Cruz Operation Inc.,
-The Weather Channel Inc.,
-The X Consortium,
-The XFree86 Project Inc.,
-Thomas E. Dickey,
-Thomas G. Lane,
-Thomas Mueller,
-Thomas Roell,
-Thomas Thanner,
-Thomas Winischhofer,
-Thomas Wolfram,
-Thorsten.Ohl,
-Tiago Gons,
+The Open Software Foundation, 
+The Regents of the University of California, 
+The Santa Cruz Operation Inc., 
+The Weather Channel Inc., 
+The X Consortium, 
+The XFree86 Project Inc., 
+Thomas E. Dickey, 
+Thomas G. Lane, 
+Thomas Hellstr&ouml;m, 
+Thomas Mueller, 
+Thomas Roell, 
+Thomas Thanner, 
+Thomas Winischhofer, 
+Thomas Wolfram, 
+Thorsten.Ohl, 
+Tiago Gons, 
 Todd C. Miller, 
-Tomohiro KUBOTA,
-Torrey T. Lyons,
-TOSHIBA Corp.,
-Tungsten Graphics Inc.,
-UCHIYAMA Yasushi,
-Unicode Inc.,
-UniSoft Group Limited,
-University of Utah,
-UNIX System Laboratories Inc.,
-URW++ GmbH,
-VA Linux Systems,
-VIA Technologies Inc.,
-Video Electronics Standard,
-VMware Inc.,
-Vrije Universiteit,
-Wittawat Yamwong,
-Wyse Technology Inc.,
-X Consortium,
-Xi Graphics Inc.,
-X-Oz Technologies,
-X-TrueType Server Project,
-and their contributors.
+Tomohiro KUBOTA, 
+Torrey Lyons, 
+Torrey T. Lyons, 
+TOSHIBA Corp., 
+Toshimitsu Tanaka, 
+Travis Tilley, 
+Tungsten Graphics Inc., 
+Ty Sarna, 
+UCHIYAMA Yasushi, 
+Unicode Inc., 
+UniSoft Group Limited, 
+University of Utah, 
+UNIX System Laboratories Inc., 
+URW++ GmbH, 
+VA Linux Systems, 
+VIA Technologies Inc., 
+Video Electronics Standard, 
+VMware Inc., 
+Vrije Universiteit, 
+Wittawat Yamwong, 
+Wyse Technology Inc., 
+X Consortium, 
+Xi Graphics Inc., 
+X-Oz Technologies, 
+X-TrueType Server Project and their contributors,
+Yu Shao,
 
 This product includes software developed by The XFree86 Project, Inc
 (http://www.xfree86.org/) and its contributors.
