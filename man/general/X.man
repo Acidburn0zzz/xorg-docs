@@ -1291,7 +1291,7 @@ the appropriate instance name can be placed before the asterisk:
 .BR Xsun (1),
 .BR Xnest (1),
 .BR Xvfb (1),
-.BR XFree86 (1),
+.BR Xorg (1),
 .BR XDarwin (1),
 .BR kbd_mode (1),
 .\" specifications
@@ -1300,17 +1300,20 @@ and
 .I "X Toolkit Intrinsics \- C Language Interface"
 .SH TRADEMARKS
 .PP
-X Window System is a trademark of X Consortium, Inc.
+X Window System is a trademark of The Open Group.
 .SH AUTHORS
 .PP
-A cast of thousands, literally.  The Release 6.3 distribution is 
-brought to you by X Consortium, Inc.  The names of all people who 
+A cast of thousands, literally.  The Release 6.7 distribution is 
+brought to you by the X.Org Foundation, LLC. The names of all people who 
 made it a reality will be found in the individual documents and 
-source files.  The staff members at the X Consortium responsible
-for this release are: Donna Converse (emeritus), Stephen Gildea 
-(emeritus), Kaleb Keithley, Matt Landau (emeritus), Ralph Mor 
-(emeritus), Janet O'Halloran, Bob Scheifler, Ralph Swick, Dave 
-Wiggins (emeritus), and Reed Augliere.
+source files.
+.PP
+Releases 6.6 and 6.5 were done by The X.Org Group.  Release 6.4 was done by
+The X Project Team.  The Release 6.3 distribution was from The X Consortium,
+Inc.  The staff members at the X Consortium responsible for that release
+were: Donna Converse (emeritus), Stephen Gildea (emeritus), Kaleb Keithley,
+Matt Landau (emeritus), Ralph Mor (emeritus), Janet O'Halloran, Bob
+Scheifler, Ralph Swick, Dave Wiggins (emeritus), and Reed Augliere.
 .PP
 The X Window System standard was originally developed at the
 Laboratory for Computer Science at the Massachusetts Institute 
