@@ -1,5 +1,5 @@
 .\" Use tbl macros.t ice.ms | troff -ms
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/ICE/ice.ms,v 1.2 2004/04/23 18:42:16 eich Exp $
 .\"
 .\" TODO:
 .\" Think about connector/listener originator/answerer terminology.

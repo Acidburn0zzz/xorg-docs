@@ -1,6 +1,6 @@
 .\" Use eqn, tbl, and -ms
 .\" $Xorg: xdmcp.ms,v 1.3 2000/08/17 19:42:20 cpqbld Exp $
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/XDMCP/xdmcp.ms,v 1.2 2004/04/23 18:42:16 eich Exp $
 .\" $Xorg: xdmcp.ms,v 1.3 2000/08/17 19:42:20 cpqbld Exp $
 .EQ
 delim @@

@@ -1,4 +1,4 @@
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/CTEXT/ctext.tbl.ms,v 1.2 2004/04/23 18:42:15 eich Exp $
 .\" Use tbl and -ms
 .sp 8
 .ce 5

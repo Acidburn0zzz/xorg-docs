@@ -1,5 +1,5 @@
 .\" Use -ms and macros.t
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/Xext/DPMSLib.ms,v 1.2 2004/04/23 18:42:18 eich Exp $
 .EH ''''
 .OH ''''
 .EF ''''
