@@ -797,7 +797,7 @@ Xedit has several new features, including:
 <sect1>Font support
 <p>
 
-Details about the font support in X11R&lastfullrelvers; can be found
+Details about the font support in X11R&lastfullrelvers;.x can be found
 in the <htmlurl name="README.fonts" url="fonts.html"> document.
 
 <sect1>TrueType support
