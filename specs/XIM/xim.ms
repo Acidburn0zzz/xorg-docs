@@ -16,7 +16,7 @@
 .sp
 \fBX Consortium Standard\fP
 .sp
-\fBX Version 11, Release 6.4\fP
+\fBX Version 11, Release 6.7\fP
 .sp 3
 .AU
 Masahiko Narita
@@ -97,8 +97,8 @@ This documentation is provided as is without express or implied warranty.
 .ps 11
 .nr PS 11
 .bp 1
-.EH '\fBX Input Method Protocol\fP''\fBX11, Release 6.1\fP'
-.OH '\fBX Input Method Protocol\fP''\fBX11, Release 6.1\fP'
+.EH '\fBX Input Method Protocol\fP''\fBX11, Release 6.7\fP'
+.OH '\fBX Input Method Protocol\fP''\fBX11, Release 6.7\fP'
 .EF ''\fB % \fP''
 .OF ''\fB % \fP''
 .NH 1
