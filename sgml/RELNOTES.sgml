@@ -194,7 +194,7 @@ extension, you could include a section like the following in the
 
 <verb>
 Section "Extensions"
-	Option "Composite" "Enable"
+        Option "Composite" "Enable"
 EndSection
 </verb>
 
@@ -931,10 +931,74 @@ please contact
 <url name="URW++ web site" url="http://www.urwpp.de">.
 
 
-<!--
 <sect>Miscellaneous
 <p>
--->
+This section describes other items of note for the X11R&relvers;
+release.
+
+<sect1>Legacy keyboard driver phase-out
+<p>
+The legacy keyboard driver is no longer compiled into the X server by
+default on certain platforms (including Linux).  The newer <tt>kbd</tt>
+driver replaces the older built-in driver.  It is suggested that, if the
+X server says that it cannot load the keyboard driver, then the
+<tt>xorg.conf</tt> file should be updated to use the new <tt>kbd</tt>
+driver, which can be done by changing the <tt>Driver</tt> line in the
+<tt>InputDevice</tt> section.  For example,
+
+<verb>
+Section "InputDevice"
+        Identifier  "Keyboard0"
+        Driver      "kbd"
+EndSection
+</verb>
+Note that the driver name is case-sensitive.
+
+<sect1>Socket directory ownership and permissions
+<p>
+The socket directories created in <tt>/tmp</tt> are now required to be
+owned by root and have their sticky-bit set.  If the premissions are not
+set correctly, the component using this directory will print an error
+message and fail to start.  Common socket directories that are known to
+be affected include:
+<verb>
+/tmp/.font-unix
+/tmp/.ICE-unix
+/tmp/.X11-unix
+</verb>
+These directories are used by the font server, <tt>xfs</tt>,
+applications using the Inter-Client Exchange protocol (ICE) and the X
+server, respectively.
+<p>
+There are several solutions to the problem of when to create these
+directories.  They could be created at install time by the system's
+installer if the <tt>/tmp</tt> dir is persistent.  They could be created
+at boot time by the system's boot scripts (e.g., the <tt>init.d</tt>
+scripts).  Or, they could be created by PAM modules at service startup
+or user login time.
+<p>
+The solution chosen is platform dependent, and the system administrator
+should be able to handle creating those directories on any systems that
+do not have the correct ownership or permissions.
+
+<sect1>Composite exposes extra visuals
+<p>
+When the Composite extension is enabled via <tt>xorg.conf</tt> or the
+command line, a new visual is created.  This visual is different from
+the other visuals used by X applications in that it includes an alpha
+component.  It is used by the compositing manager and other Composite
+aware applications.
+<p>
+Most X applications ignore this visual since it is not useful to them;
+however some applications mistakenly try to use it, which will cause
+them to fail.  An environment variable, <tt>XLIB_SKIP_ARGB_VISUALS</tt>,
+was added to the X11 library to hide this visual from applications that
+mistakenly try to use it.  If an application fails only when the
+Composite is enabled, try setting this environment variable before
+starting the application.
+<p>
+Since Composite is not enabled by default, it is not expected that this
+issue will be visible to most users.
 
 <sect>Attributions/Acknowledgements/Credits
 
