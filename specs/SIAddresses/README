@@ -1,0 +1,6 @@
+$XdotOrg: xc/doc/specs/SIAddresses/README,v 1.1.2.1 2004/03/13 18:48:39 alanc Exp $
+
+This directory contains the specifications of address types for the 
+ServerInterpreted address family used in the ChangeHost and ListHosts 
+requests in the X11 Protocol.  See Chapter 9 of the X11 Protocol spec
+for more information.
