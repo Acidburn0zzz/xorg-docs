@@ -18,7 +18,7 @@ Shape Extension Protocol\fP\s-2
 .ce 3
 Version 1.0.1
 X.Org Standard
-X Version 11, Release 6.4
+X Version 11, Release 6.7
 .sp 6
 .ce 4
 \s-1Keith Packard
