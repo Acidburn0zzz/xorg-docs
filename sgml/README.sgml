@@ -3,9 +3,9 @@
 <!ENTITY % onediff 'IGNORE'>	 <!-- patch is a single diff file -->
 <!ENTITY % twodiffs 'IGNORE'>	 <!-- patch is split into two diff files -->
 <!ENTITY % threediffs 'IGNORE'> <!-- patch is split into three diff files -->
-<!ENTITY % fourdiffs 'INCLUDE'> <!-- patch is split into four diff files -->
-<!ENTITY % difftar 'INCLUDE'> <!-- patch also contains a tarball -->
-<!ENTITY % removefiles 'INCLUDE'> <!-- patching requires removing some files -->
+<!ENTITY % fourdiffs 'IGNORE'> <!-- patch is split into four diff files -->
+<!ENTITY % difftar 'IGNORE'> <!-- patch also contains a tarball -->
+<!ENTITY % removefiles 'IGNORE'> <!-- patching requires removing some files -->
 ]>
 
 
@@ -13,7 +13,7 @@
 
 <title>README for X11R&relvers;
 <author>The X.Org Foundation
-<date>25 March 2004
+<date>6 April 2004
 
 <ident>
 $Id$.
@@ -225,13 +225,13 @@ README file for that version, which can be found on the
 The source for version &fullrelvers; is split into seven tarballs:
 
 <tscreen><verb>
-xorg-&fullrelvers;-1.tgz
-xorg-&fullrelvers;-2.tgz
-xorg-&fullrelvers;-3.tgz
-xorg-&fullrelvers;-4.tgz
-xorg-&fullrelvers;-5.tgz
-xorg-&fullrelvers;-6.tgz
-xorg-&fullrelvers;-7.tgz
+X11R&fullrelvers;-src1.tar.gz
+X11R&fullrelvers;-src2.tar.gz
+X11R&fullrelvers;-src3.tar.gz
+X11R&fullrelvers;-src4.tar.gz
+X11R&fullrelvers;-src5.tar.gz
+X11R&fullrelvers;-src6.tar.gz
+X11R&fullrelvers;-src7.tar.gz
 </verb></tscreen>
 
 The first three contain everything
