@@ -1,5 +1,6 @@
 .\" $Xorg: xim.ms,v 1.3 2000/08/17 19:42:21 cpqbld Exp $
 .\" To print this out, type tbl macros.t ThisFile | troff -ms
+.\" $XFree86: xc/doc/specs/XIM/xim.ms,v 1.3 2001/01/17 16:57:42 dawes Exp $
 .EH ''''
 .OH ''''
 .EF ''''
@@ -331,8 +332,8 @@ performance purposes. (Refer to Appendix A for more information.)
 .LP
 .LP
 .bp
-... 0.05 6.513 4.737 10.45
-... 0.000i 3.937i 4.687i 0.000i
+\^... 0.05 6.513 4.737 10.45
+\^... 0.000i 3.937i 4.687i 0.000i
 .nr 00 \n(.u
 .nf
 .PS 3.937i 4.687i 
@@ -1962,8 +1963,8 @@ Following chart shows one of the simplest protocol flow which only
 deals with keyevents for preediting operation.
 .LP
 .\"====================== event flow figure start =====================
-... 0.425 6.888 6.3 10.296
-... 0.000i 3.408i 5.875i 0.000i
+\^... 0.425 6.888 6.3 10.296
+\^... 0.000i 3.408i 5.875i 0.000i
 .nr 00 \n(.u
 .nf
 .PS 3.408i 5.875i 
@@ -2162,8 +2163,8 @@ and button press event.
 .LP
 .bp
 .\"====================== event2 flow figure start =====================
-... 0.425 5.575 6.3 10.296
-... 0.000i 4.721i 5.875i 0.000i
+\^... 0.425 5.575 6.3 10.296
+\^... 0.000i 4.721i 5.875i 0.000i
 .nr 00 \n(.u
 .nf
 .PS 4.721i 5.875i 
@@ -2713,7 +2714,7 @@ XIM_STR_CONVERSION_REPLY (IM library \(-> IM Server)
 :2:CARD16:input-context-ID
 :4:CARD32:XIMStringConversionFeedback
 ::XIMSTRCONVTEXT:XIMStringConversionText
-.SP
+.sp
 .TE
 .RE
 .LP
@@ -2883,7 +2884,7 @@ XIM_PREEDITSTATE (IM Server \(-> IM Library)
 ::#x0000001:XIMPreeditEnable
 ::#x0000002:XIMPreeditDisable
 .TE
-.SP
+.sp
 .TE
 .RE
 .LP
@@ -3319,8 +3320,8 @@ static event flow is as follows:
 .LP
 .\"===================================================================
 .sp
-... 1.675 6.888 6.237 10.296
-... 0.000i 3.408i 4.562i 0.000i
+\^... 1.675 6.888 6.237 10.296
+\^... 0.000i 3.408i 4.562i 0.000i
 .nr 00 \n(.u
 .nf
 .PS 3.408i 4.562i 
@@ -3410,8 +3411,8 @@ sample protocol sequence.
 .bp
 .LP
 .\"===================================================================
-... 1.675 6.888 6.237 10.296
-... 0.000i 3.408i 4.562i 0.000i
+\^... 1.675 6.888 6.237 10.296
+\^... 0.000i 3.408i 4.562i 0.000i
 .nr 00 \n(.u
 .nf
 .PS 3.408i 4.562i 
@@ -3534,8 +3535,8 @@ The sample protocol sequence are as follows:
 .LP
 .\"====================================================================
 .sp
-... 1.488 7.325 6.487 10.358
-... 0.000i 3.033i 4.999i 0.000i
+\^... 1.488 7.325 6.487 10.358
+\^... 0.000i 3.033i 4.999i 0.000i
 .nr 00 \n(.u
 .nf
 .PS 3.033i 4.999i 
@@ -3633,8 +3634,8 @@ The sample protocol sequence are as follows:
 <<Using the dynamic event flow>>
 .LP
 .\"====================================================================
-... 1.488 7.325 6.487 10.358
-... 0.000i 3.033i 4.999i 0.000i
+\^... 1.488 7.325 6.487 10.358
+\^... 0.000i 3.033i 4.999i 0.000i
 .nr 00 \n(.u
 .nf
 .PS 3.033i 4.999i 

@@ -1,3 +1,4 @@
+.\" $XFree86: xc/doc/specs/Xi/porting.ms,v 1.2 2000/12/04 23:25:59 dawes Exp $
 .\" Input Extension Porting Document
 .EH ''''
 .OH ''''
@@ -987,4 +988,4 @@ the stylus or finger leaves the proximity of the input devices surface.
 The event type is \fBProximityIn\fP or \fBProximityOut\fP, and there is no
 detail information.
 .bp
-.TC
+.\" .TC

@@ -538,7 +538,7 @@ use
 .PN XtSetLanguageProc .
 .LP
 .IN XtSetLanguageProc "" "@DEF@"
-.IN "language procedure" "" "@DEF@
+.IN "language procedure" "" "@DEF@"
 .sM
 .FD 0
 XtLanguageProc XtSetLanguageProc(\fIapp_context\fP, \fIproc\fP, \fIclient_data\fP)

@@ -1,4 +1,10 @@
 .\" $Xorg: icccm.ms,v 1.3 2000/08/17 19:42:08 cpqbld Exp $
+.\"
+.\"
+.\"
+.\"
+.\" $XFree86: xc/doc/specs/ICCCM/icccm.ms,v 1.3 2001/01/17 16:57:41 dawes Exp $
+.\"
 .\" Use tbl, eqn, -ms, and macros.t
 .\" @(#)icccm.ms	1.50	16 Apr 1994	14:13:55
 .EH ''''
@@ -38,6 +44,14 @@
 .ce 9999
 .B
 \s+2Inter-Client Communication Conventions Manual\s0
+
+Version 2.0.xf86.1
+
+XFree86 4.0.2
+
+XFree86, Inc.
+
+.I "based on"
 
 Version 2.0
 
@@ -1389,6 +1403,9 @@ T}
 USER	TEXT	T{
 The name of the user running the owner
 T}
+UTF8_STRING	TEXT	T{
+UTF-8 text
+T}
 .sp 6p
 _
 .TE
@@ -1665,6 +1682,7 @@ T}
 PIXMAP	32	Fixed-size
 SPAN	32	Fixed-size
 STRING	8	Zero
+UTF8_STRING	8	Zero
 WINDOW	32	Fixed-size
 .sp 6p
 _
@@ -1699,13 +1717,16 @@ The type would not actually be TEXT;
 it would be STRING or some other ATOM naming the encoding chosen by the owner.
 .LP
 STRING as a type or a target specifies the ISO Latin-1 character set plus the
-control characters TAB (octal 11) and NEWLINE (octal 12).
+control characters TAB (hex 09) and NEWLINE (hex 0A).
 The spacing interpretation of TAB is context dependent.
 Other ASCII control characters are explicitly not included in STRING 
 at the present time.
 .LP
 COMPOUND_TEXT as a type or a target specifies the Compound Text interchange
 format; see the \fICompound Text Encoding\fP.
+.LP
+UTF8_STRING as a type or a target specifies an UTF-8 encoded string, with
+NEWLINE (U+000A, hex 0A) as end-of-line marker.
 .LP
 There are some text objects where the source or intended user, as the
 case may be, does not have a specific character set for the text, but
@@ -1729,9 +1750,9 @@ way to treat them as the same. Thus no character-set based
 property type is suitable.
 .NE
 .LP
-Type STRING, COMPOUND_TEXT, and C_STRING properties will consist of a list
-of elements separated by null characters; other encodings will need to
-specify an appropriate list format.
+Type STRING, COMPOUND_TEXT, UTF8_STRING, and C_STRING properties will
+consist of a list of elements separated by null characters; other encodings
+will need to specify an appropriate list format.
 .nH 3 "INCR Properties"
 .LP
 Requestors may receive a property of type INCR\**
