@@ -6,7 +6,7 @@
 <!-- Title information -->
 <title>Information for Solaris
 <author>David Holland, modified by Marc Aurele La France
-<date>2001 October 01
+<date>2004 April 02
 
 <ident>
 $Id$.
@@ -18,7 +18,8 @@ $Id$.
 <!-- Begin the document -->
 <sect>The VT-switching sub-system in Solaris x86<p>
 The virtual terminal sub-system is a undocumented, and unsupported feature of
-Solaris x86.
+Solaris x86 releases 2.1 through 7.  It is no longer present in Solaris 8 and
+later releases.
 Therefore if you use virtual terminals, you do so at <bf>YOUR OWN RISK</bf>.<p>
 Virtual terminals are not available in Solaris SPARC, and their availability
 has been removed in Solaris8 x86.<p>
@@ -89,7 +90,7 @@ however a number of <tt>ioctl()</tt> calls are broken.<p>
 <sect>Notes for building X11R&relvers; on Solaris<p>
 <enum>
 <item>
-Both GCC, and ProWorks are supported by X11R&relvers;.
+Both GCC, and the Sun Studio compilers are supported by X11R&relvers;.
 The minimum recommended GCC release is 2.7.2.
 Some earlier GCC's are known to not work and should be avoided.<p>
 You should also make certain your version of GCC predefines `sun'.
@@ -109,7 +110,7 @@ strange hangs.
 Most notably image viewers such as xv-3.10 exhibit this problem.<p>
 It is recommended that you set ThreadedX in <tt>~xc/config/cf/host.def</tt> to
 NO, if you are using GCC.
-ProWorks does not have this problem.
+Sun's compilers do not have this problem.
 Whether this behaviour still exists with newer GCC's has not been verified.<p>
 <item>
 To build X11R&relvers; with GCC you need gcc and (optionally) c++filt from GNU
@@ -119,8 +120,8 @@ You might need to setup a /opt/SUNWspro/bin directory containing symbolic links
 named <tt/cc/, <tt/CC/, and <tt/c++filt/ pointing respectively to the actual
 <tt/gcc/, <tt/g++/ and <tt/c++filt/ commands.<p>
 <item>
-If you are using ProWorks to compile the X11R&relvers; distribution, you need to
-modify your PATH appropriately so the ProWorks tools are available.
+If you are using Sun compilers to compile the X11R&relvers; distribution, you need to
+modify your PATH appropriately so the Sun compiler tools are available.
 Normally, they should be in <tt>/opt/SUNWspro/bin</tt><p>
 <item>
 You <bf>MUST</bf> put <tt>/usr/ccs/bin</tt> at the front of your PATH.
@@ -158,12 +159,12 @@ so:<p>
 If you have made the virtual terminal devices you do not need to specify the VT
 to run the Xserver on.<p>
 <item>
-For Solaris you will probably want to set your LD_LIBRARY_PATH to
+For old releases of Solaris you will probably want to set your LD_LIBRARY_PATH to
 <tt>/usr/X11R6/lib:/usr/openwin/lib:/usr/dt/lib</tt>.
 Including <tt>/usr/X11R6/lib</tt> in your LD_LIBRARY_PATH is probably not
 necessary, however it doesn't hurt. :)<p>
 Including <tt>/usr/openwin/lib</tt> in the LD_LIBRARY_PATH is recommended
-because some Sun supplied binaries were not compiled with LD_RUN_PATH set
+on older releases because some Sun supplied binaries were not compiled with LD_RUN_PATH set
 properly at compile time.<p>
 Motif and CDE applications may require <tt>/usr/dt/lib</tt> in your
 LD_LIBRARY_PATH too.

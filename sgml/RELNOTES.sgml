@@ -5,7 +5,7 @@
 <article>
 
 <title>Release Notes for X11R&relvers;
-<author>The X.org Foundation
+<author>The X.Org Foundation
 <and>The XFree86 Project, Inc.
 <date>31 March 2004
 
@@ -16,10 +16,10 @@ $ Id: RELNOTES.sgml,v 1.1.4.4.2.2.4.3 2004/03/30 03:55:47 jg Exp $
 <abstract>
 
 These release notes contains information about features and their status in the
-X.org Foundation X11R&relvers; release.
+X.Org Foundation X11R&relvers; release.
 It is based on the XFree86 4.4RC2 RELNOTES document published by 
 The XFree86&trade; Project, Inc.
-There are significant updates and differences in the X.org release
+There are significant updates and differences in the X.Org release
 as noted below.
 </abstract>
 
@@ -35,11 +35,12 @@ stable for 15 years, with only upward compatible additions to the
 core X protocol, a record of stability envied in computing.
 Formal releases of X started with X version 9 from MIT;
 the first commercial X products were based on X version 10.
-The MIT X Consortium and its successor, the X.org Consortium before the
-founding of the X.org Foundation released versions X11R3 through X11R6.6.2.
+The MIT X Consortium and its successors, the X Consortium, the Open Group
+X Project Team, and the X.Org Group released versions X11R3 through X11R6.6,
+before the founding of the X.Org Foundation.
 <p>
-X11R&relvers; is based on the 4.4RC2 codebase, with significant updates,
-noted below.
+X11R&relvers; is based on the merger of the X11R6.6 and XFree86 4.4RC2 
+codebases, with significant updates, noted below.
 <p>
 There will be future maintenance releases in the X11R6.7.x series.
 However, efforts are well underway to split the X distribution into
@@ -54,7 +55,7 @@ Due to the new XFree86 1.1 license introduced in XFree86 4.4 (final),
 later additions to XFree86 may not be incorporated into our codebase.
 We encourage you to submit bug fixes and enhancements to bugzilla.freedesktop.org
 using the xorg product, and discussions on this server take
-place on <email>xorg@freedestkop.org</email>.
+place on <email>xorg@freedesktop.org</email>.
 
 <sect>Introduction to the XFree86 4.x Release Series
 <p>
@@ -107,7 +108,7 @@ The next section describes what is new in the latest version (&relvers;)
 compared with the previous full release (&prevfullrelvers).
 ]]>
 The other sections below describe some of the new features and changes
-between 3.3.x and 4.0.  There are lot's of new features, and we definitely
+between 3.3.x and 4.0.  There are lots of new features, and we definitely
 don't have enough space to cover them all here.
 
 </sect>
@@ -129,9 +130,20 @@ the X source tree.
 <p>
 <itemize>
 
+<item>The final version of the X11R6.7 versions of the X Window System
+       standards and specification documents are included.  Updates since
+       X11R6.6 include a small correction to the numbering of requests in
+       the Shape Extension Protocol specification; the addition of IPv6
+       support to the X11 Protocol, Xlib, XDMCP, and Session Manager
+       specifications; and the addition of the ServerInterpreted Host family
+       to the X11 Protocol and Xlib specifications.
+
+<item>IPv6 support updated to the final X11R6.7 versions of the standards, 
+       including the addition of the ServerInterpreted Host family for xhost 
+       style authentication.  See the IPv6 section below for further details.
 
 <item>Only files without the new XFree86 1.1 license are included in the
-       X11R&relvers; release. Additionally, X.org will be attempting,
+       X11R&relvers; release. Additionally, X.Org will be attempting,
        when possible, to contact copyright holders of 
        material in the distribution when those
        copyrights do not follow the Debian Free Software guidelines
@@ -141,7 +153,7 @@ the X source tree.
        the use of a trademark,
        so the documentation, error message, name of the X executable,
        configuration file name, etc., have all been changed to
-       avoid confusion of X.org's implementation with the XFree86&trade; 
+       avoid confusion of X.Org's implementation with the XFree86&trade; 
        trademarked implementation. Some of the changes made include:
        <itemize>
           <item> The name of the X server is Xorg, rather than XFree86.
@@ -159,7 +171,7 @@ the X source tree.
           <item>All messages emitted by the server in the log were
                 updated to reflect the change in name.
           <item>The module loader was modified to accept either
-                XFree86 generated modules or X.org generated modules.
+                XFree86 generated modules or X.Org generated modules.
           <item>Manual pages and other documentation was updated.
        </itemize>
 <item>Projective affine transforms and
@@ -178,7 +190,7 @@ the X source tree.
 <item>Fontconfig will no longer be installed by default since that
        has often/usually resulted in overwriting more recent versions.
        The fontconfig version 2.2.2 shipped in X11R&relvers;
-       needs to be build to allow programs in the tree to build that
+       needs to be built to allow programs in the tree to build that
        depend on it, but those programs will run fine using installed
        versions of fontconfig. If you do want to install the version
        shipped in X11R&relvers; add:
@@ -189,19 +201,19 @@ the X source tree.
 <item>Freetype was updated to version 2.1.7. 
        But installing freetype from X distributions would often or
        usually result in the replacement or use of "stale" versions 
-       of freetype. On Linux, FreeBSD, and SCO5, therefore, X11R&relvers;
+       of freetype. On Linux, FreeBSD, Solaris 10, and SCO5, therefore, X11R&relvers;
        will by default use the version of freetype2 that is installed
        on the system. If your system doesn't come with an installed
        freetype2 and you wish to use the version supplied with this
        distribution, please add:
        <tscreen><verb>  #define HasFreetype2 NO </verb></tscreen> to config/cf/host.def. Additonally, the default font
-       renderer for Truetype that is loaded by the X server was changed
+       renderer for TrueType that is loaded by the X server was changed
        to freetype.
 
 <item>During the build, the version of expat that is
        installed on the system is used by default on Microsoft
        Windows, FreeBSD, Linux and SCO5.
-       If your system doesn't come with an installed expat and you whish to 
+       If your system doesn't come with an installed expat and you wish to 
        use the version supplied with this tree please add:
        <tscreen><verb> #define HasExpat NO </verb></tscreen> to 
        config/cf/host.def. <url name="Libexpat's" 
@@ -209,7 +221,7 @@ the X source tree.
 
 <item>During build the version of zlib that is installed on the system
         is used by default on OpenBSD, FreeBSD, Mac OS (Darwin), 
-        Microsoft Windows (Cygwin), Linux, SUN Solaris, and SCO5. 
+        Microsoft Windows (Cygwin), Linux, Sun Solaris, and SCO5. 
 	If your system doesn't come with an installed zlib and you wish to 
         use the version supplied with this tree please add:
         <tscreen><verb>#define HasZlib NO </verb></tscreen> to 
@@ -238,7 +250,7 @@ the X source tree.
        Similarly, libxml2's remains were removed, as it is not used
        at all in the distribution.
 
-<item>The new fontstoft utility to convert .bdf/.pcf fonts to .ttf
+<item>The new fonttosfnt utility to convert .bdf/.pcf fonts to .ttf
        format was removed as it is not yet ready and working.
        Please turn to
        <url name="freedesktop.org's X Applications"
@@ -286,7 +298,7 @@ at http://x.cygwin.com/devel/server/changelog-full.html]
 <item>Initial version of indirect 3D acceleration by mapping GLX to Win32's
        OpenGL implementation. (Alexander Gottwald, Harold L Hunt II)
 
-<item>Allow clipboard integration to work seamlessly with Xdmcp.(Harold L Hunt II)
+<item>Allow clipboard integration to work seamlessly with Xdmcp. (Harold L Hunt II)
 
 <item>Fix clipboard integration to stop stealing ownership of the selection
        X (caused text to be unhighlighted in emacs, xterm, etc.). (Harold L
@@ -414,7 +426,7 @@ at http://x.cygwin.com/devel/server/changelog-full.html]
 <sect1>IPv6 support
 <p>
 X11R&relvers; supports IPv6, based on the code contributed by Sun
-Microsystems, Inc. to X.Org. See <url name="X.org's document"
+Microsystems, Inc. to X.Org. See <url name="X.Org's document"
 url="http://www.x.org/IPV6_Specific_Changes.html"> for a detailed list
 of what these changes are and how your system is affected by them.
 <p>
@@ -452,6 +464,19 @@ addresses but a new release of the protocol, XDM-AUTHORIZATION-2 has
 been designed; this though is yet to be  implemented.  By default 
 builds do not enable the XDM-AUTHORIZATION-1 code.
 
+<sect2>ServerInterpreted host authentication
+<p>
+The ServerInterpreted host family was added in response to comments received
+during the X11 over IPv6 standards public review period.  This family allows
+registration of new subtypes and implementation of them by modifications 
+solely to the X server, without having to modify clients such as xhost or the
+Xlib or X protocol standards.  In the initial X11R6.7.0 release, two
+subtypes are supported - "hostname" for hostnames resolved by the 
+server at connection time to better support dynamic DNS &amp; mobile 
+IP, and "ipv6" to allow IPv6 literal addresses, including in the future,
+scoped addresses.  For more information on these features, see the
+xhost manual page, X11 Protocol and Xlib standards, and the documents
+in xc/doc/specs/SIAddresses.
 
 <sect1>X Server and Extension Updates
 
@@ -869,8 +894,8 @@ running 'xset q' from within your X session.
 
 <sect>Overview of X11R6.7.x
 <p>
-X11R6.7.x has a single X server binary called <tt>Xorg</tt>.  This
-binary can either have one or more video and input drivers linked in
+On most platforms, X11R6.7.x has a single X server binary called <tt>Xorg</tt>.
+This binary can either have one or more video and input drivers linked in
 statically, or more usually, dynamically, and in that manner load the
 video drivers, input drivers, and other modules that are needed.
 
@@ -1099,7 +1124,7 @@ file is included in the <htmlurl name="Xft(3)" url="Xft.3.man"> man page.
 
 Only three applications have been modified in X11R&relvers; to work 
 with the Render extension and the Xft and FreeType libraries to provide 
-anti-aliased text.  Xterm, xditview and x11perf.  Migration of other 
+anti-aliased text: xterm, xditview and x11perf.  Migration of other 
 applications may occur in future releases.
 
 <p>
@@ -1353,13 +1378,14 @@ or the 'cvs log' information for individual source files.
   <descrip>
   <tag>Mac OS X enhancements:</tag>Torrey T. Lyons, John Harper.
   <tag>Cygwin/X enhancements:</tag>Harold L Hunt II,
+  <tag>IPv6 and ServerInterpreted enhancements:</tag>Alan Coopersmith
   <tag>Release Engineering:</tag>Egbert Eich
   <tag>Documentation updates:</tag>Jim Gettys, Keith Packard
   <tag>Updated render:</tag>Keith Packard
   <tag>Updated Xft:</tag>Keith Packard
   <tag>Updated fontconfig:</tag>Keith Packard
   </descrip>
-Note: the list celow does not contain acknowlegements to those working on the new modular X release as their work is not present in this release.
+Note: the list below does not contain acknowlegements to those working on the new modular X release as their work is not present in this release.
 Patches and other submissions (in alphabetical order):
 Paul Anderson,
 Michael Bax,
@@ -1400,7 +1426,7 @@ Nicholas Wourms.
 
 <tag>Tinderbox setup:</tag>Jim Gettys, John Dennis
 
-<tag>X.org Hosting:</tag><url name="The Open Group"
+<tag>X.Org Hosting:</tag><url name="The Open Group"
 url="http://www.tog.org/">.
 
 <tag>Freedesktop.org Hosting:</tag><url name="Portland State University"
@@ -1667,7 +1693,7 @@ Hui Yu.
 <tag>Docbook/XML conversion:</tag>John Himpel and the XFree86 documentation
 team.
 
-<tag>Webmaster:</tag>Georgina O. Economou
+<tag>XFree86 Webmaster:</tag>Georgina O. Economou
 
 <tag>XFree86 Hosting:</tag><url name="Internet Systems Consortium, Inc"
 url="http://www.isc.org/">.
