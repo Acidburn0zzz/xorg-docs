@@ -103,6 +103,7 @@ a performance measurement utility, \fIx11perf\fP;
 a font compiler, \fIbdftopcf\fP;
 a font server and related utilities, \fIxfs\fP, \fIfsinfo\fP, \fIfslsfonts\fP, \fIfstobdf\fP;
 a display server and related utilities, \fIXserver\fP, \fIrgb\fP, \fImkfontdir\fP;
+a print server and related utilities, \fIXprt\fP, \fIxplsprinters\fP;
 remote execution utilities, \fIrstart\fP and \fIxon\fP;
 a clipboard manager, \fIxclipboard\fP;
 keyboard description compiler and related utilities, \fIxkbcomp\fP, 
@@ -1228,6 +1229,7 @@ the appropriate instance name can be placed before the asterisk:
 .BR XProjectTeam (__miscmansuffix__),
 .BR XStandards (__miscmansuffix__),
 .BR Xsecurity (__miscmansuffix__),
+.BR Xprint (__miscmansuffix__),
 .\" clients, utilities, and demos
 .BR appres (1),
 .BR bdftopcf (1),
@@ -1239,6 +1241,7 @@ the appropriate instance name can be placed before the asterisk:
 .BR iceauth (1),
 .BR imake (1),
 .BR lbxproxy (1),
+.BR kbd_mode (1),
 .BR makedepend (1),
 .BR mkfontdir (1),
 .BR oclock (1),
@@ -1278,6 +1281,7 @@ the appropriate instance name can be placed before the asterisk:
 .BR xmh (1),
 .BR xmodmap (1),
 .BR xon (1),
+.BR xplsprinters (1),
 .BR xprop (1),
 .BR xrdb (1),
 .BR xrefresh (1),
@@ -1299,7 +1303,7 @@ the appropriate instance name can be placed before the asterisk:
 .BR Xvfb (1),
 .BR Xorg (1),
 .BR XDarwin (1),
-.BR kbd_mode (1),
+.BR Xprt (1).
 .\" specifications
 .I "Xlib \- C Language X Interface\fR,\fP"
 and
