@@ -59,7 +59,7 @@ as <tt>/etc/X11/XF86Config-4</tt> or <tt>/etc/X11/XF86Config</tt>):
 <tscreen><verb>
 Section "InputDevice"
     Identifier "Keyboard1"
-    Driver "Keyboard"
+    Driver "kbd"
 
     Option "XkbModel" "pc104"
     Option "XkbLayout" "us"
@@ -96,7 +96,7 @@ Then the configuration snippet could look like this:
 <tscreen><verb>
 Section "InputDevice"
     Identifier "Keyboard1"
-    Driver "Keyboard"
+    Driver "kbd"
 
     Option "XkbModel" "logicordless"
     Option "XkbLayout" "us,cz,de"
@@ -120,7 +120,7 @@ The configuration snippet then changes into:
 <tscreen><verb>
 Section "InputDevice"
     Identifier "Keyboard1"
-    Driver "Keyboard"
+    Driver "kbd"
 
     Option "XkbModel" "logicordless"
     Option "XkbLayout" "us,cz,de"
@@ -184,7 +184,7 @@ Look at the following example:
 <tscreen><verb>
 Section "InputDevice"
     Identifier "Keyboard0"
-    Driver "Keyboard"
+    Driver "kbd"
 
     Option "XkbKeycodes" "xorg"
     Option "XkbTypes"    "default"

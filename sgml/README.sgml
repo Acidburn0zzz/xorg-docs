@@ -21,11 +21,11 @@ $Id$.
 
 <abstract>
 
-X11R&relvers; is an Open Source version of the X Window System that supports
-many UNIX(R) and UNIX-like operating systems (such as Linux, FreeBSD,
-NetBSD, OpenBSD and Solaris x86) on Intel and other platforms.  This
-version is compatible with X11R6.7 and other X window system implementations
-which support the X11R6 standard.
+X11R&relvers; is an Open Source version of the X Window System that
+supports many UNIX(R) and UNIX-like operating systems (such as Linux,
+FreeBSD, NetBSD, OpenBSD and Solaris x86) on Intel and other platforms.
+This version is compatible with X11R&prevrelvers; and other X window
+system implementations which support the X11R&majorvers; standard.
 
 </abstract>
 
@@ -34,7 +34,7 @@ which support the X11R6 standard.
 <sect>What is X11R&relvers;?
 <p>
 <![ %updaterel [
-X11R&relvers; is the &whichupdaterel; update to X11R&fullrelvers;,
+X11R&relvers; is the &whichupdaterel; update to X11R&majorvers;,
 the &whichfullrel; full release in the
 <![ %earlyrel; [new]]>
 X11R&relvers; series.
@@ -48,9 +48,9 @@ stability.
 ]]>
 
 <![ %fullrel [
-X11R&fullrelvers; is the &whichfullrel; full release in the
+X11R&relvers; is the &whichfullrel; full release in the
 <![ %earlyrel; [new]]>
-X11R&relvers; series.
+X11R&majorvers; series.
 ]]>
 
 <![ %snapshot [
@@ -71,7 +71,7 @@ X11R&relvers; is a feature-complete snapshot of X11R&fullrelvers;.
 
 <p>
 X11R&relvers; is the current X.Org Foundation release series.
-The core of X11R&relvers. is a modular X server.
+The core of X11R&relvers; is a modular X server.
 <![ %fullrel [The &relvers; version is a new release that includes
 additional hardware support, functional enhancements and bug fixes.]]>
 <![ %haverelnotes [

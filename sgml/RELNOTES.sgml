@@ -7,7 +7,7 @@
 <title>Release Notes for X11R&relvers;
 <author>The X.Org Foundation
 <and>The XFree86 Project, Inc.
-<date>31 March 2004
+<date>&reldate;
 
 <abstract>
 
@@ -22,7 +22,7 @@ as noted below.
 <toc>
 
 <p>
-<sect>Introduction to the X11R&fullrelvers Release
+<sect>Introduction to the X11R&relvers Release
 <p>
 The release numbering is based on the original MIT X numbering system.
 X11 refers to the version of the network protocol that the X Window
@@ -36,13 +36,13 @@ X Project Team, and the X.Org Group released versions X11R3 through X11R6.6,
 before the founding of the X.Org Foundation.
 <p>
 There will be future maintenance releases in the X11R6.8.x series.
-However, efforts are well underway to split the X distribution into
-its modular components to allow for easier maintenance and independent
-updates. We expect a transitional period while both X11R6.8 releases
-are being fielded and the modular release completed and deployed while both
-will be available as different consumers of X technology have different
-constraints on deployment. We have not yet decided how the modular
-X releases will be numbered.
+However, efforts are well underway to split the X distribution into its
+modular components to allow for easier maintenance and independent
+updates.  We expect a transitional period while both X11R6.8 releases
+are being fielded and the modular release completed and deployed while
+both will be available as different consumers of X technology have
+different constraints on deployment. We have not yet decided how the
+modular X releases will be numbered.
 <p>
 We encourage you to submit bug fixes and enhancements to bugzilla.freedesktop.org
 using the xorg product, and discussions on this server take
@@ -83,7 +83,7 @@ as well as what is new in the latest full release (&fullrelvers;).
 ]]>
 <![ %fullrel [
 The next section describes what is new in the latest version (&relvers;)
-compared with the previous full release (&prevfullrelvers).
+compared with the previous full release (&prevrelvers;).
 ]]>
 The other sections below describe some of the new features and changes
 between 3.3.x and 4.0.  There are lots of new features, and we definitely
@@ -98,9 +98,9 @@ don't have enough space to cover them all here.
 </sect>
 ]]>
 
-<sect>Summary of new features in &fullrelvers;
+<sect>Summary of new features in X11R&relvers;
 <P>
-This is a sampling of the new features in X11R&fullrelvers;.  A more
+This is a sampling of the new features in X11R&relvers;.  A more
 complete list of changes can be found in the ChangeLog file that is part of
 the X source tree.
 <p>
@@ -109,7 +109,7 @@ the X source tree.
 <item>Freetype was updated to version 2.1.8. But installing freetype
 from X distributions would often or usually result in the replacement
 or use of "stale" versions of freetype. On Linux, FreeBSD, Solaris 10,
-and SCO5, therefore, X11R&fullrelvers will by default use the version
+and SCO5, therefore, X11R&relvers; will by default use the version
 of freetype2 that is installed on the system. If your system doesn't
 come with an installed freetype2 and you wish to use the version
 supplied with this distribution, please add:
@@ -125,7 +125,6 @@ their functionality
 <item>Updated x86emu and resynced with upstream at Scitech
 <item>Updated SiS driver
 <item>Render acceleration for ATI's R100 and R200-series cards
-<item>DMX (Distributed Multihead X)
 <item>Substantial speedups in the software implementation of the
 render extensions when compiled with gcc 3.4 on the i386 architecture.
 <item>Infrastructure for rotation support in drivers
@@ -141,7 +140,7 @@ render extensions when compiled with gcc 3.4 on the i386 architecture.
 
 <sect1>New X extensions
 <P>
-X11R6.8.0 includes four new extensions:
+X11R&relvers; includes four new extensions:
 
 <descrip>
 
@@ -187,14 +186,35 @@ turned off by default.
 
 </descrip>
 
-To turn on an experimental extension include a section like this in
-the <tt>xorg.conf</tt> file:
+As noted above, some extensions are disabled by default.  They can be
+enabled either in the <tt>xorg.conf</tt> configuration file or on the
+<tt>Xorg</tt> command-line.  For example, to enable the Composite
+extension, you could include a section like the following in the
+<tt>xorg.conf</tt> file:
 
 <verb>
 Section "Extensions"
 	Option "Composite" "Enable"
 EndSection
 </verb>
+
+or you could put <tt>+extension Composite</tt> on your command line.
+
+
+<sect1>
+Distributed Multihead X (DMX)
+<p>
+X11R&relvers; includes a new X server, called <tt>Xdmx</tt>, that allows
+users to create a single unified desktop from multiple running X
+servers.  It works by creating a local screen on each of these running X
+servers, which can be distributed across a network, and then presents
+that set of screens to the user.  When combined with Xinerama, a unified
+workspace, ranging from large display walls to small two display
+enviroments, can be created.
+<p>
+More information about DMX can be found on the <url name="DMX Project's
+web site" url="http://dmx.sf.net/">, including how to configure and use
+<tt>Xdmx</tt>.
 
 <sect1>
 Xprint updates
@@ -278,6 +298,10 @@ Xprint updates
 	<itemize>
          <item>Improved BE support
 	</itemize>
+   <item>New Voodoo driver (Alan Cox)
+        <itemize>
+         <item>Provides native (glide-less) acceleration and mode setup for voodoo/voodoo2 boards
+        </itemize>
   </itemize>
 
 <sect>Drivers
@@ -480,7 +504,7 @@ releases.
 
 <bf>Note about module security</bf>
 <quote>
-	The X server runs with root privileges, i.e. 
+	The X server runs with root privileges, i.e., 
 	the X server loadable modules also run with these privileges.
 	For this reason we recommend that all users be careful to only
 	use loadable modules from reliable sources,  otherwise the
@@ -914,7 +938,7 @@ please contact
 
 <sect>Attributions/Acknowledgements/Credits
 
-This section lists the credits for the X11R&fullrelvers; release.  For a more
+This section lists the credits for the X11R&relvers; release.  For a more
 detailed breakdown, refer to the ChangeLog file in the X.Org source
 tree, the ChangeLog's in <url name="the xorg product in
 freedesktop.org's CVS"
@@ -922,15 +946,14 @@ url="http://freedesktop.org/cgi-bin/viewcvs.cgi/xorg/xc/Attic/"> or
 the 'cvs log' information for individual source files.
 
 <![ %snapshot [
-<bf>THIS IS A DRAFT OF THE X11R&fullrelvers; CREDITS SECTION.</bf>
+<bf>THIS IS A DRAFT OF THE X11R&relvers; CREDITS SECTION.</bf>
 If you find missing credits, incorrect attributions, or other errors, please
 send details to <email>xorg@freedesktop.org</email>.
 ]]>
 
 <P>
 <descrip>
-<tag>These people contributed in some way to X11R&fullrelvers;</tag>
-Mike A. Harris, 
+<tag>These people contributed in some way to X11R&relvers;</tag>
 Paul Anderson, 
 Eric Anholt, 
 Daniel Berrange, 
@@ -942,26 +965,28 @@ David Dawes,
 Alex Deucher, 
 Stefan Dirsch, 
 Egbert Eich, 
-Kevin E. Martin, 
 Rik Faith,
 Jim Gettys, 
 Alexander Gottwald, 
+Mike A. Harris, 
 John Harper, 
 John Heasley, 
 Matthieu Herrb, 
-Kristian H&oslash;sberg, 
 Alan Hourihane, 
+Kristian H&oslash;sberg, 
+Harold L. Hunt II, 
 Adam Jackson, 
 Deron Johnson, 
 Ivan Kokshaysky, 
 Stuart Kreitman, 
 Peter Kunzman, 
 Nolan Leake,
-Harold L. Hunt II, 
 Ryan Lortie, 
 Andreas Luik, 
+Torrey T. Lyons, 
 Roland Mainz, 
 Guy Martin, 
+Kevin E. Martin, 
 Keith Packard, 
 Greg Parker, 
 Aaron Plattner, 
@@ -971,7 +996,6 @@ Yu Shao,
 Bryan Stine, 
 Owen Taylor, 
 Travis Tilley, 
-Torrey T. Lyons, 
 Ryan Underwood, 
 Ronny Vindenes, 
 Chisato Yamauchi
@@ -1009,6 +1033,7 @@ Stuart Kreitman,
 Andreas Luik,
 Torrey Lyons,
 Roland Mainz,
+Kevin E. Martin, 
 Takuma Murakami,
 Kensuke Matsuzaki,
 Keith Packard,
@@ -1160,7 +1185,6 @@ Kean Johnston. Keith Packard,
 Keith Packard, 
 Keith Whitwell, 
 Kensuke Matsuzaki, 
-Kevin E. Martin, 
 Kristian H&oslash;gsberg, 
 Larry Wall, 
 Lawrence Berkeley Laboratory, 
@@ -1261,7 +1285,7 @@ Silicon Motion Inc.,
 Simon P. Cooper, 
 Snitily Graphics Consulting Services, 
 Sony Corporation, 
-Søren Sandmann, 
+S&oslash;ren Sandmann, 
 SRI, 
 Stanislav Brabec, 
 Stefan Dirsch, 
