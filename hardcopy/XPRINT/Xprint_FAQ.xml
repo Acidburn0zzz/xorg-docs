@@ -41,10 +41,10 @@ Mappings used in this DocBook document:
     Archive-name: Xprint/FAQ
   </para>
   <para>
-    Version: 0.9
+    Version: 0.9.1
   </para>
   <para>
-    Last-Modified: 2004/02/16 04:15:16
+    Last-Modified: 2004/05/16 08:15:16
   </para>
   <para>
     Maintained-by:
@@ -71,16 +71,16 @@ Mappings used in this DocBook document:
 
   <para>
     The latest Xprint FAQ and some other goodies can be obtained through http from
-    <ulink url="http://xprint.mozdev.org/lxr/http/source/xprint/src/xprint_main/xc/doc/hardcopy/XPRINT/Xprint_FAQ.html">
-    http://xprint.mozdev.org/lxr/http/source/xprint/src/xprint_main/xc/doc/hardcopy/XPRINT/Xprint_FAQ.html
+    <ulink url="http://xprint.freedesktop.org/cgi-bin/viewcvs.cgi/*checkout*/xorg/xc/doc/hardcopy/XPRINT/Xprint_FAQ.html">
+    http://xprint.freedesktop.org/cgi-bin/viewcvs.cgi/*checkout*/xorg/xc/doc/hardcopy/XPRINT/Xprint_FAQ.html
     </ulink>
     or
-    <ulink url="http://xprint.mozdev.org/lxr/http/source/xprint/src/xprint_main/xc/doc/hardcopy/XPRINT/Xprint_FAQ.txt">
-    http://xprint.mozdev.org/lxr/http/source/xprint/src/xprint_main/xc/doc/hardcopy/XPRINT/Xprint_FAQ.txt
+    <ulink url="http://xprint.freedesktop.org/cgi-bin/viewcvs.cgi/*checkout*/xorg/xc/doc/hardcopy/XPRINT/Xprint_FAQ.txt">
+    http://xprint.freedesktop.org/cgi-bin/viewcvs.cgi/*checkout*/xorg/xc/doc/hardcopy/XPRINT/Xprint_FAQ.txt
     </ulink>
     (the DocBook/XML master source file is
-    <ulink url="http://xprint.mozdev.org/lxr/http/source/xprint/src/xprint_main/xc/doc/hardcopy/XPRINT/Xprint_FAQ.xml">
-    http://xprint.mozdev.org/lxr/http/source/xprint/src/xprint_main/xc/doc/hardcopy/XPRINT/Xprint_FAQ.xml
+    <ulink url="http://xprint.freedesktop.org/cgi-bin/viewcvs.cgi/xorg/xc/doc/hardcopy/XPRINT/Xprint_FAQ.xml">
+    http://xprint.freedesktop.org/cgi-bin/viewcvs.cgi/xorg/xc/doc/hardcopy/XPRINT/Xprint_FAQ.xml
     </ulink>).
   </para>
   <para>
@@ -468,10 +468,11 @@ Mappings used in this DocBook document:
             <para>
               Xprt's PostScript and PCL DDX have the <emphasis>unique</emphasis> feature to create
               font glyphs from bitmap fonts if they are not available as
-              printer-builtin fonts nor as PostScipt Type1 fonts. However this
-              is the fallback - the <emphasis>last</emphasis> option used by Xprt. Used if
-              everything else fails.
-              But when someone does not pass any PS Type1 fonts with the font
+              printer-builtin fonts nor as outline fonts (OpenType, TrueType, PS Type1, etc.).
+              However this is the fallback - the <emphasis>last</emphasis> option used by Xprt.
+              Used if everything else fails.
+              But when someone does not pass any outline fonts (such as OpenType,
+              TrueType or PS Type1) fonts with the font
               path nor configures a printer model-config (which contains a
               description of the features&amp;fonts supported by the printer) Xprt
               will never have a chance to use them. And if everything else
@@ -527,6 +528,64 @@ Mappings used in this DocBook document:
         </qandaentry>
 
         <!-- myth: Xprint rendering model is not good for printers -->
+        <qandaentry id="myth_rendering_model_not_good">
+          <question>
+            <label>Myth:</label>
+            <para>
+              <quote>
+                The X11 rendering model is not good enougth for printers
+              </quote>
+            </para>
+          </question>
+          <answer>
+            <label>Facts:</label>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para>
+                    The default Xprint rendering model uses the X11 rendering model - which
+                    is "limited"... but only when compared with PostScript.
+                    But the attempt to compare Xprint with PostScript is like comparing apples
+                    and eggs - they have been designed with different goals in mind - PostScript
+                    as plain rendering language for printers and Xprint as integrated all-in-one
+                    solution to allow applications to print without having special knowledge
+                    about the OS, spooler, <link linkend="what_does_pdl_mean">PDL</link> or
+                    printer.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Around 95% of the applications which have print support do not use any of the
+                    special features provided by rendering models like PostScript.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Xprint does not require that an application uses the X11 rendering model -
+                    they are <emphasis>free</emphasis> to generate their own PostScript code or PostScript
+                    fragments and pass it to the printer via the Xprint API or use the OpenGL rendering
+                    model via the GLX extension available in newer versions of the Xprint server.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Printing from Mozilla, Motif or the Qt toolkit using Xprint results in
+                    a <emphasis>much better</emphasis> quality than using the "native" PostScript
+                    generation code in those applications.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Xprint supports more <link linkend="what_does_pdl_mean">PDLs</link> than
+                    PostScript - having a PostScript-specific rendering model would be
+                    limiting, and make it difficult to support other
+                    <link linkend="what_does_pdl_mean">PDLs</link>.
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </answer>
+        </qandaentry>
 
       </qandaset>
       <!-- myth-fact list end -->
@@ -810,7 +869,7 @@ Mappings used in this DocBook document:
   </answer>
 </qandaentry>
 
-<qandaentry id="who_do_i_spell_xprint">
+<qandaentry id="how_do_i_spell_xprint">
   <question>
     <para>
       Which spelling is correct - "Xprint", "XPrint", "Xprinter" or Xprt" ?
@@ -837,7 +896,12 @@ Mappings used in this DocBook document:
       <itemizedlist>
         <listitem>
           <para>
-            Motif/LessTif (full framework incl. special widgets like <function>XmPrintShell</function>)
+            Motif/LessTif toolkits (full framework incl. special widgets like <function>XmPrintShell</function>)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Athena toolkit (full framework incl. special widgets like <function>XawPrintShell</function>, starting with X.org release 6.7.1)
           </para>
         </listitem>
         <listitem>
@@ -847,7 +911,7 @@ Mappings used in this DocBook document:
         </listitem>
         <listitem>
           <para>
-            <ulink url="http://www.mozilla.org/projects/xprint/">Mozilla</ulink>
+            <ulink url="http://www.mozilla.org/projects/xprint/">Mozilla, FireFox, ThunderBird, etc.</ulink>
           </para>
         </listitem>
         <listitem>
@@ -857,7 +921,7 @@ Mappings used in this DocBook document:
         </listitem>
         <listitem>
           <para>
-            KDE/Qt support is comming is planned for the end of Dec/2003
+            KDE/Qt support is planned for Q3/2004
           </para>
         </listitem>
         <listitem>
@@ -921,6 +985,30 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
       </para>
     </answer>
   </qandaentry>
+
+<qandaentry id="why_does_xprint_not_use_ppds">
+  <question>
+    <para>
+      Why does Xprint not use PPDs for configuration ?
+    </para>
+  </question>
+  <answer>
+    <para>
+      Xprint supports multiple "page description languages (<link linkend="what_does_pdl_mean">PDL</link>)"
+      including PostScript, PDF, PCL, etc. Therefore Xprint uses a different
+      configuration file format which works with all these PDLs and not only
+      PostScript (PPD files are PostScript-specific and cannot be used for
+      other PDLs).
+    </para>
+    <para>
+      There is currently a converter in development to convert a Adobe PPD file
+      into Xprint's model-config format.
+      See <ulink url="http://xprint.freedesktop.org/bugzilla/show_bug.cgi?id=636">xprint.freedesktop.org bug 636
+      ("RFE: Add an Adobe PPD to model-config converter / xpppdtomodelconfig")</ulink> for further information.
+    </para>
+  </answer>
+</qandaentry>
+
 </qandadiv>
 
       <qandadiv id="faq_usage">
@@ -2485,9 +2573,9 @@ Printer hplaser6
   <answer>
     <para>
       If you miss a model-config for your printer please open a bug/RFE at
-      <ulink url="http://xprint.freedesktop.org/cgi-bin/bugzilla/enter_bug.cgi?product=xprint&amp;component=Server%3A+Config%3A+model-configs">
-      http://xprint.freedesktop.org/cgi-bin/bugzilla/enter_bug.cgi?product=xprint&amp;component=Server%3A+Config%3A+model-configs</ulink>
-      (e.g. <ulink url="http://xprint.freedesktop.org/cgi-bin/bugzilla/enter_bug.cgi">http://xprint.freedesktop.org/cgi-bin/bugzilla/enter_bug.cgi</ulink>, product "Xprint", component
+      <ulink url="http://xprint.freedesktop.org/bugzilla/enter_bug.cgi?product=xprint&amp;component=Server%3A+Config%3A+model-configs">
+      http://xprint.freedesktop.org/bugzilla/enter_bug.cgi?product=xprint&amp;component=Server%3A+Config%3A+model-configs</ulink>
+      (e.g. <ulink url="http://xprint.freedesktop.org/bugzilla/enter_bug.cgi">http://xprint.freedesktop.org/bugzilla/enter_bug.cgi</ulink>, product "Xprint", component
       "Server Config: model-configs").
     </para>
   </answer>
@@ -2728,6 +2816,83 @@ Printer myscriptprinter
 
 <qandadiv id="faq_troubleshooting">
 <title>Troubleshooting</title>
+
+<qandaentry id="printout_only_covers_1_4_of_the_paper">
+  <question>
+    <para>
+      "Printing itself works but the printout covers only 1/4 of the paper - what am I doing wrong ?"
+    </para>
+  </question>
+  <answer>
+    <para>
+      This is usually an indicator for a wrong DPI setting. The default
+      "PSdefault" model config uses 300 DPI but some printers only support
+      600 DPI.
+    </para>
+    <formalpara>
+      <title>Workaround:</title>
+      <para>
+        Edit <filename><envar>${XPCONFIGDIR}</envar>/C/print/attributes/document</filename> and replace the line
+        "*default-printer-resolution: 300" with
+        "*default-printer-resolution: 600"
+        (Note that locale-specific settings in
+        <filename><envar>${XPCONFIGDIR}</envar>/<envar>${LANG}</envar>/print/attributes/document</filename> always override values
+        set in <filename><envar>${XPCONFIGDIR}</envar>/C/print/attributes/document</filename>.)
+      </para>
+    </formalpara>
+    <formalpara>
+      <title>Solution:</title>
+      <para>
+        Create a model-config for your printer which only contains attributes
+        supported by your printer ("printer-resolutions-supported" is the
+        attribute in the "model-config" which holds the space-seperated list
+        of DPI values which are supported by the printer).
+      </para>
+    </formalpara>
+  </answer>
+</qandaentry>
+
+<qandaentry>
+  <question>
+    <para>
+     "Printing works but I get large borders/margins..." / "[Top] margin is too small" /
+     "Margins are wrong" / etc.
+    </para>
+  </question>
+  <answer>
+    <para>
+      Two possible causes:
+      <itemizedlist>
+        <listitem>
+          <para>
+            Usually same issue as "Printing itself works but the printout covers
+            only 1/4 of the page"-issue: Wrong DPI.
+            Solution: Check the DPI value and adjust it as described in the FAQ item
+            above. Common DPI values for the PostScript DDX are 240, 300, 360, 400
+            and 600 DPI.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            You are trying to print "US-letter" on a "DIN-A4" paper or "DIN-A4" on
+            "US-letter".
+          </para>
+          <para>
+            Solution: Check your paper settings
+          </para>
+          <para>
+            Note that the default papersize for Xprt depends on the locale
+            (e.g. on the env var <envar>${LANG}</envar>) Xprt is running in - "en_US"&amp;co. get
+            US-letter, all others use DIN-A4 (incl. german/austrian etc. locales)).
+            Exception from this rule: If the selected printer does not support the
+            default paper size it will set no default paper size for this printer
+            (then the application side has to make an explicit choice).
+          </para>
+        </listitem>
+      </itemizedlist>
+    </para>
+  </answer>
+</qandaentry>
 
 <qandaentry>
   <question>
@@ -3087,83 +3252,6 @@ ps_myscript.xp-spooler-command: /home/sanja/xprint_test/my_xprt_cat_script.sh
         </orderedlist>
       </para>
     </formalpara>
-  </answer>
-</qandaentry>
-
-<qandaentry id="printout_only_covers_1_4_of_the_paper">
-  <question>
-    <para>
-      "Printing itself works but the printout covers only 1/4 of the paper - what am I doing wrong ?"
-    </para>
-  </question>
-  <answer>
-    <para>
-      This is usually an indicator for a wrong DPI setting. The default
-      "PSdefault" model config uses 300 DPI but some printers only support
-      600 DPI.
-    </para>
-    <formalpara>
-      <title>Workaround:</title>
-      <para>
-        Edit <filename><envar>${XPCONFIGDIR}</envar>/C/print/attributes/document</filename> and replace the line
-        "*default-printer-resolution: 300" with
-        "*default-printer-resolution: 600"
-        (Note that locale-specific settings in
-        <filename><envar>${XPCONFIGDIR}</envar>/<envar>${LANG}</envar>/print/attributes/document</filename> always override values
-        set in <filename><envar>${XPCONFIGDIR}</envar>/C/print/attributes/document</filename>.)
-      </para>
-    </formalpara>
-    <formalpara>
-      <title>Solution:</title>
-      <para>
-        Create a model-config for your printer which only contains attributes
-        supported by your printer ("printer-resolutions-supported" is the
-        attribute in the "model-config" which holds the space-seperated list
-        of DPI values which are supported by the printer).
-      </para>
-    </formalpara>
-  </answer>
-</qandaentry>
-
-<qandaentry>
-  <question>
-    <para>
-     "Printing works but I get large borders/margins..." / "[Top] margin is too small" /
-     "Margins are wrong" / etc.
-    </para>
-  </question>
-  <answer>
-    <para>
-      Two possible causes:
-      <itemizedlist>
-        <listitem>
-          <para>
-            Usually same issue as "Printing itself works but the printout covers
-            only 1/4 of the page"-issue: Wrong DPI.
-            Solution: Check the DPI value and adjust it as described in the FAQ item
-            above. Common DPI values for the PostScript DDX are 240, 300, 360, 400
-            and 600 DPI.
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            You are trying to print "US-letter" on a "DIN-A4" paper or "DIN-A4" on
-            "US-letter".
-          </para>
-          <para>
-            Solution: Check your paper settings
-          </para>
-          <para>
-            Note that the default papersize for Xprt depends on the locale
-            (e.g. on the env var <envar>${LANG}</envar>) Xprt is running in - "en_US"&amp;co. get
-            US-letter, all others use DIN-A4 (incl. german/austrian etc. locales)).
-            Exception from this rule: If the selected printer does not support the
-            default paper size it will set no default paper size for this printer
-            (then the application side has to make an explicit choice).
-          </para>
-        </listitem>
-      </itemizedlist>
-    </para>
   </answer>
 </qandaentry>
 
@@ -4203,7 +4291,7 @@ Xp Extension: Can't load driver XP-RASTER
   </question>
   <answer>
     <para>
-      There are two examples in the Xprint.org source tree which demonstrate how to use Xprint using
+      There are two examples in the Xprint.org and X11R6.7.1 source trees which demonstrate how to use Xprint using
       Athena widgets:
       <orderedlist>
         <listitem>
@@ -4517,7 +4605,7 @@ XtSetArg(args[n], XmNcursorPositionVisible, False);
   </answer>
 </qandaentry>
 
-<qandaentry>
+<qandaentry id="changing_page_attributes_on_the_fly_when_using_printshells">
   <question>
     <para>
        Can I change the paper size/resolution/page orientation/etc. when printing using the
@@ -4537,6 +4625,20 @@ XtSetArg(args[n], XmNcursorPositionVisible, False);
        <literal>XmNminX</literal>, <literal>XmNminY</literal>, <literal>XmNmaxX</literal> and <literal>XmNmaxX</literal> (<function>XmPrintShell</function>) are updated based
        on events send by the Xp Extension and then the print shell is resized based on the new values (<function>XawPrintShell</function> is slightly more flexible
        since the size mode can be defined using the <literal>XawNlayoutMode</literal> attribute)).
+    </para>
+  </answer>
+</qandaentry>
+
+<qandaentry id="examples_for_using_glx">
+  <question>
+    <para>
+      Where can I find an example how to print with Xprint using the OpenGL/GLX API ?
+    </para>
+  </question>
+  <answer>
+    <para>
+      In Xorg release 6.7.1 Xprint support was added to the GLX demo application "glxgears"
+      (<ulink url="http://xprint.freedesktop.org/cgi-bin/viewcvs.cgi/xorg/xc/programs/glxgears/">xc/programs/Xserver/glxgears/</ulink>).
     </para>
   </answer>
 </qandaentry>
