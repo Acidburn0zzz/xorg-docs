@@ -6,10 +6,10 @@
 
 <title>Fonts in X11R6.7
 <author>Juliusz Chroboczek, <email/jch@pps.jussieu.fr/
-<and>Updated by Jim Gettys, <email/jg@freedesktop.org/
 <date>25 March 2004</date>
 
 <ident>
+$Id$ 
 Based on $XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/fonts.sgml,v 1.23 2003/11/24 01:57:56 dawes Exp $. Updated by Jim Gettys.
 </ident>
 

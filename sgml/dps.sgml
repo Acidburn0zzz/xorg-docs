@@ -6,12 +6,11 @@
 
 <title>X and DPS
 <author>Juliusz Chroboczek, <email/jch@pps.jussieu.fr/
-<and>Jim Gettys, <email/jg@freedesktop.org/
 <date>27 February 2001, updated 25 March 2004</date>
 
 <ident>
 Updated by Jim Gettys.
-$XdotOrg: $
+$Id$
 Based on: $XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/dps.sgml,v 1.1 2001/03/02 02:45:37 dawes Exp $</ident>
 
 <toc>

@@ -8,7 +8,8 @@
 <date>25 February 2000
 
 <ident>
-$XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/LynxOS.sgml,v 3.19 2000/03/03 21:28:08 dawes Exp $
+$Id$ 
+Based on $XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/LynxOS.sgml,v 3.19 2000/03/03 21:28:08 dawes Exp $
 </ident>
 
 <toc>
@@ -16,7 +17,8 @@ $XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/LynxOS.sgml,v 3.19 2000/03/03 
 <sect>What and Where is X11R&relvers;?
 <p>
 X11R&relvers; is a port of X11R6.4 that supports several versions of
-Intel-based Unix.  It is derived from XFree86 4.4 rc2 which was derived from X386 1.2, which was the X server
+Intel-based Unix.  It is derived from XFree86 4.4 rc2 which was 
+derived from X386 1.2, which was the X server
 distributed with X11R5.  This release consists of many new features
 and performance improvements as well as many bug fixes.
 
