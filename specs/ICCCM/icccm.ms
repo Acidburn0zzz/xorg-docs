@@ -3,7 +3,7 @@
 .\"
 .\"
 .\"
-.\" $XFree86: xc/doc/specs/ICCCM/icccm.ms,v 1.3 2001/01/17 16:57:41 dawes Exp $
+.\" $XFree86: xc/doc/specs/ICCCM/icccm.ms,v 1.2 2000/12/11 19:39:43 dawes Exp $
 .\"
 .\" Use tbl, eqn, -ms, and macros.t
 .\" @(#)icccm.ms	1.50	16 Apr 1994	14:13:55

@@ -1,4 +1,5 @@
 /* $Xorg: registry,v 1.7 2001/06/01 18:55:58 coskrey Exp $ */
+/* $XdotOrg: xc/registry,v 1.1.4.2.6.2 2004/03/08 23:27:00 alanc Exp $ */
 
 				  X Registry
 
@@ -11,8 +12,8 @@ or to
 	The X.Org Group -- X11 Registry
 	c/o Ienup Sung
 	Sun Microsystems, Inc.
-	901 San Antonio Road, MS SJC07-201
-	Palo Alto, CA 94303-4900
+	4150 Network Circle, MS SJC07-201
+	Santa Clara, CA 95054
 
 Electronic mail will be acknowledged upon receipt.
 Please allow up to 4 weeks for a formal response to registration and inquiries.
@@ -1087,8 +1088,8 @@ REFERENCES
 	X.Org Chair:
 	Steve Swales
 	Sun Microsystems, Inc.
-	901 San Antonio Road, MS SJC07-201
-	Palo Alto, CA 94303-4900
+	4150 Network Circle, MS SJC07-201
+	Santa Clara, CA 95054
 	steve.swales@sun.com
 
 	X.Org Co-Chair:
@@ -1326,8 +1327,8 @@ REFERENCES
 [57]	(Originally David Rosenthal)
 	Steve Swales
 	Sun Microsystems, Inc.
-	901 San Antonio Road, MS SJC07-201
-	Palo Alto, CA 94303-4900
+	4150 Network Circle, MS SJC07-201
+	Santa Clara, CA 95054
 	steve.swales@sun.com
 
 [58]	(Originally Murali V. Srinivasan)
@@ -1415,11 +1416,8 @@ REFERENCES
 	P.O. Box 58700
 	Salt Lake City, UT 84158
 
-[76]	Cheryl Huntington
-	MS. MTV21-04
-	Sun Microsystems
-	2550 Garcia Ave.
-	Mountain View, CA.  94043-1100
+[76]	(Originally Cheryl Huntington)
+	See Reference [57]
 
 [77]	Junichi Hiramoto
 	Manager, Engineering Department
@@ -1688,4 +1686,4 @@ REFERENCES
         property type and selection target.  The ICCCM spec will be updated
         in a future release to fully specify UTF8_STRING.
 
-/* $XFree86: xc/registry,v 1.8 2003/07/09 15:27:23 tsi Exp $ */
+/* $XFree86: xc/registry,v 1.7tsi Exp $ */
