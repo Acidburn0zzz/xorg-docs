@@ -6,11 +6,10 @@
 
 <title>Release Notes for XFree86&trade; &relvers;
 <author>The XFree86 Project, Inc
-<date>18 December 2003
+<date>14 February 2004
 
 <ident>
-$XdotOrg: xc/programs/Xserver/hw/xfree86/doc/sgml/RELNOTES.sgml,v 1.89 2003/12/19 04:26:12 dawes Exp $
-$XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/RELNOTES.sgml,v 1.89 2003/12/19 04:26:12 dawes Exp $
+$XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/RELNOTES.sgml,v 1.110 2004/02/15 19:15:45 dawes Exp $
 </ident>
 
 <abstract>
@@ -45,7 +44,7 @@ and &relvers;.  Please check there first before downloading &relvers;.
 XFree86 4.4 introduces an automatic configuration mechanism for the
 XFree86 server.  This makes it possible to start XFree86 in a usable
 way without first creating a configuration file.  The initial automatic
-configuration support is currently targetted towards Linux and FreeBSD.
+configuration support is currently targeted towards Linux and FreeBSD.
 Automatic configuration will be supported on other platforms in future
 releases.  If you're running Linux or FreeBSD, try it out if you don't
 already have a working <tt>XF86Config</tt> file.  If you want to customise
@@ -59,7 +58,7 @@ a platform that it isn't currently supported on, try one of the older
 methods for getting started.
 
 XFree86 comes with a graphical configuration tool called "<tt>xf86cfg</tt>".
-It also has a text mode interface.  It can be used to create an iniital
+It also has a text mode interface.  It can be used to create an initial
 configuration file, and to customise existing configurations.
 
 Next in the order of configuration preferences is to make use of the
@@ -129,13 +128,13 @@ don't have enough space to cover them all here.
 	<item>Support added to the nv driver for the GeForce FX 5700,
 		which didn't work with XFree86 4.3.
 
-	<item>The driver now does a much better job of autodetecting
+	<item>The driver now does a much better job of auto-detecting
 		which connector of dual output cards the monitor is
 		attached to, which should reduce or eliminate the need
 		for manual XF86Config overrides.
 
 	<item>The 2D acceleration for TNT and GeForce was completely
-		rewritten.  Performance should be substantiallly improved.
+		rewritten.  Performance should be substantially improved.
 
 	<item>TNT and GeForce cards have a new Xv PutImage adaptor which
 		does scaled YUV bit blits.
@@ -176,7 +175,7 @@ don't have enough space to cover them all here.
 <p>
 XFree86 4.4 supports IPv6, based on the code contributed by Sun
 Microsystems to X.Org. See 
-<url name="X.org's document" url="http://www.x.org/IPV6_Specific_Changes.html"> for a detailled list of the changes. 
+<url name="X.org's document" url="http://www.x.org/IPV6_Specific_Changes.html"> for a detailed list of the changes. 
 
 <sect2>Protocol names and aliases. 
 <p>
@@ -196,7 +195,7 @@ Or you can force a IPv6 connection by setting <bf>DISPLAY</bf> to
 The IPv6 XDMCP code is not enabled by default on platforms that don't 
 support binding a IPv6 socket to a IPv4 address. 
 <p>
-The XDM-AUTHORIZATION-1 authentification scheme does not support IPv6
+The XDM-AUTHORIZATION-1 authentication scheme does not support IPv6
 addresses. A new release of the protocol, XDM-AUTHORIZATION-2 has been
 designed, but is not implemented yet. 
 Note that  by default XFree86 builds do not enable the XDM-AUTHORIZATION-1
@@ -275,7 +274,7 @@ scroll-back(1, page-2)
 
 	Improved Font Handling:
 	<itemize>
-	<item>Document in xterm's manpage how to use XFree86 ":unscaled"
+	<item>Document in xterm's manual page how to use XFree86 ":unscaled"
 		keyword to suppress scaling of bold fonts.
 
 	<item>Improved logic for deriving bold fontname from normal
@@ -383,6 +382,24 @@ scroll-back(1, page-2)
 	and to fix some bugs.  The "xtt" backend will be dropped in the
 	next release in favour of the updated unified "freetype" backend.
 
+	<itemize>
+	<item>The new "freetype" backend has the improved "very lazy" metric
+		calculation method which enables super-fast loading of
+		proportional CJKV fonts.
+
+	<item>All of the servers, including xfs, Xnest, Xprt, Xvfb, the
+		Cygwin-XFree86 server (as well as the XFree86 server)
+		can handle the perfect TTCap options.
+
+	</itemize>
+
+<item>The Compose file processing mechanism has been improved and made
+	more flexible.  See the <ref id="compose" name="Xlib Compose
+	file support and extensions section below">.
+
+<item>The Bitstream Vera TrueType fonts that Bitstream, Inc donated to
+	the Gnome Foundation are included with this release.
+
 </itemize>
 
 <sect1>OS Support Updates
@@ -407,6 +424,11 @@ scroll-back(1, page-2)
 <item>Various GNU/Hurd support updates.
 
 <item>Experimental support added for GNU/KFreeBSD and GNU/KNetBSD systems.
+
+<item>SCO OpenServer support updates.  XFree86 4.4 now works on Release
+5.0.7 with Maintenance Pack 1, or on prior releases through Release
+5.0.4.  Please consult the <htmlurl name="README.SCO" url="SCO.html">
+file for details.
 
 </itemize>
 
@@ -971,6 +993,67 @@ What is included in 4.x:
 
 </itemize>
 
+<sect1>Xlib Compose file support and extensions <label id="compose">
+<p>
+
+A more flexible Compose file processing system was added to Xlib in
+XFree86 4.4.0.  The compose file is searched for in the following order:
+
+<enum>
+<item>If the environment variable <bf>$XCOMPOSEFILE</bf> is set, its value
+is used as the name of the Compose file.
+
+<item>If the user's home directory has a file named "<tt>.XCompose</tt>", it
+is used as the Compose file.
+
+<item>The old method is used, and the compose file is
+"&lt;<it>xlocaledir</it>&gt;<tt>/</tt>&lt;<it>localename</it>&gt;<tt>/Compose</tt>".
+
+</enum>
+
+Compose files can now use an "include" instruction.  This allows local
+modifications to be made to existing compose files without including all
+of the content directly.  For example, the system's iso8859-1 compose file
+can be included with a line like this:
+
+<tscreen><verb>
+include "/usr/X11R6/lib/X11/locale/iso8859-1/Compose"
+</verb></tscreen>
+
+There are two substitutions that can be made in the file name of the
+include instruction.  <bf>%H</bf> expands to the user's home directory
+(the <bf>$HOME</bf> environment variable), and <bf>%L</bf> expands to the
+name of the locale specific Compose file (i.e., 
+"&lt;<it>xlocaledir</it>&gt;<tt>/</tt>&lt;<it>localename</it>&gt;<tt>/Compose</tt>").
+
+For example, you can include in your compose file the default Compose file
+by using:
+
+<tscreen><verb>
+include "%L"
+</verb></tscreen>
+
+and then rewrite only the few rules that you need to change.  New compose
+rules can be added, and previous ones replaced.
+
+Finally, it is no longer necessary to specify in the right part of a rule
+a locale encoded string in addition to the keysym name.  If the string is
+omitted, Xlib figures it out from the keysym according to the current
+locale.  I.e., if a rule looks like:
+
+<tscreen><verb>
+<dead_grave> <A> : "\300" Agrave
+</verb></tscreen>
+
+the result of the composition is always the letter with the "\300" code.
+But if the rule is:
+
+<tscreen><verb>
+<dead_grave> <A> : Agrave
+</verb></tscreen>
+
+the result depends on how Agrave is mapped in the current locale.
+
 <sect1>Luxi fonts from Bigelow and Holmes <label id="luxi">
 <p>
 
@@ -1009,6 +1092,300 @@ please contact
 <p>
 -->
 
+<sect>Credits
+<p>
+
+<![ %snapshot [
+<bf>THIS IS A DRAFT OF THE XFree86 &fullrelvers; CREDITS SECTION.</bf>
+If you find missing credits, incorrect attributions, or other errors, please
+send details to <email>devel@XFree86.org</email>.
+]]>
+
+This section lists the credits for the XFree86 &relvers; release.  For
+a more detailed breakdown, refer to the CHANGELOG file in the XFree86
+source tree, the <url name="cvs-commit archives"
+url="http://www.mail-archive.com/cvs-commit@xfree86.org/maillist.html">,
+or the 'cvs log' information for individual source files.
+
+<descrip>
+<tag>New Features, Enhancements and Updates:</tag>
+  <descrip>
+  <tag>IPv6 support:</tag>Alan Coopersmith, Fabio Massimo Di Nitto,
+	Marc Aurele La France, Matthieu Herrb, David H. Dawes.
+  <tag>NVIDIA 'nv' driver rewrite:</tag>Mark Vojkovich.
+  <tag>SiS driver development:</tag>Thomas Winischhofer.
+  <tag>New VIA video driver:</tag>VIA, Alan Cox, Luc Verhaegen, Thomas
+	Hellstr&ouml;m.
+  <tag>Intel 'i810' driver fixes and stability improvements:</tag>Egbert Eich,
+	David H. Dawes, Christian Zietz
+  <tag>Improved and more flexible Compose system:</tag>Ivan Pascal.
+  <tag>Automatic configuration for the XFree86 server:</tag>David H. Dawes.
+  <tag>Reworked FreeType font backend module:</tag>Chisato Yamauchi and
+	the After X-TT Project.
+  <tag>Xterm fixes, maintenance and enhancements:</tag>Thomas E. Dickey.
+  <tag>Mac OS X enhancements:</tag>Torrey T. Lyons, John Harper.
+  <tag>GNU/Hurd updates and preliminary GNU/KFreeBSD and GNU/KNetBSD
+	support:</tag> Robert Millan.
+  <tag>SCO support updates:</tag>Kean Johnston.
+  <tag>Bitstream Vera fonts:</tag>Bitstream, Inc, and the Gnome Foundation.
+  </descrip>
+<tag>Integration:</tag>
+  <descrip>
+  <tag>General Integration of Submissions:</tag>Egbert Eich, David H. Dawes,
+	Ivan Pascal, Alan Hourihane, Matthieu Herrb.
+  <tag>DRI Integration:</tag>Alan Hourihane.
+  </descrip>
+<tag>Release Engineering:</tag>David H. Dawes.
+
+<tag>Patches and other submissions (in alphabetical order):</tag>
+Roi a Torkilsheyggi,
+Dave Airlie,
+Andrew Aitchison,
+Marco Antonio Alvarez,
+Alexandr Andreev,
+Jack Angel,
+Eric Anholt,
+Ani,
+Juuso &Aring;berg,
+Sergey Babkin,
+Alexey Baj,
+Bang Jun-Young,
+Uberto Barbini,
+Matthew W. S. Bell,
+Vano Beridze,
+Hiroyuki Bessho,
+Andrew Bevitt,
+Christian Biere,
+Martin Birgmeier,
+Jakub Bogusz,
+Le Hong Boi,
+Paul Bolle,
+Charl Botha,
+Stanislav Brabec,
+Eric Branlund,
+Rob Braun,
+Peter Breitenlohner,
+Michael Breuer,
+Kevin Brosius,
+Frederick Bruckman,
+Oswald Buddenhagen,
+Nilg&uuml;n Belma Bug&uuml;ner,
+Julian Cable,
+Yukun Chen,
+Ping Cheng,
+Juliusz Chroboczek,
+Fred Clift,
+Alan Coopersmith,
+Martin Costabel,
+Alan Cox,
+Michel D&auml;nzer,
+David Dawes,
+Leif Delgass,
+Richard Dengler,
+John Dennis,
+Thomas Dickey,
+Randy Dunlap,
+Chris Edgington,
+Paul Eggert,
+Paul Elliott,
+Emmanuel,
+Visanu Euarchukiati,
+Mike Fabian,
+Rik Faith,
+Brian Feldman,
+Wu Jian Feng,
+Kevin P. Fleming,
+Jose Fonseca,
+Hugues Fournier,
+Miguel Freitas,
+Quentin Garnier,
+B&oslash;rre Gaup,
+Michael Geddes,
+Frank Giessler,
+Hansruedi Glauser,
+Wolfram Gloger,
+Alexander Gottwald,
+Guido Guenther,
+Ralf Habacker,
+Bruno Haible,
+Lindsay Haigh,
+John Harper,
+James Harris,
+Mike A. Harris,
+Bryan W. Headley,
+John Heasley,
+Thomas Hellstr&ouml;m,
+Matthieu Herrb,
+Jonathan Hough,
+Alan Hourihane,
+Joel Ray Holveck,
+Harold L Hunt II,
+Ricardo Y. Igarashi,
+Mutsumi ISHIKAWA ,
+Tsuyoshi ITO,
+Kean Johnston,
+Nicolas JOLY,
+Phil Jones,
+Roman Kagan,
+Theppitak Karoonboonyanan,
+Etsushi Kato,
+Koike Kazuhiko,
+Aidan Kehoe,
+Juergen Keil,
+Andreas Kies,
+Thomas Klausner,
+Mario Klebsch,
+Egmont Koblinger,
+Vlatko Kosturjak,
+Kusanagi Kouichi,
+Peter Kunzmann,
+Nick Kurshev,
+Mashrab Kuvatov,
+Marc La France,
+Radics Laszlo,
+Zarick Lau,
+Nolan Leake,
+Michel Lespinasse,
+Noah Levitt,
+Dave Love,
+H.J. Lu,
+Lubos Lunak,
+Sven Luther,
+Torrey T. Lyons,
+Calum Mackay,
+Paul Mackerras,
+Roland Mainz,
+Kevin Martin,
+Michal Maruska,
+Kensuke Matsuzaki,
+maxim,
+Stephen McCamant,
+Ferris McCormick,
+Luke Mewburn,
+Nicholas Miell,
+Robert Millan,
+Hisashi MIYASHITA,
+Gregory Mokhin,
+Patrik Montgomery,
+Joe Moss,
+Josselin Mouette,
+Frank Murphy,
+Reiko Nakajima,
+Paul Nasrat,
+Dan Nelson,
+Bastien Nocera,
+Alexandre Oliva,
+Hideki ONO,
+Peter Osterlund,
+Sergey V. Oudaltsov,
+S&eacute;amus &Oacute; Ciardhu&aacute;in,
+Bob Paauwe,
+Paul Pacheco,
+Tom Pala,
+Ivan Pascal,
+T. M. Pederson,
+Earle F. Philhower III,
+Nils Philippsen,
+Manfred Pohler,
+Alexander Pohoyda,
+Arnaud Quette,
+Jim Radford,
+Dale Rahn,
+Lucas Correia Villa Real,
+Ren&eacute; Rebe,
+Tyler Retzlaff,
+Sebastian Rittau,
+Tim Roberts,
+Alastair M. Robinson,
+Branden Robinson,
+Daniel Rock,
+Ian Romanick,
+Bernhard Rosenkraenzer,
+M&aring;ns Rullg&aring;rd,
+Andriy Rysin,
+Supphachoke Santiwichaya,
+Pablo Saratxaga,
+Matthias Scheler,
+Jens Schweikhardt,
+Danilo Segan,
+Shantonu Sen,
+Stas Sergeev,
+JungShik Shin,
+Jungshik Shin,
+Nikola Smolenski,
+Andreas Stenglein,
+Paul Stewart,
+Alexander Stohr,
+Alan Strohm,
+Will Styles,
+James Su,
+Mike Sulivan,
+Ville Syrjala,
+Slava Sysoltsev,
+Akira TAGOH,
+Toshimitsu Tanaka,
+Akira Taniguchi,
+Owen Taylor,
+Neil Terry,
+Jonathan Thambidurai,
+John Tillman,
+Adam Tlalka,
+Linus Torvalds,
+Christian Tosta,
+Warren Turkal,
+Stephen J. Turnbull,
+Ted Unangst,
+Mike Urban,
+Simon Vallet,
+Thuraiappah Vaseeharan,
+Luc Verhaegen,
+Yann Vernier,
+Michail Vidiassov,
+Sebastiano Vigna,
+Mark Vojkovich,
+Stephane Voltz,
+Boris Weissman,
+Keith Whitwell,
+Thomas Winischhofer,
+Eric Wittry,
+Kim Woelders,
+Roy Wood,
+Jason L. Wright,
+Joerg Wunsch,
+Chisato Yamauchi,
+Hui Yu.
+  
+<tag>Docbook/XML conversion:</tag>John Himpel and the XFree86 documentation
+team.
+
+<tag>Webmaster:</tag>Georgina O. Economou
+
+<tag>Hosting:</tag><url name="Internet Systems Consortium, Inc"
+url="http://www.isc.org/">.
+
+</descrip>
+
+<sect>Attributions/Acknowledgements
+<p>
+
+This product includes software developed by The XFree86 Project, Inc
+(http://www.xfree86.org/) and its contributors.
+
+This product includes software developed by Thomas Winischhofer.
+
+This produce includes software that is based in part of the work of the
+FreeType Team (http://www.freetype.org).
+
+This product includes software developed by the University of California,
+Berkeley and its contributors.
+
+This product includes software developed by Christopher G. Demetriou.
+
+This product includes software developed by the NetBSD Foundation, Inc. and its
+contributors
+
+This product includes software developed by X-Oz Technologies
+(http://www.x-oz.com/).
 
 
 </article>

@@ -5,52 +5,122 @@
 <article>
 <title>Licenses</title>
 <author>Compiled by The XFree86 Project</author>
-<date>December 2003</date>
+<date>February 2004</date>
 
 <ident>
-$XdotOrg: xc/programs/Xserver/hw/xfree86/doc/sgml/LICENSE.sgml,v 1.19 2003/12/12 00:42:32 dawes Exp $
-$XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/LICENSE.sgml,v 1.19 2003/12/12 00:42:32 dawes Exp $
+$XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/LICENSE.sgml,v 1.25 2004/02/15 02:16:48 dawes Exp $
 </ident>
 
 <sect>Introduction
 <p>
-XFree86&trade; code without an explicit copyright is covered by the
-XFree86 copyright/license as shown in the next section.  Portions of
-code are covered by other licenses/copyrights, as shown in subsequent
-sections.  In all cases, see individual source files for specific details,
+XFree86&trade; code without an explicit copyright or not explicitly
+marked as being in the public domain is covered by the XFree86
+copyright/license as shown in the next section.  Portions of code are
+covered by other licenses/copyrights, as shown in subsequent sections.
+In all cases, see individual source files for specific license details,
 copyright owner information, and copyright dates.
 
-<sect>XFree86 License
+<sect>XFree86 Project Licensing Policy
+<p>
+The XFree86 Project's basic licensing philosophy has always been summed
+up as "You can do what you like with the code except claim you wrote
+it."  Expressed more formally, it means that the licenses acceptable
+for code that makes up XFree86 must meet the following conditions:
+
+<itemize>
+<item>The code must be redistributable by others in either source or
+	binary form.
+
+<item>Others must be permitted to modify the code, and to distribute
+	modified code or derived code without being required to pay a
+	licensing fee or other financial consideration to the copyright
+	holder.
+
+<item>Others must be permitted to distribute binary-only forms of the
+	code if they which to do so.
+</itemize>
+
+A range of Open Source and Free Software licenses meet these conditions.
+The licenses in this document are examples of acceptable licenses.
+Contributors to XFree86 are encouraged to choose the license type that
+best suits them.  If you have any questions about whether a specific license
+fits in with the XFree86 licensing policy, please contact us.
+
+
+<sect>XFree86 License (version 1.1)
 <p>
 
-<p>
-Copyright (C) 1994-2003 The XFree86 Project, Inc.  All Rights Reserved.
+Copyright (C) 1994-2004 The XFree86 Project, Inc.<newline>
+All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the "Software"),
-to deal in the Software without restriction, including without limitation
-the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject
+to the following conditions:
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+  1.  Redistributions of source code must retain the above copyright
+      notice, this list of conditions, and the following disclaimer.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-THE XFREE86 PROJECT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
-OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+  2.  Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution, and in the same place and form as other copyright,
+      license and disclaimer information.
 
-Except as contained in this notice, the name of the XFree86 Project shall
-not be used in advertising or otherwise to promote the sale, use or other
-dealings in this Software without prior written authorization from the
-XFree86 Project.
+  3.  The end-user documentation included with the redistribution,
+      if any, must include the following acknowledgment: "This product
+      includes software developed by The XFree86 Project, Inc
+      (http://www.xfree86.org/) and its contributors", in the same
+      place and form as other third-party acknowledgments.  Alternately,
+      this acknowledgment may appear in the software itself, in the
+      same form and location as other such third-party acknowledgments.
+
+  4.  Except as contained in this notice, the name of The XFree86
+      Project, Inc shall not be used in advertising or otherwise to
+      promote the sale, use or other dealings in this Software without
+      prior written authorization from The XFree86 Project, Inc.
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE XFREE86 PROJECT, INC OR ITS CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <sect>X/MIT Licenses
 <p>
+<sect1>MIT
+<p>
+
+Copyright <it>&lt;date&gt;</it> <it>&lt;Copyright Holder&gt;</it>
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted, provided
+that the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation, and that the name of <it>&lt;Copyright Holder&gt;</it>
+not be used in advertising or publicity pertaining to distribution of
+the software without specific, written prior permission.  <it>&lt;Copyright
+Holder&gt;</it> makes no representations about the suitability of this
+software for any purpose.  It is provided "as is" without express or
+implied warranty.
+
+<it>&lt;COPYRIGHT HOLDER&gt;</it> DISCLAIMS ALL WARRANTIES WITH REGARD
+TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS, IN NO EVENT SHALL <it>&lt;COPYRIGHT HOLDER&gt;</it>  BE
+LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
 <sect1>X Consortium
 <p>
 Copyright (C) <it>&lt;date&gt;</it> X Consortium
@@ -105,12 +175,44 @@ used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from The Open Group.
 
 
+<sect1>XFree86 License (version 1.0)
+<p>
+XFree86 code without an explicit copyright is covered by the following
+copyright/license:
+
+<p>
+Copyright (C) 1994-2004 The XFree86 Project, Inc.  All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE XFREE86 PROJECT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Except as contained in this notice, the name of the XFree86 Project shall
+not be used in advertising or otherwise to promote the sale, use or other
+dealings in this Software without prior written authorization from the
+XFree86 Project.
+
 <sect>Berkeley-style Licenses
 <p>
 The Berkeley-style licenses are similar to the X/MIT-style licenses,
-except that they include conditions requiring attributions accompany
-binary distributions and/or are included with end user documetation
-and/or advertising material.
+except that they may include conditions requiring copies of the licenses
+and copyright notices accompany binary distributions, and in some cases
+that specific attributions accompany binary distributions and/or are
+included with end user documentation and/or advertising material.
 
 <sect1>General
 <p>
@@ -331,6 +433,28 @@ by Ben Collver &lt;collver1@attbi.com&gt;
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
 
+<sect1>Keith Packard
+<p>
+Copyright &copy; 2001 Keith Packard, member of The XFree86 Project, Inc.
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation, and that the name of Keith Packard not be used in
+advertising or publicity pertaining to distribution of the software without
+specific, written prior permission.  Keith Packard makes no
+representations about the suitability of this software for any purpose.  It
+is provided "as is" without express or implied warranty.
+
+KEITH PACKARD DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+EVENT SHALL KEITH PACKARD BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
+DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+
 <sect1>Theo de Raadt and Damien Miller
 <p>
 Copyright (c) 1995,1999 Theo de Raadt.  All rights reserved.
@@ -482,6 +606,40 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
+
+<sect1>Thomas Winischhofer
+<p>
+
+Copyright (C) 2001-2004 Thomas Winischhofer
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+<enum>
+<item>Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+<item>Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+<item>All advertising materials mentioning features or use of this software
+must display the following acknowledgement: This product includes
+software developed by Thomas Winischhofer.
+<item>The name of the author may not be used to endorse or promote products
+derived from this software without specific prior written permission.
+</enum>
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
 
 <sect1>X-Oz Technologies
 <p>
@@ -1259,6 +1417,56 @@ You can also contact us individually at:
     David Turner &lt;david.turner@freetype.org&gt;<newline>
     Robert Wilhelm &lt;robert.wilhelm@freetype.org&gt;<newline>
     Werner Lemberg &lt;werner.lemberg@freetype.org&gt;
+
+
+<sect>Bitstream Vera Fonts Copyright
+<p>
+Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream<newline>
+Vera is a trademark of Bitstream, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the fonts accompanying this license ("Fonts") and associated
+documentation files (the "Font Software"), to reproduce and distribute
+the Font Software, including without limitation the rights to use,
+copy, merge, publish, distribute, and/or sell copies of the Font
+Software, and to permit persons to whom the Font Software is furnished
+to do so, subject to the following conditions:
+
+The above copyright and trademark notices and this permission notice
+shall be included in all copies of one or more of the Font Software
+typefaces.
+
+The Font Software may be modified, altered, or added to, and in
+particular the designs of glyphs or characters in the Fonts may be
+modified and additional glyphs or characters may be added to the
+Fonts, only if the fonts are renamed to names not containing either
+the words "Bitstream" or the word "Vera".
+
+This License becomes null and void to the extent applicable to Fonts
+or Font Software that has been modified and is distributed under the
+"Bitstream Vera" names.
+
+The Font Software may be sold as part of a larger software package but
+no copy of one or more of the Font Software typefaces may be sold by
+itself.
+
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL
+BITSTREAM OR THE GNOME FOUNDATION BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL,
+OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT
+SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+
+Except as contained in this notice, the names of Gnome, the Gnome
+Foundation, and Bitstream Inc., shall not be used in advertising or
+otherwise to promote the sale, use or other dealings in this Font
+Software without prior written authorization from the Gnome Foundation
+or Bitstream Inc., respectively. For further information, contact:
+fonts at gnome dot org.
+
 
 
 </article>
