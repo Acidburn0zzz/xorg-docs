@@ -6,9 +6,10 @@
 <!-- Title information -->
 <title>Information for Solaris
 <author>David Holland, modified by Marc Aurele La France
-<date>2004 April 02
+<date>2004 August 18
 
 <ident>
+$XdotOrg: $
 </ident>
 
 <!-- Table of contents -->
@@ -99,9 +100,11 @@ On SPARCs, regardless of the compiler you use, ensure it generates 32-bit
 binaries.
 At this time, 64-bit binaries will probably not work.<p>
 <item>
-Also on SPARCs, you will need to set BuildXFree86OnSparcSunOS to YES in
-~xc/config/cf/host.def.
-Otherwise, you can only build the old deprecated Xsun* servers.<p>
+Also on SPARCs, you may be able to build the old deprecated Xsun* servers for
+older cg* graphics devices by adding "#define XsunServer YES" or "#define 
+Xsun24Server YES" or "#define XsunMonoServer YES" to ~xc/config/cf/host.def.
+These servers are no longer maintained nor supported and may not build in
+this release.<p>
 <item>
 A Threaded Xlib compiled with GCC has subtle problems.
 It'll work 98&percnt; of the time, however clients will occasionally exhibit
