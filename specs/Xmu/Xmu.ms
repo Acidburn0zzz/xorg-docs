@@ -1,11 +1,11 @@
-.\"
+.\" $XdotOrg$
 .\" $XFree86$
 .\"
 .sp 8
 .ce 2
 \s+2\fBXmu Library\fP\s-2
 .sp 6p
-X Version 11, Release 6.4
+X Version 11, Release 6.7
 .sp 1
 .ce 1
 ``\fIDon't ask.\fP''
@@ -34,7 +34,7 @@ Except as contained in this notice, the name of the X Consortium shall not be
 used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from the X Consortium.
 .sp 3
-\fIX Window System\fP is a trademark of X Consortium, Inc.
+\fIX Window System\fP is a trademark of The Open Group.
 .bp
 .NH 1
 Introduction

@@ -10,7 +10,7 @@
 .ce 6
 \s+2\fBXlib \- C Language X Interface\fP\s-2
 
-\s+1\fBX Consortium Standard\fP\s-1
+\s+1\fBX Window System Standard\fP\s-1
 
 \s+1\fBX Version 11, Release 6.7\fP\s-1
 .sp 6

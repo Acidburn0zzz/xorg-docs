@@ -1,4 +1,5 @@
 .\" $Xorg: icccm.ms,v 1.3 2000/08/17 19:42:08 cpqbld Exp $
+.\" $XdotOrg$
 .\" Use tbl, eqn, -ms, and macros.t
 .\" @(#)icccm.ms	1.50	16 Apr 1994	14:13:55
 .EH ''''
@@ -43,7 +44,7 @@ Version 2.0
 
 X Consortium Standard
 
-X Version 11, Release 6.4
+X Version 11, Release 6.7
 .R
 .ce 0
 .sp 6
@@ -62,7 +63,7 @@ X Version 11, Release 6.4
 .nr PS 9
 .sp 8
 .LP
-X Window System is a trademark of X Consortium, Inc.
+X Window System is a trademark of The Open Group
 .LP             
 .LP
 Copyright \(co 1988, 1991, 1993, 1994
@@ -214,8 +215,8 @@ John Interrante	John Thomas
 .De
 .bp 1
 .af PN 1
-.EH '\fBInter-Client Communication Conventions\fP''\fBX11, Release 6.4\fP'
-.OH '\fBInter-Client Communication Conventions\fP''\fBX11, Release 6.4\fP'
+.EH '\fBInter-Client Communication Conventions\fP''\fBX11, Release 6.7\fP'
+.OH '\fBInter-Client Communication Conventions\fP''\fBX11, Release 6.7\fP'
 .EF ''\fB % \fP''
 .OF ''\fB % \fP''
 .nH 1 Introduction
@@ -5200,10 +5201,11 @@ delim off
 .DE
 or to
 .DS
-	Registry
-	X Consortium
-	201 Broadway
-	Cambridge, MA 02139-1955
+        The X.Org Group -- X11 Registry
+        c/o Ienup Sung
+        Sun Microsystems, Inc.
+        4150 Network Circle, MS SJC07-201
+        Santa Clara, CA 95054
 	USA
 .DE
 Electronic mail will be acknowledged upon receipt.  Please allow up to 4

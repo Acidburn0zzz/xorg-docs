@@ -1,4 +1,5 @@
 .\" $Xorg: ICElib.ms,v 1.3 2000/08/17 19:42:09 cpqbld Exp $
+.\" $XdotOrg$
 .\" 
 .\" Use tbl, -ms, and macros.t
 .\" 
@@ -28,7 +29,7 @@ Version 1.0
 .sp
 X Consortium Standard
 .sp
-X Version 11, Release 6.4
+X Version 11, Release 6.7
 .AU
 Ralph Mor
 .AI
@@ -60,10 +61,10 @@ Except as contained in this notice, the name of the X Consortium shall not be
 used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from the X Consortium.
 .sp 5
-X Window System is a trademark of X Consortium, Inc.
+X Window System is a trademark of The Open Group.
 .bp
-.EH '\fBInter-Client Exchange Library\fP''\fBX11, Release 6.4\fP'
-.OH '\fBInter-Client Exchange Library\fP''\fBX11, Release 6.4\fP'
+.EH '\fBInter-Client Exchange Library\fP''\fBX11, Release 6.7\fP'
+.OH '\fBInter-Client Exchange Library\fP''\fBX11, Release 6.7\fP'
 .bp 1
 .EF ''\- \\\\n(PN \-''
 .OF ''\- \\\\n(PN \-''

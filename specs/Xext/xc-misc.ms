@@ -1,5 +1,6 @@
 .\" Use -ms and macros.t
 .\" $Xorg: xc-misc.ms,v 1.3 2000/08/17 19:42:37 cpqbld Exp $
+.\" $XdotOrg$
 .EH ''''
 .OH ''''
 .EF ''''
@@ -14,7 +15,7 @@
 .ce 3
 Version 1.1
 X Consortium Standard
-X Version 11, Release 6.4
+X Version 11, Release 6.7
 .sp 6
 .ce 4
 Bob Scheifler

@@ -1,3 +1,4 @@
+.\" $XdotOrg$
 .\" Use tbl and -ms
 .sp 8
 .ce 5
@@ -5,7 +6,7 @@
 .sp 6p
 Version 1.1
 X Consortium Standard
-X Version 11, Release 6.4
+X Version 11, Release 6.7
 Robert W. Scheifler
 .sp 2
 .LP

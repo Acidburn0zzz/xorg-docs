@@ -40,8 +40,8 @@
 .\" of this documentation for any purpose.
 .\" It is provided ``as is'' without express or implied warranty.
 .\" 
-.EH '\fBXlib \- C Library\fP''\fBX11, Release 6.4\fP'
-.OH '\fBXlib \- C Library\fP''\fBX11, Release 6.4\fP'
+.EH '\fBXlib \- C Library\fP''\fBX11, Release 6.7\fP'
+.OH '\fBXlib \- C Library\fP''\fBX11, Release 6.7\fP'
 .EF ''\fB % \fP''
 .OF ''\fB % \fP''
 .hw WM_NORMAL_HINTS
