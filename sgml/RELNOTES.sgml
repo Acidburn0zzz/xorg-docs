@@ -247,7 +247,7 @@ Xprint updates
 <sect1>Updated Mesa and DRI from upstream sources
 <P>	
   <itemize>
-    <item>Mesa version has been updated to 6.2 (in X11R6.8.2)
+    <item>Mesa version has been updated to 6.2.1 (in X11R6.8.2)
     <item>More OpenGL extensions
     <item>MergedFB for Radeon (Dualhead DRI support on these cards)
     <item>Many GLX fixes
@@ -472,9 +472,9 @@ X11R&relvers; includes the following input drivers:
    <tabrow><tt>hyperpen</tt><colsep>Aiptek HyperPen 6000<colsep>&nbsp;</tabrow>
    <tabrow><tt>js_x</tt><colsep>JamStudio pentablet<colsep><htmlurl
 		name="js_x(4)" url="js_x.4.html"></tabrow>
-   <tabrow><tt>kbd</tt><colsep>generic keyboards (alternate)<colsep><htmlurl
+   <tabrow><tt>kbd</tt><colsep>generic keyboards (loadable module)<colsep><htmlurl
 		name="kbd(4)" url="kbd.4.html"></tabrow>
-   <tabrow><tt>keyboard</tt><colsep>generic keyboards<colsep><htmlurl
+   <tabrow><tt>keyboard</tt><colsep>generic keyboards (builtin driver)<colsep><htmlurl
 		name="keyboard(4)" url="keyboard.4.html"></tabrow>
    <tabrow><tt>microtouch</tt><colsep>MicroTouch<colsep>&nbsp;</tabrow>
    <tabrow><tt>mouse</tt><colsep>most mouse devices<colsep><htmlurl
@@ -666,8 +666,7 @@ url="http://dri.sf.net/">.  The 3D core rendering component is provided by
 
 <sect1>XVideo Extension (Xv)
 <p>
-
-The XVideo extension is supported in X11R6.7.x.
+The XVideo extension is supported in X11R6.7.x and newer releases.
 An XvQueryPortAttributes function has been added as well as
 support for XvImages.  XvImages are XImages in alternate color spaces 
 such as YUV and can be passed to the server through shared memory
@@ -719,7 +718,11 @@ The Xft library uses configuration files, <tt>/etc/fonts/fonts.conf</tt>
 and <tt>/etc/fonts/local.conf</tt>, which
 contains information about which directories contain font files and also
 provides a sophisticated font aliasing mechanism.  Documentation for that
-file is included in the <htmlurl name="Xft(3)" url="Xft.3.man"> man page.
+file is included in the
+<htmlurl name="Xft(3)" url="Xft.3.man">,
+<htmlurl name="fontconfig(3)" url="fontconfig.3.man"> and
+<htmlurl name="fonts.conf(4)" url="fonts.conf.4.man">
+man pages.
 
 </sect2>
 
@@ -794,7 +797,7 @@ Xedit has several new features, including:
 <sect1>Font support
 <p>
 
-Details about the font support in X11R&relvers;.x can be found
+Details about the font support in X11R&lastfullrelvers; can be found
 in the <htmlurl name="README.fonts" url="fonts.html"> document.
 
 <sect1>TrueType support
@@ -932,7 +935,7 @@ These fonts include all of the glyphs needed for ISO&nbsp; 8859 parts 1 9
 and 15.
 
 The license terms for the Vera fonts are inclued in the file
-<tt/COPYRIGHT.Vera/>.
+<tt/COPYRIGHT.Vera/.
 
 <sect1>Luxi fonts from Bigelow and Holmes <label id="luxi">
 <p>
@@ -1120,6 +1123,7 @@ Travis Tilley,
 Ryan Underwood, 
 Ronny Vindenes, 
 Chisato Yamauchi,
+Mark Vojkovich, 
 Tim Yamin,
 Hui Yu
 </descrip>
@@ -1145,9 +1149,9 @@ John Dennis,
 Fabrizio Gennari,
 Jim Gettys,
 Alexander Gottwald,
-Ralf Habacker
+Ralf Habacker,
 Mike Harris,
-Mattheiu Herrb
+Mattheiu Herrb,
 Alan Hourihane,
 Harold L Hunt II,
 Elliot Lee,
@@ -1157,7 +1161,7 @@ Stuart Kreitman,
 Andreas Luik,
 Torrey Lyons,
 Roland Mainz,
-Kevin E. Martin, 
+Kevin E. Martin,
 Takuma Murakami,
 Kensuke Matsuzaki,
 Keith Packard,
@@ -1166,8 +1170,7 @@ Earle F. Philhower III,
 Benjamin Rienfenstahl,
 Leon Shiman,
 Toshimitsu Tanaka,
-Nicholas Wourms.
-
+Nicholas Wourms,
 2d3d Inc., 
 Aaron Plattner, 
 Adam de Boor, 
