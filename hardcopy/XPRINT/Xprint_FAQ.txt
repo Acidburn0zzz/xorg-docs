@@ -8,7 +8,7 @@ Xprint Frequently Asked Questions
 
    Version: 0.9.1
 
-   Last-Modified: 2004/06/14 08:15:16
+   Last-Modified: 2004/10/08 01:05:21
 
    Maintained-by: Roland Mainz <[1]roland.mainz@nrubsig.org>
 
@@ -778,12 +778,12 @@ Note
      * Motif/LessTif toolkits (full framework incl. special widgets like
        XmPrintShell)
      * Athena toolkit (full framework incl. special widgets like
-       XawPrintShell, starting with X.org release 6.7.1)
-     * Xedit, Xman, Xmore, etc. (starting with X.org release 6.7.1)
+       XawPrintShell, starting with X.org release 6.8.0)
+     * Xedit, Xman, Xmore, etc. (starting with X.org release 6.8.0)
      * [173]Common Desktop Environment (CDE) 2.x
      * [174]Mozilla, FireFox, ThunderBird, etc.
      * Eclipse
-     * KDE/Qt support is planned for Q3/2004
+     * KDE/Qt support is planned for Q1/2005
      * StarOffice 5.x
      * etc.
 
@@ -2813,7 +2813,7 @@ Tip
    How to print with Xt/Athena widgets ?
    A:
 
-   There are two examples in the Xprint.org and X11R6.7.1 source trees
+   There are two examples in the Xprint.org and X11R6.8.0 source trees
    which demonstrate how to use Xprint using Athena widgets:
     1. xc/programs/xphelloworld/xpawhelloworld/ contains a simple demo
        application which prints a Athena widget using the XawPrintShell
@@ -2998,7 +2998,7 @@ XtSetArg(args[n], XmNcursorPositionVisible, False);
    OpenGL/GLX API ?
    A:
 
-   In Xorg release 6.7.1 Xprint support was added to the GLX demo
+   In Xorg release 6.8.0 Xprint support was added to the GLX demo
    application "glxgears" ([324]xc/programs/Xserver/glxgears/).
 
 Known bugs

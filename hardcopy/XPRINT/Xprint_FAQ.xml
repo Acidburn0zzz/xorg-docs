@@ -44,7 +44,7 @@ Mappings used in this DocBook document:
     Version: 0.9.1
   </para>
   <para>
-    Last-Modified: 2004/06/14 08:15:16
+    Last-Modified: 2004/10/08 01:05:21
   </para>
   <para>
     Maintained-by:
@@ -756,7 +756,7 @@ Mappings used in this DocBook document:
         <listitem>
           <para>
             You can setup a TTF-aware X font server ("xfs", see
-            <citerefentry><refentrytitle>xfs</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>)
+            <citerefentry><refentrytitle>xfs</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>)
             with the matching TrueType fonts and add the font server location to Xprt's font path.
           </para>
         </listitem>
@@ -901,12 +901,12 @@ Mappings used in this DocBook document:
         </listitem>
         <listitem>
           <para>
-            Athena toolkit (full framework incl. special widgets like <function>XawPrintShell</function>, starting with X.org release 6.7.1)
+            Athena toolkit (full framework incl. special widgets like <function>XawPrintShell</function>, starting with X.org release 6.8.0)
           </para>
         </listitem>
         <listitem>
           <para>
-            Xedit, Xman, Xmore, etc. (starting with X.org release 6.7.1)
+            Xedit, Xman, Xmore, etc. (starting with X.org release 6.8.0)
           </para>
         </listitem>
         <listitem>
@@ -926,7 +926,7 @@ Mappings used in this DocBook document:
         </listitem>
         <listitem>
           <para>
-            KDE/Qt support is planned for Q3/2004
+            KDE/Qt support is planned for Q1/2005
           </para>
         </listitem>
         <listitem>
@@ -1381,14 +1381,14 @@ printer: david_dj01@jason:5</computeroutput>
       can be handled in various ways - like per-cookie
       (using MIT-MAGIC-COOKIE-1 authentification),
       per-user (using SUN-DES-1 or MIT-KERBEROS-5 auth., see
-      (see <citerefentry><refentrytitle>xhost</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>))
-      and/or per-machine (using "xhost" (see <citerefentry><refentrytitle>xhost</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>) and/or
+      (see <citerefentry><refentrytitle>xhost</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>))
+      and/or per-machine (using "xhost" (see <citerefentry><refentrytitle>xhost</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>) and/or
       <filename>/etc/X&lt;dpy&gt;.hosts</filename> (&lt;dpy&gt; ==  display number,
-      e.g. <filename>/etc/X0.hosts</filename> for display 0) (see <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>))
+      e.g. <filename>/etc/X0.hosts</filename> for display 0) (see <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>))
       Consult manual pages
       <citerefentry><refentrytitle>Xsecurity</refentrytitle><manvolnum>__miscmansuffix__</manvolnum></citerefentry>,
-      <citerefentry><refentrytitle>xhost</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>,
-      <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>
+      <citerefentry><refentrytitle>xhost</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>,
+      <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>
       etc. for further details.
     </para>
   </answer>
@@ -1403,7 +1403,7 @@ printer: david_dj01@jason:5</computeroutput>
   <answer>
     <para>
       Logging access to Xprt can be done using the standard Xserver auditing,
-      see the <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>
+      see the <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>
       manual page, option "-audit"
     </para>
   </answer>
@@ -1447,7 +1447,7 @@ printer: david_dj01@jason:5</computeroutput>
     </para>
     <para>
       See
-      <citerefentry><refentrytitle>xplsprinters</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>
+      <citerefentry><refentrytitle>xplsprinters</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>
       for futher usage and a description of the output.
     </para>
   </answer>
@@ -2972,7 +2972,7 @@ Xlib: Client is not authorized to connect to Server</computeroutput>
           </title>
           <para>
             If you do not want to use access control for Xprt then you can start it
-            with the option "-ac" (see <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>)
+            with the option "-ac" (see <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>)
             to disable the access control.
             Example:
 <screen>
@@ -3002,7 +3002,7 @@ Xlib: Client is not authorized to connect to Server</computeroutput>
           <para>
             Host-based access control can be archived using <filename>/etc/X&lt;dpy&gt;.hosts</filename>
             (&lt;dpy&gt; == display number, e.g. <filename>/etc/X0.hosts</filename> for display 0 (see
-            <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>
+            <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>
             manual page for further details)).
             <blockquote><procedure>
               <title>Example</title>
@@ -3150,7 +3150,7 @@ INET:mars</computeroutput>
       Xserver must run set-gid "root" to access these directories).
       Either fix the permission or start Xprt with the option "-pn". Using this
       option requires to access the server <emphasis>always</emphasis> with
-      &lt;hostname&gt;:&lt;displaynum&gt; (see <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry>
+      &lt;hostname&gt;:&lt;displaynum&gt; (see <citerefentry><refentrytitle>Xserver</refentrytitle><manvolnum>__appmansuffix__</manvolnum></citerefentry>
       manual page for the side-effects of this option).
     </para>
   </answer>
@@ -4316,7 +4316,7 @@ Xp Extension: Can't load driver XP-RASTER
   </question>
   <answer>
     <para>
-      There are two examples in the Xprint.org and X11R6.7.1 source trees which demonstrate how to use Xprint using
+      There are two examples in the Xprint.org and X11R6.8.0 source trees which demonstrate how to use Xprint using
       Athena widgets:
       <orderedlist>
         <listitem>
@@ -4662,7 +4662,7 @@ XtSetArg(args[n], XmNcursorPositionVisible, False);
   </question>
   <answer>
     <para>
-      In Xorg release 6.7.1 Xprint support was added to the GLX demo application "glxgears"
+      In Xorg release 6.8.0 Xprint support was added to the GLX demo application "glxgears"
       (<ulink url="http://xprint.freedesktop.org/cgi-bin/viewcvs.cgi/xorg/xc/programs/glxgears/">xc/programs/Xserver/glxgears/</ulink>).
     </para>
   </answer>
