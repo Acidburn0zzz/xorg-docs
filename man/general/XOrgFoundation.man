@@ -24,7 +24,7 @@
 .SH NAME
 XOrg Foundation \- XOrg Foundation information
 .SH SYNOPSIS
-Release 6.7 of X Version 11 is brought to you by the XOrg Foundation, Inc.
+Release 6.8 of X Version 11 is brought to you by the XOrg Foundation, Inc.
 .SH DESCRIPTION
 The XOrg Foundation is an independent, not-for-profit 501(c)(3) charity
 corporation.  It was formed in 2004 as the successor to the XOrg Group at

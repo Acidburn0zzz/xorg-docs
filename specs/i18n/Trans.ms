@@ -1,5 +1,5 @@
 .\" $Xorg: Trans.ms,v 1.3 2000/08/17 19:42:49 cpqbld Exp $
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/i18n/Trans.ms,v 1.2 2004/04/23 18:42:19 eich Exp $
 .\" To print this out, type tbl macros.t This File | troff -ms
 .EH ''''
 .OH ''''
@@ -17,7 +17,7 @@
 .sp
 \fBRevision 0.1\fP
 .sp
-\fBX Version 11, Release 6.7\fP
+\fBX Version 11, Release 6.8\fP
 .sp 3
 .AU
 Takashi Fujiwara
@@ -76,8 +76,8 @@ in this Software without prior written authorization from the X Consortium.
 .ps 11
 .nr PS 11
 .bp 1
-.EH '\fBXIM Transport Specification\fP''\fBX11, Release 6.7\fP'
-.OH '\fBXIM Transport Specification\fP''\fBX11, Release 6.7\fP'
+.EH '\fBXIM Transport Specification\fP''\fBX11, Release 6.8\fP'
+.OH '\fBXIM Transport Specification\fP''\fBX11, Release 6.8\fP'
 .EF ''\fB % \fP''
 .OF ''\fB % \fP''
 .NH 1

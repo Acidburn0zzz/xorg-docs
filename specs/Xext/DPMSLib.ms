@@ -1,5 +1,5 @@
 .\" Use -ms and macros.t
-.\" $XdotOrg$
+.\" $XdotOrg: xc/doc/specs/Xext/DPMSLib.ms,v 1.2 2004/04/23 18:42:18 eich Exp $
 .EH ''''
 .OH ''''
 .EF ''''
@@ -17,7 +17,7 @@
 .ce 3
 Version 1.0
 X Project Team Standard
-X Version 11, Release 6.7
+X Version 11, Release 6.8
 .sp 6
 .ce 4
 Rob Lembree
