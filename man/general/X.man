@@ -512,7 +512,7 @@ implementation dependent.
 If the name is not found, the color is looked up in the
 X server's database.
 The text form of this database is commonly stored in the file
-\fI__projectroot__/lib/X11/rgb.txt\fP.
+\fI\__projectroot__/lib/X11/rgb.txt\fP.
 .PP
 A numerical color specification
 consists of a color space name and a set of values in the following syntax:
@@ -1023,12 +1023,12 @@ to enable a particular input method. See
 .B XLOCALEDIR
 This must point to a directory containing the locale.alias file and
 Compose and XLC_LOCALE file hierarchies for all locales. The default value
-is \fI__projectroot__/lib/X11/locale\fP.
+is\fI __projectroot__/lib/X11/locale\fP.
 .TP
 .SM
 .B XENVIRONMENT
 This must point to a file containing X resources. The default is
-\fI$HOME/.Xdefaults-<hostname>\fP. Unlike \fI__projectroot__/lib/X11/Xresources\fP,
+\fI$HOME/.Xdefaults-<hostname>\fP. Unlike\fI __projectroot__/lib/X11/Xresources\fP,
 it is consulted each time an X application starts.
 .TP
 .SM
@@ -1101,17 +1101,17 @@ XUSERFILESEARCHPATH is not set.
 .SM
 .B XKEYSYMDB
 This must point to a file containing nonstandard keysym definitions.
-The default value is \fI__projectroot__/lib/X11/XKeysymDB\fP.
+The default value is\fI __projectroot__/lib/X11/XKeysymDB\fP.
 .TP
 .SM
 .B XCMSDB
 This must point to a color name database file. The default value is
-\fI__projectroot__/lib/X11/Xcms.txt\fP.
+\fI\__projectroot__/lib/X11/Xcms.txt\fP.
 .TP
 .SM
 .B XFT_CONFIG
 This must point to a configuration file for the Xft library. The default
-value is \fI__projectroot__/lib/X11/XftConfig\fP.
+value is\fI __projectroot__/lib/X11/XftConfig\fP.
 .TP
 .SM
 .B RESOURCE_NAME
@@ -1193,7 +1193,7 @@ A wide variety of error messages are generated from various programs.
 The default error handler in \fIXlib\fP (also used by many toolkits) uses
 standard resources to construct diagnostic messages when errors occur.  The
 defaults for these messages are usually stored in
-\fI__projectroot__/lib/X11/XErrorDB\fP.  If this file is not present,
+\fI\__projectroot__/lib/X11/XErrorDB\fP.  If this file is not present,
 error messages will be rather terse and cryptic.
 .PP
 When the X Toolkit Intrinsics encounter errors converting resource strings to
@@ -1297,7 +1297,7 @@ the appropriate instance name can be placed before the asterisk:
 .BR Xsun (1),
 .BR Xnest (1),
 .BR Xvfb (1),
-.BR XFree86 (1),
+.BR Xorg (1),
 .BR XDarwin (1),
 .BR kbd_mode (1),
 .\" specifications
@@ -1310,11 +1310,16 @@ X Window System is a trademark of The Open Group.
 .SH AUTHORS
 .PP
 A cast of thousands, literally.  The Release 6.7 distribution is 
-brought to you by the X.Org Foundation and it's members and contributors.
-The names of all people who made it a reality will be found in the
-individual documents and source files.  More information about the
-X.Org Foundation can be found on the internet at 
-.I http://www.x.org/
+brought to you by the X.Org Foundation, LLC. The names of all people who 
+made it a reality will be found in the individual documents and 
+source files.
+.PP
+Releases 6.6 and 6.5 were done by The X.Org Group.  Release 6.4 was done by
+The X Project Team.  The Release 6.3 distribution was from The X Consortium,
+Inc.  The staff members at the X Consortium responsible for that release
+were: Donna Converse (emeritus), Stephen Gildea (emeritus), Kaleb Keithley,
+Matt Landau (emeritus), Ralph Mor (emeritus), Janet O'Halloran, Bob
+Scheifler, Ralph Swick, Dave Wiggins (emeritus), and Reed Augliere.
 .PP
 The X Window System standard was originally developed at the
 Laboratory for Computer Science at the Massachusetts Institute 
