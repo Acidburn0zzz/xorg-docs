@@ -1,4 +1,5 @@
 .\" Use -ms and macros.t
+.\" $XFree86: xc/doc/specs/Xext/DPMS.ms,v 1.2 1998/12/20 11:56:39 dawes Exp $
 .EH ''''
 .OH ''''
 .EF ''''
@@ -382,6 +383,7 @@ The name of this extension is "DPMS".
 .ta .2i .5i 1.5i 2.5i
 .R
  =>
+.De
 .LP
 .Ds 0
 .TA .2i .5i 1.5i 2.5i
@@ -397,6 +399,7 @@ The name of this extension is "DPMS".
 .ta .2i .5i 1.5i 2.5i
 .R
  =>
+.De
 .LP
 .Ds 0
 .TA .2i .5i 1.5i 2.5i
@@ -412,6 +415,7 @@ The name of this extension is "DPMS".
 .ta .2i .5i 1.5i 2.5i
 .R
  =>
+.De
 .LP
 .Ds 0
 .TA .2i .5i 1.5i 2.5i

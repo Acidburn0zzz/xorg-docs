@@ -1,5 +1,6 @@
 .\" $Xorg: Framework.ms,v 1.3 2000/08/17 19:42:49 cpqbld Exp $
 .\" To print this out, type tbl macros.t ThisFile | troff -ms
+.\" $XFree86: xc/doc/specs/i18n/Framework.ms,v 1.5 2001/02/09 00:02:52 dawes Exp $
 .EH ''''
 .OH ''''
 .EF ''''
@@ -296,9 +297,9 @@ the components within the sample implementation.
 \h'3.063i'\v'0.782i'\h'-0.0m'\v'0.2m'\s12\fR>>\fP
 .sp -1
 .sp 1+4.344i
+.in -1c
 .PE
 .if \n(00 .fi
-.in -1c
 .\" figure end
 .LP
 .ce
@@ -649,7 +650,7 @@ JISX0212.1990-0:GR@JIS X0212-1990, Japanese Graphic Character Set
 @defined as GR
 .\" CNS11643.1986-0:GL
 .\" CNS11643.1986-1:GL
-.\" TIS620.2533-1:GR
+.\" TIS620-0:GR
 .sp 6p
 _
 .TE
@@ -1000,7 +1001,7 @@ int _XlcNCompareISOLatin1(\fIstr1\fP, \fIstr2\fP, \fIlen\fP)
 .LP
 The 
 .PN _XlcCompareIsoLatin1 
-function to compares two ISO-8859-1 strings.  Bytes representing lower 
+function to compares two ISO-8859-1 strings.  Bytes representing ASCII lower 
 case letters are converted to upper case before making the comparison.  
 The value returned is an integer less than, equal to, or greater than 
 zero, depending on whether ``\fIstr1\fP'' is lexicographicly less than, 
