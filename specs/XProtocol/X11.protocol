@@ -1,4 +1,5 @@
 .\" $Xorg: X11.protocol,v 1.4 $
+.\" $XdotOrg$
 .\"
 .\"
 .\"
@@ -8733,9 +8734,15 @@ The host number is always the first byte in the address,
 and the subnet number is always the second byte.
 The server performs no automatic swapping on the address bytes.
 .LP
-The ServerInterpreted family may be of any length up to 65535 bytes.
-The address is simply a string of characters which is interpreted by
-the server.  The server performs no automatic swapping on the address bytes.
+For the ServerInterpreted family, the address may be of any
+length up to 65535 bytes.  The address consists of two strings
+of ASCII characters, separated by a byte with a value of 0.
+The first string represents the type of address, and the second
+string contains the address value.  Address types and the syntax
+for their associated values will be registered via the X.org Registry.
+Implementors who wish to add implementation specific types may register
+a unique prefix with the X.org registry to prevent namespace
+collisions. 
 .LP
 Use of a host address in the ChangeHosts request is deprecated.  It is
 only useful when a host has a unique, constant address, a requirement
