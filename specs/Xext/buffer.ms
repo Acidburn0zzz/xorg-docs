@@ -3,7 +3,7 @@
 .\"
 .\"
 .\"
-.\" $XFree86$
+.\" $XFree86: xc/doc/specs/Xext/buffer.ms,v 1.4 2001/01/17 16:57:43 dawes Exp $
 .TL
 Extending X for Double-Buffering, Multi-Buffering, and Stereo
 .AU
