@@ -4,7 +4,7 @@
 .\"
 .\"
 .\"
-.\" $XFree86: xc/doc/specs/Xext/evi.ms,v 1.3 2000/03/03 23:16:24 dawes Exp $
+.\" $XFree86: xc/doc/specs/Xext/evi.ms,v 1.4 2001/01/17 16:57:44 dawes Exp $
 .EH ''''
 .OH ''''
 .EF ''''
