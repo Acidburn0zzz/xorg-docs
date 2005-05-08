@@ -1009,6 +1009,33 @@ starting the application.
 Since Composite is not enabled by default, it is not expected that this
 issue will be visible to most users.
 
+<sect>Deprecated components and removal plans
+
+<p>This section lists current plans for removal of obsolete or deprecated 
+components in the X.Org releases.   As our releases are open source,
+users who continue to require these can find the source in previous releases
+and continue to use these, but the X.Org Foundation and it's volunteers have
+decided the burden of continued maintanence and distribution in the core X11
+releases outweighs the benefits of doing so.   In some cases, this is simply
+because no one has volunteered to do continued maintaince, so if software is
+listed here that you need, you can contact xorg@lists.freedesktop.org to
+volunteer to take over maintaince, either inside or outside of the Xorg release
+process.
+
+<descrip>
+<tag>Display Postscript (DPS)</tag>
+
+The DPS software is included and built by default (except as noted in
+README.dps) in the X.Org X11R6.8 release series.  The software will be
+included, but not built unless specifically configured by the builder,
+in the X.Org X11R6.9 release series.  At this time, X.Org does not
+plan to include any of the DPS software in X11R7.0 or later releases.
+For more information, see
+xc/programs/Xserver/hw/xfree86/doc/README.dps in the X.Org source
+release.
+
+</descrip>
+
 <sect>Attributions/Acknowledgements/Credits
 
 This section lists the credits for the X11R&relvers; release.  For a more
