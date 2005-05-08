@@ -1015,12 +1015,12 @@ issue will be visible to most users.
 components in the X.Org releases.   As our releases are open source,
 users who continue to require these can find the source in previous releases
 and continue to use these, but the X.Org Foundation and its volunteers have
-decided the burden of continued maintanence and distribution in the core X11
+decided the burden of continued maintenence and distribution in the core X11
 releases outweighs the benefits of doing so.   In some cases, this is simply
-because no one has volunteered to do continued maintaince, so if software is
+because no one has volunteered to do continued maintenence, so if software is
 listed here that you need, you can contact xorg@lists.freedesktop.org to
-volunteer to take over maintaince, either inside or outside of the Xorg release
-process.
+volunteer to take over maintainership, either inside or outside of the Xorg 
+release process.
 
 <descrip>
 <tag>Display Postscript (DPS)</tag>
