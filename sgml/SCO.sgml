@@ -6,8 +6,8 @@
 <!-- TitleS information -->
 
 <title>Information for SCO OpenServer Users
-<author>J. Kean Johnston (jkj@sco.com)
-<date>14 February 2003
+<author>Kean Johnston (kean.johnston@x.org)
+<date>2 May 2005
 
 <ident>
 $XdotOrg: xc/programs/Xserver/hw/xfree86/doc/sgml/SCO.sgml,v 1.2 2004/04/23 19:23:59 eich Exp $
@@ -17,6 +17,16 @@ $XdotOrg: xc/programs/Xserver/hw/xfree86/doc/sgml/SCO.sgml,v 1.2 2004/04/23 19:2
 <toc>
 
 <!-- Begin the document -->
+
+<sect>Conflicts<p>
+Please note that as of Release 2.0.0 of the ``Supplemental Graphics, Web
+and X11 Libraries'' (GWXLIBS) package, portions of X.org are now included
+by default.  The GWXLIBS package includes the X.org runtime libraries,
+fonts and header files.  This means that you should be very careful when
+selecting an installation location, else you may overwrite a critical
+system component.  Release 2.0.0 of GWXLIBS is based on X.org 6.8.2.  If
+you are compiling a later version, you should select a ``ProjectRoot''
+other than the default <tt>/usr/X11R6</tt>.
 
 <sect>Requirements<p>
 
@@ -29,10 +39,10 @@ X11R&relvers, the following conditions must be met:
   <item>Ensure that OSS646, the ``Execution Environment Update'' package is
     installed, if appropriate.  Check the release notes for that update
     to see whether or not your current operating system requires this
-    update.  At least version OSS646B is required.  If you are running
-    SCO OpenServer Release 5.0.7, you must have Maintenance Pack 1 installed.
+    update.  At least version OSS646C is required.  If you are running
+    SCO OpenServer Release 5.0.7, you must have Maintenance Pack 3 installed.
   <item>Ensure that the "Graphics, Web and X11 Libraries" package is
-    installed.  At least version 1.3.2Ag is required.  You should always
+    installed.  At least version 2.0.0Eb is required.  You should always
     install the latest possible version of this supplement that is valid
     for your operating system release.  From time to time this release is
     bundled with Maintenance Packs, so if you are running 5.0.7 or later,
@@ -90,10 +100,14 @@ To actually start the compilation, perform the following steps:
     <tt>/usr/local/bin</tt>. You must ensure that <tt>/usr/gnu/bin</tt>
     appears first in your <tt>PATH</tt>.
 
+  <item>Make sure you set a ProjectRoot that is not <tt>/usr/X11R6</tt>
+  in your <tt>host.def</tt> file, unless you are comfortable overwriting
+  standard system components that are installed in <tt>/usr/X11R6</tt>.
+
   <item>Go to the top level of the source tree and execute the command
-    <tt>CC=gcc make World BOOTSTRAPCFLAGS=-DSCO5 2&gt;&amp;1 | tee world.log</tt>.
+    <tt>CC=gcc make World 2&gt;&amp;1 | tee World.log</tt>.
     This will do a full build, and send all of the build results to the
-    file <tt>world.log</tt>.
+    file <tt>World.log</tt>.
     
   <item>If the build succeeded, install the new server by executing the
     command <tt>make install 2&gt;&amp;1 | tee install.log</tt> as root.
