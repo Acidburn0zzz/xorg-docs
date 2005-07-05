@@ -796,7 +796,7 @@ License.
 X11R&relvers; has a ``fontenc'' layer to allow the scalable font backends to
 use a common method of font re-encoding.  This re-encoding makes it possible
 to uses fonts in encodings other than their their native encoding.  This
-layer is used by the Type1, Speedo and FreeType backends.
+layer is used by the Type1 and FreeType backends.
 
 <sect1>Large font optimisation
 <p>
