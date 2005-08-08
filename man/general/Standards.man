@@ -1,5 +1,5 @@
 .\" $Xorg: Standards.cpp,v 1.3 2000/08/17 19:42:04 cpqbld Exp $
-.\" $XdotOrg: xc/doc/man/general/Standards.man,v 1.2 2004/04/23 18:42:14 eich Exp $
+.\" $XdotOrg: xc/doc/man/general/Standards.man,v 1.3 2004/09/03 16:18:18 kem Exp $
 .\" Copyright (c) 1993, 1994, 1996, 2004 The Open Group
 .\"
 .\" All rights reserved.
@@ -372,7 +372,7 @@ The following include files are part of the LBX Extension library standard.
 .fi
 .PP
 The following include files are part of the Colormap Utilization
-Policy and Extention specification.
+Policy and Extension specification.
 .PP
 .nf
 <X11/extensions/Xcup.h>
