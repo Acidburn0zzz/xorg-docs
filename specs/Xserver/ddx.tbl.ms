@@ -4827,22 +4827,19 @@ Wrapping screen functions is quite easy; each vector is individually
 wrapped.  Screen functions are not supposed to change after initialization,
 so rewrapping is technically not necessary, but causes no problems.
 .LP
-Wrapping GC functions is a bit more complicated.  GC's have two sets of
-function vectors, one hanging from gc->ops and the other from gc->funcs.
-Wrappers should modify only those values, not the internal values as they
+Wrapping GC functions is a bit more complicated.  GC's have two tables of
+function vectors, one hanging from gc->ops and the other from gc->funcs, which
+should be initially wrapped from a CreateGC wrapper.  Wrappers should modify
+only table pointers, not the contents of the tables, as they
 may be shared by more than one GC (and, in the case of funcs, are probably
-shared by all gcs).  To wrap the ops, wrap the funcs and, in each func
-wrapper, unwrap the ops and funcs, call down, and re-wrap.  In each op
-wrapper, unwrap both the funcs and ops, call down and rewrap afterwards.  The
-rule is:  if you wrap funcs+ops, you must always unwrap both before down
-calling.  If you wrap ops, you must always pull the ops value out of the GC
-in the func wrapper and save it.  If you wrap funcs, you needn't pull the
-funcs value out of the GC to rewrap as the func values are required to be
-constant.  In this way, the wrapped validation routine can change the op
-vector and not have it lost when your wrapper routine rewraps the GC.  This
-occurs when the wrapped op revalidates the GC with new entries (many mi
-routines do this for opaque stipples or double dashes).  The corollary to
-this rule is:  Never change the func vector after CreateGC.
+shared by all gcs).  Your func wrappers may change the GC funcs or ops
+pointers, and op wrappers may change the GC op pointers but not the funcs.
+
+Thus, the rule for GC wrappings is: wrap the funcs from CreateGC and, in each
+func wrapper, unwrap the ops and funcs, call down, and re-wrap.  In each op
+wrapper, unwrap the ops, call down, and rewrap afterwards.  Note that in 
+re-wrapping you must save out the pointer you're replacing again.  This way the
+chain will be maintained when wrappers adjust the funcs/ops tables they use.
 .LP
 .NH 2
 Work Queue
