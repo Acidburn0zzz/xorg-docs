@@ -1,3 +1,9 @@
+2005-12-14  Alan Coopersmith  <alan.coopersmith@sun.com>
+
+	* man/general/X.man: 
+	* man/general/XOrgFoundation.man: 
+	Correct spelling of X.Org Foundation name.  Updates for 7.0 release.
+
 2005-12-08  Kevin E. Martin  <kem-at-freedesktop-dot-org>
 
 	Initial revision.
