@@ -11,79 +11,83 @@
 
 <abstract>
 
-These release notes contains information about features and their status in the
-X.Org Foundation X11R&relvers; release.
-It is based on the XFree86 4.4RC2 RELNOTES document published by 
-The XFree86&trade; Project, Inc.
-There are significant updates and differences in the X.Org release
-as noted below.
+These release notes contains information about features and their status
+in the X.Org Foundation X11R&relvers;/X11R&modvers; release.  It is
+based on the XFree86 4.4RC2 RELNOTES document published by The
+XFree86&trade; Project, Inc.  There are significant updates and
+differences in the X.Org release as noted below.
+
 </abstract>
 
 <toc>
 
 <p>
-<sect>Introduction to the X11R&relvers Release
+<sect>Introduction to the X11R&relvers;/X11R&modvers; Release
+<p>
+This release constitutes the first major version release of the X Window
+System in over a decade.  The main reasons for the major version bump
+from 6 to 7 is that we have moved from what has traditionally been a
+source codebase comprised of many different components brought together
+into a single monolithic tree to a source codebase where each of those
+same components found in the monolithic tree are now split into logical
+modules that can be developed, built and maintained separately, but
+still fit together coherently into the larger project.  At the same
+time, we have moved away from the imake build system to an autotools
+build system.  By making these changes we have opened the source code up
+to a new generation of developers that can continue to build upon the
+long tradition of the X Window System.
+<p>
+The reason for having simultaneous releases for both the monolithic and
+modular trees is to allow for a transition period as developers,
+builders and vendors incorporate the significant changes to how the tree
+is built and developed into their products and to allow time for
+additional platforms to be supported the modular tree.  This initial
+modular release has support for Linux and Solaris.  During this
+transition period, we expect both the monolithic and modular trees to
+coexist.  For the monolithic tree, we expect that there will be
+maintenance releases in the X11R6.8.x and X11R6.9.x series as needed.
+However, the main development effort will move over to the new modular
+tree.
+<p>
+The X11R&modvers; release is the first in the modular series.  One of
+the advantages of the modular tree is that it allows for more rapid and
+independent updates of module components, so full maintenance release
+will no longer be required for simple bug fixes.  Rather, each module
+component maintainers can prepare new releases as needed.  These module
+component releases will then be periodically "rolled up" into official
+X.Org Foundation releases.  The next official release will be
+X11&nextrelvers; and is expected in &nextfullreldate;.
+<p>
+For more information on the modularization effort see the <url
+name="Modularization Proposal"
+url="http://wiki.x.org/wiki/ModularizationProposal">, and for help with
+how to build and develop in the new modular tree see <url name="Modular
+Developer's Guide" url="http://wiki.x.org/wiki/ModularDevelopersGuide">.
+<p>
+We encourage you to submit bug fixes and enhancements to
+Freedesktop.org's <url name="bug tracking system"
+url="https://bugs.freedesktop.org/"> using the xorg product, and to
+discuss them on <email>xorg@lists.freedesktop.org</email>.
 <p>
 The release numbering is based on the original MIT X numbering system.
 X11 refers to the version of the network protocol that the X Window
 system is based on: Version 11 was first released in 1988 and has been
-stable for 15 years, with only upward compatible additions to the
-core X protocol, a record of stability envied in computing.
-Formal releases of X started with X version 9 from MIT;
-the first commercial X products were based on X version 10.
-The MIT X Consortium and its successors, the X Consortium, the Open Group
-X Project Team, and the X.Org Group released versions X11R3 through X11R6.6,
-before the founding of the X.Org Foundation.
+stable for 17 years, with only upward compatible additions to the core X
+protocol, a record of stability envied in computing.  Formal releases of
+X started with X version 9 from MIT; the first commercial X products
+were based on X version 10.  The MIT X Consortium and its successors,
+the X Consortium, the Open Group X Project Team, and the X.Org Group
+released versions X11R3 through X11R6.6, before the founding of the
+X.Org Foundation in early 2004.
 <p>
-There will be future maintenance releases in the X11R6.8.x series.
-However, efforts are well underway to split the X distribution into its
-modular components to allow for easier maintenance and independent
-updates.  We expect a transitional period while both X11R6.8 releases
-are being fielded and the modular release completed and deployed while
-both will be available as different consumers of X technology have
-different constraints on deployment. We have not yet decided how the
-modular X releases will be numbered.
-<p>
-We encourage you to submit bug fixes and enhancements to bugzilla.freedesktop.org
-using the xorg product, and discussions on this server take
-place on <email>xorg@freedesktop.org</email>.
-
-X11R&relvers; comes with a graphical configuration tool called 
-"<tt>xorgcfg</tt>",
-which also has a text mode interface and can be used to create an initial
-configuration file. It can also be used to customise existing
-configurations.
-
-Next in the order of configuration preferences is to use the Xorg
-server's ability to create a starting configuration file.  Run as root:
-<tscreen><verb>Xorg -configure</verb></tscreen> and follow the instructions.
-
-Finally, if all else fails, the trusty old standby text-based tool
-"<tt>xorgconfig</tt>" can also be used for generating X server config
-files.
-
-At least one, and hopefully, all of these configuration options will
-give you a reasonable starting point for a suitable configuration
-file.  With the automatic mechanism you might even find that you don't
-need one!  
-
-If you do need to customise the configuration file, see the <htmlurl
-name="xorg.conf manual page" url="xorg.conf.5.html">.  You can also
-check the driver-specific manual pages and the related documentation
-(found at <ref id="drivertables" name="tables below"> also.
-
-Before downloading  the binary distributions for this release, please
-have a quick read through the <htmlurl name="Installation Document"
-url="Install.html">.  It may save you some time and also help you figure out
-which of the binary releases you need.
-
 <![ %updaterel [
 The next sections describe what has changed in the update release(s)
 as well as what is new in the latest full release (&fullrelvers;).
 ]]>
 <![ %fullrel [
-The next section describes what is new in the latest version (&relvers;)
-compared with the previous full release (&prevrelvers;).
+The next section describes what is new in the latest version
+(&relvers;/&modvers;) compared with the previous full release
+(&prevrelvers;).
 ]]>
 The other sections below describe some of the new features and changes
 between 3.3.x and 4.0.  There are lots of new features, and we definitely
@@ -531,9 +535,28 @@ for providing configuration and run-time parameters.  The configuration
 file format is described in detail in the <htmlurl name="xorg.conf(5)"
 url="xorg.conf.5.html"> manual page.
 
-The X server has support for automatically determining an initial
-configuration on most platforms, as well as support or generating a basic
-initial configuration file.
+This release comes with a graphical configuration tool called
+"<tt>xorgcfg</tt>", which also has a text mode interface and can be used
+to create an initial configuration file. It can also be used to
+customise existing configurations.
+
+Next in the order of configuration preferences is to use the Xorg
+server's ability to create a starting configuration file.  Run as root:
+<tscreen><verb>Xorg -configure</verb></tscreen> and follow the instructions.
+
+Finally, if all else fails, the trusty old standby text-based tool
+"<tt>xorgconfig</tt>" can also be used for generating X server config
+files.
+
+At least one, and hopefully, all of these configuration options will
+give you a reasonable starting point for a suitable configuration
+file.  With the automatic mechanism you might even find that you don't
+need one!  
+
+If you do need to customize the configuration file, see the <htmlurl
+name="xorg.conf manual page" url="xorg.conf.5.html">.  You can also
+check the driver-specific manual pages and the related documentation
+(found at <ref id="drivertables" name="tables below"> also.
 
 <sect1>Command Line Options
 <p>
@@ -1011,16 +1034,18 @@ issue will be visible to most users.
 
 <sect>Deprecated components and removal plans
 
-<p>This section lists current plans for removal of obsolete or deprecated 
-components in the X.Org releases.   As our releases are open source,
-users who continue to require these can find the source in previous releases
-and continue to use these, but the X.Org Foundation and its volunteers have
-decided the burden of continued maintenence and distribution in the core X11
-releases outweighs the benefits of doing so.   In some cases, this is simply
-because no one has volunteered to do continued maintenence, so if software is
-listed here that you need, you can contact xorg@lists.freedesktop.org to
-volunteer to take over maintainership, either inside or outside of the Xorg 
-release process.
+<p>
+This section lists current plans for removal of obsolete or deprecated
+components in the X.Org releases.  As our releases are open source,
+users who continue to require these can find the source in previous
+releases and continue to use these, but the X.Org Foundation and its
+volunteers have decided the burden of continued maintenence and
+distribution in the core X11 releases outweighs the benefits of doing
+so.  In some cases, this is simply because no one has volunteered to do
+continued maintenence, so if software is listed here that you need, you
+can contact <email>xorg@lists.freedesktop.org</email> to volunteer to
+take over maintainership, either inside or outside of the Xorg release
+process.
 
 <descrip>
 <tag>Display Postscript (DPS)</tag>
@@ -1038,17 +1063,16 @@ release.
 
 <sect>Attributions/Acknowledgements/Credits
 
-This section lists the credits for the X11R&relvers; release.  For a more
-detailed breakdown, refer to the ChangeLog file in the X.Org source
+This section lists the credits for the X11R&relvers; release.  For a
+more detailed breakdown, refer to the ChangeLog file in the X.Org source
 tree, the ChangeLog's in <url name="the xorg product in
-freedesktop.org's CVS"
-url="http://freedesktop.org/cgi-bin/viewcvs.cgi/xorg/xc/Attic/"> or
-the 'cvs log' information for individual source files.
+freedesktop.org's CVS" url="http://cvs.freedesktop.org/xorg/"> or the
+'cvs log' information for individual source files.
 
 <![ %snapshot [
 <bf>THIS IS A DRAFT OF THE X11R&relvers; CREDITS SECTION.</bf>
 If you find missing credits, incorrect attributions, or other errors, please
-send details to <email>xorg@freedesktop.org</email>.
+send details to <email>xorg@lists.freedesktop.org</email>.
 ]]>
 
 <P>
