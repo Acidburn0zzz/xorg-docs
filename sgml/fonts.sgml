@@ -48,7 +48,7 @@ installed system-wide for displaying documents with embedded fonts.
 
 Xft is not compatible with the core fonts system: usage of Xft
 requires making fairly extensive changes to toolkits (user-interface
-libraries).  While X.org will continue to maintain the core fonts
+libraries).  While X.Org will continue to maintain the core fonts
 system, toolkit authors are encouraged to switch to Xft as soon as
 possible.
 
@@ -163,8 +163,10 @@ counterclockwise).
 
 <sect2>Configuring applications
 
-<p>Because most current applications use the core fonts system by
-default, it is necessary to explicitly configure them to use Xft.
+<p>Most existing applications use the core fonts system by
+default, but a growing number have been converted to use Xft.
+Some of these use Xft by default, for others it is necessary to 
+explicitly configure them to use Xft.
 How this is done depends on the application.
 
 XTerm can be set to use Xft by using the `<tt/-fa/' command line

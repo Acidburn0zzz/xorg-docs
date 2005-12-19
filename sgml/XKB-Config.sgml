@@ -128,7 +128,7 @@ Section "InputDevice"
     Option "XKbOptions" "grp:alt_shift_toggle"
 EndSection
 </verb></tscreen>
-That's seems tricky but it is not. The logic for settings of variants
+That seems tricky but it is not. The logic for settings of variants
 is the same as for layouts, that means the first and the third variant
 settings are left out (set to <tt>basic</tt>), the second is set to 
 <tt>bksl</tt> (a special variant with an enhanced definition of the backslash 
@@ -136,7 +136,7 @@ key).
 <p>
 Analogously, the loading runtime will change to:
 <tscreen><verb>
-setxkmap -rules xorg -model logicordless -layout "us,cz,de" \
+setxkbmap -rules xorg -model logicordless -layout "us,cz,de" \
          -variant ",bksl," -option "grp:alt_shift_toggle"
 </verb></tscreen>
 

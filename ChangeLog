@@ -1,3 +1,21 @@
+2005-12-19  Alan Coopersmith  <alan.coopersmith@sun.com>
+
+	* sgml/NetBSD.sgml: 
+	* sgml/Darwin.sgml:
+	* sgml/Install.sgml:
+	* sgml/LICENSE.sgml:
+	* sgml/NetBSD.sgml:
+	* sgml/OS2Notes.sgml:
+	* sgml/OpenBSD.sgml:
+	* sgml/README.sgml:
+	* sgml/RELNOTES.sgml:
+	* sgml/Solaris.sgml:
+	* sgml/XKB-Config.sgml:
+	* sgml/dps.sgml:
+	* sgml/fonts.sgml:
+        Typo fixes, mailing list & url updates, and other changes
+        to prepare for X11R6.9 & 7.0 releases.
+
 2005-12-19  Kevin E. Martin  <kem-at-freedesktop-dot-org>
 
 	* sgml/README.sgml:

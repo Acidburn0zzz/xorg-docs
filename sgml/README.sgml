@@ -63,7 +63,7 @@ Pre-release snapshots are provided for beta testing.  You should only install
 snapshots if you're comfortable dealing with possibly unstable beta-level
 software.  If you find problems with this snapshot, you are encouraged
 to report your findings to the public X.Org server mailing list:
-<email>xorg@freedesktop.org</email>.
+<email>xorg@lists.freedesktop.org</email>.
 
 <![ %relcandidate [
 X11R&relvers; is a feature-complete snapshot of X11R&fullrelvers;.
@@ -99,7 +99,7 @@ X11R&modvers;, and links to related documentation.
 
 The X.Org Foundation X releases are produced by the X.Org Foundation.
 The X.Org Foundation has been formed as a Delaware corporation organized
-to operate as a scientific charity under IRS code 501(c)(3) to chartered
+to operate as a scientific charity under IRS code 501(c)(3) chartered
 to develop and execute effective strategies which provide world-wide
 stewardship of the X Window System technology and standards. Membership
 in the X.Org Foundation is free to all participants. Applications for
@@ -108,7 +108,7 @@ further development of the X Window Technology are invited to complete a
 <url url="http://www.x.org/XOrg_Foundation_Membership.html"
 name="membership application">.  The X11R&relvers; and X11R&modvers;
 codebase forms the fourth X Window System release since the formation of
-the X.Org Foundataion and includes code from the X Consortium, the Open
+the X.Org Foundation and includes code from the X Consortium, the Open
 Group and the XFree86&trade; project.  This release is dedicated to the
 greater X community, developers and users alike.
 

@@ -110,12 +110,12 @@ the X source tree.
 <p>
 
 <itemize>
-<item>Freetype was updated to version 2.1.8. But installing freetype
+<item>FreeType was updated to version 2.1.8. But installing FreeType
 from X distributions would often or usually result in the replacement
-or use of "stale" versions of freetype. On Linux, FreeBSD, Solaris 10,
+or use of "stale" versions of FreeType. On Linux, FreeBSD, Solaris 10,
 and SCO5, therefore, X11R&relvers; will by default use the version
-of freetype2 that is installed on the system. If your system doesn't
-come with an installed freetype2 and you wish to use the version
+of FreeType2 that is installed on the system. If your system doesn't
+come with an installed FreeType2 and you wish to use the version
 supplied with this distribution, please add:
 
   #define HasFreetype2 NO 
@@ -182,7 +182,8 @@ window is redirected to off-screen buffer. Though the Damage extension the
 client, called a 'compositing manager', can know which areas of a window is
 modified and render the windows on screen. By making use of the drawing
 requests from both the core protocol and the RENDER extension, the
-compositing manager can create special effects, such as translucennt windows.
+compositing manager can create special effects, such as translucent or
+scaled windows.
 
     The Composite extension is considered experimental in X11R&relvers; and is
 turned off by default.
@@ -190,7 +191,7 @@ turned off by default.
 <tag>XEvIE (X Event Interception Extension) (experimental)</tag>
 
 XEvIE is an extension to intercept core keyboard and pointing device
-input It allows consumation, modification or synthesis of input events
+input It allows consumption, modification or synthesis of input events
 before these are sent to their final destination (i.e., interested
 clients). This feature is required by the GNOME accessibility project.
 
@@ -403,7 +404,7 @@ X11R&relvers; includes the following video drivers:
 		name="vesa(4)" url="vesa.4.html"></tabrow>
    <tabrow><tt>vga</tt><colsep>Generic VGA<colsep><htmlurl
 		name="vga(4)" url="vga.4.html"></tabrow>
-   <tabrow><tt>vmware</tt><colsep>VMWare guest OS<colsep><htmlurl
+   <tabrow><tt>vmware</tt><colsep>VMware guest OS<colsep><htmlurl
 		name="vmware(4)" url="vmware.4.html"></tabrow>
 </tabular>
 </table>
@@ -989,7 +990,7 @@ Note that the driver name is case-sensitive.
 <sect1>Socket directory ownership and permissions
 <p>
 The socket directories created in <tt>/tmp</tt> are now required to be
-owned by root and have their sticky-bit set.  If the premissions are not
+owned by root and have their sticky-bit set.  If the permissions are not
 set correctly, the component using this directory will print an error
 message and fail to start.  Common socket directories that are known to
 be affected include:
@@ -1039,10 +1040,10 @@ This section lists current plans for removal of obsolete or deprecated
 components in the X.Org releases.  As our releases are open source,
 users who continue to require these can find the source in previous
 releases and continue to use these, but the X.Org Foundation and its
-volunteers have decided the burden of continued maintenence and
+volunteers have decided the burden of continued maintenance and
 distribution in the core X11 releases outweighs the benefits of doing
 so.  In some cases, this is simply because no one has volunteered to do
-continued maintenence, so if software is listed here that you need, you
+continued maintenance, so if software is listed here that you need, you
 can contact <email>xorg@lists.freedesktop.org</email> to volunteer to
 take over maintainership, either inside or outside of the Xorg release
 process.
@@ -1097,7 +1098,7 @@ John Harper,
 John Heasley, 
 Matthieu Herrb, 
 Alan Hourihane, 
-Kristian H&oslash;sberg, 
+Kristian H&oslash;gsberg, 
 Harold L. Hunt II, 
 Adam Jackson, 
 Deron Johnson, 
