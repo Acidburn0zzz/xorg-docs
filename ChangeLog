@@ -1,5 +1,10 @@
 2005-12-20  Kevin E. Martin  <kem-at-freedesktop-dot-org>
 
+	* man/general/Standards.man:
+	Bump hardcoded version numbers.
+
+2005-12-20  Kevin E. Martin  <kem-at-freedesktop-dot-org>
+
 	* hardcopy/BDF/bdf.PS.gz:
 	* hardcopy/CTEXT/ctext.PS.gz:
 	* hardcopy/FSProtocol/fsproto.PS.gz:
