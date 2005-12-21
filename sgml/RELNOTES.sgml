@@ -65,7 +65,7 @@ how to build and develop in the new modular tree see <url name="Modular
 Developer's Guide" url="http://wiki.x.org/wiki/ModularDevelopersGuide">.
 <p>
 We encourage you to submit bug fixes and enhancements to
-Freedesktop.org's <url name="bug tracking system"
+freedesktop.org's <url name="bug tracking system"
 url="https://bugs.freedesktop.org/"> using the xorg product, and to
 discuss them on <email>xorg@lists.freedesktop.org</email>.
 <p>
@@ -96,21 +96,28 @@ don't have enough space to cover them all here.
 </sect>
 
 <![ %updaterel [
-<sect>Summary of updates in &relvers;.
+<sect>Summary of updates in &relvers; and &modvers;.
 <p>
 
 </sect>
 ]]>
 
-<sect>Summary of new features in X11R&relvers;
+<sect>Summary of new features in X11R&relvers; and X11R&modvers;
 <P>
-This is a sampling of the new features in X11R&relvers;.  A more
-complete list of changes can be found in the ChangeLog file that is part of
-the X source tree.
-<p>
+This is a sampling of the new features in X11R&relvers;/X11R&modvers;.
+A more complete list of changes can be found in the ChangeLog file that
+is part of the X source tree.
 
 <itemize>
-<item>FreeType was updated to version 2.1.8. But installing FreeType
+
+<item>EXA support included
+
+EXA is a new accleration architecture to replace XAA, the current
+architecture.  It is largely based upon KAA in KDrive, and is far more
+efficient at accelerating typical workloads on modern hardware,
+particularly involving the RENDER extension.
+
+<item>FreeType was updated to version 2.1.9. But installing FreeType
 from X distributions would often or usually result in the replacement
 or use of "stale" versions of FreeType. On Linux, FreeBSD, Solaris 10,
 and SCO5, therefore, X11R&relvers; will by default use the version
@@ -122,201 +129,190 @@ supplied with this distribution, please add:
 
 to config/cf/host.def.
 
-<item> The XTT font module and FreeType1 have been retired because FreeType2 subsumes 
-their functionality
-<item> Retire old PS Type1 font rasterizer (except for CID font usage) since the FreeType2 rasterizer now handles PS Type1 (*.pfa, *.pfb)
-<item>Render implementation fixes
-<item>Updated x86emu and resynced with upstream at Scitech
-<item>Updated SiS driver
-<item>Render acceleration for ATI's R100 and R200-series cards
-<item>Substantial speedups in the software implementation of the
-render extensions when compiled with gcc 3.4 on the i386 architecture.
-<item>Infrastructure for rotation support in drivers
-<item>New Trapezoid specification for the Render extension
-	<itemize>
-          <item>Respecify Render to include only 'normal' traps
-          <item>Allow backward compatibility but internally covert to new format
-	</itemize>
-<item>Software mouse cursor is now based on the Damage extension
-<item>A new keyboard driver is enabled by default. The old driver is disabled unless explicitly compiled in by defining the macro USE_DEPRECATED_KEYBOARD_DRIVER
-<item>Extensions can be enabled/disabled from the configuration file and from the command line
-<item>Mac OS X updates:
-	<itemize>
-         <item>Support dynamic screen configuration changes in rootless mode
-         <item>Added option to always use Mac command key equivalents
-         <item>Interpret scroll wheel mouse events correctly when shift is held down
-         <item>Added trivial Xinput support
-         <item>Fixed launch of X clients from Finder with a space in their path
-         <item>Fixed some GLX rendering problems on Mac OS X 10.2 and earlier
-	</itemize>
-</itemize>
-
-<sect1>New X extensions
-<P>
-X11R&relvers; includes four new extensions:
-
-<descrip>
-
-<tag>XFixes</tag> 
-
-The XFixes extension is a collection of improvements for deficiencies
-in the core protocol, including
-
-<itemize>
-<item>Notification when a selection changes <item>Server-side region
-objects
-<item>Allow clients to track the cursor image
-</itemize>
-
-<tag>Damage</tag>
-
-The Damage extension allows a client to be notified whenever something
-is drawn to a window. This feature is useful for VNC servers, for
-screen magnifiers, and for clients using the Composite extension to
-update the screen.
-
-<tag>Composite (experimental)</tag>
-
-The Composite extension allows a client to request that all drawing to
-window is redirected to off-screen buffer. Though the Damage extension the
-client, called a 'compositing manager', can know which areas of a window is
-modified and render the windows on screen. By making use of the drawing
-requests from both the core protocol and the RENDER extension, the
-compositing manager can create special effects, such as translucent or
-scaled windows.
-
-    The Composite extension is considered experimental in X11R&relvers; and is
-turned off by default.
-
-<tag>XEvIE (X Event Interception Extension) (experimental)</tag>
-
-XEvIE is an extension to intercept core keyboard and pointing device
-input It allows consumption, modification or synthesis of input events
-before these are sent to their final destination (i.e., interested
-clients). This feature is required by the GNOME accessibility project.
-
-The XEvIE extension is considered experimental in X11R&relvers; and is
-turned off by default.
-
-</descrip>
-
-As noted above, some extensions are disabled by default.  They can be
-enabled either in the <tt>xorg.conf</tt> configuration file or on the
-<tt>Xorg</tt> command-line.  For example, to enable the Composite
-extension, you could include a section like the following in the
-<tt>xorg.conf</tt> file:
-
-<verb>
-Section "Extensions"
-        Option "Composite" "Enable"
-EndSection
-</verb>
-
-or you could put <tt>+extension Composite</tt> on your command line.
-
-
-<sect1>
-Distributed Multihead X (DMX)
-<p>
-X11R&relvers; includes a new X server, called <tt>Xdmx</tt>, that allows
-users to create a single unified desktop from multiple running X
-servers.  It works by creating a local screen on each of these running X
-servers, which can be distributed across a network, and then presents
-that set of screens to the user.  When combined with Xinerama, a unified
-workspace, ranging from large display walls to small two display
-enviroments, can be created.
-<p>
-More information about DMX can be found on the <url name="DMX Project's
-web site" url="http://dmx.sf.net/">, including how to configure and use
-<tt>Xdmx</tt>.
-
-<sect1>
-Xprint updates
-<p>
-<itemize>
-  <item>Integrated various fixes from xprint.mozdev.org (more or less the whole codebase has been merged)
-  <item>Integrated various fixes from Sun Microsystems
-  <item>OpenGL is now supported for printing
-  <item>New set of maintenance tools for the Xprint server (xplsprinters, xprehashprinterlist, etc.)
-  <item>Added new XprintUtils client library to make the usage off Xprint easier
-  <item>Various other features and fixes integrated
-  <item>Athena toolkit now has print support (XawPrintShell) which is included
-        in a separate version of that library (Xaw8)
-  <item>Various applications/tools like xman, xedit, xlogo, etc. now have
-        print support
-</itemize>
-
-<sect1>Updated Mesa and DRI from upstream sources
-<P>	
+<item>Updated Mesa and DRI from upstream sources
 	<itemize>
           <item>More OpenGL extensions
-          <item>MergedFB for Radeon (Dualhead DRI support on these cards)
-          <item>Many GLX fixes
-          <item>Working SiS DRI driver
-          <item>Major Radeon and R200 DRI driver updates
-          <item>fbconfigs support
-          <item>Beginnings of pbuffer support (indirect only, and only in specific circumstances).
-          <item>Merge Mach64 DRI support (Eric Anholt, July 23)
+          <item>Support for Radeon r3xx/r4xx and PCI-Express chips
+          <item>Support for mixed 32-bit and 64-bit clients on 64-bit
+                machines.
 	</itemize>
+
+<item>Individual extensions may be enabled or disabled on the command line using the -extension flag
+
+<item>Improved chipset probing for IA64
+
+<item>SecureRPC enabled on Linux by default
+
+<item>Updated XRX support
+
+<item>Fixes to rootless mode for Cygwin and Darwin ports
+
+<item>Numerous K&R-to-ANSI C conversions
+
+<item>Many Darwin fixes
+
+<item>Updated XvMC support, enabling generic loading of hardware-specific drivers
+
+<item>Added wsfb video driver for OpenBSD and NetBSD framebuffer consoles
+
+<item>Numerous ATI driver updates from the GATOS project, including TV input support
+
+<item>Improved ProPolice support
+
+<item>Improved module loader support for Alpha chips
+
+<item>Added mingw port for native Win32 builds
+
+<item>Updated PCI scanning
+
+<item>Experimental DRI support for Radeon 9500 and above
+
+<item>Updated xterm to #207 from <url name="Thomas Dickey's xterm project"
+      url="http://dickey.his.com/xterm/xterm.html">
+
+<item>Added evdev input driver for generic input handling on Linux
+
+<item>Switched to libdl-based module loader
+
+<item>MMX blending routines for the Render extension
+
+<item>Initial support for running the Xorg server without root privileges
+
+<item>Add DragonFly BSD support
+
+<item>SGI Altix support
+
+<item>Support for FreeBSD/powerpc
+
+<item>Enhanced software Render core
+
+<item>Support for more than 12 buttons in the generic mouse( driver
+
+<item>Better support for DRI on 64-bit platforms
+
+<item>Solaris support updates:
+  <itemize>
+   <item>enhanced mouse driver
+   <item>agpgart support
+   <item>experimental AMD64 support
+   <item>kbd support
+   <item>/dev/audio keyboard bell option
+  </itemize>
+
+<item>Output-only windows
+
+<item>Non-rectangular mergedfb desktops
+
+<item>Update bundled fontconfig to 2.3.2
+
+<item>Added gradient, solid fill, and convolution filter operations to Render
+
+<item>Support for XGI chipsets in sis
+
+<item>Xft updated to 2.1.7
+
+<item>Include stack backtraces in logfiles when server crashes on glibc & Solaris systems
+
+<item>Multiseat support
+
+<item>xload made compatible with 64-bit kernels on Solaris
+
+<item>Bundled Mesa upgraded to 6.3.1
+
+<item>CAN-2005-2495 security fixes
+
+<item>Shared libraries now built for libXau & libXdmcp
+
+<item>GNU/kFreeBSD support
+
+</itemize>
+
+<sect1>Updated keyboard mappings
+<p>
+The requirement for XKB data can, in the modular tree, be satisfied either
+by the traditional data set (the 'xkbdata' module), or by the dataset from
+the xkeyboard-config project (the 'xkbdesc' module).  xkbdesc has numerous
+improvements relative to xkbdata: layouts have been cleaned up for
+consistency and universal multi-layout support, some new layouts have added,
+and some layouts have changed names to be more straightforward and ISO
+compliant.  Some setups will need adjustments in order to use xkbdesc.
+
+<sect1>New loader mechanism
+<p>
+The loader now uses the standard libdl-based loader, instead of
+implementing its own ELF loading and parsing mechanism.  This extends loadable
+server support to many platforms where it was not previously possible, such
+as MIPS, Motorola 68000, HP PA/RISC, et al.  The core loader itself has also
+been significantly optimised.
 
 <sect1>Video driver enhancements
 <p>
 <itemize>
    <item>SiS driver updates include
 	<itemize>
-         <item>output device hotplugging
-         <item>lots of fixes for 661, 741, 760
-         <item>extended interface for SiSCtrl?
-         <item>extended LCD handling (allow more modes)
-         <item>HDTV support (480p, 480i, 720p. 1080i; 315/330 series)
-         <item>Added video blitter Xv adapter (315/330 series)
-         <item>extended RENDER acceleration
+         <item>Support for EXA acceleration
+         <item>Support for non-rectangular MergedFB, including RandR
+         <item>Support for XGI chipsets
 	</itemize>
-   <item>Radeon driver updates:
+   <item>New sisusb driver for USB-attached video
+   <item>ATI driver updates
+    <itemize>
+          <item>Mach64 TV out support
+    </itemize>
+   <item>Rage 128 driver updates
+    <itemize>
+          <item>Added dualhead support
+    </itemize>
+   <item>Radeon driver updates
 	<itemize>
-         <item>Merged Framebuffer support (dualhead with DRI)
-         <item>DynamicClocks option (reduced power usage)
-         <item>Render acceleration (r100, r200 chips only)
-         <item>Support for new ATI chips (R420/M18, R423, RV370/M22, RV380/M24, RS300)
-         <item>DRI support for IGP chips
-         <item>Xv gamma correction
-         <item>Updated 3D drivers
-         <item>Many other small fixes
-	</itemize>
-   <item>Neomagic driver updates
-	<itemize>
-         <item>Support for Xv on pre-nm2160 chips
-         <item>Pseudocolor overlay mode
-         <item>Improved support for lowres double scan modes
+         <item>Support for non-rectangular MergedFB
+         <item>Support for EXA acceleration
+         <item>Full 3D support for r3xx/r4xx series, and PCI-Express
+         <item>Support for RN50/ES1000 chips
+         <item>VIVO support merged from the GATOS project
+         <item>Hostdata blit support for Xv videos and RENDER images
+         <item>BIOS hotkey support
+         <item>Tiled framebuffer support
 	</itemize>
    <item>MGA driver updates
 	<itemize>
-         <item>Support for DDC and DPMS on second head on G400
-         <item>Updated 3D driver
+         <item>New BIOS parsing
 	</itemize>
    <item>i810 driver updates
 	<itemize>
-         <item>Dualhead support (i830+)
-         <item>i915 support
-         <item>New 3D driver (i830+)
+         <item>i915GM, i945G and E7221 support
+         <item>Linux power management support (ACPI)
+         <item>BIOS hotkey support
+         <item>ShadowFB support
+         <item>Improved DDC support
 	</itemize>
+   <item>SunFFB driver updates
+    <itemize>
+         <item>XAA acceleration
+    </itemize>
    <item>Savage driver updates
-	<itemize>
-         <item>Pseudocolor overlay mode
-	</itemize>
-   <item>S3 driver updates
-	<itemize>
-         <item>Support for additional IBM RAMDACS
-	</itemize>
-   <item>Chips driver update
-	<itemize>
-         <item>Improved BE support
-	</itemize>
-   <item>New Voodoo driver (Alan Cox)
-        <itemize>
-         <item>Provides native (glide-less) acceleration and mode setup for voodoo/voodoo2 boards
-        </itemize>
-  </itemize>
+    <itemize>
+         <item>Support for PCI Savages
+         <item>Added dualhead and DRI support
+    </itemize>
+   <item>Newport driver updates
+    <itemize>
+         <item>XAA acceleration
+    </itemize>
+   <item>VIA driver updates
+    <itemize>
+          <item>Unichrome Pro support
+          <item>DRI support
+    </itemize>
+   <item>NV driver updates
+    <itemize>
+          <item>DPMS support for GeForce4 and greater laptops
+    </itemize>
+   <item>VMWare driver updates
+    <itemize>
+          <item>RandR support
+    </itemize>    
+</itemize>    
 
 <sect>Drivers
 <P>
@@ -324,7 +320,7 @@ Xprint updates
 <sect1>Video Drivers
 <p>
 
-X11R&relvers; includes the following video drivers:
+X11R&relvers;/X11R&modvers; includes the following video drivers:
 
 <table border=1 align="center">
 <tabular ca="|l|l|l|">
@@ -384,6 +380,8 @@ X11R&relvers; includes the following video drivers:
    <tabrow><tt>sis</tt><colsep>SiS<colsep><htmlurl
 		name="README.SiS" url="SiS.html">, <htmlurl
 		name="sis(4)" url="sis.4.html"></tabrow>
+   <tabrow><tt>sisusb</tt><colsep>SiS USB<colsep><htmlurl
+		name="sisusb(4)" url="sisusb.4.html"></tabrow>
    <tabrow><tt>sunbw2</tt> (+)<colsep>Sun bw2<colsep>&nbsp;</tabrow>
    <tabrow><tt>suncg14</tt> (+)<colsep>Sun cg14<colsep>&nbsp;</tabrow>
    <tabrow><tt>suncg3</tt> (+)<colsep>Sun cg3<colsep>&nbsp;</tabrow>
@@ -398,12 +396,12 @@ X11R&relvers; includes the following video drivers:
    <tabrow><tt>trident</tt><colsep>Trident<colsep><htmlurl
 		name="trident(4)" url="trident.4.html"></tabrow>
    <tabrow><tt>tseng</tt><colsep>Tseng Labs<colsep>&nbsp;</tabrow>
-   <tabrow><tt>via</tt><colsep>VIA<colsep><htmlurl
-		name="via(4)" url="via.4.html"></tabrow>
    <tabrow><tt>vesa</tt><colsep>VESA<colsep><htmlurl
 		name="vesa(4)" url="vesa.4.html"></tabrow>
    <tabrow><tt>vga</tt><colsep>Generic VGA<colsep><htmlurl
 		name="vga(4)" url="vga.4.html"></tabrow>
+   <tabrow><tt>via</tt><colsep>VIA<colsep><htmlurl
+		name="via(4)" url="via.4.html"></tabrow>
    <tabrow><tt>vmware</tt><colsep>VMware guest OS<colsep><htmlurl
 		name="vmware(4)" url="vmware.4.html"></tabrow>
 </tabular>
@@ -423,7 +421,7 @@ Darwin/Mac OS X uses IOKit drivers and does not use the module loader drivers
 listed above. Further information can be found in
 <htmlurl name="README.Darwin" url="Darwin.html">.
 
-X11R&relvers; includes the following input drivers:
+X11R&relvers;/X11R&modvers; includes the following input drivers:
 
 <sect1>Input Drivers
 <p>
@@ -432,9 +430,6 @@ X11R&relvers; includes the following input drivers:
 <tabular ca="|l|l|l|">
    <tabrow>Driver Name<colsep>Description<colsep>Further Information</tabrow>
    <hline>
-<!--
-   <tabrow><tt>acecad</tt><colsep>AceCad<colsep>&nbsp;</tabrow>
--->
    <tabrow><tt>aiptek(*)</tt><colsep>Aiptek USB tablet<colsep><htmlurl
 		name="aiptek(4)" url="aiptek.4.html"></tabrow>
    <tabrow><tt>calcomp</tt><colsep>Calcomp<colsep>&nbsp;</tabrow>
@@ -445,6 +440,7 @@ X11R&relvers; includes the following input drivers:
 		name="dmc(4)" url="dmc.4.html"></tabrow>
    <tabrow><tt>dynapro</tt><colsep>Dynapro<colsep>&nbsp;</tabrow>
    <tabrow><tt>elographics</tt><colsep>EloGraphics<colsep>&nbsp;</tabrow>
+   <tabrow><tt>evdev(*)</tt><colsep>EvDev<colsep>&nbsp;</tabrow>
    <tabrow><tt>fpit</tt><colsep>Fujitsu Stylistic Tablet PCs<colsep><htmlurl
 		name="fpit(4)" url="fpit.4.html"></tabrow>
    <tabrow><tt>hyperpen</tt><colsep>Aiptek HyperPen 6000<colsep>&nbsp;</tabrow>
@@ -469,24 +465,29 @@ X11R&relvers; includes the following input drivers:
 		name="ur98(4)" url="ur98.4.html"></tabrow>
    <tabrow><tt>void</tt><colsep>dummy device<colsep><htmlurl
 		name="void(4)" url="void.4.html"></tabrow>
-   <tabrow><tt>wacom</tt><colsep>Wacom tablets<colsep><htmlurl
+   <tabrow><tt>wacom(-)</tt><colsep>Wacom tablets<colsep><htmlurl
 		name="wacom(4)" url="wacom.4.html"></tabrow>
 </tabular>
 </table>
 
 Drivers marked with (*) are available for Linux only.
-
-<sect>Overview of X11R&relvers;
 <p>
-On most platforms, X11R&relvers; has a single X server binary called <tt>Xorg</tt>.
-This binary can either have one or more video and input drivers linked in
-statically, or more usually, dynamically, and in that manner load the
-video drivers, input drivers, and other modules that are needed.
+Drivers marked with (-) are available for X11R&relvers; only.
+
+<sect>Overview of X11R&relvers; and X11R&modvers;
+<p>
+On most platforms, X11R&relvers;/X11R&modvers; has a single X server
+binary called <tt>Xorg</tt>.  This binary can either have one or more
+video and input drivers linked in statically, or more usually,
+dynamically, and in that manner load the video drivers, input drivers,
+and other modules that are needed.
 
 X11R&relvers; has X server support for most UNIX&reg; and UNIX-like
 operating systems on Intel/x86 platforms, plus support for Linux and
 some BSD OSs on Alpha, PowerPC, IA-64, AMD64, Sparc, and Mips platforms,
-and for Darwin on PowerPC.
+and for Darwin on PowerPC.  X11R&modvers; has X server currently has
+support for Linux and Solaris, and is expected to have other platform
+support in X11R&nextrelvers;.
 
 <sect1>Loader and Modules
 <p>
@@ -501,8 +502,8 @@ or FreeBSD, or even OS/2.
 
 A main benefit of this, is that when modules are updated, they do not
 need to be recompiled for every different operating system.  The loader
-in version &relvers; has support for Intel (x86), Alpha and PowerPC
-platforms.  It also has preliminary support for Sparc platforms.
+in version &relvers;/&modvers; has support for Intel (x86), Alpha and
+PowerPC platforms.  It also has preliminary support for Sparc platforms.
 
 The X server makes use of modules for video drivers, X server extensions,
 font rasterisers, input device drivers, framebuffer layers (like mfb,
@@ -571,7 +572,7 @@ url="Xorg.1.html"> manual page.
 <p>
 
 The XFree86 Acceleration Architecture (XAA) was completely rewritten
-from scratch for XFree86 4.x and is used in X11R&relvers;.  
+from scratch for XFree86 4.x and is used in X11R&relvers;/X11R&modvers;.  
 Most drivers implement acceleration by
 making use of the XAA module.
 The Xorg server will accept modules built either for XFree86 4.4
@@ -580,7 +581,7 @@ servers or its own.
 <sect1>Multi-head
 <p>
 Some multi-head configurations are supported in 
-X11R&relvers;, primarily with multiple PCI/AGP cards.
+X11R&relvers;/X11R&modvers;, primarily with multiple PCI/AGP cards.
 
 One of the main problems is with drivers not sufficiently initialising
 cards that were not initialised at boot time.  This has been improved
@@ -603,8 +604,9 @@ an 8-bit screen together with a 16-bit screen in Xinerama mode.
 Xinerama is not enabled by default, and can be enabled with the
 <tt>+xinerama</tt> command line option for the X server.
 
-Xinerama was included with X11R6.4.  The version included in X11R&relvers;
-was completely rewritten for improved performance and correctness.
+Xinerama was included with X11R6.4.  The version included in
+X11R&relvers;/X11R&modvers; was completely rewritten for improved
+performance and correctness.
 
 Known problems:
 <itemize>
@@ -619,7 +621,7 @@ Known problems:
 <sect1>DGA version 2
 <p>
 
-DGA 2.0 is included in &relvers;.
+DGA 2.0 is included in &relvers;/&modvers;.
 Documentation for the client libraries can be found in the <htmlurl
 name="XDGA(3)" url="XDGA.3.man"> man page.  A good degree of backwards
 compatibility with version 1.0 is provided.
@@ -709,7 +711,8 @@ To allow a graceful transition for applications moving from core text
 rendering to the Render extension, Xft can use either the core rendering
 requests or the Render extension for text.  
 See the section on FreeType support in Xft for instructions on
-configuring X11R&relvers; to use an existing FreeType installation.
+configuring X11R&relvers;/X11R&modvers; to use an existing FreeType
+installation.
 
 <p>
 The Xft library uses configuration files, <tt>/etc/fonts/fonts.conf</tt>
@@ -723,10 +726,10 @@ file is included in the <htmlurl name="Xft(3)" url="Xft.3.man"> man page.
 <sect2>Application Support For Anti-Aliased Text
 <p>
 
-Only four applications have been modified in X11R&relvers; to work 
-with the Render extension and the Xft and FreeType libraries to provide 
-anti-aliased text: xterm, xditview, x11perf and xclock.  Migration of other 
-applications may occur in future releases.
+Only four applications have been modified in X11R&relvers;/X11R&modvers;
+to work with the Render extension and the Xft and FreeType libraries to
+provide anti-aliased text: xterm, xditview, x11perf and xclock.
+Migration of other applications may occur in future releases.
 
 <p>
 By default, xterm uses core fonts through the standard core API.  It has
@@ -791,8 +794,8 @@ Xedit has several new features, including:
 <sect1>Font support
 <p>
 
-Details about the font support in X11R&relvers;.x can be found
-in the <htmlurl name="README.fonts" url="fonts.html"> document.
+Details about the font support in X11R&relvers;.x/X11R&modvers;.x can be
+found in the <htmlurl name="README.fonts" url="fonts.html"> document.
 
 <sect1>TrueType support
 <p>
@@ -806,21 +809,22 @@ is designed to transparently support all of the functionality from the
 <sect1>CID font support
 <p>
 
-Support for CID-keyed fonts is included in X11R&relvers;
+Support for CID-keyed fonts is included in X11R&relvers;/X11R&modvers;
 The CID-keyed font format was designed by <url name="Adobe Systems"
 url="http://www.adobe.com"> for fonts with large character sets.  The
-CID-keyed font support in X11R&relvers; was donated by <url name="SGI"
-url="http://www.sgi.com">.  See the <htmlurl name="LICENSE"
-url="LICENSE.html"> document for a copy of the CID Font Code Public
-License.
+CID-keyed font support in X11R&relvers;/X11R&modvers; was donated by
+<url name="SGI" url="http://www.sgi.com">.  See the <htmlurl
+name="LICENSE" url="LICENSE.html"> document for a copy of the CID Font
+Code Public License.
 
 <sect1>Internationalisation of the scalable font backends
 <p>
 
-X11R&relvers; has a ``fontenc'' layer to allow the scalable font backends to
-use a common method of font re-encoding.  This re-encoding makes it possible
-to uses fonts in encodings other than their their native encoding.  This
-layer is used by the Type1 and FreeType backends.
+X11R&relvers;/X11R&modvers; has a ``fontenc'' layer to allow the
+scalable font backends to use a common method of font re-encoding.  This
+re-encoding makes it possible to uses fonts in encodings other than
+their their native encoding.  This layer is used by the Type1 and
+FreeType backends.
 
 <sect1>Large font optimisation
 <p>
@@ -832,7 +836,7 @@ transmitted in a compressed format.
 
 <sect1>Unicode/ISO 10646 support
 <p>
-What is included in X11R&relvers;
+What is included in X11R&relvers;/X11R&modvers;
 
 <itemize>
   <item>All ``-misc-fixed-*'' BDF fonts are now available in the
@@ -874,7 +878,7 @@ What is included in X11R&relvers;
 <p>
 
 A more flexible Compose file processing system was added to Xlib in
-X11R&relvers;.  The compose file is searched for in 
+X11R&relvers;/X11R&modvers;.  The compose file is searched for in 
 the following order:
 
 <enum>
@@ -966,8 +970,8 @@ please contact
 
 <sect>Miscellaneous
 <p>
-This section describes other items of note for the X11R&relvers;
-release.
+This section describes other items of note for the
+X11R&relvers;/X11R&modvers; release.
 
 <sect1>Legacy keyboard driver phase-out
 <p>
@@ -1064,21 +1068,21 @@ release.
 
 <sect>Attributions/Acknowledgements/Credits
 
-This section lists the credits for the X11R&relvers; release.  For a
-more detailed breakdown, refer to the ChangeLog file in the X.Org source
-tree, the ChangeLog's in <url name="the xorg product in
+This section lists the credits for the X11R&relvers;/X11R&modvers;
+release.  For a more detailed breakdown, refer to the ChangeLog file in
+the X.Org source tree, the ChangeLog's in <url name="the xorg product in
 freedesktop.org's CVS" url="http://cvs.freedesktop.org/xorg/"> or the
 'cvs log' information for individual source files.
 
 <![ %snapshot [
-<bf>THIS IS A DRAFT OF THE X11R&relvers; CREDITS SECTION.</bf>
+<bf>THIS IS A DRAFT OF THE X11R&relvers;/X11R&modvers; CREDITS SECTION.</bf>
 If you find missing credits, incorrect attributions, or other errors, please
 send details to <email>xorg@lists.freedesktop.org</email>.
 ]]>
 
 <P>
 <descrip>
-<tag>These people contributed in some way to X11R&relvers;</tag>
+<tag>These people contributed in some way to X11R&relvers;/X11R&modvers;</tag>
 Paul Anderson, 
 Eric Anholt, 
 Daniel Berrange, 
