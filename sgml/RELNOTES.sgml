@@ -42,7 +42,7 @@ modular trees is to allow for a transition period as developers,
 builders and vendors incorporate the significant changes to how the tree
 is built and developed into their products and to allow time for
 additional platforms to be supported the modular tree.  This initial
-modular release has support for Linux and Solaris.  During this
+modular release has support for Linux and Solaris.  During the
 transition period, we expect both the monolithic and modular trees to
 coexist.  For the monolithic tree, we expect that there will be
 maintenance releases in the X11R6.8.x and X11R6.9.x series as needed.
@@ -51,12 +51,12 @@ tree.
 <p>
 The X11R&modvers; release is the first in the modular series.  One of
 the advantages of the modular tree is that it allows for more rapid and
-independent updates of module components, so full maintenance release
+independent updates of module components, so full maintenance releases
 will no longer be required for simple bug fixes.  Rather, each module
-component maintainers can prepare new releases as needed.  These module
+component maintainer can prepare new releases as needed.  These module
 component releases will then be periodically "rolled up" into official
 X.Org Foundation releases.  The next official release will be
-X11&nextrelvers; and is expected in &nextfullreldate;.
+X11R&nextrelvers; and is expected in &nextfullreldate;.
 <p>
 For more information on the modularization effort see the <url
 name="Modularization Proposal"
@@ -147,7 +147,7 @@ to config/cf/host.def.
 
 <item>Fixes to rootless mode for Cygwin and Darwin ports
 
-<item>Numerous K&R-to-ANSI C conversions
+<item>Numerous K&amp;R-to-ANSI C conversions
 
 <item>Many Darwin fixes
 
@@ -186,7 +186,7 @@ to config/cf/host.def.
 
 <item>Enhanced software Render core
 
-<item>Support for more than 12 buttons in the generic mouse( driver
+<item>Support for more than 12 buttons in the generic mouse driver
 
 <item>Better support for DRI on 64-bit platforms
 
@@ -207,21 +207,21 @@ to config/cf/host.def.
 
 <item>Added gradient, solid fill, and convolution filter operations to Render
 
-<item>Support for XGI chipsets in sis
+<item>Support for XGI chipsets in SiS video driver
 
 <item>Xft updated to 2.1.7
 
-<item>Include stack backtraces in logfiles when server crashes on glibc & Solaris systems
+<item>Include stack backtraces in logfiles when server crashes on glibc and Solaris systems
 
 <item>Multiseat support
 
 <item>xload made compatible with 64-bit kernels on Solaris
 
-<item>Bundled Mesa upgraded to 6.3.1
+<item>Bundled Mesa upgraded to 6.4.1
 
 <item>CAN-2005-2495 security fixes
 
-<item>Shared libraries now built for libXau & libXdmcp
+<item>Shared libraries now built for libXau and libXdmcp
 
 <item>GNU/kFreeBSD support
 
@@ -421,10 +421,9 @@ Darwin/Mac OS X uses IOKit drivers and does not use the module loader drivers
 listed above. Further information can be found in
 <htmlurl name="README.Darwin" url="Darwin.html">.
 
-X11R&relvers;/X11R&modvers; includes the following input drivers:
-
 <sect1>Input Drivers
 <p>
+X11R&relvers;/X11R&modvers; includes the following input drivers:
 
 <table border=1 align="center">
 <tabular ca="|l|l|l|">
