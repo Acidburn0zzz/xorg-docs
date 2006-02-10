@@ -1,0 +1,806 @@
+(Format of this file shamelessly stolen from the Linux kernel.)
+
+Maintainer guidelines:
+  1) Please test your changes and the changes you receive prior to
+     checkin.  The more varied the testing, the better.
+  2) It's nice to release alpha versions to the appropriate list for
+     testing.
+  3) Make sure your changes compile!
+
+Rules:
+1) The first person to complain about an unresponsive maintainer
+   automatically assumes maintainership of the code in question.
+
+Misc. core code
+---------------
+DRM library
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+KDrive
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+X apps
+P:	Jim Gettys
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+X.Org libraries
+---------------
+AppleWM
+CVS
+FS
+ICE
+SM
+WindowsWM
+X11
+XRes
+XScrnSaver
+XTrap
+Xau
+Xaw
+Xcomposite
+Xcursor
+Xdamage
+Xdmcp
+Xevie
+Xext
+Xfixes
+Xfont
+Xfontcache
+Xft
+Xi
+Xinerama
+Xmu
+Xp
+Xpm
+XprintAppUtil
+XprintUtil
+Xrandr
+Xrender
+Xt
+Xtst
+Xv
+XvMC
+Xxf86dga
+Xxf86misc
+Xxf86rush
+Xxf86vm
+dmx
+fontenc
+lbxutil
+oldX
+xkbfile
+xkbui
+xtrans
+
+X.Org core
+----------
+Cfb subsystem
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Composite extension
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Configuration subsystem
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Damage extension
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Device Independent X (DIX)
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+DRI subsystem
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+EXA subsystem
+P:	Eric Anholt
+M:	anholt@freebsd.org
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+GL subsystem
+P:	Ian Romanick
+M:	idr@us.ibm.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+Loader subsystem
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Randr extension
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Render extension
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+XAA subsystem
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Xfixes extension
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Xgl
+P:	David Reveman
+M:	davidr@novell.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+XKB
+P:	Daniel Stone
+M:	daniels@freedesktop.org
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Xprint
+P:	Drew Parsons
+P:	Felix Schulte
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+X.Org OS ports
+--------------
+FreeBSD
+P:	Eric Anholt
+M:	anholt@freebsd.org
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Linux/i386
+P:	Egbert Eich
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Linux/x86_64
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+Linux/ia64
+P:	Jesse Barnes
+M:	jbarnes@virtuousgeek.org
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Linux/ppc
+P:	Benjamin Herrenschmidt
+M:	benh@kernel.crashing.org
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+Linux/sparc
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+LynxOS
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+Mac OS X/Darwin
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+SCO
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+System V
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+Solaris (x86 & sparc)
+P:	Alan Coopersmith
+M:	alan.coopersmith@sun.com
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+USL
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+Xwin (Cygwin/mingw port)
+P:	Alan Hourihane
+M:	alanh@freedesktop.org
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+Drivers
+-------
+xf86-input-acecad
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-aiptek
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-calcomp
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-citron
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-digitaledge
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-dmc
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-dynapro
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-elo2300
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-elographics
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-evdev
+P:	Kristian Hogsberg
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-fpit
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-hyperpen
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-jamstudio
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-joystick
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-keyboard
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-magellan
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-magictouch
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-microtouch
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-mouse
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-mutouch
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-palmax
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-penmount
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-sample
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-spaceorb
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-summa
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-tek4957
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-ur98
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-vmmouse
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-input-void
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-apm
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-ark
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-ati
+P:	Alex Deucher
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+xf86-video-chips
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-cirrus
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-cyrix
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-dummy
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-fbdev
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-glide
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-glint
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-i128
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+xf86-video-i740
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-i810
+P:	Alan Hourihane
+M:	alanh@freedesktop.org
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+xf86-video-imstt
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-mga
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-neomagic
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-newport
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-nsc
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-nv
+P:	Aaron Plattner
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+xf86-video-rendition
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-s3
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-s3virge
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-savage
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-siliconmotion
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-sis
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-sisusb
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-sunbw2
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-suncg14
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-suncg3
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-suncg6
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-sunffb
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-sunleo
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-suntcx
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-tdfx
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Maintained
+
+xf86-video-tga
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-trident
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-tseng
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-v4l
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-vesa
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-vga
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-via
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-vmware
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-voodoo
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
+xf86-video-wsfb
+P:	?
+M:	?
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Unmaintained
+
