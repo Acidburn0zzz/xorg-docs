@@ -565,8 +565,8 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-glint
-P:	?
-M:	?
+P:	Alan Hourihane
+M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
@@ -587,7 +587,7 @@ S:	Unmaintained
 
 xf86-video-i810
 P:	Alan Hourihane
-M:	alanh@freedesktop.org
+M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -621,8 +621,8 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-nsc
-P:	?
-M:	?
+P:	Alan Hourihane
+M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
@@ -740,15 +740,15 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-tga
-P:	?
-M:	?
+P:	Alan Hourihane
+M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-trident
-P:	?
-M:	?
+P:	Alan Hourihane
+M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
