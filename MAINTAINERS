@@ -36,6 +36,21 @@ S:	Maintained
 
 X.Org libraries
 ---------------
+
+xkbfile, xkbui
+P: Daniel Stone
+M: daniel@fooishbar.org
+L: xorg@lists.freedesktop.org
+W: htp://www.freedesktop.org
+S: Maintained
+
+xkbfile
+P: Daniel Stone
+M: daniel@fooishbar.org
+L: xorg@lists.freedesktop.org
+W: htp://www.freedesktop.org
+S: Maintained
+
 AppleWM
 CVS
 FS
@@ -79,8 +94,6 @@ dmx
 fontenc
 lbxutil
 oldX
-xkbfile
-xkbui
 xtrans
 
 X.Org core
@@ -185,7 +198,7 @@ S:	Maintained
 
 XKB
 P:	Daniel Stone
-M:	daniels@freedesktop.org
+M:	daniel@fooishbar.org
 L:	xorg@freedesktop.org
 W:	http://www.freedesktop.org
 S:	Maintained
