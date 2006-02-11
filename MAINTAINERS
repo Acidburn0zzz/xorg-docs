@@ -754,11 +754,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-tseng
-P:	?
-M:	?
+P:	Luc Verhaegen
+M:	libv@skynet.be
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-v4l
 P:	?
