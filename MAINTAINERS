@@ -569,7 +569,7 @@ P:	Alan Hourihane
 M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-i128
 P:	Adam Jackson
@@ -625,7 +625,7 @@ P:	Alan Hourihane
 M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-nv
 P:	Aaron Plattner
@@ -744,14 +744,14 @@ P:	Alan Hourihane
 M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-trident
 P:	Alan Hourihane
 M:	alanh@fairlite.demon.co.uk
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-tseng
 P:	Luc Verhaegen
