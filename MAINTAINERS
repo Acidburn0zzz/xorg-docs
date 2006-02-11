@@ -144,7 +144,7 @@ P:	Ian Romanick
 M:	idr@us.ibm.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 Loader subsystem
 P:	Adam Jackson
@@ -294,7 +294,7 @@ P:	Alan Hourihane
 M:	alanh@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 Drivers
 -------
