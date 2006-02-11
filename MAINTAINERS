@@ -488,11 +488,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-input-vmmouse
-P:	?
-M:	?
+P:	Philip Langdale
+M:	plangdale@vmware.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-input-void
 P:	?
@@ -789,11 +789,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-vmware
-P:	?
-M:	?
+P:	Philip Langdale
+M:	plangdale@vmware.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-voodoo
 P:	?
