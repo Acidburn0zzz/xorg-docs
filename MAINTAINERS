@@ -362,11 +362,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-input-evdev
-P:	Kristian Hogsberg
+P:	Zephaniah E. Hull
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-input-fpit
 P:	?

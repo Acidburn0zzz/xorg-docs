@@ -1,3 +1,8 @@
+2006-02-11  Zephaniah E. Hull  <warp@aehallh.com>
+
+	* MAINTAINERS:
+	Took over xf86-input-evdev. *gulps*
+
 2005-12-21  Adam Jackson  <ajax@freedesktop.org>
 
 	* sgml/RELNOTES.sgml:
