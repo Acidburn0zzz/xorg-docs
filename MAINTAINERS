@@ -44,13 +44,6 @@ L: xorg@lists.freedesktop.org
 W: htp://wiki.x.org
 S: Maintained
 
-xkbfile
-P: Daniel Stone
-M: daniel@fooishbar.org
-L: xorg@lists.freedesktop.org
-W: htp://wiki.x.org
-S: Maintained
-
 AppleWM
 FS
 ICE
