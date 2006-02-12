@@ -11,18 +11,31 @@ Rules:
 1) The first person to complain about an unresponsive maintainer
    automatically assumes maintainership of the code in question.
 
+Unlike the kernel maintainers file, this goes more or less alphabetically
+by component within each subsystem, rather than alphabetically on maintainer
+name.
+
+P: Person
+M: Mail patches to
+L: Mailing list that is relevant to this area
+W: Web-page with status/info
+S: Status, one of the following:
+
+	Supported:	Someone is actually paid to look after this.
+	Maintained:     Someone actually looks after it.
+	Odd Fixes:	It has a maintainer but they don't have time to do
+			much other than throw the odd patch in. See below..
+	Unmaintained:	No current maintainer [but maybe you could take the
+			role as you write your new code].
+	Obsolete:	Old code. Something tagged obsolete generally means
+			it has been replaced by a better system and you
+			should be using that.
+
 Misc. core code
 ---------------
 DRM library
 P:	Adam Jackson
 M:	ajax@nwnk.net
-L:	xorg@lists.freedesktop.org
-W:	http://wiki.x.org
-S:	Maintained
-
-KDrive
-P:	Keith Packard
-M:	keith.packard@intel.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -37,13 +50,6 @@ S:	Maintained
 X.Org libraries
 ---------------
 
-xkbfile, xkbui
-P: Daniel Stone
-M: daniel@fooishbar.org
-L: xorg@lists.freedesktop.org
-W: htp://wiki.x.org
-S: Maintained
-
 AppleWM
 FS
 ICE
@@ -55,37 +61,55 @@ XScrnSaver
 XTrap
 Xau
 Xaw
-Xcomposite
-Xcursor
-Xdamage
+
+Xcomposite, Xcursor, Xdamage, Xfixes, Xrandr, Xrender
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
 Xdmcp
 Xevie
 Xext
-Xfixes
 Xfont
 Xfontcache
 Xft
 Xi
 Xinerama
+
+xkbfile, xkbui
+P: Daniel Stone
+M: daniel@fooishbar.org
+L: xorg@lists.freedesktop.org
+W: htp://wiki.x.org
+S: Maintained
+
 Xmu
 Xp
 Xpm
 XprintAppUtil
 XprintUtil
-Xrandr
-Xrender
 Xt
 Xtst
 Xv
 XvMC
 Xxf86dga
 Xxf86misc
+
 Xxf86rush
+S:	Obsolete
+
 Xxf86vm
 dmx
 fontenc
+
 lbxutil
+S:	Obsolete
+
 oldX
+S:	Obsolete
+
 xtrans
 
 X.Org core
@@ -93,9 +117,9 @@ X.Org core
 Cfb subsystem
 P:	Adam Jackson
 M:	ajax@nwnk.net
-L:	xorg@lists.freedesktop.org
-W:	http://wiki.x.org
-S:	Maintained
+L:	xorg@freedesktop.org
+W:	http://www.freedesktop.org
+S:	Obsolete
 
 Composite extension
 P:	Keith Packard
@@ -146,6 +170,13 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
+KDrive
+P:	Keith Packard
+M:	keith.packard@intel.com
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
 Loader subsystem
 P:	Adam Jackson
 M:	ajax@nwnk.net
@@ -172,7 +203,7 @@ P:	Adam Jackson
 M:	ajax@nwnk.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Maintained
+S:	Obsolete
 
 Xfixes extension
 P:	Keith Packard
@@ -220,11 +251,11 @@ W:	http://wiki.x.org
 S:	Maintained
 
 Linux/x86_64
-P:	?
+P:	Egbert Eich
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 Linux/ia64
 P:	Jesse Barnes
@@ -457,7 +488,7 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Obsolete
 
 xf86-input-spaceorb
 P:	?
@@ -495,11 +526,11 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-input-void
-P:	?
-M:	?
+P:	Adam Jackson
+M:	ajax@nwnk.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-apm
 P:	?
@@ -523,11 +554,11 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-chips
-P:	?
+P:	Egbert Eich
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-cirrus
 P:	?
@@ -544,11 +575,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-dummy
-P:	?
-M:	?
+P:	Adam Jackson
+M:	ajax@nwnk.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-fbdev
 P:	?
@@ -562,7 +593,7 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Obsolete
 
 xf86-video-glint
 P:	Alan Hourihane
@@ -635,11 +666,11 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-rendition
-P:	?
-M:	?
-L:	xorg@lists.freedesktop.org
+P:	Adam Jackson
+M:	ajax@nwnk.net
+L:	xorg@freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Odd fixes.
 
 xf86-video-s3
 P:	?
@@ -656,7 +687,7 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-savage
-P:	?
+P:	Alex Deucher
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
@@ -670,18 +701,18 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-sis
-P:	?
+P:	Thomas Winischhofer
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-sisusb
-P:	?
+P:	Thomas Winischhofer
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-sunbw2
 P:	?
@@ -712,11 +743,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-sunffb
-P:	?
+P:	David S. Miller
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Odd fixes
 
 xf86-video-sunleo
 P:	?
@@ -796,14 +827,14 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-voodoo
-P:	?
+P:	Alan Cox
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Odd fixes
 
 xf86-video-wsfb
-P:	?
+P:	Matthieu Herrb
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
