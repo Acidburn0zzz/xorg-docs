@@ -261,12 +261,12 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
 
-SCO
-P:	?
-M:	?
+SCO (OpenServer 5)
+P:	Kean Johnston
+M:	jkj@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 System V
 P:	?
@@ -282,12 +282,12 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org & http://opensolaris.org/os/community/x_win/
 S:	Maintained
 
-USL
-P:	?
-M:	?
+USL (UnixWare 7.1.x, OpenServer 6)
+P:	Kean Johnston
+M:	jkj@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 Xwin (Cygwin/mingw port)
 P:	Alan Hourihane
