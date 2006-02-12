@@ -547,7 +547,7 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-ati
-P:	Alex Deucher
+P:	Alex Deucher, et al.
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
@@ -688,14 +688,14 @@ S:	Unmaintained
 
 xf86-video-savage
 P:	Alex Deucher
-M:	?
+M:	agd5f@yahoo.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-siliconmotion
-P:	?
-M:	?
+P:	Alex Deucher
+M:	agd5f@yahoo.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
