@@ -117,8 +117,8 @@ X.Org core
 Cfb subsystem
 P:	Adam Jackson
 M:	ajax@nwnk.net
-L:	xorg@freedesktop.org
-W:	http://www.freedesktop.org
+L:	xorg@listsfreedesktop.org
+W:	http://wiki.x.org
 S:	Obsolete
 
 Composite extension
@@ -668,7 +668,7 @@ S:	Maintained
 xf86-video-rendition
 P:	Adam Jackson
 M:	ajax@nwnk.net
-L:	xorg@freedesktop.org
+L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Odd fixes.
 
