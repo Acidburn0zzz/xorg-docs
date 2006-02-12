@@ -292,6 +292,13 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
 
+OpenBSD
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
 SCO (OpenServer 5)
 P:	Kean Johnston
 M:	jkj@freedesktop.org
@@ -835,8 +842,8 @@ S:	Odd fixes
 
 xf86-video-wsfb
 P:	Matthieu Herrb
-M:	?
+M:	matthieu.herrb@laas.fr
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
