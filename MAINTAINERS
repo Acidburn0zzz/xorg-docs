@@ -55,14 +55,13 @@ FS
 ICE
 SM
 WindowsWM
-X11
 XRes
 XScrnSaver
 XTrap
 Xau
 Xaw
 
-Xcomposite, Xcursor, Xdamage, Xfixes, Xrandr, Xrender
+X11, Xcomposite, Xcursor, Xdamage, Xfixes, Xrandr, Xrender
 P:	Keith Packard
 M:	keith.packard@intel.com
 L:	xorg@lists.freedesktop.org
