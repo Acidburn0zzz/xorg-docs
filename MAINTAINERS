@@ -462,11 +462,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-input-mouse
-P:	?
-M:	?
+P:	Egbert Eich
+M:	eich@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-input-mutouch
 P:	?
@@ -561,7 +561,7 @@ S:	Maintained
 
 xf86-video-chips
 P:	Egbert Eich
-M:	?
+M:	eich@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -616,8 +616,9 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-i740
-P:	?
-M:	?
+P:	Egbert Eich
+P:	??
+M:	eich@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
@@ -644,11 +645,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-neomagic
-P:	?
-M:	?
+P:	Egbert Eich
+M:	eich@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-newport
 P:	?
