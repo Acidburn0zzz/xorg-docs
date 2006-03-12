@@ -74,15 +74,16 @@ Xext
 Xfont
 Xfontcache
 Xft
-Xi
 Xinerama
 
-xkbfile, xkbui
-P: Daniel Stone
-M: daniel@fooishbar.org
-L: xorg@lists.freedesktop.org
-W: htp://wiki.x.org
-S: Maintained
+Xi, xkbfile, xkbui
+P:	Daniel Stone
+M:	daniel@fooishbar.org
+L:	xorg@lists.freedesktop.org
+W:	htp://wiki.x.org
+S:	Maintained
+S:	XKB being overhauled
+S:	Please contact Daniel if you're planning to work on this
 
 Xmu
 Xp
@@ -223,7 +224,18 @@ P:	Daniel Stone
 M:	daniel@fooishbar.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Maintained
+S:	Maintained, being seriously overhauled
+S:	Please contact Daniel if you're planning to work on this
+
+XInput
+P:	Daniel Stone
+M:	daniel@fooishbar.org
+P:	Zepheniah E. Hull
+M:	warp@debian.org
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained, being overhauled
+S:	Please contact Daniel or Zepheniah if you're planning to work on this
 
 Xprint
 P:	Drew Parsons
@@ -847,3 +859,14 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
+
+Developer relations
+-------------------
+
+Supply of pastries, other food, beverages
+P:	Luc Verhaegen
+M:	libv@skynet.be
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Disrepair
+S:	'Other food' may induce illness.  Beware.

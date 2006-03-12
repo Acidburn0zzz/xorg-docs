@@ -1,3 +1,10 @@
+2006-03-12  Daniel Stone  <daniel@freedesktop.org>
+
+	* MAINTAINERS:
+	Claim Xi for myself and Mercury.  Note that XKB and Xi in the srever
+	are in the middle of some serious work.
+	Acknowledge Luc's pivotal role in X development.
+
 2006-02-17  Keith Packard  <keithp@keithp.com>
 
 	* specs/Xext/shape.ms:
