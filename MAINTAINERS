@@ -564,6 +564,13 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
 
+xf86-video-ast
+P:	Y.C. Chen
+M:	yc_chen@aspeedtech.com
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
 xf86-video-ati
 P:	Alex Deucher, et al.
 M:	?
