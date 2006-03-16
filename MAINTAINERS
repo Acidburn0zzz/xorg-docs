@@ -867,8 +867,22 @@ W:	http://wiki.x.org
 S:	Maintained
 
 
-Developer relations
--------------------
+Developer relations & services
+------------------------------
+
+Mailing lists (lists.x.org)
+P:	Mike Harris
+M:	mailman@lists.x.org
+L:	mailman@lists.x.org
+W:	http://lists.x.org/mailman/listinfo/
+S:	Maintained
+
+Website (www.x.org)
+P:	Stuart Anderson
+M:	anderson@netsweng.com
+L:	xorg@lists.freedesktop.org
+W:	http://www.x.org/
+S:	Maintained
 
 Supply of pastries, other food, beverages
 P:	Luc Verhaegen
