@@ -1,7 +1,20 @@
+2006-04-06  Alan Coopersmith  <alan.coopersmith@sun.com>
+
+	* MAINTAINERS: 
+	Start splitting out maintained apps.   (Accepted the xdm hot potato,
+	stuck xkbcomp on Daniel as part of his XKB master plan, compiz on
+	Dave R. - left the rest assigned to Jim, though probably should be
+	listed as "Seeking maintainers".)
+
 2006-04-01  Adam Jackson  <ajax@freedesktop.org>
 
 	* configure.ac:
 	Bump to 1.1 for some reason.
+
+2006-03-15  Alan Coopersmith  <alan.coopersmith@sun.com>
+
+	* MAINTAINERS: 
+	Add xf86-video-ast driver.
 
 2006-03-12  Daniel Stone  <daniel@freedesktop.org>
 
