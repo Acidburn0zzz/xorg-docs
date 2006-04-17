@@ -45,8 +45,8 @@ X.Org apps
 compiz
 P:	David Reveman
 M:	davidr@novell.com
-L:	xorg@lists.freedesktop.org
-W:	http://wiki.x.org
+L:	compiz@lists.freedesktop.org
+W:	http://wiki.freedesktop.org/wiki/Software_2fCompiz
 S:	Maintained
 
 xdm
@@ -137,13 +137,18 @@ oldX
 S:	Obsolete
 
 xtrans
+P:      Bill Crawford
+M:      billcrawford1970@gmail.com
+L:      xorg@lists.freedesktop.org
+W:      http://wiki.x.org
+S:      Maintained
 
 X.Org core
 ----------
 Cfb subsystem
 P:	Adam Jackson
 M:	ajax@nwnk.net
-L:	xorg@listsfreedesktop.org
+L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Obsolete
 
@@ -253,7 +258,7 @@ W:	http://wiki.x.org
 S:	Maintained, being seriously overhauled
 S:	Please contact Daniel if you're planning to work on this
 
-XInput
+Input subsystem
 P:	Daniel Stone
 M:	daniel@fooishbar.org
 P:	Zepheniah E. Hull
@@ -282,14 +287,14 @@ S:	Maintained
 
 Linux/i386
 P:	Egbert Eich
-M:	?
+M:	eich@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
 Linux/x86_64
 P:	Egbert Eich
-M:	?
+M:	eich@freedesktop.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -438,7 +443,7 @@ S:	Unmaintained
 
 xf86-input-evdev
 P:	Zephaniah E. Hull
-M:	?
+M:	warp@aehallh.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -597,8 +602,17 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
-xf86-video-ati
-P:	Alex Deucher, et al.
+xf86-video-ati/atimisc
+P:      Luc Verhaegen
+M:      libv@skynet.be
+L:      xorg@lists.freedesktop.org
+W:      http://wiki.x.org
+S:      Maintained, being overhauled
+
+xf86-video-ati/r128, radeon
+P:	Alex Deucher
+P:      Ben Herrenschmidt
+P:      et al
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
@@ -865,10 +879,12 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-via
-P:	?
+P:	Luc Verhaegen
+P:      Thomas Hellström
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
+W:      http://unichrome.sf.net
 S:	Unmaintained
 
 xf86-video-vmware
