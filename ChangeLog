@@ -1,3 +1,9 @@
+2006-05-22  Adam Jackson  <ajax@freedesktop.org>
+
+	* sgml/README.sgml:
+	* sgml/RELNOTES.sgml:
+	7.1 updates.
+
 2006-04-06  Alan Coopersmith  <alan.coopersmith@sun.com>
 
 	* MAINTAINERS: 

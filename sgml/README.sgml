@@ -21,7 +21,7 @@ $Id$.
 
 <abstract>
 
-X11R&relvers; and X11R&modvers; are Open Source versions of the X Window
+X11R&modvers; is an Open Source versions of the X Window
 System that supports many UNIX(R) and UNIX-like operating systems (such
 as Linux, FreeBSD, NetBSD, OpenBSD and Solaris x86) on Intel and other
 platforms.  This version is compatible with X11R&prevrelvers; and other
@@ -32,7 +32,7 @@ standard.
 
 <toc>
 
-<sect>What are X11R&relvers; and X11R&modvers;?
+<sect>What is X11R&modvers;?
 <p>
 <![ %updaterel [
 X11R&relvers; is the &whichupdaterel; update to X11R&majorvers;,
@@ -48,10 +48,7 @@ stability.
 ]]>
 
 <![ %fullrel [
-X11R&relvers; is the &whichfullrel; and final full release in the
-<![ %earlyrel; [new]]>
-X11R&majorvers; series, and X11R&modvers; is the first release in the
-new X11R&modmajor; series.
+X11R&modvers; is the second release in the new X11R&modmajor; series.
 ]]>
 
 <![ %snapshot [
@@ -74,28 +71,16 @@ X11R&relvers; is a feature-complete snapshot of X11R&fullrelvers;.
 
 <![ %fullrel [The &relvers; version is a new release that includes
 additional hardware support, functional enhancements and bug fixes.]]>
-The &modvers; version is built from the same source code as the
-&relvers; so it contains the same additional hardware support,
-functional enhancements and bug fixes; however, it has been split into
-logical modules that can be developed, built and maintained separately,
-but still fit together coherently into the larger source code base as
-they have in the &relvers; tree.
 <![ %haverelnotes [
 Specific release enhancements can be viewed in the
 <htmlurl name="Release Notes" url="RELNOTES.html">.
 ]]>
 
-X11R&relvers; and X11R&modvers; are being released at the same time to
-assist in the transition from the older monolithic source tree to the
-new modular source tree.  It will take time for everyone to make this
-transition, so we will maintain the older X11R&majorvers; series through
-update releases to both X11R&relvers; and X11R&prevrelvers;.
-
 Most modern PC video hardware is supported in both releases, and most PC
 video hardware that isn't supported explicitly can be used with the
 "vesa" driver.  The <htmlurl name="Release Notes" url="RELNOTES3.html">
-has a table showing the drivers provided with X11R&relvers; and
-X11R&modvers;, and links to related documentation.
+has a table showing the drivers provided with X11R&modvers;, and links to
+related documentation.
 
 The X.Org Foundation X releases are produced by the X.Org Foundation.
 The X.Org Foundation has been formed as a Delaware corporation organized
@@ -106,8 +91,8 @@ in the X.Org Foundation is free to all participants. Applications for
 Membership are now being accepted, and active participants in the
 further development of the X Window Technology are invited to complete a
 <url url="http://www.x.org/XOrg_Foundation_Membership.html"
-name="membership application">.  The X11R&relvers; and X11R&modvers;
-codebase forms the fourth X Window System release since the formation of
+name="membership application">.  The X11R&modvers;
+codebase forms the fifth X Window System release since the formation of
 the X.Org Foundation and includes code from the X Consortium, the Open
 Group and the XFree86&trade; project.  This release is dedicated to the
 greater X community, developers and users alike.
@@ -193,16 +178,11 @@ mirrors of this server.
 ]]>
 
 <![ %release; [
-Information about X11R&relvers; and X11R&modvers; can be found from the
+Information about X11R&modvers; can be found from the
 <url name="X.Org Foundation wiki at" url="http://wiki.x.org">, and at
 mirrors of this server.  Information about obtaining and installing
 binary distributions of this release can be found in the <htmlurl
 name="Installation Document" url="Install.html">.
-
-Note that both X11R&relvers; and X11R&modvers; are being released
-simultaneously but only one source tree is required to build the
-release.  Information about obtaining the release in source form is
-given below.
 ]]>
 
 <sect1>X11R&relvers;
@@ -388,7 +368,7 @@ package available from the Xorg CVS repository's "doctools" module.
 
 <sect1>X11R&modvers;
 <p>
-This is the first release of the new modular source code tree.  The
+This is the second release of the new modular source code tree.  The
 souce code has been split into nine logical modules: app, data, doc,
 driver, font, lib. proto, util and xserver.  Each of these modules
 contain one or more packages that can be configured, built and installed
