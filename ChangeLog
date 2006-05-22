@@ -1,3 +1,10 @@
+2006-05-22  Kevin E. Martin  <kem-at-freedesktop-dot-org>
+
+	* sgml/README.sgml:
+	* sgml/RELNOTES.sgml:
+	* sgml/Versions.sgml:
+	More updates for 7.1 release.
+
 2006-05-22  Adam Jackson  <ajax@freedesktop.org>
 
 	* sgml/README.sgml:
