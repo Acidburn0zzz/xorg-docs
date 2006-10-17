@@ -34,9 +34,14 @@ HARDCOPYDIR=$X11DOCDIR/hardcopy
 AC_SUBST([X11DOCDIR])
 AC_SUBST([HARDCOPYDIR])
 
+AC_ARG_ENABLE(pdf,      AS_HELP_STRING([--enable-pdf],
+                [Build PDF versions of documents (default: enabled)]),
+                [BUILD_PDFDOC=$enableval], [BUILD_PDFDOC=yes])
+
 XORG_MANPAGE_SECTIONS
 XORG_RELEASE_VERSION
 
+AM_CONDITIONAL(BUILD_PDFDOC, test "x$BUILD_PDFDOC" = xyes)
 XORG_CHECK_LINUXDOC
 
 AC_OUTPUT([Makefile
