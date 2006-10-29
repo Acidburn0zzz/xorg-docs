@@ -22,7 +22,6 @@
 
 SGML_FILES = \
 	Darwin.sgml \
-	dps.sgml \
 	fonts.sgml \
 	Install.sgml \
 	LICENSE.sgml \
@@ -38,7 +37,7 @@ SGML_FILES = \
 	XKB-Config.sgml \
 	XKB-Enhancing.sgml
 
-if BUILD_LINUXDOC
+if BUILD_DOCBOOK
 TXT_FILES  = $(SGML_FILES:%.sgml=%.txt)
 PS_FILES   = $(SGML_FILES:%.sgml=%.ps)
 if BUILD_PDFDOC
@@ -56,7 +55,7 @@ SUFFIXES = .sgml .txt .html .ps .pdf
 	@rm -f $@
 	$(MAKE_PS) $<
 
-.ps.pdf:
+.sgml.pdf:
 	@rm -f $@
 	$(MAKE_PDF) $<
 
