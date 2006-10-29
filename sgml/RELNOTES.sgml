@@ -1,5 +1,5 @@
 <!DOCTYPE linuxdoc PUBLIC "-//Xorg//DTD linuxdoc//EN" [
-<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+<!ENTITY % defs SYSTEM "/usr/share/X11/sgml/defs.ent"> %defs;
 ]>
 
 <article>

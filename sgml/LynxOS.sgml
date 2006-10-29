@@ -1,139 +1,231 @@
-<!DOCTYPE linuxdoc PUBLIC "-//XFree86//DTD linuxdoc//EN" [
-<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook V4.2//EN" [
+<!ENTITY % defs SYSTEM "/usr/share/X11/sgml/defs.ent"> %defs;
 ]>
 
-<article>
-<title>README for X11R&relvers; on LynxOS
-<author>Thomas Mueller
-<date>25 August 2004
+<Article>
 
-<ident>
-</ident>
+<articleinfo>
 
-<toc>
+<Title>README for X11R&relvers; on LynxOS</Title>
+<AUTHOR><firstname>Thomas</firstname><surname>Mueller</surname></author>
+<PubDate>&reldate;</PubDate>
 
-<sect>What and Where is X11R&relvers;?
-<p>
+</articleinfo>
+
+<Sect1>
+<Title>What and Where is X11R&relvers;?</Title>
+
+<Para>
 X11R&relvers; is a port of X11R6.4 that supports several versions of
 Intel-based Unix.  It is derived from XFree86 4.4 rc2 which was 
 derived from X386 1.2, which was the X server
 distributed with X11R5.  This release consists of many new features
 and performance improvements as well as many bug fixes.
+</Para>
 
-See the <htmlurl url="COPYRIGHT.html" name="Copyright Notice">.
+<Para>
+See the <ulink url="COPYRIGHT.html">Copyright Notice</ulink>.
+</Para>
 
+<Para>
 Building of this X11R&relvers; version has been tested on
 `LynxOS 3.1.0a i386' and `LynxOS 4.0.0 i386'.
+</Para>
 
+<Para>
 Previous releases of X11R&relvers; supported LynxOS on the x86 and on
 the PowerPC platform. Building on PowerPC platforms has not been
 tested recently.
+</Para>
 
-<sect>Installing X11R&relvers;
-<p>
-Please refer to the <htmlurl name="Installation Document"
-url="Install.html"> for detailed installation instructions.
+</Sect1>
 
+<Sect1>
+<Title>Installing X11R&relvers;</Title>
+
+<Para>
+Please refer to the <ULink
+URL="Install.html"
+>Installation Document</ULink
+> for detailed installation instructions.
+</Para>
+
+<Para>
 It may be necessary to increase the process stack limit in order to
 build X11R&relvers; and run X11R&relvers; on your system. Edit
-<tt>/etc/startab</tt> and reboot your system to make the changes
+<Literal remap="tt">/etc/startab</Literal> and reboot your system to make the changes
 active before you begin the installation.
+</Para>
 
-Also, be sure to include <tt>/usr/X11R6/bin</tt> in your PATH
+<Para>
+Also, be sure to include <Literal remap="tt">/usr/X11R6/bin</Literal> in your PATH
 environment variable.
+</Para>
 
-Refer to the next section <ref id="running" name="Running X11R&relvers;"> for
+<Para>
+Refer to the next section <XRef LinkEnd="running"> for
 further information on necessary configuration steps before running 
 X11R&relvers; on LynxOS. 
+</Para>
 
-<sect1>Accessing X11R&relvers; manual pages
-<p>
-Include <tt>/usr/X11R6/man</tt> in the MANPATH environment variable or add 
-the directory <tt>/usr/X11R6/man</tt> to <tt>/usr/Lib/man.config</tt>
+<Sect2>
+<Title>Accessing X11R&relvers; manual pages</Title>
 
+<Para>
+Include <Literal remap="tt">/usr/X11R6/man</Literal> in the MANPATH environment variable or add 
+the directory <Literal remap="tt">/usr/X11R6/man</Literal> to <Literal remap="tt">/usr/Lib/man.config</Literal>
+</Para>
 
-<sect>Running X11R&relvers;<p><label id="running">
+</Sect2>
 
+</Sect1>
+
+<Sect1 id="running" xreflabel="Running X11R&relvers;">
+<Title>Running X11R&relvers;</Title>
+
+<Para>
 This section describes the changes to the LynxOS environment 
 which may be necessary to successfully run X11R&relvers;.
+</Para>
 
 <!--
 Read <htmlurl url="QuickStart.html" name="Quick-Start Guide 
-to X11R&relvers; Setup"> to learn more about how to configure X11R&relvers; for
+to X11R&relvers; Setup"> to learn more about how to configure X11R&relvers;
+for
 your hardware.
 -->
 
-<sect1>System tuning<p>
-<sect2>Tunable parameters<p>
+<Sect2>
+<Title>System tuning</Title>
+
+<Sect3>
+<Title>Tunable parameters</Title>
+
+<Para>
 To reasonably run X11R&relvers; you may have to adjust a few system parameters.
+</Para>
 
+<Para>
 On LynxOS 3.1.0 and 4.0.0 include a line
-<verb>
+
+<Screen>
 #define X_WINDOWS
-</verb>
+</Screen>
 
-in <tt>/sys/lynx.os/uparam.h</tt>.
+</Para>
 
-<sect2>Adjustment for "nv" driver for NVidia graphics cards<p>
+<Para>
+in <Literal remap="tt">/sys/lynx.os/uparam.h</Literal>.
+</Para>
 
+</Sect3>
+
+<Sect3>
+<Title>Adjustment for "nv" driver for NVidia graphics cards</Title>
+
+<Para>
 If you're using the "nv" driver (Riva 128, nVidia TNT, TNT2, GeForce)
 on LynxOS `3.1.0', you will have to increase the value of the SMEMS
-parameter in <tt>/sys/lynx.os/uparam.h</tt> from 10 to 20.
+parameter in <Literal remap="tt">/sys/lynx.os/uparam.h</Literal> from 10 to 20.
+</Para>
 
-<sect2>Increase number of ptys<p>
+</Sect3>
 
+<Sect3>
+<Title>Increase number of ptys</Title>
+
+<Para>
 You should also increase the number of ptys to be able run a couple
-more xterms. You may replace <tt>/sys/cfg/pty.cfg</tt> with
-<tt>/usr/X11R6/lib/X11/etc/pty.cfg</tt>.
+more xterms. You may replace <Literal remap="tt">/sys/cfg/pty.cfg</Literal> with
+<Literal remap="tt">/usr/X11R6/lib/X11/etc/pty.cfg</Literal>.
+</Para>
 
-<sect2>MTRR device driver<p>
+</Sect3>
 
+<Sect3>
+<Title>MTRR device driver</Title>
+
+<Para>
 If you're using an Intel PentiumPRO or Pentium II (or higher) class
 CPU you might want to install the MTRR device driver. This driver
 enables the X11R&relvers; X server to manipulate the CPU memory type range
 registers which may improve performance on certain systems.
+</Para>
 
+<Para>
 To install the driver follow these steps:
+</Para>
 
-<tscreen><verb>
+<Para>
+
+<Screen>
   # cd /
   # bash /usr/X11R6/lib/X11/etc/MTRR-Lynx.shar
   # cd sys/drivers/mtrr
   # make install
-</verb></tscreen>
+</Screen>
 
+</Para>
+
+<Para>
 Then add a line
-<tscreen><verb>
+
+<Screen>
   I:../drivers/mtrr/mtrr.cfg
-</verb></tscreen>
-to <tt>/sys/lynx.os/CONFIG.TBL</tt> and rebuild the kernel (see next section).
+</Screen>
 
-<sect2>Kernel build<p>
+to <Literal remap="tt">/sys/lynx.os/CONFIG.TBL</Literal> and rebuild the kernel (see next section).
+</Para>
 
+</Sect3>
+
+<Sect3>
+<Title>Kernel build</Title>
+
+<Para>
 If you plan to use a PS/2 mouse to the following sections
 before rebuilding the kernel, if not, you should rebuild the kernel
 now:
+</Para>
 
-  <tscreen><verb>
+<Para>
+
+<Screen>
      # cd /sys/lynx.os
      # make install
      # reboot -N
-  </verb></tscreen>
+  
+</Screen>
 
-<sect1>Mouse support in X11R&relvers;<p>
+</Para>
 
-X11R&relvers; includes support for PnP mice (see also <htmlurl
-url="mouse.html" name="Mouse Support in X11R&relvers;">). The current LynxOS
+</Sect3>
+
+</Sect2>
+
+<Sect2>
+<Title>Mouse support in X11R&relvers;</Title>
+
+<Para>
+X11R&relvers; includes support for PnP mice (see also <ULink
+URL="mouse.html"
+>Mouse Support in X11R&relvers;</ULink>). The current LynxOS
 TTY device driver doesn't allow the necessary manipulation of the RTS
 line and therefore the support for PnP mice has been disabled for
 LynxOS.
+</Para>
 
-<sect1>PS/2 mouse drivers<p>
+</Sect2>
 
+<Sect2>
+<Title>PS/2 mouse drivers</Title>
+
+<Para>
 LynxOS x86 comes with a PS/2 mouse driver. If it is not currently
 installed on your system, install it with
-<tt>/usr/bin/Install.ps2mouse</tt>. 
-  
+<Literal remap="tt">/usr/bin/Install.ps2mouse</Literal>. 
+</Para>
+
 <!--
 On `LynxOS 3.1.0a' some versions of this driver contained code to
 translate the PS/2 mouse protocol to the format of a serial mouse,
@@ -143,12 +235,16 @@ higher) does no longer perform the protocol translation an therefore
 can be defined as "PS/2" protocol format.
 -->
 
+<Para>
 The LynxOS PS/2 mouse driver is not always able to properly handle
 the mouse initialization performed by the X server. If your mouse is
 not responding after the X server has started up, modify the PS/2
 mouse driver as follows:
+</Para>
 
-  <tscreen><verb>
+<Para>
+
+<Screen>
   --- /sys/drivers/ps2mouse/mousedrvr.c.orig      Wed Aug 25 09:51:02 2004
   +++ /sys/drivers/ps2mouse/mousedrvr.c   Wed Aug 25 09:50:54 2004
   @@ -261,6 +261,7 @@
@@ -157,62 +253,92 @@ mouse driver as follows:
           int i;
   +       return 0;
    #ifdef DEBUG
-          kkprintf("Mouse: write %d %x\n", count, buff[0] & 0x0FF);
+          kkprintf("Mouse: write %d %x\n", count, buff[0] &#38; 0x0FF);
    #endif
-  </verb></tscreen>
+  
+</Screen>
 
+</Para>
+
+<Para>
 Then rebuild both the mouse driver and the kernel:
+</Para>
 
-  <tscreen><verb>
+<Para>
+
+<Screen>
      # cd /sys/drivers/ps2mouse
      # make
      # cd /sys/lynx.os
      # make install
      # reboot
-  </verb></tscreen>
+  
+</Screen>
 
-<sect1> ATC console driver and VT switching<p>
+</Para>
 
+</Sect2>
+
+<Sect2>
+<Title>ATC console driver and VT switching</Title>
+
+<Para>
 Currently there is no support for virtual terminal switching
 once the server has started. Support for this feature may be added in
 future versions (it requires a patch to the vt100 LynxOS terminal
 driver).
+</Para>
 
+<Para>
 You will need a free console which the X server will use for keyboard
 input. You must disable login on at least one of the four virtual
-terminals in <tt>/etc/ttys</tt>, e.g. <tt>/dev/atc3</tt>:
+terminals in <Literal remap="tt">/etc/ttys</Literal>, e.g. <Literal remap="tt">/dev/atc3</Literal>:
+</Para>
 
-  <tscreen>
-    change
-  <verb>
+<Para>
+
+<Screen>
+change
        /dev/atc3:1:default:vt100at:/bin/login
-  </verb>
-    to
-  <verb>
+  
+to
        /dev/atc3:0:default:vt100at:/bin/login
                  ^
-  </verb></tscreen>
+  
+</Screen>
 
-<sect1>X Server debug diagnostics output and other VT peculiarities<p>
+</Para>
 
+</Sect2>
+
+<Sect2>
+<Title>X Server debug diagnostics output and other VT peculiarities</Title>
+
+<Para>
 Output made by the X11R&relvers; X on its stdout or stderr will be lost
 after the server switches to graphics mode. The X11R&relvers;
-server stores its output in <tt>/usr/adm/Xorg.n.log</tt> (where
-<tt>n</tt> is the screen number).
+server stores its output in <Literal remap="tt">/usr/adm/Xorg.n.log</Literal> (where
+<Literal remap="tt">n</Literal> is the screen number).
+</Para>
 
+<Para>
 When the X server is running output made to other consoles will be
 lost. After server shutdown the screen contents of other consoles may
 be inconsistent with what one would expect (i.e. random).
+</Para>
 
+</Sect2>
+
+</Sect1>
 
 <!--
-<sect>Using X11R&relvers; with Motif<p>
+<sect1>Using X11R&relvers; with Motif<p>
 
   The Motif libraries shipped with LynxOS AT 2.3.0 and 2.4.0 can be
   used with the X11R&relvers; libraries. Follow the steps outlined below after
   you have installed X11R&relvers; and LynxOS Motif on your system.
 
-<sect1>Copy Motif files<p>
+<sect2>Copy Motif files<p>
 
   You must create symbolic links for the Motif libraries and 
   utilities in the <tt>/usr/X11R6</tt> directory tree.
@@ -232,8 +358,9 @@ be inconsistent with what one would expect (i.e. random).
   <tscreen><verb>
       cp /usr/lib/X11/config/Motif.* /usr/X11R6/lib/X11/config
   </verb></tscreen>
+</sect2>
 
-<sect1>Motif library patch for LynxOS AT 2.3.0<p>
+<sect2>Motif library patch for LynxOS AT 2.3.0<p>
 
   The X11R&relvers; libraries are compiled with the -mposix compiler option
   while the Motif libraries shipped with LynxOS AT 2.3.0 are not. This
@@ -251,7 +378,9 @@ be inconsistent with what one would expect (i.e. random).
   
   This patch is not necessary for LynxOS revisions after 2.3.0.
 
-<sect1>X11R6 config file patch<p>
+</sect2>
+
+<sect2>X11R6 config file patch<p>
 
   Edit <tt>/usr/X11R6/lib/X11/config/lynx.cf</tt> and change the definition
   of <tt>HasMotif</tt>
@@ -264,8 +393,9 @@ be inconsistent with what one would expect (i.e. random).
   <verb>
        #define HasMotif    YES
   </verb></tscreen>
+</sect2>
 
-<sect1>Motif config file patch<p>
+<sect2>Motif config file patch<p>
 
 The file <tt>Motif.tmpl</tt> shipped with LynxOS Motif must be
 modified to work with X11R&relvers;. In every reference to
@@ -281,95 +411,163 @@ modified to work with X11R&relvers;. In every reference to
   </verb></tscreen>
   Be sure to apply the change to the file copied to
   <tt>/usr/X11R6/lib/X11/config</tt>.
+</sect2>
+
+</sect1>
 
 -->
 
-<sect>Compiling the X11R&relvers; Distribution<p>
+<Sect1>
+<Title>Compiling the X11R&relvers; Distribution</Title>
 
 <!-- out of date
-Before trying to rebuild X11R&relvers; from source read <htmlurl url="BUILD.html"
+Before trying to rebuild X11R&relvers; from source read <htmlurl
+url="BUILD.    html"
 name="Building X11R&relvers;"> for a detailed description of the build
 process. -->
 
+<Para>
 The next sections contain LynxOS specific notes with respect to the
 build process.
+</Para>
 
-<sect1>Disk space requirements<p>
+<Sect2>
+<Title>Disk space requirements</Title>
+
+<Para>
 Currently there is no support for shared libraries in the LynxOS
 X11R&relvers; port. A complete binary installation along with manual
 pages will require approximately 250 MBytes of disk space. To compile
 the system you will need at least 350 MBytes of free disk space.
+</Para>
 
-<sect1>Changes to system environment (LynxOS x86)<p>
+</Sect2>
+
+<Sect2>
+<Title>Changes to system environment (LynxOS x86)</Title>
+
+<Para>
 Before compiling the X11R&relvers; distribution you will have to make a
 few little adjustments to your system:
+</Para>
 
-<itemize>
-<item>If not already installed, on your `LynxOS 3.1.0a' system create
-a shell script named <tt>/lib/cpp</tt> as follows:
-<tscreen><verb>
+<Para>
+
+<ItemizedList>
+<ListItem>
+
+<Para>
+If not already installed, on your `LynxOS 3.1.0a' system create
+a shell script named <Literal remap="tt">/lib/cpp</Literal> as follows:
+
+<Screen>
   #!/bin/sh
   /usr/lib/gcc-lib/i386-coff-lynxos/2.9-gnupro-98r2/cpp \
      -traditional "$@"
-</verb></tscreen>
+</Screen>
+
 On other platforms than the x86 the paths for the compiler support
 programs are different. You may use
-<tscreen><verb>
+
+<Screen>
   gcc -v
-</verb></tscreen>
-to find out the correct path. Set the file mode of <tt>/lib/cpp</tt> with
-<tscreen><verb>
+</Screen>
+
+to find out the correct path. Set the file mode of <Literal remap="tt">/lib/cpp</Literal> with
+
+<Screen>
   # chown root /lib/cpp
   # chmod 755 /lib/cpp
-</verb></tscreen>
+</Screen>
 
-<item>Modify <tt>/lib/liblynx.a</tt>. On `LynxOS 3.1.0a' the X servers
-need the <tt>smem_create()</tt> system call to map the frame buffer into their
-address space. The system call is in <tt>liblynx</tt> library along
+
+</Para>
+</ListItem>
+<ListItem>
+
+<Para>
+Modify <Literal remap="tt">/lib/liblynx.a</Literal>. On `LynxOS 3.1.0a' the X servers
+need the <Literal remap="tt">smem&lowbar;create()</Literal> system call to map the frame buffer into their
+address space. The system call is in <Literal remap="tt">liblynx</Literal> library along
 with other Lynx proprietary calls which (unfortunately) overlap with
-calls in <tt>libc</tt>. To reduce confusion you should modify
-<tt>liblynx</tt> as follows:
+calls in <Literal remap="tt">libc</Literal>. To reduce confusion you should modify
+<Literal remap="tt">liblynx</Literal> as follows:
 
-<tscreen><verb>
+
+<Screen>
   # mv /lib/liblynx.a /lib/liblynx.a.ORG
   # mkdir /tmp/xx; cd /tmp/xx
   # ar xv /lib/liblynx.a.ORG
   # ar rv /lib/liblynx.a *smem*
   # ranlib /lib/liblynx.a
-</verb></tscreen>
+</Screen>
 
-</itemize>
 
-<sect1> make World<p>
+</Para>
+</ListItem>
+
+</ItemizedList>
+
+</Para>
+
+</Sect2>
+
+<Sect2>
+<Title>make World</Title>
 
 <!-- out of date
 Read <htmlurl url="BUILD.html" name="Building X11R&relvers;"> before trying
 to rebuild X11R&relvers; from the source distribution.
 -->
 
+<Para>
 If you have the MTRR device driver installed, add a line
+</Para>
 
-  <tscreen><verb>
+<Para>
+
+<Screen>
     #define HasMTRRSupport YES
-  </verb></tscreen>
+  
+</Screen>
 
-to the <tt>config/cf/host.def</tt> file.
+</Para>
 
+<Para>
+to the <Literal remap="tt">config/cf/host.def</Literal> file.
+</Para>
+
+<Para>
 You may then issue a
+</Para>
 
-  <tscreen><verb>
+<Para>
+
+<Screen>
      make World
-  </verb></tscreen>
+  
+</Screen>
 
+</Para>
+
+<Para>
 to compile X11R&relvers;. After some time (and hopefully a successful
 build of the X11R&relvers; system) you can install the software using
+</Para>
 
-  <tscreen><verb>
+<Para>
+
+<Screen>
      make install
-  </verb></tscreen>
+  
+</Screen>
 
+</Para>
+
+<Para>
 You must be logged in as super-user (root) when you invoke `make
 install'.
+</Para>
 
 <!--
 On LynxOS x86 2.5.0 you may encounter problems with <tt>make</tt> in
@@ -377,34 +575,58 @@ deeply nested subdirectories (eg core dumps, hangups). In this case
 update to GNU make version 3.75 or higher.
 -->
 
-<sect1>Installing X11R&relvers; manual pages<p><label id="installman">
+</Sect2>
 
+<Sect2>
+<Title>Installing X11R&relvers; manual pages</Title>
+
+<Para>
+<Anchor id="installman">
+</Para>
+
+<Para>
 LynxOS uses cat-able manual pages, and because a doc preparation
 system is definitely not a vital component of a real-time operating
 system you must first install groff-1.09 (or newer).
+</Para>
 
+<Para>
 X11R&relvers; manual pages may be installed using
+</Para>
 
-  <tscreen><verb>
+<Para>
+
+<Screen>
      make install.man
-  </verb></tscreen>
+  
+</Screen>
 
+</Para>
+
+<Para>
 The index and whatis database for the X11R&relvers; manual pages will be
 created automatically. If you already have a whatis database or index
 file in the destination directories you should perform a sort/uniq
 operation to remove duplicate entries:
+</Para>
 
-  <tscreen><verb>
+<Para>
+
+<Screen>
      for i in 1 3 5
      do
        rm -f /tmp/tmpfile
-       sort /usr/X11R6/man/cat$i/LIST$i | uniq > /tmp/tmpfile
+       sort /usr/X11R6/man/cat$i/LIST$i | uniq &#62; /tmp/tmpfile
        mv /tmp/tmpfile /usr/X11R6/man/cat$i/LIST$i
      done
-     sort /usr/X11R6/man/whatis | uniq > /tmp/tmpfile
+     sort /usr/X11R6/man/whatis | uniq &#62; /tmp/tmpfile
      mv /tmp/tmpfile /usr/X11R6/man/whatis
-  </verb></tscreen>
   
+</Screen>
+
+</Para>
+
+</Sect2>
 
 <!--
 <sect>Building on microSPARC and PowerPC<label id="others"><p>
@@ -461,4 +683,6 @@ operation to remove duplicate entries:
   <tt>lynx.cf</tt> but it has never been tested (reports are welcome).
 -->
 
-</article>
+</Sect1>
+
+</Article>
