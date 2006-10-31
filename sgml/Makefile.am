@@ -61,7 +61,7 @@ SUFFIXES = .sgml .txt .html .ps .pdf
 
 .sgml.html:
 	@rm -f $@
-	$(MAKE_HTML) $<
+	$(MAKE_HTML) -o $@ $<
 
 noinst_DATA = $(TXT_FILES) $(PS_FILES) $(PDF_FILES) $(HTML_FILES)
 CLEANFILES = $(TXT_FILES) $(PS_FILES) $(PDF_FILES) $(HTML_FILES)
