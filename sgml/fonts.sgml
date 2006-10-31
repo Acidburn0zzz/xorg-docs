@@ -5,8 +5,8 @@
 <article>
 
 <title>Fonts in X11R&relvers;
-<author>Juliusz Chroboczek, <email/jch@pps.jussieu.fr/
-<date>25 March 2004</date>
+<author>Juliusz Chroboczek, <email/jch@freedesktop.org/
+<date>30 October 2006</date>
 
 <ident>
 </ident>
@@ -15,8 +15,8 @@
 
 <sect>Introduction
 
-<p>This document describes the support for fonts in X11R&relvers;.  <ref
-id="sec:installing" name="Installing fonts"> is aimed at the 
+<p>This document describes the support for fonts in X11R&relvers;.
+<ref id="sec:installing" name="Installing fonts"> is aimed at the 
 casual user wishing to install fonts in X11R&relvers; the rest of the
 document describes the font support in more detail.
 
@@ -27,11 +27,10 @@ information.
 
 <sect1>Two font systems
 
-<p>X includes two font systems: the original core X11 fonts system, which
-is present in all implementations of X11, and the Xft fonts system,
-which may not be distributed with implementations of X11 that
-are not based on X11R&relvers; but will hopefully be included by them in
-the future
+<p>X11&relvers; includes two font systems: the original core X11 fonts
+system, which is present in all implementations of X11, and the Xft
+fonts system, which may not yet be distributed with implementations of
+X11 that are not based on either XFree86 or X11R6.8 or later.
 
 The core X11 fonts system is directly derived from the fonts system
 included with X11R1 in 1987, which could only use monochrome bitmap
@@ -39,7 +38,7 @@ fonts.  Over the years, it has been more or less happily coerced into
 dealing with scalable fonts and rotated glyphs.
 
 Xft was designed from the start to provide good support for scalable
-fonts, and do so efficiently.  Unlike the core fonts system, it
+fonts, and to do so efficiently.  Unlike the core fonts system, it
 supports features such as anti-aliasing and sub-pixel rasterisation.
 Perhaps more importantly, it gives applications full control over the
 way glyphs are rendered, making fine typesetting and WYSIWIG display
@@ -47,7 +46,7 @@ possible.  Finally, it allows applications to use fonts that are not
 installed system-wide for displaying documents with embedded fonts.
 
 Xft is not compatible with the core fonts system: usage of Xft
-requires making fairly extensive changes to toolkits (user-interface
+requires fairly extensive changes to toolkits (user-interface
 libraries).  While X.Org will continue to maintain the core fonts
 system, toolkit authors are encouraged to switch to Xft as soon as
 possible.
@@ -59,11 +58,10 @@ system to access newly-installed fonts.
 
 <sect1>Configuring Xft<label id="sec:configuring-xft">
 
-<p>Xft has no configuration mechanism itself, rather it relies upon
-the fontconfig library to configure and customize fonts.  That library
-is not specific to X11R&relvers; or indeed on any particular font output
-mechanism.  This discussion describes how fontconfig, rather than Xft,
-works.
+<p>Xft has no configuration mechanism itself, it relies upon the
+fontconfig library to configure and customise fonts.  That library is
+not specific to the X Window system, and does not rely on any
+particular font output mechanism.
 
 <sect2>Installing fonts in Xft
 
@@ -78,19 +76,26 @@ $ cp lucbr.ttf ~/.fonts/
 </verb></tscreen>
 Fontconfig will notice the new font at the next opportunity and rebuild its
 list of fonts.  If you want to trigger this update from the command
-line (for example in order to globally update the system-wide Fontconfig
-information), you may run the command `<tt/fc-cache/'.
+line, you may run the command `<tt/fc-cache/'.
 <tscreen><verb>
 $ fc-cache
 </verb></tscreen>
 
+In order to globally update the system-wide Fontconfig information on
+Unix systems, you will typically need to run this command as root:
+<tscreen><verb>
+$ su -c fc-cache
+</verb></tscreen>
+
+
 <sect2>Fine-tuning Xft
 
-<p>Fontconfig's behaviour is controlled by a set of configuration files: a
-system-wide configuration file, `<tt>/etc/fonts/fonts.conf</tt>', and
-a user-specific file called `<tt>.fonts.conf</tt>' in the user's home
-directory (this can be overridden with the `<tt/FONTCONFIG_FILE/'
-environment variable).
+<p>Fontconfig's behaviour is controlled by a set of configuration
+files: a standard configuration file, `<tt>/etc/fonts/fonts.conf</tt>',
+a host-specific configuration file, `<tt>/etc/fonts/local.conf</tt>',
+and a user-specific file called `<tt>.fonts.conf</tt>' in the user's
+home directory (this can be overridden with the
+`<tt/FONTCONFIG_FILE/' environment variable).
 
 Every Fontconfig configuration file must start with the following
 boilerplate:
@@ -163,14 +168,13 @@ counterclockwise).
 
 <sect2>Configuring applications
 
-<p>Most existing applications use the core fonts system by
-default, but a growing number have been converted to use Xft.
-Some of these use Xft by default, for others it is necessary to 
-explicitly configure them to use Xft.
-How this is done depends on the application.
+<p>A growing number of applications use Xft in preference to the core
+fonts system.  Some applications, however, need to be explicitly
+configured to use Xft.
 
-XTerm can be set to use Xft by using the `<tt/-fa/' command line
-option or by setting the `<tt/XTerm*faceName/' resource:
+A case in point is XTerm, which can be set to use Xft by using the
+`<tt/-fa/' command line option or by setting the `<tt/XTerm*faceName/'
+resource:
 <tscreen><verb>
 XTerm*faceName: Courier
 </verb></tscreen>
@@ -179,34 +183,12 @@ or
 $ xterm -fa "Courier"
 </verb></tscreen>
 
-For applications based on GTK+ 2.0 (including GNOME 2 applications),
-the environment variable `<tt/GDK_USE_XFT/' should be set to `<tt/1/':
-<tscreen><verb>
-$ export GDK_USE_XFT=1
-</verb></tscreen>
-
-GTK+ 2.2 uses Xft by default.
-
 For KDE applications, you should select ``Anti-alias fonts'' in the
 ``Fonts'' panel of KDE's ``Control Center''.  Note that this option is
 misnamed: it switches KDE to using Xft but doesn't enable
 anti-aliasing in case it was disabled by your Xft configuration file.
 
-<it>(What about Mozilla?)</it>
-
-<sect2>Troubleshooting <label id="sec:troubleshooting-xft">
-
-<p>If some Xft-based applications don't seem to notice the changes you
-are making to your configuration files, they may be linked against an
-old version of Xft.  In order to fix the problem, you should
-relink them against a current version of Xft; on most systems, it is
-enough to install the current version of the Xft and Fontconfig
-libraries.
-
-If, for some reason, you cannot upgrade the shared libraries, please
-check the <htmlurl name="Xft(3)" url="Xft.3.html"> manual page included
-with XFree86 4.2 for the configuration mechanisms of the previous version
-of Xft.
+Gnome applications and Mozilla Firefox will use Xft by default.
 
 <sect1>Configuring the core X11 fonts system
 
@@ -252,13 +234,14 @@ server font path"> below.
 
 <sect2>Installing scalable fonts
 
-<p>The X11R&relvers; server supports scalable fonts in three formats:
-Type&nbsp;1, TrueType and CIDFont.  This section only applies
-to the first two; for information on CIDFonts, please see
-<ref id="sec:cid-fonts" name="Installing CIDFonts"> later in this
-document.   Previous versions also included support for the Speedo
-scalable font format, but that is disabled in the default builds of
-X11R6.9 and not included in X11R7.0 and later releases.
+<p>The X11R&relvers; server supports scalable fonts in multiple
+formats, including Type&nbsp;1, TrueType, OpenType/CFF and CIDFont.
+This section only applies to the first three; for information on
+CIDFonts, please see <ref id="sec:cid-fonts" name="Installing CIDFonts">
+later in this document.  (Earlier versions of X11 also included
+support for the Speedo scalable font format, but that is disabled in
+the default builds of X11R6.9 and not included in X11R7.0 and later
+releases.)
 
 Installing scalable fonts is very similar to installing bitmap fonts:
 you create a directory with the font files, and run `<tt/mkfontdir/'
@@ -284,8 +267,12 @@ later in this document.
 <sect2>Installing CID-keyed fonts <label id="sec:cid-fonts">
 
 <p>The CID-keyed font format was designed by Adobe Systems for fonts
-with large character sets.  A CID-keyed font, or CIDFont for short,
-contains a collection of glyphs indexed by <it/character ID/ (CID).
+with large character sets.  The CID-keyed format is obsolete, as it
+has been superseded by other formats such as OpenType/CFF; however,
+support for CID-keyed fonts is still provided in X11&relvers;.
+
+A CID-keyed font, or CIDFont for short, contains a collection of
+glyphs indexed by <it/character ID/ (CID).
 
 In order to map such glyphs to meaningful indices, Adobe provide a set
 of <it/CMap/ files.  The PostScript name of a font generated from a
@@ -1241,11 +1228,6 @@ name="xlsfonts(1)" url="xlsfonts.1.html"> and <htmlurl name="showfont(1)"
 url="showfont.1.html">.  In addition, you may want to read the X Logical
 Font Description document, by Jim Flowers, which is provided in the file
 `<tt>xc/doc/xlfd.PS.Z</tt>'.
-
-The latest released version of the X11R&relvers; documentation (including
-this document and all manual pages) can be found from
-<url name="current X11R&relvers; documentation"
-     url="http://wiki.x.org/">.
 
 The <url name="comp.fonts FAQ"
          url="http://www.faqs.org/faqs/by-newsgroup/comp/comp.fonts.html">, 
