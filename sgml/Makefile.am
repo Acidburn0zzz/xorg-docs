@@ -20,23 +20,7 @@
 #
 #  Process this file with autoconf to create configure.
 
-SGML_FILES = \
-	Darwin.sgml \
-	fonts.sgml \
-	Install.sgml \
-	LICENSE.sgml \
-	LynxOS.sgml \
-	NetBSD.sgml \
-	OpenBSD.sgml \
-	OS2Notes.sgml \
-	README.sgml \
-	RELNOTES.sgml \
-	SCO.sgml \
-	Solaris.sgml \
-	Versions.sgml \
-	XKB-Config.sgml \
-	XKB-Enhancing.sgml
-
+SGML_FILES = $(wildcard *.sgml)
 TXT_FILES  = $(SGML_FILES:%.sgml=%.txt)
 PS_FILES   = $(SGML_FILES:%.sgml=%.ps)
 PDF_FILES  = $(SGML_FILES:%.sgml=%.pdf)
