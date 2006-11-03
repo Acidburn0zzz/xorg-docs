@@ -34,14 +34,26 @@ HARDCOPYDIR=$X11DOCDIR/hardcopy
 AC_SUBST([X11DOCDIR])
 AC_SUBST([HARDCOPYDIR])
 
-AC_ARG_ENABLE(pdf,      AS_HELP_STRING([--enable-pdf],
+AC_ARG_ENABLE(txt, AS_HELP_STRING([--enable-txt],
+                [Build TXT versions of documents (default: enabled)]),
+                [BUILD_TXTDOC=$enableval], [BUILD_TXTDOC=yes])
+AC_ARG_ENABLE(pdf, AS_HELP_STRING([--enable-pdf],
                 [Build PDF versions of documents (default: enabled)]),
                 [BUILD_PDFDOC=$enableval], [BUILD_PDFDOC=yes])
+AC_ARG_ENABLE(ps, AS_HELP_STRING([--enable-ps],
+                [Build PostScript versions of documents (default: disabled)]),
+                [BUILD_PSDOC=$enableval], [BUILD_PSDOC=no])
+AC_ARG_ENABLE(html, AS_HELP_STRING([--enable-html],
+                [Build HTML versions of documents (default: disabled)]),
+                [BUILD_HTMLDOC=$enableval], [BUILD_HTMLDOC=no])
 
 XORG_MANPAGE_SECTIONS
 XORG_RELEASE_VERSION
 
+AM_CONDITIONAL(BUILD_TXTDOC, test "x$BUILD_TXTDOC" = xyes)
 AM_CONDITIONAL(BUILD_PDFDOC, test "x$BUILD_PDFDOC" = xyes)
+AM_CONDITIONAL(BUILD_PSDOC, test "x$BUILD_PSDOC" = xyes)
+AM_CONDITIONAL(BUILD_HTMLDOC, test "x$BUILD_HTMLDOC" = xyes)
 XORG_CHECK_DOCBOOK
 
 AC_OUTPUT([Makefile

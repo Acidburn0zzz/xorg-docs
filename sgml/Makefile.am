@@ -37,35 +37,46 @@ SGML_FILES = \
 	XKB-Config.sgml \
 	XKB-Enhancing.sgml
 
-if BUILD_DOCBOOK
 TXT_FILES  = $(SGML_FILES:%.sgml=%.txt)
 PS_FILES   = $(SGML_FILES:%.sgml=%.ps)
-if BUILD_PDFDOC
 PDF_FILES  = $(SGML_FILES:%.sgml=%.pdf)
-endif
 HTML_FILES = $(SGML_FILES:%.sgml=%.html)
+INSTALL_FILES =
 
 SUFFIXES = .sgml .txt .html .ps .pdf
 
+if BUILD_TXTDOC
+INSTALL_FILES += $(TXT_FILES)
 .sgml.txt:
 	@rm -f $@
 	$(MAKE_TEXT) $<
+endif
 
-.sgml.ps:
-	@rm -f $@
-	$(MAKE_PS) $<
-
+if BUILD_PDFDOC
+INSTALL_FILES += $(PDF_FILES)
 .sgml.pdf:
 	@rm -f $@
 	$(MAKE_PDF) $<
-
-.sgml.html:
-	@rm -f $@
-	$(MAKE_HTML) -o $@ $<
-
-noinst_DATA = $(TXT_FILES) $(PS_FILES) $(PDF_FILES) $(HTML_FILES)
-CLEANFILES = $(TXT_FILES) $(PS_FILES) $(PDF_FILES) $(HTML_FILES)
 endif
+
+if BUILD_PSDOC
+INSTALL_FILES += $(PS_FILES)
+.sgml.ps:
+	@rm -f $@
+	$(MAKE_PS) $<
+endif
+
+if BUILD_HTMLDOC
+INSTALL_FILES += $(HTML_FILES)
+.sgml.html:
+	@rm -rf $@
+	$(MAKE_HTML) -o $@ $<
+endif
+
+noinst_DATA = $(INSTALL_FILES)
+CLEANFILES = $(TXT_FILES) $(PS_FILES) $(PDF_FILES)
+clean-local:
+	@rm -rf $(HTML_FILES)
 
 EXTRA_DIST = \
 	$(SGML_FILES) \
