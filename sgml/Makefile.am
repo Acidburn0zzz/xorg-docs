@@ -29,6 +29,9 @@ INSTALL_FILES =
 
 SUFFIXES = .sgml .txt .html .ps .pdf
 
+x11docdir = @X11DOCDIR@
+dist_x11doc_DATA = $(wildcard *.txt) $(wildcard *.ps) $(wildcard *.pdf) $(wildcard *.html)
+
 if BUILD_TXTDOC
 INSTALL_FILES += $(TXT_FILES)
 .sgml.txt:
