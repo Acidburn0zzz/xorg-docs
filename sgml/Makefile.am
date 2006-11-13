@@ -54,7 +54,7 @@ if BUILD_HTMLDOC
 INSTALL_FILES += $(HTML_FILES)
 .sgml.html:
 	@rm -rf $@
-	$(MAKE_HTML) -o $@ $<
+	$(MAKE_HTML) -u $<
 endif
 
 noinst_DATA = $(INSTALL_FILES)
