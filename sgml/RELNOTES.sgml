@@ -104,46 +104,16 @@ The next section describes what is new in the latest version
     <itemizedlist>
         <listitem>
             <para>
-            EXA enhancements
-            
-            The new EXA acceleration architecture, introduced in 7.0, has seen many
-            updates for correctness and performance.  It is still considered a work
-            in progress; please report bugs in <ulink URL="https://bugs.freedesktop.org/">
-            Bugzilla.</ulink>
+            XACE
+            This release features the integration of the X Access Control
+            Extension (XACE). The XACE (X Access Control Extension) is a
+            set of generic "hooks" that can be used by other X extensions
+            to perform access checks. This provides integration of the X
+            server with the SELinux and xtsol platform-specific security
+            frameworks.
             </para>
         </Listitem>
         
-        <Listitem>
-            <para>
-            kdrive integration
-            
-            The kdrive DDX has been integrated.  This provides numerous low-footprint
-            X servers for embedded systems, as well as several utility servers like
-            Xephyr (an Xnest-like client) and Xsdl.
-            </para>
-        </listitem>
-        
-        <listitem>
-            <para>
-            Accelerated indirect GLX
-            
-            Indirect GLX clients can now take advantage of hardware acceleration using
-            the DRI infrastructure.  This allows for several exciting possibilities,
-            including accelerated 3D display walls using Xdmx, and high-performance
-            integration with compositing managers for modern desktop effects.
-            </para>
-        </listitem>
-        
-        <listitem>
-            <para>
-            New GLX extension: GLX&lowbar;EXT&lowbar;texture&lowbar;from&lowbar;pixmap
-            
-            This extension allows GLX clients to efficiently bind pixmaps - such as those
-            provided by the Composite extension for redirected drawing - to OpenGL
-            textures.  This enables the compositing manager to bring the full force of
-            OpenGL to bear on the problem of rendering the desktop.
-            </para>
-        </listitem>
         
         <listitem>
             <para>
