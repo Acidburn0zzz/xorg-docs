@@ -127,39 +127,6 @@ The next section describes what is new in the latest version
             allow it to be used transparently in place of libX11. 
             </para>
         </listitem>
-        
-        <listitem>
-            <para>
-            Other extension updates:
-                <itemizedlist>
-                    <listitem>
-                        <para>
-                        Fixes: New requests to show and hide the cursor
-                        </para>
-                    </listitem>
-                    <listitem>
-                        <para>
-                        Composite: Added an overlay window to fix clipping
-                        issues
-                        </para>
-                    </listitem>
-                    <listitem>
-                        <para>
-                        Screensaver: New request to reliably block
-                        screensaver activation
-                        </para>
-                    </listitem>
-                    <listitem>
-                        <para>
-                        Xv: Initial support for redirecting video to
-                        offscreen surfaces, for eventual Composite
-                        integration
-                        </para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-        </listitem>
-        
         <listitem>
             <para>
             OS support enhancements for Linux, Solaris, and most of the
