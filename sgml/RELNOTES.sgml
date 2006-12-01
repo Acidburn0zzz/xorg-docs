@@ -201,6 +201,11 @@ The next section describes what is new in the latest version
                 <entry>&nbsp;</entry>
             </row>
             <row>
+                <entry><Literal remap="tt">ast</Literal></entry>
+                <entry>ASPEED Technology</entry>
+                <entry>&nbsp;</entry>
+            </row>
+            <row>
                 <entry><Literal remap="tt">ati</Literal></entry>
                 <entry>ATI</entry>
                 <entry><ulink URL="ati.html">README.ati</ulink>, 
@@ -231,11 +236,6 @@ The next section describes what is new in the latest version
                 <entry><ulink URL="fbdev.4.html">fbdev(4)</ulink></entry>
             </row>
             <row>
-                <entry><Literal remap="tt">glide</Literal></entry>
-                <entry>Glide2x (3Dfx)</entry>
-                <entry><ulink URL="glide.4.html">glide(4)</ulink></entry>
-            </row>
-            <row>
                 <entry><Literal remap="tt">glint</Literal></entry>
                 <entry>3Dlabs, TI</entry>
                 <entry><ulink URL="glint.4.html">glint(4)</ulink></entry>
@@ -256,6 +256,11 @@ The next section describes what is new in the latest version
                 <entry>Intel i8xx</entry>
                 <entry><ulink URL="i810.html">README.i810</ulink>,
                     <ulink URL="i810.4.html">i810(4)</ulink></entry>
+            </row>
+            <row>
+                <entry><Literal remap="tt">impact</Literal></entry>
+                <entry>SGI Indigo Impact</entry>
+                <entry><ulink URL="impact.4.html">impact(4)</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">imstt</Literal></entry>
@@ -385,6 +390,11 @@ The next section describes what is new in the latest version
                 <entry>&nbsp;</entry>
             </row>
             <row>
+                <entry><Literal remap="tt">v4l</Literal></entry>
+                <entry>Video4Linux</entry>
+                <entry>&nbsp;</entry>
+            </row>
+            <row>
                 <entry><Literal remap="tt">vesa</Literal></entry>
                 <entry>VESA</entry>
                 <entry><ulink URL="vesa.4.html">vesa(4)</ulink></entry>
@@ -402,6 +412,16 @@ The next section describes what is new in the latest version
             <row>
                 <entry><Literal remap="tt">vmware</Literal></entry>
                 <entry>VMware guest OS</entry>
+                <entry><ulink URL="vmware.4.html">vmware(4)</ulink></entry>
+            </row>
+            <row>
+                <entry><Literal remap="tt">voodoo</Literal></entry>
+                <entry>3Dfx Voodoo</entry>
+                <entry><ulink URL="vmware.4.html">vmware(4)</ulink></entry>
+            </row>
+            <row>
+                <entry><Literal remap="tt">wfb</Literal></entry>
+                <entry>Wrapper Framebuffer</entry>
                 <entry><ulink URL="vmware.4.html">vmware(4)</ulink></entry>
             </row>
         </tbody>
@@ -450,6 +470,11 @@ The next section describes what is new in the latest version
                 <entry>Further Information</entry>
             </row>
             <row>
+                <entry><Literal remap="tt">acecad</Literal></entry>
+                <entry>Acecad Flair</entry>
+                <entry><ulink URL="aiptek.4.html">acecad(4)</ulink></entry>
+            </row>
+            <row>
                 <entry><Literal remap="tt">aiptek(*)</Literal></entry>
                 <entry>Aiptek USB tablet</entry>
                 <entry><ulink URL="aiptek.4.html">aiptek(4)</ulink></entry>
@@ -480,6 +505,11 @@ The next section describes what is new in the latest version
                 <entry>&nbsp;</entry>
             </row>
             <row>
+                <entry><Literal remap="tt">elo2300</Literal></entry>
+                <entry>EloGraphics 2300</entry>
+                <entry>&nbsp;</entry>
+            </row>
+            <row>
                 <entry><Literal remap="tt">elographics</Literal></entry>
                 <entry>EloGraphics</entry>
                 <entry>&nbsp;</entry>
@@ -487,7 +517,7 @@ The next section describes what is new in the latest version
             <row>
                 <entry><Literal remap="tt">evdev(*)</Literal></entry>
                 <entry>EvDev</entry>
-                <entry>&nbsp;</entry>
+                <entry><ulink URL="evdev.4.html">evdev(4)</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">fpit</Literal></entry>
@@ -515,6 +545,11 @@ The next section describes what is new in the latest version
                 <entry><ulink URL="keyboard.4.html">keyboard(4)</ulink></entry>
             </row>
             <row>
+                <entry><Literal remap="tt">magellan</Literal></entry>
+                <entry>Magellan</entry>
+                <entry>&nbsp;</entry>
+            </row>
+            <row>
                 <entry><Literal remap="tt">microtouch</Literal></entry>
                 <entry>MicroTouch</entry>
                 <entry>&nbsp;</entry>
@@ -539,7 +574,7 @@ The next section describes what is new in the latest version
                 <entry>PenMount</entry>
                 <entry>&nbsp;</entry>
             </row>
-            <row>
+            <ROW>
                 <entry><Literal remap="tt">spaceorb</Literal></entry>
                 <entry>SpaceOrb</entry>
                 <entry>&nbsp;</entry>
