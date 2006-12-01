@@ -97,18 +97,15 @@ The next section describes what is new in the latest version
     <itemizedlist>
         <listitem>
             <para>
-            XACE
-            This release features the integration of the X Access Control
-            Extension (XACE). The XACE (X Access Control Extension) is a
-            set of generic "hooks" that can be used by other X extensions
-            to perform access checks. This provides integration of the X
-            server with the SELinux and xtsol platform-specific security
-            frameworks.
+            The X Access Control Extension (XACE) has been added to this
+            release. XACE is a set of generic "hooks" that can be used by
+            other X extensions to perform access checks. This provides
+            integration of the X server with the SELinux and xtsol
+            platform-specific security frameworks.
             </para>
         </listitem>
         <listitem>
             <para>
-            Autoconfiguration
             The X server now incorporates significantly improved
             autodetection when running without an xorg.conf file. This will
             help to limit the number of users who have to fuss with their
@@ -117,14 +114,13 @@ The next section describes what is new in the latest version
         </listitem>
         <listitem>
             <para>
-            XCB Provides libX11
-            This release features XCB providing a new implementation of
-            libX11. The XCB library is a ground-up rewrite of the venerable
-            libX11.  It features a small footprint, latency hiding, direct
-            access to the protocol, improved threading support, and
-            extensibility. In addition to providing a new programming
-            interface, it also provides a libX11 compatibility layer to
-            allow it to be used transparently in place of libX11. 
+            XCB now provides a new implementation of libX11. The XCB
+            library is a ground-up rewrite of the venerable libX11.  It
+            features a small footprint, latency hiding, direct access to
+            the protocol, improved threading support, and extensibility. In
+            addition to providing a new programming interface, it also
+            provides a libX11 compatibility layer to allow it to be used
+            transparently in place of libX11. 
             </para>
         </listitem>
         <listitem>
