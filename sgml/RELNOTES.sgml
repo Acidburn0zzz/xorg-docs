@@ -112,6 +112,23 @@ The next section describes what is new in the latest version
             server with the SELinux and xtsol platform-specific security
             frameworks.
             </para>
+            <para>
+            Autoconfiguration
+            The X server now incorporates significantly improved
+            autodetection when running without an xorg.conf file. This will
+            help to limit the number of users who have to fuss with their
+            X configuration to get a working server setup.
+            </para>
+            <para>
+            XCB Provides libX11
+            This release features XCB providing a new implementation of
+            libX11. The XCB library is a ground-up rewrite of the venerable
+            libX11.  It features a small footprint, latency hiding, direct
+            access to the protocol, improved threading support, and
+            extensibility. In addition to providing a new programming
+            interface, it also provides a libX11 compatibility layer to
+            allow it to be used transparently in place of libX11. 
+            </para>
         </Listitem>
         
         
@@ -126,17 +143,21 @@ The next section describes what is new in the latest version
                     </listitem>
                     <listitem>
                         <para>
-                        Composite: Added an overlay window to fix clipping issues
+                        Composite: Added an overlay window to fix clipping
+                        issues
                         </para>
                     </listitem>
                     <listitem>
                         <para>
-                        Screensaver: New request to reliably block screensaver activation
+                        Screensaver: New request to reliably block
+                        screensaver activation
                         </para>
                     </listitem>
                     <listitem>
                         <para>
-                        Xv: Initial support for redirecting video to offscreen surfaces, for eventual Composite integration
+                        Xv: Initial support for redirecting video to
+                        offscreen surfaces, for eventual Composite
+                        integration
                         </para>
                     </listitem>
                 </itemizedlist>
@@ -145,7 +166,8 @@ The next section describes what is new in the latest version
         
         <listitem>
             <para>
-            OS support enhancements for Linux, Solaris, and most of the *BSD family
+            OS support enhancements for Linux, Solaris, and most of the
+            *BSD family
             </para>
         </listitem>
         
@@ -166,14 +188,16 @@ The next section describes what is new in the latest version
     <sect2>
         <title>Updated keyboard mappings</title>
         <para>
-        The requirement for XKB data can, in the modular tree, be satisfied either
-        by the traditional data set (the 'xkbdata' module), or by the dataset from
-        the xkeyboard-config project (the 'xkbdesc' module).  xkbdesc has numerous
-        improvements relative to xkbdata: layouts have been cleaned up for
-        consistency and universal multi-layout support, some new layouts have added,
-        and some layouts have changed names to be more straightforward and ISO
-        compliant.  Some setups will need adjustments in order to use xkbdesc.  It
-        is now strongly encouraged for all distributions to migrate to xkbdesc.
+        The requirement for XKB data can, in the modular tree, be satisfied
+        either by the traditional data set (the 'xkbdata' module), or by
+        the dataset from the xkeyboard-config project (the 'xkbdesc'
+        module).  xkbdesc has numerous improvements relative to xkbdata:
+        layouts have been cleaned up for consistency and universal
+        multi-layout support, some new layouts have added, and some layouts
+        have changed names to be more straightforward and ISO compliant.
+        Some setups will need adjustments in order to use xkbdesc.  It is
+        now strongly encouraged for all distributions to migrate to
+        xkbdesc.
         </para>
     </sect2>
     
@@ -441,9 +465,9 @@ The next section describes what is new in the latest version
     </para>
     
     <para>
-    Darwin/Mac OS X uses IOKit drivers and does not use the module loader drivers
-    listed above. Further information can be found in <ulink URL="Darwin.html">
-    README.Darwin</ulink>.
+    Darwin/Mac OS X uses IOKit drivers and does not use the module loader
+    drivers listed above. Further information can be found in <ulink
+    URL="Darwin.html"> README.Darwin</ulink>.
     </para>
     </sect2>
 
@@ -599,9 +623,9 @@ The next section describes what is new in the latest version
 <title>Overview of X11R&relvers;</title>
 
     <para>
-    On most platforms, X11R&relvers; has a single X server
-    binary called <literal remap="tt">Xorg</literal>.  This binary can either have one or more
-    video and input drivers linked in statically, or more usually,
+    On most platforms, X11R&relvers; has a single X server binary called
+    <literal remap="tt">Xorg</literal>.  This binary can either have one or
+    more video and input drivers linked in statically, or more usually,
     dynamically, and in that manner load the video drivers, input drivers,
     and other modules that are needed.
     </para>
@@ -616,21 +640,23 @@ The next section describes what is new in the latest version
         <title>Loader and Modules</title>
         
         <para>
-        The X server has a built-in run-time loader.  As of X11R7.0, it relies on
-        the operating system's native module loader support, which enables better
-        integration with the host operating system (for example: debugger support,
-        memory protection of the stack and heap, smaller code footprint, etc.).  The
-        X server makes use of modules for video drivers, X server extensions, font
-        rasterisers, input device drivers, framebuffer layers, and internal
-        components used by some drivers (like XAA),
+        The X server has a built-in run-time loader.  As of X11R7.0, it
+        relies on the operating system's native module loader support,
+        which enables better integration with the host operating system
+        (for example: debugger support, memory protection of the stack and
+        heap, smaller code footprint, etc.).  The X server makes use of
+        modules for video drivers, X server extensions, font rasterisers,
+        input device drivers, framebuffer layers, and internal components
+        used by some drivers (like XAA),
         </para>
         
         <para>
-        The module interfaces (both API and ABI) used in this release are subject
-        to change without notice.  While we will attempt to provide backward
-        compatibility for the module interfaces, we cannot guarantee this.
-        Compatibility in the other direction is explicitly not guaranteed because
-        new modules may rely on interfaces added in new releases.
+        The module interfaces (both API and ABI) used in this release are
+        subject to change without notice.  While we will attempt to provide
+        backward compatibility for the module interfaces, we cannot
+        guarantee this.  Compatibility in the other direction is explicitly
+        not guaranteed because new modules may rely on interfaces added in
+        new releases.
         </para>
         
         <para>
@@ -658,9 +684,9 @@ The next section describes what is new in the latest version
         
         <para>
         This release comes with a graphical configuration tool called
-        "<literal remap="tt">xorgcfg</literal>", which also has a text mode interface and can be used
-        to create an initial configuration file. It can also be used to
-        customize existing configurations.
+        "<literal remap="tt">xorgcfg</literal>", which also has a text mode
+        interface and can be used to create an initial configuration file.
+        It can also be used to customize existing configurations.
         </para>
         
         <para>
@@ -675,24 +701,25 @@ The next section describes what is new in the latest version
         
         <para>
         Finally, if all else fails, the trusty old standby text-based tool
-        "<literal remap="tt">xorgconfig</literal>" can also be used for generating X server config
-        files.
+        "<literal remap="tt">xorgconfig</literal>" can also be used for
+        generating X server config files.
         </para>
         
         <para>
         At least one, and hopefully, all of these configuration options will
         give you a reasonable starting point for a suitable configuration
-        file.  With the automatic mechanism you might even find that you don't
-        need one!  
+        file. With the automatic mechanism you might even find that you don't
+        need one! Note that this release features significant improvements
+        for running the server without a configuration file, so many users
+        may find that that they don't need a configuration file.
         </para>
         
         <para>
         If you do need to customize the configuration file, see the <ulink
         URL="xorg.conf.5.html"
-        >xorg.conf manual page</ulink
-        >.  You can also
-        check the driver-specific manual pages and the related documentation
-        (found at <xref LinkEnd="drivertables"> also.
+        >xorg.conf manual page</ulink> .  You can also
+        check the driver-specific manual pages and the related
+        documentation (found at <xref LinkEnd="drivertables"> also.
         </para>
     </sect2>
 
@@ -700,9 +727,10 @@ The next section describes what is new in the latest version
         <title>Command Line Options</title>
         
         <para>
-        Command line options can be used to override some default parameters and
-        parameters provided in the configuration file.  These command line options
-        are described in the <ulink URL="Xorg.1.html">Xorg(1)</ulink> manual page.
+        Command line options can be used to override some default
+        parameters and parameters provided in the configuration file.
+        These command line options are described in the <ulink
+        URL="Xorg.1.html">Xorg(1)</ulink> manual page.
         </para>
     </sect2>
 
@@ -725,14 +753,15 @@ The next section describes what is new in the latest version
         </para>
         
         <para>
-        One of the main problems is with drivers not sufficiently initializing
-        cards that were not initialized at boot time.  This has been improved
-        somewhat with the INT10 support that is used by most drivers (which
-        allows secondary card to be "soft-booted", but in some cases there are
-        other issues that still need to be resolved.  Some combinations can be
-        made to work better by changing which card is the primary card (either
-        by using a different PCI slot, or by changing the system BIOS's preference
-        for the primary card).
+        One of the main problems is with drivers not sufficiently
+        initializing cards that were not initialized at boot time.  This
+        has been improved somewhat with the INT10 support that is used by
+        most drivers (which allows secondary card to be "soft-booted", but
+        in some cases there are other issues that still need to be
+        resolved.  Some combinations can be made to work better by changing
+        which card is the primary card (either by using a different PCI
+        slot, or by changing the system BIOS's preference for the primary
+        card).
         </para>
     </sect2>
 
@@ -749,12 +778,14 @@ The next section describes what is new in the latest version
         
         <para>
         Xinerama is not enabled by default, and can be enabled with the
-        <literal remap="tt">+xinerama</literal> command line option for the X server.
+        <literal remap="tt">+xinerama</literal> command line option for the
+        X server.
         </para>
         
         <para>
-        Xinerama was included with X11R6.4.  The version included in X11R&relvers;
-        was completely rewritten for improved performance and correctness.
+        Xinerama was included with X11R6.4.  The version included in
+        X11R&relvers; was completely rewritten for improved performance and
+        correctness.
         </para>
         
         <para>
@@ -779,12 +810,12 @@ The next section describes what is new in the latest version
         <title>DGA version 2</title>
         
         <para>
-        DGA 2.0 is included in &relvers;.
-        Documentation for the client libraries can be found in the 
-        <ulink URL="XDGA.3.man">XDGA(3)</ulink> man page.  A good degree of backward
-        compatibility with version 1.0 is provided.  DGA should be considered
-        deprecated; if you are relying on it, please let us know what you need
-        it for so we can find better solutions.
+        DGA 2.0 is included in &relvers;.  Documentation for the client
+        libraries can be found in the <ulink
+        URL="XDGA.3.man">XDGA(3)</ulink> man page.  A good degree of
+        backward compatibility with version 1.0 is provided.  DGA should be
+        considered deprecated; if you are relying on it, please let us know
+        what you need it for so we can find better solutions.
         </para>
     </sect2>
 
@@ -792,36 +823,40 @@ The next section describes what is new in the latest version
         <title>DDC</title>
         
         <para>
-        The VESA&reg; Display Data Channel (DDC&trade;) standard allows the monitor
-        to tell the video card (or on some cases the computer directly) about
-        itself; particularly the supported screen resolutions and refresh rates.
+        The VESA&reg; Display Data Channel (DDC&trade;) standard allows the
+        monitor to tell the video card (or on some cases the computer
+        directly) about itself; particularly the supported screen
+        resolutions and refresh rates.
         </para>
         
         <para>
-        Partial or complete DDC support is available in most of the video drivers.
-        DDC is enabled by default, but can be disabled with a "Device" section
-        entry:  <literal remap="tt">Option "NoDDC"</literal>.  We have support for DDC versions 1
-        and 2; these can be disabled independently with <literal remap="tt">Option "NoDDC1"</Literal>
-        and <literal remap="tt">Option "NoDDC2"</literal>.
+        Partial or complete DDC support is available in most of the video
+        drivers.  DDC is enabled by default, but can be disabled with a
+        "Device" section entry:  <literal remap="tt">Option
+        "NoDDC"</literal>.  We have support for DDC versions 1 and 2; these
+        can be disabled independently with <literal remap="tt">Option
+        "NoDDC1"</Literal> and <literal remap="tt">Option
+        "NoDDC2"</literal>.
         </para>
         
         <para>
-        At startup the server prints out DDC information from the display, and
-        can use this information to set the default monitor parameters, or to
-        warn about monitor sync limits if those provided in the configuration file
-        don't match those that are detected.
+        At startup the server prints out DDC information from the display,
+        and can use this information to set the default monitor parameters,
+        or to warn about monitor sync limits if those provided in the
+        configuration file don't match those that are detected.
         </para>
         
         <sect3>
             <title>Changed behavior caused by DDC.</title>
             
             <para>
-            Several drivers uses DDC information to
-            set the screen size and pitch.  This can be overridden by explicitly
-            resetting it to the and non-DDC default value 75 with the <literal remap="tt">-dpi
-            75</literal> command line option for the X server, or by specifying appropriate
-            screen dimensions with the "DisplaySize" keyword in the "Monitor" section
-            of the config file.
+            Several drivers uses DDC information to set the screen size and
+            pitch.  This can be overridden by explicitly resetting it to
+            the and non-DDC default value 75 with the <literal
+            remap="tt">-dpi 75</literal> command line option for the X
+            server, or by specifying appropriate screen dimensions with the
+            "DisplaySize" keyword in the "Monitor" section of the config
+            file.
             </para>
         </sect3>
     </sect2>
@@ -830,11 +865,12 @@ The next section describes what is new in the latest version
         <title>GLX and the Direct Rendering Infrastructure (DRI)</title>
         
         <para>
-        Direct rendered OpenGL&reg; support is provided for several hardware
-        platforms by the Direct Rendering Infrastructure (DRI).  Further information
-        about DRI can be found at the <ulink URL="http://dri.sf.net/">DRI Project's web 
-        site</ulink>.  The 3D core rendering component is provided by 
-        <ulink URL="http://www.mesa3d.org">Mesa</ulink>.
+        Direct rendered OpenGL&reg; support is provided for several
+        hardware platforms by the Direct Rendering Infrastructure (DRI).
+        Further information about DRI can be found at the <ulink
+        URL="http://dri.sf.net/">DRI Project's web site</ulink>.  The 3D
+        core rendering component is provided by <ulink
+        URL="http://www.mesa3d.org">Mesa</ulink>.
         </para>
     </sect2>
 
@@ -856,9 +892,9 @@ The next section describes what is new in the latest version
         
         <Para>
         The X Rendering extension provides a 2D rendering model that more
-        closely matches application demands and hardware capabilities.  It provides
-        a rendering model derived from Plan 9 based on Porter/Duff image
-        composition rather than binary raster operations.
+        closely matches application demands and hardware capabilities.  It
+        provides a rendering model derived from Plan 9 based on Porter/Duff
+        image composition rather than binary raster operations.
         </Para>
         
         <Para>
@@ -869,24 +905,25 @@ The next section describes what is new in the latest version
         </Para>
         
         <Para>
-        Unlike the core protocol, Render provides no font support for applications,
-        rather it allows applications to upload glyphs for display on the screen.
-        This allows the client greater control over text rendering and complete
-        access to the available font information while still providing hardware
-        acceleration.  The Xft library provides font access for
-        Render applications.
+        Unlike the core protocol, Render provides no font support for
+        applications, rather it allows applications to upload glyphs for
+        display on the screen.  This allows the client greater control over
+        text rendering and complete access to the available font
+        information while still providing hardware acceleration.  The Xft
+        library provides font access for Render applications.
         </Para>
         
         <Sect3>
             <Title>The Xft Library</Title>
             
             <Para>
-            On the client side, the Xft library provides access to fonts for
-            applications using the FreeType library, version 2.  One 
-            important thing to note is that Xft uses the vertical size of the monitor 
-            to compute accurate pixel sizes for provided point sizes; if your monitor 
-            doesn't provide accurate information via DDC, you may want to add that 
-            information to <Literal remap="tt">xorg.conf</Literal>.
+            On the client side, the Xft library provides access to fonts
+            for applications using the FreeType library, version 2.  One
+            important thing to note is that Xft uses the vertical size of
+            the monitor to compute accurate pixel sizes for provided point
+            sizes; if your monitor doesn't provide accurate information via
+            DDC, you may want to add that information to <Literal
+            remap="tt">xorg.conf</Literal>.
             </Para>
             
             <Para>
@@ -957,22 +994,6 @@ The next section describes what is new in the latest version
 
     <Sect2>
         <Title>Other extensions</Title>
-        
-        <Para>
-        The XFree86-Misc extension has not been fully ported to the new server
-        architecture yet.  This should be completed in a future release.
-        </Para>
-        
-        <Para>
-        The XFree86-VidModeExtension extension has been updated, and mostly ported
-        to the new server architecture.  The area of mode validation needs further
-        work, and the extension should be used with care.  This extension has
-        support for changing the gamma setting at run-time, for modes where this
-        is possible.  The <Literal remap="tt">xgamma</Literal> utility makes use of this feature.
-        Compatibility with the 3.3.x version of the extension is provided.
-        The missing parts of this extension and some new features should be
-        completed in a future release.
-        </Para>
     </Sect2>
 
 <!--
@@ -1005,26 +1026,12 @@ The next section describes what is new in the latest version
         <Title>TrueType support</Title>
         
         <Para>
-        X11R6.7 came with two TrueType backends.  The functionality from the
-        `X-TrueType' backend has been integrated into the `FreeType' backend which
-        is designed to transparently support all of the functionality from the
-        `X-TrueType' backend with the exception of the font encoding libraries; the
-        `FreeType' backend uses only the fontenc-based encoding system.
-        </Para>
-    </Sect2>
-    
-    <Sect2>
-        <Title>CID font support</Title>
-        
-        <Para>
-        Support for CID-keyed fonts is included in X11R&relvers;
-        The CID-keyed font format was designed by 
-        <ulink URL="http://www.adobe.com">Adobe Systems</ulink> 
-        for fonts with large character sets.  The
-        CID-keyed font support in X11R&relvers; was donated by
-        <ulink URL="http://www.sgi.com">SGI</ulink>.  See the 
-        <ulink URL="LICENSE.html">LICENSE</ulink> document for a 
-        copy of the CID Font Code Public License.
+        X11R6.7 came with two TrueType backends.  The functionality from
+        the `X-TrueType' backend has been integrated into the `FreeType'
+        backend which is designed to transparently support all of the
+        functionality from the `X-TrueType' backend with the exception of
+        the font encoding libraries; the `FreeType' backend uses only the
+        fontenc-based encoding system.
         </Para>
     </Sect2>
     
@@ -1374,23 +1381,20 @@ The next section describes what is new in the latest version
     <Para>
     <VariableList>
         <VarListEntry>
-            <Term>Display Postscript (DPS)</Term>
-            <ListItem>
-            <Para>
-            The DPS code has been completely dropped as of X11R7.0.
-            </Para>
-        </VarListEntry>
-        <VarListEntry>
             <Term>Low-Bandwidth X (LBX)</Term>
             <ListItem>
             <Para>
-            The LBX extension is disabled by default now, although the code still ships
-            in the 7.1 server.  Compared to other solutions like NX and SSH, LBX has
-            generally worse performance and worse security.  It will be removed
-            completely in 7.2; users are encouraged to migrate to better solutions.
+            The LBX extension is has been removed in this release.
+        </VarListEntry> 
+        <VarListEntry>
+            <Term>CID Fonts</Term>
+            <ListItem>
+            <Para>
+            Support for CID fonts has been completely removed as of this
+            release. mkcfm has also been deprecated as a result.
             </Para>
         </VarListEntry>
-    </VariableList>
+      </VariableList>
     </Para>
 </Sect1>
 
