@@ -912,7 +912,7 @@ The next section describes what is new in the latest version
             information about which directories contain font files and also
             provides a sophisticated font aliasing mechanism.
             Documentation for that file is included in the 
-            <ulink URL="Xft.3.man">Xft(3)</ulink man page.
+            <ulink URL="Xft.3.man">Xft(3)</ulink> man page.
             </Para>
         </Sect3>
         
