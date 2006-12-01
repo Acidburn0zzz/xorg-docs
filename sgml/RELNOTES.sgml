@@ -136,7 +136,7 @@ The next section describes what is new in the latest version
         
         <listitem>
             <para>
-            Platform support enhancements for sparc64, ia64, x86, and amd64
+            Platform support enhancements for x86, amd64, sparc64, and ia64 
             </para>
         </listitem>
         
