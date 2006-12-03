@@ -673,24 +673,25 @@ The next section describes what is new in the latest version
         </para>
         
         <para>
-        This release comes with a graphical configuration tool called
-        "<literal remap="tt">xorgcfg</literal>", which also has a text mode
-        interface and can be used to create an initial configuration file.
-        It can also be used to customize existing configurations.
-        </para>
-        
-        <para>
-        Next in the order of configuration preferences is to use the Xorg
-        server's ability to create a starting configuration file.  Run as root:
+        The recommended method for generating a coniguration file is to use
+        the Xorg server itself.  Run as root:
         
         <screen>
         Xorg -configure
         </screen>
          and follow the instructions.
         </para>
+
+        <para>
+        This release comes with a graphical configuration tool called
+        "<literal remap="tt">xorgcfg</literal>", which also has a text mode
+        interface and can be used to create an initial configuration file.
+        It can also be used to customize existing configurations. This
+        tool is deprecated, although it is still available for use.
+        </para>
         
         <para>
-        Finally, if all else fails, the trusty old standby text-based tool
+        Finally, if all else fails, the old standby text-based tool
         "<literal remap="tt">xorgconfig</literal>" can also be used for
         generating X server config files.
         </para>
