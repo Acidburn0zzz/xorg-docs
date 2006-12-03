@@ -673,7 +673,7 @@ The next section describes what is new in the latest version
         </para>
         
         <para>
-        The recommended method for generating a coniguration file is to use
+        The recommended method for generating a configuration file is to use
         the Xorg server itself.  Run as root:
         
         <screen>
