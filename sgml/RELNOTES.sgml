@@ -147,15 +147,16 @@ The next section describes what is new in the latest version
     <sect2>
         <title>Updated keyboard mappings</title>
         <para>
-        The requirement for XKB data can be satisfied either by the
-        traditional data set (the 'xkbdata' module), or by the dataset from
+        The requirement for XKB data can be satisfied by the dataset from
         the xkeyboard-config project (the 'xkbdesc' module).  xkbdesc has
-        numerous improvements relative to xkbdata: layouts have been
-        cleaned up for consistency and universal multi-layout support, some
-        new layouts have added, and some layouts have changed names to be
-        more straightforward and ISO compliant.  Some setups will need
-        adjustments in order to use xkbdesc.  It is now strongly encouraged
-        for all distributions to migrate to xkbdesc.
+        numerous improvements relative to the deprecated xkbdata: layouts
+        have been cleaned up for consistency and universal multi-layout
+        support, some new layouts have added, and some layouts have changed
+        names to be more straightforward and ISO compliant.  Some setups
+        will need adjustments in order to use xkbdesc. It is now strongly
+        encouraged for all distributions to migrate to xkbdesc, as the old
+        formats are deprecated and are not considered a part of the
+        X11R&relvers; release.
         </para>
     </sect2>
     
@@ -1378,6 +1379,16 @@ The next section describes what is new in the latest version
             <Para>
             Support for CID fonts has been removed as of this release.
             mkcfm has also been deprecated as a result.
+            </Para>
+        </VarListEntry>
+        <VarListEntry>
+            <Term>xkbdata</Term>
+            <ListItem>
+            <Para>
+            The old xkbdata module has been deprecated and is not
+            considered to be a part of this release. Please migrate to the
+            data provided by the xkeyboard-config project, which located in
+            the xkbdesc CVS module.
             </Para>
         </VarListEntry>
       </VariableList>
