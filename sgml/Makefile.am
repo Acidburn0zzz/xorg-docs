@@ -56,14 +56,12 @@ endif
 if BUILD_HTMLDOC
 INSTALL_FILES += $(HTML_FILES)
 .sgml.html:
-	@rm -rf $@
+	@rm -f $@
 	$(MAKE_HTML) -u $<
 endif
 
 noinst_DATA = $(INSTALL_FILES)
-CLEANFILES = $(TXT_FILES) $(PS_FILES) $(PDF_FILES)
-clean-local:
-	@rm -rf $(HTML_FILES)
+CLEANFILES = $(TXT_FILES) $(PS_FILES) $(PDF_FILES) $(HTML_FILES)
 
 EXTRA_DIST = \
 	$(SGML_FILES) \
