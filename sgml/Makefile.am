@@ -20,6 +20,8 @@
 #
 #  Process this file with autoconf to create configure.
 
+SUBDIRS = core ddx fonts graphics input output platforms registry security
+
 x11docdir = @X11DOCDIR@
 include $(top_srcdir)/sgmlrules.in
 
