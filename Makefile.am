@@ -44,7 +44,6 @@ EXTRA_DIST = \
 	specs/ICE/ice.ms \
 	specs/PM/PM_spec \
 	specs/Render/library \
-	specs/Render/protocol \
 	specs/rstart/fix.awk \
 	specs/rstart/fix.nawk \
 	specs/rstart/fix.sed \
