@@ -418,12 +418,17 @@ The next section describes what is new in the latest version
             <row>
                 <entry><Literal remap="tt">voodoo</Literal></entry>
                 <entry>3Dfx Voodoo</entry>
-                <entry><ulink URL="vmware.4.html">vmware(4)</ulink></entry>
+                <entry>&nbsp;</entry>
             </row>
             <row>
                 <entry><Literal remap="tt">wfb</Literal></entry>
                 <entry>Wrapper Framebuffer</entry>
-                <entry><ulink URL="vmware.4.html">vmware(4)</ulink></entry>
+                <entry>&nbsp;</entry>
+            </row>
+            <row>
+                <entry><Literal remap="tt">wsfb</Literal></entry>
+                <entry>Workstation Framebuffer</entry>
+                <entry><ulink URL="wsfb.4.html">wsfb(4)</ulink></entry>
             </row>
         </tbody>
         </tgroup>
