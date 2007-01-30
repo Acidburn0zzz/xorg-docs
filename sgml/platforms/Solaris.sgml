@@ -181,6 +181,7 @@ however a number of <Literal remap="tt">ioctl()</Literal> calls are broken.
 Both GCC, and the Sun Studio compilers are supported by X11R&relvers;.
 The minimum recommended GCC release is 2.7.2.
 Some earlier GCC's are known to not work and should be avoided.
+</Para>
 <Para>
 You should also make certain your version of GCC predefines `sun'.
 If needed edit <Literal remap="tt">/usr/local/lib/gcc-lib/*/*/specs</Literal>, and modify the
@@ -199,13 +200,16 @@ Also on SPARCs, you may be able to build the old deprecated Xsun* servers for
 older cg* graphics devices by adding "&num;define XsunServer YES" or "&num;define 
 Xsun24Server YES" or "&num;define XsunMonoServer YES" to &nbsp;xc/config/cf/host.def.
 These servers are no longer maintained nor supported and may not build in
-this release.</ListItem>
+this release.
+</Para>
+</ListItem>
 <ListItem>
 <Para>
 A Threaded Xlib compiled with GCC has subtle problems.
 It'll work 98&percnt; of the time, however clients will occasionally exhibit
 strange hangs.
 Most notably image viewers such as xv-3.10 exhibit this problem.
+</Para>
 <Para>
 It is recommended that you set ThreadedX in <Literal remap="tt">&tilde;xc/config/cf/host.def</Literal> to
 NO, if you are using GCC.
@@ -218,6 +222,7 @@ Whether this behaviour still exists with newer GCC's has not been verified.
 To build X11R&relvers; with GCC you need gcc and (optionally) c++filt from GNU
 binutils.
 Don't install gas or ld from GNU binutils, use the one provided by Sun.
+</Para>
 <Para>
 You might need to setup a /opt/SUNWspro/bin directory containing symbolic links
 named <Literal remap="tt">cc</Literal>, <Literal remap="tt">CC</Literal>, and <Literal remap="tt">c++filt</Literal> pointing respectively to the actual
@@ -228,7 +233,9 @@ named <Literal remap="tt">cc</Literal>, <Literal remap="tt">CC</Literal>, and <L
 <Para>
 If you are using Sun compilers to compile the X11R&relvers; distribution, you need to
 modify your PATH appropriately so the Sun compiler tools are available.
-Normally, they should be in <Literal remap="tt">/opt/SUNWspro/bin</Literal></ListItem>
+Normally, they should be in <Literal remap="tt">/opt/SUNWspro/bin</Literal>
+</Para>
+</ListItem>
 <ListItem>
 <Para>
 You <Emphasis remap="bf">MUST</Emphasis> put <Literal remap="tt">/usr/ccs/bin</Literal> at the front of your PATH.
@@ -236,7 +243,9 @@ There are known problems with some GNU replacements for the utilities found
 there.
 So the <Literal remap="tt">/usr/ccs/bin</Literal> versions of these programs must be found before
 any possible GNU versions.
-(Most notably GNU '<Literal remap="tt">ar</Literal>' does not work during the build).</ListItem>
+(Most notably GNU '<Literal remap="tt">ar</Literal>' does not work during the build).
+</Para>
+</ListItem>
 
 </OrderedList>
 
@@ -254,6 +263,7 @@ any possible GNU versions.
 <Para>
 Depending on the release or architecture of Solaris you are running, you might
 need to install an OS driver for an aperture device.
+</Para>
 <Para>
 Under Solaris x86 2.5 and later, there's a system driver (<Literal remap="tt">/dev/xsvc</Literal>)
 that provides this functionality.
@@ -278,12 +288,12 @@ If you have not made the Virtual Terminal devices, you will need to specify the
 terminal device to run the Xserver on.
 The correct device is vt00 so your <Literal remap="tt">xinit</Literal> command would look like
 so:
-<Para>
+<InformalExample>
 
 <Screen>
 	xinit -- vt00
 </Screen>
-
+</InformalExample>
 If you have made the virtual terminal devices you do not need to specify the VT
 to run the Xserver on.
 </Para>
@@ -294,6 +304,7 @@ For old releases of Solaris you will probably want to set your LD&lowbar;LIBRARY
 <Literal remap="tt">/usr/X11R6/lib:/usr/openwin/lib:/usr/dt/lib</Literal>.
 Including <Literal remap="tt">/usr/X11R6/lib</Literal> in your LD&lowbar;LIBRARY&lowbar;PATH is probably not
 necessary, however it doesn't hurt. :)
+</Para>
 <Para>
 Including <Literal remap="tt">/usr/openwin/lib</Literal> in the LD&lowbar;LIBRARY&lowbar;PATH is recommended
 on older releases because some Sun supplied binaries were not compiled with LD&lowbar;RUN&lowbar;PATH set
@@ -310,14 +321,18 @@ LD&lowbar;LIBRARY&lowbar;PATH too.
 Xqueue is <Emphasis remap="bf">NOT</Emphasis> supported under Solaris.
 The includes necessary for Xqueue are available, however the driver does not
 seem to be in the kernel.
-(Go figure)</ListItem>
+(Go figure)
+</Para>
+</ListItem>
 <ListItem>
 <Para>
 If you want to use xdm with Solaris, extract the files from the shar file in
 <Literal remap="tt">/usr/X11R6/lib/X11/etc/XdmConf.svr4</Literal> into a temporary directory.
 The <Literal remap="tt">README</Literal> file tells where the individual files need to be installed.
 Be sure to read through each file and make any site-specific changes that you
-need.</ListItem>
+need.
+</Para>
+</ListItem>
 
 </OrderedList>
 
@@ -337,6 +352,7 @@ The Solaris 2.1 for x86 OpenWindows filemgr does not work against a X11R5
 Xserver, it probably will also not work against a X11R6 Xserver.
 Attempting to 'Drag and Drop' a file causes the filemgr to abort with an
 'X error'
+</Para>
 <Para>
 Solaris x86 2.4 does not have this problem.
 </Para>
@@ -349,7 +365,9 @@ There is no known work around.
 <Para>
 The SPARC port is still quite new, so instability is to be expected (and
 reported!).
-It might even have broken some aspects of the x86 port.</ListItem>
+It might even have broken some aspects of the x86 port.
+</Para>
+</ListItem>
 
 </OrderedList>
 

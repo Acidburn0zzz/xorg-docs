@@ -189,7 +189,7 @@ The next section describes what is new in the latest version
             <row>
                 <entry>Driver Name</entry>
                 <entry>Description</entry>
-                <entry>Further Information
+                <entry>Further Information</entry>
             </row>
             <row>
                 <entry><Literal remap="tt">apm</Literal></entry>
@@ -403,7 +403,7 @@ The next section describes what is new in the latest version
             <row>
                 <entry><Literal remap="tt">vga</Literal></entry>
                 <entry>Generic VGA</entry>
-                <entry><ulink URL="vga.4.html">vga(4)</ulink>
+                <entry><ulink URL="vga.4.html">vga(4)</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">via</Literal></entry>
@@ -488,7 +488,7 @@ The next section describes what is new in the latest version
             <row>
                 <entry><Literal remap="tt">citron</Literal></entry>
                 <entry>Citron</entry>
-                <entry><ulink URL="citron.4.html">citron(4)</ulink>
+                <entry><ulink URL="citron.4.html">citron(4)</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">digitaledge</Literal></entry>
@@ -498,7 +498,7 @@ The next section describes what is new in the latest version
             <row>
                 <entry><Literal remap="tt">dmc</Literal></entry>
                 <entry>DMC</entry>
-                <entry><ulink URL="dmc.4.html">dmc(4)</ulink>
+                <entry><ulink URL="dmc.4.html">dmc(4)</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">dynapro</Literal></entry>
@@ -523,7 +523,7 @@ The next section describes what is new in the latest version
             <row>
                 <entry><Literal remap="tt">fpit</Literal></entry>
                 <entry>Fujitsu Stylistic Tablet PCs</entry>
-                <entry><ulink URL="fpit.4.html">fpit(4)</ulink>
+                <entry><ulink URL="fpit.4.html">fpit(4)</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">hyperpen</Literal></entry>
@@ -1372,6 +1372,8 @@ The next section describes what is new in the latest version
             <ListItem>
             <Para>
             The LBX extension is has been removed in this release.
+            </Para>
+            </ListItem>
         </VarListEntry> 
         <VarListEntry>
             <Term>CID Fonts</Term>
@@ -1380,6 +1382,7 @@ The next section describes what is new in the latest version
             Support for CID fonts has been removed as of this release.
             mkcfm has also been deprecated as a result.
             </Para>
+            </ListItem>
         </VarListEntry>
         <VarListEntry>
             <Term>xkbdata</Term>
@@ -1390,6 +1393,7 @@ The next section describes what is new in the latest version
             data provided by the xkeyboard-config project, which located in
             the xkbdesc CVS module.
             </Para>
+            </ListItem>
         </VarListEntry>
       </VariableList>
     </Para>
@@ -1478,6 +1482,7 @@ The next section describes what is new in the latest version
     Thomas Winischhofer, 
     David Woodhouse, 
     </Para>
+    </ListItem>
     </VarListEntry>
     </VariableList>
     </Para>
@@ -1866,37 +1871,38 @@ The next section describes what is new in the latest version
     X-TrueType Server Project and their contributors,
     Yu Shao.
     </Para>
-    
+    </ListItem>
+    </VarListEntry>
+    </VariableList>
+    </Para>
+
     <Para>
     This product includes software developed by The XFree86 Project, Inc
     (http://www.xfree86.org/) and its contributors.
     </Para>
-    
+
     <Para>
     This produce includes software that is based in part of the work of the
     FreeType Team (http://www.freetype.org).
     </Para>
-    
+
     <Para>
     This product includes software developed by the University of California,
     Berkeley and its contributors.
     </Para>
-    
+
     <Para>
     This product includes software developed by Christopher G. Demetriou.
     </Para>
-    
+
     <Para>
     This product includes software developed by the NetBSD Foundation, Inc. and its
     contributors.
     </Para>
-    
+
     <Para>
     This product includes software developed by the X-Oz Technologies and its
     contributors.
-    </Para>
-    </VarListEntry>
-    </VariableList>
     </Para>
 
 </Sect1>

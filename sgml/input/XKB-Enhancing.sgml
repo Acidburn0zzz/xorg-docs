@@ -109,6 +109,7 @@ etc.
 </ItemizedList>
 
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>Types</Term>
@@ -118,6 +119,7 @@ Types describe how the produced key is changed by active modifiers (like
 Shift, Control, Alt, ...). There are several predefined types which
 cover most of used combinations.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>Compat</Term>
@@ -128,6 +130,7 @@ compat component you can assign various actions (elaborately described
 in xkb specification) to key events. This is also the place where
 LED-indicators behaviour is defined.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>Symbols</Term>
@@ -139,6 +142,7 @@ symbolic name, see above). There may be defined more than one value
 for each key and then it depends on a key type and on modifiers state
 (respective compat component) which value will be the resulting one.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>Geometry</Term>
@@ -147,6 +151,7 @@ for each key and then it depends on a key type and on modifiers state
 Geometry files aren't used by xkb itself but they may be used by some
 external programs to depict a keyboard image.
 </Para>
+</ListItem>
 </VarListEntry>
 </VariableList>
 All these components have the files located in xkb configuration tree
@@ -456,6 +461,7 @@ The most used schemes are:
 The key does not depend on any modifiers. The symbol from first level
 is always chosen.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>TWO&lowbar;LEVEL</Term>
@@ -468,6 +474,7 @@ system-specific capitalization rules. If both Shift+Lock modifier apply the
 symbol from the second level is taken and capitalization rules are applied
 (and usually have no effect).
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>ALPHABETIC</Term>
@@ -481,6 +488,7 @@ modifier apply the symbol from the first level is taken and no
 capitalization rules applied. This is often called shift-cancels-caps
 behaviour.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>THREE&lowbar;LEVEL</Term>
@@ -494,6 +502,7 @@ the resulting level. Only Shift and LevelThree are taken into that
 consideration. If the Lock modifier is active capitalization rules
 are applied on the resulting symbol.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>FOUR&lowbar;LEVEL</Term>
@@ -502,6 +511,7 @@ are applied on the resulting symbol.
 Is the same as THREE&lowbar;LEVEL but unlike LEVEL&lowbar;THREE if both Shift+LevelThree
 modifiers apply the symbol is taken from the fourth level.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>FOUR&lowbar;LEVEL&lowbar;ALPHABETIC</Term>
@@ -513,6 +523,7 @@ third level is taken and the capitalization rules are applied.
 If Lock+Shift+LevelThree apply the symbol from the third level is taken
 and no capitalization rules are applied.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>KEYPAD</Term>
@@ -525,6 +536,7 @@ Shift or NumLock modifiers apply the symbol from the second level is taken.
 If both Shift+NumLock modifiers apply the symbol from the first level
 is taken. Again, shift-cancels-caps variant.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>FOUR&lowbar;LEVEL&lowbar;KEYPAD</Term>
@@ -536,6 +548,7 @@ If Shift+LevelThree or NumLock+LevelThree apply the symbol from the fourth
 level is taken. If all Shift+NumLock+LevelThree modifiers apply the symbol
 from the third level is taken. This also, shift-cancels-caps variant.
 </Para>
+</ListItem>
 </VarListEntry>
 </VariableList>
 </Para>
@@ -552,6 +565,7 @@ It is similar to TWO&lowbar;LEVEL scheme but it considers the Control
 modifier rather than Shift. That means, the symbol from the second level
 is chosen by Control rather than by Shift.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>PC&lowbar;SYSRQ</Term>
@@ -561,6 +575,7 @@ It is similar to TWO&lowbar;LEVEL scheme but it considers the Alt modifier rathe
 than Shift. That means, the symbol from the second level
 is chosen by Alt rather than by Shift.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>CTRL+ALT</Term>
@@ -571,6 +586,7 @@ values. If only one modifier (Alt or Control) applies the symbol
 from the first level is chosen. Only if both Alt+Control modifiers apply
 the symbol from the second level is chosen.
 </Para>
+</ListItem>
 </VarListEntry>
 <VarListEntry>
 <Term>SHIFT+ALT</Term>
@@ -581,6 +597,7 @@ If only one modifier (Alt or Shift) applies the symbol
 from the first level is chosen. Only if both Alt+Shift modifiers apply
 the symbol from the second level is chosen.
 </Para>
+</ListItem>
 </VarListEntry>
 </VariableList>
 </Para>
