@@ -335,11 +335,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 Mac OS X/Darwin
-P:	?
+P:	Ben Byer
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 OpenBSD
 P:	Matthieu Herrb
