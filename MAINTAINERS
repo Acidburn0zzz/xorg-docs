@@ -40,6 +40,13 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
+PCI Access Library
+P:	Ian Romanick
+M:	?
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.freedesktop.org/wiki/PciRework
+S:	Supported
+
 X.Org apps
 ---------------
 compiz
@@ -704,11 +711,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-mga
-P:	?
+P:	Ian Romanick, Tilman Sauerbeck
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-neomagic
 P:	Egbert Eich
@@ -915,6 +922,12 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
+xf86-video-xgi
+P:	Ian Romanick
+M:	?
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
 
 Developer relations & services
 ------------------------------
