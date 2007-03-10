@@ -668,11 +668,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-glide
-P:	?
-M:	?
+P:	Guillem Jover
+M:	guillem@hadrons.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Obsolete
+S:	Obsolete, yet still somehow maintained
 
 xf86-video-glint
 P:	Alan Hourihane
