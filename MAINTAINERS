@@ -484,11 +484,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-input-joystick
-P:	?
-M:	?
+P:	Sascha Hlusiak
+M:	saschahlusiak@arcor.de
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-input-keyboard
 P:	?
