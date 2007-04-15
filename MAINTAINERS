@@ -56,6 +56,34 @@ L:	compiz@lists.freedesktop.org
 W:	http://wiki.freedesktop.org/wiki/Software_2fCompiz
 S:	Maintained
 
+xbiff
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
+xcalc 
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
+xclock
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
+xconsole
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
 xdm
 P:	Alan Coopersmith
 M:	alan.coopersmith@sun.com
@@ -72,6 +100,26 @@ S:	Maintained
 S:	XKB being overhauled
 S:	Please contact Daniel if you're planning to work on this
 
+xload
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
+xman 
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
+xmessage
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
 
 all others
 P:	Jim Gettys
