@@ -441,11 +441,11 @@ S:	Maintained
 Drivers
 -------
 xf86-input-acecad
-P:	?
-M:	?
+P:	Giuseppe Bilotta
+M:	giuseppe.bilotta@gmail.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-input-aiptek
 P:	?
