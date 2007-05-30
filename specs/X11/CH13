@@ -922,7 +922,7 @@ Until freed, its contents will not be modified by Xlib.
 .NH 4
 Query Orientation
 .XS
-\(*SN Query Orientation
+\*(SN Query Orientation
 .XE
 .LP
 The
