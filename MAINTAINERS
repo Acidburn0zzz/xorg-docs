@@ -121,6 +121,13 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
+xsetroot
+P:	Matthieu Herrb
+M:	matthieu.herrb@laas.fr
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
 all others
 P:	Jim Gettys
 M:	?
