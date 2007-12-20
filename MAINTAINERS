@@ -91,6 +91,13 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
+xinput
+P:	Philip Langdale
+M:	philipl@alumni.utexas.net
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
 xkbcomp
 P:	Daniel Stone
 M:	daniel@fooishbar.org
