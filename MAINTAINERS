@@ -462,11 +462,11 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-input-aiptek
-P:	?
-M:	?
+P:	Rene van Paassen
+M:	rene.vanpaassen@gmail.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-input-calcomp
 P:	?
