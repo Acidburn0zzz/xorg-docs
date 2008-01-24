@@ -758,9 +758,9 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
 
-xf86-video-i810
-P:	Alan Hourihane
-M:	alanh@fairlite.demon.co.uk
+xf86-video-intel
+P:	Eric Anholt
+M:	eric@anholt.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
