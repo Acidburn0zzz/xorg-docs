@@ -403,9 +403,13 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
 
-Mac OS X/Darwin
+Mac OS X (Xquartz)
 P:	Ben Byer
 M:	bbyer@apple.com
+P:	Jeremy Huddleston
+M:	jeremyhu@apple.com
+L:	xquartz-dev@lists.macosforge.org
+W:	http://xquartz.macosforge.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
