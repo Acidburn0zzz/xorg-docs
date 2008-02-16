@@ -63,14 +63,9 @@ AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 .bp
 .LP
-Note to the 2004 edition: at this time this document must be considered incomplete.
+Note to the 2008 edition: at this time this document must be considered incomplete, though improved over the 2004 edition.
 In particular, the new Render extension is still lacking good documentation,
 and has become vital to high performance X implementations.
-A new "fb" portable frame buffer graphics library (replacing "cfb") 
-is used by most implementations
-to implement software rendering for most operations. Accelerating only a few
-of the old "core" graphics functions is now needed,
-as performance in software is "good enough" for most operations.
 Modern applications 
 and desktop environments are now
 much more sensitive to good implementation of the Render extension than in
@@ -2425,9 +2420,7 @@ Colormap Routines
 You need to implement the following routines to handle the device-dependent
 aspects of color maps.  You will end up placing pointers to these procedures
 in your ScreenRec data structure(s).  The sample server implementations of
-many of these routines are in both cfbcmap.c and mfbcmap.c; since mfb does
-not do very much with color, the cfb versions are typically more useful
-prototypes.
+many of these routines are in fbcmap.c.
 .nf
 
 	Bool pScreen->CreateColormap(pColormap)
@@ -2710,7 +2703,7 @@ RealizeFont and UnrealizeFont should calculate and allocate these extra data str
 dispose of them when no longer needed.
 These are called in response to OpenFont and CloseFont requests from 
 the client.
-The sample server implementation is in mfbfont.c (which does very little).
+The sample server implementation is in fbscreen.c (which does very little).
 
 .NH 3
 Other Screen Routines
@@ -2748,7 +2741,7 @@ height for cursors that you can handle.
 For TileShape and StippleShape, start with the suggested values in pWidth
 and pHeight and modify them in place to be optimal values that are
 greater than or equal to the suggested values.
-The sample server implementation is in Xserver/mfb/mfbmisc.c.
+The sample server implementation is in Xserver/fb/fbscreen.c.
 .nf
 
 	pScreen->SourceValidate(pDrawable, x, y, width, height)
@@ -2887,7 +2880,7 @@ for the pixmap data, and if the implementation is using the
 devPrivate field as a pointer to the pixmap data, it should be
 set to NULL.
 If successful, it returns a pointer to the new pixmap; if not, it returns NULL.
-See Xserver/mfb/mfbpixmap.c for the sample server implementation.
+See Xserver/fb/fbpixmap.c for the sample server implementation.
 .nf
 
 	Bool pScreen->DestroyPixmap(pPixmap)
@@ -2898,7 +2891,7 @@ This ScreenRec procedure must "destroy" a pixmap.
 It should decrement the reference count and, if zero, it 
 must deallocate the PixmapRec and all attached devPrivate blocks.
 If successful, it returns TRUE. 
-See Xserver/mfb/mfbpixmap.c for the sample server implementation.
+See Xserver/fb/fbpixmap.c for the sample server implementation.
 .nf
 
 	Bool
@@ -3079,7 +3072,7 @@ This routine is a hook for when DIX creates a window.
 It should fill in the "Window Procedures in the WindowRec" below
 and also allocate the devPrivate block for it.
 
-See Xserver/mfb/mfbwindow.c for the sample server implementation.
+See Xserver/fb/fbwindow.c for the sample server implementation.
 .nf
 
 	Bool pScreen->DestroyWindow(pWin);
@@ -3090,7 +3083,7 @@ This routine is a hook for when DIX destroys a window.
 It should deallocate the devPrivate block for it and any other blocks that need
 to be freed, besides doing other cleanup actions.
 
-See Xserver/mfb/mfbwindow.c for the sample server implementation.
+See Xserver/fb/fbwindow.c for the sample server implementation.
 .nf
 
 	Bool pScreen->PositionWindow(pWin, x, y);
@@ -3106,7 +3099,7 @@ aligned to longword locations in the frame buffer, then you should rotate your t
 The actual graphics involved in moving the pixels on the screen and drawing the
 border are handled by CopyWindow(), below.
 .LP
-See Xserver/mfb/mfbwindow.c for the sample server implementation.
+See Xserver/fb/fbwindow.c for the sample server implementation.
 .nf
 
 	Bool pScreen->RealizeWindow(pWin);
@@ -3200,7 +3193,7 @@ Window Painting Procedures
 In addition to the procedures listed above, there are four routines which
 manipulate the actual window image directly.
 In the sample server, mi implementations will work for 
-most purposes and mfb/cfb routines speed up situations, such
+most purposes and fb routines speed up situations, such
 as solid backgrounds/borders or tiles that are 8, 16 or 32 pixels square.
 
 These three routines are used for systems that implement a backing-store scheme for it to
@@ -3287,7 +3280,7 @@ The pixels in oldRegion (with reference point oldpt) are copied to the
 window's new region (pWin->borderClip).  pWin->borderClip is gotten
 directly from the window, rather than passing it as a parameter.
 
-The sample server implementation is in Xserver/mfb/mfbwindow.c.
+The sample server implementation is in Xserver/fb/fbwindow.c.
 
 .NH 4
 Screen Operations for Backing Store
@@ -3565,7 +3558,7 @@ consumed by each GC, it is wise to create a few "boilerplate" GC ops vectors
 which can be shared by every GC which matches the constraints for that set.
 Also, it is usually reasonable to have every GC created by a particular
 module to share a common set of GC funcs.  Samples of this sort of
-sharing can be seen in cfb/cfbgc.c and mfb/mfbgc.c.
+sharing can be seen in fb/fbgc.c.
 
 The DDX software is notified any time the client (or DIX) uses a changed GC.
 For instance, if the hardware has special support for drawing fixed-width
@@ -3758,7 +3751,7 @@ of the GC.  In this way, your drawing primitive routines (and whatever
 is below them) can easily determine what to clip and where.  You
 should combine the regions clientClip (the region that the client
 desires to clip output to) and the region returned by
-NotClippedByChildren(), in DIX.  An example is in Xserver/mfb/mfbgc.c.
+NotClippedByChildren(), in DIX.  An example is in Xserver/fb/fbgc.c.
 
 Some kinds of extension software may cause this routine to be called
 more than originally intended; you should not rely on algorithms that
@@ -3918,7 +3911,7 @@ appropriate regions in the drawable.
 Since there are many regions to clip to simultaneously, 
 your ValidateGC routine should combine these into a unified 
 clip region to which your drawing routines can quickly refer.
-This is exactly what the cfb and mfb routines supplied with the sample server
+This is exactly what the fb routines supplied with the sample server
 do.
 The mi implementation passes responsibility for clipping while drawing
 down to the Pixblit routines.
@@ -4024,7 +4017,7 @@ event must be sent for the client to correctly repaint them.  Of
 course, if you implement some sort of backing store, you could do this
 without resorting to exposure events.
 
-An example implementation is mfbCopyArea() in Xserver/mfb/mfbbitblt.c.
+An example implementation is fbCopyArea() in Xserver/fb/fbcopy.c.
 .nf
 
 	RegionPtr pGC->ops->CopyPlane(src, dst, pGC, srcx, srcy, w, h, dstx, dsty, plane)
@@ -4042,8 +4035,8 @@ different depths, except for copying bitmaps to pixmaps and applying
 foreground and background colors to it.  All other conditions of
 CopyArea apply to CopyPlane too.
 
-An example implementation is mfbCopyPlane() in 
-Xserver/mfb/mfbbitblt.c.
+An example implementation is fbCopyPlane() in 
+Xserver/fb/fbcopy.c.
 .nf
 
 	void pGC->ops->PolyPoint(dst, pGC, mode, n, pPoint)
@@ -4060,7 +4053,7 @@ mode is one of the defined constants Origin (absolute coordinates) or Previous
 (each coordinate is relative to the last).
 Note that this does not use the background color or any tiles or stipples.
 
-Example implementations are mfbPolyPoint() in Xserver/mfb/mfbpolypnt.c and 
+Example implementations are fbPolyPoint() in Xserver/fb/fbpoint.c and 
 miPolyPoint in Xserver/mi/mipolypnt.c.
 .nf
 
@@ -4155,7 +4148,7 @@ An example implementation is miFillPolygon() in Xserver/mi/mipoly.c.
 .fi
 PolyFillRect fills multiple rectangles.
 
-Example implementations are mfbPolyFillRect() in Xserver/mfb/mfbfillrct.c and 
+Example implementations are fbPolyFillRect() in Xserver/fb/fbfillrect.c and 
 miPolyFillRect() in Xserver/mi/mifillrct.c.
 .nf
 
@@ -4190,7 +4183,7 @@ Either the drawable and the pixmap image have the same depth, or the
 source pixmap image must be a Bitmap.  If a Bitmap, the foreground and
 background colors will be applied to the destination.
 
-An example implementation is miPutImage() in Xserver/mfb/mibitblt.c.
+An example implementation is fbPutImage() in Xserver/fb/fbimage.c.
 .nf
 
 	void pScreen->GetImage(src, x, y, w, h, format, planeMask, pBinImage)
@@ -4304,21 +4297,20 @@ these Pixblit routines.
 These routines read and write pixel values 
 and deal directly with the image data.
 
-The Pixblit routines for the sample server are part of the "mfb"
-routines (for Monochrome Frame Buffer), and "cfb" routines (for Color
-Frame Buffer).  As with the mi routines, the mfb and cfb routines are
+The Pixblit routines for the sample server are part of the "fb"
+routines. As with the mi routines, the fb routines are
 portable but are not as portable as the mi routines.
 
-The mfb routines only work for monochrome frame buffers, the simplest
-type of display.  Furthermore, they only work for screens that
-organize their bits in rows of pixels on the screen.  (See the
-Strategies document for more details on porting mfb.)  The cfb
-routines work for packed-pixel displays from 2 to 32 bits in depth,
-although they have a bit of code which has been tuned to run on 8-bit
-(1 pixel per byte) displays.
+The fb subsystem is a depth-independent framebuffer core, capable of
+operating at any depth from 1 to 32, based on the depth of the window
+or pixmap it is currently operating on.  In particular, this means it
+can support pixmaps of multiple depths on the same screen.  It supplies
+both Pixblit routines and higher-level optimized implementations of the
+Drawing Primitive routines.  It does make the assumption that the pixel
+data it touches is available in the server's address space.
 
 In other words, if you have a "normal" frame buffer type display, you
-can probably use either the mfb or cfb code, and the mi code.  If you
+can probably use the fb code, and the mi code.  If you
 have a stranger hardware, you will have to supply your own Pixblit
 routines, but you can use the mi routines on top of them.  If you have
 better ways of doing some of the Drawing Primitive functions, then you
@@ -5106,12 +5098,12 @@ The Struct is the structure it is attached to; if blank, this
 procedure is not attached to a struct and must be named as shown.
 The sample server provides implementations in the following
 categories.  Notice that many of the graphics routines have both
-mi and mfb implementations.
+mi and fb implementations.
 .TS
 l l.
 dix	portable to all systems; do not attempt to rewrite (Xserver/dix)
 os	routine provided in Xserver/os or Xserver/include/os.h
-ddx	frame buffer dependent (examples in Xserver/mfb,Xserver/cfb)
+ddx	frame buffer dependent (examples in Xserver/fb)
 mi	routine provided in Xserver/mi
 hd	hardware dependent (examples in many Xserver/hw directories)
 none	not implemented in sample implementation
