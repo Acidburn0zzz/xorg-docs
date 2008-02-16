@@ -2993,13 +2993,11 @@ forget pieces of backing that are written into, relying instead upon
 expose events to repaint for simplicity.
 
 In X, the decision to use the backing-store scheme is made
-by you, the server implementor.
-X provides hooks for implementing backing store, therefore 
-the decision to use this strategy can be made on the fly.
-For example, you may use backing store only for certain windows
-that the user requests or you may use backing store 
-until memory runs out, at which time you
-start dropping pieces of backing as needed to make more room.
+by you, the server implementor.  The sample server implements
+backing store "for free" by reusing the infrastructure for the Composite
+extension.  As a side effect, it treats the WhenMapped and Always hints
+as equivalent.  However, it will never forget pixel contents when the
+window is mapped.
 
 When a window operation is requested by the client,
 such as a window being created or moved,
@@ -3190,14 +3188,12 @@ Window Painting Procedures
 Window Painting Procedures
 .XE
 .LP
-In addition to the procedures listed above, there are four routines which
+In addition to the procedures listed above, there are two routines which
 manipulate the actual window image directly.
 In the sample server, mi implementations will work for 
 most purposes and fb routines speed up situations, such
 as solid backgrounds/borders or tiles that are 8, 16 or 32 pixels square.
 
-These three routines are used for systems that implement a backing-store scheme for it to
-know when to stash away areas of pixels and to restore or reposition them.
 .nf
 
 	void pScreen->ClearToBackground(pWin, x, y, w, h, generateExposures);
@@ -3224,34 +3220,6 @@ rectangle in question (probably using PaintWindowBackground).
 If w or h is zero, it clears all the way to the right or lower edge of the window.
 
 The sample server implementation is in Xserver/mi/miwindow.c.
-.nf
-
-	void pScreen->PaintWindowBackground(pWin, region, kind)
-		WindowPtr pWin;
-		RegionPtr region;
-		int kind;	/* must be PW_BACKGROUND */
-
-	void pScreen->PaintWindowBorder(pWin, region, kind)
-		WindowPtr pWin;
-		RegionPtr region;
-		int kind;	/* must be PW_BORDER */
-
-.fi
-These two routines are for painting pieces of the window background or border.
-They both actually paint the area designated by region.
-The kind parameter is a defined constant that is always PW_BACKGROUND
-or PW_BORDER, as shown.
-Therefore, you can use the same routine for both.
-The defined constant tells the routine whether to use the window's 
-border fill style or its background fill style to paint the given region.
-Both fill styles consist of a union which holds a tile pointer and a pixel
-value, along with a separate variable which indicates which entry is valid.
-For PW_BORDER, borderIsPixel != 0 indicates that the border PixUnion
-contains a pixel value, else a tile.  For PW_BACKGROUND there are four
-values, contained in backgroundState; None, ParentRelative, BackgroundPixmap
-and BackgroundPixel.  None indicates that the region should be left
-unfilled, while ParentRelative indicates that the background of the parent is
-inherited (see the Protocol document for the exact semantics).
 .nf
 
 	void pScreen->CopyWindow(pWin, oldpt, oldRegion);
@@ -3281,106 +3249,6 @@ window's new region (pWin->borderClip).  pWin->borderClip is gotten
 directly from the window, rather than passing it as a parameter.
 
 The sample server implementation is in Xserver/fb/fbwindow.c.
-
-.NH 4
-Screen Operations for Backing Store
-.XS
-Screen Operations for Backing Store
-.XE
-.LP
-Each ScreenRec has six functions which provide the backing store
-interface.  For screens not supporting backing store, these pointers
-may be nul.  Servers that implement some backing store scheme 
-must fill in the procedure pointers for the procedures below,
-and must maintain the backStorage field in each window struct.
-The sample implementation is in mi/mibstore.c.
-.nf
-
-	void pScreen->SaveDoomedAreas(pWin, pRegion, dx, dy)
-		WindowPtr pWin;
-		RegionPtr pRegion;
-		int dx, dy;
-
-.fi
-This routine saves the newly obscured region, pRegion, in backing store.
-dx, dy indicate how far the window is being moved, useful as the obscured
-region is relative to the window as it will appear in the new location,
-rather then relative to the bits as the are on the screen when the function
-is invoked.
-.nf
-
-	RegionPtr pScreen->RestoreAreas(pWin, pRegion)
-		WindowPtr pWin;
-		RegionPtr pRegion;
-
-.fi
-This looks at the exposed region of the window, pRegion, and tries to
-restore to the screen the parts that have been saved.  It removes the
-restored parts from the backing storage (because they are now on the screen)
-and subtracts the areas from the exposed region.  The returned region is the
-area of the window which should have expose events generated for and can be
-either a new region, pWin->exposed, or NULL.  The region left in
-pRegion is set to the area of the window which should be painted with
-the window background.
-.nf
-
-	RegionPtr pScreen->TranslateBackingStore(pWin, dx, dy, oldClip, oldx, oldy)
-		WindowPtr pWin;
-		int dx, dy;
-		RegionPtr oldClip;
-		int oldx, oldy;
-
-.fi
-This is called when the window is moved or resized so that the backing
-store can be translated if necessary.  oldClip is the old cliplist for
-the window, which is used to save doomed areas if the window is moved
-underneath its parent as a result of bitgravity.  The returned region
-represents occluded areas of the window for which the backing store
-contents are invalid.
-.nf
-
-	void pScreen->ExposeCopy(pSrc, pDst, pGC, prgnExposed, srcx, srcy, dstx, dsty, plane)
-		WindowPtr pSrc;
-		DrawablePtr pDst;
-		GCPtr pGC;
-		RegionPtr prgnExposed;
-		int srcx;
-		int srcy;
-		int dstx;
-		int dsty;
-		unsigned long plane;
-
-.fi
-Copies a region from the backing store of pSrc to pDst.
-.nf
-
-	RegionPtr pScreen->ClearBackingStore(pWindow, x, y, w, h, generateExposures)
-		WindowPtr pWindow;
-		int x;
-		int y;
-		int w;
-		int h;
-		Bool generateExposures;
-
-.fi
-Clear the given area of the backing pixmap with the background of
-the window.  If generateExposures is TRUE, generate
-exposure events for the area. Note that if the area has any
-part outside the saved portions of the window, we do not allow the
-count in the expose events to be 0, since there will be more
-expose events to come.
-.nf
-
-	void pScreen->DrawGuarantee(pWindow, pGC, guarantee)
-		WindowPtr pWindow;
-		GCPtr pGC;
-		int guarantee;
-
-.fi
-This informs the backing store layer that you are about to validate
-a gc with a window, and that subsequent output to the window
-is (or is not) guaranteed to be already clipped to the visible
-regions of the window.
 
 .NH 4
 Screen Operations for Multi-Layered Framebuffers
@@ -4014,8 +3882,8 @@ windows in front of it.  As text is scrolled on your window, the pixels
 that are scrolled out from under obscuring windows will not be
 available on the screen to copy to the right places, and so an exposure
 event must be sent for the client to correctly repaint them.  Of
-course, if you implement some sort of backing store, you could do this
-without resorting to exposure events.
+course, if you implement backing store, you could do this without resorting
+to exposure events.
 
 An example implementation is fbCopyArea() in Xserver/fb/fbcopy.c.
 .nf
@@ -4778,7 +4646,7 @@ There are limitations on other portions of the server implementation which
 make using wrappers possible; limits on when specific fields of data
 structures may be modified.  They are intended as a replacement for
 GCInterest queues, which were not general enough to support existing
-modules; in particular software cursors and backing store both needed more
+modules; in particular software cursors needed more
 control over the activity.  The general mechanism for using wrappers is:
 .nf
 privateWrapperFunction (object, ...)
@@ -5238,8 +5106,6 @@ RegisterKeyboardDevice	dix
 RegisterPointerDevice	dix	
 RemoveEnabledDevice	os
 ResetCurrentRequest	os
-RestoreAreas	none	BackingStore
-SaveDoomedAreas	none	BackingStore
 SaveScreen	ddx	Screen
 SetCriticalOutputPending	os
 SetCursorPosition	hd	Screen
@@ -5254,7 +5120,6 @@ TimerFree	os
 TimerInit	os
 TimerSet	os
 TimeSinceLastInputEvent	hd
-TranslateBackingStore	none	BackingStore
 TranslateRegion	mi	Screen
 UninstallColormap	ddx	Screen
 Union	mi	Screen
