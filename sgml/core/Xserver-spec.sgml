@@ -104,7 +104,7 @@ for the X v11 Sample Server</title>
       </para>
       <para>To understand this document and the accompanying source code, you should know the C language.  You should be familiar with 2D graphics and windowing concepts such as clipping, bitmaps, fonts, etc.  You should have a general knowledge of the X Window System.  To implement the server code on your hardware, you need to know a lot about your hardware, its graphic display device(s), and (possibly) its networking and multitasking facilities.  This document depends a lot on the source code, so you should have a listing of the code handy.</para>
       <para>Some source in the distribution is directly compilable on your machine.  Some of it will require modification.  Other parts may have to be completely written from scratch.  The distribution also includes source for a sample implementation of a display server which runs on a very wide variety of color and monochrome displays on Linux and *BSD which you will find useful for implementing any type of X server.</para>
-      <para>Note to the 2004 edition: at this time this document must be considered incomplete.  In particular, the new Render extension is still lacking good documentation, and has become vital to high performance X implementations.  A new "fb" portable frame buffer graphics library (replacing "cfb") is used by most implementations to implement software rendering for most operations. Accelerating only a few of the old "core" graphics functions is now needed, as performance in software is "good enough" for most operations.  Modern applications and desktop environments are now much more sensitive to good implementation of the Render extension than in most operations of the old X graphics model.  The shadow frame buffer implementation is also very useful in many circumstances, and also needs documentation.  We hope to rectify these shortcomings in our documentation in the future.  Help would be greatly appreciated.</para>
+      <para>Note to the 2008 edition: at this time this document must be considered incomplete, though improved over the 2004 edition.  In particular, the new Render extension is still lacking good documentation, and has become vital to high performance X implementations.  Modern applications and desktop environments are now much more sensitive to good implementation of the Render extension than in most operations of the old X graphics model.  The shadow frame buffer implementation is also very useful in many circumstances, and also needs documentation.  We hope to rectify these shortcomings in our documentation in the future.  Help would be greatly appreciated.</para>
     </abstract>
   </articleinfo>
 
@@ -2709,9 +2709,7 @@ be modifiable by client applications.</para>
 You need to implement the following routines to handle the device-dependent
 aspects of color maps.  You will end up placing pointers to these procedures
 in your ScreenRec data structure(s).  The sample server implementations of
-many of these routines are in both cfbcmap.c and mfbcmap.c; since mfb does
-not do very much with color, the cfb versions are typically more useful
-prototypes.</para>
+many of these routines are in fbcmap.c.</para>
 <para>
 <blockquote><programlisting>
 
@@ -2984,7 +2982,7 @@ RealizeFont and UnrealizeFont should calculate and allocate these extra data str
 dispose of them when no longer needed.
 These are called in response to OpenFont and CloseFont requests from 
 the client.
-The sample server implementation is in mfbfont.c (which does very little).</para>
+The sample server implementation is in fbscreen.c (which does very little).</para>
 </section>
 </section>
 <section>
@@ -3023,7 +3021,7 @@ height for cursors that you can handle.
 For TileShape and StippleShape, start with the suggested values in pWidth
 and pHeight and modify them in place to be optimal values that are
 greater than or equal to the suggested values.
-The sample server implementation is in Xserver/mfb/mfbmisc.c.</para>
+The sample server implementation is in Xserver/fb/fbscreen.c.</para>
 <para>
 <blockquote><programlisting>
 
@@ -3162,7 +3160,7 @@ for the pixmap data, and if the implementation is using the
 devPrivate field as a pointer to the pixmap data, it should be
 set to NULL.
 If successful, it returns a pointer to the new pixmap; if not, it returns NULL.
-See Xserver/mfb/mfbpixmap.c for the sample server implementation.</para>
+See Xserver/fb/fbpixmap.c for the sample server implementation.</para>
 <para>
 <blockquote><programlisting>
 
@@ -3174,7 +3172,7 @@ This ScreenRec procedure must "destroy" a pixmap.
 It should decrement the reference count and, if zero, it 
 must deallocate the PixmapRec and all attached devPrivate blocks.
 If successful, it returns TRUE. 
-See Xserver/mfb/mfbpixmap.c for the sample server implementation.</para>
+See Xserver/fb/fbpixmap.c for the sample server implementation.</para>
 <para>
 <blockquote><programlisting>
 
@@ -3276,13 +3274,11 @@ forget pieces of backing that are written into, relying instead upon
 expose events to repaint for simplicity.</para>
 <para>
 In X, the decision to use the backing-store scheme is made
-by you, the server implementor.
-X provides hooks for implementing backing store, therefore 
-the decision to use this strategy can be made on the fly.
-For example, you may use backing store only for certain windows
-that the user requests or you may use backing store 
-until memory runs out, at which time you
-start dropping pieces of backing as needed to make more room.</para>
+by you, the server implementor.  The sample server implements
+backing store "for free" by reusing the infrastructure for the Composite
+extension.  As a side effect, it treats the WhenMapped and Always hints
+as equivalent.  However, it will never forget pixel contents when the
+window is mapped.</para>
 <para>
 When a window operation is requested by the client,
 such as a window being created or moved,
@@ -3353,7 +3349,7 @@ This routine is a hook for when DIX creates a window.
 It should fill in the "Window Procedures in the WindowRec" below
 and also allocate the devPrivate block for it.</para>
 <para>
-See Xserver/mfb/mfbwindow.c for the sample server implementation.</para>
+See Xserver/fb/fbwindow.c for the sample server implementation.</para>
 <para>
 <blockquote><programlisting>
 
@@ -3365,7 +3361,7 @@ This routine is a hook for when DIX destroys a window.
 It should deallocate the devPrivate block for it and any other blocks that need
 to be freed, besides doing other cleanup actions.</para>
 <para>
-See Xserver/mfb/mfbwindow.c for the sample server implementation.</para>
+See Xserver/fb/fbwindow.c for the sample server implementation.</para>
 <para>
 <blockquote><programlisting>
 
@@ -3382,7 +3378,7 @@ aligned to longword locations in the frame buffer, then you should rotate your t
 The actual graphics involved in moving the pixels on the screen and drawing the
 border are handled by CopyWindow(), below.</para>
 <para>
-See Xserver/mfb/mfbwindow.c for the sample server implementation.</para>
+See Xserver/fb/fbwindow.c for the sample server implementation.</para>
 <para>
 <blockquote><programlisting>
 
@@ -3477,14 +3473,11 @@ values.  dx,dy are the distance that the window has been moved (if at all).</par
 <section>
   <title>Window Painting Procedures</title>
 <para>
-In addition to the procedures listed above, there are four routines which
+In addition to the procedures listed above, there are two routines which
 manipulate the actual window image directly.
 In the sample server, mi implementations will work for 
-most purposes and mfb/cfb routines speed up situations, such
+most purposes and fb routines speed up situations, such
 as solid backgrounds/borders or tiles that are 8, 16 or 32 pixels square.</para>
-<para>
-These three routines are used for systems that implement a backing-store scheme for it to
-know when to stash away areas of pixels and to restore or reposition them.</para>
 <para>
 <blockquote><programlisting>
 
@@ -3515,35 +3508,6 @@ The sample server implementation is in Xserver/mi/miwindow.c.</para>
 <para>
 <blockquote><programlisting>
 
-	void pScreen->PaintWindowBackground(pWin, region, kind)
-		WindowPtr pWin;
-		RegionPtr region;
-		int kind;	/* must be PW_BACKGROUND */
-
-	void pScreen->PaintWindowBorder(pWin, region, kind)
-		WindowPtr pWin;
-		RegionPtr region;
-		int kind;	/* must be PW_BORDER */
-
-</programlisting></blockquote>
-These two routines are for painting pieces of the window background or border.
-They both actually paint the area designated by region.
-The kind parameter is a defined constant that is always PW_BACKGROUND
-or PW_BORDER, as shown.
-Therefore, you can use the same routine for both.
-The defined constant tells the routine whether to use the window's 
-border fill style or its background fill style to paint the given region.
-Both fill styles consist of a union which holds a tile pointer and a pixel
-value, along with a separate variable which indicates which entry is valid.
-For PW_BORDER, borderIsPixel != 0 indicates that the border PixUnion
-contains a pixel value, else a tile.  For PW_BACKGROUND there are four
-values, contained in backgroundState; None, ParentRelative, BackgroundPixmap
-and BackgroundPixel.  None indicates that the region should be left
-unfilled, while ParentRelative indicates that the background of the parent is
-inherited (see the Protocol document for the exact semantics).</para>
-<para>
-<blockquote><programlisting>
-
 	void pScreen->CopyWindow(pWin, oldpt, oldRegion);
 		WindowPtr pWin;
 		DDXPointRec oldpt;
@@ -3570,110 +3534,7 @@ The pixels in oldRegion (with reference point oldpt) are copied to the
 window's new region (pWin->borderClip).  pWin->borderClip is gotten
 directly from the window, rather than passing it as a parameter.</para>
 <para>
-The sample server implementation is in Xserver/mfb/mfbwindow.c.</para>
-</section>
-<section>
-  <title>Screen Operations for Backing Store</title>
-<para>
-Each ScreenRec has six functions which provide the backing store
-interface.  For screens not supporting backing store, these pointers
-may be nul.  Servers that implement some backing store scheme 
-must fill in the procedure pointers for the procedures below,
-and must maintain the backStorage field in each window struct.
-The sample implementation is in mi/mibstore.c.</para>
-<para>
-<blockquote><programlisting>
-
-	void pScreen->SaveDoomedAreas(pWin, pRegion, dx, dy)
-		WindowPtr pWin;
-		RegionPtr pRegion;
-		int dx, dy;
-
-</programlisting></blockquote>
-This routine saves the newly obscured region, pRegion, in backing store.
-dx, dy indicate how far the window is being moved, useful as the obscured
-region is relative to the window as it will appear in the new location,
-rather then relative to the bits as the are on the screen when the function
-is invoked.</para>
-<para>
-<blockquote><programlisting>
-
-	RegionPtr pScreen->RestoreAreas(pWin, pRegion)
-		WindowPtr pWin;
-		RegionPtr pRegion;
-
-</programlisting></blockquote>
-This looks at the exposed region of the window, pRegion, and tries to
-restore to the screen the parts that have been saved.  It removes the
-restored parts from the backing storage (because they are now on the screen)
-and subtracts the areas from the exposed region.  The returned region is the
-area of the window which should have expose events generated for and can be
-either a new region, pWin->exposed, or NULL.  The region left in
-pRegion is set to the area of the window which should be painted with
-the window background.</para>
-<para>
-<blockquote><programlisting>
-
-	RegionPtr pScreen->TranslateBackingStore(pWin, dx, dy, oldClip, oldx, oldy)
-		WindowPtr pWin;
-		int dx, dy;
-		RegionPtr oldClip;
-		int oldx, oldy;
-
-</programlisting></blockquote>
-This is called when the window is moved or resized so that the backing
-store can be translated if necessary.  oldClip is the old cliplist for
-the window, which is used to save doomed areas if the window is moved
-underneath its parent as a result of bitgravity.  The returned region
-represents occluded areas of the window for which the backing store
-contents are invalid.</para>
-<para>
-<blockquote><programlisting>
-
-	void pScreen->ExposeCopy(pSrc, pDst, pGC, prgnExposed, srcx, srcy, dstx, dsty, plane)
-		WindowPtr pSrc;
-		DrawablePtr pDst;
-		GCPtr pGC;
-		RegionPtr prgnExposed;
-		int srcx;
-		int srcy;
-		int dstx;
-		int dsty;
-		unsigned long plane;
-
-</programlisting></blockquote>
-Copies a region from the backing store of pSrc to pDs.</para>
-<para>
-<blockquote><programlisting>
-
-	RegionPtr pScreen->ClearBackingStore(pWindow, x, y, w, h, generateExposures)
-		WindowPtr pWindow;
-		int x;
-		int y;
-		int w;
-		int h;
-		Bool generateExposures;
-
-</programlisting></blockquote>
-Clear the given area of the backing pixmap with the background of
-the window.  If generateExposures is TRUE, generate
-exposure events for the area. Note that if the area has any
-part outside the saved portions of the window, we do not allow the
-count in the expose events to be 0, since there will be more
-expose events to come.</para>
-<para>
-<blockquote><programlisting>
-
-	void pScreen->DrawGuarantee(pWindow, pGC, guarantee)
-		WindowPtr pWindow;
-		GCPtr pGC;
-		int guarantee;
-
-</programlisting></blockquote>
-This informs the backing store layer that you are about to validate
-a gc with a window, and that subsequent output to the window
-is (or is not) guaranteed to be already clipped to the visible
-regions of the window.</para>
+The sample server implementation is in Xserver/fb/fbwindow.c.</para>
 </section>
 <section>
 <title>Screen Operations for Multi-Layered Framebuffers</title>
@@ -3860,7 +3721,7 @@ consumed by each GC, it is wise to create a few "boilerplate" GC ops vectors
 which can be shared by every GC which matches the constraints for that set.
 Also, it is usually reasonable to have every GC created by a particular
 module to share a common set of GC funcs.  Samples of this sort of
-sharing can be seen in cfb/cfbgc.c and mfb/mfbgc.c.</para>
+sharing can be seen in fb/fbgc.c.</para>
 <para>
 The DDX software is notified any time the client (or DIX) uses a changed GC.
 For instance, if the hardware has special support for drawing fixed-width
@@ -4047,7 +3908,7 @@ of the GC.  In this way, your drawing primitive routines (and whatever
 is below them) can easily determine what to clip and where.  You
 should combine the regions clientClip (the region that the client
 desires to clip output to) and the region returned by
-NotClippedByChildren(), in DIX.  An example is in Xserver/mfb/mfbgc.c.</para>
+NotClippedByChildren(), in DIX.  An example is in Xserver/fb/fbgc.c.</para>
 <para>
 Some kinds of extension software may cause this routine to be called
 more than originally intended; you should not rely on algorithms that
@@ -4202,7 +4063,7 @@ appropriate regions in the drawable.
 Since there are many regions to clip to simultaneously, 
 your ValidateGC routine should combine these into a unified 
 clip region to which your drawing routines can quickly refer.
-This is exactly what the cfb and mfb routines supplied with the sample server
+This is exactly what the fb routines supplied with the sample server
 do.
 The mi implementation passes responsibility for clipping while drawing
 down to the Pixblit routines.</para>
@@ -4302,10 +4163,10 @@ windows in front of it.  As text is scrolled on your window, the pixels
 that are scrolled out from under obscuring windows will not be
 available on the screen to copy to the right places, and so an exposure
 event must be sent for the client to correctly repaint them.  Of
-course, if you implement some sort of backing store, you could do this
-without resorting to exposure events.</para>
+course, if you implement backing store, you could do this without resorting
+to exposure events.</para>
 <para>
-An example implementation is mfbCopyArea() in Xserver/mfb/mfbbitblt.c.</para>
+An example implementation is fbCopyArea() in Xserver/fb/fbcopy.c.</para>
 <para>
 <blockquote><programlisting>
 
@@ -4324,8 +4185,8 @@ different depths, except for copying bitmaps to pixmaps and applying
 foreground and background colors to it.  All other conditions of
 CopyArea apply to CopyPlane too.</para>
 <para>
-An example implementation is mfbCopyPlane() in 
-Xserver/mfb/mfbbitblt.c.</para>
+An example implementation is fbCopyPlane() in 
+Xserver/fb/fbcopy.c.</para>
 <para>
 <blockquote><programlisting>
 
@@ -4343,7 +4204,7 @@ mode is one of the defined constants Origin (absolute coordinates) or Previous
 (each coordinate is relative to the last).
 Note that this does not use the background color or any tiles or stipples.</para>
 <para>
-Example implementations are mfbPolyPoint() in Xserver/mfb/mfbpolypnt.c and 
+Example implementations are fbPolyPoint() in Xserver/fb/fbpoint.c and 
 miPolyPoint in Xserver/mi/mipolypnt.c.</para>
 <para>
 <blockquote><programlisting>
@@ -4444,7 +4305,7 @@ An example implementation is miFillPolygon() in Xserver/mi/mipoly.c.</para>
 </programlisting></blockquote>
 PolyFillRect fills multiple rectangles.</para>
 <para>
-Example implementations are mfbPolyFillRect() in Xserver/mfb/mfbfillrct.c and 
+Example implementations are fbPolyFillRect() in Xserver/fb/fbfillrect.c and 
 miPolyFillRect() in Xserver/mi/mifillrct.c.</para>
 <para>
 <blockquote><programlisting>
@@ -4481,7 +4342,7 @@ Either the drawable and the pixmap image have the same depth, or the
 source pixmap image must be a Bitmap.  If a Bitmap, the foreground and
 background colors will be applied to the destination.</para>
 <para>
-An example implementation is miPutImage() in Xserver/mfb/mibitblt.c.</para>
+An example implementation is fbPutImage() in Xserver/fb/fbimage.c.</para>
 <para>
 <blockquote><programlisting>
 
@@ -4597,21 +4458,20 @@ these Pixblit routines.
 These routines read and write pixel values 
 and deal directly with the image data.</para>
 <para>
-The Pixblit routines for the sample server are part of the "mfb"
-routines (for Monochrome Frame Buffer), and "cfb" routines (for Color
-Frame Buffer).  As with the mi routines, the mfb and cfb routines are
+The Pixblit routines for the sample server are part of the "fb"
+routines.  As with the mi routines, the fb routines are
 portable but are not as portable as the mi routines.</para>
 <para>
-The mfb routines only work for monochrome frame buffers, the simplest
-type of display.  Furthermore, they only work for screens that
-organize their bits in rows of pixels on the screen.  (See the
-Strategies document for more details on porting mfb.)  The cfb
-routines work for packed-pixel displays from 2 to 32 bits in depth,
-although they have a bit of code which has been tuned to run on 8-bit
-(1 pixel per byte) displays.</para>
+The fb subsystem is a depth-independent framebuffer core, capable of
+operating at any depth from 1 to 32, based on the depth of the window
+or pixmap it is currently operating on.  In particular, this means it
+can support pixmaps of multiple depths on the same screen.  It supplies
+both Pixblit routines and higher-level optimized implementations of the
+Drawing Primitive routines.  It does make the assumption that the pixel
+data it touches is available in the server's address space.</para>
 <para>
 In other words, if you have a "normal" frame buffer type display, you
-can probably use either the mfb or cfb code, and the mi code.  If you
+can probably use the fb code, and the mi code.  If you
 have a stranger hardware, you will have to supply your own Pixblit
 routines, but you can use the mi routines on top of them.  If you have
 better ways of doing some of the Drawing Primitive functions, then you
@@ -5050,7 +4910,7 @@ There are limitations on other portions of the server implementation which
 make using wrappers possible; limits on when specific fields of data
 structures may be modified.  They are intended as a replacement for
 GCInterest queues, which were not general enough to support existing
-modules; in particular software cursors and backing store both needed more
+modules; in particular software cursors needed more
 control over the activity.  The general mechanism for using wrappers is:
 <blockquote><programlisting>
 privateWrapperFunction (object, ...)
@@ -5139,12 +4999,12 @@ The Struct is the structure it is attached to; if blank, this
 procedure is not attached to a struct and must be named as shown.
 The sample server provides implementations in the following
 categories.  Notice that many of the graphics routines have both
-mi and mfb implementations.</para>
+mi and fb implementations.</para>
 <para>
 <itemizedlist>
 <listitem><para>dix	portable to all systems; do not attempt to rewrite (Xserver/dix)</para></listitem>
 <listitem><para>os	routine provided in Xserver/os or Xserver/include/os.h</para></listitem>
-<listitem><para>ddx	frame buffer dependent (examples in Xserver/mfb,Xserver/cfb)</para></listitem>
+<listitem><para>ddx	frame buffer dependent (examples in Xserver/fb)</para></listitem>
 <listitem><para>mi	routine provided in Xserver/mi</para></listitem>
 <listitem><para>hd	hardware dependent (examples in many Xserver/hw directories)</para></listitem>
 <listitem><para>none	not implemented in sample implementation</para></listitem>
@@ -5299,8 +5159,6 @@ mi and mfb implementations.</para>
 <row><entry><function>RegisterPointerDevice</function></entry><entry><literal>dix</literal></entry><entry><para></para></entry></row>
 <row><entry><function>RemoveEnabledDevice</function></entry><entry><literal>os</literal></entry><entry><para></para></entry></row>
 <row><entry><function>ResetCurrentRequest</function></entry><entry><literal>os</literal></entry><entry><para></para></entry></row>
-<row><entry><function>RestoreAreas</function></entry><entry><literal>none</literal></entry><entry><para>BackingStore</para></entry></row>
-<row><entry><function>SaveDoomedAreas</function></entry><entry><literal>none</literal></entry><entry><para>BackingStore</para></entry></row>
 <row><entry><function>SaveScreen</function></entry><entry><literal>ddx</literal></entry><entry><para>Screen</para></entry></row>
 <row><entry><function>SetCriticalOutputPending</function></entry><entry><literal>os</literal></entry><entry><para></para></entry></row>
 <row><entry><function>SetCursorPosition</function></entry><entry><literal>hd</literal></entry><entry><para>Screen</para></entry></row>
@@ -5315,7 +5173,6 @@ mi and mfb implementations.</para>
 <row><entry><function>TimerInit</function></entry><entry><literal>os</literal></entry><entry><para></para></entry></row>
 <row><entry><function>TimerSet</function></entry><entry><literal>os</literal></entry><entry><para></para></entry></row>
 <row><entry><function>TimeSinceLastInputEvent</function></entry><entry><literal>hd</literal></entry><entry><para></para></entry></row>
-<row><entry><function>TranslateBackingStore</function></entry><entry><literal>none</literal></entry><entry><para>BackingStore</para></entry></row>
 <row><entry><function>TranslateRegion</function></entry><entry><literal>mi</literal></entry><entry><para>Screen</para></entry></row>
 <row><entry><function>UninstallColormap</function></entry><entry><literal>ddx</literal></entry><entry><para>Screen</para></entry></row>
 <row><entry><function>Union</function></entry><entry><literal>mi</literal></entry><entry><para>Screen</para></entry></row>
