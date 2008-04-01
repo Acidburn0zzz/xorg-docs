@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
-<!ENTITY % defs SYSTEM "X11/defs.ent"> %defs;
 ]>
 
 <article>
@@ -295,7 +294,8 @@ Three kinds of fields are in these structs:
 <itemizedlist>
 <listitem><para>Attribute fields - struct fields that contain values like normal structs</para></listitem>
 <listitem><para>Pointers to procedures, or structures of procedures, that operate on the object</para></listitem>
-<listitem><para>A private field (or two) used by your DDX code to keep private data (probably a pointer to another data structure), or an array of private fields, which is sized as the server initializes.</para></listitem>
+<listitem><para>A single private field or a devPrivates list (see <xref linkend="wrappers_and_privates"/>)
+used by your DDX code to store private data.</para></listitem>
 </itemizedlist>
 </para>
 <para>
@@ -3065,13 +3065,13 @@ When the server is reset, it calls this routine for each screen.</para>
 </programlisting></blockquote>
 If this routine is not NULL, it will be called once per screen per
 server initialization/reset after all modules have had a chance to
-register their devPrivates on all structures that support them (see
-the section on devPrivates below).  If you need to create any
-resources that have dynamic devPrivates as part of your screen
-initialization, you should do so in this function instead of in the
-screen init function passed to AddScreen to guarantee that the
-resources have a complete set of devPrivates.  This routine returns
-TRUE if successful.</para>
+request private space on all structures that support them (see
+<xref linkend="wrappers_and_privates"/> below).  You may create resources
+in this function instead of in the
+screen init function passed to AddScreen in order to guarantee that 
+all pre-allocated space requests have been registered first.  With the
+new devPrivates mechanism, this is not strictly necessary, however.
+This routine returns TRUE if successful.</para>
 </section>
 </section>
 <section>
@@ -3098,12 +3098,10 @@ There are, in fact, no other fields that a window drawable and pixmap
 drawable have in common besides those mentioned here.</para>
 <para>
 Both PixmapRecs and WindowRecs are structs that start with a drawable
-and continue on with more fields.  Pixmaps have devPrivate pointers
-which usually point to the pixmap data but could conceivably be
-used for anything that DDX wants.  Both windows and pixmaps have an
-array of devPrivates unions, one entry of which will probably be used
-for DDX specific data.  Entries in this array are allocated using
-Allocate{Window|Pixmap}PrivateIndex() (see Wrappers and devPrivates
+and continue on with more fields.  Pixmaps have a single pointer field
+named devPrivate which usually points to the pixmap data but could conceivably be
+used for anything that DDX wants.  Both windows and pixmaps also have a
+devPrivates field which can be used for DDX specific data (see <xref linkend="wrappers_and_privates"/>
 below).  This is done because different graphics hardware has
 different requirements for management; if the graphics is always
 handled by a processor with an independent address space, there is no
@@ -3133,13 +3131,13 @@ implementations will simply have the data dynamically allocated in the
 server's address space.  More sophisticated implementations may put the
 data in undisplayed framebuffer storage.</para>
 <para>
-In addition to dynamic devPrivates (see the section on devPrivates
+In addition to dynamic devPrivates (see <xref linkend="wrappers_and_privates"/>
 below), the pixmap data structure has two fields that are private to
 the device.  Although you can use them for anything you want, they
 have intended purposes.  devKind is intended to be a device specific
 indication of the pixmap location (host memory, off-screen, etc.).  In
 the sample server, since all pixmaps are in memory, devKind stores the
-width of the pixmap in bitmap scanline units.  devPrivate is probably
+width of the pixmap in bitmap scanline units.  devPrivate is usually
 a pointer to the bits in the pixmap.</para>
 <para>
 A bitmap is a pixmap that is one bit deep.</para>
@@ -3187,8 +3185,7 @@ See Xserver/fb/fbpixmap.c for the sample server implementation.</para>
 		pointer     pPixData;
 
 </programlisting></blockquote>
-This routine takes a pixmap header (the PixmapRec plus all the dynamic
-devPrivates) and initializes the fields of the PixmapRec to the
+This routine takes a pixmap header and initializes the fields of the PixmapRec to the
 parameters of the same name.  pPixmap must have been created via
 pScreen->CreatePixmap with a zero width or height to avoid
 allocating space for the pixmap data.  pPixData is assumed to be the
@@ -3734,9 +3731,8 @@ selected.</para>
 A definition of these structures can be found in the file 
 Xserver/include/gcstruct.h.</para>
 <para>
-Also included in each GC is an array of devPrivates which portions of the
-DDX can use for any reason.  Entries in this array are allocated with
-AllocateGCPrivateIndex() (see Wrappers and Privates below).</para>
+Also included in each GC is support for dynamic devPrivates, which the
+DDX can use for any purpose (see <xref linkend="wrappers_and_privates"/> below).</para>
 <para>
 The DIX routines available for manipulating GCs are
 CreateGC, ChangeGC, CopyGC, SetClipRects, SetDashes, and FreeGC.
@@ -3896,8 +3892,8 @@ system, and a validate is not necessary.</para>
 </programlisting></blockquote>
 ValidateGC is called by DIX just before the GC will be used when one
 of many possible changes to the GC or the graphics system has
-happened.  It can modify a devPrivates field of the GC or its
-contents, change the op vector, or change hardware according to the
+happened.  It can modify devPrivates data attached to the GC,
+change the op vector, or change hardware according to the
 values in the GC.  It may not change the device-independent portion of
 the GC itself.</para>
 <para>
@@ -3927,7 +3923,7 @@ this routine.</para>
 </programlisting></blockquote>
 This routine is called by DIX when a GC is being copied to another GC.
 This is for situations where dynamically allocated chunks of memory
-are hanging off a GC devPrivates field which need to be transferred to
+are stored in the GC's dynamic devPrivates and need to be transferred to
 the destination GC.</para>
 <para>
 <blockquote><programlisting>
@@ -4787,119 +4783,97 @@ device-dependent arguments in ddxUseMsg(), which will be
 called from UseMsg() after printing out the device-independent arguments.</para>
 </section>
 </section>
-<section>
-  <title>Wrappers and devPrivates</title>
+<section id="wrappers_and_privates">
+  <title>Wrappers and Privates</title>
 <para>
 Two new extensibility concepts have been developed for release 4, Wrappers
 and devPrivates.  These replace the R3 GCInterest queues, which were not a
 general enough mechanism for many extensions and only provided hooks into a
-single data structure.</para>
+single data structure.  devPrivates have been revised substantially for
+X.org X server relase 1.5.</para>
 <section>
   <title>devPrivates</title>
 <para>
-devPrivates are arrays of values attached to various data structures
-(Screens, GCs, Windows, and Pixmaps currently).  These arrays are sized dynamically at
-server startup (and reset) time as various modules allocate portions of
-them.  They can be used for any purpose; each array entry is actually a
-union, DevUnion, of common useful types (pointer, long and unsigned long).
-devPrivates must be allocated on startup and whenever the server resets.  To
-make this easier, the global variable "serverGeneration" is incremented each
-time devPrivates should be allocated, but before the initialization process
-begins, typical usage would be:
-<blockquote><programlisting>
-static int privateGeneration = 0;
-
-	if (privateGeneration != serverGeneration)
-	{
-		allocate devPrivates here.
-
-		privateGeneration = serverGeneration;
-	}
-</programlisting></blockquote>
-</para>
-<section>
-  <title>Screen devPrivates</title>
+devPrivates provides a way to attach arbitrary private data to various server structures.
+Any structure which contains a <structfield>devPrivates</structfield> field of
+type <type>PrivateRec</type> supports this mechanism.  Private data can be allocated at
+any time during an object's life cycle and callbacks are available to initialize and clean
+up allocated space.</para>
 <para>
-An index into every screen devPrivates array is allocated with
+To attach a piece of private data to an object, use:
 <blockquote><programlisting>
-	int AllocateScreenPrivateIndex()
+	int dixSetPrivate(PrivateRec **privates, const DevPrivateKey key, pointer val)
 </programlisting></blockquote>
-This call can occur at any time, each existing devPrivates array is resized
-to accommodate the new entry.  This routine returns -1 indicating an
-allocation failure.  Otherwise, the return value can be used to index the
-array of devPrivates on any screen:
-<blockquote><programlisting>
-	private = (PrivatePointer) pScreen->devPrivates[screenPrivateIndex].ptr;
-</programlisting></blockquote>
-The pointer in each screen is not initialized by
-AllocateScreenPrivateIndex().</para>
-</section>
-<section>
-  <title>Window devPrivates</title>
+The first argument is the address of the <structfield>devPrivates</structfield> field
+in the target structure.  This field is managed privately by the DIX layer and
+should not be directly modified.  The second argument is some address value which
+will serve as the unique identifier for the private data.  Typically this is the address
+of some global variable in your code.  Only one piece of data with a given key can be attached to an object.  However, you
+can use the same key to store data in any object that supports the devPrivates mechanism.  The third
+argument is the value to store.</para>
 <para>
-An index into every window devPrivates array is allocated with
-<blockquote><programlisting>
-	int AllocateWindowPrivateIndex ()
-</programlisting></blockquote>
-AllocateWindowPrivateIndex() never returns an error.  This call must be
-associated with a call which causes a chunk of memory to be automatically
-allocated and attached to the devPrivate entry on every screen which the
-module will need to use the index:
-<blockquote><programlisting>
-	Bool AllocateWindowPrivate (pScreen, index, amount)
-		ScreenPtr pScreen;
-		int index;
-		unsigned amount;
-</programlisting></blockquote>
-</para>
+If private data with the given key is already associated with the object, <function>dixSetPrivate</function> will
+overwrite the old value with the new one.  Otherwise, new space will be allocated to hold the pointer value.
+The function returns <literal>TRUE</literal> unless memory allocation fails, but note that since memory allocation only 
+occurs on the first reference to the private data, all subsequent calls are guaranteed to succeed.</para>
+
 <para>
-If this space is not always needed for every object, use 0 as the amount.
-In this case, the pointer field of the entry in the devPrivates array is
-initialized to NULL.  This call exists so that DIX may preallocate all of
-the space required for an object with one call; this reduces memory
-fragmentation considerably.  AllocateWindowPrivate returns FALSE on
-allocation failure.  Both of these calls must occur before any window
-structures are allocated; the server is careful to avoid window creation
-until all modules are initialized, but do not call this after
-initialization.  A typical allocation sequence for WindowPrivates would be:
+To look up a piece of private data, use one of:
 <blockquote><programlisting>
-    privateInitialize (pScreen)
-    	ScreenPtr pScreen;
-    {
-    	if (privateGeneration != serverGeneration)
-    	{
-	    windowPrivateIndex = AllocateWindowPrivateIndex();
-	    privateGeneration = serverGeneration;
-    	}
-    	
-    	return (AllocateWindowPrivate(pScreen, windowPrivateIndex,
-				      sizeof(windowPrivateStructure)));
-    }
+	pointer dixLookupPrivate(PrivateRec **privates, const DevPrivateKey key)
+	pointer *dixLookupPrivateAddr(PrivateRec **privates, const DevPrivateKey key)
 </programlisting></blockquote>
-</para>
-</section>
-<section>
-  <title>GC and Pixmap devPrivates</title>
+The first argument is the address of the <structfield>devPrivates</structfield> field
+in the target structure.  The second argument is the key to look up.  If private data with the given key is already associated
+with the object, <function>dixLookupPrivate</function> will return the stored pointer value while <function>dixLookupPrivateAddr</function>
+will return the address of the stored pointer.  Otherwise, new space will be first allocated to hold the pointer value
+and it will be initialized to NULL.  Both functions return <literal>NULL</literal> if memory allocation fails, but note that
+since memory allocation only occurs on the first reference to the private data, all subsequent calls are guaranteed to succeed.</para>
+
 <para>
-The calls for GCs and Pixmaps mirror the Window calls exactly; they have the
-same requirements and limitations:
+To request pre-allocated private space, use
 <blockquote><programlisting>
-	int AllocateGCPrivateIndex ()
-
-	Bool AllocateGCPrivate (pScreen, index, amount)
-		ScreenPtr pScreen;
-		int index;
-		unsigned amount;
-
-	int AllocatePixmapPrivateIndex ()
-
-	Bool AllocatePixmapPrivate (pScreen, index, amount)
-		ScreenPtr pScreen;
-		int index;
-		unsigned amount;
+	int dixRequestPrivate(const DevPrivateKey key, unsigned size)
 </programlisting></blockquote>
-</para>
-</section>
+The first argument is the key for which space is being requested.  The second argument is the size of the space being requested.
+After this function has been called,
+future calls to <function>dixLookupPrivate</function> or <function>dixLookupPrivateAddr</function> that cause the private pointer
+to be initially allocated will also allocate <varname>size</varname> bytes of space cleared to zero and initialize the private pointer to point
+to this space instead of <literal>NULL</literal>.  This space will be automatically freed.  Note that a call to <function>dixSetPrivate</function>
+that changes the pointer value may cause the space to be unreachable by the caller, however it will still be automatically freed.
+The function returns <literal>TRUE</literal> unless memory allocation fails.  If the function is called more than once, the largest value
+of <type>size</type> is used.</para>
+
+<para>
+To set callbacks for initializing and cleaning up private space, use
+<blockquote><programlisting>
+	typedef struct {
+		DevPrivateKey key;
+		pointer *value;
+	} PrivateCallbackRec;
+
+	int dixRegisterPrivateInitFunc(const DevPrivateKey key,
+		CallbackProcPtr callback,
+		pointer userdata)
+	int dixRegisterPrivateDeleteFunc(const DevPrivateKey key,
+		CallbackProcPtr callback,
+		pointer userdata)
+</programlisting></blockquote>
+The first argument is the key for which the callbacks are being registered.  The second argument is the callback function.  The third argument
+will be passed as the user data argument to the callback function when it is called.  The call data argument to the callback is a pointer to
+a structure of type <type>PrivateCallbackRec</type>.</para>
+<para>
+The init callback is called immediately after new private space has been allocated for the given key.  The delete callback is called immediately
+before the private space is freed when the object is being destroyed.  The <type>PrivateCallbackRec</type> structure contains the devPrivate key
+and the address of the private pointer.  The init callback may be used to initialize any pre-allocated space requested by
+<function>dixRequestPrivate</function>, while the delete callback may be used to free any data stored there.  However the callbacks are called even
+if no pre-allocated space was requested.</para>
+
+<para>
+When implementing new server resource objects that support devPrivates, there are three steps to perform:
+Declare a field of type <type>PrivateRec *</type> in your structure;
+initialize this field to <literal>NULL</literal> when creating any objects; and
+call the <function>dixFreePrivates</function> function, passing in the field value, when freeing any objects.</para>
 </section>
 <section>
   <title>Wrappers</title>
@@ -4918,14 +4892,14 @@ privateWrapperFunction (object, ...)
 {
 	pre-wrapped-function-stuff ...
 
-	object->functionVector = (void *) object->devPrivates[privateIndex].ptr;
+	object->functionVector = dixLookupPrivate(&amp;object->devPrivates, privateKey);
 	(*object->functionVector) (object, ...);
 	/*
 	 * this next line is occasionally required by the rules governing
 	 * wrapper functions.  Always using it will not cause problems.
 	 * Not using it when necessary can cause severe troubles.
 	 */
-	object->devPrivates[privateIndex].ptr = (pointer) object->functionVector;
+	dixSetPrivate(&amp;object->devPrivates, privateKey, object->functionVector);
 	object->functionVector = privateWrapperFunction;
 
 	post-wrapped-function-stuff ...
@@ -4934,7 +4908,7 @@ privateWrapperFunction (object, ...)
 privateInitialize (object)
 	ObjectPtr	object;
 {
-	object->devPrivates[privateIndex].ptr = (pointer) object->functionVector;
+	dixSetPrivate(&amp;object->devPrivates, privateKey, object->functionVector);
 	object->functionVector = privateWrapperFunction;
 }
 </programlisting></blockquote>
