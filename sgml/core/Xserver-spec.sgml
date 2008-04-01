@@ -38,8 +38,7 @@
     </author>
     <publisher><publishername>The X.Org Foundation</publishername></publisher>
     <pubdate>2004</pubdate>
-    <title>Definition of the Porting Layer 
-for the X v11 Sample Server</title>
+    <title>Definition of the Porting Layer for the X v11 Sample Server</title>
     <titleabbrev>X Porting Layer</titleabbrev>
     <revhistory>
       <revision>
@@ -77,6 +76,18 @@ for the X v11 Sample Server</title>
 	<date>17 Dec 2006</date>
 	<authorinitials>efw</authorinitials>
 	<revremark>DocBook conversion</revremark>
+      </revision>
+      <revision>
+	<revnumber>3.3</revnumber>
+	<date>17 Feb 2008</date>
+	<authorinitials>aj</authorinitials>
+	<revremark>Revised for backing store changes</revremark>
+      </revision>
+      <revision>
+	<revnumber>3.4</revnumber>
+	<date>31 Mar 2008</date>
+	<authorinitials>efw</authorinitials>
+	<revremark>Revised for devPrivates changes</revremark>
       </revision>
     </revhistory>
     <legalnotice>
