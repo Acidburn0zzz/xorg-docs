@@ -1920,7 +1920,7 @@ standard `<Literal remap="tt">fixed</Literal>' and `<Literal remap="tt">cursor</
 <Para>
 Unicode (<ULink
 URL="http://www.unicode.org"
->&#65533;</ULink
+>http://www.unicode.org</ULink
 >) is a coded character
 set with the goal of uniquely identifying all characters for all
 scripts, current and historical.  While Unicode was explicitly not

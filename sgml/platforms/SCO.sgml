@@ -84,7 +84,7 @@ URL="ftp://ftp.sco.com/pub/openserver5/opensrc"
 If you are not using OSR 5.0.7 or later, you need to get an updated
 console driver.  See <ULink
 URL="http://www.sco.com"
->&#65533;</ULink
+>http://www.sco.com</ULink
 > for details on
 OpenServer supplements.  If you can't or don't want to upgrade your
 console driver, X11R&relvers; will still compile, but you may run into
