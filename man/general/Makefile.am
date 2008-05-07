@@ -46,7 +46,7 @@ MAN_SUBSTS = \
 	-e 's|__xorgversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
 	-e 's|__projectroot__|$(prefix)|g' \
 	-e 's|__appmansuffix__|$(APP_MAN_SUFFIX)|g' \
-	-e 's|__libmansuffix__|$(APP_LIB_SUFFIX)|g' \
+	-e 's|__libmansuffix__|$(LIB_MAN_SUFFIX)|g' \
 	-e 's|__miscmansuffix__|$(MISC_MAN_SUFFIX)|g'
 
 SUFFIXES = .$(MISC_MAN_SUFFIX) .man
