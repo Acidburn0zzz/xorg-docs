@@ -3,20 +3,16 @@
                    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 <!-- lifted from troff+ms by doclifter -->
 <article id='protocolms'>
+<sect1 id="input_extension"><title>Input Extension</title>
 <para>
-<emphasis remap='B'>X11 Input Extension Protocol Specification
-<!-- .ps 12 -->
-Version 1.0
-X Consortium Standard
-X Version 11, Release 6.8
-<!-- .ps 15 -->
-Mark Patrick&numsp;&numsp;&numsp;&numsp;Ardent Computer
-George Sachs&numsp;&numsp;&numsp;&numsp;Hewlett-Packard
-<!-- .ps 12 -->
-<!-- .ce 0 -->
-<!-- .bp -->
-&numsp;
-</emphasis>
+    <literallayout>
+        X11 Input Extension Protocol Specification
+        Version 1.0
+        X Consortium Standard
+        X Version 11, Release 6.8
+        Mark Patrick, Ardent Computer
+        George Sachs, Hewlett-Packard
+    </literallayout>
 </para>
 <para>Copyright &copy; 1989, 1990, 1991 by Hewlett-Packard Company and Ardent
     Computer</para>
@@ -57,7 +53,6 @@ in this Software without prior written authorization from the X Consortium.
 <!--   Page eject for each level 1 heading -->
 <!--   Define Ch to contain the chapter string. -->
 <!--   Pull in the layout macro package. -->
-<sect1 id="input_extension_overview"><title>Input Extension Overview</title>
 <sect2><title>Input Extension Overview</title>
 <para>This document defines an extension to the X11 protocol to support 
 input devices other than the core X keyboard and pointer. 
