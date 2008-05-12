@@ -3076,5 +3076,156 @@
                 just before the event. The device-state component gives the state of the
                 buttons and modifiers on the device generating the event.</para>
         </sect2>
+        <sect2 id='device_crossing_events'>
+            <title>DeviceCrossingEvents</title>
+            <para>
+                Introduced with XI 2.0.
+                <literallayout>
+                DeviceEnterEvent
+                DeviceLeaveEvent
+                        detail: BYTE
+                            #0x00: Ancestor
+                            #0x01: Virtual
+                            #0x02: Inferior
+                            #0x03: Nonlinear
+                            #0x04: NonlinearVirtual
+                        time: TIMESTAMP
+                        root: WINDOW
+                        event: WINDOW
+                        child: WINDOW
+                            #0x00: None
+                        root-x: INT16
+                        root-y: INT16
+                        event-x: INT16
+                        event-y: INT16
+                        state: SETofKEYBUTMASK
+                        mode: BYTE
+                            #x00: Normal
+                            #x01: Grab
+                            #x10: SameScreen
+                            #x20: Focus
+                        deviceid: CARD8
+                </literallayout>
+            </para>
+            <para>
+                If pointer motion or a window hierarchy change causes the
+                device's pointer to be in a different window than before,
+                <emphasis>DeviceEnterNotify</emphasis> and
+                <emphasis>DeviceLeaveNotify</emphasis> events are generated
+                instead of a <emphasis>DeviceMotionNotify</emphasis> event.
+                The deviceid specifies the device that generated the
+                <emphasis>DeviceEnterNotify</emphasis> or
+                <emphasis>DeviceLeaveNotify</emphasis> event.  </para>
+            <para>
+                Only clients selecting DeviceEnter on a window receive
+                <emphasis>DeviceEnterNotify</emphasis> ev\-ents, and only
+                clients selecting DeviceLeave receive
+                <emphasis>DeviceLeaveNotify</emphasis> events. The device's
+                pointer position reported in the event is always the final
+                position, not the initial position of the device's pointer.
+                The root is the root window for this position, and root-x and
+                root-y are the device's pointer coordinates relative to root's
+                origin at the time of the event. Event is the event window. If
+                the event window is on the same screen as root, then event-x
+                and event-y are the device's pointer coordinates relative to
+                the event window's origin and mode has the
+                <emphasis>SameScreen</emphasis> bit set. Otherwise, event-x
+                and event-y are zero and the <emphasis>SameScreen</emphasis>
+                bit is unset. In a <emphasis>DeviceLeaveNotify</emphasis>
+                event, if a child of the event window contains the initial
+                position of the device's pointer, then the child component is
+                set to that child. Otherwise, it is <emphasis>None</emphasis>.
+                For a <emphasis>DeviceEnterNotify</emphasis> event, if a child
+                of the event window contains the final pointer position, then
+                the child component is set to that child. Otherwise, it is
+                <emphasis>None</emphasis>. If the event window is the focus
+                window or an inferior of the focus window, then mode has the
+                <emphasis>Focus</emphasis> bit set. Otherwise, the
+                <emphasis>Focus</emphasis> bit is unset. 
+            </para>
+            <para>
+                Normal pointer motion events have mode
+                <emphasis>Normal</emphasis>. Pseudo-motion events when a grab
+                activates have mode <emphasis>Grab</emphasis>, and
+                pseudo-motion events when a grab deactivates have mode
+                <emphasis>Ungrab</emphasis>. Only the lower four bits must be
+                considered when determining the grab mode.  </para>
+            <para>
+                All <emphasis>DeviceEnterNotify</emphasis> and
+                <emphasis>DeviceLeaveNotify</emphasis> events caused by a
+                window hierarchy change are generated after any hierarchy
+                event caused by that change (that is
+                <emphasis>UnmapNotify</emphasis>,
+                <emphasis>MapNotify</emphasis>,
+                <emphasis>ConfigureNotify</emphasis>,
+                <emphasis>GravityNotify</emphasis>,
+                <emphasis>CirculateNotify</emphasis>), but the ordering of
+                <emphasis>DeviceEnterNotify</emphasis> and
+                <emphasis>DeviceLeaveNotify</emphasis> events with respect to
+                <emphasis>DeviceFocusOut</emphasis> events is not constrained. 
+            </para>
+            <para>
+                The above description is a modified version of the
+                <emphasis>EnterNotify</emphasis> and
+                <emphasis>LeaveNotify</emphasis> event description from
+                the core protocol. For  a detailed description about the
+                generation of <emphasis>EnterNotify</emphasis> and
+                <emphasis>LeaveNotify</emphasis> events see
+                the core protocol specification.
+            </para>
+        </sect2>
+        <sect2 id='device_hierarchy_changed_event'>
+            <title>Device Hierarchy Changed Event</title>
+            <para>
+                Introduced with XI 2.0.
+                <literallayout>
+                DeviceHierarchyChangedEvent
+                    time: TIMESTAMP
+                </literallayout>
+                The DeviceHierarchyChangedEvent is a GenericEvent.
+            </para>
+            <para>
+                If a client modifies the device hierarchy through the
+                <emphasis>ChangeDeviceHierarchy</emphasis> request, a
+                <emphasis>DeviceHierarchyChangedEvent</emphasis> is sent to
+                all clients. The event does not include information about the
+                device hierarchy and a client is expected to issue a
+                <emphasis>ListInputDevices</emphasis> request to obtain the
+                new device hierarchy.
+            </para>
+        </sect2>
+
+        <sect2 id='device_classes_changed_event'>
+            <title>DeviceClassesChangedEvent</title>
+            <para>
+                Introduced with XI 2.0.
+                <literallayout>
+                DeviceClassesChangedEvent
+                        deviceid: CARD8
+                        new-slave: CARD8
+                        time: TIMESTAMP
+                        num-classes: CARD8
+                        classes: LISTofINPUTINFO
+                </literallayout>
+                The DeviceClassesChangedEvent is a GenericEvent.
+            </para>
+            <para>
+                A <emphasis>DeviceClassesChangedEvent</emphasis> is sent to
+                all clients when an event from a slave device causes a master
+                device to change its classes.
+            </para>
+            <para>
+                The deviceid specifies the master device that has changed
+                state and new-slave is set to the device ID of the slave
+                device that now sends events through this master device. The
+                event is followed by num-classes elements of
+                <emphasis>KeyInfo</emphasis>,
+                <emphasis>ValuatorInfo</emphasis>, and
+                <emphasis>ButtonInfo</emphasis> that reflect the capabilities
+                of the slave device.  For a description of
+                <emphasis>INPUTINFO</emphasis>, see 
+                <xref linkend="listing_available_devices"/>.
+            </para>
+        </sect2>
     </sect1>
 </article>
