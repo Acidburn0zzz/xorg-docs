@@ -3076,6 +3076,47 @@
                 just before the event. The device-state component gives the state of the
                 buttons and modifiers on the device generating the event.</para>
         </sect2>
+        <sect2 id='device_presence_events'>
+            <title>DevicePresenceEvents</title>
+            <para>
+                Introduced with XI 1.4.
+                <literallayout>
+                DevicePresence
+                        time: TIMESTAMP
+                        devchange: BYTE
+                            #x00: DeviceAdded
+                            #x01: DeviceRemoved
+                            #x02: DeviceEnabled
+                            #x03: DeviceDisabled
+                            #x04: DeviceUnrecoverable
+                        deviceid: BYTE
+                        control: CARD16
+                </literallayout>
+            </para>
+            <para>
+                <emphasis>DevicePresence</emphasis> events are sent when the
+                server adds or removes, or enables or disables an input
+                device. The client is expected to query the server for the
+                list of input devices using the
+                <emphasis>ListInputDevices</emphasis> request to obtain the
+                updated list of input devices.
+            </para>
+            <para>
+                The <emphasis>devchange</emphasis> field specifies the type of
+                operation. In case of <emphasis>DeviceAdded</emphasis>, a new
+                device has been added to the server, but this device does not
+                yet send events. If devchange is set to
+                <emphasis>DeviceEnabled</emphasis>, the device is enabled and
+                will generate events.
+                If the field is <emphasis>DeviceDisabled</emphasis> or
+                <emphasis>DeviceRemoved</emphasis>, the given device is
+                disabled and stops sending events or was removed from the
+                server, respectively.
+                If the field is <emphasis>DeviceUnrecoverable</emphasis>, an
+                IO-error has occured on the device and the device is forcibly
+                disabled and removed by the server.
+            </para>
+        </sect2>
         <sect2 id='device_crossing_events'>
             <title>DeviceCrossingEvents</title>
             <para>
