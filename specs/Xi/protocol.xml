@@ -455,24 +455,48 @@
                 <literallayout>
                     GetExtensionVersion
                             name: STRING
+                            client-major-version: CARD8
+                            client-minor-version: CARD8
                     =&gt;
                             present: BOOL
                             protocol-major-version: CARD16
                             protocol-minor-version: CARD16
                 </literallayout>
-
                 The protocol version numbers returned indicate the version of the
                 input extension supported by the target X server. The version
                 numbers can be compared to constants defined in the header file
                 <filename>XI.h</filename>. Each version is a superset of the
                 previous versions.</para>
+            <para>
+                For clients supporting XI 1.x only, the name must be the
+                name of the Input Extension as defined in the header
+                file <filename>XI.h</filename>. client-major-version and
+                client-minor-version are undefined.
+                For clients supporting XI 2.0 and above, the name must be of
+                zero length and client-major-version and client-minor version
+                must reflect the Input Extension version as supported by the
+                client.
+                The server changes the behaviour of some requests depending on
+                the version supported by the client. A client that does not
+                specify support for XI 2.x cannot use the extended
+                functionality of this version.
+            </para>
+            <para>
+                client-major-version and client-minor-version are CARD8 to
+                ensure binary compatibility with pre-XI 2.0 implementations.
+            </para>
         </sect2>
         <sect2 id='listing_available_devices'><title>Listing Available Devices</title>
             <para>A client that wishes to access a specific device must first
                 determine whether that device is connected to the X server. This
-                is done through the 
+                is done through the
                 <emphasis>ListInputDevices</emphasis> request, which will
                 return a list of all devices that can be opened by the X server.
+                For clients that have not announced XI 2.x support through the
+                <emphasis>GetExtensionVersion</emphasis> request,
+                <emphasis>ListInputDevices</emphasis> only returns the first
+                master pointer, the first master keyboard, and all floating
+                slave devices.
             <literallayout>
                 ListInputDevices
                 =&gt;
@@ -484,7 +508,9 @@
                         [type: ATOM
                          id: CARD8
                          num_classes: CARD8
-                         use: {IsXKeyboard, IsXPointer, IsExtensionDevice}
+                         use: {IsXKeyboard, IsXPointer, IsXExtensionPointer,
+                               IsXExtensionKeyboard, IsExtensionDevice}
+                         attached: CARD8
                          info: LISTofINPUTINFO
                          name: STRING8]
                          
@@ -521,9 +547,9 @@
             <para>Errors: None</para>
             <para>
                 This request returns a list of all devices that can be opened by the X 
-                server,  
-                including the core X keyboard and X pointer. Some implementations may open
-                all input devices as part of X initialization, while others may not open
+                server,  including the core X keyboard and X pointer. Some
+                implementations may open all input devices as part of X
+                initialization, while others may not open
                 an input device until requested to do so by a client program.</para>
             <para>The information returned for each device is as follows:</para>
             <variablelist>
@@ -583,6 +609,29 @@
                             X keyboard. If the value is <emphasis>IsXPointer</emphasis>, the device is currently
                             being used as the X pointer. If the value is <emphasis>IsXExtensionDevice</emphasis>,
                             the device is available for use as an extension device.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>attached</term>
+                    <listitem>
+                        <para>
+                            If the use field is <constant>IsXExtensionPointer</constant>,
+                            <emphasis>IsXExtensionKeyboard</emphasis>, or
+                            <emphasis>IsXExtensionDevice</emphasis>, the
+                            <emphasis>attached</emphasis> field specifies the device ID of the
+                            master devices this device is attached to. If the
+                            device is floating, the value is <emphasis>Floating</emphasis>.
+                            If the use field is <emphasis>IsXPointer</emphasis>,
+                            the attached field specifies the paired master keyboard that
+                            provides modifier key states for input events. If the use
+                            field is <emphasis>IsXKeyboard</emphasis>,
+                            the attached field specifies the paired master
+                            pointer that provides the pointer coordinates and
+                            button states for input events.
+                        </para>
+                        <para>
+                            For server implementations supporting XI 1.x only,
+                            the attached field is unspecified.
+                        </para>
                     </listitem>
                 </varlistentry>
                 <varlistentry><term>name</term>
@@ -758,6 +807,10 @@
                     </listitem>
                 </varlistentry>
             </variablelist>
+            <para>The information in the <emphasis>InputClassInfo</emphasis>
+                reflects the state of this device at the time the request was
+                processed. If the device is a master device, it may change
+                classes in the future (see <xref linkend="xi2_event_processing"/>.</para>
             <para>Before it exits, the client program should explicitly
                 request that the server close the device. This is done via
                 the <emphasis>CloseDevice</emphasis> request.</para>
@@ -766,6 +819,11 @@
                 with the same information as the first, but otherwise have no effect.
                 A single <emphasis>CloseDevice</emphasis> request will terminate that client's access to
                 the device.</para>
+            <para>If the client announces support of XI 2.x, any device returned
+                through by <emphasis>ListInputDevices</emphasis> can be
+                opened. Otherwise, only floating SDs may be opened by this
+                client.
+            </para>
             <para>Closing a device releases any active or passive grabs the requesting client
                 has established. If the device is frozen only by an active grab of the
                 requesting client, the queued events are released when the client terminates.</para>
