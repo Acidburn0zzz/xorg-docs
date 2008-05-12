@@ -1152,7 +1152,11 @@
         </sect2>
         <sect2 id='changing_the_core_devices'><title>Changing The Core Devices</title>
             <para>These requests are provided to change which physical device is used
-                as the X pointer or X keyboard.</para>
+                as the X pointer or X keyboard.
+                These requests are deprecated in servers supporting XI 1.4 and
+                above, and will always return a a <emphasis>BadDevice</emphasis>
+                error.
+            </para>
             <para>Using these requests may change the characteristics of the core devices.
                 The new pointer device may have a different number of buttons than the 
                 old one did, or the new keyboard device may have a different number of
