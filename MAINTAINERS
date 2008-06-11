@@ -344,12 +344,12 @@ S:	Please contact Daniel if you're planning to work on this
 Input subsystem
 P:	Daniel Stone
 M:	daniel@fooishbar.org
-P:	Zepheniah E. Hull
-M:	warp@debian.org
+P:	Peter Hutterer
+M:	peter@cs.unisa.edu.au
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained, being overhauled
-S:	Please contact Daniel or Zepheniah if you're planning to work on this
+S:	Please contact Daniel or Peter if you're planning to work on this
 
 Xprint
 P:	Drew Parsons
