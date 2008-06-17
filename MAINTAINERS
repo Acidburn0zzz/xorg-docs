@@ -529,8 +529,8 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-input-evdev
-P:	Zephaniah E. Hull
-M:	warp@aehallh.com
+P:	Peter Hutterer
+M:	peter@cs.unisa.edu.au
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
