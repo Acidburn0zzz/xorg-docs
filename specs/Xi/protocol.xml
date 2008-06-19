@@ -2852,11 +2852,29 @@
                 event window's origin. Otherwise, event-x and event-y are zero. If the 
                 source window is an inferior of the event window, then child is set to 
                 the child of the event window that is an ancestor of (or is) the source window.
-                Otherwise, it is set to None. The state component gives the logical state of 
-                the buttons on the core X pointer and modifier keys on the core X keyboard
-                just before the event. 
-                The detail component type varies with the event type:
+                Otherwise, it is set to None.
             </para>
+            <para>
+                XI 1.x:
+                The state component gives the logical state of the buttons
+                on the X pointer and modifier keys on the core X keyboard
+                just before the event.
+            </para>
+            <para>
+                XI 2.x:
+                The state component gives the logical state of the buttons
+                or keys on the device specified in the event field.  If the
+                device is a master device, the state component also contains
+                the modifier keys on the paired master device. If the device
+                is a slave device, the state component also contains the
+                modifier keys or buttons of the master device paired with this
+                device's master device.  If the device is not attached to a
+                master device, the state component only contains the logical
+                state of the buttons or keys of this device, with all other
+                bits set to zero.
+            </para>
+            <para>
+                The detail component type varies with the event type:
             <informaltable pgwide='0' frame='all'>
                 <tgroup cols='2' align='center' colsep='1' rowsep='1'>
                     <colspec colname='c1' colwidth='2in'/>
@@ -2889,6 +2907,7 @@
                     </tbody>
                 </tgroup>
             </informaltable>
+            </para>
             <para>The granularity of motion events is not guaranteed, but a client selecting 
                 for motion events is guaranteed to get at least one event when a valuator
                 changes. If <emphasis>DeviceMotionHint</emphasis> is selected, the server is free to send 
