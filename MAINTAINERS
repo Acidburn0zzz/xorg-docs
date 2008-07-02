@@ -8,8 +8,8 @@ Maintainer guidelines:
   3) Make sure your changes compile!
 
 Rules:
-1) The first person to complain about an unresponsive maintainer
-   automatically assumes maintainership of the code in question.
+  1) The first person to complain about an unresponsive maintainer
+     automatically assumes maintainership of the code in question.
 
 Unlike the kernel maintainers file, this goes more or less alphabetically
 by component within each subsystem, rather than alphabetically on maintainer
@@ -221,13 +221,6 @@ S:      Maintained
 
 X.Org core
 ----------
-Cfb subsystem
-P:	Adam Jackson
-M:	ajax@nwnk.net
-L:	xorg@lists.freedesktop.org
-W:	http://wiki.x.org
-S:	Obsolete
-
 Composite extension
 P:	Keith Packard
 M:	keith.packard@intel.com
@@ -310,7 +303,7 @@ P:	Adam Jackson
 M:	ajax@nwnk.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Obsolete
+S:	Despised
 
 XACE subsystem (security policy extensions framework)
 P:	Eamon Walsh
@@ -322,13 +315,6 @@ S:	Maintained
 Xfixes extension
 P:	Keith Packard
 M:	keith.packard@intel.com
-L:	xorg@lists.freedesktop.org
-W:	http://wiki.x.org
-S:	Maintained
-
-Xgl
-P:	David Reveman
-M:	davidr@novell.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -854,18 +840,18 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-sis
-P:	Thomas Winischhofer
+P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Maintained
+S:	Unmaintained
 
 xf86-video-sisusb
-P:	Thomas Winischhofer
+P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Maintained
+S:	Unmaintained
 
 xf86-video-sunbw2
 P:	?
@@ -952,11 +938,11 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-vesa
-P:	?
-M:	?
+P:	Adam Jackson
+M:	ajax@nwnk.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-video-vga
 P:	?
@@ -1006,7 +992,7 @@ Developer relations & services
 ------------------------------
 
 Mailing lists (lists.x.org)
-P:	Mike Harris
+P:	?
 M:	mailman@lists.x.org
 L:	mailman@lists.x.org
 W:	http://lists.x.org/mailman/listinfo/
