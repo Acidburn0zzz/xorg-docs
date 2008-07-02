@@ -345,7 +345,7 @@ Input subsystem
 P:	Daniel Stone
 M:	daniel@fooishbar.org
 P:	Peter Hutterer
-M:	peter@cs.unisa.edu.au
+M:	peter.hutterer@who-t.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained, being overhauled
@@ -530,7 +530,7 @@ S:	Unmaintained
 
 xf86-input-evdev
 P:	Peter Hutterer
-M:	peter@cs.unisa.edu.au
+M:	peter.hutterer@who-t.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
