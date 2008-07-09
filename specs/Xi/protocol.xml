@@ -2811,6 +2811,230 @@
             protocol.
         </para>
     </sect2>
+    <sect2 id="listing_a_devices_properties">
+        <title>Listing Device Properties</title>
+        <para>
+            Introduced with XI 2.0
+            <literallayout>
+            ListDeviceProperties
+                     deviceid: CARD8
+            =&gt;
+                     nAtoms: CARD16
+                     Atoms: LISTofATOM
+            </literallayout>
+            Errors: Device
+        </para>
+        <para>
+            Each device can store an arbitrary number of properties. These
+            properties can be allocated by either the client or the driver.
+            The client can change device properties and the server guarantees
+            that the device driver is notified about a change of the device's
+            properties.
+        </para>
+        <para>
+            <emphasis>ListDeviceProperties</emphasis> returns all properties
+            of a device. The client is expected to retrieve details about the
+            properties it is interested in separately.
+        </para>
+    </sect2>
+    <sect2 id="querying_a_devices_property">
+        <title>Querying a Device Property</title>
+        <para>
+            Introduced with XI 2.0
+            <literallayout>
+            QueryDeviceProperty
+                     property: ATOM
+                     deviceid: CARD8
+            =&gt;
+                     pending: BOOL
+                     range: BOOL
+                     immutable: BOOL
+                     client: BOOL
+            </literallayout>
+            Errors: Atom, Device
+        </para>
+        <para>
+            This request returns the meta-information attached to a device
+            property. If pending is <emphasis>True</emphasis>, the property
+            has a pending value that has not yet been commited by the device.
+            Each property may have exactly one pending value and has a current
+            value.
+        </para>
+        <para>
+            If range is <emphasis>True</emphasis>, the property specifies a
+            range and the number of property values must be a multiple of two.
+        </para>
+        <para>
+            If immutable is <emphasis>True</emphasis>, the property cannot be
+            modified by the client.
+        </para>
+        <para>
+            If client is <emphasis>True</emphasis>, the property has been
+            created by a client. A device driver or the X server may not
+            process these properties when modified.
+        </para>
+    </sect2>
+    <sect2 id="configuring_a_devices_properties">
+        <title>Configuring a Device Property</title>
+        <para>
+            Introduced with XI 2.0
+            <literallayout>
+            ConfigureDeviceProperty
+                     property: ATOM
+                     deviceid: CARD8
+                     pending: BOOL
+                     range: BOOL
+            </literallayout>
+            Errors: Atom, Device
+        </para>
+        <para>
+            Configure a properties meta-information. If pending is
+            <emphasis>True</emphasis>, the property is configured as a
+            property supporting pending values. A client modifying the
+            property in the future can only modify the pending value.  If
+            pending is <emphasis>False</emphasis> and the property has a
+            pending value set, this value is discarded. A client modifying the
+            property in the future will modify the current value of the
+            property.
+        </para>
+        <para>
+            If range is <emphasis>True</emphasis>, the property must specify a
+            range. A client modifying the property in the future must supply a
+            multiple of 2 data items.
+        </para>
+    </sect2>
+    <sect2 id="getting_a_devices_properties">
+        <title>Getting a Device Property</title>
+        <para>
+            Introduced with XI 2.0
+            <literallayout>
+            GetDeviceProperty:
+                     property: ATOM
+                     type: ATOM
+                     longOffset: CARD32
+                     longLength: CARD32
+                     deviceid: CARD8
+                     delete: BOOL
+                     pending: BOOL
+            =&gt;
+                     propertyType: ATOM
+                     bytesAfter: CARD32
+                     nItems: CARD32
+                     format: CARD8
+                     deviceid: CARD8
+                     data: [LISTofCARD8]
+            </literallayout>
+            Errors: Atom, Device, Value
+        </para>
+        <para>
+            Retrieve the value for a property. If the property does not exist,
+            propertyType is <emphasis>None</emphasis> and all other fields are
+            undefined.
+        </para>
+        <para>
+            If type is not <emphasis>AnyPropertyType</emphasis> and does not
+            match the property's actual type, the propertyType, bytesAfter,
+            and format are returned but not the actual data.
+        </para>
+        <para>
+            longOffset and longLength specify the offset and length
+            respectively in 32-bit multiples of the data to retrieve.
+        </para>
+        <para>
+            If delete is <emphasis>True</emphasis>, the property is deleted
+            after querying its data.
+        </para>
+        <para>
+            If pending is <emphasis>True</emphasis>, the pending value of the
+            property is retrieved. Otherwise, the current value is returned.
+        </para>
+        <para>
+            propertyType returns the atom identifier that defines the actual
+            type of the property. Note that the type of a pending
+            value may differ to the type of the current value.
+        </para>
+        <para>
+            If bytesAfter is non-zero, it specifies the number of data 4-byte
+            units after the retrieved chunk of data.
+        </para>
+        <para>
+            format secifies whether the data should be viewed as a list of
+            8-bit, 16-bit, or 32-bit quantities. Possible values are 8, 16,
+            and 32. This information allows the X server to correctly perform
+            byte-swap operations as necessary.
+        </para>
+        <para>
+            nItem specifies the number of 8-bit, 16-bit, or 32-bit items
+            returned after the request.
+        </para>
+    </sect2>
+    <sect2 id="changing_a_devices_properties">
+        <title>Changing a Device Property</title>
+        <para>
+            Introduced with XI 2.0
+            <literallayout>
+            ChangeDeviceProperty:
+                     property: ATOM
+                     type: ATOM
+                     deviceid: CARD8
+                     format: CARD8
+                     mode: CARD8
+                     nUnits: CARD32
+            </literallayout>
+            Errors: Atom, Device, Value, Match
+        </para>
+        <para>
+            Changes the pending value of a specified property. Once the driver
+            has commited the property, the value is copied into the current
+            value and the pending value is reset to zero. If the property is
+            not configured as pending, the current value is modified. A client
+            cannot modify the current value of a property configured as
+            pending.
+        </para>
+        <para>
+            The type specifies the atom identifier that defines the type of
+            the property. If mode is not <emphasis>PropModeReplace</emphasis>,
+            the type must match the current type of the property or a
+            <emphasis>BadMatch</emphasis> error is returned.
+        </para>
+        <para>
+            format secifies whether the data should be viewed as a list of
+            8-bit, 16-bit, or 32-bit quantities. Possible values are 8, 16,
+            and 32. This information allows the X server to correctly perform
+            byte-swap operations as necessary.
+        </para>
+        <para>
+            If mode is <emphasis>PropModeReplace</emphasis>, a preexising
+            value for this property is replaced with the new value. If mode is
+            <emphasis>PropModePrepend</emphasis> or
+            <emphasis>PropModeAppend</emphasis>, the value is prepended or
+            appended, respectively, to the current value of the property.
+        </para>
+        <para>
+            nUnits specifies the number of 8-bit, 16-bit, or 32-bit items
+            supplied after the reply.
+        </para>
+        <para>
+            Changing a device property results in a
+            <emphasis>DevicePropertyNotifyEvent</emphasis> being sent to all
+            clients.
+        </para>
+    </sect2>
+    <sect2 id="deleting_a_devices_properties">
+        <title>Deleting a Device Property</title>
+        <para>
+            Introduced with XI 2.0
+            <literallayout>
+            DeleteDeviceProperty:
+                     property: ATOM
+                     deviceid: CARD8
+            </literallayout>
+            Errors: Atom, Device, Value, Match
+        </para>
+        <para>
+            Deletes the specified property.
+        </para>
+    </sect2>
 </sect1>
 <sect1 id='events'><title>Events</title>
     <para>The input extension creates input events analogous to the core input events.
@@ -3292,6 +3516,39 @@
                 of the slave device.  For a description of
                 <emphasis>INPUTINFO</emphasis>, see 
                 <xref linkend="listing_available_devices"/>.
+            </para>
+        </sect2>
+        <sect2 id='device_property_notify_event'>
+            <title>DevicePropertyNotifyEvent</title>
+            <para>
+                Introduced with XI 2.0.
+                <literallayout>
+                DevicePropertyNotifyEvent
+                        deviceid: CARD8
+                        state: CARD8
+                        time: TIMESTAMP
+                        atom: ATOM
+                </literallayout>
+                The DevicePropertyNotifyEvent is a GenericEvent.
+            </para>
+            <para>
+                A <emphasis>DevicePropertyNotifyEvent</emphasis> is sent to
+                all clients when a property on the device is created, deleted,
+                or changes value.
+            </para>
+            <para>
+                The deviceid specifies the device which's property has been
+                modified.
+            </para>
+            <para>
+                The atom specifies the named identifier of the property that
+                has been altered.
+            </para>
+            <para>
+                If state is <emphasis>PropertyNewValue</emphasis>, the given
+                property has a new value or has been newly created.
+                If state is <emphasis>PropertyDeleted</emphasis>, the given
+                property has been deleted.
             </para>
         </sect2>
     </sect1>
