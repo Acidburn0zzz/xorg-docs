@@ -2243,12 +2243,16 @@
                 must be the same as
                 <emphasis>GetDeviceButtonMapping</emphasis> would return. Otherwise,
                 <emphasis>SetDeviceButtonMapping</emphasis> generates a <emphasis>Value</emphasis> error. A zero element
-                disables a buttons, and elements are not restricted in value by the 
-                number of physical buttons. However, no two elements can have the
-                same nonzero value. Otherwise, this function generates a
-                <emphasis>Value</emphasis> error. If any of the buttons to be altered are in the 
+                disables a button, and elements are not restricted in value by the
+                number of physical buttons. If any of the buttons to be altered are in the
                 down state, the status reply is <emphasis>MappingBusy</emphasis> and the mapping is
-                not changed.</para> 
+                not changed.
+            </para>
+            <para>
+                In servers supporting XI 1.x, no two elements can have the
+                same nonzero value.  Otherwise, this function generates a
+                <emphasis>Value</emphasis> error.
+            </para>
         </sect2>
         <sect2 id='obtaining_the_state_of_a_device'><title>Obtaining The State Of A Device</title>
             <para>To obtain vectors that describe the state of the keys, buttons and valuators
