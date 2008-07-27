@@ -24,7 +24,7 @@ miscmandir = $(MISC_MAN_DIR)
 
 miscman_PRE = \
 	Consortium.man \
-	security.man \
+	Xsecurity.man \
 	Standards.man \
 	X.man \
 	XOrgFoundation.man \
