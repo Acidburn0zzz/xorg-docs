@@ -20,7 +20,6 @@
 #
 #  This file is included by Makefile.am in this directory and subdirectories.
 
-SGML_FILES = $(wildcard *.sgml)
 TXT_FILES  = $(SGML_FILES:%.sgml=%.txt)
 PS_FILES   = $(SGML_FILES:%.sgml=%.ps)
 PDF_FILES  = $(SGML_FILES:%.sgml=%.pdf)
