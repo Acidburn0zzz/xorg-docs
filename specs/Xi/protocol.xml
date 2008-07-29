@@ -978,6 +978,11 @@
                 num_valuators, a BadValue error will result.</para>
             <para>If the request fails for any reason, none of the valuator resolutions will be 
                 changed.</para>
+            <para>
+                <emphasis>ChangeDeviceControl</emphasis> causes the server to
+                send a <emphasis>DevicePresence</emphasis> event to
+                interested clients.
+            </para>
         </sect2>
         <sect2 id='selecting_extension_device_events'><title>Selecting Extension Device Events</title>
             <para>Extension input events are selected using the <emphasis>SelectExtensionEvent</emphasis>
@@ -3343,6 +3348,7 @@
                             #x02: DeviceEnabled
                             #x03: DeviceDisabled
                             #x04: DeviceUnrecoverable
+                            #x05: DeviceControlChanged
                         deviceid: BYTE
                         control: CARD16
                 </literallayout>
@@ -3354,6 +3360,8 @@
                 list of input devices using the
                 <emphasis>ListInputDevices</emphasis> request to obtain the
                 updated list of input devices.
+                <emphasis>DevicePresence</emphasis> events are also sent when
+                a control on the device has been changed.
             </para>
             <para>
                 The <emphasis>devchange</emphasis> field specifies the type of
@@ -3369,6 +3377,10 @@
                 If the field is <emphasis>DeviceUnrecoverable</emphasis>, an
                 IO-error has occured on the device and the device is forcibly
                 disabled and removed by the server.
+                If <emphasis>devchange</emphasis> is
+                <emphasis>DeviceControlChanged</emphasis>,
+                <emphasis>control</emphasis> specifies the type of control
+                that has been changed.
             </para>
         </sect2>
         <sect2 id='device_crossing_events'>
