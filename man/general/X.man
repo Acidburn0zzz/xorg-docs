@@ -94,7 +94,7 @@ access control programs, \fIxauth\fP, \fIxhost\fP, and \fIiceauth\fP;
 user preference setting programs, \fIxrdb\fP, \fIxcmsdb\fP,
 \fIxset\fP, \fIxsetroot\fP, \fIxstdcmap\fP, and \fIxmodmap\fP;
 clocks, \fIxclock\fP and \fIoclock\fP;
-a font displayer, (\fIxfd\fP;
+a font displayer, \fIxfd\fP;
 utilities for listing information about fonts, windows, and displays,
 \fIxlsfonts\fP, \fIxwininfo\fP, \fIxlsclients\fP,
 \fIxdpyinfo\fP, \fIxlsatoms\fP, and \fIxprop\fP;
@@ -866,7 +866,7 @@ entries that match using "?".
 An entry preceded by a tight binding takes precedence over entries
 preceded by a loose binding.
 .PP
-Programs based on the X Tookit Intrinsics
+Programs based on the X Toolkit Intrinsics
 obtain resources from the following sources
 (other programs usually support some subset of these sources):
 .TP 8
@@ -1034,7 +1034,7 @@ is\fI __projectroot__/lib/X11/locale\fP.
 .SM
 .B XENVIRONMENT
 This must point to a file containing X resources. The default is
-\fI$HOME/.Xdefaults-<hostname>\fP. Unlike\fI __projectroot__/lib/X11/Xresources\fP,
+\fI$HOME/.Xdefaults-<hostname>\fP. Unlike \fI$HOME/.Xresources\fP,
 it is consulted each time an X application starts.
 .TP
 .SM
@@ -1112,7 +1112,7 @@ The default value is\fI __projectroot__/lib/X11/XKeysymDB\fP.
 .SM
 .B XCMSDB
 This must point to a color name database file. The default value is
-\fI\__projectroot__/lib/X11/Xcms.txt\fP.
+\fI __projectroot__/lib/X11/Xcms.txt\fP.
 .TP
 .SM
 .B XFT_CONFIG
@@ -1209,7 +1209,7 @@ convenient when it is desirable to have one set of resources across a variety
 of displays (e.g. color vs. monochrome, lots of fonts vs. very few, etc.),
 although it can pose problems for trying to determine why an application might
 be failing.  This behavior can be overridden by the setting the
-\fIStringConversionsWarning\fP resource.
+\fIStringConversionWarnings\fP resource.
 .PP
 To force the X Toolkit Intrinsics to always print string conversion error
 messages,
