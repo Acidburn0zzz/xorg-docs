@@ -91,7 +91,8 @@
                 describes the behaviour of the Input Extension 1.0, 1.1, 1.2,
                 and 1.2. XI 1.4 introduced virtual devices that act as core
                 devices (see <xref linkend='core_input_devices'/>) and input
-                device hotplugging. XI 2.0 introduces the ability to create
+                device hotplugging. XI 1.5 introduced device properties.
+                XI 2.0 introduces the ability to create
                 multiple virtual core devices. Unless stated otherwise, the
                 content of this document applies to all versions of the Input
                 Extension.
@@ -2823,7 +2824,7 @@
     <sect2 id="listing_a_devices_properties">
         <title>Listing Device Properties</title>
         <para>
-            Introduced with XI 2.0
+            Introduced with XI 1.5
             <literallayout>
             ListDeviceProperties
                      deviceid: CARD8
@@ -2846,76 +2847,10 @@
             properties it is interested in separately.
         </para>
     </sect2>
-    <sect2 id="querying_a_devices_property">
-        <title>Querying a Device Property</title>
-        <para>
-            Introduced with XI 2.0
-            <literallayout>
-            QueryDeviceProperty
-                     property: ATOM
-                     deviceid: CARD8
-            =&gt;
-                     pending: BOOL
-                     range: BOOL
-                     immutable: BOOL
-                     client: BOOL
-            </literallayout>
-            Errors: Atom, Device
-        </para>
-        <para>
-            This request returns the meta-information attached to a device
-            property. If pending is <emphasis>True</emphasis>, the property
-            has a pending value that has not yet been commited by the device.
-            Each property may have exactly one pending value and has a current
-            value.
-        </para>
-        <para>
-            If range is <emphasis>True</emphasis>, the property specifies a
-            range and the number of property values must be a multiple of two.
-        </para>
-        <para>
-            If immutable is <emphasis>True</emphasis>, the property cannot be
-            modified by the client.
-        </para>
-        <para>
-            If client is <emphasis>True</emphasis>, the property has been
-            created by a client. A device driver or the X server may not
-            process these properties when modified.
-        </para>
-    </sect2>
-    <sect2 id="configuring_a_devices_properties">
-        <title>Configuring a Device Property</title>
-        <para>
-            Introduced with XI 2.0
-            <literallayout>
-            ConfigureDeviceProperty
-                     property: ATOM
-                     deviceid: CARD8
-                     pending: BOOL
-                     range: BOOL
-            </literallayout>
-            Errors: Atom, Device
-        </para>
-        <para>
-            Configure a properties meta-information. If pending is
-            <emphasis>True</emphasis>, the property is configured as a
-            property supporting pending values. A client modifying the
-            property in the future can only modify the pending value.  If
-            pending is <emphasis>False</emphasis> and the property has a
-            pending value set, this value is discarded. A client modifying the
-            property in the future will modify the current value of the
-            property.
-        </para>
-        <para>
-            If range is <emphasis>True</emphasis>, the property must specify a
-            range. A client modifying the property in the future must supply a
-            multiple of 2 data items.
-        </para>
-    </sect2>
     <sect2 id="getting_a_devices_properties">
         <title>Getting a Device Property</title>
         <para>
-            Introduced with XI 2.0
+            Introduced with XI 1.5
             <literallayout>
             GetDeviceProperty:
                      property: ATOM
@@ -2924,7 +2859,6 @@
                      longLength: CARD32
                      deviceid: CARD8
                      delete: BOOL
-                     pending: BOOL
             =&gt;
                      propertyType: ATOM
                      bytesAfter: CARD32
@@ -2933,7 +2867,7 @@
                      deviceid: CARD8
                      data: [LISTofCARD8]
             </literallayout>
-            Errors: Atom, Device, Value
+            Errors: Atom, Device, Value, Access
         </para>
         <para>
             Retrieve the value for a property. If the property does not exist,
@@ -2951,16 +2885,12 @@
         </para>
         <para>
             If delete is <emphasis>True</emphasis>, the property is deleted
-            after querying its data.
-        </para>
-        <para>
-            If pending is <emphasis>True</emphasis>, the pending value of the
-            property is retrieved. Otherwise, the current value is returned.
+            after querying its data. If the property cannot be deleted, a
+            <emphasis>BadAccess</emphasis> error is returned.
         </para>
         <para>
             propertyType returns the atom identifier that defines the actual
-            type of the property. Note that the type of a pending
-            value may differ to the type of the current value.
+            type of the property.
         </para>
         <para>
             If bytesAfter is non-zero, it specifies the number of data 4-byte
@@ -2980,7 +2910,7 @@
     <sect2 id="changing_a_devices_properties">
         <title>Changing a Device Property</title>
         <para>
-            Introduced with XI 2.0
+            Introduced with XI 1.5
             <literallayout>
             ChangeDeviceProperty:
                      property: ATOM
@@ -2990,15 +2920,10 @@
                      mode: CARD8
                      nUnits: CARD32
             </literallayout>
-            Errors: Atom, Device, Value, Match
+            Errors: Atom, Device, Value, Match, Access
         </para>
         <para>
-            Changes the pending value of a specified property. Once the driver
-            has commited the property, the value is copied into the current
-            value and the pending value is reset to zero. If the property is
-            not configured as pending, the current value is modified. A client
-            cannot modify the current value of a property configured as
-            pending.
+            Changes the value of a specified property.
         </para>
         <para>
             The type specifies the atom identifier that defines the type of
@@ -3032,16 +2957,17 @@
     <sect2 id="deleting_a_devices_properties">
         <title>Deleting a Device Property</title>
         <para>
-            Introduced with XI 2.0
+            Introduced with XI 1.5
             <literallayout>
             DeleteDeviceProperty:
                      property: ATOM
                      deviceid: CARD8
             </literallayout>
-            Errors: Atom, Device, Value, Match
+            Errors: Atom, Device, Match, Access.
         </para>
         <para>
-            Deletes the specified property.
+            Deletes the specified property. If the property cannot be deleted
+            by the client, a <emphasis>BadAccess</emphasis> error is returned.
         </para>
     </sect2>
 </sect1>
@@ -3545,7 +3471,6 @@
                         time: TIMESTAMP
                         atom: ATOM
                 </literallayout>
-                The DevicePropertyNotifyEvent is a GenericEvent.
             </para>
             <para>
                 A <emphasis>DevicePropertyNotifyEvent</emphasis> is sent to
