@@ -202,14 +202,14 @@ The \fIssh\fP program can be used to start an X program on a remote machine;
 it automatically sets the DISPLAY variable correctly.
 .PP
 Finally, most X programs accept a command line option of
-\fB-display \fIdisplayname\fR to temporarily override the contents of
+\fB\-display \fIdisplayname\fR to temporarily override the contents of
 DISPLAY.  This is most commonly used to pop windows on another person's
 screen or as part of a "remote shell" command to start an xterm pointing back
 to your display.  For example,
 .sp
 .nf
-    % xeyes -display joesws:0 -geometry 1000x1000+0+0
-    % rsh big xterm -display myws:0 -ls </dev/null &
+    % xeyes \-display joesws:0 \-geometry 1000x1000+0+0
+    % rsh big xterm \-display myws:0 \-ls </dev/null &
 .fi
 .PP
 X servers listen for connections on a variety of different
@@ -241,9 +241,9 @@ in Release 7 are:
 .br
 .ta 3.4i
     Host Access	Simple host-based access control.
-    MIT-MAGIC-COOKIE-1	Shared plain-text "cookies".
-    XDM-AUTHORIZATION-1	Secure DES based private-keys.
-    SUN-DES-1	Based on Sun's secure rpc system.
+    MIT\-MAGIC\-COOKIE\-1	Shared plain-text "cookies".
+    XDM\-AUTHORIZATION\-1	Secure DES based private-keys.
+    SUN\-DES\-1	Based on Sun's secure rpc system.
     Server Interpreted	Server-dependent methods of access control
 .fi
 .PP
@@ -290,7 +290,7 @@ on the screen.
 Although the layout of windows on a display is controlled
 by the window manager that the user is running (described below),
 most X programs accept
-a command line argument of the form \fB-geometry \fIWIDTHxHEIGHT+XOFF+YOFF\fR
+a command line argument of the form \fB\-geometry \fIWIDTHxHEIGHT+XOFF+YOFF\fR
 (where \fIWIDTH\fP, \fIHEIGHT\fP, \fIXOFF\fP, and \fIYOFF\fP are numbers)
 for specifying a preferred size and location for this application's main
 window.
@@ -309,7 +309,7 @@ left edge of the screen (i.e., the X coordinate of the window's origin will be
 \fIXOFF\fP).  \fIXOFF\fP may be negative, in which case the window's left edge
 will be off the screen.
 .TP 8
-.I -XOFF
+.I \-XOFF
 The right edge of the window is to be placed \fIXOFF\fP pixels in from the
 right edge of the screen.  \fIXOFF\fP may be negative, in which case the
 window's right edge will be off the screen.
@@ -322,7 +322,7 @@ top edge of the screen (i.e., the Y coordinate of the window's origin will be
 \fIYOFF\fP).  \fIYOFF\fP may be negative, in which case the window's top edge
 will be off the screen.
 .TP 8
-.I -YOFF
+.I \-YOFF
 The bottom edge of the window is to be \fIYOFF\fP pixels above the
 bottom edge of the screen.  \fIYOFF\fP may be negative, in which case
 the window's bottom edge will be off the screen.
@@ -334,13 +334,13 @@ four corners of the screen using the following specifications:
 .I +0+0
 upper left hand corner.
 .TP 8
-.I -0+0
+.I \-0+0
 upper right hand corner.
 .TP 8
-.I -0-0
+.I \-0\-0
 lower right hand corner.
 .TP 8
-.I +0-0
+.I +0\-0
 lower left hand corner.
 .PP
 In the following examples, a terminal emulator is placed in roughly
@@ -349,10 +349,10 @@ a load average monitor, mailbox, and clock are placed in the upper right
 hand corner:
 .sp
 .nf
-    xterm -fn 6x10 -geometry 80x24+30+200 &
-    xclock -geometry 48x48-0+0 &
-    xload -geometry 48x48-96+0 &
-    xbiff -geometry 48x48-48+0 &
+    xterm \-fn 6x10 \-geometry 80x24+30+200 &
+    xclock \-geometry 48x48\-0+0 &
+    xload \-geometry 48x48\-96+0 &
+    xbiff \-geometry 48x48\-48+0 &
 .fi
 .PP
 .SH "WINDOW MANAGERS"
@@ -417,20 +417,20 @@ needed to uniquely identify individual fonts.  However, the X server
 supports wildcarding of font names, so the full specification
 .sp
 .nf
-    \fI-adobe-courier-medium-r-normal--10-100-75-75-m-60-iso8859-1\fP
+    \fI\-adobe\-courier\-medium\-r\-normal\-\-10\-100\-75\-75\-m\-60\-iso8859\-1\fP
 .fi
 .sp
 might be abbreviated as:
 .sp
 .nf
-    \fI-*-courier-medium-r-normal--*-100-*-*-*-*-iso8859-1\fP
+    \fI\-*\-courier\-medium\-r\-normal\-\-*\-100\-*\-*\-*\-*\-iso8859\-1\fP
 .fi
 .PP
 Because the shell also has special meanings for \fI*\fP and \fI?\fP,
 wildcarded font names should be quoted:
 .sp
 .nf
-    % xlsfonts -fn '-*-courier-medium-r-normal--*-100-*-*-*-*-*-*'
+    % xlsfonts \-fn '\-*\-courier\-medium\-r\-normal\-\-*\-100\-*\-*\-*\-*\-*\-*'
 .fi
 .PP
 The \fIxlsfonts\fP program can be used to list all of the fonts that
@@ -439,9 +439,9 @@ This will usually list the same font at many different sizes.  To see
 just the base scalable font names, try using one of the following patterns:
 .sp
 .nf
-    \fI-*-*-*-*-*-*-0-0-0-0-*-0-*-*\fP
-    \fI-*-*-*-*-*-*-0-0-75-75-*-0-*-*\fP
-    \fI-*-*-*-*-*-*-0-0-100-100-*-0-*-*\fP
+    \fI\-*\-*\-*\-*\-*\-*\-0\-0\-0\-0\-*\-0\-*\-*\fP
+    \fI\-*\-*\-*\-*\-*\-*\-0\-0\-75\-75\-*\-0\-*\-*\fP
+    \fI\-*\-*\-*\-*\-*\-*\-0\-0\-100\-100\-*\-0\-*\-*\fP
 .fi
 .PP
 To convert one of the resulting names into a font at a specific size,
@@ -597,10 +597,10 @@ All of the values (C, H, V, X, Y, Z, a, b, u, v, y, x) are
 floating point values.  Some of the values are constrained to
 be between zero and some upper bound; the upper bounds are
 given in parentheses above.
-The syntax for these values is an optional '+' or '-' sign,
+The syntax for these values is an optional '+' or '\-' sign,
 a string of digits possibly containing a decimal point,
 and an optional exponent field consisting of an 'E' or 'e'
-followed by an optional '+' or '-' followed by a string of digits.
+followed by an optional '+' or '\-' followed by a string of digits.
 .PP
 For more information on device independent color,
 see the \fIXlib\fP reference manual.
@@ -682,7 +682,7 @@ Either option specifies the width in pixels of the window border.
 .B \-fg \fIcolor\fP, \fB\-foreground \fIcolor\fP
 Either option specifies the color to use for text or graphics.
 .TP 8
-.B \-fn \fIfont\fP, \fB-font \fIfont\fP
+.B \-fn \fIfont\fP, \fB\-font \fIfont\fP
 Either option specifies the font to use for displaying text.
 .TP 8
 .B \-iconic
@@ -768,7 +768,7 @@ Binding	=	"\&." | "*"
 WhiteSpace	=	{<space> | <horizontal tab>}
 Component	=	"?" | ComponentName
 ComponentName	=	NameChar {NameChar}
-NameChar	=	"a"\-"z" | "A"\-"Z" | "0"\-"9" | "_" | "-"
+NameChar	=	"a"\-"z" | "A"\-"Z" | "0"\-"9" | "_" | "\-"
 Value	=	{<any character except null or unescaped newline>}
 .fi
 .PP
@@ -889,7 +889,7 @@ details.
 Any user- and machine-specific resources may be specified by setting
 the XENVIRONMENT environment variable to the name of a resource file
 to be loaded by all applications.  If this variable is not defined,
-a file named \fI$HOME\fP/.Xdefaults-\fIhostname\fP is looked for instead,
+a file named \fI$HOME\fP/.Xdefaults\-\fIhostname\fP is looked for instead,
 where \fIhostname\fP is the name of the host where the application
 is executing.
 .TP 8
@@ -944,7 +944,7 @@ without having to define all of the related resources.  For example,
     XTerm*scrollBar: on
     XTerm*scrollbar*thickness: 5
     XTerm*multiClickTime: 500
-    XTerm*charClass:  33:48,37:48,45-47:48,64:48
+    XTerm*charClass:  33:48,37:48,45\-47:48,64:48
     XTerm*cutNewline: off
     XTerm*cutToBeginningOfLine: off
     XTerm*titeInhibit:  on
@@ -953,13 +953,13 @@ without having to define all of the related resources.  For example,
     XLoad*Foreground: red
     XLoad*highlight: black
     XLoad*borderWidth: 0
-    emacs*Geometry:  80x65-0-0
+    emacs*Geometry:  80x65\-0\-0
     emacs*Background:  rgb:5b/76/86
     emacs*Foreground:  white
     emacs*Cursor:  white
     emacs*BorderColor:  white
     emacs*Font:  6x10
-    xmag*geometry: -0-0
+    xmag*geometry: \-0\-0
     xmag*borderColor:  white
 .fi
 .PP
@@ -968,7 +968,7 @@ directory, they could be added to any existing resources in the server with
 the following command:
 .sp
 .nf
-    % xrdb -merge $HOME/.Xresources
+    % xrdb \-merge $HOME/.Xresources
 .fi
 .sp
 This is frequently how user-friendly startup scripts merge user-specific
@@ -1022,7 +1022,7 @@ is\fI __datadir__/X11/locale\fP.
 .SM
 .B XENVIRONMENT
 This must point to a file containing X resources. The default is
-\fI$HOME/.Xdefaults-<hostname>\fP. Unlike \fI$HOME/.Xresources\fP,
+\fI$HOME/.Xdefaults\-<hostname>\fP. Unlike \fI$HOME/.Xresources\fP,
 it is consulted each time an X application starts.
 .TP
 .SM
@@ -1129,7 +1129,7 @@ Denotes the session manager to which the application should connect. See
 .TP
 .SM
 .B XF86BIGFONT_DISABLE
-Setting this variable to a non-empty value disables the XFree86-Bigfont
+Setting this variable to a non-empty value disables the XFree86\-Bigfont
 extension. This extension is a mechanism to reduce the memory consumption
 of big fonts by use of shared memory.
 .LP
@@ -1167,27 +1167,27 @@ please refer to that command's manual page.
 .sp
 .nf
     %  xrdb $HOME/.Xresources
-    %  xmodmap -e "keysym BackSpace = Delete"
+    %  xmodmap \-e "keysym BackSpace = Delete"
     %  mkfontdir /usr/local/lib/X11/otherfonts
     %  xset fp+ /usr/local/lib/X11/otherfonts
     %  xmodmap $HOME/.keymap.km
-    %  xsetroot -solid 'rgbi:.8/.8/.8'
+    %  xsetroot \-solid 'rgbi:.8/.8/.8'
     %  xset b 100 400 c 50 s 1800 r on
     %  xset q
     %  twm
     %  xmag
-    %  xclock -geometry 48x48-0+0 -bg blue -fg white
-    %  xeyes -geometry 48x48-48+0
-    %  xbiff -update 20
+    %  xclock \-geometry 48x48-0+0 \-bg blue \-fg white
+    %  xeyes \-geometry 48x48\-48+0
+    %  xbiff \-update 20
     %  xlsfonts '*helvetica*'
-    %  xwininfo -root
-    %  xdpyinfo -display joesworkstation:0
-    %  xhost -joesworkstation
+    %  xwininfo \-root
+    %  xdpyinfo \-display joesworkstation:0
+    %  xhost \-joesworkstation
     %  xrefresh
     %  xwd | xwud
     %  bitmap companylogo.bm 32x32
-    %  xcalc -bg blue -fg magenta
-    %  xterm -geometry 80x66-0-0 -name myxterm $*
+    %  xcalc \-bg blue \-fg magenta
+    %  xterm \-geometry 80x66\-0\-0 \-name myxterm $*
 .fi
 .SH DIAGNOSTICS
 A wide variety of error messages are generated from various programs.
