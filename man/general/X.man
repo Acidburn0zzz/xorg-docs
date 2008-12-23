@@ -281,7 +281,8 @@ In many environments, this level of security is not a concern, but if it is,
 you need to know the exact semantics of the particular authorization
 data to know if this is actually a problem.
 .PP
-For more information on access control, see the \fIXsecurity\fP manual page.
+For more information on access control, see the
+\fIXsecurity\fP(__miscmansuffix__) manual page.
 .SH "GEOMETRY SPECIFICATIONS"
 One of the advantages of using window systems instead of
 hardwired terminals is that
