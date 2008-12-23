@@ -233,12 +233,6 @@ hostname or IP address.  Full Internet names, abbreviated names, IPv4
 addresses, and IPv6 addresses are all allowed.  For example:
 \fIx.org:0\fP, \fIexpo:0\fP, \fI[::1]:0\fP,
 \fI198.112.45.11:0\fP, \fIbigmachine:1\fP, and \fIhydra:0.1\fP.
-.TP 8
-.I DECnet
-.br
-The hostname part of the display name should be the server machine's
-nodename, followed by two colons instead of one.
-For example:  \fImyws::0\fP, \fIbig::1\fP, and \fIhydra::0.1\fP.
 .PP
 .SH "ACCESS CONTROL"
 An X server can use several types of access control.  Mechanisms provided
