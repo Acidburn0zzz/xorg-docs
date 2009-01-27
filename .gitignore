@@ -10,3 +10,6 @@ configure
 install-sh
 missing
 *~
+xorg-docs-*.tar.*
+ChangeLog
+tags

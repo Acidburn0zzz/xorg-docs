@@ -24,6 +24,10 @@ AC_PREREQ([2.57])
 AC_INIT([xorg-docs], [1.4], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg])
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 
+# Require xorg-macros: XORG_CWARNFLAGS, XORG_CHANGELOG
+m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.2)
+
 DEFAULT_X11DOCDIR=${datadir}/X11/doc
 AC_ARG_WITH(x11docdir,
         AC_HELP_STRING([--with-x11docdir=<path>],
@@ -55,6 +59,7 @@ AM_CONDITIONAL(BUILD_PDFDOC, test "x$BUILD_PDFDOC" = xyes)
 AM_CONDITIONAL(BUILD_PSDOC, test "x$BUILD_PSDOC" = xyes)
 AM_CONDITIONAL(BUILD_HTMLDOC, test "x$BUILD_HTMLDOC" = xyes)
 XORG_CHECK_DOCBOOK
+XORG_CHANGELOG
 
 AC_OUTPUT([Makefile
            hardcopy/Makefile
