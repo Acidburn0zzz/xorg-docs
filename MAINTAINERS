@@ -650,6 +650,15 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Unmaintained
 
+xf86-input-synaptics
+P:	Christoph Brill
+M:	egore911@egore911.de
+P:	Peter Hutterer
+M:	peter.hutterer@who-t.net
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
 xf86-input-tek4957
 P:	?
 M:	?
