@@ -550,11 +550,11 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-input-keyboard
-P:	?
-M:	?
+P:	Alan Coopersmith
+M:	alan.coopersmith@sun.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-input-magellan
 P:	?
@@ -578,8 +578,8 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-input-mouse
-P:	Egbert Eich
-M:	eich@freedesktop.org
+P:	Alan Coopersmith
+M:	alan.coopersmith@sun.com
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
