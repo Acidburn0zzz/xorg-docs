@@ -55,12 +55,6 @@ S:	Supported
 
 X.Org apps
 ---------------
-compiz
-P:	David Reveman
-M:	davidr@novell.com
-L:	compiz@lists.freedesktop.org
-W:	http://wiki.freedesktop.org/wiki/Software_2fCompiz
-S:	Maintained
 
 xbiff
 P:	Matthieu Herrb
