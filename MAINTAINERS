@@ -31,6 +31,12 @@ S: Status, one of the following:
 			it has been replaced by a better system and you
 			should be using that.
 
+For patch submission instructions, see:
+        http://www.x.org/wiki/Development/Documentation/SubmittingPatches
+
+Send all patches for modules without a specific maintainer address listed
+to xorg-devel@lists.x.org
+
 Misc. core code
 ---------------
 DRM library
