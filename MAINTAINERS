@@ -56,6 +56,24 @@ S:	Supported
 X.Org apps
 ---------------
 
+beforelight
+S:	Obsolete
+
+lbxproxy
+S:	Obsolete - use ssh X forwarding + compression instead
+
+makepsres
+S:	Obsolete - DPS support has been dropped
+
+mkcfm
+S:	Obsolete - CID font support has been dropped
+
+pclcomp
+S:	Obsolete - only used by Xprint
+
+rstart
+S:	Obsolete - use ssh instead
+
 xbiff
 P:	Matthieu Herrb
 M:	matthieu.herrb@laas.fr
@@ -135,6 +153,9 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
+xmh
+S:	Obsolete - use exmh instead
+
 xsetroot
 P:	Matthieu Herrb
 M:	matthieu.herrb@laas.fr
@@ -143,11 +164,11 @@ W:	http://wiki.x.org
 S:	Maintained
 
 all others
-P:	Jim Gettys
-M:	?
+P:	?
+M:	xorg-devel@lists.x.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Maintained
+S:	Unmaintained
 
 X.Org libraries
 ---------------
@@ -390,11 +411,7 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 LynxOS
-P:	?
-M:	?
-L:	xorg@lists.freedesktop.org
-W:	http://wiki.x.org
-S:	Unmaintained
+S:	Obsolete / Removed
 
 Mac OS X (Xquartz)
 P:	Ben Byer
@@ -406,6 +423,13 @@ W:	http://xquartz.macosforge.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
+
+NetBSD
+P:	?
+M:	xorg-devel@lists.x.org
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Unmaintained
 
 OpenBSD
 P:	Matthieu Herrb
@@ -421,12 +445,12 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
-System V
+System V (other than Solaris & SCO)
 P:	?
-M:	?
+M:	xorg-devel@lists.x.org
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Unmaintained (libraries/apps) ; Obsolete/Removed (Xorg server)
 
 Solaris (x86 & sparc)
 P:	Alan Coopersmith
@@ -987,6 +1011,19 @@ M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
+
+Other modules
+-------------
+
+data/bitmaps, data/cursors, doc/*, fonts/*, util/*
+P:	?
+M:	xorg-devel@lists.x.org
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Unmaintained
+
+xkbdata
+S:	Obsolete - use xkeyboard-config instead
 
 Developer relations & services
 ------------------------------
