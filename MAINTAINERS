@@ -27,6 +27,9 @@ S: Status, one of the following:
 			much other than throw the odd patch in. See below..
 	Unmaintained:	No current maintainer [but maybe you could take the
 			role as you write your new code].
+	Deactivated:	Package is about to be obsoleted. A deactivated
+			package will not receive general fixes unless a user
+			requires this package to be reactivated first.
 	Obsolete:	Old code. Something tagged obsolete generally means
 			it has been replaced by a better system and you
 			should be using that.
@@ -494,42 +497,42 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-citron
 P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-digitaledge
 P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-dmc
 P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-dynapro
 P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-elo2300
 P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-elographics
 P:	?
@@ -564,7 +567,7 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-joystick
 P:	Sascha Hlusiak
@@ -585,14 +588,14 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-magictouch
 P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-microtouch
 P:	?
@@ -620,7 +623,7 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-penmount
 P:	?
@@ -641,14 +644,14 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-summa
 P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-synaptics
 P:	Christoph Brill
@@ -664,14 +667,14 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-ur98
 P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Deactivated
 
 xf86-input-vmmouse
 P:	Philip Langdale
