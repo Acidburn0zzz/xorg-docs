@@ -3464,7 +3464,7 @@
         <sect2 id='device_property_notify_event'>
             <title>DevicePropertyNotifyEvent</title>
             <para>
-                Introduced with XI 2.0.
+                Introduced with XI 1.5.
                 <literallayout>
                 DevicePropertyNotifyEvent
                         deviceid: CARD8
