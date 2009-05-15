@@ -2898,7 +2898,7 @@
             units after the retrieved chunk of data.
         </para>
         <para>
-            format secifies whether the data should be viewed as a list of
+            format specifies whether the data should be viewed as a list of
             8-bit, 16-bit, or 32-bit quantities. Possible values are 8, 16,
             and 32. This information allows the X server to correctly perform
             byte-swap operations as necessary.
@@ -2933,7 +2933,7 @@
             <emphasis>BadMatch</emphasis> error is returned.
         </para>
         <para>
-            format secifies whether the data should be viewed as a list of
+            format specifies whether the data should be viewed as a list of
             8-bit, 16-bit, or 32-bit quantities. Possible values are 8, 16,
             and 32. This information allows the X server to correctly perform
             byte-swap operations as necessary.
