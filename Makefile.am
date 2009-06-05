@@ -157,8 +157,6 @@ EXTRA_DIST = \
 	specs/Xext/xtest1.mm \
 	specs/Xext/xtestlib.ms \
 	specs/Xext/xtest.ms \
-	specs/xfs/design.ms \
-	specs/xfs/FSlib.doc \
 	specs/Xi/encoding.ms \
 	specs/Xi/library.ms \
 	specs/XIM/xim.ms \

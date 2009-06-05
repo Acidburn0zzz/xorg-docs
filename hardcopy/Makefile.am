@@ -21,5 +21,5 @@
 #  Process this file with autoconf to create configure.
 
 SUBDIRS = BDF CTEXT FSProtocol i18n ICCCM ICE man rstart RX saver SM X11 \
-          Xaw XDMCP Xext xfs Xi XIM XKB XLFD Xmu XPRINT XProtocol Xserver \
+          Xaw XDMCP Xext Xi XIM XKB XLFD Xmu XPRINT XProtocol Xserver \
           Xt xtrans Xv

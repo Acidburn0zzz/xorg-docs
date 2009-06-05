@@ -78,7 +78,6 @@ AC_OUTPUT([Makefile
            hardcopy/Xaw/Makefile
            hardcopy/XDMCP/Makefile
            hardcopy/Xext/Makefile
-           hardcopy/xfs/Makefile
            hardcopy/Xi/Makefile
            hardcopy/XIM/Makefile
            hardcopy/XKB/Makefile
