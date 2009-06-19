@@ -8,7 +8,7 @@
     <author><firstname>Eamon</firstname><othername>F.</othername><surname>Walsh</surname></author>
     <authorinitials>efw</authorinitials>
     <publisher><publishername>National Security Agency</publishername></publisher>
-    <pubdate>2008</pubdate>
+    <pubdate>2009</pubdate>
     <title>X Access Control Extension Specification</title>
     <titleabbrev>XACE-Spec</titleabbrev>
     <revhistory>
@@ -23,6 +23,12 @@
 	<date>10 Mar 2008</date>
 	<authorinitials>efw</authorinitials>
 	<revremark>Version 2.0</revremark>
+      </revision>
+      <revision>
+	<revnumber>2.1</revnumber>
+	<date>19 Jun 2009</date>
+	<authorinitials>efw</authorinitials>
+	<revremark>Version 2.1 (XI2)</revremark>
       </revision>
     </revhistory>
     <legalnotice>
@@ -476,7 +482,7 @@
 
 	<section id="device_access_hook">
 	  <title>Device Access</title>
-	  <para>This hook allows security extensions to restrict certain actions by clients related to keyboard input.  For the specifics, refer to the "Input Security" section of the SECURITY extension specification.  The hook argument is a pointer to a structure of type <type>XaceDeviceAccessRec</type>.  This structure contains a 
+	  <para>This hook allows security extensions to restrict client actions on input devices.  The hook argument is a pointer to a structure of type <type>XaceDeviceAccessRec</type>.  This structure contains a 
 	  <structfield>client</structfield> field of type <type>ClientPtr</type>, 
 	  a <structfield>dev</structfield> field of type <type>DeviceIntPtr</type>, 
 	  a <structfield>access_mode</structfield> field of type <type>Mask</type>,
@@ -558,13 +564,38 @@
 		</row>
 		<row>
 		  <entry><literal>DixCreateAccess</literal></entry>
-		  <entry>The device object has been newly allocated (Currently serverClient only).</entry>
-		  <entry>D-BUS device notification</entry>
+		  <entry>The device object has been newly allocated.</entry>
+		  <entry>XIChangeDeviceHierarchy, XIAddMaster</entry>
 		</row>
 		<row>
 		  <entry><literal>DixDestroyAccess</literal></entry>
-		  <entry>The device is being removed (Currently serverClient only).</entry>
-		  <entry>D-BUS device notification</entry>
+		  <entry>The device is being removed.</entry>
+		  <entry>XIChangeDeviceHierarchy, XIRemoveMaster</entry>
+		</row>
+		<row>
+		  <entry><literal>DixAddAccess</literal></entry>
+		  <entry>A slave device is being attached to the device.</entry>
+		  <entry>XIChangeDeviceHierarchy, XIChangeAttachment</entry>
+		</row>
+		<row>
+		  <entry><literal>DixRemoveAccess</literal></entry>
+		  <entry>A slave device is being unattached from the device.</entry>
+		  <entry>XIChangeDeviceHierarchy, XIChangeAttachment</entry>
+		</row>
+		<row>
+		  <entry><literal>DixListPropAccess</literal></entry>
+		  <entry>Properties set on the device are being listed.</entry>
+		  <entry>ListDeviceProperties, XIListProperties</entry>
+		</row>
+		<row>
+		  <entry><literal>DixGetPropAccess</literal></entry>
+		  <entry>A property set on the device is being read.</entry>
+		  <entry>GetDeviceProperty, XIGetProperty</entry>
+		</row>
+		<row>
+		  <entry><literal>DixSetPropAccess</literal></entry>
+		  <entry>A property set on the device is being written.</entry>
+		  <entry>SetDeviceProperty, XISetProperty</entry>
 		</row>
 	      </tbody>
 	    </tgroup>
