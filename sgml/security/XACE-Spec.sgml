@@ -30,6 +30,12 @@
 	<authorinitials>efw</authorinitials>
 	<revremark>Version 2.1 (XI2)</revremark>
       </revision>
+      <revision>
+	<revnumber>2.2</revnumber>
+	<date>29 Jun 2009</date>
+	<authorinitials>efw</authorinitials>
+	<revremark>Version 2.2 (Property post-data hook)</revremark>
+      </revision>
     </revhistory>
     <legalnotice>
       <para>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER DEALINGS IN THE SOFTWARE.</para>
@@ -656,6 +662,11 @@
 		  <entry>Existence of the property is being disclosed.</entry>
 		  <entry>ListProperties</entry>
 		</row>
+		<row>
+		  <entry><literal>DixPostAccess</literal></entry>
+		  <entry>Post-write call reflecting new contents (this bit will always occur in conjunction with <literal>DixWriteAccess</literal>).</entry>
+		  <entry>ChangeProperty</entry>
+		</row>
 	      </tbody>
 	    </tgroup>
 	  </table>
@@ -667,6 +678,9 @@
 	      <listitem><para>Alternately, when a property is being looked up, the <structfield>status</structfield> may be set to <literal>BadMatch</literal> which will cause the DIX layer to treat the property as not existing.  This may result in an additional property object with the same name being created (in which case the hook will be called again with the create access mode).</para></listitem>
 	    </itemizedlist>
 	  </para>
+
+	  <para>New in XACE Version 2.2, this hook allows security extensions to verify the contents of properties after the client has written them.  On a property change, the property access hook will be called twice.  The first call is unchanged from previous versions.  The second call will have the <literal>DixPostAccess</literal> bit together with <literal>DixWriteAccess</literal> and the <structfield>ppProp</structfield> property pointer will contain the new data.  Setting the <structfield>status</structfield> field to something other than <literal>Success</literal> will cause the previous property contents to be restored and the client to receive the status code as an error.</para>
+	  <para>Note that in the case of property creation (when <literal>DixCreateAccess</literal> is set), the <structfield>ppProp</structfield> field already reflects the new data.  Hence security extensions wishing to validate property data should check for either <literal>DixPostAccess</literal> or <literal>DixCreateAccess</literal> in conjunction with <literal>DixWriteAccess</literal>.  If your extension does not need this feature, simply ignore calls with the <literal>DixPostAccess</literal> bit set.</para>
 	</section>
 
 	<section id="send_access_hook">
