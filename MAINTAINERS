@@ -684,8 +684,8 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-input-void
-P:	Adam Jackson
-M:	ajax@nwnk.net
+P:	Peter Hutterer
+M:	peter.hutterer@who-t.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
