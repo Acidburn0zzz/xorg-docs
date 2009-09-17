@@ -17,7 +17,7 @@
 
 <Para>
 X11R&relvers; is a port of X11R6.4 that supports several versions of
-Intel-based Unix.  It is derived from XFree86 4.4 rc2 which was 
+Intel-based Unix.  It is derived from XFree86 4.4 rc2 which was
 derived from X386 1.2, which was the X server
 distributed with X11R5.  This release consists of many new features
 and performance improvements as well as many bug fixes.
@@ -64,15 +64,15 @@ environment variable.
 
 <Para>
 Refer to the next section <XRef LinkEnd="running"> for
-further information on necessary configuration steps before running 
-X11R&relvers; on LynxOS. 
+further information on necessary configuration steps before running
+X11R&relvers; on LynxOS.
 </Para>
 
 <Sect2>
 <Title>Accessing X11R&relvers; manual pages</Title>
 
 <Para>
-Include <Literal remap="tt">/usr/X11R6/man</Literal> in the MANPATH environment variable or add 
+Include <Literal remap="tt">/usr/X11R6/man</Literal> in the MANPATH environment variable or add
 the directory <Literal remap="tt">/usr/X11R6/man</Literal> to <Literal remap="tt">/usr/Lib/man.config</Literal>
 </Para>
 
@@ -84,12 +84,12 @@ the directory <Literal remap="tt">/usr/X11R6/man</Literal> to <Literal remap="tt
 <Title>Running X11R&relvers;</Title>
 
 <Para>
-This section describes the changes to the LynxOS environment 
+This section describes the changes to the LynxOS environment
 which may be necessary to successfully run X11R&relvers;.
 </Para>
 
 <!--
-Read <htmlurl url="QuickStart.html" name="Quick-Start Guide 
+Read <htmlurl url="QuickStart.html" name="Quick-Start Guide
 to X11R&relvers; Setup"> to learn more about how to configure X11R&relvers;
 for
 your hardware.
@@ -194,7 +194,7 @@ now:
      # cd /sys/lynx.os
      # make install
      # reboot -N
-  
+
 </Screen>
 
 </Para>
@@ -223,7 +223,7 @@ LynxOS.
 <Para>
 LynxOS x86 comes with a PS/2 mouse driver. If it is not currently
 installed on your system, install it with
-<Literal remap="tt">/usr/bin/Install.ps2mouse</Literal>. 
+<Literal remap="tt">/usr/bin/Install.ps2mouse</Literal>.
 </Para>
 
 <!--
@@ -255,7 +255,7 @@ mouse driver as follows:
    #ifdef DEBUG
           kkprintf("Mouse: write %d %x\n", count, buff[0] &#38; 0x0FF);
    #endif
-  
+
 </Screen>
 
 </Para>
@@ -272,7 +272,7 @@ Then rebuild both the mouse driver and the kernel:
      # cd /sys/lynx.os
      # make install
      # reboot
-  
+
 </Screen>
 
 </Para>
@@ -300,11 +300,11 @@ terminals in <Literal remap="tt">/etc/ttys</Literal>, e.g. <Literal remap="tt">/
 <Screen>
 change
        /dev/atc3:1:default:vt100at:/bin/login
-  
+
 to
        /dev/atc3:0:default:vt100at:/bin/login
                  ^
-  
+
 </Screen>
 
 </Para>
@@ -340,7 +340,7 @@ be inconsistent with what one would expect (i.e. random).
 
 <sect2>Copy Motif files<p>
 
-  You must create symbolic links for the Motif libraries and 
+  You must create symbolic links for the Motif libraries and
   utilities in the <tt>/usr/X11R6</tt> directory tree.
   <tscreen><verb>
       ln -s /usr/bin/X11/uil /usr/X11R6/bin
@@ -364,8 +364,8 @@ be inconsistent with what one would expect (i.e. random).
 
   The X11R&relvers; libraries are compiled with the -mposix compiler option
   while the Motif libraries shipped with LynxOS AT 2.3.0 are not. This
-  incompatibility will cause Motif <tt>XmFileSelection</tt> widgets to be linked 
-  with the wrong (i.e. POSIX) directory routines. To circumvent this 
+  incompatibility will cause Motif <tt>XmFileSelection</tt> widgets to be linked
+  with the wrong (i.e. POSIX) directory routines. To circumvent this
   problem apply the following patch to the library:
   <tscreen><verb>
       cp /usr/lib/libXm.a /usr/X11R6/lib
@@ -375,7 +375,7 @@ be inconsistent with what one would expect (i.e. random).
       mv x.o Xmos.o
       ar r /usr/X11R6/lib/libXm.a Xmos.o
   </verb></tscreen>
-  
+
   This patch is not necessary for LynxOS revisions after 2.3.0.
 
 </sect2>
@@ -528,7 +528,7 @@ If you have the MTRR device driver installed, add a line
 
 <Screen>
     #define HasMTRRSupport YES
-  
+
 </Screen>
 
 </Para>
@@ -545,7 +545,7 @@ You may then issue a
 
 <Screen>
      make World
-  
+
 </Screen>
 
 </Para>
@@ -559,7 +559,7 @@ build of the X11R&relvers; system) you can install the software using
 
 <Screen>
      make install
-  
+
 </Screen>
 
 </Para>
@@ -598,7 +598,7 @@ X11R&relvers; manual pages may be installed using
 
 <Screen>
      make install.man
-  
+
 </Screen>
 
 </Para>
@@ -621,7 +621,7 @@ operation to remove duplicate entries:
      done
      sort /usr/X11R6/man/whatis | uniq &#62; /tmp/tmpfile
      mv /tmp/tmpfile /usr/X11R6/man/whatis
-  
+
 </Screen>
 
 </Para>
@@ -633,20 +633,20 @@ operation to remove duplicate entries:
 
   X11R&relvers; 3.3 compiles on LynxOS microSPARC and on LynxOS PPC as well. On the
   microSPARC there is X server support for the colour frame buffers CG3 and CG6
-  while on the PPC there is no X server available at this time. Before you 
+  while on the PPC there is no X server available at this time. Before you
   start the build (on versions earlier than 2.5.0) you must create a symbolic
-  link from the CYGNUS gcc to a file named <tt>cc</tt> somewhere in a 
+  link from the CYGNUS gcc to a file named <tt>cc</tt> somewhere in a
   directory included in your PATH environment variable.
 
 <sect1>Console driver patch for microSPARC<p>
 
   Before building on the microSPARC you should install the patch for the console
   driver supplied in <tt>xc/programs/Xserver/hw/sunLynx/patch.Console</tt>.
-  (<tt>xc/programs/Xserver/hw/sunLynx/patch.Console-2.4.0</tt> for LynxOS 
+  (<tt>xc/programs/Xserver/hw/sunLynx/patch.Console-2.4.0</tt> for LynxOS
   revisions earlier than 2.5.0).
-  The patch fixes minor problems in the original LynxOS driver and adds 
+  The patch fixes minor problems in the original LynxOS driver and adds
   functionalities to detect the keyboard type and control the key click.
-  To create a backup of the original driver and install the patch issue 
+  To create a backup of the original driver and install the patch issue
   the commands
 <tscreen><verb>
  # cd /
@@ -675,8 +675,8 @@ operation to remove duplicate entries:
 
   On the first start of the X server on the microSPARC you will notice that
   the pointer follows mouse movements with a certain delay (especially if
-  you're moving the mouse real fast). You will also notice that moving 
-  windows with certain window managers (eg mwm) is not working correctly. 
+  you're moving the mouse real fast). You will also notice that moving
+  windows with certain window managers (eg mwm) is not working correctly.
   These effects should go away on the next server start.
 
   The server for monochrome cards builds properly if you enable it in

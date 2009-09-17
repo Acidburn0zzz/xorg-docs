@@ -37,7 +37,7 @@ information, and set at least the environment variables described there.
 
 <Para>
 At the current time, the most recent version available is X11R&relvers;
-This is a full and unrestricted version which comes with complete source 
+This is a full and unrestricted version which comes with complete source
 code. 4.0 is a highly experimental release, so many features that might
 have worked in earlier versions, may now no longer work, or work differently.
 Be aware that for OS/2, X11R&relvers; is considered to be alpha software.
@@ -168,8 +168,8 @@ which might still be available from some archives is NOT compatible.
 </Para>
 
 <Para>
-Furthermore, you need the X11R&relvers; sources. These are available from 
-the common X.Org repositories. Look into a directory which is 
+Furthermore, you need the X11R&relvers; sources. These are available from
+the common X.Org repositories. Look into a directory which is
 often named /pub/R7.1.
 </Para>
 
@@ -203,7 +203,7 @@ put everything below this tree. I found that a clean tree occupies
 less than the half space of the disk, this gives me the opportunity to
 rename this tree to <Literal remap="tt">&bsol;x11old</Literal> and copy a new version to the
 same disk to produce diffs. Last time the complete tree was
-arranged under the root directory <Literal remap="tt">xc</Literal>, this would become 
+arranged under the root directory <Literal remap="tt">xc</Literal>, this would become
 <Literal remap="tt">&bsol;x11&bsol;xc</Literal> then.
 </Para>
 </ListItem>
@@ -215,7 +215,7 @@ To unpack the files you would usually execute the command
 <Screen>
 gzip -dc file.tar.gz | tar xvf -
 </Screen>
- 
+
 in the <Literal remap="tt">&bsol;x11</Literal> directory. At the end you will usually see the
 irritating, but non-fatal message "gzip: stdout Broken pipe". Ignore it.
 </Para>
@@ -228,9 +228,9 @@ the X.Org Foundation. Before you do this, enter
 
 <Screen>
       chmod -R a+rw &bsol;x11&bsol;xc
-      
+
 </Screen>
- 
+
 to make certain files in the tree writable.
 </Para>
 </ListItem>
@@ -241,7 +241,7 @@ There should be a file <Literal remap="tt">added-XXX</Literal> accompanying the 
 which lists the files that are newly created. The patch program has
 a problem with creating new directories, so we need to create them
 on advance. For each <Literal remap="tt">added-XXX</Literal> file you find, execute from
-<Literal remap="tt">&bsol;x11</Literal> 
+<Literal remap="tt">&bsol;x11</Literal>
 <Screen>
 xc&bsol;config&bsol;util&bsol;added added-XXX
 </Screen>
@@ -251,7 +251,7 @@ the following instructions:
 
 <Screen>
       grep "&bsol;*&bsol;*&bsol;* xc/" patchfile &#62;added-file
-      
+
 </Screen>
 
 Edit <Literal remap="tt">added-file</Literal> with a text editor and remove the <Literal remap="tt">*** </Literal> at
@@ -268,7 +268,7 @@ is done by a command
 
 <Screen>
       patch -p -E &#60;patchfile 2&#62;&#38;1 | tee patchlog
-      
+
 </Screen>
 
 from the <Literal remap="tt">&bsol;x11</Literal> directory. Be aware to use the right
@@ -277,9 +277,9 @@ Don't use the recommended <Literal remap="tt">-s</Literal> option, this makes <L
 and you won't see problems in the patchlog file. Use
 
 <Screen>
-      find &bsol;x11 -name *.rej -print 
+      find &bsol;x11 -name *.rej -print
       find &bsol;x11 -name *# -print
-      
+
 </Screen>
 
 to find any rejects and unapplied patches (attention: yet another OS/2
@@ -289,7 +289,7 @@ remove the original files with
 
 <Screen>
       find &bsol;x11 -name *.orig -print -exec rm {} ;
-      
+
 </Screen>
 
 </Para>
@@ -321,7 +321,7 @@ Both options are not yet supported.
 
 <Para>
 Tcl* and Tk* don't need to be set explicitly. Reasonable defaults
-are in the other config files, provided you have a complete 
+are in the other config files, provided you have a complete
 X11R&relvers;/OS2 binary tree with the tcl/tk runtime support installed.
 </Para>
 </ListItem>
@@ -340,8 +340,8 @@ This does not work.
 <ListItem>
 
 <Para>
-Go to the directory <Literal remap="tt">xc&bsol;util&bsol;compress</Literal> and 
-<Literal remap="tt">make compress.exe</Literal> there. Install the program produced 
+Go to the directory <Literal remap="tt">xc&bsol;util&bsol;compress</Literal> and
+<Literal remap="tt">make compress.exe</Literal> there. Install the program produced
 there in your path. I stumbled more than once on half-ported
 compress programs on OS/2 ftp servers that are defective w.r.t.
 reading and writing stdin/stdout. In some stage (font compression)
@@ -407,7 +407,7 @@ Finally, from the <Literal remap="tt">xc</Literal> dir, execute
 <Screen>
       xmake install
       xmake install.man
-      
+
 </Screen>
 
 </Para>
@@ -431,7 +431,7 @@ This is no problem and has no effect on the rest of the system.
 The imake.exe which is installed in <Literal remap="tt">&bsol;X11R&relvers;&bsol;bin</Literal> is usually defective.
 The one which was built initially and installed in the root directory
 of the drive where you have the source tree is okay. So simply copy
-this <Literal remap="tt">&bsol;imake.exe</Literal> to the <Literal remap="tt">&bsol;X11R&relvers;&bsol;bin</Literal> directory 
+this <Literal remap="tt">&bsol;imake.exe</Literal> to the <Literal remap="tt">&bsol;X11R&relvers;&bsol;bin</Literal> directory
 manually. Some day this might be fixed.
 </Para>
 </ListItem>

@@ -113,7 +113,7 @@
 	</itemizedlist>
       </section>
     </section>
-      
+
     <section>
       <title>Future Work</title>
       <section id="future_hooks">
@@ -140,7 +140,7 @@
 
     <section>
       <title>Using Hooks</title>
-      
+
       <section>
 	<title>Overview</title>
 	<para>XACE has two header files that security extension code may need to include.  Include <filename>Xext/xacestr.h</filename> if you need the structure definitions for the XACE hooks in your source file.  Otherwise, include <filename>Xext/xace.h</filename>, which contains everything else including constants and function declarations.</para>
@@ -291,8 +291,8 @@
 
 	<section id="core_dispatch_hook">
 	  <title>Core Dispatch</title>
-	  <para>This hook allows security extensions to examine all incoming core protocol requests before they are dispatched.  The hook argument is a pointer to a structure of type <type>XaceCoreDispatchRec</type>.  This structure contains a 
-	  <structfield>client</structfield> field of type <type>ClientPtr</type> 
+	  <para>This hook allows security extensions to examine all incoming core protocol requests before they are dispatched.  The hook argument is a pointer to a structure of type <type>XaceCoreDispatchRec</type>.  This structure contains a
+	  <structfield>client</structfield> field of type <type>ClientPtr</type>
 	  and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client making the incoming request.  Note that the complete request is accessible via the <structfield>requestBuffer</structfield> member of the client structure.  The <function>REQUEST</function> family of macros, located in <filename>include/dix.h</filename>, are useful in verifying and reading from this member.</para>
 	  <para>The <structfield>status</structfield> field may be set to a nonzero X protocol error code.  In this event, the request will not be processed further and the error code will be returned to the client.</para>
@@ -300,10 +300,10 @@
 
 	<section id="ext_dispatch_hook">
 	  <title>Extension Dispatch</title>
-	  <para>This hook allows security extensions to examine all incoming extension protocol requests before they are dispatched.  The hook argument is a pointer to a structure of type <type>XaceExtAccessRec</type>.  This structure contains a 
-	  <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	  a <structfield>ext</structfield> field of type <type>ExtensionEntry*</type>, 
-	  a <structfield>access_mode</structfield> field of type <type>Mask</type>, 
+	  <para>This hook allows security extensions to examine all incoming extension protocol requests before they are dispatched.  The hook argument is a pointer to a structure of type <type>XaceExtAccessRec</type>.  This structure contains a
+	  <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	  a <structfield>ext</structfield> field of type <type>ExtensionEntry*</type>,
+	  a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	  and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client making the incoming request.  Note that the complete request is accessible via the <structfield>requestBuffer</structfield> member of the client structure.  The <function>REQUEST</function> family of macros, located in <filename>include/dix.h</filename>, are useful in verifying and reading from this member.</para>
 	  <para>The <structfield>ext</structfield> field refers to the extension being accessed.  This is required information since extensions are not associated with any particular major number.</para>
@@ -313,13 +313,13 @@
 
 	<section id="resource_access_hook">
 	  <title>Resource Access</title>
-	  <para>This hook allows security extensions to monitor all resource lookups.  The hook argument is a pointer to a structure of type <type>XaceResourceAccessRec</type>.  This structure contains a 
-	  <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	  a <structfield>id</structfield> field of type <type>XID</type>, 
-	  a <structfield>rtype</structfield> field of type <type>RESTYPE</type>, 
-	  a <structfield>res</structfield> field of type <type>pointer</type>, 
-	  a <structfield>ptype</structfield> field of type <type>RESTYPE</type>, 
-	  a <structfield>parent</structfield> field of type <type>pointer</type>, 
+	  <para>This hook allows security extensions to monitor all resource lookups.  The hook argument is a pointer to a structure of type <type>XaceResourceAccessRec</type>.  This structure contains a
+	  <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	  a <structfield>id</structfield> field of type <type>XID</type>,
+	  a <structfield>rtype</structfield> field of type <type>RESTYPE</type>,
+	  a <structfield>res</structfield> field of type <type>pointer</type>,
+	  a <structfield>ptype</structfield> field of type <type>RESTYPE</type>,
+	  a <structfield>parent</structfield> field of type <type>pointer</type>,
 	  a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	  and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client on whose behalf the lookup is being performed.  Note that this may be <varname>serverClient</varname> for server lookups.</para>
@@ -488,9 +488,9 @@
 
 	<section id="device_access_hook">
 	  <title>Device Access</title>
-	  <para>This hook allows security extensions to restrict client actions on input devices.  The hook argument is a pointer to a structure of type <type>XaceDeviceAccessRec</type>.  This structure contains a 
-	  <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	  a <structfield>dev</structfield> field of type <type>DeviceIntPtr</type>, 
+	  <para>This hook allows security extensions to restrict client actions on input devices.  The hook argument is a pointer to a structure of type <type>XaceDeviceAccessRec</type>.  This structure contains a
+	  <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	  a <structfield>dev</structfield> field of type <type>DeviceIntPtr</type>,
 	  a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	  and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client attempting to access the device (keyboard).  Note that this may be <varname>serverClient</varname>.</para>
@@ -610,9 +610,9 @@
 
 	<section id="property_access_hook">
 	  <title>Property Access</title>
-	  <para>This hook allows security extensions to monitor all property accesses and additionally to support polyinstantiation if desired.  The hook argument is a pointer to a structure of type <type>XacePropertyAccessRec</type>.  This structure contains a 
-	    <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	    a <structfield>pWin</structfield> field of type <type>WindowPtr</type>, 
+	  <para>This hook allows security extensions to monitor all property accesses and additionally to support polyinstantiation if desired.  The hook argument is a pointer to a structure of type <type>XacePropertyAccessRec</type>.  This structure contains a
+	    <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	    a <structfield>pWin</structfield> field of type <type>WindowPtr</type>,
 	    a <structfield>ppProp</structfield> field of type <type>PropertyPtr*</type>,
 	    a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	    and a <structfield>status</structfield> field of type <type>int</type>.</para>
@@ -685,12 +685,12 @@
 
 	<section id="send_access_hook">
 	  <title>Send Access</title>
-	  <para>This hook allows security extensions to prevent devices and clients from posting X events to a given window.  The hook argument is a pointer to a structure of type <type>XaceSendAccessRec</type>.  This structure contains 
-	    a <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	    a <structfield>dev</structfield> field of type <type>DeviceIntPtr</type>, 
-	    a <structfield>pWin</structfield> field of type <type>WindowPtr</type>, 
+	  <para>This hook allows security extensions to prevent devices and clients from posting X events to a given window.  The hook argument is a pointer to a structure of type <type>XaceSendAccessRec</type>.  This structure contains
+	    a <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	    a <structfield>dev</structfield> field of type <type>DeviceIntPtr</type>,
+	    a <structfield>pWin</structfield> field of type <type>WindowPtr</type>,
 	    a <structfield>events</structfield> field of type <type>events</type>,
-	    a <structfield>count</structfield> field of type <type>int</type>, 
+	    a <structfield>count</structfield> field of type <type>int</type>,
 	    and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client attempting a <literal>SendEvent</literal> request or other synthetic event generation to the given window.  This field may be NULL if the <structfield>dev</structfield> field is set.</para>
 	  <para>The <structfield>dev</structfield> field refers to the device attempting to post an event which would be delivered to the given window.  This field may be NULL if the <structfield>client</structfield> field is set.</para>
@@ -704,10 +704,10 @@
 	<section id="receive_access_hook">
 	  <title>Receive Access</title>
 	  <para>This hook allows security extensions to prevent a client from receiving X events that have been delivered to a given window.  The hook argument is a pointer to a structure of type <type>XaceReceiveAccessRec</type>.  This structure contains
-	    a <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	    a <structfield>pWin</structfield> field of type <type>WindowPtr</type>, 
+	    a <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	    a <structfield>pWin</structfield> field of type <type>WindowPtr</type>,
 	    a <structfield>events</structfield> field of type <type>events</type>,
-	    a <structfield>count</structfield> field of type <type>int</type>, 
+	    a <structfield>count</structfield> field of type <type>int</type>,
 	    and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client to which the event would be delivered.</para>
 	  <para>The <structfield>pWin</structfield> field refers to the window where the event has been sent.</para>
@@ -719,10 +719,10 @@
 
 	<section id="client_access_hook">
 	  <title>Client Access</title>
-	  <para>This hook allows security extensions to prevent clients from manipulating other clients directly.  This hook applies to a small set of protocol requests such as <literal>KillClient</literal>.  The hook argument is a pointer to a structure of type <type>XaceClientAccessRec</type>.  This structure contains 
-	  a <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	  a <structfield>target</structfield> field of type <type>ClientPtr</type>, 
-	  a <structfield>access_mode</structfield> field of type <type>Mask</type>, 
+	  <para>This hook allows security extensions to prevent clients from manipulating other clients directly.  This hook applies to a small set of protocol requests such as <literal>KillClient</literal>.  The hook argument is a pointer to a structure of type <type>XaceClientAccessRec</type>.  This structure contains
+	  a <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	  a <structfield>target</structfield> field of type <type>ClientPtr</type>,
+	  a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	  and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client making the request.</para>
 	  <para>The <structfield>target</structfield> field refers to the client being manipulated.</para>
@@ -766,10 +766,10 @@
 
 	<section id="ext_access_hook">
 	  <title>Extension Access</title>
-	  <para>This hook allows security extensions to approve or deny requests involving which extensions are supported by the server.  This allows control over which extensions are visible.  The hook argument is a pointer to a structure of type <type>XaceExtAccessRec</type>.  This structure contains a 
-	  <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	  a <structfield>ext</structfield> field of type <type>ExtensionEntry*</type>, 
-	  a <structfield>access_mode</structfield> field of type <type>Mask</type>, 
+	  <para>This hook allows security extensions to approve or deny requests involving which extensions are supported by the server.  This allows control over which extensions are visible.  The hook argument is a pointer to a structure of type <type>XaceExtAccessRec</type>.  This structure contains a
+	  <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	  a <structfield>ext</structfield> field of type <type>ExtensionEntry*</type>,
+	  a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	  and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client making the incoming request, which is typically <literal>QueryExtension</literal> or <literal>ListExtensions</literal>.</para>
 	  <para>The <structfield>ext</structfield> field refers to the extension being accessed.  This is required information since extensions are not associated with any particular major number.</para>
@@ -780,9 +780,9 @@
 
 	<section id="server_access_hook">
 	  <title>Server Access</title>
-	  <para>This hook allows security extensions to approve or deny requests that affect the X server itself.  The hook argument is a pointer to a structure of type <type>XaceServerAccessRec</type>, which contains 
-	  a <structfield>client</structfield> field of type <type>ClientPtr</type>, 
-	  a <structfield>access_mode</structfield> field of type <type>Mask</type>, 
+	  <para>This hook allows security extensions to approve or deny requests that affect the X server itself.  The hook argument is a pointer to a structure of type <type>XaceServerAccessRec</type>, which contains
+	  a <structfield>client</structfield> field of type <type>ClientPtr</type>,
+	  a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	  and a <structfield>status</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the client making the request.</para>
 	  <para>The <structfield>access_mode</structfield> field encodes the type of action being performed.  The valid mode bits are described in the table below.</para>
@@ -835,8 +835,8 @@
 
 	<section id="selection_access_hook">
 	  <title>Selection Access</title>
-	  <para>This hook allows security extensions to monitor all selection accesses and additionally to support polyinstantiation if desired.  The hook argument is a pointer to a structure of type <type>XaceSelectionAccessRec</type>.  This structure contains a 
-	    <structfield>client</structfield> field of type <type>ClientPtr</type>, 
+	  <para>This hook allows security extensions to monitor all selection accesses and additionally to support polyinstantiation if desired.  The hook argument is a pointer to a structure of type <type>XaceSelectionAccessRec</type>.  This structure contains a
+	    <structfield>client</structfield> field of type <type>ClientPtr</type>,
 	    a <structfield>ppSel</structfield> field of type <type>Selection**</type>,
 	    a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	    and a <structfield>status</structfield> field of type <type>int</type>.</para>
@@ -890,8 +890,8 @@
 
 	<section id="screen_access_hook">
 	  <title>Screen Access</title>
-	  <para>This hook allows security extensions to approve or deny requests that manipulate screen objects  The hook argument is a pointer to a structure of type <type>XaceScreenAccessRec</type>.  This structure contains a 
-	    <structfield>client</structfield> field of type <type>ClientPtr</type>, 
+	  <para>This hook allows security extensions to approve or deny requests that manipulate screen objects  The hook argument is a pointer to a structure of type <type>XaceScreenAccessRec</type>.  This structure contains a
+	    <structfield>client</structfield> field of type <type>ClientPtr</type>,
 	    a <structfield>screen</structfield> field of type <type>ScreenPtr</type>,
 	    a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	    and a <structfield>status</structfield> field of type <type>int</type>.</para>
@@ -937,8 +937,8 @@
 
 	<section id="screensaver_access_hook">
 	  <title>Screen Saver Access</title>
-	  <para>This hook allows security extensions to approve or deny requests that manipulate the screensaver.   The hook argument is a pointer to a structure of type <type>XaceScreenAccessRec</type>.  This structure contains a 
-	    <structfield>client</structfield> field of type <type>ClientPtr</type>, 
+	  <para>This hook allows security extensions to approve or deny requests that manipulate the screensaver.   The hook argument is a pointer to a structure of type <type>XaceScreenAccessRec</type>.  This structure contains a
+	    <structfield>client</structfield> field of type <type>ClientPtr</type>,
 	    a <structfield>screen</structfield> field of type <type>ScreenPtr</type>,
 	    a <structfield>access_mode</structfield> field of type <type>Mask</type>,
 	    and a <structfield>status</structfield> field of type <type>int</type>.</para>
@@ -984,8 +984,8 @@
 
 	<section id="auth_avail_hook">
 	  <title>Authorization Availability Hook</title>
-	  <para>This hook allows security extensions to examine the authorization associated with a newly connected client.  This can be used to set up client security state depending on the authorization method that was used.  The hook argument is a pointer to a structure of type <type>XaceAuthAvailRec</type>.  This structure contains a 
-	  <structfield>client</structfield> field of type <type>ClientPtr</type>, 
+	  <para>This hook allows security extensions to examine the authorization associated with a newly connected client.  This can be used to set up client security state depending on the authorization method that was used.  The hook argument is a pointer to a structure of type <type>XaceAuthAvailRec</type>.  This structure contains a
+	  <structfield>client</structfield> field of type <type>ClientPtr</type>,
 	  and a <structfield>authId</structfield> field of type <type>XID</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to the newly connected client.</para>
 	  <para>The <structfield>authId</structfield> field is the resource ID of the client's authorization.</para>
@@ -995,11 +995,11 @@
 	    <para>This hook is a legacy of the APPGROUP Extension.  In the future, this hook may be phased out in favor of a new client state, <literal>ClientStateAuthenticated</literal>.</para>
 	  </note>
 	</section>
- 
+
 	<section id="key_avail_hook">
 	  <title>Keypress Availability Hook</title>
-	  <para>This hook allows security extensions to examine keypresses outside of the normal event mechanism.  This could be used to implement server-side hotkey support.  The hook argument is a pointer to a structure of type <type>XaceKeyAvailRec</type>.  This structure contains a 
-	  <structfield>event</structfield> field of type <type>xEventPtr</type>, 
+	  <para>This hook allows security extensions to examine keypresses outside of the normal event mechanism.  This could be used to implement server-side hotkey support.  The hook argument is a pointer to a structure of type <type>XaceKeyAvailRec</type>.  This structure contains a
+	  <structfield>event</structfield> field of type <type>xEventPtr</type>,
 	  a <structfield>keybd</structfield> field of type <type>DeviceIntPtr</type>,
 	  and a <structfield>count</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>event</structfield> field refers to the keyboard event, typically a <literal>KeyPress</literal> or <literal>KeyRelease</literal>.</para>
@@ -1007,21 +1007,21 @@
 	  <para>The <structfield>count</structfield> field is the number of repetitions of the event (not 100\% sure of this at present, however).</para>
 	  <para>This hook has no return value.</para>
 	</section>
- 
+
 	<section id="audit_avail_hook">
 	  <title>Auditing Hooks</title>
-	  <para>Two hooks provide basic auditing support.  The begin hook is called immediately before an incoming client request is dispatched and before the dispatch hook is called (refer to <xref linkend="core_dispatch_hook"/>).  The end hook is called immedately after the processing of the request has finished.  The hook argument is a pointer to a structure of type <type>XaceKeyAvailRec</type>.  This structure contains a 
-	  <structfield>client</structfield> field of type <type>ClientPtr</type>, 
+	  <para>Two hooks provide basic auditing support.  The begin hook is called immediately before an incoming client request is dispatched and before the dispatch hook is called (refer to <xref linkend="core_dispatch_hook"/>).  The end hook is called immedately after the processing of the request has finished.  The hook argument is a pointer to a structure of type <type>XaceKeyAvailRec</type>.  This structure contains a
+	  <structfield>client</structfield> field of type <type>ClientPtr</type>,
 	  and a <structfield>requestResult</structfield> field of type <type>int</type>.</para>
 	  <para>The <structfield>client</structfield> field refers to client making the request.</para>
 	  <para>The <structfield>requestResult</structfield> field contains the result of the request, either <literal>Success</literal> or one of the protocol error codes.  Note that this field is significant only in the end hook.</para>
 	  <para>These hooks have no return value.</para>
 	</section>
- 
+
      </section>
     </section>
   </section>
-  
+
   <section>
     <title>Protocol</title>
     <section>

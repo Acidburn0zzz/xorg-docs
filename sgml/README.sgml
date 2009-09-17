@@ -197,8 +197,8 @@ in that document, please contact us with details at
 >xf&lowbar;board@x.org</email
 >.
 While the current licenses are all open source licenses, the
-X.Org Foundation is attempting, with time, to bring as much as 
-possible of the code's licenses in the distribution into compliance with the 
+X.Org Foundation is attempting, with time, to bring as much as
+possible of the code's licenses in the distribution into compliance with the
 <ulink
 url="http://www.debian.org/social_contract#guidelines"
 >Debian Free Software Guidelines</ulink
@@ -234,7 +234,7 @@ Additional information may be available at the <ulink url="http://wiki.x.org/"
 Current information about the X.Org Foundation public mailing lists is
 available on <ulink url="http://lists.x.org/mailman/listinfo/">the X.Org mailing list page</ulink> and related desktop
 technology mailing lists can be found on <ulink
-url="http://freedesktop.org/mailman/listinfo">Freedesktop.org's mailing list 
+url="http://freedesktop.org/mailman/listinfo">Freedesktop.org's mailing list
 page</ulink>.
 </para>
 

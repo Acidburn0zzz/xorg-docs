@@ -19,7 +19,7 @@
 
 <Para>
 This document describes the support for fonts in X11R.
-<XRef LinkEnd="sec-installing"> is aimed at the 
+<XRef LinkEnd="sec-installing"> is aimed at the
 casual user wishing to install fonts in X11R the rest of the
 document describes the font support in more detail.
 </Para>
@@ -294,7 +294,7 @@ BDF format and the somewhat more efficient binary PCF format.
 Bitmap fonts are normally distributed in the BDF format.  Before
 installing such fonts, it is desirable (but not absolutely necessary)
 to convert the font files to the PCF format.  This is done by using the
-command `<Literal remap="tt">bdftopcf</Literal>', <Emphasis remap="it">e.g.</Emphasis> 
+command `<Literal remap="tt">bdftopcf</Literal>', <Emphasis remap="it">e.g.</Emphasis>
 
 <Screen>
 $ bdftopcf courier12.bdf
@@ -525,7 +525,7 @@ $ xset fp+ /usr/local/fonts/bitmap
 <Para>
 Conversely, an element may be removed from the front of the font path
 with `<Literal remap="tt">xset -fp</Literal>', and removed from the end with `<Literal remap="tt">xset fp-</Literal>'.
-You may reset the font path to its default value with 
+You may reset the font path to its default value with
 `<Literal remap="tt">xset fp default</Literal>'.
 </Para>
 
@@ -729,19 +729,19 @@ Unicode text.  Together, the fonts contain approximately 7500 glyphs.
 The main ClearlyU font has the XLFD
 
 <Screen>
--mutt-clearlyu-medium-r-normal--17-120-100-100-p-101-iso10646-1 
+-mutt-clearlyu-medium-r-normal--17-120-100-100-p-101-iso10646-1
 </Screen>
 
 and resides in the font file
 
 <Screen>
-/usr/X11R6/lib/X11/fonts/misc/cu12.pcf.gz 
+/usr/X11R6/lib/X11/fonts/misc/cu12.pcf.gz
 </Screen>
 
 Additional ClearlyU fonts include
 
 <Screen>
--mutt-clearlyu alternate glyphs-medium-r-normal--17-120-100-100-p-91-iso10646-1 
+-mutt-clearlyu alternate glyphs-medium-r-normal--17-120-100-100-p-91-iso10646-1
 -mutt-clearlyu pua-medium-r-normal--17-120-100-100-p-111-iso10646-1
 -mutt-clearlyu arabic extra-medium-r-normal--17-120-100-100-p-103-fontspecific-0
 -mutt-clearlyu ligature-medium-r-normal--17-120-100-100-p-141-fontspecific-0
@@ -879,15 +879,15 @@ Standard encoding.
 </Para>
 
 <Para>
-The Luxi fonts are original designs by Kris Holmes and Charles 
-Bigelow.  Luxi fonts include seriffed, sans serif, and monospaced 
-styles, in roman and oblique, and normal and bold weights. The fonts 
-share stem weight, x-height, capital height, ascent and descent, for 
+The Luxi fonts are original designs by Kris Holmes and Charles
+Bigelow.  Luxi fonts include seriffed, sans serif, and monospaced
+styles, in roman and oblique, and normal and bold weights. The fonts
+share stem weight, x-height, capital height, ascent and descent, for
 graphical harmony.
 </Para>
 
 <Para>
-The character width metrics of Luxi roman and bold fonts match those 
+The character width metrics of Luxi roman and bold fonts match those
 of core fonts bundled with popular operating and window systems.
 </Para>
 
@@ -900,13 +900,13 @@ URL="LICENSE.html"
 </Para>
 
 <Para>
-Charles Bigelow and Kris Holmes from Bigelow and Holmes Inc. 
+Charles Bigelow and Kris Holmes from Bigelow and Holmes Inc.
 developed the Luxi typeface designs in Ikarus digital format.
 </Para>
 
 <Para>
-URW++ Design and Development GmbH converted the Ikarus format fonts 
-to TrueType and Type1 font programs and implemented the grid-fitting 
+URW++ Design and Development GmbH converted the Ikarus format fonts
+to TrueType and Type1 font programs and implemented the grid-fitting
 "hints" and kerning tables in the Luxi fonts.
 </Para>
 
@@ -914,10 +914,10 @@ to TrueType and Type1 font programs and implemented the grid-fitting
 For more information, please contact
 <EMAIL
 >design@bigelowandholmes.com</EMAIL
-> or 
+> or
 <EMAIL
 >info@urwpp.de</EMAIL
->, or consult 
+>, or consult
 <ULink
 URL="http://www.urwpp.de"
 >the URW++ web site</ULink
@@ -954,7 +954,7 @@ XLFD in `<Literal remap="tt">fonts.dir</Literal>'.  For example, a `<Literal rem
 contain entries for the Type&nbsp;1 Courier font such as
 
 <Screen>
-cour.pfa -adobe-courier-medium-r-normal--0-0-0-0-m-0-iso8859-1 
+cour.pfa -adobe-courier-medium-r-normal--0-0-0-0-m-0-iso8859-1
 cour.pfa -adobe-courier-medium-r-normal--0-0-0-0-m-0-iso8859-2
 </Screen>
 
@@ -1555,7 +1555,7 @@ remap them to their proper names.
 
 <Para>
 This is done by writing a `<Literal remap="tt">fonts.alias</Literal>' file. The format of this file
-is very simple: it consists of a series of lines each mapping an alias 
+is very simple: it consists of a series of lines each mapping an alias
 name to a font name.  A `<Literal remap="tt">fonts.alias</Literal>' file might look as follows:
 
 <Screen>
@@ -1994,7 +1994,7 @@ Font Description document, by Jim Flowers, which is provided in the file
 The <ULink
 URL="http://www.faqs.org/faqs/by-newsgroup/comp/comp.fonts.html"
 >comp.fonts FAQ</ULink
->, 
+>,
 which is unfortunately no longer being maintained, contains a wealth
 of information about digital fonts.
 </Para>
@@ -2008,7 +2008,7 @@ URL="http://www.fontconfig.org"
 </Para>
 
 <Para>
-The 
+The
 <ULink
 URL="http://www.dcs.ed.ac.uk/home/jec/programs/xfsft/"
 >xfsft home page</ULink
@@ -2018,7 +2018,7 @@ however still find some of the information that it contains useful.
 <ULink
 URL="http://www.joerg-pommnitz.de/TrueType/xfsft.html"
 >Joerg Pommnitz' xfsft page</ULink
-> 
+>
 is the canonical source for the `<Literal remap="tt">ttmkfdir</Literal>' utility, which is the
 ancestor of <Literal remap="tt">mkfontscale</Literal>.
 </Para>
@@ -2040,11 +2040,11 @@ URL="http://x-tt.sourceforge.jp/"
 </Para>
 
 <Para>
-A number of East-Asian CIDFonts are available from 
+A number of East-Asian CIDFonts are available from
 <ULink
 URL="ftp://ftp.oreilly.com/pub/examples/nutshell/cjkv/adobe/"
 >O'Reilly's FTP site</ULink
->. 
+>.
 </Para>
 
 <Para>

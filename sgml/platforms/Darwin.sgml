@@ -18,8 +18,8 @@
 <para>
 <ulink
 url="http://www.freedesktop.org/Software/xorg">Xorg</ulink>, a freely
-redistributable open-source implementation of the 
-<ulink url="http://www.x.org/">X Window System</ulink>, 
+redistributable open-source implementation of the
+<ulink url="http://www.x.org/">X Window System</ulink>,
 has been ported to <ulink url="http://www.opensource.apple.com/projects/darwin/"
 >Darwin</ulink>
 and <ulink
@@ -173,7 +173,7 @@ cd sandbox
 cvs checkout xc
 </screen>
 
-Wait for all the files to complete downloading. 
+Wait for all the files to complete downloading.
 
 </para>
 </listitem>
@@ -189,7 +189,7 @@ Wait for all the files to complete downloading.
 
 <para>
 Once you have everything ready it is easy to build and install
-X11R&relvers;. From the command line: 
+X11R&relvers;. From the command line:
 </para>
 
 <para>
@@ -218,7 +218,7 @@ sudo make install.man &#62;&#38; man.log
 
 <para>
 You need to add the X Window System executables to your path. Your path
-is the list of directories to be searched for executable commands. 
+is the list of directories to be searched for executable commands.
 The X11 commands are located in <literal remap="tt">/usr/X11R6/bin</literal>, which needs to be
 added to your path. In Quartz mode, the XDarwin application does this for
 you automatically. It can also be configured to add additional directories
@@ -263,7 +263,7 @@ From the text console you can start the X Window System by typing
 When you are ready to quit X11R&relvers; type ``exit'' in the main
 terminal window or quit with the window manager if you have one
 running. Unfortunately in IOKit mode, the X server does not shutdown
-correctly and if you did not start with ``exec startx'', you 
+correctly and if you did not start with ``exec startx'', you
 will get an apparently frozen screen with only a spinning beachball
 cursor on it. Nothing you type shows up on the screen, but in fact
 your keystrokes are being received by the console. Type
@@ -334,7 +334,7 @@ look, how the windows are moved, resized, etc. You will likely want to
 get a fancier window manager than twm, which is included with
 X11R&relvers;. The <Literal remap="tt">.xinitrc</Literal> file in your home directory controls what
 programs are run when you start the X Window System. You can find a sample
-<Literal remap="tt">.xinitrc</Literal> file in <Literal remap="tt">/etc/X11/xinit/xinitrc</Literal>.  
+<Literal remap="tt">.xinitrc</Literal> file in <Literal remap="tt">/etc/X11/xinit/xinitrc</Literal>.
 </Para>
 
 <Para>
