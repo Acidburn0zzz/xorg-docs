@@ -1230,561 +1230,541 @@ The next section describes what is new in the latest version
 
 
     <Para>
-    This section lists the credits for the X11R&relvers;
-    release.  For a more detailed breakdown, refer to the ChangeLog file in
-    the source tree for each module, the history in <ulink
-    URL="http://cgit.freedesktop.org/xorg/">the xorg product in 
-    freedesktop.org's git repositories</ulink> or the 
-    '<userinput>git log</userinput>' information for individual source files.
+      This section lists the credits for the X11R&relvers; release.
+      For a more detailed breakdown, refer to the ChangeLog file in
+      the source tree for each module, the history in <ulink
+	URL="http://cgit.freedesktop.org/xorg/">the xorg product in
+	freedesktop.org's git repositories</ulink> or the
+      '<userinput>git log</userinput>' information for individual source files.
     </Para>
 
     <Para>
-      <VariableList>
-
-	<VarListEntry>
-	  <Term>These people contributed in some way to X11R&relvers;:</Term>
-	  <ListItem>
-	    <Para>
-    Aaron Plattner,
-    Aaron Zang,
-    Adam Jackson,
-    Adam Tkac,
-    Alan Coopersmith,
-    Alan Hourihane,
-    Alex Deucher,
-    Ander Conselvan de Oliveira,
-    Bart Trojanowski,
-    Ben Byer,
-    Ben Gamari,
-    Ben Skeggs,
-    Benjamin Close,
-    Benjamin Defnet,
-    Benjamin Tissoires,
-    Bernhard R. Link,
-    Bernhard Rosenkraenzer,
-    Brad Smith,
-    Brian Rogers,
-    Carl Worth,
-    Chris Ball,
-    Christian Beier,
-    Colin Guthrie,
-    Colin Harrison,
-    Cooper Yuan,
-    Dan Nicholson,
-    Daniel Drake,
-    Daniel Stone,
-    Dave Airlie,
-    Dave Miller,
-    David Jander,
-    David Marx,
-    David Miller,
-    David Nolden,
-    David Nusinow,
-    Dodji Seketeli,
-    Donnie Berkholz,
-    Doug Chapman,
-    Drew Parsons,
-    Eamon Walsh,
-    Egbert Eich,
-    Eric Anholt,
-    Eric Paris,
-    &Eacute;ric Piel,
-    Federico Mena Quintero,
-    Felix Kuehling,
-    Fernando Carrijo,
-    Francis Giraldeau,
-    Fredrik H&ouml;glund,
-    Gaetan Nadon,
-    George Peter Staplin,
-    George Sapountzis,
-    George Staplin,
-    Goneri Le Bouder,
-    Hans de Goede,
-    Hasso Tepper,
-    Havoc Pennington,
-    Hong Liu,
-    Ian Romanick,
-    Ivaylo Boyadzhiev,
-    James Cloos,
-    Jason Vas Dias,
-    Jay Cotton,
-    Jeremy Huddleston,
-    Jeremy Uejio,
-    Jerome Glisse,
-    Jesse Adkins,
-    Jesse Barnes,
-    Jesse Ruffin,
-    Jie Luo,
-    Jim Huang,
-    Joe Krahn,
-    Joel Bosveld,
-    John Hein,
-    John Tapsell,
-    Jon TURNEY,
-    Jordan Crouse,
-    Julien Cristau,
-    Kazuhiro Inaoka,
-    Keith Packard,
-    Kevin E Martin,
-    Kim Woelders,
-    Kristian H&oslash;gsberg,
-    Lee Leahu,
-    Luc Verhaegen,
-    Maarten Maathuis,
-    Magnus Kessler,
-    Magnus Vigerl&ouml;f,
-    Manuel Bouyer,
-    Mark Kettenis,
-    Martin-&Eacute;ric Racine,
-    Mathieu B&eacute;rard,
-    Matt Turner,
-    Matthias Hopf,
-    Matthieu Herrb,
-    Michael Lorenz,
-    Michael Vogt,
-    Michael Witrant,
-    Michel D&auml;nzer,
-    Mikhail Gusarov,
-    Nathaniel McCallum,
-    Nicolai H&auml;hnle,
-    Oliver McFadden,
-    Olivier Blin,
-    Owen Taylor,
-    Owen W. Taylor,
-    Paul Bender,
-    Paulo Cesar Pereira de Andrade,
-    Paulo Ricardo Zanoni,
-    Peter &Aring;strand,
-    Peter Harris,
-    Peter Hutterer,
-    Pierre Willenbrock,
-    Pierre-Loup A. Griffais,
-    RALOVICH, Krist&oacute;f,
-    R&eacute;mi Cardona,
-    Richard Hughes,
-    Robert Noland,
-    Roland B&auml;r,
-    Roland Scheidegger,
-    Ross Burton,
-    Samuel Thibault,
-    Sascha Hlusiak,
-    Shunichi Fuji,
-    Simon Farnsworth,
-    Simon Thum,
-    S&oslash;ren Sandmann Pedersen,
-    Stefan Dirsch,
-    Stuart Bennett,
-    Thomas Bodzar,
-    Thomas Jaeger,
-    Thorvald Natvig,
-    Tiago Vignatti,
-    Tilman Sauerbeck,
-    Timo Aaltonen,
-    Tom Jaeger,
-    Tomas Carnecky,
-    Tomas Janousek,
-    Topi Kanerva,
-    Tormod Volden,
-    Werner LEMBERG,
-    Winfried Gr&uuml;newald,
-    Xavier Bestel,
-    Xiang, Haihao,
-    Yaakov Selkowitz,
-    Zhenyu Wang.
-	    </Para>
-	  </ListItem>
-	</VarListEntry>
-      </VariableList>
+      The X Window System has been a collaborative effort from its inception.
+      Our apologies for anyone or organization inadvertently overlooked.
+      Many individuals (including major contributors) who worked on X are
+      represented by their employers in this list.  If you feel we have left
+      anyone out, please let us know.
     </Para>
 
     <Para>
-    The X Window System has been a collaborative effort from its inception.
-    Our apologies for anyone or organization inadvertently overlooked.
-    Many individuals (including major contributors) who worked on X are
-    represented by their employers in this list.  If you feel we have left anyone
-    out, please let us know.
+      These people contributed in some way to X11R&relvers;:
+      <simplelist type='vert' columns='2'>
+	<member>Aaron Plattner</member>
+	<member>Aaron Zang</member>
+	<member>Adam Jackson</member>
+	<member>Adam Tkac</member>
+	<member>Alan Coopersmith</member>
+	<member>Alan Hourihane</member>
+	<member>Alex Deucher</member>
+	<member>Ander Conselvan de Oliveira</member>
+	<member>Bart Trojanowski</member>
+	<member>Ben Byer</member>
+	<member>Ben Gamari</member>
+	<member>Ben Skeggs</member>
+	<member>Benjamin Close</member>
+	<member>Benjamin Defnet</member>
+	<member>Benjamin Tissoires</member>
+	<member>Bernhard R. Link</member>
+	<member>Bernhard Rosenkraenzer</member>
+	<member>Brad Smith</member>
+	<member>Brian Rogers</member>
+	<member>Carl Worth</member>
+	<member>Chris Ball</member>
+	<member>Christian Beier</member>
+	<member>Colin Guthrie</member>
+	<member>Colin Harrison</member>
+	<member>Cooper Yuan</member>
+	<member>Dan Nicholson</member>
+	<member>Daniel Drake</member>
+	<member>Daniel Stone</member>
+	<member>Dave Airlie</member>
+	<member>Dave Miller</member>
+	<member>David Jander</member>
+	<member>David Marx</member>
+	<member>David Miller</member>
+	<member>David Nolden</member>
+	<member>David Nusinow</member>
+	<member>Dodji Seketeli</member>
+	<member>Donnie Berkholz</member>
+	<member>Doug Chapman</member>
+	<member>Drew Parsons</member>
+	<member>Eamon Walsh</member>
+	<member>Egbert Eich</member>
+	<member>Eric Anholt</member>
+	<member>Eric Paris</member>
+	<member>&Eacute;ric Piel</member>
+	<member>Federico Mena Quintero</member>
+	<member>Felix Kuehling</member>
+	<member>Fernando Carrijo</member>
+	<member>Francis Giraldeau</member>
+	<member>Fredrik H&ouml;glund</member>
+	<member>Gaetan Nadon</member>
+	<member>George Peter Staplin</member>
+	<member>George Sapountzis</member>
+	<member>George Staplin</member>
+	<member>Goneri Le Bouder</member>
+	<member>Hans de Goede</member>
+	<member>Hasso Tepper</member>
+	<member>Havoc Pennington</member>
+	<member>Hong Liu</member>
+	<member>Ian Romanick</member>
+	<member>Ivaylo Boyadzhiev</member>
+	<member>James Cloos</member>
+	<member>Jason Vas Dias</member>
+	<member>Jay Cotton</member>
+	<member>Jeremy Huddleston</member>
+	<member>Jeremy Uejio</member>
+	<member>Jerome Glisse</member>
+	<member>Jesse Adkins</member>
+	<member>Jesse Barnes</member>
+	<member>Jesse Ruffin</member>
+	<member>Jie Luo</member>
+	<member>Jim Huang</member>
+	<member>Joe Krahn</member>
+	<member>Joel Bosveld</member>
+	<member>John Hein</member>
+	<member>John Tapsell</member>
+	<member>Jon TURNEY</member>
+	<member>Jordan Crouse</member>
+	<member>Julien Cristau</member>
+	<member>Kazuhiro Inaoka</member>
+	<member>Keith Packard</member>
+	<member>Kevin E Martin</member>
+	<member>Kim Woelders</member>
+	<member>Kristian H&oslash;gsberg</member>
+	<member>Lee Leahu</member>
+	<member>Luc Verhaegen</member>
+	<member>Maarten Maathuis</member>
+	<member>Magnus Kessler</member>
+	<member>Magnus Vigerl&ouml;f</member>
+	<member>Manuel Bouyer</member>
+	<member>Mark Kettenis</member>
+	<member>Martin-&Eacute;ric Racine</member>
+	<member>Mathieu B&eacute;rard</member>
+	<member>Matt Turner</member>
+	<member>Matthias Hopf</member>
+	<member>Matthieu Herrb</member>
+	<member>Michael Lorenz</member>
+	<member>Michael Vogt</member>
+	<member>Michael Witrant</member>
+	<member>Michel D&auml;nzer</member>
+	<member>Mikhail Gusarov</member>
+	<member>Nathaniel McCallum</member>
+	<member>Nicolai H&auml;hnle</member>
+	<member>Oliver McFadden</member>
+	<member>Olivier Blin</member>
+	<member>Owen W. Taylor</member>
+	<member>Paul Bender</member>
+	<member>Paulo C&eacute;sar Pereira de Andrade</member>
+	<member>Paulo Ricardo Zanoni</member>
+	<member>Peter &Aring;strand</member>
+	<member>Peter Harris</member>
+	<member>Peter Hutterer</member>
+	<member>Pierre Willenbrock</member>
+	<member>Pierre-Loup A. Griffais</member>
+	<member>RALOVICH, Krist&oacute;f</member>
+	<member>R&eacute;mi Cardona</member>
+	<member>Richard Hughes</member>
+	<member>Robert Noland</member>
+	<member>Roland B&auml;r</member>
+	<member>Roland Scheidegger</member>
+	<member>Ross Burton</member>
+	<member>Samuel Thibault</member>
+	<member>Sascha Hlusiak</member>
+	<member>Shunichi Fuji</member>
+	<member>Simon Farnsworth</member>
+	<member>Simon Thum</member>
+	<member>S&oslash;ren Sandmann Pedersen</member>
+	<member>Stefan Dirsch</member>
+	<member>Stuart Bennett</member>
+	<member>Thomas Bodzar</member>
+	<member>Thomas Jaeger</member>
+	<member>Thorvald Natvig</member>
+	<member>Tiago Vignatti</member>
+	<member>Tilman Sauerbeck</member>
+	<member>Timo Aaltonen</member>
+	<member>Tom Jaeger</member>
+	<member>Tomas Carnecky</member>
+	<member>Tomas Janousek</member>
+	<member>Topi Kanerva</member>
+	<member>Tormod Volden</member>
+	<member>Werner LEMBERG</member>
+	<member>Winfried Gr&uuml;newald</member>
+	<member>Xavier Bestel</member>
+	<member>Xiang, Haihao</member>
+	<member>Yaakov Selkowitz</member>
+	<member>Zhenyu Wang</member>
+      </SimpleList>
     </Para>
 
     <Para>
-    <VariableList>
-
-    <VarListEntry>
-    <Term>This product includes software developed by: </Term>
-    <ListItem>
-    <Para>
-    2d3d Inc.,
-    3Dlabs Inc. Ltd.,
-    Aaron Plattner,
-    Adam de Boor,
-    Adam Jackson,
-    Adobe Systems Inc.,
-    After X-TT Project,
-    AGE Logic Inc.,
-    Alan Coopersmith,
-    Alan Cox,
-    Alan Hourihane,
-    Alexander Gottwald,
-    Alex Deucher,
-    Alex Williamson,
-    Anders Carlsson,
-    Andreas Luik,
-    Andreas Monitzer,
-    Andreas Robinson,
-    Andrei Barbu,
-    Andrew C Aitchison,
-    Andy Ritger,
-    Angus Lees,
-    Ani Joshi,
-    Anton Zioviev,
-    Apollo Computer Inc.,
-    Apple Computer Inc.,
-    Ares Software Corp.,
-    AT&amp;T Inc.,
-    ATI Technologies Inc.,
-    BEAM Ltd.,
-    Benjamin Herrenschmidt,
-    Benjamin Rienfenstahl,
-    Ben Skeggs,
-    Bigelow and Holmes,
-    Bill Reynolds,
-    Bitstream Inc.,
-    Bogdan Diaconescu,
-    Branden Robinson,
-    Brian Fundakowski Feldman,
-    Brian Goines,
-    Brian Paul,
-    Bruno Haible,
-    Bryan Stine,
-    Carl Switzky,
-    Catharon Productions Inc.,
-    Charles Murcko,
-    Chen Xiangyang,
-    Chisato Yamauchi,
-    Chris Constello,
-    Christian Zietz,
-    Cognition Corp.,
-    Compaq Computer Corporation,
-    Concurrent Computer Corporation,
-    Conectiva S.A.,
-    Corin Anderson,
-    Craig Struble,
-    Daewoo Electronics Co. Ltd.,
-    Dag-Erling Sm&oslash;rgrav,
-    Dale Schumacher,
-    Damien Miller,
-    Daniel Berrange,
-    Daniel Borca,
-    Daniel Stone,
-    Daniver Limited,
-    Daryll Strauss,
-    Data General Corporation,
-    Dave Airlie,
-    David Bateman,
-    David Dawes,
-    David E. Wexelblat,
-    David Holland,
-    David J. McKay,
-    David McCullough,
-    David Mosberger-Tang,
-    David Reveman,
-    David S. Miller,
-    David Woodhouse,
-    Davor Matic,
-    Deron Johnson,
-    Digeo Inc.,
-    Digital Equipment Corporation,
-    Dirk Hohndel,
-    Dmitry Golubev,
-    Donnie Berkholz,
-    Doug Anson,
-    Drew Parsons,
-    Earle F. Philhower III,
-    Edouard TISSERANT,
-    Eduard Fuchs,
-    Eduardo Horvath,
-    Egbert Eich,
-    Egmont Koblinger,
-    Elliot Lee,
-    Eric Anholt,
-    Eric Fortune,
-    Eric Sunshine,
-    Erik Fortune,
-    Erik Nygren,
-    Evans &#38; Sutherland Computer Corporation,
-    Fabio Massimo Di Nitto,
-    Fabrizio Gennari,
-    Felix Kuehling,
-    Felix K&uuml;hling,
-    Finn Thoegersen,
-    Francesco Zappa Nardelli,
-    Frank C. Earl,
-    Frederic Lepied,
-    Fredrik H&ouml;glund,
-    Free Software Foundation Inc.,
-    Fujitsu Limited,
-    Fujitsu Open Systems Solutions Inc.,
-    Fuji Xerox Co. Ltd.,
-    Geert Uytterhoeven,
-    George Fufutos,
-    Gerrit Jan Akkerman,
-    Gerry Toll,
-    Glenn G. Lai,
-    GNOME Foundation,
-    Go Watanabe,
-    Greg Kroah-Hartman,
-    Gregory Mokhin,
-    Greg Parker,
-    GROUPE BULL,
-    Guy Martin,
-    Hans Oey,
-    Harald Koenig,
-    Harm Hanemaayer,
-    Harold L Hunt II,
-    Harry Langenbacher,
-    Henry A. Worth,
-    Hewlett-Packard Company,
-    Hitachi Ltd,
-    Holger Veit,
-    Hong Bo Peng,
-    Howard Greenwell,
-    Hummingbird Communications Ltd.,
-    Ian Romanick,
-    IBM Corporation,
-    Intel Corporation,
-    INTERACTIVE Systems Corporation,
-    International Business Machines Corp.,
-    Itai Nahshon,
-    Ivan Kokshaysky,
-    Ivan Pascal,
-    Jakub Jelinek,
-    James Tsillas,
-    Jason Bacon,
-    Jaymz Julian,
-    Jean-loup Gailly,
-    Jeff Hartmann,
-    Jeff Kirk,
-    Jeffrey Hsu,
-    Jehan Bing,
-    Jeremy C. Reed,
-    Jeremy Katz,
-    Jerome Glisse,
-    Jesse Barnes,
-    Jim Gettys,
-    Jim Tsillas,
-    John Dennis,
-    John Harper,
-    John Heasley,
-    Jonathan Adamczewski,
-    Jon Block,
-    Jon Smirl,
-    Jon Tombs,
-    Jorge Delgado,
-    Jos&eacute; Fonseca,
-    Joseph Friedman,
-    Joseph V. Moss,
-    Julio M. Merino Vidal,
-    Juliusz Chroboczek,
-    Jyunji Takagi,
-    Kaleb Keithley,
-    Kazushi (Jam) Marukawa,
-    Kazuyuki (ikko-) Okamoto,
-    Kean Johnston,
-    Keith Packard,
-    Keith Whitwell,
-    Kensuke Matsuzaki,
-    Kevin E. Martin,
-    Kristian H&oslash;gsberg,
-    Larry Wall,
-    Lars Knoll,
-    Lawrence Berkeley Laboratory,
-    Leif Delgass,
-    Lennart Augustsson,
-    Leon Shiman,
-    Lexmark International Inc.,
-    Linus Torvalds,
-    Luc Verhaegen,
-    Machine Vision Holdings Inc.,
-    Manfred Brands,
-    Marc Aurele La France,
-    Mark Adler,
-    Mark J. Kilgard,
-    Mark Leisher,
-    Mark Smulders,
-    Mark Vojkovich,
-    Marvin Solomon,
-    Massachusetts Institute Of Technology,
-    Matrox Graphics,
-    Matthew Grossman,
-    Matthias Hopf,
-    Matthieu Herrb,
-    Metro Link Inc.,
-    Michael Bax,
-    Michael H. Schimek,
-    Michael P. Marking,
-    Michael Schimek,
-    Michael Smith,
-    Michel Daenzer,
-    Michel D&auml;nzer,
-    Mike A. Harris,
-    Mike Harris,
-    Ming Yu,
-    MIPS Computer Systems Inc.,
-    National Semiconductor,
-    NCR Corporation Inc.,
-    Netscape Communications Corporation,
-    Network Computing Devices Inc.,
-    Nicholas Joly,
-    Nicholas Miell,
-    Nicholas Wourms,
-    Nicolai Haehnle,
-    Noah Levitt,
-    Nolan Leake,
-    Novell Inc.,
-    Nozomi YTOW,
-    NTT Software Corporation,
-    Number Nine Computer Corp.,
-    Number Nine Visual Technologies,
-    NVIDIA Corp.,
-    Oivier Danet,
-    Oki Technosystems Laboratory Inc.,
-    OMRON Corporation,
-    Open Software Foundation,
-    Orest Zborowski,
-    Owen Taylor,
-    Pablo Saratxaga,
-    Panacea Inc.,
-    Panagiotis Tsirigotis,
-    Paolo Severini,
-    Pascal Haible,
-    Patrick Lecoanet,
-    Patrick Lerda,
-    Paul Anderson,
-    Paul Elliott,
-    Paul Mackerras,
-    Peter Breitenlohner,
-    Peter Kunzmann,
-    Peter Trattler,
-    Philip Homburg,
-    Philip Langdale,
-    Precision Insight Inc.,
-    Prentice Hall,
-    Quarterdeck Office Systems,
-    Radek Doulik,
-    Ralf Habacker,
-    Randy Hendry,
-    Ranier Keller,
-    Red Hat Inc.,
-    Regents of the University of California,
-    Regis Cridlig,
-    Rene Cougnenc,
-    Richard A. Hecker,
-    Richard Burdick,
-    Rich Murphey,
-    Rickard E. Faith,
-    Rik Faith,
-    Robert Chesler,
-    Robert Millan,
-    Robert V. Baron,
-    Robin Cutshaw,
-    Roland Mainz,
-    Roland Scheidegger,
-    Ronny Vindenes,
-    Russ Blaine,
-    Ryan Breen,
-    Ryan Lortie,
-    Ryan Underwood,
-    S3 Graphics Inc.,
-    Sam Leffler,
-    SciTech Software,
-    Scott Laird,
-    Sebastien Marineau,
-    Shigehiro Nomura,
-    ShoGraphics Inc.,
-    Shunsuke Akiyama,
-    Silicon Graphics Computer Systems Inc.,
-    Silicon Integrated Systems Corp Inc.,
-    Silicon Motion Inc.,
-    Simon P. Cooper,
-    Snitily Graphics Consulting Services,
-    Sony Corporation,
-    S&oslash;ren Sandmann,
-    SRI,
-    Stanislav Brabec,
-    Stefan Dirsch,
-    Stephane Marchesin,
-    Stephan Lang,
-    Steven Lang,
-    Stuart Kreitman,
-    Sun Microsystems Inc.,
-    SunSoft Inc.,
-    SuSE Inc,
-    Sven Luther,
-    Takis Psarogiannakopoulos,
-    Takuma Murakami,
-    Takuya SHIOZAKI,
-    T. A. Phelps,
-    Tektronix Inc.,
-    The DOS-EMU-Development-Team,
-    The Institute of Software Academia Sinica,
-    The NetBSD Foundation,
-    Theo de Raadt,
-    Theodore Ts'o,
-    The Open Group,
-    The Open Software Foundation,
-    The Regents of the University of California,
-    The Santa Cruz Operation Inc.,
-    The Weather Channel Inc.,
-    The X Consortium,
-    The XFree86 Project Inc.,
-    Thomas E. Dickey,
-    Thomas G. Lane,
-    Thomas Hellstr&ouml;m,
-    Thomas Mueller,
-    Thomas Roell,
-    Thomas Thanner,
-    Thomas Winischhofer,
-    Thomas Wolfram,
-    Thorsten.Ohl,
-    Tiago Gons,
-    Tilman Sauerbeck,
-    Todd C. Miller,
-    Tomohiro KUBOTA,
-    Torrey Lyons,
-    Torrey T. Lyons,
-    TOSHIBA Corp.,
-    Toshimitsu Tanaka,
-    Travis Tilley,
-    Trolltech AS,
-    Tungsten Graphics Inc.,
-    Tuomas J. Lukka,
-    Ty Sarna,
-    UCHIYAMA Yasushi,
-    Unicode Inc.,
-    UniSoft Group Limited,
-    University of Utah,
-    University of Wisconsin,
-    UNIX System Laboratories Inc.,
-    URW++ GmbH,
-    Valery Inozemtsev,
-    VA Linux Systems,
-    VIA Technologies Inc.,
-    Video Electronics Standard,
-    VMware Inc.,
-    Vrije Universiteit,
-    Wittawat Yamwong,
-    Wyse Technology Inc.,
-    X Consortium,
-    Xi Graphics Inc.,
-    X-Oz Technologies,
-    X-TrueType Server Project and their contributors,
-    Yu Shao,
-    Zack Rusin,
-    Zephaniah E. Hull,
-    Zhenyu Wang.
-    </Para>
-    </ListItem>
-    </VarListEntry>
-    </VariableList>
+      This product includes software developed by:
+      <simplelist type='vert' columns='2'>
+	<member>2d3d Inc.</member>
+	<member>3Dlabs Inc. Ltd.</member>
+	<member>Aaron Plattner</member>
+	<member>Adam de Boor</member>
+	<member>Adam Jackson</member>
+	<member>Adobe Systems Inc.</member>
+	<member>After X-TT Project</member>
+	<member>AGE Logic Inc.</member>
+	<member>Alan Coopersmith</member>
+	<member>Alan Cox</member>
+	<member>Alan Hourihane</member>
+	<member>Alexander Gottwald</member>
+	<member>Alex Deucher</member>
+	<member>Alex Williamson</member>
+	<member>Anders Carlsson</member>
+	<member>Andreas Luik</member>
+	<member>Andreas Monitzer</member>
+	<member>Andreas Robinson</member>
+	<member>Andrei Barbu</member>
+	<member>Andrew C Aitchison</member>
+	<member>Andy Ritger</member>
+	<member>Angus Lees</member>
+	<member>Ani Joshi</member>
+	<member>Anton Zioviev</member>
+	<member>Apollo Computer Inc.</member>
+	<member>Apple Computer Inc.</member>
+	<member>Ares Software Corp.</member>
+	<member>AT&amp;T Inc.</member>
+	<member>ATI Technologies Inc.</member>
+	<member>BEAM Ltd.</member>
+	<member>Benjamin Herrenschmidt</member>
+	<member>Benjamin Rienfenstahl</member>
+	<member>Ben Skeggs</member>
+	<member>Bigelow and Holmes</member>
+	<member>Bill Reynolds</member>
+	<member>Bitstream Inc.</member>
+	<member>Bogdan Diaconescu</member>
+	<member>Branden Robinson</member>
+	<member>Brian Fundakowski Feldman</member>
+	<member>Brian Goines</member>
+	<member>Brian Paul</member>
+	<member>Bruno Haible</member>
+	<member>Bryan Stine</member>
+	<member>Carl Switzky</member>
+	<member>Catharon Productions Inc.</member>
+	<member>Charles Murcko</member>
+	<member>Chen Xiangyang</member>
+	<member>Chisato Yamauchi</member>
+	<member>Chris Constello</member>
+	<member>Christian Zietz</member>
+	<member>Cognition Corp.</member>
+	<member>Compaq Computer Corporation</member>
+	<member>Concurrent Computer Corporation</member>
+	<member>Conectiva S.A.</member>
+	<member>Corin Anderson</member>
+	<member>Craig Struble</member>
+	<member>Daewoo Electronics Co. Ltd.</member>
+	<member>Dag-Erling Sm&oslash;rgrav</member>
+	<member>Dale Schumacher</member>
+	<member>Damien Miller</member>
+	<member>Daniel Berrange</member>
+	<member>Daniel Borca</member>
+	<member>Daniel Stone</member>
+	<member>Daniver Limited</member>
+	<member>Daryll Strauss</member>
+	<member>Data General Corporation</member>
+	<member>Dave Airlie</member>
+	<member>David Bateman</member>
+	<member>David Dawes</member>
+	<member>David E. Wexelblat</member>
+	<member>David Holland</member>
+	<member>David J. McKay</member>
+	<member>David McCullough</member>
+	<member>David Mosberger-Tang</member>
+	<member>David Reveman</member>
+	<member>David S. Miller</member>
+	<member>David Woodhouse</member>
+	<member>Davor Matic</member>
+	<member>Deron Johnson</member>
+	<member>Digeo Inc.</member>
+	<member>Digital Equipment Corporation</member>
+	<member>Dirk Hohndel</member>
+	<member>Dmitry Golubev</member>
+	<member>Donnie Berkholz</member>
+	<member>DOS-EMU-Development-Team</member>
+	<member>Doug Anson</member>
+	<member>Drew Parsons</member>
+	<member>Earle F. Philhower III</member>
+	<member>Edouard TISSERANT</member>
+	<member>Eduard Fuchs</member>
+	<member>Eduardo Horvath</member>
+	<member>Egbert Eich</member>
+	<member>Egmont Koblinger</member>
+	<member>Elliot Lee</member>
+	<member>Eric Anholt</member>
+	<member>Eric Fortune</member>
+	<member>Eric Sunshine</member>
+	<member>Erik Fortune</member>
+	<member>Erik Nygren</member>
+	<member>Evans &#38; Sutherland Computer Corp.</member>
+	<member>Fabio Massimo Di Nitto</member>
+	<member>Fabrizio Gennari</member>
+	<member>Felix Kuehling</member>
+	<member>Felix K&uuml;hling</member>
+	<member>Finn Thoegersen</member>
+	<member>Francesco Zappa Nardelli</member>
+	<member>Frank C. Earl</member>
+	<member>Frederic Lepied</member>
+	<member>Fredrik H&ouml;glund</member>
+	<member>Free Software Foundation</member>
+	<member>Fujitsu Limited</member>
+	<member>Fujitsu Open Systems Solutions Inc.</member>
+	<member>Fuji Xerox Co. Ltd.</member>
+	<member>Geert Uytterhoeven</member>
+	<member>George Fufutos</member>
+	<member>Gerrit Jan Akkerman</member>
+	<member>Gerry Toll</member>
+	<member>Glenn G. Lai</member>
+	<member>GNOME Foundation</member>
+	<member>Go Watanabe</member>
+	<member>Greg Kroah-Hartman</member>
+	<member>Gregory Mokhin</member>
+	<member>Greg Parker</member>
+	<member>GROUPE BULL</member>
+	<member>Guy Martin</member>
+	<member>Hans Oey</member>
+	<member>Harald Koenig</member>
+	<member>Harm Hanemaayer</member>
+	<member>Harold L Hunt II</member>
+	<member>Harry Langenbacher</member>
+	<member>Henry A. Worth</member>
+	<member>Hewlett-Packard Company</member>
+	<member>Hitachi Ltd</member>
+	<member>Holger Veit</member>
+	<member>Hong Bo Peng</member>
+	<member>Howard Greenwell</member>
+	<member>Hummingbird Communications Ltd.</member>
+	<member>Ian Romanick</member>
+	<member>IBM Corporation</member>
+	<member>Inst. of Software Academia Sinica</member>
+	<member>Intel Corporation</member>
+	<member>INTERACTIVE Systems Corporation</member>
+	<member>Itai Nahshon</member>
+	<member>Ivan Kokshaysky</member>
+	<member>Ivan Pascal</member>
+	<member>Jakub Jelinek</member>
+	<member>James Tsillas</member>
+	<member>Jason Bacon</member>
+	<member>Jaymz Julian</member>
+	<member>Jean-loup Gailly</member>
+	<member>Jeff Hartmann</member>
+	<member>Jeff Kirk</member>
+	<member>Jeffrey Hsu</member>
+	<member>Jehan Bing</member>
+	<member>Jeremy C. Reed</member>
+	<member>Jeremy Katz</member>
+	<member>Jerome Glisse</member>
+	<member>Jesse Barnes</member>
+	<member>Jim Gettys</member>
+	<member>Jim Tsillas</member>
+	<member>John Dennis</member>
+	<member>John Harper</member>
+	<member>John Heasley</member>
+	<member>Jonathan Adamczewski</member>
+	<member>Jon Block</member>
+	<member>Jon Smirl</member>
+	<member>Jon Tombs</member>
+	<member>Jorge Delgado</member>
+	<member>Jos&eacute; Fonseca</member>
+	<member>Joseph Friedman</member>
+	<member>Joseph V. Moss</member>
+	<member>Julio M. Merino Vidal</member>
+	<member>Juliusz Chroboczek</member>
+	<member>Jyunji Takagi</member>
+	<member>Kaleb Keithley</member>
+	<member>Kazushi (Jam) Marukawa</member>
+	<member>Kazuyuki (ikko-) Okamoto</member>
+	<member>Kean Johnston</member>
+	<member>Keith Packard</member>
+	<member>Keith Whitwell</member>
+	<member>Kensuke Matsuzaki</member>
+	<member>Kevin E. Martin</member>
+	<member>Kristian H&oslash;gsberg</member>
+	<member>Larry Wall</member>
+	<member>Lars Knoll</member>
+	<member>Lawrence Berkeley Laboratory</member>
+	<member>Leif Delgass</member>
+	<member>Lennart Augustsson</member>
+	<member>Leon Shiman</member>
+	<member>Lexmark International Inc.</member>
+	<member>Linus Torvalds</member>
+	<member>Luc Verhaegen</member>
+	<member>Machine Vision Holdings Inc.</member>
+	<member>Manfred Brands</member>
+	<member>Marc Aurele La France</member>
+	<member>Mark Adler</member>
+	<member>Mark J. Kilgard</member>
+	<member>Mark Leisher</member>
+	<member>Mark Smulders</member>
+	<member>Mark Vojkovich</member>
+	<member>Marvin Solomon</member>
+	<member>Massachusetts Inst. Of Technology</member>
+	<member>Matrox Graphics</member>
+	<member>Matthew Grossman</member>
+	<member>Matthias Hopf</member>
+	<member>Matthieu Herrb</member>
+	<member>Metro Link Inc.</member>
+	<member>Michael Bax</member>
+	<member>Michael H. Schimek</member>
+	<member>Michael P. Marking</member>
+	<member>Michael Schimek</member>
+	<member>Michael Smith</member>
+	<member>Michel D&auml;nzer</member>
+	<member>Mike A. Harris</member>
+	<member>Mike Harris</member>
+	<member>Ming Yu</member>
+	<member>MIPS Computer Systems Inc.</member>
+	<member>National Semiconductor</member>
+	<member>NCR Corporation Inc.</member>
+	<member>NetBSD Foundation</member>
+	<member>Netscape Communications Corp.</member>
+	<member>Network Computing Devices Inc.</member>
+	<member>Nicholas Joly</member>
+	<member>Nicholas Miell</member>
+	<member>Nicholas Wourms</member>
+	<member>Nicolai Haehnle</member>
+	<member>Noah Levitt</member>
+	<member>Nolan Leake</member>
+	<member>Novell Inc.</member>
+	<member>Nozomi YTOW</member>
+	<member>NTT Software Corporation</member>
+	<member>Number Nine Computer Corp.</member>
+	<member>Number Nine Visual Technologies</member>
+	<member>NVIDIA Corp.</member>
+	<member>Oivier Danet</member>
+	<member>Oki Technosystems Laboratory Inc.</member>
+	<member>OMRON Corporation</member>
+	<member>Open Software Foundation</member>
+	<member>Orest Zborowski</member>
+	<member>Owen Taylor</member>
+	<member>Pablo Saratxaga</member>
+	<member>Panacea Inc.</member>
+	<member>Panagiotis Tsirigotis</member>
+	<member>Paolo Severini</member>
+	<member>Pascal Haible</member>
+	<member>Patrick Lecoanet</member>
+	<member>Patrick Lerda</member>
+	<member>Paul Anderson</member>
+	<member>Paul Elliott</member>
+	<member>Paul Mackerras</member>
+	<member>Peter Breitenlohner</member>
+	<member>Peter Kunzmann</member>
+	<member>Peter Trattler</member>
+	<member>Philip Homburg</member>
+	<member>Philip Langdale</member>
+	<member>Precision Insight Inc.</member>
+	<member>Prentice Hall</member>
+	<member>Quarterdeck Office Systems</member>
+	<member>Radek Doulik</member>
+	<member>Ralf Habacker</member>
+	<member>Randy Hendry</member>
+	<member>Ranier Keller</member>
+	<member>Red Hat Inc.</member>
+	<member>Regis Cridlig</member>
+	<member>Rene Cougnenc</member>
+	<member>Richard A. Hecker</member>
+	<member>Richard Burdick</member>
+	<member>Rich Murphey</member>
+	<member>Rickard E. Faith</member>
+	<member>Rik Faith</member>
+	<member>Robert Chesler</member>
+	<member>Robert Millan</member>
+	<member>Robert V. Baron</member>
+	<member>Robin Cutshaw</member>
+	<member>Roland Mainz</member>
+	<member>Roland Scheidegger</member>
+	<member>Ronny Vindenes</member>
+	<member>Russ Blaine</member>
+	<member>Ryan Breen</member>
+	<member>Ryan Lortie</member>
+	<member>Ryan Underwood</member>
+	<member>S3 Graphics Inc.</member>
+	<member>Sam Leffler</member>
+	<member>Santa Cruz Operation Inc.</member>
+	<member>SciTech Software</member>
+	<member>Scott Laird</member>
+	<member>Sebastien Marineau</member>
+	<member>Shigehiro Nomura</member>
+	<member>ShoGraphics Inc.</member>
+	<member>Shunsuke Akiyama</member>
+	<member>Silicon Graphics Computer Systems</member>
+	<member>Silicon Integrated Systems Corp</member>
+	<member>Silicon Motion Inc.</member>
+	<member>Simon P. Cooper</member>
+	<member>Snitily Graphics Consulting Services</member>
+	<member>Sony Corporation</member>
+	<member>S&oslash;ren Sandmann</member>
+	<member>SRI</member>
+	<member>Stanislav Brabec</member>
+	<member>Stefan Dirsch</member>
+	<member>Stephane Marchesin</member>
+	<member>Stephan Lang</member>
+	<member>Steven Lang</member>
+	<member>Stuart Kreitman</member>
+	<member>Sun Microsystems Inc.</member>
+	<member>SunSoft Inc.</member>
+	<member>SuSE Inc</member>
+	<member>Sven Luther</member>
+	<member>Takis Psarogiannakopoulos</member>
+	<member>Takuma Murakami</member>
+	<member>Takuya SHIOZAKI</member>
+	<member>T. A. Phelps</member>
+	<member>Tektronix Inc.</member>
+	<member>Theo de Raadt</member>
+	<member>Theodore Ts'o</member>
+	<member>The Open Group</member>
+	<member>The Weather Channel Inc.</member>
+	<member>Thomas E. Dickey</member>
+	<member>Thomas G. Lane</member>
+	<member>Thomas Hellstr&ouml;m</member>
+	<member>Thomas Mueller</member>
+	<member>Thomas Roell</member>
+	<member>Thomas Thanner</member>
+	<member>Thomas Winischhofer</member>
+	<member>Thomas Wolfram</member>
+	<member>Thorsten.Ohl</member>
+	<member>Tiago Gons</member>
+	<member>Tilman Sauerbeck</member>
+	<member>Todd C. Miller</member>
+	<member>Tomohiro KUBOTA</member>
+	<member>Torrey Lyons</member>
+	<member>Torrey T. Lyons</member>
+	<member>TOSHIBA Corp.</member>
+	<member>Toshimitsu Tanaka</member>
+	<member>Travis Tilley</member>
+	<member>Trolltech AS</member>
+	<member>Tungsten Graphics Inc.</member>
+	<member>Tuomas J. Lukka</member>
+	<member>Ty Sarna</member>
+	<member>UCHIYAMA Yasushi</member>
+	<member>Unicode Inc.</member>
+	<member>UniSoft Group Limited</member>
+	<member>University of California</member>
+	<member>University of Utah</member>
+	<member>University of Wisconsin</member>
+	<member>UNIX System Laboratories Inc.</member>
+	<member>URW++ GmbH</member>
+	<member>Valery Inozemtsev</member>
+	<member>VA Linux Systems</member>
+	<member>VIA Technologies Inc.</member>
+	<member>Video Electronics Standard Assoc.</member>
+	<member>VMware Inc.</member>
+	<member>Vrije Universiteit</member>
+	<member>Wittawat Yamwong</member>
+	<member>Wyse Technology Inc.</member>
+	<member>X Consortium</member>
+	<member>XFree86 Project Inc.</member>
+	<member>Xi Graphics Inc.</member>
+	<member>X-Oz Technologies</member>
+	<member>X-TrueType Server Project</member>
+	<member>Yu Shao</member>
+	<member>Zack Rusin</member>
+	<member>Zephaniah E. Hull</member>
+	<member>Zhenyu Wang</member>
+      </SimpleList>
     </Para>
 
     <Para>
