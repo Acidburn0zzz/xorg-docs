@@ -7,7 +7,11 @@
 <articleinfo>
 
 <title>Release Notes for X11R&relvers;</title>
-<author><firstname>The X.Org Foundation</firstname></author>
+
+<corpauthor><ulink url="http://www.x.org/wiki/XorgFoundation">
+The X.Org Foundation
+</ulink></corpauthor>
+
 <pubdate>&reldate;</pubdate>
 
 <abstract>
@@ -25,15 +29,15 @@ in the X.Org Foundation X11R&relvers; release.
 <title>Introduction to the X11R&relvers; Release</title>
 
 <para>
-This release is the third modular release of the X Window System. The next
-official release will be X11R&nextrelvers; and is expected in
+This release is the &whichfullrel; modular release of the X Window System.
+The next full release will be X11R&nextrelvers; and is expected in
 &nextfullreldate;.
 </para>
 
 <para>
-For help with how to build and develop in the modular tree see <ulink
+For help with how to build and develop in the modular tree see the <ulink
 URL="http://wiki.x.org/wiki/ModularDevelopersGuide"> Modular Developer's
-Guide</ulink>.
+Guide</ulink> in the X.Org wiki.
 </para>
 
 <para>
@@ -41,20 +45,23 @@ We encourage you to submit bug fixes and enhancements to
 freedesktop.org's <ulink URL="https://bugs.freedesktop.org/">
 bug tracking system</ulink> using the xorg product, and to
 discuss them on <email>xorg@lists.freedesktop.org</email>.
+More details on patch submission and review process are available on the
+<ulink url="http://www.x.org/wiki/Development/Documentation/SubmittingPatches">
+SubmittingPatches</ulink> page of the X.Org wiki.
 </para>
 
 <para>
 The release numbering is based on the original MIT X numbering system.
 X11 refers to the version of the network protocol that the X Window
 system is based on: Version 11 was first released in 1988 and has been
-stable for 18 years, with only upward compatible additions to the core X
+stable for 21 years, with only upward compatible additions to the core X
 protocol, a record of stability envied in computing.  Formal releases of
 X started with X version 9 from MIT; the first commercial X products
 were based on X version 10.  The MIT X Consortium and its successors,
 the X Consortium, the Open Group X Project Team, and the X.Org Group
 released versions X11R3 through X11R6.6.  Since the founding of the
-X.Org Foundation in early 2004, five further major releases have been
-issued, from 6.7 to the current &relvers;.
+X.Org Foundation in early 2004, many further releases have been
+issued, from X11R6.7 to the current &relvers;.
 </para>
 
 <para>
@@ -89,84 +96,106 @@ The next section describes what is new in the latest version
     <para>
     This is a sampling of the new features in X11R&relvers;.
     A more complete list of changes can be found in the ChangeLog files that
-    are part of the X source tree.
+    are part of the source of each X module.
     </para>
 
     <para>
 
-    <itemizedlist>
+      <itemizedlist>
         <listitem>
-            <para>
-            The X Access Control Extension (XACE) has been added to this
-            release. XACE is a set of generic "hooks" that can be used by
-            other X extensions to perform access checks. This provides
-            integration of the X server with the SELinux and xtsol
-            platform-specific security frameworks.
-            </para>
+	  <para>
+	    <firstterm>Multi-Pointer X (<acronym>MPX</acronym>)</firstterm>
+	    provides the user with multiple independent mouse cursors and
+	    multiple independent keyboard foci.  Each cursor is a true system
+	    cursor and different pointers can operate in multiple applications
+	    simultaneously.
+	  </para>
         </listitem>
         <listitem>
-            <para>
-            The X server now incorporates significantly improved
-            autodetection when running without an xorg.conf file. This will
-            help to limit the number of users who have to fuss with their
-            X configuration to get a working server setup.
-            </para>
+	  <para>
+	    <firstterm>Input device properties</firstterm> allow you to attach
+	    properties to a device. These properties can be of arbitrary type
+	    and can be changed without the server having to know their details.
+	  </para>
         </listitem>
-        <listitem>
-            <para>
-            XCB now provides a new implementation of libX11. The XCB
-            library is a ground-up rewrite of the venerable libX11.  It
-            features a small footprint, latency hiding, direct access to
-            the protocol, improved threading support, and extensibility. In
-            addition to providing a new programming interface, it also
-            provides a libX11 compatibility layer to allow it to be used
-            transparently in place of libX11.
-            </para>
-        </listitem>
-        <listitem>
-            <para>
-            OS support enhancements for Linux, Solaris, and most of the
-            *BSD family
-            </para>
+
+	<listitem>
+	  <para>
+	    The <firstterm>X Input Extension version 2.0
+		(<acronym>XI2</acronym>)</firstterm> is designed to
+	    replace both core input processing and prior
+	    versions of the X Input Extension.   Besides MPX, it provides a
+	    number of other enhancements over version 1.5, including:
+	    <itemizedlist spacing="compact">
+
+	      <listitem><para>use of XGE and GenericEvents.</para></listitem>
+	      <listitem><para>explicit device hierarchy of master and slave devices.</para></listitem>
+	      <listitem><para>the ability for devices to change capabilities at runtime.</para></listitem>
+	      <listitem><para>raw device events</para></listitem>
+	    </itemizedlist>
+	  </para>
         </listitem>
 
         <listitem>
-            <para>
-            Platform support enhancements for x86, amd64, sparc64, and ia64
-            </para>
+	  <para>
+	    <firstterm>Resize, Rotate and Reflect Extension
+	      (<acronym>RANDR</acronym>) version 1.3</firstterm>
+	    builds on the changes made with version 1.2 and adds some new
+	    capabilities without fundmentally changing the extension again.
+	    The following features are added in this version:
+	    <variablelist>
+	      <varlistentry>
+		<term>Projective Transforms</term>
+		<listitem><para>
+		    The implementation work for general rotation support made
+		    it trivial to add full projective transformations. These
+		    can be used to scale the screen up/down as well as perform
+		    projector keystone correct or other effects.
+		</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term>Panning</term>
+		<listitem><para>
+		    Panning was removed with RandR 1.2 because the old
+		    semantics didn't fit any longer. With RandR 1.3 panning
+		    can be specified per crtc.
+		  </para></listitem>
+	      </varlistentry>
+	    </variablelist>
+	  </para>
         </listitem>
 
         <listitem>
-            <para>
+	  <para>
+	    The <firstterm><acronym>DRI2</acronym> extension</firstterm>
+	    is designed to associate and access auxillary rendering
+	    buffers with an X drawable.  It is a essentially a helper
+	    extension to support implementation of direct rendering
+	    drivers/libraries/technologies.
+	    The main consumer of this extension will be a direct
+	    rendering OpenGL driver, but the DRI2 extension is not
+	    designed to be OpenGL specific.  Direct rendering
+	    implementations of OpenVG, Xv, cairo and other graphics
+	    APIs should find the functionality exposed by this
+	    extension helpful and hopefully sufficient.
+	  </para>
+        </listitem>
+
+        <listitem>
+	  <para>
+	    <firstterm>Video and input driver enhancements</firstterm>.
+	    Please see the ChangeLog files for individual drivers; there are
+	    far too many updates to list here.
+	  </para>
+        </listitem>
+
+        <listitem>
+	  <para>
             ... and the usual assortment of correctness and crash fixes.
-            </para>
+	  </para>
         </listitem>
-    </itemizedlist>
+      </itemizedlist>
     </para>
-
-    <sect2>
-        <title>Updated keyboard mappings</title>
-        <para>
-        The requirement for XKB data can be satisfied by the dataset from
-        the xkeyboard-config project (the 'xkbdesc' module).  xkbdesc has
-        numerous improvements relative to the deprecated xkbdata: layouts
-        have been cleaned up for consistency and universal multi-layout
-        support, some new layouts have added, and some layouts have changed
-        names to be more straightforward and ISO compliant.  Some setups
-        will need adjustments in order to use xkbdesc. It is now strongly
-        encouraged for all distributions to migrate to xkbdesc, as the old
-        formats are deprecated and are not considered a part of the
-        X11R&relvers; release.
-        </para>
-    </sect2>
-
-    <sect2>
-        <title>Video driver enhancements</title>
-        <para>
-        Please see the ChangeLog files for individual drivers; there are far too
-        many updates to list here.
-        </para>
-    </sect2>
 </sect1>
 
 <sect1>
@@ -208,11 +237,8 @@ The next section describes what is new in the latest version
             </row>
             <row>
                 <entry><Literal remap="tt">ati</Literal></entry>
-                <entry>ATI</entry>
-                <entry><ulink URL="ati.html">README.ati</ulink>,
-                    <ulink URL="r128.html">README.r128</ulink>,
-                    <ulink URL="r128.4.html">r128(4)</ulink>,
-                    <ulink URL="radeon.4.html">radeon(4)</ulink></entry>
+                <entry>ATI Mach64</entry>
+                <entry><ulink URL="ati.html">README.ati</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">chips</Literal></entry>
@@ -253,10 +279,10 @@ The next section describes what is new in the latest version
                 <entry><ulink URL="i740.html">README.i740</ulink></entry>
             </row>
             <row>
-                <entry><Literal remap="tt">i810</Literal></entry>
-                <entry>Intel i8xx</entry>
-                <entry><ulink URL="i810.html">README.i810</ulink>,
-                    <ulink URL="i810.4.html">i810(4)</ulink></entry>
+                <entry><Literal remap="tt">intel</Literal></entry>
+                <entry>Intel i8xx/i9xx</entry>
+                <entry><ulink URL="intel.html">README.intel</ulink>,
+                    <ulink URL="intel.4.html">intel(4)</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">impact</Literal></entry>
@@ -292,10 +318,20 @@ The next section describes what is new in the latest version
             <row>
                 <entry><Literal remap="tt">nv</Literal></entry>
                 <entry>NVIDIA</entry>
-                <entry><ulink
-                URL="nv.4.html"
-                >nv(4)</ulink></entry>
+                <entry><ulink URL="nv.4.html">nv(4)</ulink></entry>
             </row>
+            <row>
+                <entry><Literal remap="tt">ati</Literal></entry>
+                <entry>ATI Rage128</entry>
+                <entry><ulink URL="r128.html">README.r128</ulink>,
+			<ulink URL="r128.4.html">r128(4)</ulink></entry>
+            </row>
+            <row>
+                <entry><Literal remap="tt">radeon</Literal></entry>
+                <entry>ATI Radeon</entry>
+                <entry><ulink URL="radeon.4.html">radeon(4)</ulink></entry>
+            </row>
+
             <row>
                 <entry><Literal remap="tt">rendition</Literal></entry>
                 <entry>Rendition</entry>
@@ -401,16 +437,6 @@ The next section describes what is new in the latest version
                 <entry><ulink URL="vesa.4.html">vesa(4)</ulink></entry>
             </row>
             <row>
-                <entry><Literal remap="tt">vga</Literal></entry>
-                <entry>Generic VGA</entry>
-                <entry><ulink URL="vga.4.html">vga(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">via</Literal></entry>
-                <entry>VIA</entry>
-                <entry><ulink URL="via.4.html">via(4)</ulink></entry>
-            </row>
-            <row>
                 <entry><Literal remap="tt">vmware</Literal></entry>
                 <entry>VMware guest OS</entry>
                 <entry><ulink URL="vmware.4.html">vmware(4)</ulink></entry>
@@ -421,17 +447,12 @@ The next section describes what is new in the latest version
                 <entry>&nbsp;</entry>
             </row>
             <row>
-                <entry><Literal remap="tt">wfb</Literal></entry>
-                <entry>Wrapper Framebuffer</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
                 <entry><Literal remap="tt">wsfb</Literal></entry>
                 <entry>Workstation Framebuffer</entry>
                 <entry><ulink URL="wsfb.4.html">wsfb(4)</ulink></entry>
             </row>
-        </tbody>
-        </tgroup>
+	  </tbody>
+       </tgroup>
     </informaltable>
     </para>
 
@@ -486,36 +507,6 @@ The next section describes what is new in the latest version
                 <entry><ulink URL="aiptek.4.html">aiptek(4)</ulink></entry>
             </row>
             <row>
-                <entry><Literal remap="tt">calcomp</Literal></entry>
-                <entry>Calcomp</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">citron</Literal></entry>
-                <entry>Citron</entry>
-                <entry><ulink URL="citron.4.html">citron(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">digitaledge</Literal></entry>
-                <entry>DigitalEdge</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">dmc</Literal></entry>
-                <entry>DMC</entry>
-                <entry><ulink URL="dmc.4.html">dmc(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">dynapro</Literal></entry>
-                <entry>Dynapro</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">elo2300</Literal></entry>
-                <entry>EloGraphics 2300</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
                 <entry><Literal remap="tt">elographics</Literal></entry>
                 <entry>EloGraphics</entry>
                 <entry>&nbsp;</entry>
@@ -536,24 +527,14 @@ The next section describes what is new in the latest version
                 <entry>&nbsp;</entry>
             </row>
             <row>
-                <entry><Literal remap="tt">js&lowbar;x</Literal></entry>
-                <entry>JamStudio pentablet</entry>
-                <entry><ulink URL="js_x.4.html">js_x(4)</ulink></entry>
+                <entry><Literal remap="tt">joystick</Literal></entry>
+                <entry>Joystick</entry>
+                <entry>&nbsp;</entry>
             </row>
             <row>
                 <entry><Literal remap="tt">kbd</Literal></entry>
-                <entry>generic keyboards (alternate)</entry>
+                <entry>generic keyboards (non-evdev systems)</entry>
                 <entry><ulink URL="kbd.4.html">kbd(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">keyboard</Literal></entry>
-                <entry>generic keyboards</entry>
-                <entry><ulink URL="keyboard.4.html">keyboard(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">magellan</Literal></entry>
-                <entry>Magellan</entry>
-                <entry>&nbsp;</entry>
             </row>
             <row>
                 <entry><Literal remap="tt">microtouch</Literal></entry>
@@ -562,7 +543,7 @@ The next section describes what is new in the latest version
             </row>
             <row>
                 <entry><Literal remap="tt">mouse</Literal></entry>
-                <entry>most mouse devices</entry>
+                <entry>most mouse devices (non-evdev systems)</entry>
                 <entry><ulink URL="mouse.4.html">mouse(4)</ulink></entry>
             </row>
             <row>
@@ -571,34 +552,19 @@ The next section describes what is new in the latest version
                 <entry>&nbsp;</entry>
             </row>
             <row>
-                <entry><Literal remap="tt">palmax</Literal></entry>
-                <entry>Palmax PD1000/PD1100</entry>
-                <entry><ulink URL="palmax.4.html">palmax(4)</ulink></entry>
-            </row>
-            <row>
                 <entry><Literal remap="tt">penmount</Literal></entry>
                 <entry>PenMount</entry>
                 <entry>&nbsp;</entry>
             </row>
-            <ROW>
-                <entry><Literal remap="tt">spaceorb</Literal></entry>
-                <entry>SpaceOrb</entry>
+            <row>
+                <entry><Literal remap="tt">synaptics</Literal></entry>
+                <entry>Synaptics &amp; ALP touchpads</entry>
                 <entry>&nbsp;</entry>
             </row>
             <row>
-                <entry><Literal remap="tt">summa</Literal></entry>
-                <entry>SummaGraphics</entry>
+                <entry><Literal remap="tt">vmmouse</Literal></entry>
+                <entry>VMWare virtual mouse</entry>
                 <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">tek4957</Literal></entry>
-                <entry>Tektronix 4957 tablet</entry>
-                <entry><ulink URL="tek4957.4.html">tek4957(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><Literal remap="tt">ur98(*)</Literal></entry>
-                <entry>Union Reality UR-F98 headtracker</entry>
-                <entry><ulink URL="ur98.4.html">ur98(4)</ulink></entry>
             </row>
             <row>
                 <entry><Literal remap="tt">void</Literal></entry>
@@ -622,28 +588,91 @@ The next section describes what is new in the latest version
 <title>Overview of X11R&relvers;</title>
 
     <para>
-    On most platforms, X11R&relvers; has a single X server binary called
-    <literal remap="tt">Xorg</literal>.  This binary can either have one or
-    more video and input drivers linked in statically, or more usually,
-    dynamically, and in that manner load the video drivers, input drivers,
-    and other modules that are needed.
+      On most platforms, X11R&relvers; has a single hardware-driving
+      X server binary called <command>Xorg</command>.  This binary can
+      dynamically load the video drivers, input drivers, and other modules
+      that are needed.
+
+      <command>Xorg</command> has currently has support for Linux, Solaris,
+      and some BSD OSs on Alpha, PowerPC, IA-64, AMD64, Intel x86, Sparc,
+      and MIPS platforms.
+
     </para>
 
     <para>
-    X11R&relvers; has currently has support for Linux, Solaris, and some BSD OSs
-    on Alpha, PowerPC, IA-64, AMD64, Intel x86, Sparc, and MIPS platforms.
+      Additional specialized X server binaries may be found depending on
+      the platform and build configuration, including:
+
+      <glosslist>
+	<glossentry>
+	  <glossterm><command>Xdmx</command></glossterm>
+	  <glossdef><para>
+	    is a proxy X server that uses one or more other X servers as its
+	    display devices.  It provides multi-head X functionality for
+	    displays that might be located on different machines.
+	  </para></glossdef>
+	</glossentry>
+	<glossentry>
+	  <glossterm><command>Xnest</command></glossterm>
+	  <glossdef><para>
+	    is a nested X server, that operates as both an X client and X
+	    server.  <command>Xnest</command> is a client of the real server
+	    which manages windows and graphics requests on its behalf.
+	    <command>Xnest</command> is a server to its own clients, and
+	    manages windows and graphics requests on their behalf.
+	    To these clients, it appears to be a conventional server.
+	  </para></glossdef>
+	</glossentry>
+	<glossentry>
+	  <glossterm><command>Xephyr</command></glossterm>
+	  <glossdef><para>
+	    is a X server that outputs to a window on a pre-existing "host"
+	    X display.  Unlike <command>Xnest</command> which is an X proxy,
+	    and thus limited to the capabilities of the host X server,
+	    <command>Xephyr</command> is a full X server which uses the host
+	    X server window as "framebuffer" via fast SHM XImages.
+	  </para></glossdef>
+	</glossentry>
+	<glossentry>
+	  <glossterm><command>Xvfb</command></glossterm>
+	  <glossdef><para>
+	    is a virtual framebuffer X server that can run on machines with
+	    no display hardware and no physical input devices.  It emulates
+	    a dumb framebuffer using virtual memory.
+	  </para></glossdef>
+	</glossentry>
+	<glossentry>
+	  <glossterm><command>Xquartz</command></glossterm>
+	  <glossdef><para>
+	    is an X server that interacts with the MacOS X native Aqua window
+	    system, displaying windows on the Mac desktop and accepting
+	    input from the Mac system devices, allowing X11 applications
+	    to be used in a native Mac desktop session.
+	  </para></glossdef>
+	</glossentry>
+	<glossentry>
+	  <glossterm><command>Xwin</command></glossterm>
+	  <glossdef><para>
+	    is an X server that runs under the Cygwin environment,
+	    interacting with the Microsoft Windows native window
+	    system, displaying windows on the Windows desktop and accepting
+	    input from the Windows system devices, allowing X11 applications
+	    to be used in a native Windows desktop session.
+	  </para></glossdef>
+	</glossentry>
+      </glosslist>
     </para>
 
     <sect2>
         <title>Loader and Modules</title>
 
         <para>
-        The X server
+        The Xorg server
         relies on the operating system's native module loader support for
         handling program modules. The X server makes use of modules for
         video drivers, X server extensions, font rasterisers, input device
         drivers, framebuffer layers, and internal components used by some
-        drivers (like XAA),
+        drivers (like XAA).
         </para>
 
         <para>
@@ -655,17 +684,17 @@ The next section describes what is new in the latest version
         new releases.
         </para>
 
-        <para>
-        <emphasis remap="bf">Note about module security</emphasis>
-        <quote>The X server runs with root privileges, i.e.,
+        <warning>
+        <title>Note about module security</title>
+        <para>The X server runs with root privileges, i.e.,
         the X server loadable modules also run with these privileges.
         For this reason we recommend that all users be careful to only
         use loadable modules from reliable sources,  otherwise the
         introduction of viruses and contaminated code can occur and
         wreak havoc on your system.  We hope to have a mechanism for
         signing/verifying the modules that we provide available in a
-        future release.</quote>
-        </para>
+        future release.
+        </para></warning>
     </sect2>
 
     <sect2 id="config">
@@ -679,34 +708,7 @@ The next section describes what is new in the latest version
         </para>
 
         <para>
-        The recommended method for generating a configuration file is to use
-        the Xorg server itself.  Run as root:
-
-        <screen>
-        Xorg -configure
-        </screen>
-         and follow the instructions.
-        </para>
-
-        <para>
-        This release comes with a graphical configuration tool called
-        "<literal remap="tt">xorgcfg</literal>", which also has a text mode
-        interface and can be used to create an initial configuration file.
-        It can also be used to customize existing configurations. This
-        tool is deprecated, although it is still available for use.
-        </para>
-
-        <para>
-        Finally, if all else fails, the old standby text-based tool
-        "<literal remap="tt">xorgconfig</literal>" can also be used for
-        generating X server config files.
-        </para>
-
-        <para>
-        At least one, and hopefully, all of these configuration options will
-        give you a reasonable starting point for a suitable configuration
-        file. With the automatic mechanism you might even find that you don't
-        need one! Note that this release features significant improvements
+        Note that this release features significant improvements
         for running the server without a configuration file, so many users
         may find that that they don't need a configuration file.
         </para>
@@ -718,6 +720,17 @@ The next section describes what is new in the latest version
         check the driver-specific manual pages and the related
         documentation (found at <xref LinkEnd="drivertables"> also.
         </para>
+
+        <para>
+        The recommended method for generating a configuration file is to use
+        the Xorg server itself.  Run as root:
+
+        <screen>
+        Xorg -configure
+        </screen>
+         and follow the instructions.
+        </para>
+
     </sect2>
 
     <Sect2>
@@ -788,7 +801,7 @@ The next section describes what is new in the latest version
 
         <para>
         Xinerama is not enabled by default, and can be enabled with the
-        <literal remap="tt">+xinerama</literal> command line option for the
+        <option>+xinerama</option> command line option for the
         X server.
         </para>
 
@@ -856,8 +869,8 @@ The next section describes what is new in the latest version
             <para>
             Several drivers uses DDC information to set the screen size and
             pitch.  This can be overridden by explicitly resetting it to
-            the and non-DDC default value 75 with the <literal
-            remap="tt">-dpi 75</literal> command line option for the X
+            the and non-DDC default value 75 with the <option>-dpi 75</option>
+	    command line option for the X
             server, or by specifying appropriate screen dimensions with the
             "DisplaySize" keyword in the "Monitor" section of the config
             file.
@@ -886,120 +899,6 @@ The next section describes what is new in the latest version
         newer if it is to use DRM.
         </para>
     </sect2>
-
-    <sect2>
-        <title>XVideo Extension (Xv)</title>
-
-        <para>
-        The XVideo extension is supported in X11R&relvers;.
-        </para>
-    </sect2>
-
-    <Sect2 id="render">
-        <Title>X Rendering Extension (Render) </Title>
-
-        <Para>
-        The X Rendering extension provides a 2D rendering model that more
-        closely matches application demands and hardware capabilities.  It
-        provides a rendering model derived from Plan 9 based on Porter/Duff
-        image composition rather than binary raster operations.
-        </Para>
-
-        <Para>
-        Using simple compositing operators provided by most hardware, Render
-        can draw anti-aliased text and geometric objects as well as perform
-        translucent image overlays and other image operations not possible with
-        the core X rendering system.
-        </Para>
-
-        <Para>
-        Unlike the core protocol, Render provides no font support for
-        applications, rather it allows applications to upload glyphs for
-        display on the screen.  This allows the client greater control over
-        text rendering and complete access to the available font
-        information while still providing hardware acceleration.  The Xft
-        library provides font access for Render applications.
-        </Para>
-
-        <Sect3>
-            <Title>The Xft Library</Title>
-
-            <Para>
-            On the client side, the Xft library provides access to fonts
-            for applications using the FreeType library, version 2.  One
-            important thing to note is that Xft uses the vertical size of
-            the monitor to compute accurate pixel sizes for provided point
-            sizes; if your monitor doesn't provide accurate information via
-            DDC, you may want to add that information to <Literal
-            remap="tt">xorg.conf</Literal>.
-            </Para>
-
-            <Para>
-            To allow a graceful transition for applications moving from
-            core text rendering to the Render extension, Xft can use either
-            the core rendering requests or the Render extension for text.
-            See the section on FreeType support in Xft for instructions on
-            configuring X11R&relvers; to use an existing FreeType
-            installation.
-            </Para>
-
-            <Para>
-            The Xft library uses configuration files, <Literal
-            remap="tt">/etc/fonts/fonts.conf</Literal> and <Literal
-            remap="tt">/etc/fonts/local.conf</Literal>, which contains
-            information about which directories contain font files and also
-            provides a sophisticated font aliasing mechanism.
-            Documentation for that file is included in the
-            <ulink URL="Xft.3.man">Xft(3)</ulink> man page.
-            </Para>
-        </Sect3>
-
-        <Sect3>
-            <Title>Application Support For Anti-Aliased Text</Title>
-
-            <Para>
-            Only four applications have been modified in X11R&relvers; to
-            work with the Render extension and the Xft and FreeType
-            libraries to provide anti-aliased text: xterm, xditview,
-            x11perf and xclock.  Migration of other applications may occur
-            in future releases.
-            </Para>
-
-            <Para>
-            By default, xterm uses core fonts through the standard core
-            API.  It has a command line option and associated resource to
-            direct it to use Xft instead:
-
-            <ItemizedList>
-            <ListItem>
-
-            <Para>
-            <Literal remap="tt">-fa</Literal> family / <Literal remap="tt">.VT100.faceName:</Literal> family.  Selects the font
-            family to use.
-            </Para>
-            </ListItem>
-
-            </ItemizedList>
-
-            </Para>
-
-            <Para>
-            Xditview will use Xft instead of the core API by default.
-            X11perf includes tests to measure the performance of text
-            rendered in three ways, anti-aliased, anti-aliased with
-            sub-pixel sampling and regular chunky text, but through the
-            Render extension, a path which is currently somewhat slower
-            than core text.
-            </Para>
-
-            <Para>
-            Xclock uses the Render extension to draw the analog face and
-            shares the -fa option and faceName resources with xterm to
-            select a font for the digital mode.
-            </Para>
-
-        </Sect3>
-    </Sect2>
 
 <!--
     <Sect2>
@@ -1035,100 +934,12 @@ The next section describes what is new in the latest version
     </Sect2>
 
     <Sect2>
-        <Title>TrueType support</Title>
+        <Title>Type1 Font support</Title>
 
         <Para>
-        X11R6.7 came with two TrueType backends.  The functionality from
-        the `X-TrueType' backend has been integrated into the `FreeType'
-        backend which is designed to transparently support all of the
-        functionality from the `X-TrueType' backend with the exception of
-        the font encoding libraries; the `FreeType' backend uses only the
-        fontenc-based encoding system.
-        </Para>
-    </Sect2>
-
-    <Sect2>
-        <Title>Internationalisation of the scalable font backends</Title>
-
-        <Para>
-        X11R&relvers; has a ``fontenc'' layer to allow the
-        scalable font backends to use a common method of font re-encoding.  This
-        re-encoding makes it possible to uses fonts in encodings other than
-        their their native encoding.  This layer is used by the Type1 and
-        FreeType backends.
-        </Para>
-    </Sect2>
-
-    <Sect2>
-        <Title>Large font optimization</Title>
-
-        <Para>
-        The glyph metrics array, which all the X clients using a particular font
-        have access to, is placed in shared memory, so as to reduce redundant
-        memory consumption.  For non-local clients, the glyph metrics array is
-        transmitted in a compressed format.
-        </Para>
-    </Sect2>
-
-    <Sect2>
-        <Title>Unicode/ISO 10646 support</Title>
-
-        <Para>
-        What is included in X11R&relvers;
-        </Para>
-
-        <Para>
-        <ItemizedList>
-            <ListItem>
-                <Para>
-                All ``-misc-fixed-*'' BDF fonts are now available in the
-                ISO10646-1 encoding and cover at least the 614 characters
-                found in ISO 8859-&lcub;1-5,7-10,14,15&rcub;, CP1252, and
-                MES-1. The non-bold fonts also cover all Windows Glyph List
-                4 (WGL4) characters, including those found in all 8-bit
-                MS-DOS/Windows code pages. The 8-bit variants of the
-                ``-misc-fixed-*'' BDF fonts (ISO8859-1, ISO8859-2, KOI8-R,
-                etc.) have all been automatically generated from the new
-                ISO10646-1 master fonts.
-                </Para>
-            </ListItem>
-            <ListItem>
-                <Para>
-                Some ``-misc-fixed-*'' BDF ISO10646-1 fonts now cover a
-                comprehensive Unicode repertoire of over 3000 characters
-                including all Latin, Greek, Cyrillic, Armenian, Gregorian,
-                Hebrew, IPA, and APL characters, plus numerous scientific,
-                typographic, technical, and backward-compatibility
-                symbols. Some of these fonts also cover Arabic, Ethiopian,
-                Thai, Han/Kanji, Hangul, full ISO 8859, and more. For the 6x13
-                font there is now a 12x13ja Kanji extension and for the 9x18
-                font there is a 18x18ja Kanji/Han/Hangul extension, which
-                covers all ISO-2022-JP-2 (RFC 1554) characters. The 9x18 font
-                can also be used to implement simple combining characters by
-                accent overstriking. For more information, read Markus Kuhn's
-                <ulink URL="http://www.cl.cam.ac.uk/~mgk25/unicode.html">UTF-8
-                and Unicode FAQ</ulink>.
-                </Para>
-            </ListItem>
-            <ListItem>
-                <Para>
-                Mark Leisher's ClearlyU proportional font (similar to Computer
-                Modern).
-                </Para>
-            </ListItem>
-            <ListItem>
-                <Para>
-                ISO 10646/Unicode UTF-8 Level 1 support added to xterm
-                (enabled with the <Literal remap="tt">-u8</Literal> option).
-                </Para>
-            </ListItem>
-            <ListItem>
-                <Para>
-                The Freetype backend (the <Literal remap="tt">"freetype"</Literal> module) supports
-                Unicode-encoded fonts.
-                </Para>
-            </ListItem>
-        </ItemizedList>
+        Previous versions of X came with two Postscript Type1 font backends.
+	The functionality from the `Type1' backend has been replaced by the
+	Type1 support in the `FreeType' backend.
         </Para>
     </Sect2>
 
@@ -1145,15 +956,15 @@ The next section describes what is new in the latest version
         <OrderedList>
             <ListItem>
                 <Para>
-                If the environment variable <Emphasis
-                remap="bf">$XCOMPOSEFILE</Emphasis> is set, its value is
+                If the environment variable <envar>$XCOMPOSEFILE</envar> 
+	        is set, its value is
                 used as the name of the Compose file.
                 </Para>
             </ListItem>
             <ListItem>
                 <Para>
-                If the user's home directory has a file named "<Literal
-                remap="tt">.XCompose</Literal>", it is used as the Compose
+                If the user's home directory has a file named 
+	        "<filename>.XCompose</filename>", it is used as the Compose
                 file.
                 </Para>
             </ListItem>
@@ -1212,25 +1023,6 @@ The next section describes what is new in the latest version
         &#60;dead_grave&#62; &#60;A&#62; : Agrave
         </Screen>
         the result depends on how Agrave is mapped in the current locale.
-        </Para>
-    </Sect2>
-
-    <Sect2 id="vera">
-        <Title>Bitstream Vera fonts </Title>
-
-        <Para>
-        X11R7.1 includes the Bitstream Vera family of typefaces in TrueType
-        format.  This family includes the ``Bitstream Vera Sans'',
-        ``Bitstream Vera Sans Mono'' and ``Bitstream Vera Serif'' in Roman
-        and Bold variants as well as the ``Bitstream Vera Sans'' and
-        ``Bitstream Vera Sans Mono'' in Oblique and Bold Oblique.  These
-        fonts include all of the glyphs needed for ISO&nbsp; 8859 parts 1 9
-        and 15.
-        </Para>
-
-        <Para>
-        The license terms for the Vera fonts are included in the file
-        <Literal remap="tt">COPYRIGHT.Vera</Literal>.
         </Para>
     </Sect2>
 
@@ -1302,8 +1094,8 @@ The next section describes what is new in the latest version
         /tmp/.X11-unix
         </Screen>
 
-        These directories are used by the font server, <Literal
-        remap="tt">xfs</Literal>, applications using the Inter-Client
+        These directories are used by the font server, 
+	<command>xfs</command>,	applications using the Inter-Client
         Exchange protocol (ICE) and the X server, respectively.
         </Para>
 
@@ -1328,8 +1120,7 @@ The next section describes what is new in the latest version
         <Title>Composite exposes extra visuals</Title>
 
         <Para>
-        When the Composite extension is enabled via <Literal
-        remap="tt">xorg.conf</Literal> or the command line, a new visual is
+        When the Composite extension is enabled, a new visual is
         created.  This visual is different from the other visuals used by X
         applications in that it includes an alpha component.  It is used by
         the compositing manager and other Composite aware applications.
@@ -1338,18 +1129,14 @@ The next section describes what is new in the latest version
         <Para>
         Most X applications ignore this visual since it is not useful to
         them; however some applications mistakenly try to use it, which
-        will cause them to fail.  An environment variable, <Literal
-        remap="tt">XLIB&lowbar;SKIP&lowbar;ARGB&lowbar;VISUALS</Literal>,
+        will cause them to fail.  An environment variable, 
+	<envar>XLIB_SKIP_ARGB_VISUALS</envar>,
         was added to the X11 library to hide this visual from applications
         that mistakenly try to use it.  If an application fails only when
         the Composite is enabled, try setting this environment variable
         before starting the application.
         </Para>
 
-        <Para>
-        Since Composite is not enabled by default, it is not expected that this
-        issue will be visible to most users.
-        </Para>
     </Sect2>
 </Sect1>
 
@@ -1371,35 +1158,59 @@ The next section describes what is new in the latest version
     </Para>
 
     <Para>
-    <VariableList>
+      <VariableList>
         <VarListEntry>
-            <Term>Low-Bandwidth X (LBX)</Term>
-            <ListItem>
+	  <Term>Xprint</Term>
+	  <ListItem>
             <Para>
-            The LBX extension is has been removed in this release.
+	      The Xprint server and extension have been removed in
+	      this release.   Xprint support in a number of client
+	      programs has also been removed.
             </Para>
-            </ListItem>
+	  </ListItem>
         </VarListEntry>
         <VarListEntry>
-            <Term>CID Fonts</Term>
-            <ListItem>
+	  <Term>Unmaintained extensions</Term>
+	  <ListItem>
             <Para>
-            Support for CID fonts has been removed as of this release.
-            mkcfm has also been deprecated as a result.
+	      Support has been removed from the X servers for the
+	      following extensions, which were obsolete, not widely
+	      used, or not working:
+	      <ItemizedList>
+		<ListItem><Para>AppGroup</Para></ListItem>
+		<ListItem><Para>EVI</Para></ListItem>
+		<ListItem><Para>MIT-SUNDRY-NONSTANDARD</Para></ListItem>
+		<ListItem><Para>TOG-CUP</Para></ListItem>
+		<ListItem><Para>XTrap</Para></ListItem>
+		<ListItem><Para>XFree86-Misc</Para></ListItem>
+		<ListItem><Para>XEvIE</Para></ListItem>
+	      </ItemizedList>
             </Para>
-            </ListItem>
+	  </ListItem>
         </VarListEntry>
         <VarListEntry>
-            <Term>xkbdata</Term>
-            <ListItem>
+	  <Term>Xorg configuration utilities</Term>
+	  <ListItem>
             <Para>
-            The old xkbdata module has been deprecated and is not
-            considered to be a part of this release. Please migrate to the
-            data provided by the xkeyboard-config project, which located in
-            the xkbdesc CVS module.
+	      The <command>xorgcfg</command> GUI and
+	      <command>xorgconfig</command> CLI utilities
+	      have been removed in this release.  See the
+	      <link linkend="config">Configuration File</link> section for
+	      alternative methods of Xorg configuration.
             </Para>
-            </ListItem>
+	  </ListItem>
         </VarListEntry>
+        <VarListEntry>
+	  <Term>ioport</Term>
+	  <ListItem>
+            <Para>
+	      The ioport utility and its aliases (inb, inw, inl, outb, outw,
+	      and outl) for manipulating I/O space addresses directly have
+	      been removed in this release.
+            </Para>
+	  </ListItem>
+        </VarListEntry>
+
       </VariableList>
     </Para>
 </Sect1>
@@ -1408,88 +1219,182 @@ The next section describes what is new in the latest version
     <Title>Attributions/Acknowledgements/Credits</Title>
 
     <![ %snapshot [
-    <emphasis remap="bf">THIS IS A DRAFT OF THE X11R&relvers; CREDITS
-    SECTION.</emphasis>
-    If you find missing credits, incorrect attributions, or other errors,
-    please
-    send details to <email>xorg@lists.freedesktop.org</email>.
+    <note>
+      <title>THIS IS A DRAFT OF THE X11R&relvers; CREDITS SECTION.</title>
+      <para>
+	If you find missing credits, incorrect attributions, or other errors,
+	please send details to <email>xorg@lists.freedesktop.org</email>.
+      </para>
+    </note>
     ]]>
 
 
     <Para>
     This section lists the credits for the X11R&relvers;
     release.  For a more detailed breakdown, refer to the ChangeLog file in
-    the X.Org source tree, the ChangeLog's in <ulink
-    URL="http://cvs.freedesktop.org/xorg/"
-    >the xorg product in freedesktop.org's CVS</ulink
-    > or the
-    'cvs log' information for individual source files.
+    the source tree for each module, the history in <ulink
+    URL="http://cgit.freedesktop.org/xorg/">the xorg product in 
+    freedesktop.org's git repositories</ulink> or the 
+    '<userinput>git log</userinput>' information for individual source files.
     </Para>
 
     <Para>
-    <VariableList>
+      <VariableList>
 
-    <VarListEntry>
-    <Term>These people contributed in some way to X11R7.1</Term>
-    <ListItem>
-    <Para>
-    Jonathan Adamczewski,
-    Dave Airlie,
-    Paul Anderson,
-    Eric Anholt,
-    Andrei Barbu,
-    Jesse Barnes,
-    Donnie Berkholz,
-    Alan Coopersmith,
-    Michel D&auml;nzer,
-    Alex Deucher,
-    Radek Doulik,
-    Egbert Eich,
-    Eduard Fuchs,
-    George Fufutos,
-    Alexander Gottwald,
-    Matthieu Herrb,
-    Ben Herrenschmidt,
-    Thomas Hellstr&ouml;m,
-    Fredrik H&ouml;glund,
-    Kristian H&oslash;gsberg,
-    Matthias Hopf,
-    Zephaniah E. Hull,
-    Alan Hourihane,
-    Valery Inozemtsev,
-    Adam Jackson,
-    Deron Johnson,
-    Nicholas Joly,
-    Jaymz Julian,
-    Lars Knoll,
-    Egmont Koblinger,
-    Felix K&uuml;hling,
-    Philip Langdale,
-    Kevin E. Martin,
-    Keith Packard,
-    Drew Parsons,
-    Hong Bo Peng,
+	<VarListEntry>
+	  <Term>These people contributed in some way to X11R&relvers;:</Term>
+	  <ListItem>
+	    <Para>
     Aaron Plattner,
-    Jeremy C. Reed,
-    David Reveman,
-    Ian Romanick,
-    Zack Rusin,
-    S&oslash;ren Sandmann,
-    Tilman Sauerbeck,
-    Roland Scheidegger,
-    Dag-Erling Sm&oslash;rgrav,
+    Aaron Zang,
+    Adam Jackson,
+    Adam Tkac,
+    Alan Coopersmith,
+    Alan Hourihane,
+    Alex Deucher,
+    Ander Conselvan de Oliveira,
+    Bart Trojanowski,
+    Ben Byer,
+    Ben Gamari,
+    Ben Skeggs,
+    Benjamin Close,
+    Benjamin Defnet,
+    Benjamin Tissoires,
+    Bernhard R. Link,
+    Bernhard Rosenkraenzer,
+    Brad Smith,
+    Brian Rogers,
+    Carl Worth,
+    Chris Ball,
+    Christian Beier,
+    Colin Guthrie,
+    Colin Harrison,
+    Cooper Yuan,
+    Dan Nicholson,
+    Daniel Drake,
     Daniel Stone,
-    Carl Switzky,
+    Dave Airlie,
+    Dave Miller,
+    David Jander,
+    David Marx,
+    David Miller,
+    David Nolden,
+    David Nusinow,
+    Dodji Seketeli,
+    Donnie Berkholz,
+    Doug Chapman,
+    Drew Parsons,
+    Eamon Walsh,
+    Egbert Eich,
+    Eric Anholt,
+    Eric Paris,
+    &Eacute;ric Piel,
+    Federico Mena Quintero,
+    Felix Kuehling,
+    Fernando Carrijo,
+    Francis Giraldeau,
+    Fredrik H&ouml;glund,
+    Gaetan Nadon,
+    George Peter Staplin,
+    George Sapountzis,
+    George Staplin,
+    Goneri Le Bouder,
+    Hans de Goede,
+    Hasso Tepper,
+    Havoc Pennington,
+    Hong Liu,
+    Ian Romanick,
+    Ivaylo Boyadzhiev,
+    James Cloos,
+    Jason Vas Dias,
+    Jay Cotton,
+    Jeremy Huddleston,
+    Jeremy Uejio,
+    Jerome Glisse,
+    Jesse Adkins,
+    Jesse Barnes,
+    Jesse Ruffin,
+    Jie Luo,
+    Jim Huang,
+    Joe Krahn,
+    Joel Bosveld,
+    John Hein,
+    John Tapsell,
+    Jon TURNEY,
+    Jordan Crouse,
+    Julien Cristau,
+    Kazuhiro Inaoka,
+    Keith Packard,
+    Kevin E Martin,
+    Kim Woelders,
+    Kristian H&oslash;gsberg,
+    Lee Leahu,
     Luc Verhaegen,
-    Julio M. Merino Vidal,
-    Zhenyu Wang,
-    Alex Williamson,
-    Thomas Winischhofer,
-    David Woodhouse,
-    </Para>
-    </ListItem>
-    </VarListEntry>
-    </VariableList>
+    Maarten Maathuis,
+    Magnus Kessler,
+    Magnus Vigerl&ouml;f,
+    Manuel Bouyer,
+    Mark Kettenis,
+    Martin-&Eacute;ric Racine,
+    Mathieu B&eacute;rard,
+    Matt Turner,
+    Matthias Hopf,
+    Matthieu Herrb,
+    Michael Lorenz,
+    Michael Vogt,
+    Michael Witrant,
+    Michel D&auml;nzer,
+    Mikhail Gusarov,
+    Nathaniel McCallum,
+    Nicolai H&auml;hnle,
+    Oliver McFadden,
+    Olivier Blin,
+    Owen Taylor,
+    Owen W. Taylor,
+    Paul Bender,
+    Paulo Cesar Pereira de Andrade,
+    Paulo Ricardo Zanoni,
+    Peter &Aring;strand,
+    Peter Harris,
+    Peter Hutterer,
+    Pierre Willenbrock,
+    Pierre-Loup A. Griffais,
+    RALOVICH, Krist&oacute;f,
+    R&eacute;mi Cardona,
+    Richard Hughes,
+    Robert Noland,
+    Roland B&auml;r,
+    Roland Scheidegger,
+    Ross Burton,
+    Samuel Thibault,
+    Sascha Hlusiak,
+    Shunichi Fuji,
+    Simon Farnsworth,
+    Simon Thum,
+    S&oslash;ren Sandmann Pedersen,
+    Stefan Dirsch,
+    Stuart Bennett,
+    Thomas Bodzar,
+    Thomas Jaeger,
+    Thorvald Natvig,
+    Tiago Vignatti,
+    Tilman Sauerbeck,
+    Timo Aaltonen,
+    Tom Jaeger,
+    Tomas Carnecky,
+    Tomas Janousek,
+    Topi Kanerva,
+    Tormod Volden,
+    Werner LEMBERG,
+    Winfried Gr&uuml;newald,
+    Xavier Bestel,
+    Xiang, Haihao,
+    Yaakov Selkowitz,
+    Zhenyu Wang.
+	    </Para>
+	  </ListItem>
+	</VarListEntry>
+      </VariableList>
     </Para>
 
     <Para>
@@ -1507,41 +1412,6 @@ The next section describes what is new in the latest version
     <Term>This product includes software developed by: </Term>
     <ListItem>
     <Para>
-    Paul Anderson,
-    Michael Bax,
-    Jehan Bing,
-    Peter Breitenlohner,
-    Alan Coopersmith,
-    Egbert Eich,
-    John Dennis,
-    Fabrizio Gennari,
-    Jim Gettys,
-    Alexander Gottwald,
-    Ralf Habacker
-    Mike Harris,
-    Matthieu Herrb,
-    Alan Hourihane,
-    Harold L Hunt II,
-    Elliot Lee,
-    Jeremy Katz,
-    Kaleb Keithley,
-    Stuart Kreitman,
-    Andreas Luik,
-    Torrey Lyons,
-    Roland Mainz,
-    Kevin E. Martin,
-    Takuma Murakami,
-    Kensuke Matsuzaki,
-    Keith Packard,
-    Ivan Pascal,
-    Earle F. Philhower III,
-    Benjamin Rienfenstahl,
-    Leon Shiman,
-    Toshimitsu Tanaka,
-    Nicholas Wourms.
-    </Para>
-
-    <Para>
     2d3d Inc.,
     3Dlabs Inc. Ltd.,
     Aaron Plattner,
@@ -1555,10 +1425,12 @@ The next section describes what is new in the latest version
     Alan Hourihane,
     Alexander Gottwald,
     Alex Deucher,
+    Alex Williamson,
     Anders Carlsson,
     Andreas Luik,
     Andreas Monitzer,
     Andreas Robinson,
+    Andrei Barbu,
     Andrew C Aitchison,
     Andy Ritger,
     Angus Lees,
@@ -1570,9 +1442,9 @@ The next section describes what is new in the latest version
     AT&amp;T Inc.,
     ATI Technologies Inc.,
     BEAM Ltd.,
-    Ben Skeggs,
     Benjamin Herrenschmidt,
     Benjamin Rienfenstahl,
+    Ben Skeggs,
     Bigelow and Holmes,
     Bill Reynolds,
     Bitstream Inc.,
@@ -1583,6 +1455,7 @@ The next section describes what is new in the latest version
     Brian Paul,
     Bruno Haible,
     Bryan Stine,
+    Carl Switzky,
     Catharon Productions Inc.,
     Charles Murcko,
     Chen Xiangyang,
@@ -1596,6 +1469,7 @@ The next section describes what is new in the latest version
     Corin Anderson,
     Craig Struble,
     Daewoo Electronics Co. Ltd.,
+    Dag-Erling Sm&oslash;rgrav,
     Dale Schumacher,
     Damien Miller,
     Daniel Berrange,
@@ -1612,18 +1486,24 @@ The next section describes what is new in the latest version
     David J. McKay,
     David McCullough,
     David Mosberger-Tang,
+    David Reveman,
     David S. Miller,
+    David Woodhouse,
     Davor Matic,
     Deron Johnson,
     Digeo Inc.,
     Digital Equipment Corporation,
     Dirk Hohndel,
-    Doug Anson,
     Dmitry Golubev,
+    Donnie Berkholz,
+    Doug Anson,
+    Drew Parsons,
     Earle F. Philhower III,
     Edouard TISSERANT,
+    Eduard Fuchs,
     Eduardo Horvath,
     Egbert Eich,
+    Egmont Koblinger,
     Elliot Lee,
     Eric Anholt,
     Eric Fortune,
@@ -1634,23 +1514,26 @@ The next section describes what is new in the latest version
     Fabio Massimo Di Nitto,
     Fabrizio Gennari,
     Felix Kuehling,
+    Felix K&uuml;hling,
     Finn Thoegersen,
     Francesco Zappa Nardelli,
     Frank C. Earl,
     Frederic Lepied,
+    Fredrik H&ouml;glund,
     Free Software Foundation Inc.,
     Fujitsu Limited,
     Fujitsu Open Systems Solutions Inc.,
     Fuji Xerox Co. Ltd.,
     Geert Uytterhoeven,
+    George Fufutos,
     Gerrit Jan Akkerman,
     Gerry Toll,
     Glenn G. Lai,
     GNOME Foundation,
     Go Watanabe,
     Greg Kroah-Hartman,
-    Greg Parker,
     Gregory Mokhin,
+    Greg Parker,
     GROUPE BULL,
     Guy Martin,
     Hans Oey,
@@ -1662,8 +1545,10 @@ The next section describes what is new in the latest version
     Hewlett-Packard Company,
     Hitachi Ltd,
     Holger Veit,
+    Hong Bo Peng,
     Howard Greenwell,
     Hummingbird Communications Ltd.,
+    Ian Romanick,
     IBM Corporation,
     Intel Corporation,
     INTERACTIVE Systems Corporation,
@@ -1674,25 +1559,30 @@ The next section describes what is new in the latest version
     Jakub Jelinek,
     James Tsillas,
     Jason Bacon,
+    Jaymz Julian,
     Jean-loup Gailly,
     Jeff Hartmann,
     Jeff Kirk,
     Jeffrey Hsu,
     Jehan Bing,
+    Jeremy C. Reed,
     Jeremy Katz,
     Jerome Glisse,
+    Jesse Barnes,
     Jim Gettys,
     Jim Tsillas,
     John Dennis,
     John Harper,
     John Heasley,
+    Jonathan Adamczewski,
     Jon Block,
     Jon Smirl,
     Jon Tombs,
     Jorge Delgado,
-    José Fonseca,
+    Jos&eacute; Fonseca,
     Joseph Friedman,
     Joseph V. Moss,
+    Julio M. Merino Vidal,
     Juliusz Chroboczek,
     Jyunji Takagi,
     Kaleb Keithley,
@@ -1702,8 +1592,10 @@ The next section describes what is new in the latest version
     Keith Packard,
     Keith Whitwell,
     Kensuke Matsuzaki,
+    Kevin E. Martin,
     Kristian H&oslash;gsberg,
     Larry Wall,
+    Lars Knoll,
     Lawrence Berkeley Laboratory,
     Leif Delgass,
     Lennart Augustsson,
@@ -1713,7 +1605,8 @@ The next section describes what is new in the latest version
     Luc Verhaegen,
     Machine Vision Holdings Inc.,
     Manfred Brands,
-    Marc Aurele La France Mark Adler,
+    Marc Aurele La France,
+    Mark Adler,
     Mark J. Kilgard,
     Mark Leisher,
     Mark Smulders,
@@ -1722,6 +1615,7 @@ The next section describes what is new in the latest version
     Massachusetts Institute Of Technology,
     Matrox Graphics,
     Matthew Grossman,
+    Matthias Hopf,
     Matthieu Herrb,
     Metro Link Inc.,
     Michael Bax,
@@ -1730,13 +1624,16 @@ The next section describes what is new in the latest version
     Michael Schimek,
     Michael Smith,
     Michel Daenzer,
+    Michel D&auml;nzer,
     Mike A. Harris,
+    Mike Harris,
     Ming Yu,
     MIPS Computer Systems Inc.,
     National Semiconductor,
     NCR Corporation Inc.,
     Netscape Communications Corporation,
     Network Computing Devices Inc.,
+    Nicholas Joly,
     Nicholas Miell,
     Nicholas Wourms,
     Nicolai Haehnle,
@@ -1768,10 +1665,13 @@ The next section describes what is new in the latest version
     Peter Kunzmann,
     Peter Trattler,
     Philip Homburg,
+    Philip Langdale,
     Precision Insight Inc.,
     Prentice Hall,
     Quarterdeck Office Systems,
-    Ralf Habacker Randy Hendry,
+    Radek Doulik,
+    Ralf Habacker,
+    Randy Hendry,
     Ranier Keller,
     Red Hat Inc.,
     Regents of the University of California,
@@ -1787,6 +1687,7 @@ The next section describes what is new in the latest version
     Robert V. Baron,
     Robin Cutshaw,
     Roland Mainz,
+    Roland Scheidegger,
     Ronny Vindenes,
     Russ Blaine,
     Ryan Breen,
@@ -1810,18 +1711,18 @@ The next section describes what is new in the latest version
     SRI,
     Stanislav Brabec,
     Stefan Dirsch,
-    Stephan Lang,
     Stephane Marchesin,
+    Stephan Lang,
     Steven Lang,
     Stuart Kreitman,
     Sun Microsystems Inc.,
     SunSoft Inc.,
     SuSE Inc,
     Sven Luther,
-    T. A. Phelps,
     Takis Psarogiannakopoulos,
     Takuma Murakami,
     Takuya SHIOZAKI,
+    T. A. Phelps,
     Tektronix Inc.,
     The DOS-EMU-Development-Team,
     The Institute of Software Academia Sinica,
@@ -1845,6 +1746,7 @@ The next section describes what is new in the latest version
     Thomas Wolfram,
     Thorsten.Ohl,
     Tiago Gons,
+    Tilman Sauerbeck,
     Todd C. Miller,
     Tomohiro KUBOTA,
     Torrey Lyons,
@@ -1863,6 +1765,7 @@ The next section describes what is new in the latest version
     University of Wisconsin,
     UNIX System Laboratories Inc.,
     URW++ GmbH,
+    Valery Inozemtsev,
     VA Linux Systems,
     VIA Technologies Inc.,
     Video Electronics Standard,
@@ -1874,7 +1777,10 @@ The next section describes what is new in the latest version
     Xi Graphics Inc.,
     X-Oz Technologies,
     X-TrueType Server Project and their contributors,
-    Yu Shao.
+    Yu Shao,
+    Zack Rusin,
+    Zephaniah E. Hull,
+    Zhenyu Wang.
     </Para>
     </ListItem>
     </VarListEntry>
@@ -1883,12 +1789,12 @@ The next section describes what is new in the latest version
 
     <Para>
     This product includes software developed by The XFree86 Project, Inc
-    (http://www.xfree86.org/) and its contributors.
+    (<ulink URL="http://www.xfree86.org/"></ulink>) and its contributors.
     </Para>
 
     <Para>
-    This produce includes software that is based in part of the work of the
-    FreeType Team (http://www.freetype.org).
+    This product includes software that is based in part of the work of the
+    FreeType Team (<ulink URL="http://www.freetype.org/"></ulink>).
     </Para>
 
     <Para>
@@ -1901,13 +1807,13 @@ The next section describes what is new in the latest version
     </Para>
 
     <Para>
-    This product includes software developed by the NetBSD Foundation, Inc. and its
-    contributors.
+    This product includes software developed by the NetBSD Foundation, Inc.
+      (<ulink URL="http://www.netbsd.org/"></ulink>) and its contributors.
     </Para>
 
     <Para>
-    This product includes software developed by the X-Oz Technologies and its
-    contributors.
+    This product includes software developed by X-Oz Technologies
+      (<ulink URL="http://www.x-oz.com/"></ulink>).
     </Para>
 
 </Sect1>
