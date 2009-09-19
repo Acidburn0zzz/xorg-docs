@@ -10,7 +10,7 @@
 .\" copyright notice(s) and this permission notice appear in all copies of
 .\" the Software and that both the above copyright notice(s) and this
 .\" permission notice appear in supporting documentation.
-.\" 
+.\"
 .\" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 .\" OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 .\" MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
@@ -20,12 +20,12 @@
 .\" FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
 .\" NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
 .\" WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-.\" 
+.\"
 .\" Except as contained in this notice, the name of a copyright holder
 .\" shall not be used in advertising or otherwise to promote the sale, use
 .\" or other dealings in this Software without prior written authorization
 .\" of the copyright holder.
-.\" 
+.\"
 .\" X Window System is a trademark of The Open Group.
 .\"
 .nr )S 12
@@ -43,7 +43,6 @@ The sample implementation includes six mechanisms:
     MIT-MAGIC-COOKIE-1	Shared plain-text "cookies".
     XDM-AUTHORIZATION-1	Secure DES based private-keys.
     SUN-DES-1	Based on Sun's secure rpc system.
-    MIT-KERBEROS-5	Kerberos Version 5 user-to-user.
     Server Interpreted	Server-dependent methods of access control
 .fi
 Not all of these are available in all builds or implementations.
@@ -56,7 +55,7 @@ to a given machine, and is easy to use when the list of hosts used is small.
 This system does not work well when multiple people can log in to a single
 machine and mutual trust does not exist.
 The list of allowed hosts is stored in the X server and can be changed with
-the \fIxhost\fP command.   The list is stored in the server by network 
+the \fIxhost\fP command.   The list is stored in the server by network
 address, not host names, so is not automatically updated if a host changes
 address while the server is running.
 When using the more secure mechanisms listed below, the host list is
@@ -135,38 +134,9 @@ users which have set up the appropriate public/private key pairs on their
 system.  See the Secure RPC documentation for details.
 To access the display from a remote host, you may have to do a
 \fIkeylogin\fP on the remote host first.
-.IP MIT-KERBEROS-5
-Kerberos is a network-based authentication scheme developed by MIT for
-Project Athena.  It allows mutually suspicious principals to
-authenticate each other as long as each trusts a third party,
-Kerberos.  Each principal has a secret key known only to it and
-Kerberos.  Principals includes servers, such as an FTP server or X
-server, and human users, whose key is their password.  Users gain
-access to services by getting Kerberos tickets for those services from
-a Kerberos server.  Since the X server has no place to store a secret
-key, it shares keys with the user who logs in.  X authentication thus
-uses the user-to-user scheme of Kerberos version 5.
-.IP
-When you log in via \fIxdm\fP, \fIxdm\fP will use your password to
-obtain the initial Kerberos tickets.  \fIxdm\fP stores the tickets in
-a credentials cache file and sets the environment variable
-\fIKRB5CCNAME\fP to point to the file.  The credentials cache is
-destroyed when the session ends to reduce the chance of the tickets
-being stolen before they expire.
-.IP
-Since Kerberos is a user-based authorization protocol, like the
-SUN-DES-1 protocol, the owner of a display can enable
-and disable specific users, or Kerberos principals.
-The \fIxhost\fP client is used to enable or disable authorization.
-For example,
-.nf
-    xhost krb5:judy krb5:gildea@x.org
-.fi
-adds "judy" from the Kerberos realm of the local machine, and "gildea"
-from the "x.org" realm.
 .IP "Server Interpreted"
 The Server Interpreted method provides two strings to the X server for
-entry in the access control list.  The first string represents the type 
+entry in the access control list.  The first string represents the type
 of entry, and the second string contains the value of the entry.  These
 strings are interpreted by the server and different implementations and
 builds may support different types of entries.  The types supported in
@@ -176,7 +146,7 @@ TYPES section below.   Entries of this type can be manipulated via
 localuser with a value of root, the command is \fBxhost +si:localuser:root\fP.
 .SH "THE AUTHORIZATION FILE"
 .PP
-Except for Host Access control and Server Interpreted Access Control, each of 
+Except for Host Access control and Server Interpreted Access Control, each of
 these systems uses data stored in
 the \fI.Xauthority\fP file to generate the correct authorization information
 to pass along to the X server at connection setup.  MIT-MAGIC-COOKIE-1 and
@@ -198,7 +168,7 @@ type to generate the correct information at connection setup time.
 The \fIxauth\fP program manipulates the \fI.Xauthority\fP file format.
 It understands the semantics of the connection families and address formats,
 displaying them in an easy to understand format.  It also understands that
-SUN-DES-1 and MIT-KERBEROS-5 use
+SUN-DES-1 uses
 string values for the authorization data, and displays
 them appropriately.
 .PP
@@ -231,22 +201,6 @@ principal for the machine on which it is running
 "unix.expire.lcs.mit.edu@our.domain.edu").  Putting the correct principal
 name in the \fI.Xauthority\fP file causes Xlib to generate the appropriate
 authorization information using the secure RPC library.
-.IP "MIT-KERBEROS-5"
-Kerberos reads tickets from the cache pointed to by the
-\fIKRB5CCNAME\fP environment variable, so does not use any data from
-the \fI.Xauthority\fP file.  An entry with no data must still exist to tell
-clients that MIT-KERBEROS-5 is available.
-.IP
-Unlike the \fI.Xauthority\fP file for clients, the authority file
-passed by xdm to 
-a local X server (with ``\fB\-auth\fP \fIfilename\fP'', see xdm(1))
-does contain the name of the credentials cache, since 
-the X server will not have the 
-\fIKRB5CCNAME\fP environment variable set.
-The data of the MIT-KERBEROS-5 entry is the credentials cache name and
-has the form ``UU:FILE:\fIfilename\fP'', where \fIfilename\fP is the
-name of the credentials cache file created by xdm.  Note again that
-this form is \fInot\fP used by clients.
 .SH "SERVER INTERPRETED ACCESS TYPES"
 The sample implementation includes several Server Interpreted mechanisms:
 .nf
@@ -258,7 +212,9 @@ The sample implementation includes several Server Interpreted mechanisms:
     localgroup	Local connection group id
 .fi
 .IP "IPv6"
-A literal IPv6 address as defined in IETF RFC 3513.
+A literal IPv6 address as defined in IETF RFC 3513.   This allows adding
+IPv6 addresses when the X server supports IPv6, but the xhost client was
+compiled without IPv6 support.
 .IP "hostname"
 The value must be a hostname as defined in IETF RFC 2396. Due to Mobile IP
 and dynamic DNS, the name service is consulted at connection
@@ -270,12 +226,12 @@ not allow use of literal IP addresses.
 On systems which can determine in a secure fashion the credentials of a client
 process, the "localuser" and "localgroup" authentication methods provide access
 based on those credentials.  The format of the values provided is platform
-specific.  For POSIX & UNIX platforms, if the value starts with the 
-character '#', the rest of the string is treated as a decimal uid or gid, 
+specific.  For POSIX & UNIX platforms, if the value starts with the
+character '#', the rest of the string is treated as a decimal uid or gid,
 otherwise the string is defined as a user name or group name.
 .IP
 If your system supports this method and you use it, be warned that some
-programs that proxy connections and are setuid or setgid may get authenticated 
+programs that proxy connections and are setuid or setgid may get authenticated
 as the uid or gid of the proxy process.  For instance, some versions of ssh
 will be authenticated as the user root, no matter what user is running the
 ssh client, so on systems with such software, adding access for localuser:root

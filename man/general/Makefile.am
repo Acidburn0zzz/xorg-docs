@@ -44,7 +44,9 @@ XORGRELSTRING = @PACKAGE_STRING@
 MAN_SUBSTS = \
 	-e 's|__vendorversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
 	-e 's|__xorgversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
-	-e 's|__projectroot__|$(prefix)|g' \
+	-e 's|__datadir__|$(datadir)|g' \
+	-e 's|__libdir__|$(libdir)|g' \
+	-e 's|__sysconfdir__|$(sysconfdir)|g' \
 	-e 's|__appmansuffix__|$(APP_MAN_SUFFIX)|g' \
 	-e 's|__libmansuffix__|$(LIB_MAN_SUFFIX)|g' \
 	-e 's|__miscmansuffix__|$(MISC_MAN_SUFFIX)|g'
