@@ -711,20 +711,11 @@ L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Maintained
 
-xf86-video-ati/atimisc
+xf86-video-ati
 P:      Luc Verhaegen
 M:      libv@skynet.be
 L:      xorg@lists.freedesktop.org
 W:      http://wiki.x.org
-S:      Maintained, being overhauled
-
-xf86-video-ati/r128, radeon
-P:	Alex Deucher
-P:      Ben Herrenschmidt
-P:      et al
-M:	?
-L:	xorg@lists.freedesktop.org
-W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-chips
@@ -846,6 +837,24 @@ M:	ajax@nwnk.net
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
 S:	Odd fixes.
+
+xf86-video-r128
+P:	Alex Deucher
+P:      Ben Herrenschmidt
+P:      et al
+M:	?
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
+
+xf86-video-radeon
+P:	Alex Deucher
+P:      Ben Herrenschmidt
+P:      et al
+M:	?
+L:	xorg@lists.freedesktop.org
+W:	http://wiki.x.org
+S:	Maintained
 
 xf86-video-s3
 P:	?
@@ -985,7 +994,7 @@ P:	?
 M:	?
 L:	xorg@lists.freedesktop.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Obsolete - use xf86-video-vesa instead
 
 xf86-video-via
 P:	Luc Verhaegen
