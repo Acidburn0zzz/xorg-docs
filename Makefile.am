@@ -161,7 +161,7 @@ EXTRA_DIST = \
 	specs/Xi/library.ms \
 	specs/XIM/xim.ms \
 	specs/Xi/porting.ms \
-	specs/Xi/protocol.ms \
+	specs/Xi/protocol.txt \
 	specs/XKB/Proto/dflttrns.fm5 \
 	specs/XKB/Proto/encoding.fm5 \
 	specs/XKB/Proto/keysyms.fm5 \
