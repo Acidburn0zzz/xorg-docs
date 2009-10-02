@@ -34,9 +34,7 @@ AC_ARG_WITH(x11docdir,
                        [Where to install X11 docs (default: ${datadir}/X11/doc)]),
         [X11DOCDIR="$withval"],
         [X11DOCDIR="$DEFAULT_X11DOCDIR"])
-HARDCOPYDIR=$X11DOCDIR/hardcopy
 AC_SUBST([X11DOCDIR])
-AC_SUBST([HARDCOPYDIR])
 
 AC_ARG_ENABLE(txt, AS_HELP_STRING([--enable-txt],
                 [Build TXT versions of documents (default: enabled)]),
@@ -62,33 +60,6 @@ XORG_CHECK_DOCBOOK
 XORG_CHANGELOG
 
 AC_OUTPUT([Makefile
-           hardcopy/Makefile
-           hardcopy/BDF/Makefile
-           hardcopy/CTEXT/Makefile
-           hardcopy/FSProtocol/Makefile
-           hardcopy/i18n/Makefile
-           hardcopy/ICCCM/Makefile
-           hardcopy/ICE/Makefile
-           hardcopy/man/Makefile
-           hardcopy/rstart/Makefile
-           hardcopy/RX/Makefile
-           hardcopy/saver/Makefile
-           hardcopy/SM/Makefile
-           hardcopy/X11/Makefile
-           hardcopy/Xaw/Makefile
-           hardcopy/XDMCP/Makefile
-           hardcopy/Xext/Makefile
-           hardcopy/Xi/Makefile
-           hardcopy/XIM/Makefile
-           hardcopy/XKB/Makefile
-           hardcopy/XLFD/Makefile
-           hardcopy/Xmu/Makefile
-           hardcopy/XPRINT/Makefile
-           hardcopy/XProtocol/Makefile
-           hardcopy/Xserver/Makefile
-           hardcopy/Xt/Makefile
-           hardcopy/xtrans/Makefile
-           hardcopy/Xv/Makefile
            man/Makefile
            man/general/Makefile
            sgml/Makefile

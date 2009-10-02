@@ -20,7 +20,7 @@
 #
 #  Process this file with autoconf to create configure.
 
-SUBDIRS = hardcopy man sgml
+SUBDIRS = man sgml
 x11docdir = @X11DOCDIR@
 
 dist_x11doc_DATA = MAINTAINERS
@@ -231,6 +231,7 @@ EXTRA_DIST = \
 	specs/Xt/strings.mit \
 	specs/Xt/Xtk.intr.front \
 	specs/XvMC/XvMC_API.txt \
+	specs/Xv/xv-library-v2.2.txt \
 	specs/Xv/xv-protocol-v2.txt \
 	util/block.awk \
 	util/fixindex.awk \
