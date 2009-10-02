@@ -230,7 +230,6 @@ EXTRA_DIST = \
 	specs/Xt/strings.mit \
 	specs/Xt/Xtk.intr.front \
 	specs/XvMC/XvMC_API.txt \
-	specs/Xv/xv-library-v2.2.txt \
 	specs/Xv/xv-protocol-v2.txt \
 	util/block.awk \
 	util/fixindex.awk \
