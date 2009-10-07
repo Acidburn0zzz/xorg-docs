@@ -198,7 +198,6 @@ EXTRA_DIST = \
 	specs/XProtocol/X11.protocol \
 	specs/Xserver/analysis.tex \
 	specs/Xserver/appgroup.ms \
-	specs/Xserver/fontlib.ms \
 	specs/Xserver/secint.tex \
 	specs/Xserver/Xprt.book \
 	specs/Xserver/Xprt_cov.mif \
