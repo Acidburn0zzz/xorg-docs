@@ -183,7 +183,6 @@ SM
 WindowsWM
 XRes
 XScrnSaver
-XTrap
 Xau
 Xaw
 
@@ -234,7 +233,10 @@ lbxutil
 S:	Obsolete
 
 oldX
-S:	Obsolete
+S:	Obsolete - use libX11 instead
+
+XTrap
+S:	Obsolete - use libXtst instead
 
 xtrans
 P:      Bill Crawford
