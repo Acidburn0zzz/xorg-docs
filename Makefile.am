@@ -83,53 +83,6 @@ EXTRA_DIST = \
 	specs/X11/glossary \
 	specs/X11/indexmacros.t \
 	specs/X11/postproc \
-	specs/Xaw/AsciiSink \
-	specs/Xaw/AsciiSource \
-	specs/Xaw/AsciiText \
-	specs/Xaw/block.awk \
-	specs/Xaw/Box \
-	specs/Xaw/CH1 \
-	specs/Xaw/CH2 \
-	specs/Xaw/CH3.intro \
-	specs/Xaw/CH4.intro \
-	specs/Xaw/CH5.intro \
-	specs/Xaw/CH6.intro \
-	specs/Xaw/CH7.intro \
-	specs/Xaw/Command \
-	specs/Xaw/Dialog \
-	specs/Xaw/fixindex.awk \
-	specs/Xaw/Form \
-	specs/Xaw/Grip \
-	specs/Xaw/Label \
-	specs/Xaw/List \
-	specs/Xaw/MenuButton \
-	specs/Xaw/Paned \
-	specs/Xaw/Panner \
-	specs/Xaw/Porthole \
-	specs/Xaw/Repeater \
-	specs/Xaw/Scrollbar \
-	specs/Xaw/Simple \
-	specs/Xaw/SimpleMenu \
-	specs/Xaw/Sme \
-	specs/Xaw/SmeBSB \
-	specs/Xaw/SmeLine \
-	specs/Xaw/strings.mit \
-	specs/Xaw/strings.xaw \
-	specs/Xaw/StripChart \
-	specs/Xaw/Template \
-	specs/Xaw/Text \
-	specs/Xaw/TextActions \
-	specs/Xaw/TextCustom \
-	specs/Xaw/TextFuncs \
-	specs/Xaw/TextSink \
-	specs/Xaw/TextSource \
-	specs/Xaw/Toggle \
-	specs/Xaw/TPage_Credits \
-	specs/Xaw/Tree \
-	specs/Xaw/Viewport \
-	specs/Xaw/widg.idxmac.t \
-	specs/Xaw/Xtk.widgets \
-	specs/Xaw/Xtk.widg.front \
 	specs/XDMCP/xdmcp.ms \
 	specs/Xext/AppGroup.mif \
 	specs/Xext/bigreq.ms \
