@@ -55,8 +55,6 @@ EXTRA_DIST = \
 	specs/SIAddresses/IPv6.txt \
 	specs/SIAddresses/localuser.txt \
 	specs/SIAddresses/README \
-	specs/SM/SMlib.ms \
-	specs/SM/xsmp.ms \
 	specs/specindex.html \
 	specs/X11/abstract.t \
 	specs/X11/AppA \
