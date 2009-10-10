@@ -1060,6 +1060,7 @@ will search for resource files. The default value consists of
 A path template is transformed to a pathname by substituting:
 .sp
 .nf
+    %D => the implementation-specific default path
     %N => name (basename) being searched for
     %T => type (dirname) being searched for
     %S => suffix being searched for
@@ -1093,6 +1094,7 @@ $XAPPLRESDIR defaults to \fI$HOME\fP, see below.
 A path template is transformed to a pathname by substituting:
 .sp
 .nf
+    %D => the implementation-specific default path
     %N => name (basename) being searched for
     %T => type (dirname) being searched for
     %S => suffix being searched for
