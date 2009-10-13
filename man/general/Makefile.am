@@ -28,7 +28,6 @@ miscman_PRE = \
 	Standards.man \
 	X.man \
 	XOrgFoundation.man \
-	Xprint.man \
 	XProjectTeam.man
 
 miscman_DATA = $(miscman_PRE:man=@MISC_MAN_SUFFIX@)
@@ -56,4 +55,4 @@ SUFFIXES = .$(MISC_MAN_SUFFIX) .man
 .man.$(MISC_MAN_SUFFIX):
 	sed $(MAN_SUBSTS) < $< > $@
 
-EXTRA_DIST = $(miscman_PRE) Xprint.sgml
+EXTRA_DIST = $(miscman_PRE)

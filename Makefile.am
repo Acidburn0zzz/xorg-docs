@@ -124,16 +124,6 @@ EXTRA_DIST = \
 	specs/XKB/XKBlib/XKBlib.book \
 	specs/XLFD/xlfd.tbl.ms \
 	specs/Xmu/Xmu.ms \
-	specs/XPRINT/xp_library.book \
-	specs/XPRINT/xp_library_cov.mif \
-	specs/XPRINT/xp_libraryIX.doc \
-	specs/XPRINT/xp_library.mif \
-	specs/XPRINT/xp_libraryTOC.doc \
-	specs/XPRINT/xp_proto.book \
-	specs/XPRINT/xp_proto_cov.mif \
-	specs/XPRINT/xp_protoIX.doc \
-	specs/XPRINT/xp_proto.mif \
-	specs/XPRINT/xp_protoTOC.doc \
 	specs/XProtocol/glossary \
 	specs/XProtocol/indexmacros.t \
 	specs/XProtocol/postproc \
@@ -143,11 +133,6 @@ EXTRA_DIST = \
 	specs/Xserver/analysis.tex \
 	specs/Xserver/appgroup.ms \
 	specs/Xserver/secint.tex \
-	specs/Xserver/Xprt.book \
-	specs/Xserver/Xprt_cov.mif \
-	specs/Xserver/XprtIX.doc \
-	specs/Xserver/Xprt.mif \
-	specs/Xserver/XprtTOC.doc \
 	specs/Xt/appA \
 	specs/Xt/appB \
 	specs/Xt/appC \
