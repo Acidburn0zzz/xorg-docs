@@ -42,7 +42,6 @@ EXTRA_DIST = \
 	specs/ICCCM/indexmacros.t \
 	specs/ICE/ICElib.ms \
 	specs/ICE/ice.ms \
-	specs/PM/PM_spec \
 	specs/rstart/fix.awk \
 	specs/rstart/fix.nawk \
 	specs/rstart/fix.sed \
