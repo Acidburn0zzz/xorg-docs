@@ -42,12 +42,6 @@ EXTRA_DIST = \
 	specs/ICCCM/indexmacros.t \
 	specs/ICE/ICElib.ms \
 	specs/ICE/ice.ms \
-	specs/rstart/fix.awk \
-	specs/rstart/fix.nawk \
-	specs/rstart/fix.sed \
-	specs/rstart/rstartd.txt \
-	specs/rstart/rstart.ms \
-	specs/rstart/tmac.rfc \
 	specs/RX/RX.mif \
 	specs/saver/saver.ms \
 	specs/SIAddresses/hostname.txt \
