@@ -35,9 +35,6 @@ EXTRA_DIST = \
 	specs/CTEXT/ctext.tbl.ms \
 	specs/FSProtocol/protocol.ms \
 	specs/GL/libGL.txt \
-	specs/i18n/Framework.ms \
-	specs/i18n/LocaleDB.ms \
-	specs/i18n/Trans.ms \
 	specs/ICCCM/icccm.ms \
 	specs/ICCCM/indexmacros.t \
 	specs/ICE/ICElib.ms \
@@ -49,31 +46,6 @@ EXTRA_DIST = \
 	specs/SIAddresses/localuser.txt \
 	specs/SIAddresses/README \
 	specs/specindex.html \
-	specs/X11/abstract.t \
-	specs/X11/AppA \
-	specs/X11/AppB \
-	specs/X11/AppC \
-	specs/X11/AppD \
-	specs/X11/CH01 \
-	specs/X11/CH02 \
-	specs/X11/CH03 \
-	specs/X11/CH04 \
-	specs/X11/CH05 \
-	specs/X11/CH06 \
-	specs/X11/CH07 \
-	specs/X11/CH08 \
-	specs/X11/CH09 \
-	specs/X11/CH10 \
-	specs/X11/CH11 \
-	specs/X11/CH12 \
-	specs/X11/CH13 \
-	specs/X11/CH14 \
-	specs/X11/CH15 \
-	specs/X11/CH16 \
-	specs/X11/credits.t \
-	specs/X11/glossary \
-	specs/X11/indexmacros.t \
-	specs/X11/postproc \
 	specs/XDMCP/xdmcp.ms \
 	specs/Xext/AppGroup.mif \
 	specs/Xext/bigreq.ms \
@@ -102,7 +74,6 @@ EXTRA_DIST = \
 	specs/Xext/xtest.ms \
 	specs/Xi/encoding.ms \
 	specs/Xi/library.ms \
-	specs/XIM/xim.ms \
 	specs/Xi/porting.ms \
 	specs/Xi/protocol.txt \
 	specs/XKB/Proto/dflttrns.fm5 \
