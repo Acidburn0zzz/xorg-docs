@@ -125,7 +125,6 @@ EXTRA_DIST = \
 	specs/Xt/CH13 \
 	specs/Xt/intr.idxmac.t \
 	specs/Xt/postproc \
-	specs/xtrans/Xtrans.mm \
 	specs/Xt/strings.mit \
 	specs/Xt/Xtk.intr.front \
 	util/block.awk \
