@@ -1251,32 +1251,77 @@ The next section describes what is new in the latest version
       <simplelist type='vert' columns='2'>
 	<member>Aaron Plattner</member>
 	<member>Aaron Zang</member>
+	<member>Adam Hoka</member>
 	<member>Adam Jackson</member>
 	<member>Adam Tkac</member>
+	<member>Adel Gadllah</member>
+	<member>Adrian Friedli</member>
 	<member>Alan Coopersmith</member>
+	<member>Alan Cox</member>
+	<member>Alan Curry</member>
 	<member>Alan Hourihane</member>
+	<member>Albert Damen</member>
+	<member>Alberto Milone</member>
 	<member>Alex Deucher</member>
+	<member>Alex Villac&iacute;s Lasso</member>
+	<member>Alexey Ten</member>
 	<member>Ander Conselvan de Oliveira</member>
+	<member>Andre Herms</member>
+	<member>Andreas Luik</member>
+	<member>Andres Salomon</member>
+	<member>Andrew Randrianasulu</member>
+	<member>Arkadiusz Mi&sacute;kiewicz</member>
+	<member>Arnaud Patard</member>
+	<member>Arthur HUILLET</member>
+	<member>Asbj&oslash;annes</member>
+	<member>Barry Scott</member>
+	<member>Bart Massey</member>
 	<member>Bart Trojanowski</member>
+	<member>Bastien Nocera</member>
+	<member>Batchty</member>
 	<member>Ben Byer</member>
 	<member>Ben Gamari</member>
+	<member>Ben Hutchings</member>
+	<member>Ben North</member>
 	<member>Ben Skeggs</member>
 	<member>Benjamin Close</member>
 	<member>Benjamin Defnet</member>
+	<member>Benjamin Herrenschmidt</member>
 	<member>Benjamin Tissoires</member>
 	<member>Bernhard R. Link</member>
 	<member>Bernhard Rosenkraenzer</member>
+	<member>Bill Nottingham</member>
+	<member>Bob Ham</member>
+	<member>Bob Long</member>
 	<member>Brad Smith</member>
+	<member>Branden Robinson</member>
 	<member>Brian Rogers</member>
+	<member>Brice Goglin</member>
+	<member>Bryce Harrington</member>
+	<member>Calvin Fong</member>
+	<member>Caolan McNamara</member>
 	<member>Carl Worth</member>
+	<member>Charlie</member>
 	<member>Chris Ball</member>
+	<member>Chris Salch</member>
+	<member>Chris Wilson</member>
+	<member>Christiaan van Dijk</member>
+	<member>Christian Aistleitner</member>
 	<member>Christian Beier</member>
+	<member>Christian Koenig</member>
+	<member>Christian Schmitt</member>
+	<member>Christoph Brill</member>
+	<member>Coleman Kane</member>
 	<member>Colin Guthrie</member>
 	<member>Colin Harrison</member>
 	<member>Cooper Yuan</member>
+	<member>Corbin Simpson</member>
+	<member>Dan</member>
 	<member>Dan Nicholson</member>
 	<member>Daniel Drake</member>
 	<member>Daniel Stone</member>
+	<member>Daniel Vetter</member>
+	<member>Darren Smith</member>
 	<member>Dave Airlie</member>
 	<member>Dave Miller</member>
 	<member>David Jander</member>
@@ -1284,103 +1329,206 @@ The next section describes what is new in the latest version
 	<member>David Miller</member>
 	<member>David Nolden</member>
 	<member>David Nusinow</member>
+	<member>David Schleef</member>
+	<member>Dennis Kasprzyk</member>
+	<member>Derek Upham</member>
+	<member>Derek Wang</member>
+	<member>Diego Elio 'Flameeyes' Petten&ograve;</member>
+	<member>Dima Kogan</member>
+	<member>Dmitry Torokhov</member>
 	<member>Dodji Seketeli</member>
+	<member>Donald Kayser</member>
 	<member>Donnie Berkholz</member>
 	<member>Doug Chapman</member>
 	<member>Drew Parsons</member>
 	<member>Eamon Walsh</member>
+	<member>Ed Catmur</member>
+	<member>Eduard Bagrov</member>
+	<member>Eduard Fuchs</member>
+	<member>edward shu</member>
 	<member>Egbert Eich</member>
 	<member>Eric Anholt</member>
 	<member>Eric Paris</member>
 	<member>&Eacute;ric Piel</member>
+	<member>Erik Andren</member>
+	<member>Erkin Bahceci</member>
+	<member>Evgeny M. Zubok</member>
+	<member>Eygene Ryabinkin</member>
+	<member>Fabio</member>
 	<member>Federico Mena Quintero</member>
+	<member>Fedor P. Goncharov (Fredy)</member>
 	<member>Felix Kuehling</member>
 	<member>Fernando Carrijo</member>
 	<member>Francis Giraldeau</member>
+	<member>Francisco Jerez</member>
 	<member>Fredrik H&ouml;glund</member>
 	<member>Gaetan Nadon</member>
 	<member>George Peter Staplin</member>
 	<member>George Sapountzis</member>
 	<member>George Staplin</member>
+	<member>Giuseppe Bilotta</member>
 	<member>Goneri Le Bouder</member>
+	<member>Guillem Jover</member>
 	<member>Hans de Goede</member>
 	<member>Hasso Tepper</member>
 	<member>Havoc Pennington</member>
+	<member>Helge Bahmann</member>
+	<member>Henrik Rydberg</member>
+	<member>Henry unbongo</member>
 	<member>Hong Liu</member>
+	<member>Hugo Jacques</member>
 	<member>Ian Romanick</member>
+	<member>Imranullah Syed</member>
 	<member>Ivaylo Boyadzhiev</member>
+	<member>Jakob Bornecrantz</member>
+	<member>Jakub Bogusz</member>
 	<member>James Cloos</member>
+	<member>Jamie Lentin</member>
 	<member>Jason Vas Dias</member>
+	<member>Jasper Lievisse Adriaanse</member>
 	<member>Jay Cotton</member>
+	<member>Jeff Smith</member>
+	<member>Jens Granseuer</member>
+	<member>Jeremy C. Reed</member>
 	<member>Jeremy Huddleston</member>
+	<member>Jeremy Jay</member>
+	<member>Jeremy Lain&eacute;</member>
 	<member>Jeremy Uejio</member>
 	<member>Jerome Glisse</member>
+	<member>Jerome Pinot</member>
 	<member>Jesse Adkins</member>
 	<member>Jesse Barnes</member>
 	<member>Jesse Ruffin</member>
 	<member>Jie Luo</member>
 	<member>Jim Huang</member>
+	<member>Jochen Voss</member>
 	<member>Joe Krahn</member>
 	<member>Joel Bosveld</member>
 	<member>John Hein</member>
+	<member>John McKernan</member>
+	<member>John Nielsen</member>
 	<member>John Tapsell</member>
 	<member>Jon TURNEY</member>
 	<member>Jordan Crouse</member>
+	<member>Joseph Adams</member>
+	<member>Juan RP</member>
 	<member>Julien Cristau</member>
+	<member>Julien Plissonneau Duquene</member>
+	<member>Juliusz Chroboczek</member>
+	<member>Kalev Lember</member>
 	<member>Kazuhiro Inaoka</member>
+	<member>Kees Cook</member>
 	<member>Keith Packard</member>
+	<member>Kel Modderman</member>
 	<member>Kevin E Martin</member>
 	<member>Kim Woelders</member>
 	<member>Kristian H&oslash;gsberg</member>
+	<member>Krzysztof Halasa</member>
+	<member>Kshitij Kulshreshtha</member>
+	<member>Kyle McMartin</member>
 	<member>Lee Leahu</member>
+	<member>Li Peng</member>
+	<member>Li Shao Hua</member>
 	<member>Luc Verhaegen</member>
+	<member>Luk&acute;&scaron; Hejtm&acute;nek</member>
+	<member>Lukasz Kurylo</member>
+	<member>Ma Ling</member>
 	<member>Maarten Maathuis</member>
+	<member>Maciej Cencora</member>
 	<member>Magnus Kessler</member>
 	<member>Magnus Vigerl&ouml;f</member>
 	<member>Manuel Bouyer</member>
+	<member>Marcel Dejean</member>
+	<member>Marcin 'Qrczak' Kowalczyk</member>
 	<member>Mark Kettenis</member>
+	<member>Mark van Doesburg</member>
+	<member>Markus Gapp</member>
+	<member>Markus Kuhn</member>
+	<member>Mart Raudsepp</member>
 	<member>Martin-&Eacute;ric Racine</member>
 	<member>Mathieu B&eacute;rard</member>
+	<member>Matt Helsley</member>
 	<member>Matt Turner</member>
 	<member>Matthias Hopf</member>
 	<member>Matthieu Herrb</member>
+	<member>Mattia Dongili</member>
+	<member>Maxim Levitsky</member>
+	<member>Micah Dowty</member>
+	<member>Michael Chapman</member>
 	<member>Michael Lorenz</member>
+	<member>Michael Scherer</member>
 	<member>Michael Vogt</member>
 	<member>Michael Witrant</member>
+	<member>Michael Witten</member>
 	<member>Michel D&auml;nzer</member>
 	<member>Mikhail Gusarov</member>
+	<member>Nathael Pajani</member>
 	<member>Nathaniel McCallum</member>
+	<member>Neale Pickett</member>
 	<member>Nicolai H&auml;hnle</member>
+	<member>Nicos Gollan</member>
+	<member>Niels de Vos</member>
 	<member>Oliver McFadden</member>
 	<member>Olivier Blin</member>
+	<member>Olivier Fourdan</member>
+	<member>Otavio Salvador</member>
+	<member>Owain G. Ainsworth</member>
+	<member>Owen Taylor</member>
 	<member>Owen W. Taylor</member>
+	<member>Patrick Haller</member>
 	<member>Paul Bender</member>
+	<member>Paul Menzel</member>
+	<member>Paul &quot;TBBle&quot; Hampson</member>
+	<member>Pauli Nieminen</member>
 	<member>Paulo C&eacute;sar Pereira de Andrade</member>
 	<member>Paulo Ricardo Zanoni</member>
+	<member>Peter Alfredsen</member>
 	<member>Peter &Aring;strand</member>
+	<member>Peter Breitenlohner</member>
 	<member>Peter Harris</member>
 	<member>Peter Hutterer</member>
+	<member>Peter Korsgaard</member>
+	<member>Petr Salinger</member>
+	<member>Philip Langdale</member>
+	<member>Pierre Ossman</member>
 	<member>Pierre Willenbrock</member>
 	<member>Pierre-Loup A. Griffais</member>
 	<member>RALOVICH, Krist&oacute;f</member>
+	<member>Rami Ylimaki</member>
+	<member>Ramon van der Stelt</member>
 	<member>R&eacute;mi Cardona</member>
 	<member>Richard Hughes</member>
+	<member>Robert Lowery</member>
 	<member>Robert Noland</member>
 	<member>Roland B&auml;r</member>
 	<member>Roland Scheidegger</member>
 	<member>Ross Burton</member>
+	<member>Ryan Hill</member>
+	<member>Ryan Lortie</member>
 	<member>Samuel Thibault</member>
 	<member>Sascha Hlusiak</member>
+	<member>Sayamindu Dasgupta</member>
+	<member>Shaohua Li</member>
+	<member>Shelley Gong</member>
+	<member>Shuang He</member>
 	<member>Shunichi Fuji</member>
 	<member>Simon Farnsworth</member>
+	<member>Simon Munton</member>
 	<member>Simon Thum</member>
+	<member>S&oslash;ren Hauberg</member>
 	<member>S&oslash;ren Sandmann Pedersen</member>
 	<member>Stefan Dirsch</member>
+	<member>Stijn van Drongelen</member>
 	<member>Stuart Bennett</member>
+	<member>Stuart Kreitman</member>
+	<member>Tero Saarni</member>
 	<member>Thomas Bodzar</member>
 	<member>Thomas Jaeger</member>
+	<member>Thomas Klausner</member>
+	<member>Thomas Petazzoni</member>
 	<member>Thorvald Natvig</member>
 	<member>Tiago Vignatti</member>
+	<member>Tibi Nagy</member>
 	<member>Tilman Sauerbeck</member>
 	<member>Timo Aaltonen</member>
 	<member>Tom Jaeger</member>
@@ -1388,13 +1536,26 @@ The next section describes what is new in the latest version
 	<member>Tomas Janousek</member>
 	<member>Topi Kanerva</member>
 	<member>Tormod Volden</member>
+	<member>Vincent Mussard</member>
 	<member>Werner LEMBERG</member>
+	<member>William Grant</member>
 	<member>Winfried Gr&uuml;newald</member>
+	<member>Wolke Liu</member>
+	<member>Wu Fengguang</member>
 	<member>Xavier Bestel</member>
 	<member>Xiang, Haihao</member>
+	<member>Y.C. Chen</member>
 	<member>Yaakov Selkowitz</member>
+	<member>Yan Li</member>
+	<member>Yang Zhao</member>
+	<member>Yann Droneaud</member>
+	<member>Yannick Heneault</member>
+	<member>&#xC624;&#xC720;&#xC5F0;(Yu-yeon Oh)</member>
+	<member>Zdenek Kabelac</member>
+	<member>Zhao Yakui</member>
 	<member>Zhenyu Wang</member>
-      </SimpleList>
+	<member>Zou Nan hai</member>
+      </simplelist>
     </Para>
 
     <Para>
