@@ -948,7 +948,7 @@ The next section describes what is new in the latest version
 
         <Para>
         A more flexible Compose file processing system was added to Xlib in
-        X11R&relvers;.  The compose file is searched for in
+        XFree86 4.4.0 and X11R6.7.  The compose file is searched for in
         the following order:
         </Para>
 
