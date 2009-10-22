@@ -1,0 +1,8 @@
+#		Add & Override for this directory and it's subdirectories
+# Override defaults from top level .gitignore
+!Makefile
+# Additional files to ignore
+index.raw
+proto.idx.pdf
+proto.pdf
+x11.pdf
