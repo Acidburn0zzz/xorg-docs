@@ -20,7 +20,7 @@
 <Title>What and Where is X11R7&relvers;?</Title>
 
 <Para>
-The X.Org Foundation X11R7&relvers; is an Open Source version of
+The X.Org Foundation X11R&relvers; is an Open Source version of
 the X Window System that supports
 several UNIX(R) and UNIX-like operating systems (such as Linux, the BSDs
 and Solaris x86) on Intel and other platforms.
@@ -28,13 +28,13 @@ and Solaris x86) on Intel and other platforms.
 
 <Para>
 See the <ULink
-URL="COPYRIGHT.html"
+URL="../LICENSE.html"
 >Copyright Notice</ULink
 >.
 </Para>
 
 <Para>
-The sources for X11R7&relvers; are available from
+The sources for X11R&relvers; are available from
 <ULink
 URL="http://wiki.x.org"
 >http://wiki.x.org</ULink
@@ -42,7 +42,7 @@ URL="http://wiki.x.org"
 </Para>
 
 <Para>
-X11R7&relvers; builds on most architectures supported by OpenBSD. See section
+X11R&relvers; builds on most architectures supported by OpenBSD. See section
 <XRef LinkEnd="otherarch"> for details.
 </Para>
 
@@ -69,7 +69,7 @@ See the <ULink
 URL="RELNOTES.html"
 >Release Notes</ULink
 > for
-non-OS dependent new features in X11R7&relvers;.
+non-OS dependent new features in X11R&relvers;.
 </Para>
 
 <Para>
@@ -175,7 +175,7 @@ modes with the <Literal remap="tt">xvidtune</Literal> utility.
 <Title>About mouse configuration</Title>
 
 <Para>
-X11R7&relvers; has support for the mouse driver included in
+X11R&relvers; has support for the mouse driver included in
 the new <Emphasis remap="bf">wscons</Emphasis> console driver.
 Specify ``<Literal remap="tt">wsmouse</Literal>'' as the protocol and
 ``<Literal remap="tt">/dev/wsmouse</Literal>'' as the  device in <Literal remap="tt">/etc/X11/xorg.conf</Literal>
@@ -316,10 +316,7 @@ extension.
 </Sect1>
 
 <Sect1>
-<Title>Rebuilding the X Distribution
-You should configure the distribution by editing
-<Literal remap="tt">xc/config/cf/host.def</Literal>  before compiling.  To compile the
-sources, invoke ``<Literal remap="tt">make World</Literal>'' in the xc directory.</Title>
+<Title>Rebuilding the X Distribution</Title>
 
 <Para>
 
@@ -338,7 +335,7 @@ URL="http://www.openbsd.org/anoncvs.html"
 </Para>
 
 <Para>
-X11R7&relvers; compiles on most OpenBSD architectures. The X.Org
+X11R&relvers; compiles on most OpenBSD architectures. The X.Org
 X server builds and run on the following systems. On other
 architectures supported by OpenBSD, only client side libraries and
 applications are supported.
@@ -434,7 +431,7 @@ Modeline "1152x768" 64.995 1152 1213 1349 1472  768 771 777 806 -HSync -VSync
 <Para>
 OpenBSD 3.2 on sparc switched to the wscons device driver and now uses
 the OS specific <Emphasis>wsfb</Emphasis> driver in the X server. This driver is
-not included in X11R7&relvers;. Please use the version shipped with
+not included in X11R&relvers;. Please use the version shipped with
 OpenBSD instead.
 </Para>
 
@@ -457,7 +454,7 @@ support for the X server on both SBus and UPA (unaccelerated) based cards.
 <Title>Thanks</Title>
 
 <Para>
-Many thanks to all people who contributed to make X11R7&relvers; work on
+Many thanks to all people who contributed to make X11R&relvers; work on
 *BSD, in particular:
 <Emphasis remap="bf">David Dawes</Emphasis>,
 <Emphasis remap="bf">Todd Fries</Emphasis>,
