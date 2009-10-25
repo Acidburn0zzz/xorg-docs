@@ -21,7 +21,7 @@ dnl
 dnl  Process this file with autoconf to create configure.
 
 AC_PREREQ([2.57])
-AC_INIT([xorg-docs], [1.4.99.902], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg])
+AC_INIT([xorg-docs], [1.5], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg])
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 
 # Require xorg-macros 1.3 or later: XORG_DEFAULT_OPTIONS
