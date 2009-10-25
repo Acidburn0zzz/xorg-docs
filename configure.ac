@@ -24,9 +24,11 @@ AC_PREREQ([2.57])
 AC_INIT([xorg-docs], [1.4.99.902], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg])
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 
-# Require xorg-macros: XORG_CWARNFLAGS, XORG_CHANGELOG
-m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
-XORG_MACROS_VERSION(1.2)
+# Require xorg-macros 1.3 or later: XORG_DEFAULT_OPTIONS
+m4_ifndef([XORG_MACROS_VERSION],
+	  [m4_fatal([must install xorg-macros 1.3 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.3)
+XORG_DEFAULT_OPTIONS
 
 DEFAULT_X11DOCDIR=${datadir}/X11/doc
 AC_ARG_WITH(x11docdir,
@@ -49,15 +51,11 @@ AC_ARG_ENABLE(html, AS_HELP_STRING([--enable-html],
                 [Build HTML versions of documents (default: disabled)]),
                 [BUILD_HTMLDOC=$enableval], [BUILD_HTMLDOC=no])
 
-XORG_MANPAGE_SECTIONS
-XORG_RELEASE_VERSION
-
 AM_CONDITIONAL(BUILD_TXTDOC, test "x$BUILD_TXTDOC" = xyes)
 AM_CONDITIONAL(BUILD_PDFDOC, test "x$BUILD_PDFDOC" = xyes)
 AM_CONDITIONAL(BUILD_PSDOC, test "x$BUILD_PSDOC" = xyes)
 AM_CONDITIONAL(BUILD_HTMLDOC, test "x$BUILD_HTMLDOC" = xyes)
 XORG_CHECK_DOCBOOK
-XORG_CHANGELOG
 
 AC_OUTPUT([Makefile
            man/Makefile

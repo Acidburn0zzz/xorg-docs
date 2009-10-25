@@ -53,6 +53,6 @@ MAN_SUBSTS = \
 SUFFIXES = .$(MISC_MAN_SUFFIX) .man
 
 .man.$(MISC_MAN_SUFFIX):
-	sed $(MAN_SUBSTS) < $< > $@
+	$(AM_V_GEN)$(SED) $(MAN_SUBSTS) < $< > $@
 
 EXTRA_DIST = $(miscman_PRE)
