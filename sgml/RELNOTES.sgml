@@ -647,7 +647,7 @@ The next section describes what is new in the latest version
             <row>
                 <entry><literal remap="tt">mouse</literal></entry>
                 <entry>most mouse devices (non-evdev systems)</entry>
-                <entry><ulink url="mouse.4.html">mouse(4)</ulink></entry>
+                <entry><ulink url="mousedrv.4.html">mousedrv(4)</ulink></entry>
             </row>
             <row>
                 <entry><literal remap="tt">synaptics</literal></entry>
