@@ -132,8 +132,6 @@ EXTRA_DIST = \
 	util/indexmacros.t \
 	util/macros.t
 
-EXTRA_DIST += ChangeLog
-MAINTAINERCLEANFILES = ChangeLog
 
 .PHONY: ChangeLog
 
