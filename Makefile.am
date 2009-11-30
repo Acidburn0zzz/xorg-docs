@@ -25,6 +25,7 @@ x11docdir = @X11DOCDIR@
 
 dist_x11doc_DATA = MAINTAINERS
 
+MAINTAINERCLEANFILES = ChangeLog INSTALL
 EXTRA_DIST = \
 	MAINTAINERS \
 	misc/xlogo.epsi \
