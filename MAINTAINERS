@@ -714,10 +714,12 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-ati
-P:      Luc Verhaegen
-M:      libv@skynet.be
-L:      xorg-devel@lists.x.org
-W:      http://wiki.x.org
+P:	Alex Deucher
+P:      Ben Herrenschmidt
+P:      et al
+M:	?
+L:	xorg-devel@lists.x.org
+W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-chips
@@ -789,6 +791,13 @@ P:	Eric Anholt
 M:	eric@anholt.net
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
+S:	Maintained
+
+xf86-video-mach64
+P:      Luc Verhaegen
+M:      libv@skynet.be
+L:      xorg-devel@lists.x.org
+W:      http://wiki.x.org
 S:	Maintained
 
 xf86-video-imstt
