@@ -808,7 +808,7 @@ W:	http://wiki.x.org
 S:	Unmaintained
 
 xf86-video-mga
-P:	Ian Romanick, Tilman Sauerbeck
+P:	Ian Romanick
 M:	?
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
