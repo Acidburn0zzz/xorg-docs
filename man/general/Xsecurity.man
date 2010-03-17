@@ -55,7 +55,7 @@ Xsecurity \- X display access control
 .SH SYNOPSIS
 .PP
 X provides mechanism for implementing many access control systems.
-The sample implementation includes six mechanisms:
+The sample implementation includes five mechanisms:
 .nf
 .br
 .ta 3.4i
