@@ -471,11 +471,19 @@ L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
 
-Xwin (Cygwin/mingw port)
-P:	Alan Hourihane
-M:	alanh@freedesktop.org
-L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
+Cygwin
+P:	Jon TURNEY
+M:	jon.turney@dronecode.org.uk
+P:	Yaakov Selkowitz
+M:	yselkowitz@users.sourceforge.net
+L:	cygwin-xfree@cygwin.com
+W:	http://x.cygwin.com/
+S:	Maintained
+
+MinGW
+P:	Colin Harrison
+M:	colin.harrison@virgin.net
+W:	http://www.straightrunning.com/XmingNotes/
 S:	Maintained
 
 Drivers
