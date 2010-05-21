@@ -20,7 +20,7 @@
 #
 #  Process this file with autoconf to create configure.
 
-SUBDIRS = core fonts graphics input platforms security
+SUBDIRS = fonts graphics input platforms security
 
 x11docdir = @X11DOCDIR@
 SGML_FILES = \

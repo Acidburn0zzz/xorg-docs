@@ -62,7 +62,6 @@ AC_OUTPUT([Makefile
            man/Makefile
            man/general/Makefile
            sgml/Makefile
-	   sgml/core/Makefile
 	   sgml/fonts/Makefile
 	   sgml/graphics/Makefile
 	   sgml/input/Makefile
