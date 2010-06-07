@@ -94,7 +94,6 @@ EXTRA_DIST = \
 	specs/XKB/XKBlib/title.fm5 \
 	specs/XKB/XKBlib/XKBlib.book \
 	specs/XLFD/xlfd.tbl.ms \
-	specs/Xmu/Xmu.ms \
 	specs/XProtocol/glossary \
 	specs/XProtocol/indexmacros.t \
 	specs/XProtocol/postproc \
