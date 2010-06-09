@@ -37,8 +37,6 @@ EXTRA_DIST = \
 	specs/FSProtocol/protocol.ms \
 	specs/ICCCM/icccm.ms \
 	specs/ICCCM/indexmacros.t \
-	specs/ICE/ICElib.ms \
-	specs/ICE/ice.ms \
 	specs/RX/RX.mif \
 	specs/saver/saver.ms \
 	specs/SIAddresses/hostname.txt \
