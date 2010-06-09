@@ -20,7 +20,7 @@
 #
 #  Process this file with autoconf to create configure.
 
-SUBDIRS = man sgml
+SUBDIRS = man sgml specs/XProtocol
 x11docdir = @X11DOCDIR@
 
 dist_x11doc_DATA = MAINTAINERS
@@ -92,12 +92,6 @@ EXTRA_DIST = \
 	specs/XKB/XKBlib/title.fm5 \
 	specs/XKB/XKBlib/XKBlib.book \
 	specs/XLFD/xlfd.tbl.ms \
-	specs/XProtocol/glossary \
-	specs/XProtocol/indexmacros.t \
-	specs/XProtocol/postproc \
-	specs/XProtocol/X11.encoding \
-	specs/XProtocol/X11.keysyms \
-	specs/XProtocol/X11.protocol \
 	specs/Xserver/analysis.tex \
 	specs/Xserver/appgroup.ms \
 	specs/Xserver/secint.tex \
