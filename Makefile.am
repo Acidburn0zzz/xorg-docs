@@ -101,29 +101,6 @@ EXTRA_DIST = \
 	specs/Xserver/analysis.tex \
 	specs/Xserver/appgroup.ms \
 	specs/Xserver/secint.tex \
-	specs/Xt/appA \
-	specs/Xt/appB \
-	specs/Xt/appC \
-	specs/Xt/appD \
-	specs/Xt/appE \
-	specs/Xt/appF \
-	specs/Xt/CH01 \
-	specs/Xt/CH02 \
-	specs/Xt/CH03 \
-	specs/Xt/CH04 \
-	specs/Xt/CH05 \
-	specs/Xt/CH06 \
-	specs/Xt/CH07 \
-	specs/Xt/CH08 \
-	specs/Xt/CH09 \
-	specs/Xt/CH10 \
-	specs/Xt/CH11 \
-	specs/Xt/CH12 \
-	specs/Xt/CH13 \
-	specs/Xt/intr.idxmac.t \
-	specs/Xt/postproc \
-	specs/Xt/strings.mit \
-	specs/Xt/Xtk.intr.front \
 	util/block.awk \
 	util/fixindex.awk \
 	util/indexmacros.t \
