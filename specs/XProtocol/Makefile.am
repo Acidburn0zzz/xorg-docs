@@ -11,13 +11,16 @@ SRCS = $(UTIL)/macros.t $(protoSRCS)
 ISRCS = $(indexSRCS) $(UTIL)/indexmacros.t
 EXTRA_DIST = $(indexSRCS) $(protoSRCS)
 
-x11doc_DATA = x11.pdf proto.pdf proto.idx.pdf
+x11doc_DATA = proto.pdf proto.idx.pdf
+if HAVE_PDFTK
+x11doc_DATA += x11.pdf
+endif
 
 x11.pdf: proto.pdf proto.idx.pdf
-	pdftk proto.pdf proto.idx.pdf cat output $@
+	$(PDFTK) proto.pdf proto.idx.pdf cat output $@
 
 proto.pdf index.raw: $(SRCS)
-	$(TBL) $^ | $(EQN) | $(TROFF) $(MSMACROS) 2> index.raw | ps2pdf - proto.pdf
+	$(TBL) $^ | $(EQN) | $(TROFF) $(MSMACROS) 2> index.raw | $(PS2PDF) - proto.pdf
 
 index.pageno: index.raw
 	tail -1 $< > $@
@@ -26,7 +29,6 @@ index.troff: index.pageno $(UTIL)/block.awk $(UTIL)/fixindex.awk
 	grep -v '^.pn ' index.raw | sort -f -t: +1 -3 +0n -1n | awk -f $(UTIL)/fixindex.awk | awk -f $(UTIL)/block.awk > index.troff
 
 proto.idx.pdf: $(ISRCS) index.troff
-	cat $^ | $(TROFF) -me | ps2pdf - proto.idx.pdf
+	cat $^ | $(TROFF) -me | $(PS2PDF) - proto.idx.pdf
 
 CLEANFILES = proto.pdf proto.idx.pdf x11.pdf index.raw index.pageno index.troff
-

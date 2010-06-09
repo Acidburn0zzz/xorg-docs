@@ -25,10 +25,10 @@ AC_INIT([xorg-docs], [1.5], [https://bugs.freedesktop.org/enter_bug.cgi?product=
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
-# Require xorg-macros 1.3 or later: XORG_DEFAULT_OPTIONS
+# Require xorg-macros 1.6 or later: XORG_WITH_PS2PDF
 m4_ifndef([XORG_MACROS_VERSION],
-	  [m4_fatal([must install xorg-macros 1.3 or later before running autoconf/autogen])])
-XORG_MACROS_VERSION(1.3)
+	  [m4_fatal([must install xorg-macros 1.6 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.6)
 XORG_DEFAULT_OPTIONS
 
 DEFAULT_X11DOCDIR=${datadir}/X11/doc
@@ -51,6 +51,13 @@ AC_ARG_ENABLE(ps, AS_HELP_STRING([--enable-ps],
 AC_ARG_ENABLE(html, AS_HELP_STRING([--enable-html],
                 [Build HTML versions of documents (default: disabled)]),
                 [BUILD_HTMLDOC=$enableval], [BUILD_HTMLDOC=no])
+
+XORG_WITH_PS2PDF
+if ! test -x "$PS2PDF"; then
+	AC_MSG_ERROR([ps2pdf is required to build the X protocol spec])
+fi
+AC_PATH_PROG([PDFTK], [pdftk])
+AM_CONDITIONAL(HAVE_PDFTK, test -x "$PDFTK")
 
 AM_CONDITIONAL(BUILD_TXTDOC, test "x$BUILD_TXTDOC" = xyes)
 AM_CONDITIONAL(BUILD_PDFDOC, test "x$BUILD_PDFDOC" = xyes)
