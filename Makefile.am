@@ -48,9 +48,7 @@ EXTRA_DIST = \
 	specs/Xext/AppGroup.mif \
 	specs/Xext/bigreq.ms \
 	specs/Xext/buffer.ms \
-	specs/Xext/dbelib.tex \
 	specs/Xext/dbe.tex \
-	specs/Xext/DPMSLib.ms \
 	specs/Xext/DPMS.ms \
 	specs/Xext/evi.ms \
 	specs/Xext/lbxalg.mif \
@@ -60,9 +58,7 @@ EXTRA_DIST = \
 	specs/Xext/recordlib.ms \
 	specs/Xext/record.ms \
 	specs/Xext/security.tex \
-	specs/Xext/shapelib.ms \
 	specs/Xext/shape.ms \
-	specs/Xext/synclib.tex \
 	specs/Xext/sync.tex \
 	specs/Xext/tog-cup.ms \
 	specs/Xext/xc-misc.ms \
