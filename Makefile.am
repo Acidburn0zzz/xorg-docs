@@ -55,7 +55,6 @@ EXTRA_DIST = \
 	specs/Xext/lbx.book \
 	specs/Xext/lbx.mif \
 	specs/Xext/mit-shm.ms \
-	specs/Xext/recordlib.ms \
 	specs/Xext/record.ms \
 	specs/Xext/security.tex \
 	specs/Xext/shape.ms \
@@ -64,7 +63,6 @@ EXTRA_DIST = \
 	specs/Xext/xc-misc.ms \
 	specs/Xext/xtest1.info \
 	specs/Xext/xtest1.mm \
-	specs/Xext/xtestlib.ms \
 	specs/Xext/xtest.ms \
 	specs/Xi/encoding.ms \
 	specs/Xi/library.ms \
