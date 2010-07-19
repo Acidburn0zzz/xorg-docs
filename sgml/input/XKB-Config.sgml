@@ -226,7 +226,8 @@ setxkbmap -rules xorg -model logicordless -layout "us,cz,de" \
 <Title>Basic Global Options</Title>
 
 <Para>
-See rules/*.lst files.
+For a list of available options, with a short decription of what they do,
+see the section starting with "! option" in the rules/*.lst files.
 </Para>
 
 <!--
