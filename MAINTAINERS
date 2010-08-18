@@ -1025,8 +1025,8 @@ W:      http://unichrome.sf.net
 S:	Unmaintained
 
 xf86-video-vmware
-P:	Philip Langdale
-M:	plangdale@vmware.com
+P:	Thomas Hellstrom
+M:	thellstrom@vmware.com
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
