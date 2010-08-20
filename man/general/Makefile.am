@@ -22,37 +22,24 @@
 
 miscmandir = $(MISC_MAN_DIR)
 
-miscman_PRE = \
-	Consortium.man \
-	Xsecurity.man \
-	Standards.man \
-	X.man \
-	XOrgFoundation.man \
+miscman_PRE =			\
+	Consortium.man		\
+	Xsecurity.man		\
+	Standards.man		\
+	X.man			\
+	XOrgFoundation.man	\
 	XProjectTeam.man
 
 miscman_DATA = $(miscman_PRE:man=@MISC_MAN_SUFFIX@)
 
+EXTRA_DIST = $(miscman_PRE)
 CLEANFILES = $(miscman_DATA)
-
-SED = sed
-
-# Strings to replace in man pages
-XORGRELSTRING = @PACKAGE_STRING@
-  XORGMANNAME = X Version 11
-
-MAN_SUBSTS = \
-	-e 's|__vendorversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
-	-e 's|__xorgversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
-	-e 's|__datadir__|$(datadir)|g' \
-	-e 's|__libdir__|$(libdir)|g' \
-	-e 's|__sysconfdir__|$(sysconfdir)|g' \
-	-e 's|__appmansuffix__|$(APP_MAN_SUFFIX)|g' \
-	-e 's|__libmansuffix__|$(LIB_MAN_SUFFIX)|g' \
-	-e 's|__miscmansuffix__|$(MISC_MAN_SUFFIX)|g'
-
 SUFFIXES = .$(MISC_MAN_SUFFIX) .man
+
+# String replacements in MAN_SUBSTS now come from xorg-macros.m4 via configure
+MAN_SUBSTS += 	-e 's|__datadir__|$(datadir)|g' \
+		-e 's|__libdir__|$(libdir)|g' \
+		-e 's|__sysconfdir__|$(sysconfdir)|g'
 
 .man.$(MISC_MAN_SUFFIX):
 	$(AM_V_GEN)$(SED) $(MAN_SUBSTS) < $< > $@
-
-EXTRA_DIST = $(miscman_PRE)
