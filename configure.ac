@@ -73,5 +73,4 @@ AC_OUTPUT([Makefile
 	   sgml/graphics/Makefile
 	   sgml/input/Makefile
 	   sgml/platforms/Makefile
-	   sgml/security/Makefile
-	   specs/XProtocol/Makefile])
+	   sgml/security/Makefile])

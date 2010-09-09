@@ -20,7 +20,7 @@
 #
 #  Process this file with autoconf to create configure.
 
-SUBDIRS = man sgml specs/XProtocol
+SUBDIRS = man sgml
 x11docdir = @X11DOCDIR@
 
 dist_x11doc_DATA = MAINTAINERS
