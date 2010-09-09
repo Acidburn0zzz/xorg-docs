@@ -38,7 +38,6 @@ EXTRA_DIST = \
 	specs/ICCCM/icccm.ms \
 	specs/ICCCM/indexmacros.t \
 	specs/RX/RX.mif \
-	specs/saver/saver.ms \
 	specs/SIAddresses/hostname.txt \
 	specs/SIAddresses/IPv6.txt \
 	specs/SIAddresses/localuser.txt \
