@@ -43,7 +43,6 @@ EXTRA_DIST = \
 	specs/SIAddresses/localuser.txt \
 	specs/SIAddresses/README \
 	specs/specindex.html \
-	specs/XDMCP/xdmcp.ms \
 	specs/Xext/AppGroup.mif \
 	specs/Xext/lbxalg.mif \
 	specs/Xext/lbx.book \
