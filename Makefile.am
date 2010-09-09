@@ -49,10 +49,6 @@ EXTRA_DIST = \
 	specs/Xext/lbx.mif \
 	specs/Xext/xtest1.info \
 	specs/Xext/xtest1.mm \
-	specs/Xi/encoding.ms \
-	specs/Xi/library.ms \
-	specs/Xi/porting.ms \
-	specs/Xi/protocol.txt \
 	specs/XKB/Proto/dflttrns.fm5 \
 	specs/XKB/Proto/encoding.fm5 \
 	specs/XKB/Proto/keysyms.fm5 \
