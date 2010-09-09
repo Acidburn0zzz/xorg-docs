@@ -47,24 +47,11 @@ EXTRA_DIST = \
 	specs/specindex.html \
 	specs/XDMCP/xdmcp.ms \
 	specs/Xext/AppGroup.mif \
-	specs/Xext/bigreq.ms \
-	specs/Xext/buffer.ms \
-	specs/Xext/dbe.tex \
-	specs/Xext/DPMS.ms \
-	specs/Xext/evi.ms \
 	specs/Xext/lbxalg.mif \
 	specs/Xext/lbx.book \
 	specs/Xext/lbx.mif \
-	specs/Xext/mit-shm.ms \
-	specs/Xext/record.ms \
-	specs/Xext/security.tex \
-	specs/Xext/shape.ms \
-	specs/Xext/sync.tex \
-	specs/Xext/tog-cup.ms \
-	specs/Xext/xc-misc.ms \
 	specs/Xext/xtest1.info \
 	specs/Xext/xtest1.mm \
-	specs/Xext/xtest.ms \
 	specs/Xi/encoding.ms \
 	specs/Xi/library.ms \
 	specs/Xi/porting.ms \
