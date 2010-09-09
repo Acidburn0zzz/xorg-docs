@@ -35,7 +35,6 @@ EXTRA_DIST = \
 	specs/BDF/fig1.ps \
 	specs/BDF/fig2.ps \
 	specs/CTEXT/ctext.tbl.ms \
-	specs/FSProtocol/protocol.ms \
 	specs/ICCCM/icccm.ms \
 	specs/ICCCM/indexmacros.t \
 	specs/RX/RX.mif \
