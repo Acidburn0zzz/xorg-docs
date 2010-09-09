@@ -34,9 +34,8 @@ EXTRA_DIST = \
 	specs/BDF/bdf.ms \
 	specs/BDF/fig1.ps \
 	specs/BDF/fig2.ps \
-	specs/CTEXT/ctext.tbl.ms \
-	specs/ICCCM/icccm.ms \
-	specs/ICCCM/indexmacros.t \
+	specs/CTEXT/ctext.xml \
+	specs/ICCCM/icccm.xml \
 	specs/RX/RX.mif \
 	specs/SIAddresses/hostname.txt \
 	specs/SIAddresses/IPv6.txt \
@@ -66,10 +65,10 @@ EXTRA_DIST = \
 	specs/XKB/XKBlib/fonts.fm5 \
 	specs/XKB/XKBlib/title.fm5 \
 	specs/XKB/XKBlib/XKBlib.book \
-	specs/XLFD/xlfd.tbl.ms \
-	specs/Xserver/analysis.tex \
-	specs/Xserver/appgroup.ms \
-	specs/Xserver/secint.tex \
+	specs/XLFD/xlfd.xml \
+	specs/Xserver/analysis.xml \
+	specs/Xserver/appgroup.xml \
+	specs/Xserver/secint.xml \
 	util/block.awk \
 	util/fixindex.awk \
 	util/indexmacros.t \
