@@ -52,13 +52,6 @@ AC_ARG_ENABLE(html, AS_HELP_STRING([--enable-html],
                 [Build HTML versions of documents (default: disabled)]),
                 [BUILD_HTMLDOC=$enableval], [BUILD_HTMLDOC=no])
 
-XORG_WITH_PS2PDF
-if ! test -x "$PS2PDF"; then
-	AC_MSG_ERROR([ps2pdf is required to build the X protocol spec])
-fi
-AC_PATH_PROG([PDFTK], [pdftk])
-AM_CONDITIONAL(HAVE_PDFTK, test -x "$PDFTK")
-
 AM_CONDITIONAL(BUILD_TXTDOC, test "x$BUILD_TXTDOC" = xyes)
 AM_CONDITIONAL(BUILD_PDFDOC, test "x$BUILD_PDFDOC" = xyes)
 AM_CONDITIONAL(BUILD_PSDOC, test "x$BUILD_PSDOC" = xyes)
