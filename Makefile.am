@@ -29,6 +29,7 @@ MAINTAINERCLEANFILES = ChangeLog INSTALL
 EXTRA_DIST = \
 	MAINTAINERS \
 	misc/xlogo.epsi \
+	misc/xlogo.svg \
 	registry \
 	specs/BDF/bdf.ms \
 	specs/BDF/fig1.ps \
