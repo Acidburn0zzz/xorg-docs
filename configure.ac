@@ -65,11 +65,12 @@ AM_CONDITIONAL(BUILD_PDFDOC, test "x$BUILD_PDFDOC" = xyes)
 AM_CONDITIONAL(BUILD_PSDOC, test "x$BUILD_PSDOC" = xyes)
 AM_CONDITIONAL(BUILD_HTMLDOC, test "x$BUILD_HTMLDOC" = xyes)
 
-AC_OUTPUT([Makefile
-           man/Makefile
-           sgml/Makefile
-	   sgml/fonts/Makefile
-	   sgml/graphics/Makefile
-	   sgml/input/Makefile
-	   sgml/platforms/Makefile
-	   sgml/security/Makefile])
+AC_CONFIG_FILES([Makefile
+		 man/Makefile
+		 sgml/Makefile
+		 sgml/fonts/Makefile
+		 sgml/graphics/Makefile
+		 sgml/input/Makefile
+		 sgml/platforms/Makefile
+		 sgml/security/Makefile])
+AC_OUTPUT
