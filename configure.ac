@@ -60,7 +60,6 @@ XORG_CHECK_DOCBOOK
 
 AC_OUTPUT([Makefile
            man/Makefile
-           man/general/Makefile
            sgml/Makefile
 	   sgml/fonts/Makefile
 	   sgml/graphics/Makefile
