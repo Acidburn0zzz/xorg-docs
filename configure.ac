@@ -37,7 +37,6 @@ m4_ifndef([XORG_MACROS_VERSION],
 	  [m4_fatal([must install xorg-macros 1.8 or later before running autoconf/autogen])])
 XORG_MACROS_VERSION(1.8)
 XORG_DEFAULT_OPTIONS
-XORG_CHECK_DOCBOOK
 
 DEFAULT_X11DOCDIR=${datadir}/X11/doc
 AC_ARG_WITH(x11docdir,
@@ -64,6 +63,7 @@ AM_CONDITIONAL(BUILD_TXTDOC, test "x$BUILD_TXTDOC" = xyes)
 AM_CONDITIONAL(BUILD_PDFDOC, test "x$BUILD_PDFDOC" = xyes)
 AM_CONDITIONAL(BUILD_PSDOC, test "x$BUILD_PSDOC" = xyes)
 AM_CONDITIONAL(BUILD_HTMLDOC, test "x$BUILD_HTMLDOC" = xyes)
+XORG_CHECK_DOCBOOK
 
 AC_CONFIG_FILES([Makefile
 		 man/Makefile
