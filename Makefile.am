@@ -61,7 +61,6 @@ EXTRA_DIST = \
 	specs/XKB/XKBlib/fonts.fm5 \
 	specs/XKB/XKBlib/title.fm5 \
 	specs/XKB/XKBlib/XKBlib.book \
-	specs/XLFD/xlfd.xml \
 	specs/Xserver/analysis.xml \
 	specs/Xserver/appgroup.xml \
 	specs/Xserver/secint.xml \
