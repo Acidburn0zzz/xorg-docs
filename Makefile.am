@@ -20,7 +20,7 @@
 #
 #  Process this file with autoconf to create configure.
 
-SUBDIRS = man sgml
+SUBDIRS = man sgml specs
 
 dist_doc_DATA = MAINTAINERS
 
@@ -32,7 +32,6 @@ EXTRA_DIST = \
 	specs/BDF/bdf.ms \
 	specs/BDF/fig1.ps \
 	specs/BDF/fig2.ps \
-	specs/CTEXT/ctext.xml \
 	specs/ICCCM/icccm.xml \
 	specs/RX/RX.mif \
 	specs/SIAddresses/hostname.txt \

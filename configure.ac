@@ -32,12 +32,16 @@ AC_CONFIG_SRCDIR([Makefile.am])
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
-# Require X.Org macros 1.8 or later for MAN_SUBSTS set by XORG_MANPAGE_SECTIONS
+# Require xorg-macros minimum of 1.10 for DocBook XML documentation
 m4_ifndef([XORG_MACROS_VERSION],
-	  [m4_fatal([must install xorg-macros 1.8 or later before running autoconf/autogen])])
-XORG_MACROS_VERSION(1.8)
+          [m4_fatal([must install xorg-macros 1.10 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.10)
 XORG_DEFAULT_OPTIONS
 XORG_ENABLE_DOCS
+XORG_ENABLE_SPECS
+XORG_WITH_XMLTO(0.0.20)
+XORG_WITH_FOP
+XORG_CHECK_SGML_DOCTOOLS(1.5)
 XORG_CHECK_DOCBOOK
 
 AC_CONFIG_FILES([Makefile
@@ -47,5 +51,7 @@ AC_CONFIG_FILES([Makefile
 		 sgml/graphics/Makefile
 		 sgml/input/Makefile
 		 sgml/platforms/Makefile
-		 sgml/security/Makefile])
+		 sgml/security/Makefile
+		 specs/Makefile
+		 specs/CTEXT/Makefile])
 AC_OUTPUT
