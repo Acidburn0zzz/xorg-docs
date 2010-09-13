@@ -21,9 +21,8 @@
 #  Process this file with autoconf to create configure.
 
 SUBDIRS = man sgml
-x11docdir = @X11DOCDIR@
 
-dist_x11doc_DATA = MAINTAINERS
+dist_doc_DATA = MAINTAINERS
 
 MAINTAINERCLEANFILES = ChangeLog INSTALL
 EXTRA_DIST = \

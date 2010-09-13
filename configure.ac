@@ -38,15 +38,6 @@ m4_ifndef([XORG_MACROS_VERSION],
 XORG_MACROS_VERSION(1.8)
 XORG_DEFAULT_OPTIONS
 XORG_ENABLE_DOCS
-
-DEFAULT_X11DOCDIR=${datadir}/X11/doc
-AC_ARG_WITH(x11docdir,
-        AC_HELP_STRING([--with-x11docdir=<path>],
-                       [Where to install X11 docs (default: ${datadir}/X11/doc)]),
-        [X11DOCDIR="$withval"],
-        [X11DOCDIR="$DEFAULT_X11DOCDIR"])
-AC_SUBST([X11DOCDIR])
-
 XORG_CHECK_DOCBOOK
 
 AC_CONFIG_FILES([Makefile

@@ -22,7 +22,7 @@
 
 SUBDIRS = fonts graphics input platforms security
 
-x11docdir = @X11DOCDIR@
+x11docdir = $(docdir)
 SGML_FILES = \
 	Install.sgml \
 	LICENSE.sgml \

@@ -1,6 +1,6 @@
 #  Process this file with automake to create Makefile.in
 
-x11docdir = @X11DOCDIR@/platforms
+x11docdir = $(docdir)/platforms
 SGML_FILES = \
 	Darwin.sgml \
 	NetBSD.sgml \
