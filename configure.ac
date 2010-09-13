@@ -53,5 +53,6 @@ AC_CONFIG_FILES([Makefile
 		 sgml/platforms/Makefile
 		 sgml/security/Makefile
 		 specs/Makefile
-		 specs/CTEXT/Makefile])
+		 specs/CTEXT/Makefile
+		 specs/ICCCM/Makefile])
 AC_OUTPUT
