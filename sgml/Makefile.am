@@ -24,7 +24,6 @@ SUBDIRS = fonts graphics input platforms security
 
 x11docdir = $(docdir)
 SGML_FILES = \
-	Install.sgml \
 	LICENSE.sgml \
 	README.sgml \
 	RELNOTES.sgml \
