@@ -19,7 +19,7 @@ Please allow up to 4 weeks for a formal response to registration and inquiries.
 The registry is published as part of the X software distribution
 from The X.Org Foundation. The latest registry can be found at:
 
-	ftp://ftp.x.org/pub/DOCS/registry
+	http://cgit.freedesktop.org/xorg/doc/xorg-docs/tree/registry
 
 All registered items must have the postal address of someone responsible for
 the item, or a reference to a document describing the item and the postal
