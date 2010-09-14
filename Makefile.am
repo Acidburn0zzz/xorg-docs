@@ -63,12 +63,7 @@ EXTRA_DIST = \
 	specs/XKB/XKBlib/XKBlib.book \
 	specs/Xserver/analysis.xml \
 	specs/Xserver/appgroup.xml \
-	specs/Xserver/secint.xml \
-	util/block.awk \
-	util/fixindex.awk \
-	util/indexmacros.t \
-	util/macros.t
-
+	specs/Xserver/secint.xml
 
 .PHONY: ChangeLog INSTALL
 

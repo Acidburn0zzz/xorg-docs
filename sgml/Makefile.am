@@ -32,9 +32,5 @@ SGML_FILES = \
 include $(top_srcdir)/sgmlrules.in
 
 EXTRA_DIST = \
-	add.sh \
-	index.post \
-	index.pre \
-	mdefs.pre \
 	Japanese/1st.sgml \
 	Japanese/read98.sgml
