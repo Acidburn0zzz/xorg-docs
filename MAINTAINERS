@@ -545,11 +545,11 @@ W:	http://wiki.x.org
 S:	Deactivated
 
 xf86-input-elographics
-P:	?
-M:	?
+P:	Marc Balmer
+M:	marc.balmer@arcapos.com
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
-S:	Unmaintained
+S:	Maintained
 
 xf86-input-evdev
 P:	Peter Hutterer
