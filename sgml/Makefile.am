@@ -30,7 +30,3 @@ SGML_FILES = \
 	Versions.sgml
 
 include $(top_srcdir)/sgmlrules.in
-
-EXTRA_DIST = \
-	Japanese/1st.sgml \
-	Japanese/read98.sgml
