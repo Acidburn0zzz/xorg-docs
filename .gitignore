@@ -71,8 +71,13 @@ core
 *.tar.bz2
 *.tar.gz
 #
-#		Add & Override patterns for xorg-docs 
+#		Add & Override patterns for xorg-docs
 #
 #		Edit the following section as needed
 # For example, !report.pc overrides *.pc. See 'man gitignore'
-# 
+#
+*.html
+*.ps
+*.pdf
+*.txt
+*.css
