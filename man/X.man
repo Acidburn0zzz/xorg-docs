@@ -31,8 +31,6 @@
 .\"
 .\" X Window System is a trademark of The Open Group.
 .\"
-.\" $XFree86: xc/doc/man/general/X.man,v 1.7 2001/10/01 13:43:56 eich Exp $
-.\"
 .TH X __miscmansuffix__ __vendorversion__
 .SH NAME
 X \- a portable, network-transparent window system
