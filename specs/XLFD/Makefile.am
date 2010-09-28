@@ -1,9 +1,9 @@
 if ENABLE_SPECS
 
-specdir = $(docdir)/$(subdir)
+xmldir = $(docdir)/$(subdir)
 doc_sources = xlfd.xml
-dist_spec_DATA = $(doc_sources)
+dist_xml_DATA = $(doc_sources)
 
-include $(top_srcdir)/specs/xmlrules.in
+include $(top_srcdir)/xmlrules.in
 
 endif ENABLE_SPECS
