@@ -60,10 +60,7 @@ EXTRA_DIST = \
 	specs/XKB/XKBlib/allchaps.toc \
 	specs/XKB/XKBlib/fonts.fm5 \
 	specs/XKB/XKBlib/title.fm5 \
-	specs/XKB/XKBlib/XKBlib.book \
-	specs/Xserver/analysis.xml \
-	specs/Xserver/appgroup.xml \
-	specs/Xserver/secint.xml
+	specs/XKB/XKBlib/XKBlib.book
 
 .PHONY: ChangeLog INSTALL
 

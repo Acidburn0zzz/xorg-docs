@@ -51,9 +51,9 @@ AC_CONFIG_FILES([Makefile
 		 sgml/graphics/Makefile
 		 sgml/input/Makefile
 		 sgml/platforms/Makefile
-		 sgml/security/Makefile
 		 specs/Makefile
 		 specs/CTEXT/Makefile
 		 specs/ICCCM/Makefile
-		 specs/XLFD/Makefile])
+		 specs/XLFD/Makefile
+		 specs/Xserver/Makefile])
 AC_OUTPUT
