@@ -486,6 +486,13 @@ M:	colin.harrison@virgin.net
 W:	http://www.straightrunning.com/XmingNotes/
 S:	Maintained
 
+GNU/Hurd
+P:	Samuel Thibault
+M:	samuel.thibault@ens-lyon.org
+W:	http://wiki.x.org
+L:	bug-hurd@gnu.org
+S:	Maintained
+
 Drivers
 -------
 xf86-input-acecad
