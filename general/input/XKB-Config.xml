@@ -102,7 +102,7 @@ The proper rules file depends on your vendor. In reality, the commonest
 file of rules is <filename>xorg</filename>. For each rules file there is a
 description file named
 <filename>&lt;<replaceable>vendor-rules</replaceable>&gt;.lst</filename>,
-for instance <literal remap="tt">xorg.lst</literal> which is located in
+for instance <filename>xorg.lst</filename> which is located in
 the xkb configuration subdirectory <filename>rules</filename>
 (for example <filename>/etc/X11/xkb/rules</filename>).
     </para>
@@ -129,11 +129,10 @@ Section "InputDevice"
 EndSection
 	</screen>
 
-The values of <literal remap="tt">XkbModel</literal>
-and <literal remap="tt">XkbLayout</literal> are really
-not surprising. The <literal remap="tt">XkbOptions</literal>
+The values of <option>XkbModel</option> and <option>XkbLayout</option> are
+really not surprising. The <option>XkbOptions</option>
 has been explicitly set to the empty set of parameters.
-The <literal remap="tt">XkbVariant</literal> option has been left out.
+The <option>XkbVariant</option> option has been left out.
 That means the default variant named <literal remap="tt">basic</literal>
 is loaded.
       </para>
@@ -167,8 +166,9 @@ switched very fast from one to another by a combination of keys.
       <para>
 Let's say you want to configure your new Logitech cordless desktop
 keyboard, you intend to use three different layouts at the same
-time - us, czech and german (in this order), and that you are used
-to <literal remap="tt">Alt-Shift</literal> combination for switching among them.
+time - us, czech and german (in this order), and that you are used to
+<keycombo action='simul'><keycap>Alt</keycap><keycap>Shift</keycap></keycombo>
+combination for switching among them.
       </para>
 
       <para>
@@ -243,7 +243,7 @@ setxkbmap -rules xorg -model logicordless -layout "us,cz,de" \
 
       <para>
 For a list of available options, with a short decription of what they do,
-see the section starting with "! option" in the
+see the section starting with <quote><literal>! option</literal></quote> in the
 <filename>rules/*.lst</filename> files.
       </para>
 
@@ -261,8 +261,8 @@ see the section starting with "! option" in the
     <para>
 Generally, you can directly prescribe what configuration of each of basic
 xkb components should be used to form the resulting keyboard mapping.
-This method is rather "brute force". You precisely need to know the structure
-and the meaning of all of used configuration components.
+This method is rather <quote>brute force</quote>. You precisely need to know
+the structure and the meaning of all of used configuration components.
     </para>
 
     <para>
