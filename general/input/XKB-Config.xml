@@ -57,40 +57,43 @@ fulfill your needs.
     <para>
       The parameters are:
 
-      <itemizedlist>
-	<listitem>
+      <variablelist>
+	<varlistentry>
+	  <term><option>XkbRules</option></term>
+	  <listitem><para>
+files of rules to be used for keyboard mapping composition
+	  </para></listitem>
+	</varlistentry>
 
-	  <para>
-<literal remap="tt">XkbRules </literal>- files of rules to be used for keyboard mapping
-composition
-	  </para>
-	</listitem>
+	<varlistentry>
+	  <term><option>XkbModel</option></term>
+	  <listitem><para>
+ name of the model of your keyboard type
+	  </para></listitem>
+	</varlistentry>
 
-	<listitem>
-	  <para>
-<literal remap="tt">XkbModel </literal>- name of the model of your keyboard type
-	  </para>
-	</listitem>
+	<varlistentry>
+	  <term><option>XkbLayout</option></term>
+	  <listitem><para>
+ layout(s) you intend to use
+	  </para></listitem>
+	</varlistentry>
 
-	<listitem>
-	  <para>
-<literal remap="tt">XkbLayout </literal>- layout(s) you intend to use
-	  </para>
-	</listitem>
+	<varlistentry>
+	  <term><option>XkbVariant</option></term>
+	  <listitem><para>
+ variant(s) of the layout you intend to use
+	  </para></listitem>
+	</varlistentry>
 
-	<listitem>
-	  <para>
-<literal remap="tt">XkbVariant </literal>- variant(s) of the layout you intend to use
-	  </para>
-	</listitem>
+	<varlistentry>
+	  <term><option>XkbOptions</option></term>
+	  <listitem><para>
+ extra xkb configuration options
+	  </para></listitem>
+	</varlistentry>
 
-	<listitem>
-	  <para>
-<literal remap="tt">XkbOptions </literal>- extra xkb configuration options
-	  </para>
-	</listitem>
-
-      </itemizedlist>
+      </variablelist>
 
     </para>
 
