@@ -45,11 +45,12 @@ XORG_CHECK_SGML_DOCTOOLS(1.5)
 XORG_CHECK_DOCBOOK
 
 AC_CONFIG_FILES([Makefile
+		 general/Makefile
+		 general/input/Makefile
 		 man/Makefile
 		 sgml/Makefile
 		 sgml/fonts/Makefile
 		 sgml/graphics/Makefile
-		 sgml/input/Makefile
 		 sgml/platforms/Makefile
 		 specs/Makefile
 		 specs/CTEXT/Makefile

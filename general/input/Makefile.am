@@ -1,0 +1,8 @@
+#  Process this file with automake to create Makefile.in
+
+doc_sources = XKB-Config.xml XKB-Enhancing.xml
+
+xmldir = $(docdir)/input
+dist_xml_DATA = $(doc_sources)
+
+include $(top_srcdir)/xmlrules.in
