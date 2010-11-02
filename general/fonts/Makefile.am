@@ -1,10 +1,8 @@
 #  Process this file with automake to create Makefile.in
 
-SUBDIRS = fonts input graphics
+doc_sources = fonts.xml
 
-doc_sources = ReleaseNotes.xml
-
-xmldir = $(docdir)
+xmldir = $(docdir)/fonts
 dist_xml_DATA = $(doc_sources)
 
 include $(top_srcdir)/xmlrules.in
