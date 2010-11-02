@@ -2,7 +2,7 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
                       "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
 [
-<!ENTITY % defs SYSTEM "X11/defs.ent"> %defs;
+<!ENTITY % defs SYSTEM "/xorg-sgml-doctools/X11/defs.ent"> %defs;
 ]>
 
 <article>
@@ -111,23 +111,28 @@ issued, from X11R6.7 to the current &relvers;.
 </para>
 
 <para>
+<!-- We only do release notes for full releases now.
 <![ %updaterel [
 The next sections describe what has changed in the update release(s)
 as well as what is new in the latest full release (&fullrelvers;).
 ]]>
 <![ %majorrel [
+-->
 The next section describes what is new in the latest full release
 (&relvers;) compared with the previous full release
 (&prevrelvers;).
+<!--
 ]]>
 <![ %minorrel [
 The next section describes what is new in the latest version
 (&relvers;) compared with the previous full release (&prevrelvers;).
 ]]>
+ -->
 </para>
 
 </sect1>
 
+<!--
 <![ %updaterel [
 <sect1>
     <title>Summary of updates in &relvers;</title>
@@ -135,6 +140,7 @@ The next section describes what is new in the latest version
     </para>
 </sect1>
 ]]>
+-->
 
 <sect1>
     <title>Summary of new features in X11R&relvers;</title>
@@ -1311,6 +1317,7 @@ The next section describes what is new in the latest version
   <sect1>
     <title>Attributions/Acknowledgements/Credits</title>
 
+<!--
     <![ %snapshot [
     <note>
       <title>THIS IS A DRAFT OF THE X11R&relvers; CREDITS SECTION.</title>
@@ -1320,7 +1327,7 @@ The next section describes what is new in the latest version
       </para>
     </note>
     ]]>
-
+ -->
 
     <para>
       This section lists the credits for the X11R&relvers; release.

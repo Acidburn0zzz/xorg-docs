@@ -32,8 +32,11 @@ if HAVE_XMLTO_TEXT
 xml_DATA += $(doc_sources:.xml=.txt)
 endif
 
+# Path to find X11/defs.ent
+XMLTO_FLAGS = --searchpath $(XORG_SGML_PATH)/X11
+
 if HAVE_STYLESHEETS
-XMLTO_FLAGS = -m $(XSL_STYLESHEET) --stringparam img.src.path=$(abs_builddir)/
+XMLTO_FLAGS += -m $(XSL_STYLESHEET) --stringparam img.src.path=$(abs_builddir)/
 
 xml_DATA += xorg.css
 xorg.css: $(STYLESHEET_SRCDIR)/xorg.css

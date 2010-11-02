@@ -26,7 +26,6 @@ x11docdir = $(docdir)
 SGML_FILES = \
 	LICENSE.sgml \
 	README.sgml \
-	RELNOTES.sgml \
 	Versions.sgml
 
 include $(top_srcdir)/sgmlrules.in
