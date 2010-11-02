@@ -2,7 +2,9 @@
 
 SUBDIRS = fonts input graphics
 
-doc_sources = ReleaseNotes.xml
+doc_sources = \
+	License.xml \
+	ReleaseNotes.xml
 
 xmldir = $(docdir)
 dist_xml_DATA = $(doc_sources)

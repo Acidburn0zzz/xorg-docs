@@ -24,7 +24,6 @@ SUBDIRS = platforms
 
 x11docdir = $(docdir)
 SGML_FILES = \
-	LICENSE.sgml \
 	README.sgml \
 	Versions.sgml
 
