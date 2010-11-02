@@ -4,6 +4,7 @@ SUBDIRS = fonts input graphics
 
 doc_sources = \
 	License.xml \
+	README.xml \
 	ReleaseNotes.xml
 
 xmldir = $(docdir)

@@ -1,5 +1,7 @@
-<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook V4.2//EN" [
-<!ENTITY % defs SYSTEM "X11/defs.ent"> %defs;
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+                      "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+<!ENTITY % defs SYSTEM "/xorg-sgml-doctools/X11/defs.ent"> %defs;
 ]>
 
 <article>
@@ -32,6 +34,7 @@ the X11 standard.
 <sect1>
 <title>What is X11R&relvers;?</title>
 
+<!-- We only do release notes for full releases now.
 <![ %updaterel [
 <para>
 X11R&relvers; is the &whichupdaterel; update to X11R&majorvers;, the
@@ -47,6 +50,7 @@ issues, fixes for driver bugs, and fixes that improve stability.
 ]]>
 
 <![ %minorrel [
+-->
 <para>
 X11R&relvers; is the &whichfullrel; release in the X11R&majorvers; series.
 Tarballs for packages that have had updates since the &prevrelvers; release
@@ -54,6 +58,7 @@ are included in this release. To build this release, you will first need to
 get the packages from X11R&prevrelvers; and then add the new packages from
 X11R&relvers; to them.
 </para>
+<!--
 ]]>
 
 <![ %snapshot [
@@ -69,8 +74,10 @@ encouraged to report your findings to the public X.Org server mailing list:
 <email>xorg@lists.freedesktop.org</email>.
 </para>
 ]]>
+ -->
 
 <para>
+<!--
 <![ %majorrel [
 X11R&relvers; is the first release in the new X11R&majorvers; series.
 The &relvers; version is a new major release that includes additional
@@ -81,18 +88,19 @@ The &relvers; version is a new minor release that includes additional
 hardware support, functional enhancements and bug fixes.
 ]]>
 <![ %haverelnotes [
+ -->
 Specific release enhancements can be viewed in the <ulink
-url="RELNOTES.html">Release Notes</ulink>.
+url="ReleaseNotes.html">Release Notes</ulink>.
+<!--
 ]]>
+ -->
 </para>
 
 <para>
 Most modern PC video hardware is supported in this release, and most PC
 video hardware that isn't supported explicitly can be used with the
 "vesa" driver.  The <ulink
-url="RELNOTES3.html"
->Release Notes</ulink
->
+url="ReleaseNotes.html">Release Notes</ulink>
 has a table showing the drivers provided with X11R&relvers;, and links to
 related documentation.
 </para>
@@ -118,6 +126,7 @@ users alike.
 
 </sect1>
 
+<!--
 <![ %snapshot [
 <sect1>
 <title>Redistribution of Snapshots</title>
@@ -130,6 +139,7 @@ release, we don't recommend including them in production releases.
 </para>
 </sect1>
 ]]>
+ -->
 
 <sect1>
 <title>Licensing</title>
@@ -185,7 +195,7 @@ url="http://www.fsf.org/philosophy/free-sw.html"
 Copyright and Licensing information for X, including the reproduction
 of copyright and/or license notices and attributions required by some
 of the licenses for binary distributions, can be found in the <ulink
-url="LICENSE.html">License Document</ulink>.  If you find any omissions
+url="License.html">License Document</ulink>.  If you find any omissions
 in that document, please contact us with details at
 <email>xorg@lists.freedesktop.org</email>.
 While the current licenses are all open source licenses, the
@@ -237,7 +247,7 @@ page</ulink>.
 <para>
 If you have any new work or enhancements/bug fixes for existing work,
 please send them as git format patches to
-<EMAIL>xorg-devel@lists.freedesktop.org</EMAIL> or to our
+<email>xorg-devel@lists.freedesktop.org</email> or to our
 <ulink url="https://bugs.freedesktop.org/">bug tracking system</ulink>
 using the xorg component.  This will help ensure that they are included
 in future releases.   More details on patch submission and review
@@ -251,6 +261,7 @@ SubmittingPatches</ulink> page of the X.Org wiki.
 <sect1>
 <title>How to get the release</title>
 
+<!--
 <![ %snapshot; [
 <para>
 X11R&relvers; can be found from the <ulink url="http://wiki.x.org">X.Org
@@ -259,6 +270,7 @@ Foundation wiki</ulink>, and at mirrors of this server.
 ]]>
 
 <![ %release; [
+-->
 <para>
 Information about X11R&relvers; can be found from the
 <ulink
@@ -266,7 +278,9 @@ url="http://wiki.x.org"
 >X.Org Foundation wiki</ulink>, and at
 mirrors of this server.
 </para>
+<!--
 ]]>
+ -->
 
 <sect2>
 <title>X11R&relvers;</title>

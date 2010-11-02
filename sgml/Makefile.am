@@ -24,7 +24,6 @@ SUBDIRS = platforms
 
 x11docdir = $(docdir)
 SGML_FILES = \
-	README.sgml \
 	Versions.sgml
 
 include $(top_srcdir)/sgmlrules.in
