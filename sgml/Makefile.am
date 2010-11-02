@@ -20,7 +20,7 @@
 #
 #  Process this file with autoconf to create configure.
 
-SUBDIRS = fonts graphics platforms
+SUBDIRS = fonts platforms
 
 x11docdir = $(docdir)
 SGML_FILES = \

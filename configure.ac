@@ -47,10 +47,10 @@ XORG_CHECK_DOCBOOK
 AC_CONFIG_FILES([Makefile
 		 general/Makefile
 		 general/input/Makefile
+		 general/graphics/Makefile
 		 man/Makefile
 		 sgml/Makefile
 		 sgml/fonts/Makefile
-		 sgml/graphics/Makefile
 		 sgml/platforms/Makefile
 		 specs/Makefile
 		 specs/CTEXT/Makefile

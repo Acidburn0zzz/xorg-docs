@@ -1,85 +1,81 @@
-<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook V4.2//EN" [
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+          "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
 ]>
 
-<Article>
+<article>
 
 <articleinfo>
 
-<Title>X and DPS</Title>
-<AUTHOR
->
+<title>X and DPS</title>
+<author>
 <firstname>Juliusz</firstname><surname>Chroboczek</surname>
 <email>jch@freedesktop.org</email>
-</AUTHOR>
-<PubDate>27 February 2001, updated 30 October 2006</PubDate>
+</author>
+<pubdate>27 February 2001, updated 30 October 2006</pubdate>
 
 </articleinfo>
 
-<Para>
+<para>
 Updated by Jim Gettys and Juliusz Chroboczek.
-</Para>
+</para>
 
-<Para>
+<para>
 
-</Para>
+</para>
 
-<Para>
+<para>
 
-</Para>
+</para>
 
-<Sect1>
-<Title>Notice of Obsolescence and Removal from X.Org Releases</Title>
+<sect1>
+<title>Notice of Obsolescence and Removal from X.Org Releases</title>
 
-<Para>
+<para>
 DPS is now obsolete.
-</Para>
+</para>
 
-<Para>
+<para>
 At the time when I started this project, there was no decent rendering
 interface for X11 other than DPS.
-</Para>
+</para>
 
-<Para>
+<para>
 Since then, there has been a large amount of work on a simple and
 clean X server extension, Xrender, which provides the basis for just
 such an interface.
-</Para>
+</para>
 
-<Para>
+<para>
 Rendering libraries that are being built above Xrender include Xft, a
 font rendering library built on FreeType; Cairo, a geometry rendering
 library that provides PostScript-like rendering primitives but with
 from-the-ground support for Porter-Duff compositing (transparency);
 Pango, a high-level typesetting library.
-</Para>
+</para>
 
-<Para>
+<para>
 If your application uses DPS, please consider porting it to the above libraries.
-See <ULink
-URL="http://dps.sourceforge.net"
->the DPS extension site</ULink
->
+See <ulink url="http://dps.sourceforge.net">the DPS extension site</ulink>
 for more details
-</Para>
+</para>
 
-<Para>
+<para>
 The client-side DPS software was included and built by default (except
 as noted below) in the X.Org X11R6.8 release series.  The client-side
 software was included, but not built unless specifically
 configured by the builder, in the X.Org X11R6.9 release series.
 The client-side DPS software is no longer included in X11R7.0 or
 later releases.
-</Para>
+</para>
 
-<Para>
+<para>
 The server-side software is not included in any X.Org release for
 licensing reasons; the code is still available
-from <ULink
-URL="http://dps.sourceforge.net"
->the DPS extension site</ULink
->; it is not known whether it still compiles.
-</Para>
+from <ulink url="http://dps.sourceforge.net">the DPS extension site</ulink>;
+it is not known whether it still compiles.
+</para>
 
-</Sect1>
+</sect1>
 
-</Article>
+</article>
