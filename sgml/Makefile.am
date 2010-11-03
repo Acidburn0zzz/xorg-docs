@@ -21,9 +21,3 @@
 #  Process this file with autoconf to create configure.
 
 SUBDIRS = platforms
-
-x11docdir = $(docdir)
-SGML_FILES = \
-	Versions.sgml
-
-include $(top_srcdir)/sgmlrules.in
