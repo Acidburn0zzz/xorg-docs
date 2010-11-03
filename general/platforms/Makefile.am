@@ -1,14 +1,12 @@
 #  Process this file with automake to create Makefile.in
 
-SUBDIRS = fonts input graphics platforms
-
 doc_sources = \
-	License.xml \
-	README.xml \
-	ReleaseNotes.xml \
-	Versions.xml
+	Darwin.xml \
+	NetBSD.xml \
+	OpenBSD.xml \
+	Solaris.xml
 
-xmldir = $(docdir)
+xmldir = $(docdir)/platforms
 dist_xml_DATA = $(doc_sources)
 
 include $(top_srcdir)/xmlrules.in

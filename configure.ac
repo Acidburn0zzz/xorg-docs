@@ -42,16 +42,14 @@ XORG_ENABLE_SPECS
 XORG_WITH_XMLTO(0.0.20)
 XORG_WITH_FOP
 XORG_CHECK_SGML_DOCTOOLS(1.5)
-XORG_CHECK_DOCBOOK
 
 AC_CONFIG_FILES([Makefile
 		 general/Makefile
 		 general/fonts/Makefile
 		 general/input/Makefile
 		 general/graphics/Makefile
+		 general/platforms/Makefile
 		 man/Makefile
-		 sgml/Makefile
-		 sgml/platforms/Makefile
 		 specs/Makefile
 		 specs/CTEXT/Makefile
 		 specs/ICCCM/Makefile

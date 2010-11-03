@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+                      "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+<!ENTITY % defs SYSTEM "/xorg-sgml-doctools/X11/defs.ent"> %defs;
+]>
+
+<article>
+
+<articleinfo>
+
+<title>README for X11R&relvers; on OpenBSD</title>
+<author>
+<firstname>Matthieu</firstname><surname>Herrb</surname>
+</author>
+<pubdate>Last modified on: 4 February 2005.</pubdate>
+
+</articleinfo>
+
+<sect1>
+<title>What and Where is X11R7&relvers;?</title>
+
+<para>
+The X.Org Foundation X11R&relvers; is an Open Source version of
+the X Window System that supports
+several UNIX(R) and UNIX-like operating systems (such as Linux, the BSDs
+and Solaris x86) on Intel and other platforms.
+</para>
+
+<para>
+See the <ulink url="../LICENSE.html">Copyright Notice</ulink>.
+</para>
+
+<para>
+The sources for X11R&relvers; are available from
+<ulink url="http://wiki.x.org">http://wiki.x.org</ulink>
+</para>
+
+<para>
+X11R&relvers; builds on most architectures supported by OpenBSD. See section
+<xref linkend="otherarch"/> for details.
+</para>
+
+</sect1>
+
+<sect1>
+<title>Bug Reports for This Document</title>
+
+<para>
+Use the X.Org Bugzilla at <ulink 
+url="http://bugs.freedesktop.org">http://bugs.freedesktop.org</ulink>
+to submit comments or suggestions about this file, using the xorg product.
+</para>
+
+</sect1>
+
+<sect1>
+<title>New OS dependent features</title>
+
+<para>
+See the <ulink url="ReleaseNotes.html">Release Notes</ulink> for
+non-OS dependent new features in X11R&relvers;.
+</para>
+
+<para>
+
+<itemizedlist>
+<listitem>
+
+<para>
+Switch the the Xinput-aware kbd driver for keyboard input
+</para>
+</listitem>
+
+</itemizedlist>
+
+</para>
+
+<sect2>
+<title>New OS related features in X.Org 6.8</title>
+
+<para>
+
+<itemizedlist>
+<listitem>
+
+<para>
+Support for Propolice in modules.
+</para>
+</listitem>
+<listitem>
+
+<para>
+Server support for OpenBSD/amd64.
+</para>
+</listitem>
+
+</itemizedlist>
+
+</para>
+
+</sect2>
+
+</sect1>
+
+<sect1>
+<title>Configuring X for Your Hardware</title>
+
+<para>
+The <filename>/etc/X11/xorg.conf</filename> file tells the X server what kind of
+monitor,
+video card and mouse you have.  You <emphasis>must</emphasis> create it to tell the
+server what specific hardware you have.
+</para>
+
+<para>
+You'll need info on your hardware:
+
+<itemizedlist>
+<listitem>
+
+<para>
+Your mouse type, baud rate and its /dev entry.
+</para>
+</listitem>
+<listitem>
+
+<para>
+The video card's chipset (e.g. ATI Radeon, nVidia GeForce 4/MX etc).
+</para>
+</listitem>
+<listitem>
+
+<para>
+Your monitor's sync frequencies.
+</para>
+</listitem>
+
+</itemizedlist>
+
+</para>
+
+<para>
+The recommended way to generate an <filename>xorg.conf</filename> file is to use the
+<command>xorgcfg</command> utility.  The xorgconfig text utility is still there
+for the (few) cases where xorgcfg can't be used. Also, there is a
+sample file installed as <filename>/usr/X11R6/lib/X11/xorg.conf.eg</filename>,
+which can be used as a starting point.
+</para>
+
+<para>
+For details about the <filename>xorg.conf</filename> file format, refer to the
+<emphasis><ulink url="xorg.conf.5.html">xorg.conf(5)</ulink></emphasis>
+manual page.
+</para>
+
+<para>
+Once you've set up a xorg.conf file, you can fine tune the video
+modes with the <command>xvidtune</command> utility.
+</para>
+
+<sect2>
+<title>About mouse configuration</title>
+
+<para>
+X11R&relvers; has support for the mouse driver included in
+the new <emphasis remap="bf">wscons</emphasis> console driver.
+Specify <quote><filename>wsmouse</filename></quote> as the protocol and
+<quote><filename>/dev/wsmouse</filename></quote> as the  device in <filename>/etc/X11/xorg.conf</filename>
+with a PS/2 or USB mouse.
+</para>
+
+<para>
+See <ulink
+url="mouse.html"
+>README.mouse</ulink
+>  for general
+instruction on mouse configuration.
+</para>
+
+</sect2>
+
+</sect1>
+
+<sect1>
+<title>Running X</title>
+
+<sect2>
+<title>Starting xdm, the display manager</title>
+
+<para>
+To start the display manager, log in as root on the console and type:
+<quote><userinput>xdm -nodaemon</userinput></quote>.
+</para>
+
+<para>
+You can start xdm automatically on bootup by adding the line:
+
+<screen>
+xdm_flags=""            # for normal use: xdm_flags=""
+</screen>
+
+in <filename>/etc/rc.conf.local</filename>.
+</para>
+
+</sect2>
+
+<sect2>
+<title>Running X without the display manager</title>
+
+<para>
+The easiest way for new users to start X windows is to type: <quote><userinput>startx
+&#62;&amp; startx.log</userinput></quote>.  Error messages are lost unless you redirect them
+because the server takes over the screen.
+</para>
+
+<para>
+To get out of X windows, type: <quote><userinput>exit</userinput></quote> in the console xterm.
+You can customize your X by creating <filename>.xinitrc</filename>, <filename>.xserverrc</filename>,
+and <filename>.twmrc</filename> files in your home directory as described in the xinit
+and startx man pages.
+</para>
+
+</sect2>
+
+</sect1>
+
+<sect1>
+<title>Kernel Support for X</title>
+
+<para>
+OpenBSD's GENERIC kernels have all support for running X enabled.
+</para>
+
+<sect2>
+<title>Console drivers</title>
+
+<para>
+The server supports wscons, the standard OpenBSD/i386 console driver.
+</para>
+
+</sect2>
+
+<sect2>
+<title>Aperture Driver</title>
+
+<para>
+By default OpenBSD includes the BSD 4.4 kernel security
+feature that disables access to the <filename>/dev/mem</filename> device when in
+multi-user mode. But the X server requires
+linear access to the display memory in most cases.
+</para>
+
+<para>
+OpenBSD requires the aperture driver to be enabled for all X
+servers, because the aperture driver also controls access to the
+I/O ports of the video boards.
+</para>
+
+<para>
+To enable the aperture driver, once included in the kernel, set
+
+<screen>
+machdep.allowaperture=2
+</screen>
+
+in <filename>/etc/sysctl.conf</filename>.  See the
+<ulink
+url="http://www.openbsd.org/cgi-bin/man.cgi?query=xf86&#38;apropos=0&#38;sektion=4&#38;manpath=OpenBSD+Current&#38;arch=i386&#38;format=html"
+>xf86(4)</ulink
+>
+manual page for details.
+</para>
+
+<para>
+Another (less recommended) way to enable linear memory and I/O ports
+access is to disable the kernel security feature by
+initializing <varname>securelevel</varname> to -1
+in <filename>/etc/rc.securelevel</filename>.
+</para>
+
+<note><title>Caveat:</title>
+<para>
+the aperture driver only allows one access at a time
+(so that the system is in the same security state once X is
+launched). This means that if you run multiple servers on multiple
+virtual terminals, only the first one will have linear memory access.
+Set <varname>securelevel</varname> to -1 if you need more that one X
+server at a time.
+</para></note>
+
+</sect2>
+
+<sect2>
+<title>MIT-SHM</title>
+
+<para>
+OpenBSD supports System V shared memory. If X
+detects this support in your kernel, it will support the MIT-SHM
+extension.
+</para>
+
+</sect2>
+
+</sect1>
+
+<sect1>
+<title>Rebuilding the X Distribution</title>
+
+<para>
+
+Note that OpenBSD project now has its own source tree,
+with some local modifications. You may want
+to start with this tree to rebuild from sources.  The OpenBSD XF4
+source tree is available by anoncvs from all OpenBSD anoncvs
+servers. See <ulink url="http://www.openbsd.org/anoncvs.html"
+>http://www.openbsd.org/anoncvs.html</ulink> for details on anoncvs.
+</para>
+
+<para>
+<anchor id="otherarch" xreflabel="Building on other architectures" />
+</para>
+
+<para>
+X11R&relvers; compiles on most OpenBSD architectures. The X.Org
+X server builds and run on the following systems. On other
+architectures supported by OpenBSD, only client side libraries and
+applications are supported.
+</para>
+
+<sect2>
+<title>OpenBSD/alpha</title>
+
+<para>
+The X server is known to work on some VGA cards in alpha
+machines that support BWX I/O, with OpenBSD 3.2 and higher.
+</para>
+
+<para>
+The following cards have been successfully tested for now:
+
+<itemizedlist>
+<listitem>
+
+<para>
+3DLabs Permedia 2 (8, 15, 16 and 24 bits depth)
+</para>
+</listitem>
+<listitem>
+
+<para>
+ATI Rage Pro (works with 'Option "NoAccel"')
+</para>
+</listitem>
+<listitem>
+
+<para>
+Cirrus Logic CL5430 (works with 'Option "NoAccel"')
+</para>
+</listitem>
+<listitem>
+
+<para>
+Cirrus Logic GD5446 (8, 16 and 24 bits depth)
+</para>
+</listitem>
+<listitem>
+
+<para>
+Matrox MGA 2064 (8, 16 and 24 bits depth)
+</para>
+</listitem>
+
+</itemizedlist>
+
+</para>
+
+<para>
+Note that this version of doesn't work on TGA cards. The
+version shipped with OpenBSD 3.1 and higher includes an OS-specific
+driver <emphasis>wsfb</emphasis> that is used to support TGA cards.
+</para>
+
+</sect2>
+
+<sect2>
+<title>OpenBSD/macppc</title>
+
+<para>
+The X server is currently known to work on most of the G4 Macs and
+iBooks with ATI or nVidia cards.
+Other machines are more or less untested.
+</para>
+
+<para>
+Use xorgconfig to build a /etc/X11/xorg.conf file before starting
+the server for the first time.
+</para>
+
+<para>
+For the Titanium Powerbook G4, you can try the following mode line in
+<filename>/etc/X11/xorg.conf</filename> to match the flat panel resolution:
+</para>
+
+<para>
+
+<screen>
+Modeline "1152x768" 64.995 1152 1213 1349 1472  768 771 777 806 -HSync -VSync
+</screen>
+
+</para>
+
+</sect2>
+
+<sect2>
+<title>OpenBSD/sparc</title>
+
+<para>
+OpenBSD 3.2 on sparc switched to the wscons device driver and now uses
+the OS specific <emphasis>wsfb</emphasis> driver in the X server. This driver is
+not included in X11R&relvers;. Please use the version shipped with
+OpenBSD instead.
+</para>
+
+</sect2>
+
+<sect2>
+<title>OpenBSD/sparc64</title>
+
+<para>
+This version only has support PCI based machines using ATI cards on
+OpenBSD/sparc64. Note that the version shipped with OpenBSD has
+support for the X server on both SBus and UPA (unaccelerated) based cards.
+</para>
+
+</sect2>
+
+</sect1>
+
+<sect1>
+<title>Thanks</title>
+
+<para>
+Many thanks to all people who contributed to make X11R&relvers; work on
+*BSD, in particular:
+<emphasis remap="bf">David Dawes</emphasis>,
+<emphasis remap="bf">Todd Fries</emphasis>,
+<emphasis remap="bf">Miodrag Vallat</emphasis>,
+<emphasis remap="bf">Rod Grimes</emphasis>,
+<emphasis remap="bf">Charles Hannum</emphasis>,
+<emphasis remap="bf">Amancio Hasty</emphasis>,
+<emphasis remap="bf">Christoph Robitschko</emphasis>,
+<emphasis remap="bf">Matthias Scheler</emphasis>,
+<emphasis remap="bf">Michael Smith</emphasis>,
+<emphasis remap="bf">Ignatios Souvatzis</emphasis>,
+<emphasis remap="bf">Jack Velte</emphasis>,
+<emphasis remap="bf">Nate Williams</emphasis> and
+<emphasis remap="bf">Pace Willison</emphasis>.
+</para>
+
+</sect1>
+
+</article>

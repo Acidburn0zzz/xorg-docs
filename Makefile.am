@@ -20,7 +20,7 @@
 #
 #  Process this file with autoconf to create configure.
 
-SUBDIRS = general man sgml specs
+SUBDIRS = general man specs
 
 dist_doc_DATA = MAINTAINERS
 
