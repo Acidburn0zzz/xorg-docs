@@ -2,8 +2,6 @@
 
 doc_sources = \
 	Darwin.xml \
-	NetBSD.xml \
-	OpenBSD.xml \
 	Solaris.xml
 
 xmldir = $(docdir)/platforms
