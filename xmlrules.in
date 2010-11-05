@@ -36,11 +36,10 @@ endif
 XMLTO_FLAGS = --searchpath $(XORG_SGML_PATH)/X11
 
 if HAVE_STYLESHEETS
-XMLTO_FLAGS += -m $(XSL_STYLESHEET) --stringparam img.src.path=$(abs_builddir)/
-
-xml_DATA += xorg.css
-xorg.css: $(STYLESHEET_SRCDIR)/xorg.css
-	$(AM_V_GEN)cp -pf $(STYLESHEET_SRCDIR)/xorg.css $@
+XMLTO_FLAGS +=								\
+	-m $(XSL_STYLESHEET)						\
+	--stringparam html.stylesheet=$(STYLESHEET_SRCDIR)/xorg.css	\
+	--stringparam img.src.path=$(abs_builddir)/
 endif
 
 CLEANFILES = $(xml_DATA)
