@@ -62,6 +62,7 @@ SUFFIXES = .xml .ps .pdf .txt .html
 chunked-html: $(doc_sources)
 	$(AM_V_GEN)$(XMLTO) $(XMLTO_FLAGS) -o html xhtml $(doc_sources)
 
-CLEANFILES += html
+clean-local:
+	$(AM_V_GEN)rm -fr html/
 
 endif HAVE_XMLTO
