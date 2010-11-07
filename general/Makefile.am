@@ -1,6 +1,7 @@
-#  Process this file with automake to create Makefile.in
 
 SUBDIRS = fonts input graphics platforms
+
+if ENABLE_DOCS
 
 doc_sources = \
 	License.xml \
@@ -12,3 +13,5 @@ xmldir = $(docdir)
 dist_xml_DATA = $(doc_sources)
 
 include $(top_srcdir)/xmlrules.in
+
+endif ENABLE_DOCS
