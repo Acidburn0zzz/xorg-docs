@@ -31,6 +31,19 @@
   </articleinfo>
 
   <sect1>
+    <title>Dedication</title>
+
+    <para><emphasis>
+	Two of the early leaders of the X Window System community were
+	lost to cancer this year &mdash; Smokey Wallace, who lead the DEC
+	WSL team which created the initial implementation of X11, and
+	Hideki Hiura from Sun Microsystems who helped design the X11R6
+	internationalization framework.  This release is dedicated to
+	their memory.
+    </emphasis></para>
+  </sect1>
+
+  <sect1>
     <title>Introduction to the X11R&relvers; Release</title>
 
     <para>
