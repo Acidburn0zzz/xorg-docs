@@ -38,7 +38,6 @@ EXTRA_DIST = \
 	specs/SIAddresses/localuser.txt \
 	specs/SIAddresses/README \
 	specs/specindex.html \
-	specs/Xext/AppGroup.mif \
 	specs/XKB/Proto/dflttrns.fm5 \
 	specs/XKB/Proto/encoding.fm5 \
 	specs/XKB/Proto/keysyms.fm5 \
