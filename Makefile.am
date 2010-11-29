@@ -39,11 +39,6 @@ EXTRA_DIST = \
 	specs/SIAddresses/README \
 	specs/specindex.html \
 	specs/Xext/AppGroup.mif \
-	specs/Xext/lbxalg.mif \
-	specs/Xext/lbx.book \
-	specs/Xext/lbx.mif \
-	specs/Xext/xtest1.info \
-	specs/Xext/xtest1.mm \
 	specs/XKB/Proto/dflttrns.fm5 \
 	specs/XKB/Proto/encoding.fm5 \
 	specs/XKB/Proto/keysyms.fm5 \
