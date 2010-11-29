@@ -1273,7 +1273,6 @@ The next section describes what is new in the latest version
 
 <!--
     <![ %snapshot [
- -->
     <note>
       <title>THIS IS A DRAFT OF THE X11R&relvers; CREDITS SECTION.</title>
       <para>
@@ -1281,7 +1280,6 @@ The next section describes what is new in the latest version
 	please send details to <email>xorg@lists.freedesktop.org</email>.
       </para>
     </note>
-<!--
     ]]>
  -->
 
