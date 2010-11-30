@@ -32,7 +32,6 @@ EXTRA_DIST = \
 	specs/BDF/bdf.ms \
 	specs/BDF/fig1.ps \
 	specs/BDF/fig2.ps \
-	specs/RX/RX.mif \
 	specs/SIAddresses/hostname.txt \
 	specs/SIAddresses/IPv6.txt \
 	specs/SIAddresses/localuser.txt \
