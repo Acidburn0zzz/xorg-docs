@@ -1,7 +1,7 @@
 if ENABLE_SPECS
 
 xmldir = $(docdir)/$(subdir)
-doc_sources = lbx.xml lbxalg.xml
+doc_sources = lbxalg.xml
 dist_xml_DATA = $(doc_sources)
 
 include $(top_srcdir)/xmlrules.in
