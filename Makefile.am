@@ -36,24 +36,7 @@ EXTRA_DIST = \
 	specs/SIAddresses/IPv6.txt \
 	specs/SIAddresses/localuser.txt \
 	specs/SIAddresses/README \
-	specs/specindex.html \
-	specs/XKB/Proto/dflttrns.fm5 \
-	specs/XKB/Proto/encoding.fm5 \
-	specs/XKB/Proto/keysyms.fm5 \
-	specs/XKB/Proto/protocol.fm5 \
-	specs/XKB/Proto/prototoc.doc \
-	specs/XKB/Proto/title.fm5 \
-	specs/XKB/Proto/types.fm5 \
-	specs/XKB/Proto/XKBproto.book \
-	specs/XKB/XKBlib/allchaps.fm5 \
-	specs/XKB/XKBlib/allchaps.ix \
-	specs/XKB/XKBlib/allchaps.lof \
-	specs/XKB/XKBlib/allchaps.lot \
-	specs/XKB/XKBlib/allchaps.ps \
-	specs/XKB/XKBlib/allchaps.toc \
-	specs/XKB/XKBlib/fonts.fm5 \
-	specs/XKB/XKBlib/title.fm5 \
-	specs/XKB/XKBlib/XKBlib.book
+	specs/specindex.html
 
 .PHONY: ChangeLog INSTALL
 
