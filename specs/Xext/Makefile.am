@@ -6,6 +6,4 @@ dist_xml_DATA = $(doc_sources)
 
 include $(top_srcdir)/xmlrules.in
 
-EXTRA_DIST = xtest1.info
-
 endif ENABLE_SPECS
