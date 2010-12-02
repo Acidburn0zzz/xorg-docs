@@ -32,10 +32,6 @@ EXTRA_DIST = \
 	specs/BDF/bdf.ms \
 	specs/BDF/fig1.ps \
 	specs/BDF/fig2.ps \
-	specs/SIAddresses/hostname.txt \
-	specs/SIAddresses/IPv6.txt \
-	specs/SIAddresses/localuser.txt \
-	specs/SIAddresses/README \
 	specs/specindex.html
 
 .PHONY: ChangeLog INSTALL
