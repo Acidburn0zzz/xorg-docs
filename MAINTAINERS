@@ -503,11 +503,11 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-input-aiptek
-P:	Rene van Paassen
-M:	rene.vanpaassen@gmail.com
+P:	?
+M:	?
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
-S:	Maintained
+S:	Unmaintained
 
 xf86-input-calcomp
 P:	?
