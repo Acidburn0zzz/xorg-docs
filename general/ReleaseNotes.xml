@@ -22,7 +22,7 @@
     <abstract>
 
       <para>
-	These release notes contains information about features and their
+	These release notes contain information about features and their
 	status in the X.Org Foundation X11R&relvers; release.
       </para>
 
@@ -35,7 +35,7 @@
 
     <para><emphasis>
 	Two of the early leaders of the X Window System community were
-	lost to cancer this year &mdash; Smokey Wallace, who lead the DEC
+	lost to cancer this year &mdash; Smokey Wallace, who led the DEC
 	WSL team which created the initial implementation of X11, and
 	Hideki Hiura from Sun Microsystems who helped design the X11R6
 	internationalization framework.  This release is dedicated to
