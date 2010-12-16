@@ -21,14 +21,20 @@
       </othercredit>
    </authorgroup>
    <corpname>X Consortium Standard</corpname>
-   <copyright><year>1988, 1991, 1993, 1994</year><holder>X Consortium</holder></copyright>
-   <copyright><year>1987, 1988, 1989, 1993, 1994</year><holder>Sun Microsystems, Inc</holder></copyright>
    <affiliation><orgname>X Consortium</orgname></affiliation>
    <productnumber>X Version 11, Release 6.8</productnumber>
 
 
 <legalnotice>
+<para>
+X Window System is a trademark of The Open Group
+</para>
+</legalnotice>
 
+<legalnotice>
+<para>
+Copyright &copy; 1988, 1991, 1993, 1994 X Consortium
+</para>
 <para>
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -57,10 +63,12 @@ not be used in advertising or otherwise to promote the sale, use or
 other dealings in this Software without prior written authorization
 from the X Consortium.
 </para>
-<para>
-<!-- .LP -->
-</para>
+</legalnotice>
 
+<legalnotice>
+<para>
+Copyright &copy; 1987, 1988, 1989, 1993, 1994 Sun Microsystems, Inc
+</para>
 <para>
 Permission to use, copy, modify, and distribute this documentation
 for any purpose and without fee is hereby granted, provided
@@ -69,9 +77,6 @@ notice appear in all copies.
 Sun Microsystems makes no representations about the
 suitability for any purpose of the information in this document.
 This documentation is provided as is without express or implied warranty.
-</para>
-<para>
-X Window System is a trademark of The Open Group
 </para>
 </legalnotice>
 
