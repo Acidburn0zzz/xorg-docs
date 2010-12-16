@@ -77,8 +77,8 @@ X Window System is a trademark of The Open Group
 
 </bookinfo>
 
-<chapter>
-<title>TITLE</title>
+<preface>
+<title>Preface to Version 2.0</title>
 <para>
 The goal of the ICCCM Version 2.0 effort was to add new facilities, to fix
 problems with earlier drafts, and to improve readability and
@@ -113,6 +113,10 @@ Stuart W. Marks
 <para>
 December 1993
 </para>
+</preface>
+
+<preface>
+<title>Preface to Version 1.1</title>
 
 <para>
 David Rosenthal had overall architectural responsibility
@@ -189,8 +193,9 @@ Kee Hinckley      Steve Pitschke
 Brian Holt        Brad Reed
 John Interrante   John Thomas
 </literallayout>
+</preface>
 
-<sect1 id="introduction">
+<chapter id="introduction">
 <title>Introduction</title>
 <para>
 It was an explicit design goal of X Version 11 to specify mechanism,
@@ -252,7 +257,7 @@ and to the equivalent interfaces for other languages
 is the subject of other documents.
 </para>
 
-<sect2 id="evolution_of_the_conventions">
+<sect1 id="evolution_of_the_conventions">
 <title>Evolution of the Conventions</title>
 <para>
 In the interests of timely acceptance,
@@ -291,9 +296,9 @@ will interoperate correctly with those that use the conventions
 appropriate to protocol minor revision
 <emphasis remap='I'>n</emphasis> + 1 if the server supports both.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="atoms">
+<sect1 id="atoms">
 <title>Atoms</title>
 <para>
 Many of the conventions use atoms.
@@ -301,7 +306,7 @@ To assist the reader,
 the following sections attempt to amplify the description of atoms
 that is provided in the protocol specification.
 </para>
-<sect3 id="what_are_atoms">
+<sect2 id="what_are_atoms">
 <title>What Are Atoms?</title>
 <para>
 At the conceptual level,
@@ -337,9 +342,9 @@ that maps to the byte sequence.
 The inverse operator is also available
 ( <function>GetAtomName</function> ).
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="predefined_atoms">
+<sect2 id="predefined_atoms">
 <title>Predefined Atoms</title>
 <para>
 The protocol specifies a number of atoms as being predefined:
@@ -373,9 +378,9 @@ and other atoms; all atoms are viewed as symbols at the interface.
 However, a CLX implementation will typically keep a symbol or atom cache
 and will typically initialize this cache with the predefined atoms.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="naming_conventions">
+<sect2 id="naming_conventions">
 <title>Naming Conventions</title>
 <para>
 The built-in atoms are composed of uppercase ASCII characters with the
@@ -395,9 +400,9 @@ Keyword constructors allow the programmer to specify the atoms as LISP atoms.
 If the atoms were not all uppercase,
 special quoting conventions would have to be used.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="semantics">
+<sect2 id="semantics">
 <title>Semantics</title>
 <para>
 The core protocol imposes no semantics on atoms except as they are used in
@@ -405,8 +410,8 @@ FONTPROP structures.
 For further information on FONTPROP semantics,
 see the <emphasis remap='I'>X Logical Font Description Conventions</emphasis>.
 </para>
-</sect3>
-<sect3 id="name_spaces">
+</sect2>
+<sect2 id="name_spaces">
 <title>Name Spaces</title>
 <para>
 The protocol defines six distinct spaces in which atoms are interpreted.
@@ -461,9 +466,9 @@ with respect to each of these name spaces.
   </tbody>
   </tgroup>
 </informaltable>
-</sect3>
+</sect2>
 
-<sect3 id="discriminated_names">
+<sect2 id="discriminated_names">
 <title>Discriminated Names</title>
 <para>
 Sometimes a protocol requires an arbitrary number of similar
@@ -574,11 +579,11 @@ that future protocols -- both standard and private -- will use these
 conventions.
 </para>
 </blockquote>
-</sect3>
 </sect2>
 </sect1>
+</chapter>
 
-<sect1 id="peer_to_peer_communication_by_means_of_selections">
+<chapter id="peer_to_peer_communication_by_means_of_selections">
 <title>Peer-to-Peer Communication by Means of Selections</title>
 <para>
 Selections are the primary mechanism that X Version 11 defines
@@ -669,7 +674,7 @@ Thus, passing indirect references to data
 is permitted only if both clients specifically agree.
 </para>
 
-<sect2 id="acquiring_selection_ownership">
+<sect1 id="acquiring_selection_ownership">
 <title>Acquiring Selection Ownership</title>
 <para>
 A client wishing to acquire ownership of a particular selection
@@ -818,9 +823,9 @@ request succeeds (not merely appears to succeed),
 the client that issues it is recorded by the server as being the owner
 of the selection for the time period starting at the specified time.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="responsibilities_of_the_selection_owner">
+<sect1 id="responsibilities_of_the_selection_owner">
 <title>Responsibilities of the Selection Owner</title>
 <para>
 When a requestor wants the value of a selection,
@@ -1138,16 +1143,16 @@ on the part of the software developer.
 the owner should take no action.
 </para>
 
-</sect2>
+</sect1>
 
-<sect2 id="giving_up_selection_ownership">
+<sect1 id="giving_up_selection_ownership">
 <title>Giving Up Selection Ownership</title>
 <para>
 Clients may either give up selection ownership voluntarily
 or lose it forcibly as the result of some other client's actions.
 </para>
 
-<sect3 id="voluntarily_giving_up_selection_ownership">
+<sect2 id="voluntarily_giving_up_selection_ownership">
 <title>Voluntarily Giving Up Selection Ownership</title>
 <para>
 To relinquish ownership of a selection voluntarily,
@@ -1167,9 +1172,9 @@ In both cases,
 the ownership of the selection involved will revert to
 <function>None</function>.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="forcibly_giving_up_selection_ownership">
+<sect2 id="forcibly_giving_up_selection_ownership">
 <title>Forcibly Giving Up Selection Ownership</title>
 <para>
 If a client gives up ownership of a selection
@@ -1192,10 +1197,10 @@ in its
 <function>SetSelectionOwner</function>
 request.
 </para>
-</sect3>
 </sect2>
+</sect1>
 
-<sect2 id="requesting_a_selection">
+<sect1 id="requesting_a_selection">
 <title>Requesting a Selection</title>
 <para>
 A client that wishes to obtain the value of a selection in a particular
@@ -1513,9 +1518,9 @@ see
 
 </para>
 </blockquote>
-</sect2>
+</sect1>
 
-<sect2 id="large_data_transfers">
+<sect1 id="large_data_transfers">
 <title>Large Data Transfers</title>
 <para>
 Selections can get large, which poses two problems:
@@ -1626,9 +1631,9 @@ Single-threaded servers should take care to avoid locking up during large
 data transfers.
 </para>
 </blockquote>
-</sect2>
+</sect1>
 
-<sect2 id="use_of_selection_atoms">
+<sect1 id="use_of_selection_atoms">
 <title>Use of Selection Atoms</title>
 <para>
 Defining a new atom consumes resources in the server
@@ -1637,7 +1642,7 @@ Thus, reducing the need for newly minted atoms is an important goal
 for the use of the selection atoms.
 </para>
 
-<sect3 id="selection_atoms">
+<sect2 id="selection_atoms">
 <title>Selection Atoms</title>
 <para>
 There can be an arbitrary number of selections, each named by an atom.
@@ -1667,16 +1672,16 @@ Other selections may be used freely for private communication among
 related groups of clients.
 </para>
 
-<sect4 id="the_primary_Selection">
+<sect3 id="the_primary_Selection">
 <title>The PRIMARY Selection</title>
 <para>
 The selection named by the atom PRIMARY is used for all commands
 that take only a single argument and is the principal means of communication
 between clients that use the selection mechanism.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="the_secondary_Selection">
+<sect3 id="the_secondary_Selection">
 <title>The SECONDARY Selection</title>
 <para>
 The selection named by the atom SECONDARY is used:
@@ -1696,8 +1701,8 @@ and the user does not want to disturb it
   </listitem>
 </itemizedlist>
 
-</sect4>
-<sect4 id="the_clipboard_selection">
+</sect3>
+<sect3 id="the_clipboard_selection">
 <title>The CLIPBOARD Selection</title>
 <para>
 The selection named by the atom CLIPBOARD is used to hold data
@@ -1840,10 +1845,10 @@ Flexibility - The clipboard data may be available as more than one target.
     </para>
   </listitem>
 </itemizedlist>
-</sect4>
 </sect3>
+</sect2>
 
-<sect3 id="target_atoms">
+<sect2 id="target_atoms">
 <title>Target Atoms</title>
 <para>
 The atom that a requestor supplies as the target of a
@@ -2272,9 +2277,9 @@ returning the timestamp they used to obtain the selection.
     </para>
   </listitem>
 </itemizedlist>
-</sect3>
+</sect2>
 
-<sect3 id="selection_targets_with_side_effects">
+<sect2 id="selection_targets_with_side_effects">
 <title>Selection Targets with Side Effects</title>
 <para>
 Some targets (for example, DELETE) have side effects.
@@ -2335,7 +2340,7 @@ These side-effect targets are used to implement operations such as
 "exchange PRIMARY and SECONDARY selections."
 </para>
 
-<sect4 id="delete">
+<sect3 id="delete">
 <title>DELETE</title>
 <para>
 When the owner of a selection receives a request to convert it to DELETE,
@@ -2343,9 +2348,9 @@ it should delete the corresponding selection
 (whatever doing so means for its internal data structures)
 and return a zero-length property of type NULL if the deletion was successful.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="insert_selection">
+<sect3 id="insert_selection">
 <title>INSERT_SELECTION</title>
 <para>
 When the owner of a selection receives a request to convert it to
@@ -2358,8 +2363,8 @@ into the named target and should insert it at the location of the selection
 for which it got the INSERT_SELECTION request
 (whatever doing so means for its internal data structures).
 </para>
-</sect4>
-<sect4 id="insert_property">
+</sect3>
+<sect3 id="insert_property">
 <title>INSERT_PROPERTY</title>
 <para>
 When the owner of a selection receives a request to convert it to
@@ -2368,11 +2373,11 @@ it should insert the property named in the request at the location
 of the selection for which it got the INSERT_SELECTION request
 (whatever doing so means for its internal data structures).
 </para>
-</sect4>
 </sect3>
 </sect2>
+</sect1>
 
-<sect2 id="use_of_selection_properties">
+<sect1 id="use_of_selection_properties">
 <title>Use of Selection Properties</title>
 <para>
 The names of the properties used in selection data transfer are chosen by
@@ -2515,7 +2520,7 @@ the separators are also listed.
 It is expected that this table will grow over time.
 </para>
 
-<sect3 id="text_properties">
+<sect2 id="text_properties">
 <title>TEXT Properties</title>
 <para>
 In general,
@@ -2602,9 +2607,9 @@ Type STRING, COMPOUND_TEXT, and C_STRING properties will consist of a list
 of elements separated by null characters; other encodings will need to
 specify an appropriate list format.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="incr_properties">
+<sect2 id="incr_properties">
 <title>INCR Properties</title>
 <para>
 Requestors may receive a property of type INCR
@@ -2714,9 +2719,9 @@ Deletes the zero-length property.
 The type of the converted selection is the type of the first partial property.
 The remaining partial properties must have the same type.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="drawable_properties">
+<sect2 id="drawable_properties">
 <title>DRAWABLE Properties</title>
 <para>
 Requestors may receive properties of type PIXMAP, BITMAP, DRAWABLE, or WINDOW,
@@ -2773,9 +2778,9 @@ COLORMAP returns a colormap ID.
   </listitem>
 </itemizedlist>
 
-</sect3>
+</sect2>
 
-<sect3 id="span_properties">
+<sect2 id="span_properties">
 <title>SPAN Properties</title>
 <para>
 Properties with type SPAN contain a list of cardinal-pairs
@@ -2788,10 +2793,10 @@ the span is zero-length and is before the specified position.
 The units are implied by the target atom,
 such as LINE_NUMBER or CHARACTER_POSITION.
 </para>
-</sect3>
 </sect2>
+</sect1>
 
-<sect2 id="manager_selections">
+<sect1 id="manager_selections">
 <title>Manager Selections</title>
 <para>
 Certain clients, often called managers, take on responsibility
@@ -2983,10 +2988,10 @@ select for
 on the appropriate root window and should watch for the appropriate MANAGER
 <function>ClientMessage</function>.
 </para>
-</sect2>
 </sect1>
+</chapter>
 
-<sect1 id="peer_to_peer_communication_by_means_of_cut_buffers">
+<chapter id="peer_to_peer_communication_by_means_of_cut_buffers">
 <title>Peer-to-Peer Communication by Means of Cut Buffers</title>
 <para>
 The cut buffer mechanism is much simpler but much less powerful
@@ -3042,9 +3047,9 @@ and the ring rotated only when requested by explicit user action.
 Users depend on their mental model of cut buffer operation
 and need to be able to identify operations that transfer data to and fro.
 </para>
-</sect1>
+</chapter>
 
-<sect1 id="client_to_window_manager_communication">
+<chapter id="client_to_window_manager_communication">
 <title>Client-to-Window-Manager Communication</title>
 <para>
 To permit window managers to perform their role of mediating the competing
@@ -3105,7 +3110,7 @@ and it should be run under a window manager that allows other windows
 (for example, the debugger) to appear on top.
 </para>
 
-<sect2 id="clients_ctions">
+<sect1 id="clients_ctions">
 <title>Client's Actions</title>
 <para>
 In general,
@@ -3133,7 +3138,7 @@ Being prepared for resource allocations to change at any time
   </listitem>
 </itemizedlist>
 
-<sect3 id="creating_a_top_level_window">
+<sect2 id="creating_a_top_level_window">
 <title>Creating a Top-Level Window</title>
 <para>
 A client's
@@ -3214,9 +3219,9 @@ For further details, see
 <link linkend="changing_window_state">
 <xref linkend="changing_window_state"></xref></link>.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="client_properties">
+<sect2 id="client_properties">
 <title>Client Properties</title>
 <para>
 Once the client has one or more top-level windows,
@@ -3284,7 +3289,7 @@ They are summarized in the table in
 
 </para>
 
-<sect4 id="wm_name_property">
+<sect3 id="wm_name_property">
 <title>WM_NAME Property</title>
 <para>
 The WM_NAME property is an uninterpreted string
@@ -3327,9 +3332,9 @@ Even window managers that support headline bars will place some limit
 on the length of the WM_NAME string that can be visible;
 brevity here will pay dividends.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="wm_icon_name_property">
+<sect3 id="wm_icon_name_property">
 <title>WM_ICON_NAME Property</title>
 <para>
 The WM_ICON_NAME property is an uninterpreted string
@@ -3345,9 +3350,9 @@ fewer characters will normally be visible in WM_ICON_NAME than WM_NAME.
 Clients should not attempt to display this string in their icon pixmaps
 or windows; rather, they should rely on the window manager to do so.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="wm_normal_hints_property">
+<sect3 id="wm_normal_hints_property">
 <title>WM_NORMAL_HINTS Property</title>
 <para>
 The type of the WM_NORMAL_HINTS property is WM_SIZE_HINTS.
@@ -3613,9 +3618,9 @@ ratio falls in range.  If a base size is not provided, nothing should be
 subtracted from the window size.  (The minimum size is not to be used in
 place of the base size for this purpose.)
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="wm_hints_property">
+<sect3 id="wm_hints_property">
 <title>WM_HINTS Property</title>
 <para>
 The WM_HINTS property (whose type is WM_HINTS)
@@ -3981,9 +3986,9 @@ for a window that is newly urgent, such as by flashing its icon (if the
 window is iconic) or by raising it to the top of the stack.
 </para>
 </blockquote>
-</sect4>
+</sect3>
 
-<sect4 id="wm_class_property">
+<sect3 id="wm_class_property">
 <title>WM_CLASS Property</title>
 <para>
 The WM_CLASS property (of type STRING without control characters)
@@ -4053,9 +4058,9 @@ and, thus, differ from the general conventions that STRING properties
 are null-separated.
 This inconsistency is necessary for backwards compatibility.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="wm_transient_for_property">
+<sect3 id="wm_transient_for_property">
 <title>WM_TRANSIENT_FOR Property</title>
 <para>
 The WM_TRANSIENT_FOR property (of type WINDOW)
@@ -4080,9 +4085,9 @@ If other windows must be prevented from processing input
 (for example, when implementing pop-up menus),
 use override-redirect and grab the pointer while the window is mapped.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="wm_protocols_property">
+<sect3 id="wm_protocols_property">
 <title>WM_PROTOCOLS Property</title>
 <para>
 The WM_PROTOCOLS property (of type ATOM) is a list of atoms.
@@ -4155,9 +4160,9 @@ The following table lists the protocols that have been defined to date.
 <para>
 It is expected that this table will grow over time.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="wm_colormap_windows_property">
+<sect3 id="wm_colormap_windows_property">
 <title>WM_COLORMAP_WINDOWS Property</title>
 <para>
 The WM_COLORMAP_WINDOWS property (of type WINDOW) on a top-level window
@@ -4171,19 +4176,19 @@ see
 <link linkend="colormaps">
 <xref linkend="colormaps"></xref></link>
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="wm_client_machine_property">
+<sect3 id="wm_client_machine_property">
 <title>WM_CLIENT_MACHINE Property</title>
 <para>
 The client should set the WM_CLIENT_MACHINE property (of one of the TEXT
 types) to a string that forms the name of the machine running the client as
 seen from the machine running the server.
 </para>
-</sect4>
 </sect3>
+</sect2>
 
-<sect3 id="window_manager_properties">
+<sect2 id="window_manager_properties">
 <title>Window Manager Properties</title>
 <para>
 The properties that were described in the previous section are those
@@ -4192,7 +4197,7 @@ This section describes the properties that the window manager places on
 client's top-level windows and on the root.
 </para>
 
-<sect4 id="wm_state_property">
+<sect3 id="wm_state_property">
 <title>WM_STATE Property</title>
 <para>
 The window manager will place a WM_STATE property (of type WM_STATE) on each
@@ -4316,9 +4321,9 @@ The WM_STATE icon may be a window that the window manager has supplied and
 that contains the client's icon pixmap, or it may be an ancestor of the
 client's icon window.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="wm_icon_size_property">
+<sect3 id="wm_icon_size_property">
 <title>WM_ICON_SIZE Property</title>
 <para>
 A window manager that wishes to place constraints on the sizes of icon
@@ -4372,10 +4377,10 @@ The contents of this property are listed in the following table.
 For more details see section 14.1.12 in  <!-- xref -->
 <emphasis remap='I'>Xlib - C Language X Interface</emphasis>.
 </para>
-</sect4>
 </sect3>
+</sect2>
 
-<sect3 id="changing_window_state">
+<sect2 id="changing_window_state">
 <title>Changing Window State</title>
 <para>
 From the client's point of view,
@@ -4698,9 +4703,9 @@ advised to withdraw transients for the window.
 </para>
 </blockquote>
 
-</sect3>
+</sect2>
 
-<sect3 id="configuring_the_window">
+<sect2 id="configuring_the_window">
 <title>Configuring the Window</title>
 <para>
 Clients can resize and reposition their top-level windows by using the
@@ -4968,9 +4973,9 @@ field of both real and synthetic
 events received on their top-level windows because this field may not
 contain useful information.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="changing_window_attributes">
+<sect2 id="changing_window_attributes">
 <title>Changing Window Attributes</title>
 <para>
 The attributes that may be supplied when a window is created may be
@@ -5090,9 +5095,9 @@ and
     </para>
   </listitem>
 </itemizedlist>
-</sect3>
+</sect2>
 
-<sect3 id="input_focus">
+<sect2 id="input_focus">
 <title>Input Focus</title>
 <para>
 There are four models of input handling:
@@ -5381,9 +5386,9 @@ Clients should not give up the input focus of their own volition.
 They should ignore input that they receive instead.
 </para>
 </blockquote>
-</sect3>
+</sect2>
 
-<sect3 id="colormaps">
+<sect2 id="colormaps">
 <title>Colormaps</title>
 <para>
 The window manager is responsible for installing and uninstalling
@@ -5633,9 +5638,9 @@ Window manager implementors may want to implement a feature that resets
 colormap installation policy in response to a command from the user.
 </para>
 </blockquote>
-</sect3>
+</sect2>
 
-<sect3 id="icons">
+<sect2 id="icons">
 <title>Icons</title>
 <para>
 A client can hint to the window manager about the desired appearance
@@ -5798,9 +5803,9 @@ WM_HINTS, WM_CLASS, WM_TRANSIENT_FOR, WM_PROTOCOLS, WM_COLORMAP_WINDOWS,
 WM_COMMAND, or WM_CLIENT_MACHINE
 properties they find on icon windows.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="pop_up_windows">
+<sect2 id="pop_up_windows">
 <title>Pop-up Windows</title>
 <para>
 Clients that wish to pop up a window can do one of three things:
@@ -5865,9 +5870,9 @@ on the WM_TRANSIENT_FOR window;
 the window manager will change its state if that is the policy it wishes
 to enforce.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="window_groups">
+<sect2 id="window_groups">
 <title>Window Groups</title>
 <para>
 A set of top-level windows that should be treated from the user's point of view
@@ -5897,10 +5902,10 @@ At present,
 there is no way for a client to request a group,
 as opposed to an individual, operation.
 </para>
-</sect3>
 </sect2>
+</sect1>
 
-<sect2 id="client_responses_to_window_manager_actions">
+<sect1 id="client_responses_to_window_manager_actions">
 <title>Client Responses to Window Manager Actions</title>
 <para>
 The window manager performs a number of operations on client resources,
@@ -5909,7 +5914,7 @@ Clients must not try to fight this but may elect to receive notification
 of the window manager's operations.
 </para>
 
-<sect3 id="reparenting">
+<sect2 id="reparenting">
 <title>Reparenting</title>
 <para>
 Clients must be aware that some window managers will reparent
@@ -6014,9 +6019,9 @@ if the window manager terminates and will be remapped if it was unmapped.
 Note that this applies to all client windows the window manager reparents,
 including transient windows and client icon windows.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="redirection_of_operations">
+<sect2 id="redirection_of_operations">
 <title>Redirection of Operations</title>
 <para>
 Clients must be aware that some window managers will arrange
@@ -6167,9 +6172,9 @@ of the user interface policies the window manager is trying to maintain
 and because their user interface behavior is likely to conflict with that of
 less demanding clients.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="window_move">
+<sect2 id="window_move">
 <title>Window Move</title>
 
 <para>
@@ -6225,10 +6230,10 @@ request with the following arguments:
   </tbody>
   </tgroup>
 </informaltable>
-</sect3>
+</sect2>
 
 
-<sect3 id="window_resize">
+<sect2 id="window_resize">
 <title>Window Resize</title>
 <para>
 The client can elect to receive notification of being resized by selecting for
@@ -6249,9 +6254,9 @@ themselves to a better size.
 If the size is impossible to work with,
 clients are free to request to change to the Iconic state.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="iconify_and_deiconify">
+<sect2 id="iconify_and_deiconify">
 <title>Iconify and Deiconify</title>
 <para>
 A top-level window that is not Withdrawn will be
@@ -6271,9 +6276,9 @@ event when it goes Iconic and a
 <function>MapNotify</function>
 event when it goes Normal.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="colormap_change">
+<sect2 id="colormap_change">
 <title>Colormap Change</title>
 <para>
 Clients that wish to be notified of their colormaps being installed
@@ -6286,9 +6291,9 @@ They will receive
 events with the new field FALSE when the colormap for that window
 is installed or uninstalled.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="input_focus_2">
+<sect2 id="input_focus_2">
 <title>Input Focus</title>
 <para>
 Clients can request notification that they have the input focus by selecting
@@ -6416,9 +6421,9 @@ the revert-to field to
 </itemizedlist>
 </blockquote>
 
-</sect3>
+</sect2>
 
-<sect3 id="clientmessage_events">
+<sect2 id="clientmessage_events">
 <title>ClientMessage Events</title>
 <para>
 There is no way for clients to prevent themselves being sent
@@ -6504,7 +6509,7 @@ request with the following arguments:
   </tgroup>
 </informaltable>
 
-<sect4 id="window_deletion">
+<sect3 id="window_deletion">
 <title>Window Deletion</title>
 <para>
 Clients, usually those with multiple top-level windows, whose server
@@ -6566,10 +6571,10 @@ Clients that choose not to include WM_DELETE_WINDOW in the WM_PROTOCOLS
 property may be disconnected from the server
 if the user asks for one of the client's top-level windows to be deleted.
 </para>
-</sect4>
 </sect3>
+</sect2>
 
-<sect3 id="redirecting_requests">
+<sect2 id="redirecting_requests">
 <title>Redirecting Requests</title>
 <para>
 Normal clients can use the redirection mechanism just as window managers do
@@ -6648,10 +6653,10 @@ If a window manager detects that a client is not obeying this convention,
 it is free to take whatever measures it deems appropriate to deal with
 the client.
 </para>
-</sect3>
 </sect2>
+</sect1>
 
-<sect2 id="communication_with_the_window_manager_by_means_of_selections">
+<sect1 id="communication_with_the_window_manager_by_means_of_selections">
 <title>Communication with the Window Manager by Means of Selections</title>
 <para>
 For each screen they manage, window managers will acquire ownership of a
@@ -6707,9 +6712,9 @@ or later.
   </tbody>
   </tgroup>
 </informaltable>
-</sect2>
+</sect1>
 
-<sect2 id="summary_of_window_manager_property_types">
+<sect1 id="summary_of_window_manager_property_types">
 <title>Summary of Window Manager Property Types</title>
 <para>
 The window manager properties are summarized in the following table
@@ -6834,10 +6839,10 @@ The window manager properties are summarized in the following table
   </tbody>
   </tgroup>
 </informaltable>
-</sect2>
 </sect1>
+</chapter>
 
-<sect1 id="session_management_and_additional_inter_Client_exchanges">
+<chapter id="session_management_and_additional_inter_Client_exchanges">
 <title>Session Management and Additional Inter-Client Exchanges</title>
 <para>
 This section contains some conventions for clients that participate in
@@ -6848,7 +6853,7 @@ expect their window state (e.g., WM_STATE, position, size, and stacking order)
 to be preserved across sessions.
 </para>
 
-<sect2 id="client_support_for_session_management">
+<sect1 id="client_support_for_session_management">
 <title>Client Support for Session Management</title>
 <para>
 Each session participant will obtain a unique client identifier (client-ID)
@@ -6956,9 +6961,9 @@ Contain a string restricted to the XPCS characters, encoded in ISO 8859-1
     </para>
   </listitem>
 </itemizedlist>
-</sect2>
+</sect1>
 
-<sect2 id="window_manager_support_for_session_management">
+<sect1 id="window_manager_support_for_session_management">
 <title>Window Manager Support for Session Management</title>
 <para>
 A window manager supporting session management must register with the
@@ -6971,9 +6976,9 @@ Clients are allowed to change this state during the first phase of the
 session checkpoint process.  Therefore, window managers should request a
 second checkpoint phase and save clients' state only during that phase.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="support_for_ice_client_rendezvous">
+<sect1 id="support_for_ice_client_rendezvous">
 <title>Support for ICE Client Rendezvous</title>
 <para>
 The Inter-Client Exchange protocol (ICE) defined as of X11R6
@@ -6989,10 +6994,10 @@ and uses the property ICE_PROTOCOLS plus
 <function>ClientMessage</function>
 events.  Refer to that specification for complete details.
 </para>
-</sect2>
 </sect1>
+</chapter>
 
-<sect1 id="manipulation_of_shared_resources">
+<chapter id="manipulation_of_shared_resources">
 <title>Manipulation of Shared Resources</title>
 <para>
 X Version 11 permits clients to manipulate a number of shared resources,
@@ -7000,7 +7005,7 @@ for example, the input focus, the pointer, and colormaps.
 Conventions are required so that clients share resources in an
 orderly fashion.
 </para>
-<sect2 id="the_input_focus">
+<sect1 id="the_input_focus">
 <title>The Input Focus</title>
 <para>
 Clients that explicitly set the input focus must observe one of two modes:
@@ -7052,9 +7057,9 @@ request, not
 </itemizedlist>
 </blockquote>
 
-</sect2>
+</sect1>
 
-<sect2 id="the_pointer">
+<sect1 id="the_pointer">
 <title>The Pointer</title>
 <para>
 In general, clients should not warp the pointer.
@@ -7083,9 +7088,9 @@ request set to one of their windows.
   </listitem>
 </itemizedlist>
 </blockquote>
-</sect2>
+</sect1>
 
-<sect2 id="grabs">
+<sect1 id="grabs">
 <title>Grabs</title>
 <para>
 A client's attempt to establish a button or a key grab on a window
@@ -7215,8 +7220,8 @@ by which the user can send an event from any key or button to the client
   </listitem>
 </itemizedlist>
 
-</sect2>
-<sect2 id="colormaps_2">
+</sect1>
+<sect1 id="colormaps_2">
 <title>Colormaps</title>
 <para>
 <link linkend="colormaps">
@@ -7347,9 +7352,9 @@ This is a colormap for the root visual,
 and clients can use it to improve the extent of colormap sharing
 if they use the root visual.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="the_keyboard_mapping">
+<sect1 id="the_keyboard_mapping">
 <title>The Keyboard Mapping</title>
 <para>
 The X server contains a table (which is read by
@@ -7441,9 +7446,9 @@ events should update any internal keycode translation tables they are using.
 </para>
 </blockquote>
 
-</sect2>
+</sect1>
 
-<sect2 id="the_modifier_mapping">
+<sect1 id="the_modifier_mapping">
 <title>The Modifier Mapping</title>
 <para>
 X Version 11 supports 8 modifier bits of which 3 are preassigned
@@ -7582,10 +7587,10 @@ and
 <function>SetModifierMapping</function>
 pair in these transactions atomic.
 </para>
-</sect2>
 </sect1>
+</chapter>
 
-<sect1 id="device_color_characterization">
+<chapter id="device_color_characterization">
 <title>Device Color Characterization</title>
 <!-- .EQ -->
 <!--
@@ -7675,7 +7680,7 @@ If other device types are eventually necessary, additional
 properties will be required to describe them.
 </para>
 
-<sect2 id="xyz_rgb_conversion_matrices">
+<sect1 id="xyz_rgb_conversion_matrices">
 <title>XYZ &lt;-&gt; RGB Conversion Matrices</title>
 <para>
 Because of the limited dynamic range of both XYZ and RGB intensity,
@@ -7752,9 +7757,9 @@ This will be encoded as shown in the following table:
   </tbody>
   </tgroup>
 </informaltable>
-</sect2>
+</sect1>
 
-<sect2 id="intensity_da_rgb_value_conversion">
+<sect1 id="intensity_da_rgb_value_conversion">
 <title>Intensity (dA RGB Value Conversion</title>
 <para>
 XDCCC provides two representations for describing the conversion
@@ -8092,10 +8097,10 @@ value/intensity values
   </tbody>
   </tgroup>
 </informaltable>
-</sect2>
 </sect1>
+</chapter>
 
-<sect1 id="conclusion">
+<chapter id="conclusion">
 <title>Conclusion</title>
 <para>
 This document provides the protocol-level specification of the minimal
@@ -8110,7 +8115,7 @@ for information on session management, and to
 for information on general-purpose communication among clients.
 </para>
 
-<sect2 id="the_x_registry">
+<sect1 id="the_x_registry">
 <title>The X Registry</title>
 <!-- .IN "X Registry" -->
 <para>
@@ -8152,7 +8157,6 @@ and the postal address of where to write to obtain the document.
 <!-- .nr H1 0 -->
 <!-- .af H1 A -->
 <!-- .cT "Appendix A" no -->
-</sect2>
 </sect1>
 </chapter>
 
