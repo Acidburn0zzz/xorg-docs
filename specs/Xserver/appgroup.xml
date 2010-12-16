@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
                    "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
 
 
-<book id="appgroup">
+<article id="appgroup">
 
-<bookinfo>
+<articleinfo>
    <title>Description of the Application Group Extension</title>
    <subtitle>Implementation for the X11 Sample Server</subtitle>
    <releaseinfo>Version 1.0</releaseinfo>
@@ -13,7 +13,6 @@
       <author>
          <firstname>Kaleb </firstname><surname>KEITHLEY</surname>
          <affiliation><orgname>FUJITSU Limited.</orgname></affiliation>
-         <email>blah@blah.com</email>
       </author>
    </authorgroup>
    <corpname>X Consortium Standard</corpname>
@@ -65,10 +64,8 @@ are trademarks of Apple Computer, Inc.  X Window System is a
 trademark of X Consortium, Inc.
 </para>
 </legalnotice>
-</bookinfo>
+</articleinfo>
 
-<chapter>
-<title>TITLE</title>
 <para>
 To understand this document and the accompanying source code, you
 should know the C language, should be familiar with X server
@@ -244,5 +241,4 @@ The LBX proxy caches connection setup information and will return
 incorrect connection setup information to an embedded client.
 </para>
 </sect1>
-</chapter>
-</book>
+</article>
