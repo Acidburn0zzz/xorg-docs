@@ -3,7 +3,7 @@
                    "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
 
 
-<book id="BOOKID">
+<book id="xlfd">
 
 <bookinfo>
    <title>X Logical Font Description Conventions</title>
@@ -15,7 +15,6 @@
          <affiliation><orgname>
 Digital Equipment Corporation
          </orgname></affiliation>
-         <email>blah@blah.com</email>
       </author>
       <othercredit>
          <contrib>edited by</contrib>
@@ -102,9 +101,7 @@ This documentation is provided as is without express or implied warranty.
 
 </legalnotice>
 </bookinfo>
-<chapter>
-<title>TITLE</title>
-<sect1 id="introduction">
+<chapter id="introduction">
 <title>Introduction</title>
 <!-- .XS -->
 <!-- (SN Introduction -->
@@ -156,9 +153,9 @@ this information is required by certain clients
 to position subscripts automatically and determine small capital heights,
 recommended leading, word-space values, and so on.
 </para>
-</sect1>
+</chapter>
 
-<sect1 id="requirements_and_goals">
+<chapter id="requirements_and_goals">
 <title>Requirements and Goals</title>
 <!-- .XS -->
 <!-- (SN Requirements and Goals -->
@@ -206,7 +203,7 @@ Is extensible
   </listitem>
 </itemizedlist>
 
-<sect2 id="provide_unique_and_descriptive_font_names">
+<sect1 id="provide_unique_and_descriptive_font_names">
 <title>Provide Unique and Descriptive Font Names</title>
 <!-- .XS -->
 <!-- (SN Provide Unique and Descriptive Font Names -->
@@ -224,9 +221,9 @@ The name itself should be structured to be amenable to simple pattern
 matching and parsing, thus allowing X clients to restrict font queries to
 some subset of all possible fonts in the server.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="support_multiple_font_vendors_and_character_sets">
+<sect1 id="support_multiple_font_vendors_and_character_sets">
 <title>Support Multiple Font Vendors and Character Sets</title>
 <!-- .XS -->
 <!-- (SN Support Multiple Font Vendors and Character Sets -->
@@ -250,9 +247,9 @@ Provisions must be made in the font name
 that allows a font request to specify or identify specific charset mappings
 in server environments where multiple charsets are supported.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="support_scalable_and_polymorphic_fonts">
+<sect1 id="support_scalable_and_polymorphic_fonts">
 <title>Support Scalable and Polymorphic Fonts</title>
 <!-- .XS -->
 <!-- (SN Support Scalable and Polymorphic Fonts -->
@@ -265,9 +262,9 @@ that fact from the font name, and the
 application should be able to construct a font name for any specific
 instance.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="support_transformations_and_subsetting_of_fonts">
+<sect1 id="support_transformations_and_subsetting_of_fonts">
 <title>Support Transformations and Subsetting of Fonts</title>
 <!-- .XS -->
 <!-- (SN Support Transformations and Subsetting of Fonts -->
@@ -280,9 +277,9 @@ may be used for special effects requiring a few characters from each
 of many differently transformed fonts, it should be possible to
 request only a few characters from a font for efficiency.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="be_independent_of_x_server_and_operating_or_file_system_implementations">
+<sect1 id="be_independent_of_x_server_and_operating_or_file_system_implementations">
 <title>Be Independent of X Server and Operating or File System Implementations</title>
 <!-- .XS -->
 <!-- (SN Be Independent of X Server and Operating or File System Implementations -->
@@ -299,9 +296,9 @@ without compromising the uniqueness of the font name.
 This algorithm should be reversible (exactly how this translation is done is
 implementation dependent).
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="support_arbitrarily_complex_font_matching_and_substitution">
+<sect1 id="support_arbitrarily_complex_font_matching_and_substitution">
 <title>Support Arbitrarily Complex Font Matching and Substitution</title>
 <!-- .XS -->
 <!-- (SN Support Arbitrarily Complex Font Matching and Substitution -->
@@ -315,9 +312,9 @@ This allows client applications to derive font-specific formatting
 or display data and to perform font matching or substitution
 when asked to handle potentially unknown fonts, as required.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="be_extensible">
+<sect1 id="be_extensible">
 <title>Be Extensible</title>
 <!-- .XS -->
 <!-- (SN Be Extensible -->
@@ -328,10 +325,10 @@ The XLFD must be extensible so that new and/or private descriptive font
 properties can be added to conforming fonts without making existing
 X client or server implementations obsolete.
 </para>
-</sect2>
 </sect1>
+</chapter>
 
-<sect1 id="x_logical_font_description">
+<chapter id="x_logical_font_description">
 <title>X Logical Font Description</title>
 <!-- .XS -->
 <!-- (SN X Logical Font Description -->
@@ -373,7 +370,7 @@ may also appear as items of the
 <function>STARTPROPERTIES</function>...<function>ENDPROPERTIES</function>list
 in the BDF V2.1 specification. <!-- xref -->
 </para>
-<sect2 id="fontname">
+<sect1 id="fontname">
 <title>FontName</title>
 <!-- .XS -->
 <!-- (SN FontName -->
@@ -432,7 +429,7 @@ numeric property values are represented as signed or unsigned integers,
 as appropriate.
 </para>
 
-<sect3 id="fontname_syntax">
+<sect2 id="fontname_syntax">
 <title>FontName Syntax</title>
 <!-- .XS -->
 <!-- (SN FontName Syntax -->
@@ -544,9 +541,9 @@ Note that SPACE is a valid character of a
 field; for example, the string "ITC Avant Garde Gothic" might be a
 FAMILY_NAME.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="fontname_field_definitions">
+<sect2 id="fontname_field_definitions">
 <title>FontName Field Definitions</title>
 <!-- .XS -->
 <!-- (SN FontName Field Definitions -->
@@ -619,7 +616,7 @@ CHARSET_REGISTRY and CHARSET_ENCODING fields
   </listitem>
 </itemizedlist>
 
-<sect4 id="foundry_field">
+<sect3 id="foundry_field">
 <title>FOUNDRY Field</title>
 <!-- .XS -->
 <!-- (SN FOUNDRY Field -->
@@ -660,9 +657,9 @@ a registry of such registered names for use in XLFD font names and properties.
 <para>
 <!-- .LP -->
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="family_name_field">
+<sect3 id="family_name_field">
 <title>FAMILY_NAME Field</title>
 <!-- .XS -->
 <!-- (SN FAMILY_NAME Field -->
@@ -723,9 +720,9 @@ Stone
     </para>
   </listitem>
 </itemizedlist>
-</sect4>
+</sect3>
 
-<sect4 id="weight_name_field">
+<sect3 id="weight_name_field">
 <title>WEIGHT_NAME Field</title>
 <!-- .XS -->
 <!-- (SN WEIGHT_NAME Field -->
@@ -757,9 +754,9 @@ X client applications should use the weight-related font properties
 (RELATIVE_WEIGHT and WEIGHT) that give the coded relative weight
 and the calculated weight, respectively.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="slant_field">
+<sect3 id="slant_field">
 <title>SLANT Field</title>
 <!-- .XS -->
 <!-- (SN SLANT Field -->
@@ -828,9 +825,9 @@ The SLANT codes are for programming convenience only and usually are
 converted into their equivalent human-understandable form before being
 presented to a user.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="setwidth_name_field">
+<sect3 id="setwidth_name_field">
 <title>SETWIDTH_NAME Field</title>
 <!-- .XS -->
 <!-- (SN SETWIDTH_NAME Field -->
@@ -880,9 +877,9 @@ Double Wide
     </para>
   </listitem>
 </itemizedlist>
-</sect4>
+</sect3>
 
-<sect4 id="add_style_name_field">
+<sect3 id="add_style_name_field">
 <title>ADD_STYLE_NAME Field</title>
 <!-- .XS -->
 <!-- (SN ADD_STYLE_NAME Field -->
@@ -927,9 +924,9 @@ Decorated
     </para>
   </listitem>
 </itemizedlist>
-</sect4>
+</sect3>
 
-<sect4 id="pixel_size_field">
+<sect3 id="pixel_size_field">
 <title>PIXEL_SIZE Field</title>
 <!-- .XS -->
 <!-- (SN PIXEL_SIZE Field -->
@@ -955,9 +952,9 @@ query fonts according to device-dependent size,
 regardless of the point size or vertical resolution
 for which the font was designed.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="point_size_field">
+<sect3 id="point_size_field">
 <title>SN POINT_SIZE Field</title>
 <!-- .XS -->
 <!-- (SN POINT_SIZE Field -->
@@ -983,9 +980,9 @@ POINT_SIZE and RESOLUTION_Y are used by X clients to query fonts
 according to device-independent size to maintain constant text
 size on the display regardless of the PIXEL_SIZE used for the font.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="resolution_x_and_resolution_y_fields">
+<sect3 id="resolution_x_and_resolution_y_fields">
 <title>RESOLUTION_X and RESOLUTION_Y Fields</title>
 <!-- .XS -->
 <!-- (SN RESOLUTION_X and RESOLUTION_Y Fields -->
@@ -1017,9 +1014,9 @@ POINT_SIZE and RESOLUTION_Y will help the server to differentiate
 between potentially separate font masters for text, title,
 and display sizes or for other typographic considerations.
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="spacing_field">
+<sect3 id="spacing_field">
 <title>SPACING Field</title>
 <!-- .XS -->
 <!-- (SN SPACING Field -->
@@ -1087,9 +1084,9 @@ The cell height = font-descent + font-ascent, and the width = AVERAGE_WIDTH.
   </tbody>
   </tgroup>
 </informaltable>
-</sect4>
+</sect3>
 
-<sect4 id="average_width_field">
+<sect3 id="average_width_field">
 <title>AVERAGE_WIDTH Field</title>
 <!-- .XS -->
 <!-- (SN AVERAGE_WIDTH Field -->
@@ -1106,9 +1103,9 @@ For monospaced and character cell fonts,
 this is the width of all glyphs in the font.
 Zero is used to indicate a scalable font (see section \n(sS).
 </para>
-</sect4>
+</sect3>
 
-<sect4 id="charset_registry_and_charset_encoding_fields">
+<sect3 id="charset_registry_and_charset_encoding_fields">
 <title>CHARSET_REGISTRY and CHARSET_ENCODING Fields</title>
 <!-- .XS -->
 <!-- (SN CHARSET_REGISTRY and CHARSET_ENCODING Fields -->
@@ -1315,10 +1312,10 @@ For example,
 tells the font source that the client is interested only in characters
 65, 70, and 80-90.
 </para>
-</sect4>
 </sect3>
+</sect2>
 
-<sect3 id="examples">
+<sect2 id="examples">
 <title>Examples</title>
 <!-- .XS -->
 <!-- (SN Examples -->
@@ -1427,10 +1424,10 @@ shipped with the X Consortium distribution.
   </tbody>
   </tgroup>
 </informaltable>
-</sect3>
 </sect2>
+</sect1>
 
-<sect2 id="font_properties">
+<sect1 id="font_properties">
 <title>Font Properties</title>
 <!-- .XS -->
 <!-- (SN Font Properties -->
@@ -1522,7 +1519,7 @@ AXIS_TYPES</entry>
   </tgroup>
 </informaltable>
 
-<sect3 id="foundry">
+<sect2 id="foundry">
 <title>FOUNDRY</title>
 <!-- .XS -->
 <!-- (SN FOUNDRY -->
@@ -1537,9 +1534,9 @@ except that the property type is ATOM.
 <!-- .LP -->
 FOUNDRY cannot be calculated or defaulted if not supplied as a font property.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="family_name">
+<sect2 id="family_name">
 <title>FAMILY_NAME</title>
 <!-- .XS -->
 <!-- (SN FAMILY_NAME -->
@@ -1555,9 +1552,9 @@ except that the property type is ATOM.
 FAMILY_NAME cannot be calculated or defaulted if not supplied as a font
 property.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="weight_name ">
+<sect2 id="weight_name ">
 <title>WEIGHT_NAME</title>
 <!-- .XS -->
 <!-- (SN WEIGHT_NAME -->
@@ -1577,9 +1574,9 @@ WEIGHT_NAME can be defaulted if not supplied as a font property, as follows:
 if (WEIGHT_NAME undefined) then
    WEIGHT_NAME = ATOM("Medium")
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="slant">
+<sect2 id="slant">
 <title>SLANT </title>
 <!-- .XS -->
 <!-- (SN SLANT -->
@@ -1599,9 +1596,9 @@ SLANT can be defaulted if not supplied as a font property, as follows:
 if (SLANT undefined) then
    SLANT = ATOM("R")
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="setwidth_name">
+<sect2 id="setwidth_name">
 <title>SETWIDTH_NAME</title>
 <!-- .XS -->
 <!-- (SN SETWIDTH_NAME -->
@@ -1621,9 +1618,9 @@ SETWIDTH_NAME can be defaulted if not supplied as a font property, as follows:
 if (SETWIDTH_NAME undefined) then
    SETWIDTH_NAME = ATOM("Normal")
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="add_style_name">
+<sect2 id="add_style_name">
 <title>ADD_STYLE_NAME</title>
 <!-- .XS -->
 <!-- (SN ADD_STYLE_NAME -->
@@ -1643,9 +1640,9 @@ ADD_STYLE_NAME can be defaulted if not supplied as a font property, as follows:
 if (ADD_STYLE_NAME undefined) then
    ADD_STYLE_NAME = ATOM("")
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="pixel_size">
+<sect2 id="pixel_size">
 <title>PIXEL_SIZE</title>
 <!-- .XS -->
 <!-- (SN PIXEL_SIZE -->
@@ -1695,9 +1692,9 @@ if (PIXEL_SIZE undefined) then
    PIXEL_SIZE = ROUND ((RESOLUTION_Y * POINT_SIZE) / DeciPointsPerInch)
 </literallayout>
 
-</sect3>
+</sect2>
 
-<sect3 id="point_size">
+<sect2 id="point_size">
 <title>POINT_SIZE</title>
 <!-- .XS -->
 <!-- (SN POINT_SIZE -->
@@ -1723,9 +1720,9 @@ en space, and thin space can use the following algorithm:
 <!-- .LP -->
 Design POINT_SIZE cannot be calculated or approximated.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="resolution_x">
+<sect2 id="resolution_x">
 <title>RESOLUTION_X</title>
 <!-- .XS -->
 <!-- (SN RESOLUTION_X -->
@@ -1740,9 +1737,9 @@ except that the property type is CARD32.
 <!-- .LP -->
 RESOLUTION_X cannot be calculated or approximated.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="resolution_y">
+<sect2 id="resolution_y">
 <title>RESOLUTION_Y</title>
 <!-- .XS -->
 <!-- (SN RESOLUTION_Y -->
@@ -1757,9 +1754,9 @@ except that the property type is CARD32.
 <!-- .LP -->
 RESOLUTION_X cannot be calculated or approximated.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="spacing">
+<sect2 id="spacing">
 <title>SPACING</title>
 <!-- .XS -->
 <!-- (SN SPACING -->
@@ -1776,9 +1773,9 @@ SPACING can be calculated if not supplied as a font property,
 according to the definitions given above for the
 <function>FontName .</function>
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="average_width">
+<sect2 id="average_width">
 <title>AVERAGE_WIDTH</title>
 <!-- .XS -->
 <!-- (SN AVERAGE_WIDTH -->
@@ -1816,9 +1813,9 @@ AVERAGE_WIDTH and RESOLUTION_X font properties:
 if (SPACING not proportional) then
    CharPitch = (RESOLUTION_X * 10) / AVERAGE_WIDTH
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="charset_registry">
+<sect2 id="charset_registry">
 <title>CHARSET_REGISTRY</title>
 <!-- .XS -->
 <!-- (SN CHARSET_REGISTRY -->
@@ -1833,9 +1830,9 @@ except that the property type is ATOM.
 <!-- .LP -->
 CHARSET_REGISTRY cannot be defaulted if not supplied as a font property.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="charset_encoding">
+<sect2 id="charset_encoding">
 <title>CHARSET_ENCODING</title>
 <!-- .XS -->
 <!-- (SN CHARSET_ENCODING -->
@@ -1850,9 +1847,9 @@ except that the property type is ATOM.
 <!-- .LP -->
 CHARSET_ENCODING cannot be defaulted if not supplied as a font property.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="min_space">
+<sect2 id="min_space">
 <title>MIN_SPACE</title>
 <!-- .XS -->
 <!-- (SN MIN_SPACE -->
@@ -1872,9 +1869,9 @@ according to the following algorithm:
 if (MIN_SPACE undefined) then
    MIN_SPACE = ROUND(0.75 * NORM_SPACE)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="norm_space">
+<sect2 id="norm_space">
 <title>NORM_SPACE</title>
 <!-- .XS -->
 <!-- (SN NORM_SPACE -->
@@ -1897,9 +1894,9 @@ if (NORM_SPACE undefined) then
       NORM_SPACE = width of SPACE
    else NORM_SPACE = ROUND((0.33 * RESOLUTION_X * POINT_SIZE)/ DeciPointsPerInch)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="max_space">
+<sect2 id="max_space">
 <title>MAX_SPACE</title>
 <!-- .XS -->
 <!-- (SN MAX_SPACE -->
@@ -1919,9 +1916,9 @@ according to the following algorithm:
 if (MAX_SPACE undefined) then
    MAX_SPACE = ROUND(1.5 * NORM_SPACE)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="end_space">
+<sect2 id="end_space">
 <title>END_SPACE</title>
 <!-- .XS -->
 <!-- (SN END_SPACE -->
@@ -1941,9 +1938,9 @@ according to the following algorithm:
 if (END_SPACE undefined) then
    END_SPACE = NORM_SPACE
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="avg_capital_width">
+<sect2 id="avg_capital_width">
 <title>AVG_CAPITAL_WIDTH</title>
 <!-- .XS -->
 <!-- (SN AVG_CAPITAL_WIDTH -->
@@ -1974,9 +1971,9 @@ if (AVG_CAPITAL_WIDTH undefined) then
            * (if (dominant writing direction L-to-R) then 1 else -1)
    else AVG_CAPITAL_WIDTH undefined
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="avg_lowercase_width">
+<sect2 id="avg_lowercase_width">
 <title>AVG_LOWERCASE_WIDTH</title>
 <!-- .XS -->
 <!-- (SN AVG_LOWERCASE_WIDTH -->
@@ -2007,9 +2004,9 @@ if (AVG_LOWERCASE_WIDTH undefined) then
        * (if (dominant writing direction L-to-R) then 1 else -1)
    else AVG_LOWERCASE_WIDTH undefined
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="quad_width">
+<sect2 id="quad_width">
 <title>QUAD_WIDTH</title>
 <!-- .XS -->
 <!-- (SN QUAD_WIDTH -->
@@ -2034,9 +2031,9 @@ the FIGURE_WIDTH or one of the average character width font properties
 </para>
 </note>
 <!-- .NE -->
-</sect3>
+</sect2>
 
-<sect3 id="figure_width">
+<sect2 id="figure_width">
 <title>FIGURE_WIDTH</title>
 <!-- .XS -->
 <!-- (SN FIGURE_WIDTH -->
@@ -2059,9 +2056,9 @@ if (numerals and DOLLAR sign are defined &amp; widths are equal) then
    FIGURE_WIDTH = width of DOLLAR
 else FIGURE_WIDTH property undefined
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="superscript_x">
+<sect2 id="superscript_x">
 <title>SUPERSCRIPT_X</title>
 <!-- .XS -->
 <!-- (SN SUPERSCRIPT_X -->
@@ -2092,9 +2089,9 @@ if (SUPERSCRIPT_X undefined) then
 where TANGENT is a trigonometric function that returns the tangent of
 its argument, which is in 1/64 degrees.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="superscript_y">
+<sect2 id="superscript_y">
 <title>SUPERSCRIPT_Y</title>
 <!-- .XS -->
 <!-- (SN SUPERSCRIPT_Y -->
@@ -2116,9 +2113,9 @@ according to the following algorithm:
 if (SUPERSCRIPT_Y undefined) then
    SUPERSCRIPT_Y = ROUND(0.40 * CAP_HEIGHT)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="subscript_x">
+<sect2 id="subscript_x">
 <title>SUBSCRIPT_X</title>
 <!-- .XS -->
 <!-- (SN SUBSCRIPT_X -->
@@ -2143,9 +2140,9 @@ if (SUBSCRIPT_X undefined) then
       SUBSCRIPT_X = ROUND((0.40 * CAP_HEIGHT) / TANGENT(ITALIC_ANGLE))
    else SUBSCRIPT_X = ROUND(0.40 * CAP_HEIGHT)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="subscript_y">
+<sect2 id="subscript_y">
 <title>SUBSCRIPT_Y</title>
 <!-- .XS -->
 <!-- (SN SUBSCRIPT_Y -->
@@ -2168,9 +2165,9 @@ according to the following algorithm:
 if (SUBSCRIPT_Y undefined) then
    SUBSCRIPT_Y = ROUND(0.40 * CAP_HEIGHT)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="superscript_size">
+<sect2 id="superscript_size">
 <title>SUPERSCRIPT_SIZE</title>
 <!-- .XS -->
 <!-- (SN SUPERSCRIPT_SIZE -->
@@ -2194,9 +2191,9 @@ according to the following algorithm:
 if (SUPERSCRIPT_SIZE undefined) then
    SUPERSCRIPT_SIZE = ROUND(0.60 * PIXEL_SIZE)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="subscript_size">
+<sect2 id="subscript_size">
 <title>SUBSCRIPT_SIZE</title>
 <!-- .XS -->
 <!-- (SN SUBSCRIPT_SIZE -->
@@ -2221,9 +2218,9 @@ according to the algorithm:
 if (SUBSCRIPT_SIZE undefined) then
    SUBSCRIPT_SIZE = ROUND(0.60 * PIXEL_SIZE)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="small_cap_size">
+<sect2 id="small_cap_size">
 <title>SMALL_CAP_SIZE</title>
 <!-- .XS -->
 <!-- (SN SMALL_CAP_SIZE -->
@@ -2248,9 +2245,9 @@ if (SMALL_CAP_SIZE undefined) then
    SMALL_CAP_SIZE = ROUND(PIXEL_SIZE * ((X_HEIGHT
                               + ((CAP_HEIGHT - X_HEIGHT) / 3)) / CAP_HEIGHT))
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="underline_position">
+<sect2 id="underline_position">
 <title>UNDERLINE_POSITION </title>
 <!-- .XS -->
 <!-- (SN UNDERLINE_POSITION -->
@@ -2278,9 +2275,9 @@ where <emphasis remap='I'>maximum descent</emphasis>
 is the maximum descent (below the baseline)
 in pixels of any glyph in the font.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="underline_thickness">
+<sect2 id="underline_thickness">
 <title>UNDERLINE_THICKNESS</title>
 <!-- .XS -->
 <!-- (SN UNDERLINE_THICKNESS -->
@@ -2301,9 +2298,9 @@ CapStemWidth = average width of the stems of capitals
 if (UNDERLINE_THICKNESS undefined) then
    UNDERLINE_THICKNESS = CapStemWidth
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="strikeout_ascent">
+<sect2 id="strikeout_ascent">
 <title>STRIKEOUT_ASCENT</title>
 <!-- .XS -->
 <!-- (SN STRIKEOUT_ASCENT -->
@@ -2331,9 +2328,9 @@ where <emphasis remap='I'>maximum ascent</emphasis>
 is the maximum ascent (above the baseline)
 in pixels of any glyph in the font.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="strikeout_descent">
+<sect2 id="strikeout_descent">
 <title>STRIKEOUT_DESCENT</title>
 <!-- .XS -->
 <!-- (SN STRIKEOUT_DESCENT -->
@@ -2363,9 +2360,9 @@ where <emphasis remap='I'>maximum descent</emphasis> is the maximum
 descent (below the baseline)
 in pixels of any glyph in the font.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="italic_angle">
+<sect2 id="italic_angle">
 <title>ITALIC_ANGLE</title>
 <!-- .XS -->
 <!-- (SN ITALIC_ANGLE -->
@@ -2385,9 +2382,9 @@ according to the following algorithm:
 if (ITALIC_ANGLE undefined) then
    ITALIC_ANGLE = (90 * 64)
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="cap_height">
+<sect2 id="cap_height">
 <title>CAP_HEIGHT</title>
 <!-- .XS -->
 <!-- (SN CAP_HEIGHT -->
@@ -2420,9 +2417,9 @@ if (CAP_HEIGHT undefined) then
        CAP_HEIGHT = XCharStruct.ascent[some unaccented capital glyph]
    else CAP_HEIGHT undefined
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="x_height">
+<sect2 id="x_height">
 <title>X_HEIGHT</title>
 <!-- .XS -->
 <!-- (SN X_HEIGHT -->
@@ -2456,9 +2453,9 @@ if (X_HEIGHT undefined) then
         X_HEIGHT = XCharStruct.ascent[some unaccented lc glyph without an ascender]
    else X_HEIGHT undefined
 </literallayout>
-</sect3>
+</sect2>
 
-<sect3 id="relative_setwidth">
+<sect2 id="relative_setwidth">
 <title>RELATIVE_SETWIDTH</title>
 <!-- .XS -->
 <!-- (SN RELATIVE_SETWIDTH -->
@@ -2571,9 +2568,9 @@ SETWIDTH = AVG_CAPITAL_WIDTH / (CAP_HEIGHT * 10)
 where SETWIDTH is a real number with zero being the narrowest
 calculated setwidth.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="relative_weight">
+<sect2 id="relative_weight">
 <title>RELATIVE_WEIGHT</title>
 <!-- .XS -->
 <!-- (SN RELATIVE_WEIGHT -->
@@ -2672,9 +2669,9 @@ if (RELATIVE_WEIGHT undefined) then
 For polymorphic fonts, RELATIVE_WEIGHT is not necessarily a
 linear function of the font's weight axis.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="weight">
+<sect2 id="weight">
 <title>WEIGHT</title>
 <!-- .XS -->
 <!-- (SN WEIGHT -->
@@ -2707,9 +2704,9 @@ and therefore, are somewhat subjective.
 Calculated WEIGHT provides a font-independent way of identifying
 the weight across all fonts and all font vendors.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="resolution">
+<sect2 id="resolution">
 <title>RESOLUTION</title>
 <!-- .XS -->
 <!-- (SN RESOLUTION  -->
@@ -2732,9 +2729,9 @@ and are encouraged to use the appropriate X,Y resolution properties,
 as required.
 <!-- .NE                     \" Note End -->
 </para></note>
-</sect3>
+</sect2>
 
-<sect3 id="font">
+<sect2 id="font">
 <title>FONT</title>
 <!-- .XS -->
 <!-- (SN FONT -->
@@ -2749,9 +2746,9 @@ instance of the same font.
 <!-- .LP -->
 If not provided, the FONT property cannot be calculated.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="face_name">
+<sect2 id="face_name">
 <title>FACE_NAME</title>
 <!-- .XS -->
 <!-- (SN FACE_NAME -->
@@ -2769,9 +2766,9 @@ This property may be used as feedback during font selection.
 FACE_NAME cannot be calculated or approximated if not provided as a font
 property.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="full_name">
+<sect2 id="full_name">
 <title>FULL_NAME</title>
 <!-- .XS -->
 <!-- (SN FULL_NAME -->
@@ -2781,9 +2778,9 @@ property.
 FULL_NAME is the same as FACE_NAME.
 Its use is deprecated, but it is found on some old fonts.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="copyright">
+<sect2 id="copyright">
 <title>COPYRIGHT</title>
 <!-- .XS -->
 <!-- (SN COPYRIGHT -->
@@ -2806,9 +2803,9 @@ be thrown away for efficiency reasons).
 COPYRIGHT cannot be calculated or approximated if not provided as a font
 property.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="notice">
+<sect2 id="notice">
 <title>NOTICE</title>
 <!-- .XS -->
 <!-- (SN NOTICE -->
@@ -2834,9 +2831,9 @@ but is independent of the particular format used to represent it.
 NOTICE cannot be calculated or approximated if not provided as
 a font property.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="destination">
+<sect2 id="destination">
 <title>DESTINATION</title>
 <!-- .XS -->
 <!-- (SN DESTINATION -->
@@ -2894,9 +2891,9 @@ The font is optimized for screen legibility and readability.
   </tbody>
   </tgroup>
 </informaltable>
-</sect3>
+</sect2>
 
-<sect3 id="font_type">
+<sect2 id="font_type">
 <title>FONT_TYPE</title>
 <!-- .XS -->
 <!-- (SN FONT_TYPE -->
@@ -2963,9 +2960,9 @@ a scalable font rasterizer would be considered "Prebuilt", not "Bitmap".
 <para>
 Other values may be registered with the X Consortium.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="font_version">
+<sect2 id="font_version">
 <title>FONT_VERSION</title>
 <!-- .XS -->
 <!-- (SN FONT_VERSION -->
@@ -2976,9 +2973,9 @@ FONT_VERSION is a human-understandable string (of type ATOM)
 that describes the formal or informal version of the font.
 <function>None</function> is a valid value.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="rasterizer_name">
+<sect2 id="rasterizer_name">
 <title>RASTERIZER_NAME</title>
 <!-- .XS -->
 <!-- (SN RASTERIZER_NAME -->
@@ -3045,9 +3042,9 @@ Examples:
 If RASTERIZER_NAME is not defined, or is <function>None</function>, no
 rasterization operation has been applied to the FONT_TYPE.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="rasterizer_version">
+<sect2 id="rasterizer_version">
 <title>RASTERIZER_VERSION</title>
 <!-- .XS -->
 <!-- (SN RASTERIZER_VERSION -->
@@ -3060,9 +3057,9 @@ font rasterizer.
 The RASTERIZER_VERSION should match the corresponding
 product version number known to users, when applicable.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="raw_ascent">
+<sect2 id="raw_ascent">
 <title>RAW_ASCENT</title>
 <!-- .XS -->
 <!-- (SN RAW_ASCENT -->
@@ -3073,9 +3070,9 @@ For a font with a transformation matrix, RAW_ASCENT is the font ascent
 in 1000 pixel metrics
 (see section \n(sM.1).
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="raw_descent">
+<sect2 id="raw_descent">
 <title>RAW_DESCENT</title>
 <!-- .XS -->
 <!-- (SN RAW_DESCENT -->
@@ -3086,9 +3083,9 @@ For a font with a transformation matrix, RAW_DESCENT is the font
 descent in 1000 pixel metrics
 (see section 4.1). <!-- xref -->
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="raw_">
+<sect2 id="raw_">
 <title>RAW_*</title>
 <!-- .XS -->
 <!-- (SN RAW_* -->
@@ -3101,9 +3098,9 @@ displacements will be accompanied by a new property, named as the
 original except prefixed with "RAW_", that is computed as
 described in section 4.1. <!-- xref -->
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="axis_names">
+<sect2 id="axis_names">
 <title>AXIS_NAMES</title>
 <!-- .XS -->
 <!-- (SN AXIS_NAMES -->
@@ -3115,9 +3112,9 @@ names of the axes for a polymorphic font, separated by a null (0) byte.
 These names are suitable for presentation in a user interface
 (see section 6).
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="axis_limits">
+<sect2 id="axis_limits">
 <title>AXIS_LIMITS</title>
 <!-- .XS -->
 <!-- (SN AXIS_LIMITS -->
@@ -3129,9 +3126,9 @@ giving the minimum and maximum allowable values for that axis of a
 polymorphic font
 (see section \n(sP).
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="axis_types">
+<sect2 id="axis_types">
 <title>AXIS_TYPES</title>
 <!-- .XS -->
 <!-- (SN AXIS_TYPES -->
@@ -3142,10 +3139,10 @@ AXIS_TYPES is like AXIS_NAMES,
 but can be registered as having specific semantics
 (see section 6).
 </para>
-</sect3>
 </sect2>
+</sect1>
 
-<sect2 id="built-in_font_property_atoms">
+<sect1 id="built-in_font_property_atoms">
 <title>Built-in Font Property Atoms</title>
 <!-- .XS -->
 <!-- (SN Built-in Font Property Atoms -->
@@ -3268,10 +3265,10 @@ version of the core protocol:
 </informaltable>
 <!-- .br -->
 <!-- .\" section \n(sM -->
-</sect2>
 </sect1>
+</chapter>
 
-<sect1 id="matrix_transformations">
+<chapter id="matrix_transformations">
 <title>Matrix Transformations</title>
 <!-- .XS -->
 <!-- (SN Matrix Transformations -->
@@ -3431,7 +3428,7 @@ wildcarded), the preceding formulas can be used to compute one from the
 other.
 </para>
 
-<sect2 id="metrics_and_font_properties">
+<sect1 id="metrics_and_font_properties">
 <title>Metrics and Font Properties</title>
 <!-- .XS -->
 <!-- (SN Metrics and Font Properties -->
@@ -3519,10 +3516,10 @@ height or displacement.  Each such property will be accompanied by a new
 property, named as the original except prefixed with "RAW_", that gives
 the value of the width, height, or displacement in 1000 pixel metrics.
 </para>
-</sect2>
 </sect1>
+</chapter>
 
-<sect1 id="scalable_fonts">
+<chapter id="scalable_fonts">
 <title>Scalable Fonts</title>
 <!-- .XS -->
 <!-- (SN Scalable Fonts -->
@@ -3697,9 +3694,9 @@ X servers are permitted, but not required,
 to use a more sophisticated matching algorithm.
 <!-- .\" section \n(sP -->
 </para>
-</sect1>
+</chapter>
 
-<sect1 id="polymorphic_fonts">
+<chapter id="polymorphic_fonts">
 <title>Polymorphic Fonts</title>
 <!-- .XS -->
 <!-- (SN Polymorphic Fonts -->
@@ -3871,9 +3868,9 @@ undefined.  The font source may treat this as a
 value as if it were the closest legal value, or extrapolate to try to
 accommodate the value.
 </para>
-</sect1>
+</chapter>
 
-<sect1 id="affected_elements_of_xlib_and_the_x_protocol">
+<chapter id="affected_elements_of_xlib_and_the_x_protocol">
 <title>Affected Elements of Xlib and the X Protocol</title>
 <!-- .XS -->
 <!-- (SN Affected Elements of Xlib and the X Protocol -->
@@ -3934,9 +3931,9 @@ the following Xlib functions must support the XLFD conventions:
     </para>
   </listitem>
 </itemizedlist>
-</sect1>
+</chapter>
 
-<sect1 id="bdf_conformance">
+<chapter id="bdf_conformance">
 <title>BDF Conformance</title>
 <!-- .XS -->
 <!-- (SN BDF Conformance -->
@@ -3951,7 +3948,7 @@ or the semantics of the font properties that might be provided in a BDF font.
 This section identifies the requirements for BDF fonts that conform to XLFD.
 </para>
 
-<sect2 id="xlfd_conformance_requirements">
+<sect1 id="xlfd_conformance_requirements">
 <title>XLFD Conformance Requirements</title>
 <!-- .XS -->
 <!-- (SN XLFD Conformance Requirements -->
@@ -4005,9 +4002,9 @@ are valid,
 and that each font property name either matches a standard XLFD property name
 or follows the definition of a private property.
 </para>
-</sect2>
+</sect1>
 
-<sect2 id="font_ascent_font_descent_and_default_char">
+<sect1 id="font_ascent_font_descent_and_default_char">
 <title>FONT_ASCENT, FONT_DESCENT, and DEFAULT_CHAR</title>
 <!-- .XS -->
 <!-- (SN FONT_ASCENT, FONT_DESCENT, and DEFAULT_CHAR -->
@@ -4023,7 +4020,7 @@ If present,
 these properties shall comply with the following semantic definitions.
 </para>
 
-<sect3 id="font_ascent">
+<sect2 id="font_ascent">
 <title>FONT_ASCENT</title>
 <!-- .XS -->
 <!-- (SN FONT_ASCENT -->
@@ -4053,9 +4050,9 @@ if (FONT_ASCENT undefined) then
 where maximum ascent is the maximum ascent (above the baseline)
 in pixels of any glyph in the font.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="font_descent">
+<sect2 id="font_descent">
 <title>FONT_DESCENT</title>
 <!-- .XS -->
 <!-- (SN FONT_DESCENT -->
@@ -4088,9 +4085,9 @@ if (FONT_DESCENT undefined) then
 where maximum descent is the maximum descent (below the baseline)
 in pixels of any glyph in the font.
 </para>
-</sect3>
+</sect2>
 
-<sect3 id="default_char">
+<sect2 id="default_char">
 <title>DEFAULT_CHAR</title>
 <!-- .XS -->
 <!-- (SN DEFAULT_CHAR -->
@@ -4117,7 +4114,6 @@ DEFAULT_CHAR cannot be approximated if not provided as a font property.
 <!-- .af PN i -->
 <!-- .PX -->
 </para>
-</sect3>
 </sect2>
 </sect1>
 </chapter>
