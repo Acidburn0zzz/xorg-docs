@@ -8127,28 +8127,27 @@ selection names, selection targets, WM_PROTOCOLS protocols,
 <function>ClientMessage</function>
 types, and application classes.  Requests to register items, or questions
 about registration, should be addressed to
-</para>
-<literallayout class="monospaced">
+  <address>
      xregistry@x.org
-</literallayout>
-<para>
+  </address>
 or to
-</para>
-<literallayout class="monospaced">
-        The X.Org Group -- X11 Registry
-        c/o Ienup Sung
-        Sun Microsystems, Inc.
-        4150 Network Circle, MS SJC07-201
+  <address>
+        The X.Org Foundation -- X11 Registry
+        c/o Alan Coopersmith
+        Oracle Corporation
+        M/S SCA17-3824
+        4170 Network Circle
         Santa Clara, CA 95054
-     USA
-</literallayout>
+        USA
+  </address>
+</para>
 <para>
 Electronic mail will be acknowledged upon receipt.  Please allow up to 4
 weeks for a formal response to registration and inquiries.
 </para>
 <para>
-The registry is published as part of the X software distribution from the X
-Consortium.  All registered items must have the postal address of someone
+The registry is published as part of the X software distribution from the
+X.Org Foundation.  All registered items must have the postal address of someone
 responsible for the item or a reference to a document describing the item
 and the postal address of where to write to obtain the document.
 </para>
