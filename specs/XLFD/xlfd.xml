@@ -734,7 +734,7 @@ that is, the nominal blackness of the font,
 according to the FOUNDRY's judgment.
 This name must be human-understandable and suitable for presentation to a
 font user.
-The value "0" is used to indicate a polymorphic font (see section \n(sP).
+The value "0" is used to indicate a polymorphic font (see <xref linkend="polymorphic_fonts"/>).
 </para>
 <para>
 <!-- .LP -->
@@ -814,7 +814,7 @@ The encoding is as follows:
     <row rowsep="0">
       <entry>numeric</entry>
       <entry>Polymorphic</entry>
-      <entry>See section 6 on polymorphic font support.</entry> <!-- xref -->
+      <entry>See <xref linkend="polymorphic_fonts"/>.</entry>
     </row>
   </tbody>
   </tgroup>
@@ -837,7 +837,7 @@ presented to a user.
 SETWIDTH_NAME is a string that gives the font's typographic
 proportionate width, that is, the nominal width per horizontal unit of the
 font, according to the FOUNDRY's judgment.
-The value "0" is used to indicate a polymorphic font (see section \n(sP).
+The value "0" is used to indicate a polymorphic font (see <xref linkend="polymorphic_fonts"/>).
 </para>
 <para>
 <!-- .LP -->
@@ -890,7 +890,7 @@ ADD_STYLE_NAME is a string that identifies additional typographic
 style information that is not captured by other fields but is needed
 to identify the particular font.
 The character "[" anywhere in the field is used to indicate a
-polymorphic font (see section \n(sP).
+polymorphic font (see <xref linkend="polymorphic_fonts"/>).
 </para>
 <para>
 <!-- .LP -->
@@ -938,12 +938,12 @@ gives the body size of the font at a particular
 POINT_SIZE and RESOLUTION_Y.
 PIXEL_SIZE is either an integer-string or a string beginning
 with "[".  A string beginning with "[" represents a matrix
-(see section \n(sM).
+(see <xref linkend="matrix_transformations"/>).
 PIXEL_SIZE usually incorporates additional vertical spacing
 that is considered part of the font design.
 (Note, however, that this value is not necessarily equivalent to the height
 of the font bounding box.)
-Zero is used to indicate a scalable font (see section \n(sS).
+Zero is used to indicate a scalable font (see <xref linkend="scalable_fonts"/>).
 </para>
 <para>
 <!-- .LP -->
@@ -965,14 +965,14 @@ POINT_SIZE gives the body size
 for which the font was designed.
 POINT_SIZE is either an integer-string or a string beginning
 with "[".  A string beginning with "[" represents a matrix
-(see section \n(sM).
+(see <xref linkend="matrix_transformations"/>).
 This field usually incorporates additional vertical spacing
 that is considered part of the font design.
 (Note, however, that POINT_SIZE is not necessarily equivalent to the height
 of the font bounding box.)
 POINT_SIZE is expressed in decipoints (where points are as defined
 in the X protocol or 72.27 points equal 1 inch).
-Zero is used to indicate a scalable font (see section \n(sS).
+Zero is used to indicate a scalable font (see <xref linkend="scalable_fonts"/>).
 </para>
 <para>
 <!-- .LP -->
@@ -993,7 +993,7 @@ RESOLUTION_X and RESOLUTION_Y are unsigned integer-strings that give
 the horizontal and vertical resolution,
 measured in pixels or dots per inch (dpi),
 for which the font was designed.
-Zero is used to indicate a scalable font (see section \n(sS).
+Zero is used to indicate a scalable font (see <xref linkend="scalable_fonts"/>).
 Horizontal and vertical values are required
 because a separate bitmap font must be designed
 for displays with very different aspect ratios
@@ -1101,7 +1101,7 @@ writing direction for the font is right-to-left.
 A leading "~" (TILDE) indicates a negative value.
 For monospaced and character cell fonts,
 this is the width of all glyphs in the font.
-Zero is used to indicate a scalable font (see section \n(sS).
+Zero is used to indicate a scalable font (see <xref linkend="scalable_fonts"/>).
 </para>
 </sect3>
 
@@ -3068,7 +3068,7 @@ product version number known to users, when applicable.
 <!-- .LP -->
 For a font with a transformation matrix, RAW_ASCENT is the font ascent
 in 1000 pixel metrics
-(see section \n(sM.1).
+(see <xref linkend="metrics_and_font_properties"/>).
 </para>
 </sect2>
 
@@ -3081,7 +3081,7 @@ in 1000 pixel metrics
 <!-- .LP -->
 For a font with a transformation matrix, RAW_DESCENT is the font
 descent in 1000 pixel metrics
-(see section 4.1). <!-- xref -->
+(see <xref linkend="metrics_and_font_properties"/>).
 </para>
 </sect2>
 
@@ -3096,7 +3096,7 @@ For a font with a transformation matrix,
 all font properties that represent horizontal or vertical sizes or
 displacements will be accompanied by a new property, named as the
 original except prefixed with "RAW_", that is computed as
-described in section 4.1. <!-- xref -->
+described in <xref linkend="metrics_and_font_properties" />.
 </para>
 </sect2>
 
@@ -3124,7 +3124,7 @@ These names are suitable for presentation in a user interface
 AXIS_LIMITS is a list of integers, two for each axis,
 giving the minimum and maximum allowable values for that axis of a
 polymorphic font
-(see section \n(sP).
+(see <xref linkend="polymorphic_fonts"/>).
 </para>
 </sect2>
 
@@ -3264,7 +3264,6 @@ version of the core protocol:
   </tgroup>
 </informaltable>
 <!-- .br -->
-<!-- .\" section \n(sM -->
 </sect1>
 </chapter>
 
@@ -3692,7 +3691,6 @@ pattern is only required to return the list obtained by performing
 a simple pattern match against the global list.
 X servers are permitted, but not required,
 to use a more sophisticated matching algorithm.
-<!-- .\" section \n(sP -->
 </para>
 </chapter>
 
