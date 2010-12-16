@@ -122,7 +122,7 @@ to the user or so that intelligent font fallbacks can be chosen.
 It is desirable for the most common queries to be accomplished
 without the overhead of opening each font and inspecting font properties,
 by means of simple
-<function>ListFonts </function>
+<function>ListFonts</function>
 requests.
 For example, if a user selected a Helvetica typeface family,
 a client application should be able to query the server
@@ -135,7 +135,7 @@ This document gives a standard logical font description
 in the core protocol so that clients can query and access screen type libraries
 in a consistent manner across all X servers.
 In addition to completely specifying a given font by means of its
-<function>FontName ,</function>
+<function>FontName</function>,
 the XLFD also provides for a standard set of key
 <function>FontProperties</function>
 that describe the font in more detail.
@@ -349,7 +349,7 @@ which describe a font in more detail.
 <para>
 <!-- .LP -->
 The
-<function>FontName </function>
+<function>FontName</function>
 is used in font queries and is returned as data in certain X protocol requests.
 It is also specified as the data value for the
 <function>FONT</function>
@@ -359,13 +359,13 @@ item in the X Consortium Character Bitmap Distribution Format Standard
 <para>
 <!-- .LP -->
 The
-<function>FontProperties </function>
+<function>FontProperties</function>
 are supplied on a font-by-font basis and are returned
 as data in certain X protocol requests as part of the
 <function>XFontStruct</function>
 data structure.
 The names and associated data values for each of the
-<function>FontProperties </function>
+<function>FontProperties</function>
 may also appear as items of the
 <function>STARTPROPERTIES</function>...<function>ENDPROPERTIES</function>list
 in the BDF V2.1 specification. <!-- xref -->
@@ -378,7 +378,7 @@ in the BDF V2.1 specification. <!-- xref -->
 <para>
 <!-- .LP -->
 Each
-<function>FontName </function>
+<function>FontName</function>
 is logically composed of two strings: a
 <function>FontNameRegistry</function>
 prefix that is followed by a
@@ -402,7 +402,7 @@ All font names that conform to this specification are to use a
 prefix, which is defined to be the string "-"
 (HYPHEN).
 All
-<function>FontNameRegistry </function>
+<function>FontNameRegistry</function>
 prefixes of the form: +<emphasis remap='I'>version</emphasis>-,
 where the specified version indicates some future XLFD specification,
 are reserved by the X Consortium for future extensions to XLFD font names.
@@ -418,13 +418,13 @@ is server implementation dependent.
 <!-- .LP -->
 In the X protocol specification,
 the
-<function>FontName </function>
+<function>FontName</function>
 is required to be a string;
 hence, numeric field values are represented in the name as string equivalents.
 All
-<function>FontNameSuffix </function>
+<function>FontNameSuffix</function>
 fields are also defined as
-<function>FontProperties ; </function>
+<function>FontProperties</function>;
 numeric property values are represented as signed or unsigned integers,
 as appropriate.
 </para>
@@ -437,7 +437,7 @@ as appropriate.
 <para>
 <!-- .LP -->
 The
-<function>FontName </function>
+<function>FontName</function>
 is a structured, parsable string (of type STRING8)
 whose Backus-Naur Form syntax description is as follows:
 </para>
@@ -537,7 +537,7 @@ The entire font name string must have no more than 255 characters.
 It is recommended that clients construct font name query patterns
 by explicitly including all field delimiters to avoid unexpected results.
 Note that SPACE is a valid character of a
-<function>FontName </function>
+<function>FontName</function>
 field; for example, the string "ITC Avant Garde Gothic" might be a
 FAMILY_NAME.
 </para>
@@ -551,7 +551,7 @@ FAMILY_NAME.
 <para>
 <!-- .LP -->
 This section discusses the
-<function>FontName :</function>
+<function>FontName</function>:
 </para>
 <itemizedlist>
   <listitem>
@@ -644,7 +644,7 @@ of output technologies or has its own perception of market needs.
 <!-- .LP -->
 It is up to the type supplier to register with the X Consortium a
 suitable name for this
-<function>FontName </function>
+<function>FontName</function>
 field according to the registration procedures defined by the Consortium.
 </para>
 <para>
@@ -1527,7 +1527,7 @@ AXIS_TYPES</entry>
 <para>
 <!-- .LP -->
 FOUNDRY is as defined in the
-<function>FontName </function>
+<function>FontName</function>
 except that the property type is ATOM.
 </para>
 <para>
@@ -1747,7 +1747,7 @@ RESOLUTION_X cannot be calculated or approximated.
 <para>
 <!-- .LP -->
 RESOLUTION_Y is as defined in the
-<function>FontName </function>
+<function>FontName</function>
 except that the property type is CARD32.
 </para>
 <para>
@@ -1771,7 +1771,7 @@ except that the property type is ATOM.
 <!-- .LP -->
 SPACING can be calculated if not supplied as a font property,
 according to the definitions given above for the
-<function>FontName .</function>
+<function>FontName</function>.
 </para>
 </sect2>
 
@@ -3962,30 +3962,30 @@ following conditions are satisfied:
     <para>
 The value for the BDF item <function>FONT</function> conforms to the syntax
 and semantic definition of a XLFD
-<function>FontName </function>
+<function>FontName</function>
 string.
     </para>
   </listitem>
   <listitem>
     <para>
 The
-<function>FontName </function>
+<function>FontName</function>
 begins with the X
-<function>FontNameRegistry </function>
+<function>FontNameRegistry</function>
 prefix: "-".
     </para>
   </listitem>
   <listitem>
     <para>
 All XLFD
-<function>FontName </function>
+<function>FontName</function>
 fields are defined.
     </para>
   </listitem>
   <listitem>
     <para>
 Any FontProperties provided conform in name and semantics to the XLFD
-<function>FontProperty </function>
+<function>FontProperty</function>
 definitions.
     </para>
   </listitem>
@@ -3993,7 +3993,7 @@ definitions.
 <para>
 <!-- .LP              -->
 A simple method of testing for conformance would entail verifying that the
-<function>FontNameRegistry </function>
+<function>FontNameRegistry</function>
 prefix is the string "-",
 that the number of field delimiters in the string and coded field values
 are valid,
@@ -4011,7 +4011,7 @@ or follows the definition of a private property.
 <!-- .LP -->
 FONT_ASCENT, FONT_DESCENT, and DEFAULT_CHAR are provided in the BDF
 specification as properties that are moved to the
-<function>XFontStruct </function>
+<function>XFontStruct</function>
 by the BDF font compiler in generating the X server-specific
 binary font encoding.
 If present,

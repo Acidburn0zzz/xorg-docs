@@ -323,7 +323,7 @@ The elements are not necessarily ASCII characters,
 and no case folding happens.
 <footnote><para>
 The comment in the protocol specification for
-<function>InternAtom </function>
+<function>InternAtom</function>
 that ISO Latin-1 encoding should be used is in the nature of a convention;
 the server treats the string as a byte sequence.
 </para></footnote>
@@ -725,7 +725,7 @@ This time value usually will be obtained from the timestamp of the event
 that triggers the acquisition of the selection.
 Clients should not set the time
 value to
-<function>CurrentTime ,</function>
+<function>CurrentTime</function>,
 because if they do so, they have no way of finding
 when they gained ownership of the selection.
 Clients must use a window they created so that requestors
@@ -742,10 +742,10 @@ This restriction is imposed to prepare for possible future extensions.
 <title>Convention</title>
 <para>
 Clients attempting to acquire a selection must set the time value of the
-<function>SetSelectionOwner </function>
+<function>SetSelectionOwner</function>
 request to the timestamp of the event triggering the acquisition attempt,
 not to
-<function>CurrentTime .</function>
+<function>CurrentTime</function>.
 A zero-length append to a property is a way to obtain a timestamp for
 this purpose;
 the timestamp is in the corresponding
@@ -756,7 +756,7 @@ event.
 
 <para>
 If the time in the
-<function>SetSelectionOwner </function>
+<function>SetSelectionOwner</function>
 request is in the future relative to the server's current time
 or is in the past relative to the last time the specified selection
 changed hands, the
@@ -877,7 +877,7 @@ event, which is defined as follows:
 <para>
 The specified owner and selection will be the values that were specified in
 the
-<function>SetSelectionOwner </function>
+<function>SetSelectionOwner</function>
 request.
 The owner should compare the timestamp with the period
 it has owned the selection and, if the time is outside,
@@ -901,7 +901,7 @@ even though they do not own it now.
 
 <para>
 If the specified property is
-<function>None ,</function>
+<function>None</function>,
 the requestor is an obsolete client.
 Owners are encouraged to support these clients by using the specified target
 atom as the property name to be used for the reply.
@@ -958,7 +958,7 @@ See also
 If the property is successfully stored,
 the owner should acknowledge the successful conversion
 by sending the requestor window a
-<function>SelectionNotify </function>
+<function>SelectionNotify</function>
 event (by means of a
 <function>SendEvent</function>
 request with an empty mask).
@@ -1004,10 +1004,10 @@ is defined as follows:
 <para>
 The owner should set the specified selection, target, time,
 and property arguments to the values received in the
-<function>SelectionRequest </function>
+<function>SelectionRequest</function>
 event.
 (Note that setting the property argument to
-<function>None </function>
+<function>None</function>
 indicates that the conversion requested could not be made.)
 </para>
 
@@ -1085,7 +1085,7 @@ event.
 <para>
 When some other client acquires a selection,
 the previous owner receives a
-<function>SelectionClear </function>
+<function>SelectionClear</function>
 event, which is defined as follows:
 </para>
 
@@ -1121,7 +1121,7 @@ event, which is defined as follows:
 <para>
 The timestamp argument is the time at which the ownership changed hands,
 and the owner argument is the window the previous owner specified in its
-<function>SetSelectionOwner </function>
+<function>SetSelectionOwner</function>
 request.
 </para>
 
@@ -1330,7 +1330,7 @@ request.
 
 <para>
 The protocol allows the property field to be set to
-<function>None ,</function>
+<function>None</function>,
 in which case the owner is supposed to choose a property name.
 However, it is difficult for the owner to make this choice safely.
 </para>
@@ -1350,7 +1350,7 @@ request.
   <listitem>
     <para>
 Owners receiving
-<function>ConvertSelection </function>
+<function>ConvertSelection</function>
 requests with a property argument of
 <function>None</function>
 are talking to an obsolete client.
@@ -1376,13 +1376,13 @@ event, see
 <para>
 The requestor, selection, time, and target arguments will be the same
 as those on the
-<function>ConvertSelection </function>
+<function>ConvertSelection</function>
 request.
 </para>
 
 <para>
 If the property argument is
-<function>None ,</function>
+<function>None</function>,
 the conversion has been refused.
 This can mean either that there is no owner for the selection,
 that the owner does not support the conversion implied by the target,
@@ -1391,7 +1391,7 @@ or that the server did not have sufficient space to accommodate the data.
 
 <para>
 If the property argument is not
-<function>None ,</function>
+<function>None</function>,
 then that property will exist on the requestor window.
 The value of the selection can be retrieved from this
 property by using the
@@ -1543,7 +1543,7 @@ in properties.
 Exceeding this limit will result in an
 <function>Alloc</function>
 error on the
-<function>ChangeProperty </function>
+<function>ChangeProperty</function>
 request that the selection owner uses to store the data.
     </para>
   </listitem>
@@ -1600,14 +1600,14 @@ clients should use a sequence of
 <function>ChangeProperty (mode==Append)</function>
 requests for reasonable quantities of data.
 This avoids locking servers up and limits the waste of data an
-<function>Alloc </function>
+<function>Alloc</function>
 error would cause.
     </para>
   </listitem>
   <listitem>
     <para>
 If an
-<function>Alloc </function>
+<function>Alloc</function>
 error occurs during the storing of the selection data,
 all properties stored for this selection should be deleted
 and the
@@ -1623,7 +1623,7 @@ request should be refused (see
 To avoid locking servers up for inordinate lengths of time,
 requestors retrieving large quantities of data from a property
 should perform a series of
-<function>GetProperty </function>
+<function>GetProperty</function>
 requests, each asking for a reasonable amount of data.
     </para>
   </listitem>
@@ -2196,7 +2196,7 @@ All other targets are optional.
 TARGETS - The owner should return a list of atoms that represent
 the targets for which an attempt to convert the current selection
 will succeed (barring unforseeable problems such as
-<function>Alloc </function>
+<function>Alloc</function>
 errors).
 This list should include all the required atoms.
     </para>
@@ -2205,12 +2205,12 @@ This list should include all the required atoms.
     <para>
 MULTIPLE - The MULTIPLE target atom is valid only when a property
 is specified on the
-<function>ConvertSelection </function>
+<function>ConvertSelection</function>
 request.
 If the property argument in the
-<function>SelectionRequest </function>
+<function>SelectionRequest</function>
 event is
-<function>None </function>
+<function>None</function>
 and the target is MULTIPLE,
 it should be refused.
     </para>
@@ -2220,10 +2220,10 @@ When a selection owner receives a
 request,
 the contents of the property named in the request will be a list of atom pairs:
 the first atom naming a target and the second naming a property
-<function>( None </function>
+<function>( None</function>
 is not valid here).
 The effect should be as if the owner had received a sequence of
-<function>SelectionRequest </function>
+<function>SelectionRequest</function>
 events (one for each atom pair) except that:
 <!-- .RS -->
     </para>
@@ -2231,7 +2231,7 @@ events (one for each atom pair) except that:
       <listitem>
         <para>
 The owner should reply with a
-<function>SelectionNotify </function>
+<function>SelectionNotify</function>
 only when all the requested conversions have been performed.
         </para>
       </listitem>
@@ -2240,7 +2240,7 @@ only when all the requested conversions have been performed.
 If the owner fails to convert the target named by an atom
 in the MULTIPLE property,
 it should replace that atom in the property with
-<function>None .</function>
+<function>None</function>.
         </para>
       </listitem>
     </itemizedlist>
@@ -2334,7 +2334,7 @@ the corresponding conversion request must be refused.
 
 <para>
 The need to delay responding to the
-<function>ConvertSelection </function>
+<function>ConvertSelection</function>
 request until a further conversion has succeeded poses problems
 for the Intrinsics interface that need to be addressed.
 </para>
@@ -2388,9 +2388,9 @@ of the selection for which it got the INSERT_SELECTION request
 The names of the properties used in selection data transfer are chosen by
 the requestor.
 The use of
-<function>None </function>
+<function>None</function>
 property fields in
-<function>ConvertSelection </function>
+<function>ConvertSelection</function>
 requests (which request the selection owner to choose a name)
 is not permitted by these conventions.
 </para>
@@ -2679,7 +2679,7 @@ The selection requestor:
   <listitem>
     <para>
 Waits for the
-<function>SelectionNotify </function>
+<function>SelectionNotify</function>
 event.
     </para>
   </listitem>
@@ -2691,15 +2691,15 @@ Loops:
       <listitem>
         <para>
 Retrieving data using
-<function>GetProperty </function>
+<function>GetProperty</function>
 with the delete argument
-<function>True .</function>
+<function>True</function>.
         </para>
       </listitem>
       <listitem>
         <para>
 Waiting for a
-<function>PropertyNotify </function>
+<function>PropertyNotify</function>
 with the state argument
 <function>NewValue</function>.
         </para>
@@ -3014,7 +3014,7 @@ named by the predefined atoms CUT_BUFFER0 to CUT_BUFFER7.
 These properties must, at present, have type STRING and format 8.
 A client that uses the cut buffer mechanism must initially ensure that
 all eight properties exist by using
-<function>ChangeProperty </function>
+<function>ChangeProperty</function>
 requests to append zero-length data to each.
 </para>
 
@@ -3033,14 +3033,14 @@ request in mode
 
 <para>
 A client that obtains data from the cut buffers should use a
-<function>GetProperty </function>
+<function>GetProperty</function>
 request to retrieve the contents of CUT_BUFFER0.
 </para>
 
 <para>
 In response to a specific user request,
 a client may rotate the cut buffers by minus 1 by using
-<function>RotateProperties </function>
+<function>RotateProperties</function>
 requests to rename each buffer;
 that is, CUT_BUFFER7 to CUT_BUFFER6, CUT_BUFFER6 to CUT_BUFFER5, ...,
 and CUT_BUFFER0 to CUT_BUFFER7.
@@ -3526,7 +3526,7 @@ To indicate that it was specified by the client without any user involvement,
 the client should set
 <function>PPosition</function>
 and
-<function>PSize .</function>
+<function>PSize</function>.
 </para>
 
 <para>
@@ -3538,13 +3538,13 @@ window excluding borders.
 The win_gravity may be any of the values specified for WINGRAVITY in
 the core protocol except for
 <function>Unmap</function>:
-<function>NorthWest </function>
+<function>NorthWest</function>
 (1),
-<function>North </function>
+<function>North</function>
 (2),
-<function>NorthEast </function>
+<function>NorthEast</function>
 (3),
-<function>West </function>
+<function>West</function>
 (4),
 <function>Center</function>
 (5),
@@ -3783,10 +3783,10 @@ model used by the client (see
 <para>
 Clients with the Globally Active and No Input models should set the
 input flag to
-<function>False .</function>
+<function>False</function>.
 Clients with the Passive and Locally Active models should set the input
 flag to
-<function>True .</function>
+<function>True</function>.
 </para>
 
 <para>
@@ -4299,10 +4299,10 @@ the window is in, which may not match the client's idea as expressed
 in the initial_state field of the WM_HINTS property
 (for example, if the user has asked the window manager to iconify the window).
 If it is
-<function>NormalState ,</function>
+<function>NormalState</function>,
 the window manager believes the client should be animating its window.
 If it is
-<function>IconicState ,</function>
+<function>IconicState</function>,
 the client should animate its icon window.
 In either state,
 clients should be prepared to handle exposure events from either window.
@@ -4319,7 +4319,7 @@ or it will remove the WM_STATE property entirely.
 The icon field should contain the window ID of the window that the
 window manager uses as the icon for the window on which this property is
 set.  If no such window exists, the icon field should be
-<function>None .</function>
+<function>None</function>.
 Note that this window could be but is not necessarily the same window as the
 icon window that the client may have specified in its WM_HINTS property.
 The WM_STATE icon may be a window that the window manager has supplied and
@@ -4449,7 +4449,7 @@ WM_HINTS.initial_state being
     <para>
 Withdrawn -&gt; Iconic - The client should map the window with
 WM_HINTS.initial_state being
-<function>IconicState .</function>
+<function>IconicState</function>.
     </para>
   </listitem>
   <listitem>
@@ -4620,7 +4620,7 @@ reparenting window managers, and the WM_STATE technique is to be preferred.
 <para>
 If the transition is from the Normal to the Iconic state,
 the client should send a
-<function>ClientMessage </function>
+<function>ClientMessage</function>
 event to the root with:
 </para>
 <itemizedlist>
@@ -4635,11 +4635,11 @@ Type
 <footnote>
 <para>
 The type field of the
-<function>ClientMessage </function>
+<function>ClientMessage</function>
 event (called the message_type field by Xlib) should not be confused with
 the code field of the event itself,
 which will have the value 33
-<function>( ClientMessage ).</function>
+<function>( ClientMessage</function>).
 </para>
 </footnote>
 == the atom WM_CHANGE_STATE
@@ -4660,7 +4660,7 @@ Data[0] == IconicState
 <blockquote><title>Rationale</title>
 <para>
 The format of this
-<function>ClientMessage </function>
+<function>ClientMessage</function>
 event does not match the format of
 <function>ClientMessages</function>
 in
@@ -4674,7 +4674,7 @@ and this message is sent by clients to the window manager.
 <para>
 Other values of data[0] are reserved for future extensions to these
 conventions.  The parameters of the
-<function>SendEvent </function>
+<function>SendEvent</function>
 request should be those described for the synthetic
 <function>UnmapNotify</function>
 event.
@@ -4788,7 +4788,7 @@ changing its border width.
     </para>
     <para>
 A client will receive a synthetic
-<function>ConfigureNotify </function>
+<function>ConfigureNotify</function>
 event following the change that describes the new geometry of the window.
 The event's (x,y) coordinates will be in the root coordinate system adjusted
 for the border width the client requested.
@@ -4892,7 +4892,7 @@ Clients that change their position in the stack must be aware
 that they may have been reparented,
 which means that windows that used to be siblings no longer are.
 Using a nonsibling as the sibling parameter on a
-<function>ConfigureWindow </function>
+<function>ConfigureWindow</function>
 request will cause an error.
 </para>
 
@@ -4915,7 +4915,7 @@ window that was originally a sibling must do the
 request (in case they are running under a nonreparenting window manager),
 be prepared to deal with a resulting error,
 and then follow with a synthetic
-<function>ConfigureRequest </function>
+<function>ConfigureRequest</function>
 event by invoking a
 <function>SendEvent</function>
 request with the following arguments:
@@ -5224,7 +5224,7 @@ Clients may also acquire
 the focus without a corresponding
 <function>EnterNotify</function>.
 Note that clients must not use
-<function>CurrentTime </function>
+<function>CurrentTime</function>
 in the time field.
 </para>
 
@@ -5278,14 +5278,14 @@ that transfers the focus.
 <para>
 Windows with the atom WM_TAKE_FOCUS in their WM_PROTOCOLS property
 may receive a
-<function>ClientMessage </function>
+<function>ClientMessage</function>
 event from the window manager (as described in
 <link linkend="clientmessage_events">
 <xref linkend="clientmessage_events"></xref></link>.
 )
 with WM_TAKE_FOCUS in its data[0] field and a valid timestamp
 (i.e., not
-<function>CurrentTime )</function>
+<function>CurrentTime</function>)
 in its data[1] field.
 If they want the focus,
 they should respond with a
@@ -5339,7 +5339,7 @@ which is probably what you want.
   <listitem>
     <para>
 <!-- .bP -->
-<function>PointerRoot </function>
+<function>PointerRoot</function>
 - Using
 this value with a click-to-type focus management policy
 leads to race conditions because the window becoming unviewable may
@@ -5371,7 +5371,7 @@ is really safe to use.
 <title>Convention</title>
 <para>
 Clients that invoke a
-<function>SetInputFocus </function>
+<function>SetInputFocus</function>
 request should set the revert-to argument to
 <function>Parent</function>.
 </para>
@@ -5770,7 +5770,7 @@ Clients should not configure their icon windows.
     <para>
 Clients should not set override-redirect on their icon windows
 or select for
-<function>ResizeRedirect </function>
+<function>ResizeRedirect</function>
 events on them.
     </para>
   </listitem>
@@ -5936,7 +5936,7 @@ The effects that this reparenting will have on the client are as follows:
 The parent value returned by a
 <function>QueryTree</function>
 request will no longer be the value supplied to the
-<function>CreateWindow </function>
+<function>CreateWindow</function>
 request that created the reparented window.
 There should be no need for the client to be aware of the identity
 of the window to which the top-level window has been reparented.
@@ -6042,7 +6042,7 @@ The possibility that a request may be redirected means
 that a client cannot assume that any redirectable request is actually
 performed when the request is issued or is actually performed at all.
 The requests that may be redirected are
-<function>MapWindow ,</function>
+<function>MapWindow</function>,
 <function>ConfigureWindow</function>,
 and
 <function>CirculateWindow</function>.
@@ -6068,7 +6068,7 @@ The client must wait for an
 event before drawing in the window.
 <footnote><para>
 This is true even if the client set the backing-store attribute to
-<function>Always .</function>
+<function>Always</function>.
 The backing-store attribute is a only a hint,
 and the server may stop maintaining backing store contents at any time.
 </para>
@@ -6306,7 +6306,7 @@ for
 <function>FocusChange</function>
 events on their top-level windows;
 they will receive
-<function>FocusIn </function>
+<function>FocusIn</function>
 and
 <function>FocusOut</function>
 events.
@@ -6406,7 +6406,7 @@ This cannot be a
 <function>FocusIn</function>
 event because they do not have timestamps.
 Clients may also acquire the focus without a corresponding
-<function>EnterNotify </function>
+<function>EnterNotify</function>
 event.
 Clients must not use
 <function>CurrentTime</function>
@@ -6521,7 +6521,7 @@ Clients, usually those with multiple top-level windows, whose server
 connection must survive the deletion of some of their top-level windows,
 should include the atom WM_DELETE_WINDOW in the WM_PROTOCOLS property on
 each such window.  They will receive a
-<function>ClientMessage </function>
+<function>ClientMessage</function>
 event as described above whose data[0] field is WM_DELETE_WINDOW.
 </para>
 
@@ -7038,7 +7038,7 @@ Locally active clients should set the input focus to one of their windows
 only when it is already in one of their windows
 or when they receive a WM_TAKE_FOCUS message.
 They should set the input field of the WM_HINTS structure to
-<function>True .</function>
+<function>True</function>.
     </para>
   </listitem>
   <listitem>
@@ -7047,7 +7047,7 @@ Globally active clients should set the input focus to one of their windows
 only when they receive a button event and a passive-grabbed key event,
 or when they receive a WM_TAKE_FOCUS message.
 They should set the input field of the WM_HINTS structure to
-<function>False .</function>
+<function>False</function>.
     </para>
   </listitem>
   <listitem>
@@ -7188,7 +7188,7 @@ pointer/keyboard-mode == Synchronous
 
 <para>
 Then, the window manager should release the grab by using an
-<function>AllowEvents </function>
+<function>AllowEvents</function>
 request with the following specified:
 </para>
 
@@ -7587,7 +7587,7 @@ it should reinstall the modifier.
 Note that a
 <function>GrabServer</function>
 request must be used to make the
-<function>GetModifierMapping </function>
+<function>GetModifierMapping</function>
 and
 <function>SetModifierMapping</function>
 pair in these transactions atomic.
@@ -8718,7 +8718,7 @@ in the timestamp field of WM_TAKE_FOCUS messages.
 In the WM_HINTS property, the
 <function>VisibleHint</function>
 flag has been renamed to
-<function>UrgencyHint .</function>
+<function>UrgencyHint</function>.
 Its semantics have also been defined more thoroughly.
     </para>
   </listitem>
@@ -8775,14 +8775,14 @@ it should be added at the next protocol revision.
     <para>
 <!-- .bP -->
 There is a race condition in the
-<function>InstallColormap </function>
+<function>InstallColormap</function>
 request.
 It does not take a timestamp and may be executed after the top-level colormap
 has been uninstalled.
 The next protocol revision should provide the timestamp in the
-<function>InstallColormap ,</function>
-<function>UninstallColormap ,</function>
-<function>ListInstalledColormaps </function>
+<function>InstallColormap</function>,
+<function>UninstallColormap</function>,
+<function>ListInstalledColormaps</function>
 requests and in the
 <function>ColormapNotify</function>
 event.
