@@ -23,7 +23,7 @@ dnl  Process this file with autoconf to create configure.
 # Initialize Autoconf
 AC_PREREQ([2.60])
 AC_INIT([xorg-docs],
-        [1.5.99.901],
+        [1.6],
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         [xorg-docs])
 AC_CONFIG_SRCDIR([Makefile.am])
