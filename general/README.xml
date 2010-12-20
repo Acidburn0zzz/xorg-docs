@@ -132,7 +132,7 @@ users alike.
 <title>Redistribution of Snapshots</title>
 <para>
 While the X.Org Foundation <ulink
-url="LICENSE.html">License</ulink>
+url="License.html">License</ulink>
 doesn't
 prohibit vendors and others redistributing binaries of this snapshot
 release, we don't recommend including them in production releases.
