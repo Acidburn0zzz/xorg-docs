@@ -913,7 +913,7 @@ font type.
 <para>
 <emphasis remap="it">Please note:</emphasis> the X-TrueType (X-TT) backend is not included
 in X11R&relvers;.  That functionality has been merged into the FreeType
-backend.&#62;
+backend.
 </para>
 
 <para>
