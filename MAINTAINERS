@@ -185,6 +185,7 @@ XRes
 XScrnSaver
 Xau
 Xaw
+S:	Unmaintained
 
 X11, Xcomposite, Xcursor, Xdamage, Xfixes, Xrandr, Xrender
 P:	Keith Packard
@@ -194,40 +195,64 @@ W:	http://wiki.x.org
 S:	Maintained
 
 Xdmcp
+S:	Unmaintained
+
 Xevie
+S:	Obsolete
+
 Xext
 Xfont
+S:	Unmaintained
+
 Xfontcache
+S:	Obsolete
+
 Xft
 Xinerama
+S:	Unmaintained
 
-Xi, xkbfile, xkbui
+Xi
+P:	Peter Hutterer
+M:	peter.hutterer@who-t.net
+L:	xorg-devel@lists.x.org
+W:	http://wiki.x.org
+S:	Maintained
+
+xkbfile, xkbui
 P:	Daniel Stone
 M:	daniel@fooishbar.org
 L:	xorg-devel@lists.x.org
-W:	htp://wiki.x.org
+W:	http://wiki.x.org
 S:	Maintained
 S:	XKB being overhauled
 S:	Please contact Daniel if you're planning to work on this
 
 Xmu
-Xp
 Xpm
-XprintAppUtil
-XprintUtil
+S:	Unmaintained
+
+Xp
+S:	Obsolete
+S:	maintained solely for binary compatibilty for software like Motif
+
+XprintAppUtil, XprintUtil
+S:	Obsolete
+
 Xt
 Xtst
 Xv
 XvMC
 Xxf86dga
-Xxf86misc
+S:	Unmaintained
 
+Xxf86misc
 Xxf86rush
 S:	Obsolete
 
 Xxf86vm
 dmx
 fontenc
+S:	Unmaintained
 
 lbxutil
 S:	Obsolete
