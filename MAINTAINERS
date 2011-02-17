@@ -130,7 +130,7 @@ xkbcomp
 P:	Daniel Stone
 M:	daniel@fooishbar.org
 L:	xorg-devel@lists.x.org
-W:	htp://wiki.x.org
+W:	http://wiki.x.org
 S:	Maintained
 S:	XKB being overhauled
 S:	Please contact Daniel if you're planning to work on this
