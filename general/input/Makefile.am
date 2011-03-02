@@ -1,10 +1,15 @@
+
 if ENABLE_DOCS
+if HAVE_XMLTO
 
-doc_sources = XKB-Config.xml XKB-Enhancing.xml
+# Main DocBook/XML files (DOCTYPE book)
+docbook = XKB-Config.xml XKB-Enhancing.xml
 
-xmldir = $(docdir)/input
-dist_xml_DATA = $(doc_sources)
+# The location where the DocBook/XML files and their generated formats are installed
+shelfdir = $(docdir)/input
 
-include $(top_srcdir)/xmlrules.in
+# Generate DocBook/XML output formats with or without stylesheets
+include $(top_srcdir)/docbook.am
 
+endif HAVE_XMLTO
 endif ENABLE_DOCS
