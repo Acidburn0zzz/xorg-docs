@@ -696,8 +696,6 @@ W:	http://wiki.x.org
 S:	Deactivated
 
 xf86-input-synaptics
-P:	Christoph Brill
-M:	egore911@egore911.de
 P:	Peter Hutterer
 M:	peter.hutterer@who-t.net
 L:	xorg-devel@lists.x.org
