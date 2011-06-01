@@ -235,7 +235,7 @@ extension is considered secure. It is initialized to FALSE by AddExtension.
 The following new dix function can be used to set the secure field:
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='declareextensionsecurity'>
 <funcprototype>
   <funcdef>void <function>DeclareExtensionSecurity</function></funcdef>
     <paramdef>char <parameter> *extname</parameter></paramdef>

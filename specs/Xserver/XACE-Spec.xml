@@ -159,7 +159,7 @@
 	When the callback is called, <parameter>pcbl</parameter> points to the callback list itself.  The X callback mechanism allows the list to be manipulated in various ways, but XACE callbacks should not do this.  Remember that other security extensions may be registered on the same hook.  <parameter>userdata</parameter> is set to the data argument that was passed to <function>XaceRegisterCallback</function> at registration time; this can be used by your extension to pass data into the callback.  <parameter>calldata</parameter> points to a value or structure which is specific to each XACE hook.  These are discussed in the documentation for each specific hook, below.  Your extension must cast this argument to the appropriate pointer type.</para>
 	<para>To register a callback on a given hook, use <function>XaceRegisterCallback</function>:
 	<blockquote>
-	  <funcsynopsis>
+	  <funcsynopsis id='xaceregistercallback'>
 	    <funcprototype><funcdef>Bool <function>XaceRegisterCallback</function></funcdef>
 	    <paramdef>
 	      <parameter>int hook</parameter>
@@ -172,7 +172,7 @@
 	Where <parameter>hook</parameter> is the XACE hook you wish to register on, <parameter>callback</parameter> is the callback function you wish to register, and <parameter>userdata</parameter> will be passed through to the callback as its second argument, as described above.  See <xref linkend="hooks_tab"/> for the list of XACE hook codes.  <function>XaceRegisterCallback</function> is typically called from the extension initialization code; see the SECURITY source for examples.  The return value is <literal>TRUE</literal> for success, <literal>FALSE</literal> otherwise.</para>
 	<para>To unregister a callback, use <function>XaceDeleteCallback</function>:
 	<blockquote>
-	  <funcsynopsis>
+	  <funcsynopsis id='xacedeletecallback'>
 	    <funcprototype><funcdef>Bool <function>XaceDeleteCallback</function></funcdef>
 	    <paramdef>
 	      <parameter>int hook</parameter>
