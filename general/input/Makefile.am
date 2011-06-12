@@ -1,6 +1,5 @@
 
 if ENABLE_DOCS
-if HAVE_XMLTO
 
 # Main DocBook/XML files (DOCTYPE book)
 docbook = XKB-Config.xml XKB-Enhancing.xml
@@ -11,5 +10,4 @@ shelfdir = $(docdir)/input
 # Generate DocBook/XML output formats with or without stylesheets
 include $(top_srcdir)/docbook.am
 
-endif HAVE_XMLTO
 endif ENABLE_DOCS
