@@ -107,7 +107,7 @@ S:	Maintained
 
 xdm
 P:	Alan Coopersmith
-M:	alan.coopersmith@sun.com
+M:	alan.coopersmith@oracle.com
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -484,7 +484,7 @@ S:	Unmaintained (libraries/apps) ; Obsolete/Removed (Xorg server)
 
 Solaris (x86 & sparc)
 P:	Alan Coopersmith
-M:	alan.coopersmith@sun.com
+M:	alan.coopersmith@oracle.com
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org & http://opensolaris.org/os/community/x_win/
 S:	Maintained
@@ -620,7 +620,7 @@ S:	Maintained
 
 xf86-input-keyboard
 P:	Alan Coopersmith
-M:	alan.coopersmith@sun.com
+M:	alan.coopersmith@oracle.com
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -648,7 +648,7 @@ S:	Unmaintained
 
 xf86-input-mouse
 P:	Alan Coopersmith
-M:	alan.coopersmith@sun.com
+M:	alan.coopersmith@oracle.com
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
