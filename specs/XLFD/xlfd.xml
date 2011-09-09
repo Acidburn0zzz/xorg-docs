@@ -16,10 +16,9 @@
 Digital Equipment Corporation
          </orgname></affiliation>
       </author>
-      <othercredit>
-         <contrib>edited by</contrib>
+      <editor>
          <firstname>Stephen </firstname><surname>Gildea</surname>
-      </othercredit>
+      </editor>
    </authorgroup>
    <corpname>X Consortium Standard</corpname>
    <copyright><year>1988,1994</year><holder>X Consortium</holder></copyright>

@@ -14,11 +14,10 @@
          <firstname>David</firstname><surname>Rosenthal</surname>
          <affiliation><orgname>Sun Microsystems, Inc.</orgname></affiliation>
       </author>
-      <othercredit>
-         <contrib>Version 2 edited by</contrib>
+      <editor>
          <firstname>Stuart</firstname><othername>W.</othername><surname>Marks</surname>
          <affiliation><orgname>SunSoft, Inc.</orgname></affiliation>
-      </othercredit>
+      </editor>
    </authorgroup>
    <corpname>X Consortium Standard</corpname>
    <affiliation><orgname>X Consortium</orgname></affiliation>
