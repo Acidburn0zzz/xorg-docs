@@ -22,11 +22,6 @@ xhtml,docbook,html,refcaption
    <copyright><year>1996</year><holder>X Consortium</holder></copyright>
    <affiliation><orgname>X Consortium</orgname></affiliation>
 
-   <othercredit>
-      <firstname>Matt</firstname><surname>Dew</surname>
-      <contrib>conversion from tex to docbook</contrib>
-   </othercredit>
-
 <legalnotice>
 <para>THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</para>
 
