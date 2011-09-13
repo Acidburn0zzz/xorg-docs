@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
-                   "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+                   "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+]>
 
 
 <!--translated from secint.tex, on 2010-06-27 15:38:00,
@@ -12,7 +15,8 @@ xhtml,docbook,html,refcaption -->
 <bookinfo>
    <title>Security Extension Server Design Draft</title>
    <subtitle>X Consortium Standard</subtitle>
-   <releaseinfo>June 27, 2010</releaseinfo>
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
+   <releaseinfo>Version 3.0</releaseinfo>
    <authorgroup>
       <author>
          <firstname>David</firstname><surname>Wiggins</surname>
@@ -20,7 +24,6 @@ xhtml,docbook,html,refcaption -->
    </authorgroup>
    <corpname>X Consortium Standard</corpname>
    <copyright><year>1996</year><holder>X Consortium</holder></copyright>
-   <releaseinfo>Version 3.0</releaseinfo>
    <affiliation><orgname>X Consortium</orgname></affiliation>
 
 <legalnotice>
@@ -41,6 +44,7 @@ Consortium.
 </para>
 
 </legalnotice>
+<pubdate>June 27, 2010</pubdate>
 
 <abstract>
 <para>This paper describes the implementation strategy used to implement
