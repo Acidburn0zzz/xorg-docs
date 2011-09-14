@@ -13,6 +13,7 @@
  <title>X Window System support for <trademark>Solaris</trademark> &amp;
       <trademark>OpenSolaris</trademark> from X.Org
  </title>
+ <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
  <authorgroup>
   <author>
     <firstname>David</firstname><surname>Holland</surname>
