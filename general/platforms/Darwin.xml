@@ -9,8 +9,9 @@
 
   <articleinfo>
 
-    <title>X.Org X11R&relvers; on Darwin and Mac OS X</title>
-    <pubdate>October 2009</pubdate>
+    <title>X on Darwin and Mac OS X</title>
+    <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
+   <pubdate>October 2009</pubdate>
 
   </articleinfo>
 

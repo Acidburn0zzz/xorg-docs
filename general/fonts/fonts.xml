@@ -10,6 +10,7 @@
 <articleinfo>
 
 <title>Fonts in X11R&relvers;</title>
+<releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
 <author><firstname>Juliusz</firstname><surname>Chroboczek</surname>
 <email>jch@freedesktop.org</email>
 </author>

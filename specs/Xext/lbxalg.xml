@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE article
-          PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
-          "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+                      "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+]>
 
 <article id='lbxalg'>
-<title>LBX X Consortium Algorithms</title>
+  <articleinfo>
+    <title>LBX X Consortium Algorithms</title>
+    <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
+</articleinfo>
 
 <sect1 id='introduction'>
 <title>Introduction</title>

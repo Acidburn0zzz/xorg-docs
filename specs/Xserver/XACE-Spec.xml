@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
                       "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
-[]>
+[
+<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+]>
 
 <article>
   <articleinfo>
@@ -11,7 +13,8 @@
     <pubdate>2009</pubdate>
     <title>X Access Control Extension Specification</title>
     <titleabbrev>XACE-Spec</titleabbrev>
-    <revhistory>
+    <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
+   <revhistory>
       <revision>
 	<revnumber>1.0</revnumber>
 	<date>19 Oct 2006</date>
