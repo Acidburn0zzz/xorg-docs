@@ -10,9 +10,7 @@
 <!-- Title information -->
 <articleinfo>
 
- <title>X Window System support for <trademark>Solaris</trademark> &amp;
-      <trademark>OpenSolaris</trademark> from X.Org
- </title>
+ <title>X Window System on <trademark>Solaris</trademark></title>
  <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
  <authorgroup>
   <author>
