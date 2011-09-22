@@ -11,28 +11,17 @@
 <articleinfo>
    <title>Description of the Application Group Extension</title>
    <subtitle>Implementation for the X11 Sample Server</subtitle>
-   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
-   <releaseinfo>Version 1.0</releaseinfo>
    <authorgroup>
       <author>
          <firstname>Kaleb </firstname><surname>KEITHLEY</surname>
          <affiliation><orgname>FUJITSU Limited.</orgname></affiliation>
       </author>
    </authorgroup>
-   <corpname>X Consortium Standard</corpname>
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
+   <releaseinfo>Version 1.0</releaseinfo>
    <copyright><year>1996</year><holder>X Consortium</holder></copyright>
-   <affiliation><orgname>X Consortium</orgname></affiliation>
-
-<abstract>
-<para>
-The following document explains the server side of the Application
-Group Extension.
-</para>
-</abstract>
 
 <legalnotice>
-
-
 <para>
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,7 +37,7 @@ all copies or substantial portions of the Software.
 </para>
 
 <para>
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
@@ -57,16 +46,26 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </para>
 
 <para>
+Except as contained in this notice, the name of the X Consortium shall
+not be used in advertising or otherwise to promote the sale, use or
+other dealings in this Software without prior written authorization
+from the X Consortium.
+</para>
+<para>X Window System is a trademark of The Open Group.</para>
+</legalnotice>
+
+<legalnotice>
+<para>WindowsNT is a trademark of Microsoft, Inc.</para>
+<para>Macintosh and Apple are trademarks of Apple Computer, Inc.</para>
+</legalnotice>
+
+<abstract>
+<para>
 The following document explains the server side of the Application
 Group Extension.
 </para>
+</abstract>
 
-<para>
-WindowsNT is a trademark of Microsoft, Inc.  Macintosh and Apple
-are trademarks of Apple Computer, Inc.  X Window System is a
-trademark of X Consortium, Inc.
-</para>
-</legalnotice>
 </articleinfo>
 
 <para>
