@@ -521,11 +521,11 @@ S:	Maintained
 Drivers
 -------
 xf86-input-acecad
-P:	Giuseppe Bilotta
-M:	giuseppe.bilotta@gmail.org
+P:	?
+M:	?
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
-S:	Maintained
+S:	Unmaintained
 
 xf86-input-aiptek
 P:	?
