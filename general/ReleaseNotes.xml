@@ -713,8 +713,8 @@ The next section describes what is new in the latest version
         </para></warning>
       </sect3>
 
-      <sect3 id="config">
-        <title>Configuration File</title>
+      <sect3 id='Configuration_File'>
+<title>Configuration File</title>
 
         <para>
         The Xorg server uses a configuration file as the primary mechanism
@@ -939,8 +939,8 @@ The next section describes what is new in the latest version
 </sect1>
 -->
 
-    <sect2 id="font">
-        <title>Font support</title>
+    <sect2 id='Font_support'>
+<title>Font support</title>
 
         <para>
         Details about the font support in X11R&relvers; can be

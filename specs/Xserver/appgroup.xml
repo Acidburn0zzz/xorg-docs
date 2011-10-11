@@ -231,7 +231,7 @@ by the record, and finally frees the record itself.
 </para>
 </sect1>
 
-<sect1 id="Known_Problems_in_this_release_">
+<sect1 id='Known_Problems_in_this_release'>
 <title>Known Problems in this release.</title>
 <para>
 In a combined UI/Print server the connection setup returned to an

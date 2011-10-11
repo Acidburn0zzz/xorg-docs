@@ -240,7 +240,7 @@ modifiers so it its row has only one column defined.
 
       <para>
 Note that in XKB there is no prior assumption that certain modifiers are bound
-to certain columns. By editing proper files (see <xref linkend="keytypes" />)
+to certain columns. By editing proper files (see <xref linkend='Key_Types' xrefstyle='select: title'/>)
 this mapping can be changed as well.
       </para>
 
@@ -419,8 +419,8 @@ definition and altering what may be needed.
 
     </sect2>
 
-    <sect2 id="keytypes" xreflabel="keytypes">
-      <title>Key Types</title>
+    <sect2 id='Key_Types'>
+<title>Key Types</title>
 
       <para>
 The differences in the number of columns (shift levels) are caused by

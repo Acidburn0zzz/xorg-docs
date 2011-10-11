@@ -23,14 +23,14 @@
 
 <para>
 This document describes the support for fonts in X11R&relvers;.
-<xref linkend="sec-installing"/> is aimed at the
+<xref linkend='Installing_fonts' xrefstyle='select: title'/> is aimed at the
 casual user wishing to install fonts in X11R&relvers; the rest of the
 document describes the font support in more detail.
 </para>
 
 <para>
 We assume some familiarity with digital fonts.  If anything is not
-clear to you, please consult <xref linkend="sec-background" /> at the
+clear to you, please consult <xref linkend='Appendix_background_and_terminology' xrefstyle='select: title'/> at the
 end of this document for background information.
 </para>
 
@@ -73,7 +73,7 @@ possible.
 
 </sect1>
 
-<sect1 id="sec-installing" xreflabel="Installing fonts">
+<sect1 id='Installing_fonts'>
 <title>Installing fonts</title>
 
 <para>
@@ -81,7 +81,7 @@ This section explains how to configure both Xft and the core fonts
 system to access newly-installed fonts.
 </para>
 
-<sect2 id="sec-configuring-xft">
+<sect2 id='Configuring_Xft'>
 <title>Configuring Xft</title>
 
 <para>
@@ -334,7 +334,7 @@ $ mkfontdir /usr/local/share/fonts/bitmap/
 
 <para>
 All that remains is to tell the X server about the existence of the
-new font directory; see <xref linkend="sec-set-font-path"/> below.
+new font directory; see <xref linkend='Setting_the_servers_font_path' xrefstyle='select: title'/> below.
 </para>
 
 </sect3>
@@ -375,14 +375,14 @@ url="mkfontdir.1.html"
 > and <ulink
 url="mkfontscale.1.html"
 >mkfontscale(1)</ulink
-> manual pages and <xref linkend="sec-internationalisation"/>
+> manual pages and <xref linkend='Core_fonts_and_internationalisation' xrefstyle='select: title'/>
 later in this document.
 </para>
 
 </sect3>
 
-<sect3 id="sec-cid-fonts" xreflabel="Installing CIDFonts">
-<title>CID-keyed fonts </title>
+<sect3 id='CID_keyed_fonts'>
+<title>CID-keyed fonts</title>
 
 <para>
 The CID-keyed font format was designed by Adobe Systems for fonts
@@ -393,8 +393,8 @@ support for CID-keyed fonts has been removed from X11.
 
 </sect3>
 
-<sect3 id="sec-set-font-path" xreflabel="Setting the server font path">
-<title>Setting the server's font path </title>
+<sect3 id='Setting_the_servers_font_path'>
+<title>Setting the server's font path</title>
 
 <para>
 The list of directories where the server looks for fonts is known
@@ -535,8 +535,8 @@ url="xorg.conf.5.html"
 
 </sect3>
 
-<sect3 id="sec-troubleshooting-core">
-<title>Troubleshooting </title>
+<sect3 id='Troubleshooting'>
+<title>Troubleshooting</title>
 
 <para>
 If you seem to be unable to use some of the fonts you have
@@ -873,17 +873,16 @@ name have been removed from X11R&relvers;.
 
 </sect1>
 
-<sect1 id="sec-more-core">
-<title>More about core fonts </title>
+<sect1 id='More_about_core_fonts'>
+<title>More about core fonts</title>
 
 <para>
 This section describes X11R&relvers;-specific enhancements to the core
 X11 fonts system.
 </para>
 
-<sect2 id="sec-internationalisation" xreflabel="Core fonts and
-internationalisation">
-<title>Core fonts and internationalisation </title>
+<sect2 id='Core_fonts_and_internationalisation'>
+<title>Core fonts and internationalisation</title>
 
 <para>
 The scalable font backends (Type&nbsp;1 and TrueType) can
@@ -900,8 +899,8 @@ which will lead to the font being recoded to ISO&nbsp;8859-1 and
 ISO&nbsp;8859-2 respectively.
 </para>
 
-<sect3 id="sec-fontenc">
-<title>The <emphasis remap="it">fontenc</emphasis> layer </title>
+<sect3 id='The_fontenc_layer'>
+<title>The <emphasis remap="it">fontenc</emphasis> layer</title>
 
 <para>
 Two of the scalable backends (Type&nbsp;1 and the
@@ -1068,7 +1067,8 @@ manual page for more details.
 <para>
 A number of encoding files for common encodings are included with
 X11R&relvers;.  Information on writing new encoding files can be found in
-<xref linkend="sec-format-encoding-directory-files"/> and <xref linkend="sec-format-encoding-files"/> later in this document.
+<xref linkend='Format_of_encoding_directory_files' xrefstyle='select: title'/>
+and <xref linkend='Format_of_encoding_files' xrefstyle='select: title'/> later in this document.
 </para>
 
 </sect3>
@@ -1076,8 +1076,8 @@ X11R&relvers;.  Information on writing new encoding files can be found in
 <sect3>
 <title>Backend-specific notes about fontenc</title>
 
-<sect4 id="sec-fontenc-freetype">
-<title>The <emphasis remap="it">FreeType</emphasis> backend </title>
+<sect4 id='The_FreeType_backend'>
+<title>The <emphasis remap="it">FreeType</emphasis> backend</title>
 
 <para>
 For TrueType and OpenType fonts, the FreeType backend scans the
@@ -1098,7 +1098,8 @@ points that have been assigned names by Adobe.
 <para>
 Specifying an encoding value of <literal remap="tt">adobe-fontspecific</literal> for a
 Type&nbsp;1 font disables the encoding mechanism.  This is useful with
-symbol and incorrectly encoded fonts (see <xref linkend="sec-incorrect-encoding"/> below).
+symbol and incorrectly encoded fonts (see 
+<xref linkend='Hints_about_using_badly_encoded_fonts' xrefstyle='select: title'/> below).
 </para>
 
 <para>
@@ -1110,9 +1111,8 @@ ISO&nbsp;8859-1.
 
 </sect3>
 
-<sect3 id="sec-format-encoding-directory-files" xreflabel="Format of
-encodings directory files">
-<title>Format of encoding directory files </title>
+<sect3 id='Format_of_encoding_directory_files'>
+<title>Format of encoding directory files</title>
 
 <para>
 In order to use a font in an encoding that the font backend does
@@ -1162,8 +1162,8 @@ url="mkfontdir.1.html"
 
 </sect3>
 
-<sect3 id="sec-format-encoding-files" xreflabel="Format of encoding files">
-<title>Format of encoding files </title>
+<sect3 id='Format_of_encoding_files'>
+<title>Format of encoding files</title>
 
 <para>
 The encoding files are ``free form,'' <emphasis remap="it">i.e.</emphasis> any string of
@@ -1389,8 +1389,8 @@ sections with an unknown target.
 
 </sect3>
 
-<sect3 id="sec-symbol-fonts">
-<title>Using symbol fonts </title>
+<sect3 id='Using_symbol_fonts'>
+<title>Using symbol fonts</title>
 
 <para>
 Type&nbsp;1 symbol fonts should be installed using the
@@ -1415,8 +1415,8 @@ for the <literal remap="tt">ZapfDingbats</literal> font; see the file
 
 </sect3>
 
-<sect3 id="sec-incorrect-encoding" xreflabel="Incorrectly encoded fonts">
-<title>Hints about using badly encoded fonts </title>
+<sect3 id='Hints_about_using_badly_encoded_fonts'>
+<title>Hints about using badly encoded fonts</title>
 
 <para>
 A number of text fonts are incorrectly encoded. Incorrect encoding
@@ -1522,7 +1522,8 @@ Project (see <ulink
 url="http://x-tt.sourceforge.jp/"
 >the After X-TT Project web site</ulink
 >).  The <emphasis remap="it">FreeType</emphasis> backend has support for the
-``fontenc'' style of internationalisation (see <xref linkend="sec-fontenc"/>).  This backend supports TrueType font files
+``fontenc'' style of internationalisation (see
+<xref linkend='The_fontenc_layer' xrefstyle='select: title'/>).  This backend supports TrueType font files
 (`<filename>*.ttf</filename>'), OpenType font files (`<filename>*.otf</filename>'), TrueType Collections
 (`<filename>*.ttc</filename>'), OpenType Collections (`<filename>*.otc</filename>') and Type 1 font
 files (`<filename>*.pfa</filename>' and `<filename>*.pfb</filename>').
@@ -1594,7 +1595,8 @@ url="http://x-tt.sourceforge.jp/"
 
 <para>
 The <emphasis remap="it">FreeType</emphasis> backend uses the <emphasis remap="it">fontenc</emphasis> layer in order to support
-recoding of fonts; this was described in <xref linkend="sec-fontenc"/> and especially <xref linkend="sec-fontenc-freetype"/> earlier in this document.
+recoding of fonts; this was described in <xref linkend='The_fontenc_layer' xrefstyle='select: title'/>
+and especially <xref linkend='The_FreeType_backend' xrefstyle='select: title'/> earlier in this document.
 </para>
 
 </sect3>
@@ -1675,8 +1677,8 @@ that not all monospaced fonts are character-cell fonts.
 
 </sect1>
 
-<sect1 id="sec-background" xreflabel="Appendix: Background">
-<title>Appendix: background and terminology </title>
+<sect1 id='Appendix_background_and_terminology'>
+<title>Appendix: background and terminology</title>
 
 <sect2>
 <title>Characters and glyphs</title>
@@ -1717,8 +1719,8 @@ character sets are necessary for ideographic writing systems.
 
 </sect2>
 
-<sect2 id="sec-xlfd">
-<title>Font files, fonts, and XLFD </title>
+<sect2 id='Font_files_fonts_and_XLFD'>
+<title>Font files, fonts, and XLFD</title>
 
 <para>
 Traditionally, typographers speak about <emphasis remap="it">typefaces</emphasis> and
