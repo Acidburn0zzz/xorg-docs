@@ -418,46 +418,45 @@ Any particular atom may or may not have some valid interpretation
 with respect to each of these name spaces.
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='4' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
-  <colspec colname='c4' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.5*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Space</entry>
       <entry>Briefly</entry>
       <entry>Examples</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>Property name</entry>
       <entry>Name</entry>
       <entry>WM_HINTS, WM_NAME, RGB_BEST_MAP, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Property type</entry>
       <entry>Type</entry>
       <entry>WM_HINTS, CURSOR, RGB_COLOR_MAP, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Selection name</entry>
       <entry>Selection</entry>
       <entry>PRIMARY, SECONDARY, CLIPBOARD</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Selection target</entry>
       <entry>Target</entry>
       <entry>FILE_NAME, POSTSCRIPT, PIXMAP, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Font property</entry>
       <entry></entry>
       <entry>QUAD_WIDTH, POINT_SIZE, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>ClientMessage</function> type</entry>
       <entry></entry>
       <entry>WM_SAVE_YOURSELF, _DEC_SAVE_EDITS, &amp;...</entry>
@@ -498,26 +497,26 @@ exactly 8 digits, and using uppercase letters, then such discriminated names
 shall have the form:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='4' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
-  <colspec colname='c4' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='2.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='2.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Name Discriminated by</entry>
       <entry>Form</entry>
       <entry>Example</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>screen number</entry>
       <entry><emphasis remap='I'>name</emphasis>_S<emphasis remap='I'>d</emphasis></entry>
       <entry>WM_COMMS_S2</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>X resource</entry>
       <entry><emphasis remap='I'>name</emphasis>_R<emphasis remap='I'>x</emphasis></entry>
       <entry>GROUP_LEADER_R1234ABCD</entry>
@@ -686,19 +685,20 @@ which is defined as follows:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>selection</emphasis>: ATOM</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>owner</emphasis>: WINDOW or
 <function>None</function>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>time</emphasis>: TIMESTAMP or
 <function>CurrentTime</function>
@@ -779,16 +779,17 @@ which is defined as follows:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>selection</emphasis>: ATOM</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>-&gt;</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>owner</emphasis>: WINDOW or
 <function>None</function>
@@ -837,29 +838,30 @@ event, which is defined as follows:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>owner</emphasis>: WINDOW</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>selection</emphasis>: ATOM</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>selection</emphasis>: ATOM</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>target</emphasis>: ATOM</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>property</emphasis>: ATOM or
 <function>None</function></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>requestor</emphasis>: WINDOW</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>time</emphasis>: TIMESTAMP or
 <function>CurrentTime</function></entry>
     </row>
@@ -965,25 +967,26 @@ is defined as follows:
 
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>requestor</emphasis>: WINDOW</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>selection</emphasis>,
 <emphasis remap='I'>target</emphasis>: ATOM
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>property</emphasis>: ATOM or
 <function>None</function>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>time</emphasis>: TIMESTAMP or
 <function>CurrentTime</function>
@@ -1086,20 +1089,21 @@ event, which is defined as follows:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>owner</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>selection</emphasis>: ATOM
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>time</emphasis>: TIMESTAMP
       </entry>
@@ -1210,27 +1214,28 @@ request, which is defined as follows:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>selection</emphasis>,
 <emphasis remap='I'>target</emphasis>: ATOM
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>property</emphasis>: ATOM or
 <function>None</function>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>requestor</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>time</emphasis>: TIMESTAMP or
 <function>CurrentTime</function>
@@ -1393,57 +1398,57 @@ request, which is defined as follows:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0"/>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>window</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>property</emphasis>: ATOM
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>type</emphasis>: ATOM or
 <function>AnyPropertyType</function>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>long-offset</emphasis>,
 <emphasis remap='I'>long-length</emphasis>: CARD32
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>delete</emphasis>: BOOL
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 -&gt;
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 type: ATOM or <function>None</function>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 format: {0, 8, 16, 32}
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 bytes-after: CARD32
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 value: LISTofINT8 or LISTofINT16 or LISTofINT32
       </entry>
@@ -1857,84 +1862,84 @@ embedded in the table.  This means that the auto-numbering needs to be
 dinked around with after the end of the table.
 -->
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.5*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='1.5*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Atom</entry>
       <entry>Type </entry>
       <entry>Data Received</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
-      <entry>ADOBE_PORTABLE_DOCUMENT_FORMAT</entry>
+    <row>
+      <entry>ADOBE_PORTABLE_&shy;DOCUMENT_&shy;FORMAT</entry>
       <entry>STRING</entry>
       <entry>[1]</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>APPLE_PICT</entry>
       <entry>APPLE_PICT</entry>
       <entry>[2]</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>BACKGROUND</entry>
       <entry>PIXEL</entry>
       <entry>A list of pixel values</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>BITMAP</entry>
       <entry>BITMAP</entry>
       <entry>A list of bitmap IDs</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>CHARACTER_POSITION</entry>
       <entry>SPAN</entry>
       <entry>The start and end of the selection in bytes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>CLASS</entry>
       <entry>TEXT</entry>
       <entry>(see
 <xref linkend='WM_CLASS_Property' xrefstyle='select: title'/>.
 )</entry> <!-- xref -->
     </row>
-    <row rowsep="0">
+    <row>
       <entry>CLIENT_WINDOW</entry>
       <entry>WINDOW</entry>
       <entry>Any top-level window owned by the selection owner</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>COLORMAP</entry>
       <entry>COLORMAP</entry>
       <entry>A list of colormap IDs</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>COLUMN_NUMBER</entry>
       <entry>SPAN</entry>
       <entry>The start and end column numbers</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>COMPOUND_TEXT</entry>
       <entry>COMPOUND_TEXT</entry>
       <entry>Compound Text</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>DELETE</entry>
       <entry>NULL</entry>
       <entry>(see
 <xref linkend='DELETE' xrefstyle='select: title'/>.
 )</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>DRAWABLE</entry>
       <entry>DRAWABLE</entry>
       <entry>A list of drawable IDs</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>ENCAPSULATED_POSTSCRIPT</entry>
       <entry>STRING</entry>
       <entry>[3], Appendix H
@@ -1946,43 +1951,43 @@ type as well to allow for compatibility with older clients.
 </para></footnote>
       </entry>
     </row>
-    <row rowsep="0">
-      <entry>ENCAPSULATED_POSTSCRIPT_INTERCHANGE</entry>
+    <row>
+      <entry>ENCAPSULATED_POSTSCRIPT_&shy;INTERCHANGE</entry>
       <entry>STRING</entry>
       <entry>[3], Appendix H</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>FILE_NAME</entry>
       <entry>TEXT</entry>
       <entry>The full path name of a file</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>FOREGROUND</entry>
       <entry>PIXEL</entry>
       <entry>A list of pixel values</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>HOST_NAME</entry>
       <entry>TEXT</entry>
       <entry>(see
 <xref linkend='WM_CLIENT_MACHINE_Property' xrefstyle='select: title'/>.
 )</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>INSERT_PROPERTY</entry>
       <entry>NULL</entry>
       <entry>(see
 <xref linkend='INSERT_PROPERTY' xrefstyle='select: title'/>.
 )</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>INSERT_SELECTION</entry>
       <entry>NULL</entry>
       <entry>(see
 <xref linkend='INSERT_SELECTION' xrefstyle='select: title'/>.
 )</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>LENGTH</entry>
       <entry>INTEGER</entry>
       <entry>The number of bytes in the selection
@@ -1995,44 +2000,44 @@ backward compatibility.
 </para></footnote>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>LINE_NUMBER</entry>
       <entry>SPAN</entry>
       <entry>The start and end line numbers</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>LIST_LENGTH</entry>
       <entry>INTEGER</entry>
       <entry>The number of disjoint parts of the selection</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>MODULE</entry>
       <entry>TEXT</entry>
       <entry>The name of the selected procedure</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>MULTIPLE</entry>
       <entry>ATOM_PAIR</entry>
       <entry>(see the discussion that follows)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>NAME</entry>
       <entry>TEXT</entry>
       <entry>(see
 <xref linkend='WM_NAME_Property' xrefstyle='select: title'/>.
 )</entry> <!-- xref -->
     </row>
-    <row rowsep="0">
+    <row>
       <entry>ODIF</entry>
       <entry>TEXT</entry>
       <entry>ISO Office Document Interchange Format</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>OWNER_OS</entry>
       <entry>TEXT</entry>
       <entry>The operating system of the owner client</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PIXMAP</entry>
       <entry>PIXMAP
 <footnote>
@@ -2047,47 +2052,47 @@ the result of a conversion to LENGTH; its use is thus deprecated.
       </entry>
       <entry>A list of pixmap IDs</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>POSTSCRIPT</entry>
       <entry>STRING</entry>
       <entry>[3]</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PROCEDURE</entry>
       <entry>TEXT</entry>
       <entry>The name of the selected procedure</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PROCESS</entry>
       <entry>INTEGER, TEXT</entry>
       <entry>The process ID of the owner</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>STRING</entry>
       <entry>STRING</entry>
       <entry>ISO Latin-1 (+TAB+NEWLINE) text</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>TARGETS</entry>
       <entry>ATOM</entry>
       <entry>A list of valid target atoms</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>TASK</entry>
       <entry>INTEGER, TEXT</entry>
       <entry>The task ID of the owner</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>TEXT</entry>
       <entry>TEXT</entry>
       <entry>The text in the owner's choice of encoding</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>TIMESTAMP</entry>
       <entry>INTEGER</entry>
       <entry>The timestamp used to acquire the selection</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>USER</entry>
       <entry>TEXT</entry>
       <entry>The name of the user running the owner</entry>
@@ -2405,90 +2410,90 @@ For variable-length items such as text,
 the separators are also listed.
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.5*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Type Atom</entry>
       <entry>Format</entry>
       <entry>Separator</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>APPLE_PICT</entry>
       <entry>8</entry>
       <entry>Self-sizing</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>ATOM</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>ATOM_PAIR</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>BITMAP</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>C_STRING</entry>
       <entry>8</entry>
       <entry>Zero</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>COLORMAP</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>COMPOUND_TEXT</entry>
       <entry>8</entry>
       <entry>Zero</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>DRAWABLE</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>INCR</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>INTEGER</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PIXEL</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PIXMAP</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>SPAN</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>STRING</entry>
       <entry>8</entry>
       <entry>Zero</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WINDOW</entry>
       <entry>32</entry>
       <entry>Fixed-size</entry>
@@ -2873,51 +2878,46 @@ protocol request with the following arguments:
 
 <!-- .br -->
 <!-- .ne 6 -->
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <thead>
-    <row>
-      <entry namest="c1" nameend="c2">Argument</entry>
+    <row rowsep='1'>
+      <entry>Argument</entry>
       <entry>Value</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">destination:</entry>
+    <row>
+      <entry>destination:</entry>
       <entry>
 the root window of screen 0, or the root
 window of the appropriate screen if the
 manager is managing a screen-specific resource</entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">propogate:</entry>
+    <row>
+      <entry>propogate:</entry>
       <entry>False</entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">event-mask:</entry>
+    <row>
+      <entry>event-mask:</entry>
       <entry><function>StructureNotify</function></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>event:</entry>
-      <entry></entry>
       <entry><function>ClientMessage</function></entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>type:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</entry>
       <entry>MANAGER</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>format:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:</entry>
       <entry>32</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[0]
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[0]
 <footnote>
 <para>
 We use the notation data[n] to indicate the n
@@ -2931,24 +2931,20 @@ The list is indexed from zero.
       </entry>
       <entry>timestamp</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[1]:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[1]:</entry>
       <entry>manager selection atom</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[2]:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[2]:</entry>
       <entry>the window owning the selection</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[3]:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[3]:</entry>
       <entry>manager-selection-specific data</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[4]:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[4]:</entry>
       <entry>manager-selection-specific data</entry>
     </row>
   </tbody>
@@ -3328,74 +3324,74 @@ The type of the WM_NORMAL_HINTS property is WM_SIZE_HINTS.
 Its contents are as follows:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='1.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Field</entry>
       <entry>Type</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>flags</entry>
       <entry>CARD32</entry>
       <entry>(see the next table)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>pad</entry>
       <entry>4*CARD32</entry>
       <entry>For backwards compatibility</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>min_width</entry>
       <entry>INT32</entry>
       <entry>If missing, assume base_width</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>min_height</entry>
       <entry>INT32</entry>
       <entry>If missing, assume base_height</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>max_width</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>max_height</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>width_inc</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>height_inc</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>min_aspect</entry>
       <entry>(INT32,INT32)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>max_aspect</entry>
       <entry>(INT32,INT32)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>base_width</entry>
       <entry>INT32</entry>
       <entry>If missing, assume min_width</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>base_height</entry>
       <entry>INT32</entry>
       <entry>If missing, assume min_height</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>win_gravity</entry>
       <entry>INT32</entry>
       <entry>If missing, assume <function>NorthWest</function></entry>
@@ -3408,65 +3404,65 @@ Its contents are as follows:
 The WM_SIZE_HINTS.flags bit definitions are as follows:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='2.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Name</entry>
       <entry>Value</entry>
       <entry>Field</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry><function>USPosition</function></entry>
       <entry>1</entry>
       <entry>User-specified x, y</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>USSize</function></entry>
       <entry>2</entry>
       <entry>User-specified width, height</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>PPosition</function></entry>
       <entry>4</entry>
       <entry>Program-specified position</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>PSize</function></entry>
       <entry>8</entry>
       <entry>Program-specified size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>PMinSize</function></entry>
       <entry>16</entry>
       <entry>Program-specified minimum size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>PMaxSize</function></entry>
       <entry>32</entry>
       <entry>Program-specified maximum size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>PResizeInc</function></entry>
       <entry>64</entry>
       <entry>Program-specified resize increments</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>PAspect</function></entry>
       <entry>128</entry>
       <entry>Program-specified min and max aspect ratios</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>PBaseSize</function></entry>
       <entry>256</entry>
       <entry>Program-specified base size</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>PWinGravity</function></entry>
       <entry>512</entry>
       <entry>Program-specified window gravity</entry>
@@ -3604,59 +3600,59 @@ which need separate properties, such as WM_NAME.
 The contents of the properties are as follows:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.3*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Field</entry>
       <entry>Type</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>flags</entry>
       <entry>CARD32</entry>
       <entry>(see the next table)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>input</entry>
       <entry>CARD32</entry>
       <entry>The client's input model</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>initial_state</entry>
       <entry>CARD32</entry>
       <entry>The state when first mapped</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>icon_pixmap</entry>
       <entry>PIXMAP</entry>
       <entry>The pixmap for the icon image</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>icon_window</entry>
       <entry>WINDOW</entry>
       <entry>The window for the icon image</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>icon_x</entry>
       <entry>INT32</entry>
       <entry>The icon location</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>icon_y</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>icon_mask</entry>
       <entry>PIXMAP</entry>
       <entry>The mask for the icon shape</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>window_group</entry>
       <entry>WINDOW</entry>
       <entry>The ID of the group leader window</entry>
@@ -3669,13 +3665,13 @@ The contents of the properties are as follows:
 The WM_HINTS.flags bit definitions are as follows:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.3*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Name</entry>
       <entry>Value</entry>
       <entry>Field</entry>
@@ -3687,42 +3683,42 @@ The WM_HINTS.flags bit definitions are as follows:
       <entry>1</entry>
       <entry>input</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>StateHint</function></entry>
       <entry>2</entry>
       <entry>initial_state</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>IconPixmapHint</function></entry>
       <entry>4</entry>
       <entry>icon_pixmap</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>IconWindowHint</function></entry>
       <entry>8</entry>
       <entry>icon_window</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>IconPositionHint</function></entry>
       <entry>16</entry>
       <entry>icon_x &amp; icon_y</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>IconMaskHint</function></entry>
       <entry>32</entry>
       <entry>icon_mask</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>WindowGroupHint</function></entry>
       <entry>64</entry>
       <entry>window_group</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>MessageHint</function></entry>
       <entry>128</entry>
       <entry>(this bit is obsolete)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>UrgencyHint</function></entry>
       <entry>256</entry>
       <entry>urgency</entry>
@@ -3791,25 +3787,26 @@ wishes to be in at the time the top-level window is mapped
 from the Withdrawn state, as shown in the following table:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.3*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>State</entry>
       <entry>Value</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>NormalState</entry>
       <entry>1</entry>
       <entry>The window is visible</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>IconicState</entry>
       <entry>3</entry>
       <entry>The icon is visible</entry>
@@ -4082,32 +4079,33 @@ in the name space.
 The following table lists the protocols that have been defined to date.
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='1.5*'/>
   <thead>
-    <row>
+    <row rowsep='1'>
       <entry>Protocol</entry>
       <entry>Section</entry>
       <entry>Purpose</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>WM_TAKE_FOCUS</entry>
       <entry>
 <xref linkend='Input_Focus' xrefstyle='select: title'/>
       </entry>
       <entry>Assignment of input focus</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_SAVE_YOURSELF</entry>
       <entry>Appendix C</entry>
       <entry>Save client state request (deprecated)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_DELETE_WINDOW</entry>
       <entry>
 <xref linkend='Window_Deletion' xrefstyle='select: title'/>
@@ -4184,25 +4182,26 @@ child-of-root window if one is present beneath the selected location.
 The contents of the WM_STATE property are defined as follows:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.3*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row>
+    <row rowsep='1'>
       <entry>Field</entry>
       <entry>Type</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>state</entry>
       <entry>CARD32</entry>
       <entry>(see the next table)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>icon</entry>
       <entry>WINDOW</entry>
       <entry>ID of icon window</entry>
@@ -4215,26 +4214,27 @@ The contents of the WM_STATE property are defined as follows:
 The following table lists the WM_STATE.state values:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.3*'/>
+  <colspec colname='c2' colwidth='5.0*'/>
   <thead>
-    <row>
+    <row rowsep='1'>
       <entry>State</entry>
       <entry>Value</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>WithdrawnState</entry>
       <entry>0</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>NormalState</entry>
       <entry>1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>IconicState</entry>
       <entry>3</entry>
     </row>
@@ -4291,41 +4291,42 @@ pixmaps and/or windows should place a property called WM_ICON_SIZE on the root.
 The contents of this property are listed in the following table.
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Field</entry>
       <entry>Type</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>min_width</entry>
       <entry>CARD32</entry>
       <entry>The data for the icon size series</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>min_height</entry>
       <entry>CARD32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>max_width</entry>
       <entry>CARD32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>max_height</entry>
       <entry>CARD32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>width_inc</entry>
       <entry>CARD32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>height_inc</entry>
       <entry>CARD32</entry>
     </row>
@@ -4476,48 +4477,43 @@ using a
 request with the following arguments:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">Argument</entry>
+    <row rowsep='1'>
+      <entry>Argument</entry>
       <entry>Value</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">destination</entry>
+    <row>
+      <entry>destination</entry>
       <entry>The root</entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">propogate</entry>
+    <row>
+      <entry>propogate</entry>
       <entry><emphasis role="bold">False</emphasis></entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">event-mask</entry>
+    <row>
+      <entry>event-mask</entry>
       <entry>(<emphasis role="bold">SubstructureRedirect|SubstructureNotify</emphasis>)</entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">
-event: an <function>UnmapNotify</function> with:
-      </entry>
+    <row>
+      <entry>event: an <function>UnmapNotify</function> with:</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>event:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event:</entry>
       <entry>The root</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>window:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window:</entry>
       <entry>The window itself</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>from-configure:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from-configure:</entry>
       <entry><emphasis role="bold">False</emphasis></entry>
     </row>
   </tbody>
@@ -4873,48 +4869,43 @@ event by invoking a
 request with the following arguments:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">Argument</entry>
+    <row rowsep='1'>
+      <entry>Argument</entry>
       <entry>Value</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">destination</entry>
+    <row>
+      <entry>destination</entry>
       <entry>The root</entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">propogate</entry>
+    <row>
+      <entry>propogate</entry>
       <entry><emphasis role="bold">False</emphasis></entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">event-mask</entry>
+    <row>
+      <entry>event-mask</entry>
       <entry>(<emphasis role="bold">SubstructureRedirect|SubstructureNotify</emphasis>)</entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">
-event: an <function>ConfigureRequest</function> with:
-      </entry>
+    <row>
+      <entry>event: an <function>ConfigureRequest</function> with:</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>event:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event:</entry>
       <entry>The root</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>window:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window:</entry>
       <entry>The window itself</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>...</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</entry>
       <entry>Other parameters from the <emphasis role="bold">ConfigureWindow</emphasis> request</entry>
     </row>
   </tbody>
@@ -4942,66 +4933,66 @@ request.
 The window attributes are listed in the following table:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Attribute</entry>
       <entry>Private to Client</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>Background pixmap</entry>
       <entry>Yes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Background pixel</entry>
       <entry>Yes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Border pixmap</entry>
       <entry>Yes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Border pixel</entry>
       <entry>Yes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Bit gravity</entry>
       <entry>Yes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Window gravity</entry>
       <entry>No</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Backing-store hint</entry>
       <entry>Yes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Save-under hint</entry>
       <entry>No</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Event Mask</entry>
       <entry>No</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Do-not-propagate mask</entry>
       <entry>Yes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Override-redirect flag</entry>
       <entry>No</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Colormap</entry>
       <entry>Yes</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Cursor</entry>
       <entry>Yes</entry>
     </row>
@@ -5114,35 +5105,36 @@ and the presence or absence of the WM_TAKE_FOCUS atom in the
 WM_PROTOCOLS property are listed in the following table:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Input Model</entry>
       <entry>Input Field</entry>
       <entry>WM_TAKE_FOCUS</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>No Input</entry>
       <entry><emphasis role="bold">False</emphasis></entry>
       <entry>Absent</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Passive</entry>
       <entry><emphasis role="bold">True</emphasis></entry>
       <entry>Absent</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Locally Active</entry>
       <entry><emphasis role="bold">True</emphasis></entry>
       <entry>Present</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Globally Active</entry>
       <entry><emphasis role="bold">False</emphasis></entry>
       <entry>Present</entry>
@@ -5449,85 +5441,76 @@ The client notifies the window manager by issuing a
 request with the following arguments:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">Argument</entry>
+    <row rowsep='1'>
+      <entry>Argument</entry>
       <entry>Value</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">destination</entry>
+    <row>
+      <entry>destination</entry>
       <entry>
 The root window of the screen on which the colormap is installed
       </entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">propogate</entry>
+    <row>
+      <entry>propogate</entry>
       <entry><emphasis role="bold">False</emphasis></entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">event-mask</entry>
+    <row>
+      <entry>event-mask</entry>
       <entry><emphasis role="bold">ColormapChange</emphasis></entry>
     </row>
-    <row rowsep="0">
-      <entry namest="c1" nameend="c2">
-event: an <function>ClientMessage</function> with:
-      </entry>
-    </row>
-    <row rowsep="0">
+    <row>
+      <entry>event: an <function>ClientMessage</function> with:</entry>
       <entry></entry>
-      <entry>window:</entry>
+    </row>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window:</entry>
       <entry>The root window, as above</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>type:</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</entry>
       <entry>WM_COLORMAP_NOTIFY</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>format</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format</entry>
       <entry>32</entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[0]</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[0]</entry>
       <entry>
 the timestampe of the event that caused the client to start or stop
 installing colormaps
       </entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[1]</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[1]</entry>
       <entry>
 1 if the client is starting colormap installation,
 0 if the client is finished with colormap installation
       </entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[2]</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[2]</entry>
       <entry>
 reserved, must be zero
       </entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[3]</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[3]</entry>
       <entry>
 reserved, must be zero
       </entry>
     </row>
-    <row rowsep="0">
-      <entry></entry>
-      <entry>data[4]</entry>
+    <row>
+      <entry>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[4]</entry>
       <entry>
 reserved, must be zero
       </entry>
@@ -6149,26 +6132,27 @@ The window manager will send these events by using a
 request with the following arguments:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Argument</entry>
       <entry>Value</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>destination</entry>
       <entry>The client's window</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>propagate</entry>
       <entry><emphasis role="bold">False</emphasis></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>event-mask</entry>
       <entry><emphasis role="bold">StructureNotify</emphasis></entry>
     </row>
@@ -6300,8 +6284,9 @@ request, which is defined as follows:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
     <row>
       <entry>
@@ -6419,30 +6404,31 @@ These events will be sent by using a
 request with the following arguments:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Argument</entry>
       <entry>Value</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>destination</entry>
       <entry>The client's window</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>propagate</entry>
       <entry><emphasis role="bold">False</emphasis></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>event-mask</entry>
       <entry>() empty</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>event</entry>
       <entry>As specified by the protocol</entry>
     </row>
@@ -6614,20 +6600,21 @@ should support conversion of the following target on their manager
 selection:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Atom</entry>
       <entry>Type</entry>
       <entry>Data Received</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>VERSION</entry>
       <entry>INTEGER</entry>
       <entry>
@@ -6660,14 +6647,14 @@ The window manager properties are summarized in the following table
 <emphasis remap='I'>Xlib - C Language X Interface</emphasis>).
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='4' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
-  <colspec colname='c4' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='4' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='3.0*'/>
+  <colspec colname='c2' colwidth='2.0*'/>
+  <colspec colname='c3' colwidth='1.0*'/>
+  <colspec colname='c4' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Name</entry>
       <entry>Type</entry>
       <entry>Format</entry>
@@ -6675,7 +6662,7 @@ The window manager properties are summarized in the following table
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>WM_CLASS</entry>
       <entry>STRING</entry>
       <entry>8</entry>
@@ -6683,7 +6670,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_CLASS_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_CLIENT_MACHINE</entry>
       <entry>TEXT</entry>
       <entry></entry>
@@ -6691,7 +6678,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_CLIENT_MACHINE_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_COLORMAP_WINDOWS</entry>
       <entry>WINDOW</entry>
       <entry>32</entry>
@@ -6699,7 +6686,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_COLORMAP_WINDOWS_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_HINTS</entry>
       <entry>WM_HINTS</entry>
       <entry>32</entry>
@@ -6707,7 +6694,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_HINTS_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_ICON_NAME</entry>
       <entry>TEXT</entry>
       <entry></entry>
@@ -6715,7 +6702,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_ICON_NAME_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_ICON_SIZE</entry>
       <entry>WM_ICON_SIZE</entry>
       <entry>32</entry>
@@ -6723,7 +6710,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_ICON_SIZE_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_NAME</entry>
       <entry>TEXT</entry>
       <entry></entry>
@@ -6731,7 +6718,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_NAME_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_NORMAL_HINTS</entry>
       <entry>WM_SIZE_HINTS</entry>
       <entry>32</entry>
@@ -6739,7 +6726,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_NORMAL_HINTS_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_PROTOCOLS</entry>
       <entry>ATOM</entry>
       <entry>32</entry>
@@ -6747,7 +6734,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_PROTOCOLS_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_STATE</entry>
       <entry>WM_STATE</entry>
       <entry>32</entry>
@@ -6755,7 +6742,7 @@ The window manager properties are summarized in the following table
 <xref linkend='WM_STATE_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_TRANSIENT_FOR</entry>
       <entry>WINDOW</entry>
       <entry>32</entry>
@@ -7167,65 +7154,65 @@ the root window of the appropriate screen.
 The contents of the RGB_COLOR_MAP type property are as follows:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Field</entry>
       <entry>Type</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>colormap</entry>
       <entry>COLORMAP</entry>
       <entry>ID of the colormap described</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>red_max</entry>
       <entry>CARD32</entry>
       <entry>Values for pixel calculations</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>red_mult</entry>
       <entry>CARD32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>green_max</entry>
       <entry>CARD32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>green_mult</entry>
       <entry>CARD32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>blue_max</entry>
       <entry>CARD32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>blue_mult</entry>
       <entry>CARD32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>base_pixel</entry>
       <entry>CARD32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>visual_id</entry>
       <entry>VISUALID</entry>
       <entry>Visual to which colormap belongs</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>kill_id</entry>
       <entry>CARD32</entry>
       <entry>ID for destroying the resources</entry>
@@ -7627,55 +7614,55 @@ each screen, using values appropriate for that screen.
 This will be encoded as shown in the following table:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Field</entry>
       <entry>Type</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>M<subscript>0,0</subscript></entry>
       <entry>INT32</entry>
       <entry>Interpreted as a fixed-point number -16 &le; x &lt; 16</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>M<subscript>0,1</subscript></entry>
       <entry>INT32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>...</entry>
       <entry>INT32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>M<subscript>3,3</subscript></entry>
       <entry>INT32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>M<superscript>-1</superscript><subscript>0,0</subscript></entry>
       <entry>INT32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>M<superscript>-1</superscript><subscript>0,1</subscript></entry>
       <entry>INT32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>...</entry>
       <entry>INT32</entry>
       <entry></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>M<superscript>-1</superscript><subscript>3,3</subscript></entry>
       <entry>INT32</entry>
       <entry></entry>
@@ -7740,35 +7727,35 @@ This will be encoded as shown in the following table:
 <para>
 XDCCC_LINEAR_RGB_CORRECTION Property Contents for Type 0 Correction
 </para>
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Field</entry>
       <entry>Type</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>VisualID0</entry>
       <entry>CARD</entry>
       <entry>Most significant portion of VisualID</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>VisualID1</entry>
       <entry>CARD</entry>
       <entry>Exists if and only if the property format is 8</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>VisualID2</entry>
       <entry>CARD</entry>
       <entry>Exists if and only if the property format is 8</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>VisualID3</entry>
       <entry>CARD</entry>
       <entry>
@@ -7776,34 +7763,34 @@ Least significant portion, exists if and only if the property
 format is 8 or 16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>type</entry>
       <entry>CARD</entry>
       <entry>0 for this type of correction</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>count</entry>
       <entry>CARD</entry>
       <entry>Number of tables following (either 1 or 3)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>length</entry>
       <entry>CARD</entry>
       <entry>Number of pairs -1 following in this table</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>value</entry>
       <entry>CARD</entry>
       <entry>X Protocol RBG value</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>intensity</entry>
       <entry>CARD</entry>
       <entry>
 Interpret as number 0 &le; <emphasis>intensity</emphasis> &le; 1
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>...</entry>
       <entry>...</entry>
       <entry>
@@ -7811,7 +7798,7 @@ Total of <emphasis remap='I'>length+1</emphasis> pairs of
 value/intensity values
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>lengthg</entry>
       <entry>CARD</entry>
       <entry>
@@ -7819,19 +7806,19 @@ Number of pairs -1 following in this table (if and only if
 <emphasis>count</emphasis> is 3
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>value</entry>
       <entry>CARD</entry>
       <entry>X Protocol RBG value</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>intensity</entry>
       <entry>CARD</entry>
       <entry>
 Interpret as a number 0 &le; <emphasis>intensity</emphasis> &le; 1
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>...</entry>
       <entry>...</entry>
       <entry>
@@ -7839,7 +7826,7 @@ Total of <emphasis remap='I'>length+1</emphasis> pairs of
 value/intensity values
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>lengthb</entry>
       <entry>CARD</entry>
       <entry>
@@ -7847,19 +7834,19 @@ Number of pairs -1 following in this table (if and only if
 <emphasis>count</emphasis> is 3
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>value</entry>
       <entry>CARD</entry>
       <entry>X Protocol RBG value</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>intensity</entry>
       <entry>CARD</entry>
       <entry>
 Interpret as a number 0 &le; <emphasis>intensity</emphasis> &le; 1
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>...</entry>
       <entry>...</entry>
       <entry>
@@ -7908,35 +7895,35 @@ This will be encoded as shown in the following table:
 XDCCC_LINEAR_RGB_CORRECTION Property Contents for Type 1 Correction
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Field</entry>
       <entry>Type</entry>
       <entry>Comments</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>VisualID0</entry>
       <entry>CARD</entry>
       <entry>Most significant portion of VisualID</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>VisualID1</entry>
       <entry>CARD</entry>
       <entry>Exists if and only if the property format is 8</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>VisualID2</entry>
       <entry>CARD</entry>
       <entry>Exists if and only if the property format is 8</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>VisualID3</entry>
       <entry>CARD</entry>
       <entry>
@@ -7944,29 +7931,29 @@ Least significant portion, exists if and only if the property
 format is 8 or 16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>type</entry>
       <entry>CARD</entry>
       <entry>1 for this type of correction</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>count</entry>
       <entry>CARD</entry>
       <entry>Number of tables following (either 1 or 3)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>length</entry>
       <entry>CARD</entry>
       <entry>Number of pairs -1 following in this table</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>intensity</entry>
       <entry>CARD</entry>
       <entry>
 Interpret as number 0 &le; <emphasis>intensity</emphasis> &le; 1
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>...</entry>
       <entry>...</entry>
       <entry>
@@ -7974,7 +7961,7 @@ Total of <emphasis remap='I'>length+1</emphasis> pairs of
 value/intensity values
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>lengthg</entry>
       <entry>CARD</entry>
       <entry>
@@ -7982,14 +7969,14 @@ Number of pairs -1 following in this table (if and only if
 <emphasis>count</emphasis> is 3
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>intensity</entry>
       <entry>CARD</entry>
       <entry>
 Interpret as a number 0 &le; <emphasis>intensity</emphasis> &le; 1
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>...</entry>
       <entry>...</entry>
       <entry>
@@ -7997,7 +7984,7 @@ Total of <emphasis remap='I'>length+1</emphasis> pairs of
 value/intensity values
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>lengthb</entry>
       <entry>CARD</entry>
       <entry>
@@ -8005,14 +7992,14 @@ Number of pairs -1 following in this table (if and only if
 <emphasis>count</emphasis> is 3
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>intensity</entry>
       <entry>CARD</entry>
       <entry>
 Interpret as a number 0 &le; <emphasis>intensity</emphasis> &le; 1
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>...</entry>
       <entry>...</entry>
       <entry>
@@ -8966,14 +8953,15 @@ is described in
 The session manager properties are listed in the following table:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='4' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
-  <colspec colname='c4' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='4' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='2.0*'/>
+  <colspec colname='c2' colwidth='1.0*'/>
+  <colspec colname='c3' colwidth='1.0*'/>
+  <colspec colname='c4' colwidth='3.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Name</entry>
       <entry>Type</entry>
       <entry>Format</entry>
@@ -8981,7 +8969,7 @@ The session manager properties are listed in the following table:
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>WM_CLIENT_MACHINE</entry>
       <entry>TEXT</entry>
       <entry></entry>
@@ -8989,7 +8977,7 @@ The session manager properties are listed in the following table:
 <xref linkend='WM_CLIENT_MACHINE_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_COMMAND</entry>
       <entry>TEXT</entry>
       <entry></entry>
@@ -8997,7 +8985,7 @@ The session manager properties are listed in the following table:
 <xref linkend='WM_COMMAND_Property' xrefstyle='select: title'/>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WM_STATE</entry>
       <entry>WM_STATE</entry>
       <entry>32</entry>
