@@ -341,17 +341,19 @@ The next section describes what is new in the latest version
     </para>
 
     <para>
-    <informaltable id="drivertables" xreflabel="driver tables">
-        <tgroup cols="3">
-            <colspec align="left" colsep="1"></colspec>
-            <colspec align="left" colsep="1"></colspec>
-            <colspec align="left" colsep="1"></colspec>
-        <tbody>
-            <row>
+    <informaltable id="drivertables" xreflabel="driver tables" frame='topbot'>
+        <tgroup cols="3" colsep='0' rowsep='0'>
+            <colspec align="left" colwidth="1.0*"/>
+            <colspec align="left" colwidth="2.0*"/>
+            <colspec align="left" colwidth="2.0*"/>
+        <thead>
+            <row rowsep='1'>
                 <entry>Driver Name</entry>
                 <entry>Description</entry>
                 <entry>Further Information</entry>
             </row>
+        </thead>
+        <tbody>
             <row>
                 <entry><literal remap="tt">apm</literal></entry>
                 <entry>Alliance Pro Motion</entry>
@@ -611,17 +613,20 @@ The next section describes what is new in the latest version
 
     <para>
 
-    <informaltable>
-        <tgroup cols="3">
-            <colspec align="left" colsep="1"></colspec>
-            <colspec align="left" colsep="1"></colspec>
-            <colspec align="left" colsep="1"></colspec>
-        <tbody>
-            <row>
+    <informaltable frame='topbot'>
+        <?dbfo keep-together="always" ?>
+        <tgroup cols="3" colsep='0' rowsep='0'>
+            <colspec colname='c1' align="left" colwidth="1.0*"/>
+            <colspec colname='c2' align="left" colwidth="1.0*"/>
+            <colspec colname='c3' align="left" colwidth="1.0*"/>
+        <thead>
+            <row rowsep='1'>
                 <entry>Driver Name</entry>
                 <entry>Description</entry>
                 <entry>Further Information</entry>
             </row>
+        </thead>
+        <tbody>
             <row>
                 <entry><literal remap="tt">acecad</literal></entry>
                 <entry>Acecad Flair</entry>

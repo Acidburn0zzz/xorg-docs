@@ -440,22 +440,23 @@ whose Backus-Naur Form syntax description is as follows:
 <!-- .IN "FontName Syntax" -->
 <!-- .SM -->
 <informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='2.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>FontName ::=</entry>
       <entry>
 XFontNameRegistry XFontNameSuffix |
 PrivFontNameRegistry PrivFontNameSuffix
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>XFontNameRegistry ::=</entry>
       <entry>XFNDelim | XFNExtPrefix Version XFNDelim</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>XFontNameSuffix ::=</entry>
       <entry>
 FOUNDRY XFNDelim FAMILY_NAME XFNDelim WEIGHT_NAME
@@ -466,26 +467,26 @@ SPACING XFNDelim AVERAGE_WIDTH XFNDelim CHARSET_REGISTRY
 XFNDelim CHARSET_ENCODING
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Version ::=</entry>
       <entry>
 STRING8 - the XLFD version that defines an extension
 to the font name syntax (for example, "1.4")
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>XFNExtPrefix ::=</entry>
       <entry>OCTET - "+" (PLUS)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>XFNDelim ::=</entry>
       <entry>OCTET - "-" (HYPHEN)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PrivFontNameRegistry ::=</entry>
       <entry>STRING8 - other than those strings reserved by XLFD</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PrivFontNameSuffix ::=</entry>
       <entry>STRING8</entry>
     </row>
@@ -764,50 +765,51 @@ typeface design used in the font.
 The encoding is as follows:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
+  <colspec colname='c3' colwidth='5.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Code</entry>
       <entry>English Translation</entry>
       <entry>Description</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>"R"</entry>
       <entry>Roman</entry>
       <entry>Upright design</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"I"</entry>
       <entry>Italic</entry>
       <entry>Italic design, slanted clockwise from the vertical</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"O"</entry>
       <entry>Oblique</entry>
       <entry>Obliqued upright design, slanted clockwise from the vertical</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"RI"</entry>
       <entry>Reverse Italic</entry>
       <entry>Italic design, slanted counterclockwise from the vertical</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"RO"</entry>
       <entry>Reverse Oblique</entry>
       <entry>Obliqued upright design, slanted counterclockwise from the vertical</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"OT"</entry>
       <entry>Other</entry>
       <entry>Other</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>numeric</entry>
       <entry>Polymorphic</entry>
       <entry>See <xref linkend='Polymorphic_Fonts' xrefstyle='select: title'/>.</entry>
@@ -1026,20 +1028,20 @@ data-processing character cell font model).
 The encoding is as follows:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
+  <colspec colname='c3' colwidth='6.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Code</entry>
       <entry>English Translation</entry>
       <entry>Description</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>"P"</entry>
       <entry>Proportional</entry>
       <entry>
@@ -1048,7 +1050,7 @@ Note that no other restrictions are placed on the metrics
 of a proportional font.
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"M"</entry>
       <entry>Monospaced</entry>
       <entry>
@@ -1057,7 +1059,7 @@ A font whose logical character widths are constant
 No other restrictions are placed on the metrics of a monospaced font.
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"C"</entry>
       <entry>CharCell</entry>
       <entry>
@@ -1139,51 +1141,51 @@ be constructed according to the following conventions:
 <!-- .IN "CHARSET Syntax" -->
 <!-- .SM -->
 <informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='2.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>CharsetRegistry ::=</entry>
       <entry>StdCharsetRegistryName | PrivCharsetRegistryName</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>CharsetEncoding ::=</entry>
       <entry>StdCharsetEncodingName | PrivCharsetEncodingName</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>StdCharsetRegistryName ::=</entry>
       <entry>StdOrganizationId StdNumber | StdOrganizationId StdNumber Dot Year</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PrivCharsetRegistryName ::=</entry>
       <entry>OrganizationId STRING8</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>StdCharsetEncodingName ::=</entry>
       <entry>STRING8-numeric part number of referenced standard</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PrivCharsetEncodingName ::=</entry>
       <entry>STRING8</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>StdOrganizationId ::=</entry>
       <entry>STRING8-the registered name or acronym of the referenced standard organization</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>StdNumber ::=</entry>
       <entry>STRING8-referenced standard number</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>OrganizationId ::=</entry>
       <entry>STRING8-the registered name or acronym of the organization</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Dot ::=</entry>
       <entry>OCTET-"." (FULL STOP)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Year ::=</entry>
       <entry>STRING8-numeric year (for example, 1989)</entry>
     </row>
@@ -1222,55 +1224,55 @@ The BNF for the subsetting hint is
 </para>
 <!-- .SM -->
 <informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='2.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>Subset ::=</entry>
       <entry>LeftBracket RangeList RightBracket</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>RangeList ::=</entry>
       <entry>Range | Range Space RangeList</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Range ::=</entry>
       <entry>Number | Number Underscore Number</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Number ::=</entry>
       <entry>"0x" HexNumber | DecNumber</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>HexNumber ::=</entry>
       <entry>HexDigit | HexDigit HexNumber</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>DecNumber ::=</entry>
       <entry>DecDigit | DecDigit DecNumber</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>DecDigit ::=</entry>
       <entry>"0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>HexDigit ::=</entry>
       <entry>DecDigit | "a" | "b" | "c" | "d" | "e" | "f"</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>LeftBracket ::=</entry>
       <entry>"[" (LEFT SQUARE BRACKET)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>RightBracket ::=</entry>
       <entry>"]" (RIGHT SQUARE BRACKET)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Space ::=</entry>
       <entry>"\0" (SPACE)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Underscore ::=</entry>
       <entry>"_" (LOW LINE)</entry>
     </row>
@@ -1324,96 +1326,96 @@ shipped with the X Consortium distribution.
 <!-- .\" why is this table so long?  I took out some fonts in v1.5 -->
 <!-- .\" to make the page breaks better. -->
 <!-- .SM -->
-<informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='2.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Font</entry>
       <entry>X FontName</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry><function>75-dpi Fonts</function></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Charter 12 pt</entry>
       <entry>-Bitstream-Charter-Medium-R-Normal--12-120-75-75-P-68-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Charter Bold 12 pt</entry>
       <entry>-Bitstream-Charter-Bold-R-Normal--12-120-75-75-P-76-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Charter Bold Italic 12 pt</entry>
       <entry>-Bitstream-Charter-Bold-I-Normal--12-120-75-75-P-75-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Charter Italic 12 pt</entry>
       <entry>-Bitstream-Charter-Medium-I-Normal--12-120-75-75-P-66-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Courier 8 pt</entry>
       <entry>-Adobe-Courier-Medium-R-Normal--8-80-75-75-M-50-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Courier 10 pt</entry>
       <entry>-Adobe-Courier-Medium-R-Normal--10-100-75-75-M-60-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Courier 12 pt</entry>
       <entry>-Adobe-Courier-Medium-R-Normal--12-120-75-75-M-70-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Courier 24 pt</entry>
       <entry>-Adobe-Courier-Medium-R-Normal--24-240-75-75-M-150-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Courier Bold 10 pt</entry>
       <entry>-Adobe-Courier-Bold-R-Normal--10-100-75-75-M-60-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Courier Bold Oblique 10 pt</entry>
       <entry>-Adobe-Courier-Bold-O-Normal--10-100-75-75-M-60-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Courier Oblique 10 pt</entry>
       <entry>-Adobe-Courier-Medium-O-Normal--10-100-75-75-M-60-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><function>100-dpi Fonts</function></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Symbol 10 pt</entry>
       <entry>-Adobe-Symbol-Medium-R-Normal--14-100-100-100-P-85-Adobe-FONTSPECIFIC</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Symbol 14 pt</entry>
       <entry>-Adobe-Symbol-Medium-R-Normal--20-140-100-100-P-107-Adobe-FONTSPECIFIC</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Symbol 18 pt</entry>
       <entry>-Adobe-Symbol-Medium-R-Normal--25-180-100-100-P-142-Adobe-FONTSPECIFIC</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Symbol 24 pt</entry>
       <entry>-Adobe-Symbol-Medium-R-Normal--34-240-100-100-P-191-Adobe-FONTSPECIFIC</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Times Bold 10 pt</entry>
       <entry>-Adobe-Times-Bold-R-Normal--14-100-100-100-P-76-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Times Bold Italic 10 pt</entry>
       <entry>-Adobe-Times-Bold-I-Normal--14-100-100-100-P-77-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Times Italic 10 pt</entry>
       <entry>-Adobe-Times-Medium-I-Normal--14-100-100-100-P-73-ISO8859-1</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Times Roman 10 pt</entry>
       <entry>-Adobe-Times-Medium-R-Normal--14-100-100-100-P-74-ISO8859-1</entry>
     </row>
@@ -1463,28 +1465,28 @@ The Backus-Naur Form syntax description of X font properties is as follows:
 <!-- .IN "Font Properties" "BNF Syntax" -->
 <!-- .SM -->
 <informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>Properties ::=</entry>
       <entry>OptFontPropList</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>OptFontPropList ::=</entry>
       <entry>NULL | OptFontProp OptFontPropList</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>OptFontProp ::=</entry>
       <entry>PrivateFontProp | XFontProp</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>PrivateFontProp ::=</entry>
       <entry>STRING8 | Underscore OrganizationId Underscore STRING8</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>XFontProp ::=</entry>
       <entry>
 FOUNDRY | FAMILY_NAME | WEIGHT_NAME | SLANT | SETWIDTH_NAME | ADD_STYLE_NAME
@@ -1503,11 +1505,11 @@ NOTICE | DESTINATION
 RAW_ASCENT | RAW_DESCENT | RAW_* | AXIS_NAMES | AXIS_LIMITS |
 AXIS_TYPES</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Underscore ::=</entry>
       <entry>OCTET-"_" (LOW LINE)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>OrganizationId ::=</entry>
       <entry>STRING8-the registered name of the organization</entry>
     </row>
@@ -1682,6 +1684,7 @@ PIXEL_SIZE can be approximated if not supplied as a font property,
 according to the following algorithm:
 </para>
 
+<!-- <literallayout class="monospaced"> -->
 <literallayout class="monospaced">
 DeciPointsPerInch = 722.7
 if (PIXEL_SIZE undefined) then
@@ -2468,62 +2471,62 @@ according to the type designer's or FOUNDRY's judgment.
 RELATIVE_SETWIDTH ranges from 10 to 90 or is 0 if undefined or unknown.
 The following reference values are defined:
 </para>
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
+  <colspec colname='c3' colwidth='5.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Code</entry>
       <entry>English Translation</entry>
       <entry>Description</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>0</entry>
       <entry>Undefined</entry>
       <entry>Undefined or unknown</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>10</entry>
       <entry>UltraCondensed</entry>
       <entry>The lowest ratio of average width to height</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>20</entry>
       <entry>ExtraCondensed</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>30</entry>
       <entry>Condensed</entry>
       <entry>Condensed, Narrow, Compressed, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>40</entry>
       <entry>SemiCondensed</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>50</entry>
       <entry>Medium</entry>
       <entry>Medium, Normal, Regular, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>60</entry>
       <entry>SemiExpanded</entry>
       <entry>SemiExpanded, DemiExpanded, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>70</entry>
       <entry>Expanded</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>80</entry>
       <entry>ExtraExpanded</entry>
       <entry>ExtraExpanded, Wide, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>90</entry>
       <entry>UltraExpanded</entry>
       <entry>The highest ratio of average width to height</entry>
@@ -2583,62 +2586,62 @@ according to the type designer's or FOUNDRY's judgment.
 RELATIVE_WEIGHT ranges from 10 to 90 or is 0 if undefined or unknown.
 The following reference values are defined:
 </para>
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
+  <colspec colname='c3' colwidth='6.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Code</entry>
       <entry>English Translation</entry>
       <entry>Description</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>0</entry>
       <entry>Undefined</entry>
       <entry>Undefined or unknown</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>10</entry>
       <entry>UltraLight</entry>
       <entry>The lowest ratio of stem width to height</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>20</entry>
       <entry>ExtraLight</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>30</entry>
       <entry>Light</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>40</entry>
       <entry>SemiLight</entry>
       <entry>SemiLight, Book, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>50</entry>
       <entry>Medium</entry>
       <entry>Medium, Normal, Regular,...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>60</entry>
       <entry>SemiBold</entry>
       <entry>SemiBold, DemiBold, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>70</entry>
       <entry>Bold</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>80</entry>
       <entry>ExtraBold</entry>
       <entry>ExtraBold, Heavy, ...</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>90</entry>
       <entry>UltraBold</entry>
       <entry>
@@ -2856,20 +2859,21 @@ to query for X screen fonts that suit their particular requirements.
 <!-- .LP -->
 The encoding is as follows:
 </para>
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
-  <colspec colname='c3' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='3' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
+  <colspec colname='c3' colwidth='6.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Code</entry>
       <entry>English Translation</entry>
       <entry>Description</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>0</entry>
       <entry>WYSIWYG</entry>
       <entry>
@@ -2877,7 +2881,7 @@ The font is optimized to match the typographic design and metrics of an
 equivalent printer font.
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>1</entry>
       <entry>Video text</entry>
       <entry>
@@ -2907,25 +2911,26 @@ without regard to the rasterizer used to render the font.
 <!-- .LP -->
 Predefined values are as follows:
 </para>
-<informaltable frame="none">
-  <tgroup cols='3' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='5.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Value</entry>
       <entry>When applicable</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>"Bitmap"</entry>
       <entry>
 Hand-tuned bitmap fonts. Some attempt has been made to optimize the visual
 appearance of the font for the requested size and resolution.
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"Prebuilt"</entry>
       <entry>
 All bitmap format fonts that cannot be described as "Bitmap", that is,
@@ -2934,19 +2939,19 @@ For example, a bitmap format font that was generated mechanically using
 a scalable font rasterizer would be considered "Prebuilt", not "Bitmap".
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"Type 1"</entry>
       <entry>Any Type 1 font.</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"TrueType"</entry>
       <entry>Any TrueType font.</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"Speedo"</entry>
       <entry>Any Speedo font.</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>"F3"</entry>
       <entry>Any F3 font.</entry>
     </row>
@@ -2991,27 +2996,30 @@ recommended:
 <!-- .SM -->
 
 <informaltable frame="none">
-  <tgroup cols='2' align='left'>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>RasterizerName ::=</entry>
       <entry>OrganizationId Space Rasterizer</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>OrganizationId ::=</entry>
       <entry>
 STRING8—the X Registry ORGANIZATION name of the rasterizer
 implementor or maintainer.
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Rasterizer ::=</entry>
       <entry>
 the case-sensitive, human-understandable product name of the rasterizer.
 Words within this name should be separated by a single SPACE.
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Space ::=</entry>
       <entry>OCTET−" " (SPACE)</entry>
     </row>
@@ -3149,110 +3157,111 @@ The following font property atom definitions were predefined in the initial
 version of the core protocol:
 </para>
 
-<informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0"/>
-  <colspec colname='c2' colsep="0"/>
+<informaltable frame="topbot">
+  <?dbfo keep-together="auto" ?>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='2.0*'/>
   <thead>
-    <row rowsep="0">
+    <row rowsep='1'>
       <entry>Font Property/Atom Name</entry>
       <entry>Property Type</entry>
     </row>
   </thead>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>MIN_SPACE</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>NORM_SPACE</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>MAX_SPACE</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>END_SPACE</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>SUPERSCRIPT_X</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>SUPERSCRIPT_Y</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>SUBSCRIPT_X</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>SUBSCRIPT_Y</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>UNDERLINE_POSITION</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>UNDERLINE_THICKNESS</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>STRIKEOUT_ASCENT</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>STRIKEOUT_DESCENT</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>FONT_ASCENT</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>FONT_DESCENT</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>ITALIC_ANGLE</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>X_HEIGHT</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>QUAD_WIDTH</entry>
       <entry>INT32 −<superscript>deprecated</superscript></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>WEIGHT</entry>
       <entry>CARD32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>POINT_SIZE</entry>
       <entry>INT32</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>RESOLUTION</entry>
       <entry>CARD32 −<superscript>deprecated</superscript></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>COPYRIGHT</entry>
       <entry>ATOM</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>FULL_NAME</entry>
       <entry>ATOM −<superscript>deprecated</superscript></entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>FAMILY_NAME</entry>
       <entry>ATOM</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>DEFAULT_CHAR</entry>
       <entry>CARD32</entry>
     </row>
@@ -3285,78 +3294,80 @@ The BNF for a matrix transformation string is as follows:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='2' align='left'>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
+  <colspec colname='c2' colwidth='3.0*'/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>MatrixString ::=</entry>
       <entry>
 LeftBracket OptionalSpace Float Space Float Space
 Float Space Float OptionalSpace RightBracket
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>OptionalSpace ::=</entry>
       <entry>"" | Space</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Space ::=</entry>
       <entry>SpaceChar | SpaceChar Space</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Float ::=</entry>
       <entry>Mantissa | Mantissa Exponent</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Mantissa ::=</entry>
       <entry>Sign Number | Number</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Sign ::=</entry>
       <entry>Plus | Tilde</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Number ::=</entry>
       <entry>Integer | Integer Dot Integer | Dot Integer</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Integer ::=</entry>
       <entry>Digit | Digit Integer</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Digit ::=</entry>
       <entry>
 "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Exponent ::=</entry>
       <entry>"e" SignedInteger | "E" SignedInteger</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>SignedInteger ::=</entry>
       <entry>Sign Integer | Integer</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>LeftBracket ::=</entry>
       <entry>OCTET − "[" (LEFT SQUARE BRACKET)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>RightBracket ::=</entry>
       <entry>OCTET − "]" (RIGHT SQUARE BRACKET)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>SpaceChar ::=</entry>
       <entry>OCTET − " " (SPACE)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Tilde ::=</entry>
       <entry>OCTET − "˜" (TILDE)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Plus ::=</entry>
       <entry>OCTET − "+" (PLUS)</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>Dot ::=</entry>
       <entry>OCTET − "." (FULL STOP)</entry>
     </row>
@@ -3371,16 +3382,18 @@ in the font by the matrix
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth='1.0*'/>
   <tbody>
-    <row rowsep="0">
-      <entry> [  a  b  0  ]</entry>
+    <row>
+      <entry>[  a  b  0  ]</entry>
     </row>
-    <row rowsep="0">
-      <entry> [  c  d  0  ]</entry>
+    <row>
+      <entry>[  c  d  0  ]</entry>
     </row>
-    <row rowsep="0">
-      <entry> [  0  0  1  ]</entry>
+    <row>
+      <entry>[  0  0  1  ]</entry>
     </row>
   </tbody>
   </tgroup>
