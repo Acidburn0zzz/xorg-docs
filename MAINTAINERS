@@ -852,6 +852,13 @@ L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
 
+xf86-video-modesetting
+P:	Dave Airlie
+M:	airlied@redhat.com
+L:	xorg-devel@lists.x.org
+W:	http://wiki.x.org
+S:	Maintained
+
 xf86-video-neomagic
 P:	Egbert Eich
 M:	eich@freedesktop.org
