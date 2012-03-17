@@ -14,7 +14,7 @@
 <author><firstname>Juliusz</firstname><surname>Chroboczek</surname>
 <email>jch@freedesktop.org</email>
 </author>
-<pubdate>23 October 2009</pubdate>
+<pubdate>16 March 2012</pubdate>
 
 </articleinfo>
 
@@ -305,7 +305,7 @@ command `<command>bdftopcf</command>', <emphasis remap="it">e.g.</emphasis>
 $ bdftopcf courier12.bdf
 </screen>
 
-You will then want to compress the resulting PCF font files:
+You may then want to compress the resulting PCF font files:
 
 <screen>
 $ gzip courier12.pcf
@@ -840,8 +840,10 @@ of core fonts bundled with popular operating and window systems.
 
 <para>
 The license terms for the Luxi fonts are included in the file
-`<filename>COPYRIGHT.BH</filename>', as well as in the <ulink
-url="../License.html">License document</ulink>.
+`<filename>COPYRIGHT.BH</filename>', as well as in the <olink
+targetdoc='License'
+targetptr='Bigelow_Holmes_Inc_and_URW_GmbH_Luxi_font_license'>License
+document</olink>.
 </para>
 
 <para>
@@ -877,8 +879,8 @@ name have been removed from X11R&relvers;.
 <title>More about core fonts</title>
 
 <para>
-This section describes X11R&relvers;-specific enhancements to the core
-X11 fonts system.
+This section describes XFree86-created enhancements to the core
+X11 fonts system that were adopted by X.Org.
 </para>
 
 <sect2 id='Core_fonts_and_internationalisation'>
@@ -1876,9 +1878,8 @@ url="xlsfonts.1.html"
 > and <ulink
 url="showfont.1.html"
 >showfont(1)</ulink
->.  In addition, you may want to read the X Logical
-Font Description document, by Jim Flowers, which is provided in the file
-`<filename>xc/doc/xlfd.PS.Z</filename>'.
+>.  In addition, you may want to read the <olink targetdoc='xlfd'
+targetptr='xlfd'>X Logical Font Description document</olink> by Jim Flowers.
 </para>
 
 <para>
@@ -1894,7 +1895,7 @@ of information about digital fonts.
 Xft and Fontconfig are described on
 <ulink
 url="http://www.fontconfig.org"
->Keith Packard's Fontconfig site</ulink
+>the Fontconfig site</ulink
 >.
 </para>
 
@@ -1943,9 +1944,10 @@ url="http://www.cl.cam.ac.uk/~mgk25/unicode.html"
 </para>
 
 <para>
-The IANA RFC documents, available from a number of sites throughout
+The IETF RFC documents, available from a number of sites throughout
 the world, often provide interesting information about character set
-issues; see for example RFC&nbsp;373.
+issues; see for example <ulink
+url="https://datatracker.ietf.org/doc/rfc373/">RFC&nbsp;373</ulink>.
 </para>
 
 </sect1>
