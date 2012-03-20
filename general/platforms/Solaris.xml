@@ -5,7 +5,7 @@
 <!ENTITY % defs SYSTEM "defs.ent"> %defs;
 ]>
 
-<article>
+<article id='Solaris'>
 
 <!-- Title information -->
 <articleinfo>
@@ -38,7 +38,7 @@
 <!-- Table of contents -->
 
 <!-- Begin the document -->
-<sect1>
+<sect1 id='The_VT-switching_sub-system_in_Solaris'>
 <title>The VT-switching sub-system in Solaris</title>
 
 <para>
@@ -66,7 +66,7 @@ most other VT sub-systems.
 
 </sect1>
 
-<sect1>
+<sect1 id='Notes_for_building_X11R&relvers;_on_Solaris'>
 <title>Notes for building X11R&relvers; on Solaris</title>
 
 <para>
@@ -118,7 +118,7 @@ these programs must be found before any possible GNU versions.
 
 </sect1>
 
-<sect1>
+<sect1 id='Notes_for_running_Xorg_on_Solaris'>
 <title>Notes for running Xorg on Solaris</title>
 
 <para>
@@ -159,7 +159,7 @@ Xqueue is <emphasis remap="bf">NOT</emphasis> supported under Solaris.
 </sect1>
 
 
-<sect1>
+<sect1 id='Bug_Notification'>
 <title>Bug Notification</title>
 
 <para>

@@ -5,7 +5,7 @@
 <!ENTITY % defs SYSTEM "defs.ent"> %defs;
 ]>
 
-<article>
+<article id='Darwin'>
 
   <articleinfo>
 
@@ -15,7 +15,7 @@
 
   </articleinfo>
 
-  <sect1>
+  <sect1 id='Introduction'>
     <title>Introduction</title>
 
     <para>

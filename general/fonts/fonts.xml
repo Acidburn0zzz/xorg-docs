@@ -5,7 +5,7 @@
 <!ENTITY % defs SYSTEM "defs.ent"> %defs;
 ]>
 
-<article>
+<article id='fonts'>
 
 <articleinfo>
 
@@ -18,7 +18,7 @@
 
 </articleinfo>
 
-<sect1>
+<sect1 id='Introduction'>
 <title>Introduction</title>
 
 <para>
@@ -34,7 +34,7 @@ clear to you, please consult <xref linkend='Appendix_background_and_terminology'
 end of this document for background information.
 </para>
 
-<sect2>
+<sect2 id='Two_font_systems'>
 <title>Two font systems</title>
 
 <para>
@@ -92,7 +92,7 @@ not specific to the X Window system, and does not rely on any
 particular font output mechanism.
 </para>
 
-<sect3>
+<sect3 id='Installing_fonts_in_Xft'>
 <title>Installing fonts in Xft</title>
 
 <para>
@@ -129,7 +129,7 @@ $ su -c fc-cache
 
 </sect3>
 
-<sect3>
+<sect3 id='Fine-tuning_Xft'>
 <title>Fine-tuning Xft</title>
 
 <para>
@@ -234,7 +234,7 @@ counterclockwise).
 
 </sect3>
 
-<sect3>
+<sect3 id='Configuring_applications'>
 <title>Configuring applications</title>
 
 <para>
@@ -275,7 +275,7 @@ Gnome applications and Mozilla Firefox will use Xft by default.
 
 </sect2>
 
-<sect2>
+<sect2 id='Configuring_the_core_X11_fonts_system'>
 <title>Configuring the core X11 fonts system</title>
 
 <para>
@@ -286,7 +286,7 @@ inform the X server of the existence of this new directory by
 including it in the <emphasis remap="it">font path</emphasis>.
 </para>
 
-<sect3>
+<sect3 id='Installing_bitmap_fonts'>
 <title>Installing bitmap fonts</title>
 
 <para>
@@ -339,7 +339,7 @@ new font directory; see <xref linkend='Setting_the_servers_font_path' xrefstyle=
 
 </sect3>
 
-<sect3>
+<sect3 id='Installing_scalable_fonts'>
 <title>Installing scalable fonts</title>
 
 <para>
@@ -427,7 +427,7 @@ $ xset q
 
 </para>
 
-<sect4>
+<sect4 id='Font_path_catalogue_directories'>
 <title>Font path catalogue directories</title>
 
 <para>
@@ -472,7 +472,7 @@ setting the following font path:
 </para>
 </sect4>
 
-<sect4>
+<sect4 id='Temporary_modification_of_the_font_path'>
 <title>Temporary modification of the font path</title>
 
 <para>
@@ -504,7 +504,7 @@ url="xset.1.html"
 
 </sect4>
 
-<sect4>
+<sect4 id='Permanent_modification_of_the_font_path'>
 <title>Permanent modification of the font path</title>
 
 <para>
@@ -592,10 +592,10 @@ these modules:
 
 </sect1>
 
-<sect1>
+<sect1 id='Fonts_included_with_X11'>
 <title>Fonts included with X11R&relvers;</title>
 
-<sect2>
+<sect2 id='Standard_bitmap_fonts'>
 <title>Standard bitmap fonts</title>
 
 <para>
@@ -663,7 +663,7 @@ The standard short name `<literal remap="tt">fixed</literal>' is normally an ali
 
 </sect2>
 
-<sect2>
+<sect2 id='The_ClearlyU_Unicode_font_family'>
 <title>The ClearlyU Unicode font family</title>
 
 <para>
@@ -722,14 +722,14 @@ may be useful for improved presentation of text.
 
 </sect2>
 
-<sect2>
+<sect2 id='Standard_scalable_fonts'>
 <title>Standard scalable fonts</title>
 
 <para>
 X11R&relvers; includes all the scalable fonts distributed with X11R6.
 </para>
 
-<sect3>
+<sect3 id='Standard_Type1_fonts'>
 <title>Standard Type&nbsp;1 fonts</title>
 
 <para>
@@ -786,7 +786,7 @@ and reside in the font files
 
 </sect2>
 
-<sect2>
+<sect2 id='The_Bigelow_and__Holmes_Luxi_family'>
 <title>The Bigelow &amp; Holmes Luxi family</title>
 
 <para>
@@ -1073,7 +1073,7 @@ and <xref linkend='Format_of_encoding_files' xrefstyle='select: title'/> later i
 
 </sect3>
 
-<sect3>
+<sect3 id='Backend-specific_notes_about_fontenc'>
 <title>Backend-specific notes about fontenc</title>
 
 <sect4 id='The_FreeType_backend'>
@@ -1434,7 +1434,7 @@ encoding they were designed for, and creating an <emphasis remap="it">ad hoc</em
 file.
 </para>
 
-<sect4>
+<sect4 id='Using_fonts_with_the_designers_encoding'>
 <title>Using fonts with the designer's encoding</title>
 
 <para>
@@ -1458,7 +1458,7 @@ results.
 
 </sect4>
 
-<sect4>
+<sect4 id='Specifying_an_ad_hoc_encoding_file'>
 <title>Specifying an <emphasis remap="it">ad hoc</emphasis> encoding file</title>
 
 <para>
@@ -1469,7 +1469,7 @@ in a font in any desired order. Again, see the
 
 </sect4>
 
-<sect4>
+<sect4 id='Specifying_font_aliases'>
 <title>Specifying font aliases</title>
 
 <para>
@@ -1504,11 +1504,11 @@ url="mkfontdir.1.html"
 
 </sect2>
 
-<sect2>
+<sect2 id='Additional_notes_about_scalable_core_fonts'>
 <title>Additional notes about scalable core fonts</title>
 
 
-<sect3>
+<sect3 id='About_the_FreeType_backend'>
 <title>About the <emphasis remap="it">FreeType</emphasis> backend</title>
 
 <para>
@@ -1601,7 +1601,7 @@ and especially <xref linkend='The_FreeType_backend' xrefstyle='select: title'/> 
 
 </sect3>
 
-<sect3>
+<sect3 id='Delayed_glyph_rasterisation'>
 <title>Delayed glyph rasterisation</title>
 
 <para>
@@ -1680,7 +1680,7 @@ that not all monospaced fonts are character-cell fonts.
 <sect1 id='Appendix_background_and_terminology'>
 <title>Appendix: background and terminology</title>
 
-<sect2>
+<sect2 id='Characters_and_glyphs'>
 <title>Characters and glyphs</title>
 
 <para>
@@ -1805,7 +1805,7 @@ standard `<literal remap="tt">fixed</literal>' and `<literal remap="tt">cursor</
 
 </sect2>
 
-<sect2>
+<sect2 id='Unicode'>
 <title>Unicode</title>
 
 <para>
@@ -1843,7 +1843,7 @@ have the last two fields of their XLFD set to `<literal remap="tt">iso10646-1</l
 
 </sect1>
 
-<sect1>
+<sect1 id='References'>
 <title>References</title>
 
 <para>

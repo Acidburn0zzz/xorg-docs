@@ -5,7 +5,7 @@
 <!ENTITY % defs SYSTEM "defs.ent"> %defs;
 ]>
 
-<article>
+<article id='ReleaseNotes'>
 
   <articleinfo>
 
@@ -30,7 +30,7 @@
 
   </articleinfo>
 
-  <sect1>
+  <sect1 id='Dedication'>
     <title>Dedication</title>
 
     <para><emphasis>
@@ -43,7 +43,7 @@
     </emphasis></para>
   </sect1>
 
-  <sect1>
+  <sect1 id='Introduction_to_the_X11R&relvers;_Release'>
     <title>Introduction to the X11R&relvers; Release</title>
 
     <para>
@@ -148,7 +148,7 @@ The next section describes what is new in the latest version
 
 <!--
 <![ %updaterel [
-<sect1>
+<sect1 id='Summary_of_updates_in_&relvers;'>
     <title>Summary of updates in &relvers;</title>
     <para>
     </para>
@@ -156,7 +156,7 @@ The next section describes what is new in the latest version
 ]]>
 -->
 
-<sect1>
+<sect1 id='Summary_of_new_features_in_X11R&relvers;'>
     <title>Summary of new features in X11R&relvers;</title>
 
     <para>
@@ -249,7 +249,7 @@ The next section describes what is new in the latest version
     </para>
   </sect1>
 
-  <sect1>
+  <sect1 id='Overview_of_X11R&relvers;'>
     <title>Overview of X11R&relvers;</title>
 
     <para>
@@ -330,10 +330,10 @@ The next section describes what is new in the latest version
     </para>
   </sect1>
 
-  <sect1>
+  <sect1 id='Details_of_X11R&relvers;_components'>
     <title>Details of X11R&relvers; components</title>
 
-    <sect2>
+    <sect2 id='Video_Drivers'>
     <title>Video Drivers</title>
 
     <para>
@@ -604,7 +604,7 @@ The next section describes what is new in the latest version
     </para>
     </sect2>
 
-    <sect2>
+    <sect2 id='Input_Drivers'>
     <title>Input Drivers</title>
 
     <para>
@@ -683,9 +683,9 @@ The next section describes what is new in the latest version
 
     </sect2>
 
-    <sect2>
+    <sect2 id='Xorg_server'>
       <title>Xorg server</title>
-      <sect3>
+      <sect3 id='Loader_and_Modules'>
         <title>Loader and Modules</title>
 
         <para>
@@ -754,7 +754,7 @@ The next section describes what is new in the latest version
 
       </sect3>
 
-      <sect3>
+      <sect3 id='Command_Line_Options'>
         <title>Command Line Options</title>
 
         <para>
@@ -765,7 +765,7 @@ The next section describes what is new in the latest version
         </para>
       </sect3>
 
-      <sect3>
+      <sect3 id='Multi-head'>
         <title>Multi-head</title>
 
         <para>
@@ -787,7 +787,7 @@ The next section describes what is new in the latest version
         </para>
       </sect3>
 
-      <sect3>
+      <sect3 id='Xinerama'>
         <title>Xinerama</title>
         <para>
         <firstterm>Xinerama</firstterm> is an X server extension that
@@ -807,7 +807,7 @@ The next section describes what is new in the latest version
         </para>
       </sect3>
 
-      <sect3>
+      <sect3 id='DDC'>
         <title>DDC</title>
 
         <para>
@@ -835,7 +835,7 @@ The next section describes what is new in the latest version
         configuration file don't match those that are detected.
         </para>
 
-        <sect4>
+        <sect4 id='Changed_behavior_caused_by_DDC.'>
             <title>Changed behavior caused by DDC.</title>
 
             <para>
@@ -850,7 +850,7 @@ The next section describes what is new in the latest version
         </sect4>
       </sect3>
 
-      <sect3>
+      <sect3 id='GLX_and_the_Direct_Rendering_Infrastructure_DRI'>
         <title>GLX and the Direct Rendering Infrastructure (DRI)</title>
 
         <para>
@@ -872,7 +872,7 @@ The next section describes what is new in the latest version
         </para>
       </sect3>
 
-      <sect3>
+      <sect3 id='Terminate_Server_keystroke'>
 	<title>Terminate Server keystroke</title>
 
 	<para>
@@ -908,7 +908,7 @@ The next section describes what is new in the latest version
       </sect3>
 
 
-      <sect3>
+      <sect3 id='X_Server_startup_state'>
 	<title>X Server startup state</title>
 
 	<para>
@@ -922,14 +922,14 @@ The next section describes what is new in the latest version
     </sect2>
 
 <!--
-    <sect2>
+    <sect2 id='Other_extensions'>
         <title>Other extensions</title>
         <para></para>
     </sect2>
 -->
 
 <!--
-<sect1>
+<sect1 id='X_libraries_and_clients'>
 <title>X libraries and clients</title>
 <para>
 </para>
@@ -937,7 +937,7 @@ The next section describes what is new in the latest version
 -->
 
 <!--
-<sect1>
+<sect1 id='Fonts_and_Internationalisation'>
 <title>Fonts and Internationalisation</title>
 <para>
 </para>
@@ -953,7 +953,7 @@ The next section describes what is new in the latest version
 	   >Fonts in X11R&relvers;</ulink></quote> document.
         </para>
 
-	<sect3>
+	<sect3 id='Default_font_installation_directory'>
 	  <title>Default font installation directory</title>
 
 	  <para>
@@ -978,7 +978,7 @@ The next section describes what is new in the latest version
 	  </para>
 	</sect3>
 
-	<sect3>
+	<sect3 id='Bitmap_font_compression_methods'>
 	  <title>Bitmap font compression methods</title>
 
 	  <para>
@@ -1001,7 +1001,7 @@ The next section describes what is new in the latest version
 	  </para>
 	</sect3>
 
-	<sect3>
+	<sect3 id='Type1_Font_support'>
 	  <title>Type1 Font support</title>
 
 	  <para>
@@ -1012,7 +1012,7 @@ The next section describes what is new in the latest version
 	  </para>
 	</sect3>
 
-	<sect3>
+	<sect3 id='CID_Font_support'>
 	  <title>CID Font support</title>
 
 	  <para>
@@ -1028,10 +1028,10 @@ The next section describes what is new in the latest version
 
   </sect1>
 
-  <sect1>
+  <sect1 id='Build_changes_and_issues'>
     <title>Build changes and issues</title>
 
-    <sect2>
+    <sect2 id='Silent_build_rules'>
       <title>Silent build rules</title>
 
       <para>
@@ -1049,7 +1049,7 @@ The next section describes what is new in the latest version
       </para>
     </sect2>
 
-    <sect2>
+    <sect2 id='New_configure_options_for_font_modules'>
       <title>New configure options for font modules</title>
 
       <para>
@@ -1061,7 +1061,7 @@ The next section describes what is new in the latest version
       </para>
     </sect2>
 
-    <sect2>
+    <sect2 id='New_configure_options_for_documentation_in_modules'>
       <title>New configure options for documentation in modules</title>
 
       <para>
@@ -1134,7 +1134,7 @@ The next section describes what is new in the latest version
 
   </sect1>
 
-  <sect1>
+  <sect1 id='Miscellaneous'>
     <title>Miscellaneous</title>
 
     <para>
@@ -1142,7 +1142,7 @@ The next section describes what is new in the latest version
     X11R&relvers; release.
     </para>
 
-    <sect2>
+    <sect2 id='Socket_directory_ownership_and_permissions'>
         <title>Socket directory ownership and permissions</title>
 
       <para>
@@ -1184,7 +1184,7 @@ The next section describes what is new in the latest version
 
   </sect1>
 
-  <sect1>
+  <sect1 id='Deprecated_components_and_removal_plans'>
     <title>Deprecated components and removal plans</title>
 
     <para>
@@ -1202,7 +1202,7 @@ The next section describes what is new in the latest version
     </para>
 
 
-    <sect2>
+    <sect2 id='Future_Removals'>
       <title>Future Removals</title>
 
       <variablelist>
@@ -1243,7 +1243,7 @@ The next section describes what is new in the latest version
       </variablelist>
     </sect2>
 
-    <sect2>
+    <sect2 id='Removed_in_this_Release'>
       <title>Removed in this Release</title>
 	<para>
 	  <variablelist>
@@ -1286,7 +1286,7 @@ The next section describes what is new in the latest version
     </sect2>
   </sect1>
 
-  <sect1>
+  <sect1 id='Attributions_Acknowledgements_Credits'>
     <title>Attributions/Acknowledgements/Credits</title>
 
 <!--
