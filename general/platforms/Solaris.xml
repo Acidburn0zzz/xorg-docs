@@ -27,12 +27,12 @@
 
   <author>
       <firstname>Alan</firstname><surname>Coopersmith</surname>
-      <affiliation><orgname><ulink url="http://www.sun.com/">Sun
-	      Microsystems, Inc.</ulink></orgname></affiliation>
+      <affiliation><orgname><ulink url="http://www.oracle.com/">Oracle
+	      Corp.</ulink></orgname></affiliation>
   </author>
  </authorgroup>
 
- <date>2009 September 16</date>
+ <date>2012 March 20</date>
 </articleinfo>
 
 <!-- Table of contents -->
@@ -52,11 +52,12 @@ If you use this form of virtual terminals, you do so at
 </para>
 
 <para>
-A new virtual terminal sub-system has been introduced in Solaris 11
-(currently available in pre-release development builds).   This version
-is supported on both SPARC and x86 platforms, though SPARC support is
-limited to devices with "Coherent Console" support in the kernel frame buffer
-driver.   Support for it is found only in Xorg 1.7 and later releases.
+A new virtual terminal sub-system has been introduced in Solaris 11,
+and is also available in systems based on the OpenSolaris or illumos sources.
+This version is supported on both SPARC and x86 platforms, though SPARC
+support is limited to devices with "Coherent Console" support in the kernel
+frame buffer driver.  Support for it is found only in Xorg 1.7 and later
+server releases.
 </para>
 
 <para>
