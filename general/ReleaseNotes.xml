@@ -30,19 +30,6 @@
 
   </articleinfo>
 
-  <sect1 id='Dedication'>
-    <title>Dedication</title>
-
-    <para><emphasis>
-	Two of the early leaders of the X Window System community were
-	lost to cancer this year &mdash; Smokey Wallace, who led the DEC
-	WSL team which created the initial implementation of X11, and
-	Hideki Hiura from Sun Microsystems who helped design the X11R6
-	internationalization framework.  This release is dedicated to
-	their memory.
-    </emphasis></para>
-  </sect1>
-
   <sect1 id='Introduction_to_the_X11R&relvers;_Release'>
     <title>Introduction to the X11R&relvers; Release</title>
 
@@ -84,7 +71,7 @@
     <para>
       Once their window system build is established, most builders watch for
       announcements of individual module updates on the <ulink
-	url="http://lists.freedesktop.org/mailman/listinfo/xorg-announce"
+	url="http://lists.x.org/mailman/listinfo/xorg-announce"
 	>xorg-announce mailing list</ulink> and update to those as needed.
       The X.Org Foundation currently releases the X Window System
       katamari releases approximately once a year, but many modules,
@@ -114,7 +101,7 @@
 The release numbering is based on the original MIT X numbering system.
 X11 refers to the version of the network protocol that the X Window
 system is based on: Version 11 was first released in 1988 and has been
-stable for 22 years, with only upward compatible additions to the core X
+stable for nearly 25 years, with only upward compatible additions to the core X
 protocol, a record of stability envied in computing.  Formal releases of
 X started with X version 9 from MIT; the first commercial X products
 were based on X version 10.  The MIT X Consortium and its successors,
@@ -170,65 +157,35 @@ The next section describes what is new in the latest version
       <itemizedlist>
         <listitem>
 	  <para>
-	    <firstterm>InputClass</firstterm> sections in Xorg configuration
-	    files are used to apply configuration options to any input
-	    device matching specified rules, such as device path,
-	    type of device, device manufacturer, or other data provided
-	    by the input hotplug backend.  Details can be found in the
-	    <literal>INPUTCLASS</literal> section of the
-	    <ulink url="xorg.conf.5.html">xorg.conf(5)</ulink> manual page.
+	    <firstterm>Multi-touch</firstterm> events are now supported for
+	    touchpads and touchscreens which can report position information
+	    on more than one finger providing input at the same time, such as
+	    found on many tablets and recent laptops.  These are exposed by
+	    Xorg server 1.12 and later via the Xinput extension version 2.2.
 	  </para>
         </listitem>
 
         <listitem>
 	  <para>
-	    <firstterm>Xorg configuration directories</firstterm> are
-	    used to allow fragments of the X server configuration to be
-	    delivered in individual files.   For instance, the input device
-	    driver matching rules previously provided in HAL
-	    <filename>.fdi</filename> files are now provided as
-	    <literal>InputClass</literal> sections in
-	    <filename>.conf</filename> files in a
-	    <filename>xorg.conf.d</filename> directory.
-	  </para>
-        </listitem>
-
-	<listitem>
-	  <para>
-	    <firstterm>udev</firstterm> is now used by the X server on
-	    Linux systems for input device discovery and hot-plug
-	    notification.  Other platforms continue to use the HAL
-	    framework for these tasks for now.
+	    Additional <firstterm>Xinput extension</firstterm> features were
+	    introduced in version 1.1, as supported in Xorg server 1.11,
+	    including allowing clients to track raw events from input devices,
+	    additional detail in scrolling events to allow clients to perform
+	    smoother scrolling, and additional constants in the Xlib-based
+	    libXi API.
 	  </para>
         </listitem>
 
         <listitem>
 	  <para>
-	    <firstterm>X protocol C-language Binding (XCB)</firstterm>
-	    is now included in the katamari, and is required by several
-	    client-side modules, including
-	    <systemitem class="library">libX11</systemitem>,
-	    <command>xlsatoms</command>, <command>xlsclients</command>
-	    and <command>xwininfo</command>.
-
-	    XCB is a replacement for Xlib featuring a small footprint,
-	    latency hiding, direct access to the protocol, improved threading
-	    support, and extensibility.   More information can be found on
-	    the XCB website at <ulink url="http://xcb.freedesktop.org/" />.
-	  </para>
-        </listitem>
-
-        <listitem>
-	  <para>
-	    Major progress has been made on the X.Org Documentation
-	    modernization - most of the library and protocol specifications
-	    are now included in the modules for those libraries and protocols
-	    so they can be updated in sync with new versions, and many have
-	    been converted to DocBook XML from the variety of formats they
-	    were previously in.   On most systems these documents will be
+	    More progress has been made on the X.Org Documentation
+	    modernization - the rest of the library and protocol specifications
+	    have been converted to DocBook XML from the variety of formats they
+	    were previously in, and support for cross-linking between documents
+	    hase been added.  On most systems these documents will be
 	    installed under <filename>/usr/share/doc/</filename>.  They
 	    are also posted on the X.Org website at
-	    <ulink url="http://www.x.org/releases/X11R7.6/" />.
+	    <ulink url="http://www.x.org/releases/X11R7.7/" />.
 	  </para>
         </listitem>
 
@@ -408,13 +365,8 @@ The next section describes what is new in the latest version
                 <entry><ulink url="i740.html">README.i740</ulink></entry>
             </row>
             <row>
-                <entry><literal remap="tt">imstt</literal></entry>
-                <entry>Integrated Micro Solns</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
                 <entry><literal remap="tt">intel</literal></entry>
-                <entry>Intel i8xx/i9xx</entry>
+                <entry>Intel Integrated Graphics Processors</entry>
                 <entry><ulink url="intel.html">README.intel</ulink>,
                     <ulink url="intel.4.html">intel(4)</ulink></entry>
             </row>
@@ -438,11 +390,6 @@ The next section describes what is new in the latest version
                 <entry>SGI Newport</entry>
                 <entry><ulink url="newport.html">README.newport</ulink>,
                     <ulink url="newport.4.html">newport(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">nsc</literal></entry>
-                <entry>National Semiconductor</entry>
-                <entry><ulink url="nsc.4.html">nsc(4)</ulink></entry>
             </row>
             <row>
                 <entry><literal remap="tt">nv</literal></entry>
@@ -628,16 +575,6 @@ The next section describes what is new in the latest version
         </thead>
         <tbody>
             <row>
-                <entry><literal remap="tt">acecad</literal></entry>
-                <entry>Acecad Flair</entry>
-                <entry><ulink url="aiptek.4.html">acecad(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">aiptek(*)</literal></entry>
-                <entry>Aiptek USB tablet</entry>
-                <entry><ulink url="aiptek.4.html">aiptek(4)</ulink></entry>
-            </row>
-            <row>
                 <entry><literal remap="tt">evdev(*)</literal></entry>
                 <entry>Linux kernel EvDev</entry>
                 <entry><ulink url="evdev.4.html">evdev(4)</ulink></entry>
@@ -699,22 +636,21 @@ The next section describes what is new in the latest version
         <para>
         The module interfaces (both API and ABI) used in this release are
         subject to change without notice.  While we will attempt to provide
-        backward compatibility for the module interfaces, we cannot
-        guarantee this. Compatibility in the other direction is explicitly
-        not guaranteed because new modules may rely on interfaces added in
-        new releases.
+        backward compatibility for the module interfaces in stable releases,
+        we cannot guarantee this. Compatibility in the other direction is
+        explicitly not guaranteed because new modules may rely on interfaces
+        added in new releases, nor is compatibility across stable release
+        branches (such as between Xorg 1.11 and 1.12).
         </para>
 
         <warning>
         <title>Note about module security</title>
-        <para>The X server runs with root privileges, i.e.,
-        the X server loadable modules also run with these privileges.
+        <para>The Xorg server runs with root privileges, so
+        the Xorg server loadable modules also run with these privileges.
         For this reason we recommend that all users be careful to only
         use loadable modules from reliable sources,  otherwise the
-        introduction of viruses and contaminated code can occur and
-        wreak havoc on your system.  We hope to have a mechanism for
-        signing/verifying the modules that we provide available in a
-        future release.
+        introduction of malware and contaminated code can occur and
+        wreak havoc on your system.
         </para></warning>
       </sect3>
 
@@ -731,7 +667,9 @@ The next section describes what is new in the latest version
         <para>
         Note that this release features significant improvements
         for running the server without a configuration file, so many users
-        may find that that they don't need a configuration file.
+        may find that that they don't need a configuration file, or may
+	rely on just snippets of configuration placed in the
+	<filename class="directory">xorg.conf.d</filename> directory.
         </para>
 
         <para>
@@ -896,12 +834,12 @@ The next section describes what is new in the latest version
 	  <screen>
 	setxkbmap -option "terminate:ctrl_alt_bksp"
 	  </screen>
-	  <ulink url="input/XKB-Config.html">The XKB Configuration
-	    Guide</ulink> also includes
-	  <ulink url="input/XKB-Config.html#zap">an example xorg.conf.d
-	    file that sets the
+	  <olink targetdoc="XKB-Config" targetptr="XKB-Config">The XKB
+	    Configuration Guide</olink> also includes
+	  <olink targetdoc="XKB-Config" targetptr="zap">an example
+	    xorg.conf.d file that sets the
 	    &ldquo;<option>terminate:ctrl_alt_bksp</option>&rdquo;
-	    option by default on all keyboards</ulink>.
+	    option by default on all keyboards</olink>.
 	  Many desktop environments include XKB configuration options in
 	  their preferences to enable this as well.
 	</para>
@@ -949,8 +887,8 @@ The next section describes what is new in the latest version
 
         <para>
         Details about the font support in X11R&relvers; can be
-        found in the <quote><ulink url="fonts/fonts.html"
-	   >Fonts in X11R&relvers;</ulink></quote> document.
+        found in the <quote><olink targetdoc="fonts" targetptr="fonts"
+	   >Fonts in X11R&relvers;</olink></quote> document.
         </para>
 
 	<sect3 id='Default_font_installation_directory'>
@@ -1196,7 +1134,7 @@ The next section describes what is new in the latest version
     distribution in the core X11 releases outweighs the benefits of doing
     so.  In some cases, this is simply because no one has volunteered to do
     continued maintenance, so if software is listed here that you need, you
-    can contact <email>xorg@lists.freedesktop.org</email> to volunteer to
+    can contact <email>xorg-devel@lists.x.org</email> to volunteer to
     take over maintainership, either inside or outside of the Xorg release
     process.
     </para>
@@ -1226,12 +1164,12 @@ The next section describes what is new in the latest version
 	  <term>Input device discovery via HAL</term>
 	  <listitem>
 	    <para>
-	      The Xorg server currently uses the <ulink
+	      Xorg server 1.4 started using the <ulink
 	      url="http://www.freedesktop.org/wiki/Software/hal">HAL
 	      framework</ulink> to discover connected input devices,
 	      receive notification of hotplug events for them, and to
 	      retrieve configuration parameters for them. The HAL
-	      maintainers have deprecated HAL, so the X.Org developers
+	      maintainers have since deprecated HAL, so the X.Org developers
 	      have begun replacement with alternatives.  As a result,
 	      configuration of input devices via HAL
 	      <filename>*.fdi</filename> files is no longer supported
@@ -1247,26 +1185,23 @@ The next section describes what is new in the latest version
       <title>Removed in this Release</title>
 	<para>
 	  <variablelist>
-	    <varlistentry>
-	    <term>Xprint</term>
+
+	  <varlistentry>
+	    <term>Unmaintained drivers</term>
 	    <listitem>
 	      <para>
-		The Xprint server and extension were previously removed
-		from X11R7.5.  This release removes Xprint support from
-		a number of client programs that still had it.
+		This release no longer contains the following drivers,
+		due to lack of maintainers with relevant hardware.
+		Existing driver versions may work with current Xorg servers,
+		but they are not being actively updated to support Xorg
+		driver API &amp; ABI changes.
+		<itemizedlist>
+		  <listitem><para>xf86-input-acecad: Acecad Flair</para></listitem>
+		  <listitem><para>xf86-input-aiptek: Aiptek USB tablet</para></listitem>
+		</itemizedlist>
 	      </para>
 	    </listitem>
-	    </varlistentry>
-
-	    <varlistentry>
-	      <term>Xsdl server</term>
-	      <listitem>
-		<para>
-		  The experimental Xsdl server has never been finished or
-		  maintained, and was removed in this release.
-		</para>
-	      </listitem>
-            </varlistentry>
+	  </varlistentry>
 
 	  <varlistentry>
 	    <term>Unmaintained extensions</term>
