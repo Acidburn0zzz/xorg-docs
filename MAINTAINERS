@@ -16,7 +16,7 @@ by component within each subsystem, rather than alphabetically on maintainer
 name.
 
 P: Person
-M: Mail patches to
+M: Mail patches to (but cc the mailing list as well)
 L: Mailing list that is relevant to this area
 W: Web-page with status/info
 S: Status, one of the following:
@@ -756,7 +756,7 @@ P:	Alex Deucher
 P:      Ben Herrenschmidt
 P:      et al
 M:	?
-L:	xorg-devel@lists.x.org
+L:	xorg-driver-ati@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
 
@@ -777,9 +777,9 @@ S:	Unmaintained
 xf86-video-cyrix
 P:	?
 M:	?
-L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
-S:	Unmaintained
+L:	xorg-driver-geode@lists.x.org
+W:	http://www.x.org/wiki/GeodeDriver
+S:	Obsolete - mostly replaced by xf86-video-geode
 
 xf86-video-dummy
 P:	Adam Jackson
@@ -794,6 +794,14 @@ M:	?
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Unmaintained
+
+xf86-video-geode
+P:	?
+M:	?
+L:	xorg-driver-geode@lists.x.org
+W:	http://lists.x.org/mailman/listinfo/xorg-driver-geode
+W:	http://www.x.org/wiki/GeodeDriver
+S:	Maintained
 
 xf86-video-glide
 P:	Guillem Jover
@@ -827,14 +835,14 @@ S:	Unmaintained
 xf86-video-intel
 P:	Eric Anholt
 M:	eric@anholt.net
-L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
-S:	Maintained
+L:	intel-gfx@lists.freedesktop.org
+W:	http://intellinuxgraphics.org/
+S:	Supported
 
 xf86-video-mach64
 P:      Luc Verhaegen
 M:      libv@skynet.be
-L:      xorg-devel@lists.x.org
+L:	xorg-driver-ati@lists.x.org
 W:      http://wiki.x.org
 S:	Maintained
 
@@ -866,6 +874,13 @@ L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
 
+xf86-video-nested
+P:	?
+M:	?
+L:	xorg-devel@lists.x.org
+W:	http://wiki.x.org
+S:	Maintained
+
 xf86-video-newport
 P:	?
 M:	?
@@ -876,13 +891,20 @@ S:	Unmaintained
 xf86-video-nsc
 P:	Alan Hourihane
 M:	alanh@fairlite.demon.co.uk
-L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
-S:	Maintained
+L:	xorg-driver-geode@lists.x.org
+W:	http://www.x.org/wiki/GeodeDriver
+S:	Obsolete - mostly replaced by xf86-video-geode
 
 xf86-video-nv
 P:	Aaron Plattner
 M:	aplattner@freedesktop.org
+L:	xorg-devel@lists.x.org
+W:	http://wiki.x.org
+S:	Maintained
+
+xf86-video-qxl
+P:	?
+M:	?
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
@@ -899,17 +921,17 @@ P:	Alex Deucher
 P:      Ben Herrenschmidt
 P:      et al
 M:	?
-L:	xorg-devel@lists.x.org
+L:	xorg-driver-ati@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
 
-xf86-video-radeon
+radeon driver (xf86-video-ati)
 P:	Alex Deucher
 P:      Ben Herrenschmidt
 P:      et al
 M:	?
-L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
+L:	xorg-driver-ati@lists.x.org
+W:	http://www.x.org/wiki/radeon
 S:	Maintained
 
 xf86-video-s3
@@ -1046,20 +1068,10 @@ W:	http://wiki.x.org
 S:	Maintained
 
 xf86-video-vga
-P:	?
-M:	?
-L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
 S:	Obsolete - use xf86-video-vesa instead
 
 xf86-video-via
-P:	Luc Verhaegen
-P:      Thomas Hellström
-M:	?
-L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
-W:      http://unichrome.sf.net
-S:	Unmaintained
+S:	Obsolete - use xf86-video-openchrome or xf86-video-unichrome instead
 
 xf86-video-vmware
 P:	Thomas Hellstrom
@@ -1088,6 +1100,13 @@ M:	?
 L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
+
+xf86-video-xgixp
+P:	?
+M:	?
+L:	xorg-devel@lists.x.org
+W:	http://wiki.x.org
+S:	Unmaintained
 
 Other modules
 -------------

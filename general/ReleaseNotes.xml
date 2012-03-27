@@ -312,11 +312,6 @@ The next section describes what is new in the latest version
         </thead>
         <tbody>
             <row>
-                <entry><literal remap="tt">apm</literal></entry>
-                <entry>Alliance Pro Motion</entry>
-                <entry><ulink url="apm.html">README.apm</ulink></entry>
-            </row>
-            <row>
                 <entry><literal remap="tt">ark</literal></entry>
                 <entry>Ark Logic</entry>
                 <entry>&nbsp;</entry>
@@ -325,13 +320,6 @@ The next section describes what is new in the latest version
                 <entry><literal remap="tt">ast</literal></entry>
                 <entry>ASPEED Technology</entry>
                 <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">chips</literal></entry>
-                <entry>Chips &amp; Technologies</entry>
-                <entry><ulink url="chips.html">README.chips</ulink>,
-                    <ulink url="chips.4.html">chips(4)</ulink>
-                </entry>
             </row>
             <row>
                 <entry><literal remap="tt">cirrus</literal></entry>
@@ -356,24 +344,19 @@ The next section describes what is new in the latest version
             <row>
                 <entry><literal remap="tt">i128</literal></entry>
                 <entry>Number Nine</entry>
-                <entry><ulink url="I128.html">README.I128</ulink>,
+                <entry><ulink url="I128.txt">README.I128</ulink>,
                     <ulink url="i128.4.html">i128(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">i740</literal></entry>
-                <entry>Intel i740</entry>
-                <entry><ulink url="i740.html">README.i740</ulink></entry>
             </row>
             <row>
                 <entry><literal remap="tt">intel</literal></entry>
                 <entry>Intel Integrated Graphics Processors</entry>
-                <entry><ulink url="intel.html">README.intel</ulink>,
+                <entry><ulink url="intel.txt">README.intel</ulink>,
                     <ulink url="intel.4.html">intel(4)</ulink></entry>
             </row>
             <row>
                 <entry><literal remap="tt">mach64</literal></entry>
                 <entry>ATI Mach64</entry>
-                <entry><ulink url="ati.html">README.ati</ulink></entry>
+                <entry><ulink url="ati.txt">README.ati</ulink></entry>
             </row>
             <row>
                 <entry><literal remap="tt">mga</literal></entry>
@@ -388,7 +371,7 @@ The next section describes what is new in the latest version
             <row>
                 <entry><literal remap="tt">newport</literal> (-)</entry>
                 <entry>SGI Newport</entry>
-                <entry><ulink url="newport.html">README.newport</ulink>,
+                <entry><ulink url="newport.txt">README.newport</ulink>,
                     <ulink url="newport.4.html">newport(4)</ulink></entry>
             </row>
             <row>
@@ -399,31 +382,13 @@ The next section describes what is new in the latest version
             <row>
                 <entry><literal remap="tt">r128</literal></entry>
                 <entry>ATI Rage128</entry>
-                <entry><ulink url="r128.html">README.r128</ulink>,
+                <entry><ulink url="r128.txt">README.r128</ulink>,
 			<ulink url="r128.4.html">r128(4)</ulink></entry>
             </row>
             <row>
                 <entry><literal remap="tt">radeon</literal></entry>
                 <entry>ATI Radeon</entry>
                 <entry><ulink url="radeon.4.html">radeon(4)</ulink></entry>
-            </row>
-
-            <row>
-                <entry><literal remap="tt">rendition</literal></entry>
-                <entry>Rendition</entry>
-                <entry><ulink url="rendition.html">README.rendition</ulink>,
-                    <ulink url="rendition.4.html">rendition(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">s3</literal></entry>
-                <entry>S3 (not ViRGE or Savage)</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">s3virge</literal></entry>
-                <entry>S3 ViRGE</entry>
-                <entry><ulink url="s3virge.html">README.s3virge</ulink>,
-                    <ulink url="s3virge.4.html">s3virge(4)</ulink></entry>
             </row>
             <row>
                 <entry><literal remap="tt">savage</literal></entry>
@@ -438,23 +403,8 @@ The next section describes what is new in the latest version
             <row>
                 <entry><literal remap="tt">sis</literal></entry>
                 <entry>SiS</entry>
-                <entry><ulink url="SiS.html">README.SiS</ulink>,
+                <entry><ulink url="SiS.txt">README.SiS</ulink>,
                     <ulink url="sis.4.html">sis(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">sisusb</literal></entry>
-                <entry>SiS USB</entry>
-                <entry><ulink url="sisusb.4.html">sisusb(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">suncg14</literal> (+)</entry>
-                <entry>Sun cg14</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">suncg3</literal> (+)</entry>
-                <entry>Sun cg3</entry>
-                <entry>&nbsp;</entry>
             </row>
             <row>
                 <entry><literal remap="tt">suncg6</literal> (+)</entry>
@@ -464,17 +414,6 @@ The next section describes what is new in the latest version
             <row>
                 <entry><literal remap="tt">sunffb</literal> (+)</entry>
                 <entry>Sun Creator/3D, Elite 3D</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">sunleo</literal> (+)</entry>
-                <entry>Sun Leo (ZX)</entry>
-                <entry>&nbsp;</entry>
-            </row>
-            <row>
-                <entry>
-                <literal remap="tt">suntcx</literal> (+)</entry>
-                <entry>Sun TCX</entry>
                 <entry>&nbsp;</entry>
             </row>
             <row>
@@ -491,11 +430,6 @@ The next section describes what is new in the latest version
                 <entry><literal remap="tt">trident</literal></entry>
                 <entry>Trident</entry>
                 <entry><ulink url="trident.4.html">trident(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">tseng</literal></entry>
-                <entry>Tseng Labs</entry>
-                <entry>&nbsp;</entry>
             </row>
             <row>
                 <entry><literal remap="tt">v4l</literal></entry>
@@ -521,16 +455,6 @@ The next section describes what is new in the latest version
                 <entry><literal remap="tt">wsfb</literal></entry>
                 <entry>Workstation Framebuffer</entry>
                 <entry><ulink url="wsfb.4.html">wsfb(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">xgi</literal></entry>
-                <entry>XGI</entry>
-                <entry><ulink url="xgi.4.html">xgi(4)</ulink></entry>
-            </row>
-            <row>
-                <entry><literal remap="tt">xgixp</literal></entry>
-                <entry>XGI XP</entry>
-                <entry><ulink url="xgixp.4.html">xgixp(4)</ulink></entry>
             </row>
 	  </tbody>
        </tgroup>
@@ -1198,6 +1122,20 @@ The next section describes what is new in the latest version
 		<itemizedlist>
 		  <listitem><para>xf86-input-acecad: Acecad Flair</para></listitem>
 		  <listitem><para>xf86-input-aiptek: Aiptek USB tablet</para></listitem>
+		  <listitem><para>xf86-video-apm: Alliance Pro Motion</para></listitem>
+		  <listitem><para>xf86-video-chips: Chips &amp; Technologies</para></listitem>
+		  <listitem><para>xf86-video-i740: Intel i740</para></listitem>
+		  <listitem><para>xf86-video-rendition: Rendition Verite</para></listitem>
+		  <listitem><para>xf86-video-s3: S3 (not ViRGE or Savage)</para></listitem>
+		  <listitem><para>xf86-video-s3virge: S3 ViRGE</para></listitem>
+		  <listitem><para>xf86-video-sisusb: SiS Net2280-based USB</para></listitem>
+		  <listitem><para>xf86-video-suncg14: Sun CG14</para></listitem>
+		  <listitem><para>xf86-video-suncg3: Sun CG3</para></listitem>
+		  <listitem><para>xf86-video-sunleo: Sun Leo (ZX)</para></listitem>
+		  <listitem><para>xf86-video-suntcx: Sun TCX</para></listitem>
+		  <listitem><para>xf86-video-tseng: Tseng Labs</para></listitem>
+		  <listitem><para>xf86-video-xgi: XGI</para></listitem>
+		  <listitem><para>xf86-video-xgixp: XGI Volari 8300</para></listitem>
 		</itemizedlist>
 	      </para>
 	    </listitem>
