@@ -945,6 +945,29 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
   <sect1 id='Build_changes_and_issues'>
     <title>Build changes and issues</title>
 
+    <sect2 id='Strict_compilation_flags'>
+      <title>Strict compilation flags</title>
+
+      <para>
+        Most of the modules in this release use stricter compiler flags
+        when building with the GNU gcc, LLVM clang, Oracle Solaris Studio,
+        or Intel compilers.   These flags both enable more warnings, and
+        promote some warnings to fatal errors in the build.   If these
+        flags cause your build to fail, you can disable the flags that
+        turn these selected warnings into errors by adding
+        <option>--disable-selective-werror</option> to the configure command
+        for the affected module.   If that is necessary for any X.Org modules,
+        please report a bug in the xorg product on
+        <ulink url="https://bugs.freedesktop.org/" />.
+      </para>
+
+      <para>
+        Builders seeking even stricter compiler checks can instead pass
+        <option>--enable-strict-compilation</option> to the configure command
+        to make all warnings become errors.
+      </para>
+    </sect2>
+
     <sect2 id='Silent_build_rules'>
       <title>Silent build rules</title>
 
