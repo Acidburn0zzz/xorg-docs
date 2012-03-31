@@ -622,8 +622,11 @@ The next section describes what is new in the latest version
         <para>
         Command line options can be used to override some default
         parameters and parameters provided in the configuration file.
-        These command line options are described in the <ulink
-        url="Xorg.1.html">Xorg(1)</ulink> manual page.
+        Command line options available for use with all X servers in
+        this release are described in the <ulink
+        url="Xserver.1.html">Xserver(1)</ulink> manual page.
+        Command line options specific to the Xorg server are described in
+        the <ulink url="Xorg.1.html">Xorg(1)</ulink> manual page.
         </para>
       </sect3>
 
