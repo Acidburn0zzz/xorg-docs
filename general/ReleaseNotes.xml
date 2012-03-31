@@ -772,6 +772,55 @@ The next section describes what is new in the latest version
 	</para>
       </sect3>
 
+<sect3 id='Grab_debugging_keystrokes'>
+        <title>Grab debugging keystrokes</title>
+
+        <para>
+          The Xorg server in this release provides various functions
+          that can be mapped to keystrokes to aid in the debugging of
+          programs with errant input grabs.
+        </para>
+        <para>
+          The keysyms <keysym>XF86LogGrabInfo</keysym> and
+          <keysym>XF86LogWindowTree</keysym> are defined to
+          print information to the Xorg log file on the current set
+          of input grabs, and the window tree of the current display.
+          By default, these are available for use, but not mapped to any key.
+        </para>
+        <para>
+          The keysym <keysym>XF86Ungrab</keysym> forces the X server
+          to release all active grabs, which may leave the clients holding
+          them in an inconsistent state.  <keysym>XF86ClearGrab</keysym>
+          goes further, killing the client connection of any client holding
+          an active grab when it is pressed.   These keystrokes are
+          intended to allow developers to debug clients which are not
+          properly releasing grabs or have problems occur while input is
+          grabbed.   Since grabs are a fundamental part of the X
+          client security model, these keystrokes come with risks, such
+          as the ability to bypass or kill screen locks without knowing
+          the password, and thus are not available by default.
+        </para>
+        <para>
+          Users who are willing to accept the security risk and wish to enable
+          this functionality may do so via the XKB configuration option
+          &ldquo;<option>grab:break_actions</option>&rdquo;.
+        </para>
+        <warning>
+          <title>Security issue in older xkeyboard-config releases</title>
+          <para>
+            The xkeyboard-config data files included in this release have
+            the grab disabling keys correctly disabled by default, but
+            versions before xkeyboard-config 2.5 had them enabled, leading
+            to the security risk described above.   When upgrading to the
+            X server in this release be sure to also ensure xkeyboard-config
+            is a safe version.   More details about this issue may be found
+            in <ulink
+url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
+            >advisories for CVE-2012-0064</ulink>.
+          </para>
+        </warning>
+      </sect3>
+
 
       <sect3 id='X_Server_startup_state'>
 	<title>X Server startup state</title>
