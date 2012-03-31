@@ -1272,6 +1272,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 
       <simplelist type='vert' columns='2'>
 	<member>Aapo Rantalainen</member>
+	<member>Aaron Culich</member>
 	<member>Aaron Plattner</member>
 	<member>Abdoulaye Walsimou Gaye</member>
 	<member>Adam Jackson</member>
@@ -1282,6 +1283,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Alan Hourihane</member>
 	<member>Alban Browaeys</member>
 	<member>Albert Damen</member>
+	<member>Aldis Berjoza</member>
 	<member>Alessandro Guido</member>
 	<member>Alex Deucher</member>
 	<member>Alex Plotnick</member>
@@ -1304,6 +1306,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Arnaud Fontaine</member>
 	<member>Arthur Taylor</member>
 	<member>Arvind Umrao</member>
+	<member>Avram Lyon</member>
 	<member>Bartosz Brachaczek</member>
 	<member>Bartosz Kosiorek</member>
 	<member>Bastian Blank</member>
@@ -1341,6 +1344,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Colin Harrison</member>
 	<member>Cristian Rodríguez</member>
 	<member>Cyril Brulebois</member>
+	<member>Daiki Ueno</member>
 	<member>Dan Horák</member>
 	<member>Dan Nicholson</member>
 	<member>Daniel A. Steffen</member>
@@ -1357,6 +1361,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>David Nusinow</member>
 	<member>David Reveman</member>
 	<member>David Ronis</member>
+	<member>Denis 'GNUtoo' Carikli</member>
 	<member>Derek Buitenhuis</member>
 	<member>Derek Foreman</member>
 	<member>Derek Wang</member>
@@ -1454,6 +1459,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Knut Petersen</member>
 	<member>Konstantin Belousov</member>
 	<member>Kristian Høgsberg</member>
+	<member>Kristof Szabo</member>
 	<member>Krzysztof Halasa</member>
 	<member>Kusanagi Kouichi</member>
 	<member>Lennart Poettering</member>
@@ -1466,6 +1472,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Magnus Kessler</member>
 	<member>Marcin Kościelnicki</member>
 	<member>Marcin Slusarz</member>
+	<member>Marcin Woliński</member>
 	<member>Marek Olšák</member>
 	<member>Mario Kleiner</member>
 	<member>Mark Dokter</member>
@@ -1476,6 +1483,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Markus Duft</member>
 	<member>Markus Fleschutz</member>
 	<member>Mart Raudsepp</member>
+	<member>Martin Langhoff</member>
 	<member>Martin-Éric Racine</member>
 	<member>Marton Balint</member>
 	<member>Matěj Cepl</member>
@@ -1533,8 +1541,10 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Owen Taylor</member>
 	<member>Pander</member>
 	<member>Pär Lidberg</member>
+	<member>Parag Nemade</member>
 	<member>Patrick Curran</member>
 	<member>Patrick E. Kane</member>
+	<member>Paul Fox</member>
 	<member>Paul Menzel</member>
 	<member>Paul Neumann</member>
 	<member>Pauli Nieminen</member>
@@ -1552,9 +1562,11 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Phillp Haddad</member>
 	<member>Pierre-Loup A. Griffais</member>
 	<member>Priit Laes</member>
+	<member>Promathesh Mandal</member>
 	<member>Rami Ylimäki</member>
 	<member>Reinhard Karcher</member>
 	<member>Rémi Cardona</member>
+	<member>Richard Hartmann</member>
 	<member>Rob Clark</member>
 	<member>Robert Ancell</member>
 	<member>Robert Bragg</member>
@@ -1576,6 +1588,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Sebastian Glita</member>
 	<member>Sedat Dilek</member>
 	<member>Sergey Samokhin</member>
+	<member>Sergey V. Udaltsov</member>
 	<member>Servaas Vandenberghe</member>
 	<member>Siddhesh Poyarekar</member>
 	<member>Simon Farnsworth</member>
@@ -1587,6 +1600,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Stefan Glasenhardt</member>
 	<member>Stefan Kost</member>
 	<member>Stefan Potyra</member>
+	<member>Stephan Hilb</member>
 	<member>Stephane Marchesin</member>
 	<member>Stephen Turnbull</member>
 	<member>Stuart Kreitman</member>
@@ -1619,11 +1633,14 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Ulrich Müller</member>
 	<member>Van de Bugger</member>
 	<member>Vasily Khoruzhick</member>
+	<member>Vasyĺ V. Vercynśkyj</member>
 	<member>Victor Machado</member>
 	<member>Ville Skyttä</member>
 	<member>Ville Syrjälä</member>
 	<member>Vincent Torri</member>
+	<member>Walter Bender</member>
 	<member>Walter Harms</member>
+	<member>William Jon McCann</member>
 	<member>Xavier Bachelot</member>
 	<member>Xiang, Haihao</member>
 	<member>Xue Wei</member>
@@ -1638,6 +1655,8 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Zhigang Gong</member>
 	<member>Zou Nan hai</member>
       </simplelist>
+      and the members of <ulink url="http://translationproject.org/">the
+      Translation Project</ulink>.
     </para>
 
     <para>
