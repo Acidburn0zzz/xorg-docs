@@ -168,9 +168,9 @@ The next section describes what is new in the latest version
         <listitem>
 	  <para>
 	    Additional <firstterm>Xinput extension</firstterm> features were
-	    introduced in version 1.1, as supported in Xorg server 1.11,
+	    introduced in version 2.1, as supported in Xorg server 1.11,
 	    including allowing clients to track raw events from input devices,
-	    additional detail in scrolling events to allow clients to perform
+	    additional detail in scrolling events so that clients may perform
 	    smoother scrolling, and additional constants in the Xlib-based
 	    libXi API.
 	  </para>
@@ -186,6 +186,58 @@ The next section describes what is new in the latest version
 	    installed under <filename>/usr/share/doc/</filename>.  They
 	    are also posted on the X.Org website at
 	    <ulink url="http://www.x.org/releases/X11R7.7/" />.
+	  </para>
+        </listitem>
+
+        <listitem>
+	  <para>
+            <firstterm>Fence</firstterm> objects are now available in Version
+            3.1 of the <olink targetdoc="sync" targetptr="sync">Synchronization
+            (<quote>Sync</quote>) extension</olink>.   These allow clients
+            to create a object that is either in <quote>triggered</quote>
+            or <quote>not-triggered</quote> state, and to perform actions
+            when the object becomes triggered.   When a client requests a
+            fence be triggered, the X server will first complete all rendering
+            from previous requests that affects resources owned by the fence's
+            screen before changing the state, so that clients may synchronize
+            with such rendering.  Support for these has been added to both
+	    the <filename class="libraryfile">libxcb-sync</filename> and
+	    <filename class="libraryfile">libXext</filename> API's.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para>
+            <firstterm>Pointer barriers</firstterm> were added by X Fixes
+            extension Version 5.0.  Compositing managers and desktop
+            environments may have UI elements in particular screen locations
+            such that for a single-headed display they correspond to easy
+            targets, for example, the top left corner.  For a multi-headed
+            environment these corners should still be semi-impermeable.
+            Pointer barriers allow the application to define additional
+            constraint on cursor motion so that these areas behave as
+            expected even in the face of multiple displays.
+	  </para>
+        </listitem>
+
+        <listitem>
+	  <para>
+	    Version 1.2 of the X Resource extension provides new requests
+	    that allow clients to query for additional identification
+	    information about other clients, such as their process id,
+	    and to request size information about the resources clients
+	    have allocated in the X server, to allow better observability
+	    and easier debugging of client resource allocations in the server.
+	  </para>
+        </listitem>
+
+        <listitem>
+	  <para>
+	    The XCB libraries have begun adding support for the GLX and XKB
+	    extensions.   This work is not yet complete in this release,
+	    and not all of the functionality available through these extensions
+	    is accessibile via the XCB APIs.  Some of this effort was funded
+	    by past Google Summer of Code projects.
 	  </para>
         </listitem>
 
@@ -1216,6 +1268,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	    </listitem>
 	  </varlistentry>
 
+<!--
 	  <varlistentry>
 	    <term>Unmaintained extensions</term>
 	    <listitem>
@@ -1229,6 +1282,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	      </para>
 	    </listitem>
 	  </varlistentry>
+ -->
 	</variablelist>
       </para>
     </sect2>
