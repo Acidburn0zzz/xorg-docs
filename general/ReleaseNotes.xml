@@ -382,6 +382,11 @@ The next section describes what is new in the latest version
                 <entry>&nbsp;</entry>
             </row>
             <row>
+                <entry><literal remap="tt">dummy</literal></entry>
+                <entry>Virtual/offscreen framebuffer</entry>
+                <entry>&nbsp;</entry>
+            </row>
+            <row>
                 <entry><literal remap="tt">fbdev</literal></entry>
                 <entry>Linux framebuffer device</entry>
                 <entry><ulink url="fbdev.4.html">fbdev(4)</ulink></entry>
@@ -390,6 +395,11 @@ The next section describes what is new in the latest version
                 <entry><literal remap="tt">geode</literal> (*)</entry>
                 <entry>AMD Geode GX and LX</entry>
                 <entry>&nbsp;</entry>
+            </row>
+            <row>
+                <entry><literal remap="tt">glide</literal></entry>
+                <entry>3Dfx Voodoo 1, 2, Banshee, 3, 4 &amp; 5</entry>
+                <entry><ulink url="glide.4.html">glide(4)</ulink></entry>
             </row>
             <row>
                 <entry><literal remap="tt">glint</literal></entry>
