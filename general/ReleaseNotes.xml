@@ -1229,6 +1229,19 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	    </para>
 	  </listitem>
         </varlistentry>
+
+	<varlistentry>
+	  <term>Nested and virtual X servers</term>
+	  <listitem>
+	    <para>
+	      As described in <xref linkend='Overview_of_X11R&relvers;' />,
+	      this release contains multiple X servers that either display
+	      onto another X server, or render into a virtual memory
+	      framebuffer.   These may be replaced in a future release by
+	      drivers for the Xorg server which perform the same tasks.
+	    </para>
+	  </listitem>
+        </varlistentry>
       </variablelist>
     </sect2>
 
