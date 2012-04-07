@@ -1235,10 +1235,15 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	  <listitem>
 	    <para>
 	      As described in <xref linkend='Overview_of_X11R&relvers;' />,
-	      this release contains multiple X servers that either display
-	      onto another X server, or render into a virtual memory
-	      framebuffer.   These may be replaced in a future release by
-	      drivers for the Xorg server which perform the same tasks.
+	      this release contains several X servers that either display
+	      onto another X server (<command>Xephyr</command> &amp;
+	      <command>Xnest</command>), or render into a virtual memory
+	      framebuffer (<command>Xvfb</command> &amp;
+	      <command>Xfake</command>).   These may be replaced in a future
+	      release by use of the <command>Xorg</command> server with the
+	      <literal remap="tt">xf86-video-nested</literal> and
+	      <literal remap="tt">xf86-video-dummy</literal> drivers
+	      which perform the same tasks.
 	    </para>
 	  </listitem>
         </varlistentry>
