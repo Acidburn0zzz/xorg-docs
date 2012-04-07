@@ -752,17 +752,25 @@ The next section describes what is new in the latest version
         configuration file don't match those that are detected.
         </para>
 
-        <sect4 id='Changed_behavior_caused_by_DDC.'>
-            <title>Changed behavior caused by DDC.</title>
+        <sect4 id='Changed_behavior_in_handling_information_from_DDC'>
+            <title>Changed behavior in handling information from DDC</title>
 
             <para>
-            Several drivers use DDC information to set the screen size and
-            pitch.  This can be overridden by explicitly resetting it to
-            the and non-DDC default value 75 with the <option>-dpi 75</option>
-	    command line option for the X
-            server, or by specifying appropriate screen dimensions with the
-            "DisplaySize" keyword in the "Monitor" section of the config
-            file.
+              The X server previously used DDC information to detect screen
+              size and pitch, and compute DPI automatically, allowing fonts
+              and other UI elements to automatically scale to appropriate
+              sizes.  This mechanism worked reasonably well for many
+              single-monitor cases, but did not compute accurate DPI values
+              for multi-monitor cases or less common single-display setups.
+              Thus, this autodetection has been removed, and the X server no
+              longer tries to compute an appropriate DPI value.  All users
+              wanting fonts, physical measurement units, and other UI elements
+              scaled appropriately for their display (including users for whom
+              autodetection previously worked) must now set DPI or some other
+              scaling factor explicitly, either via the X server's
+              <option>-dpi</option> option, a DPI setting in their graphical
+              enironment, or an alternate scaling mechanism provided by their
+              environment.
             </para>
         </sect4>
       </sect3>
