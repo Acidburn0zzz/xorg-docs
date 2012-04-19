@@ -220,6 +220,8 @@ The next section describes what is new in the latest version
 	  </para>
         </listitem>
 
+	<!-- Skip for 7.7, since only the proto headers landed in time.
+	     Restore for 7.8 once the server & client bits land.
         <listitem>
 	  <para>
 	    Version 1.2 of the X Resource extension provides new requests
@@ -230,6 +232,7 @@ The next section describes what is new in the latest version
 	    and easier debugging of client resource allocations in the server.
 	  </para>
         </listitem>
+	-->
 
         <listitem>
 	  <para>
