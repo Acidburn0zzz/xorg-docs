@@ -717,11 +717,11 @@ W:	http://wiki.x.org
 S:	Deactivated
 
 xf86-input-vmmouse
-P:	Thomas Hellstrom
-M:	thellstrom@vmware.com
+P:	VMware Linux Graphics Maintainer
+M:	linux-graphics-maintainer@vmware.com
 L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
-S:	Maintained
+W:	http://wiki.x.org/wiki/vmware
+S:	Supported
 
 xf86-input-void
 P:	Peter Hutterer
