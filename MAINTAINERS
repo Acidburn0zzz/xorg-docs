@@ -902,6 +902,13 @@ L:	xorg-devel@lists.x.org
 W:	http://wiki.x.org
 S:	Maintained
 
+xf86-video-omap
+P:	Rob Clark
+M:	robclark@freedesktop.org
+L:	xorg-devel@lists.x.org
+W:	http://wiki.x.org
+S:	Maintained
+
 xf86-video-qxl
 P:	?
 M:	?
