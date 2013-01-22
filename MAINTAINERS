@@ -77,6 +77,13 @@ S:	Obsolete - only used by Xprint
 rstart
 S:	Obsolete - use ssh instead
 
+xauth
+P:	Dr. Tilmann Bubeck
+M:	t.bubeck@reinform.de
+L:	xorg-devel@lists.x.org
+W:	http://wiki.x.org
+S:	Maintained
+
 xbiff
 P:	Matthieu Herrb
 M:	matthieu.herrb@laas.fr
