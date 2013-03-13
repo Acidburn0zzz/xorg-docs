@@ -493,7 +493,7 @@ Solaris (x86 & sparc)
 P:	Alan Coopersmith
 M:	alan.coopersmith@oracle.com
 L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org & http://opensolaris.org/os/community/x_win/
+W:	http://wiki.x.org & http://solaris-x11.java.net/
 S:	Maintained
 
 USL (UnixWare 7.1.x, OpenServer 6)
