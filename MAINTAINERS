@@ -166,6 +166,12 @@ S:	Maintained
 xmh
 S:	Obsolete - use exmh instead
 
+xsetmode
+S:	Obsolete - use xinput instead
+
+xsetpointer
+S:	Obsolete - use xinput instead (for Xorg < 1.4, can't work after that)
+
 xsetroot
 P:	Matthieu Herrb
 M:	matthieu.herrb@laas.fr
