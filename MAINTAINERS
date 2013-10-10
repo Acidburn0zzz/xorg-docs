@@ -1097,10 +1097,10 @@ xf86-video-via
 S:	Obsolete - use xf86-video-openchrome or xf86-video-unichrome instead
 
 xf86-video-vmware
-P:	Thomas Hellstrom
-M:	thellstrom@vmware.com
+P:	VMware Linux Graphics Maintainer
+M:	linux-graphics-maintainer@vmware.com
 L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org
+W:	http://wiki.x.org/vmware
 S:	Maintained
 
 xf86-video-voodoo
