@@ -270,7 +270,7 @@ The next section describes what is new in the latest version
       dynamically load the video drivers, input drivers, and other modules
       that are needed.
 
-      <command>Xorg</command> has currently has support for Linux, Solaris,
+      <command>Xorg</command> currently has support for Linux, Solaris,
       and some BSD OSs on Alpha, PowerPC, IA-64, AMD64, Intel x86, Sparc,
       and MIPS platforms.
 
