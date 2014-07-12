@@ -1078,7 +1078,7 @@ A path template is transformed to a pathname by substituting:
 .fi
 .TP
 .B XAPPLRESDIR
-This must point to a base directory where the user stores his application
+This must point to a base directory where the user stores the application
 dependent resource files. The default value is \fI$HOME\fP. Only used if
 XUSERFILESEARCHPATH is not set.
 .TP
