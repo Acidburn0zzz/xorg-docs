@@ -239,7 +239,7 @@ The next section describes what is new in the latest version
 	    The XCB libraries have begun adding support for the GLX and XKB
 	    extensions.   This work is not yet complete in this release,
 	    and not all of the functionality available through these extensions
-	    is accessibile via the XCB APIs.  Some of this effort was funded
+	    is accessible via the XCB APIs.  Some of this effort was funded
 	    by past Google Summer of Code projects.
 	  </para>
         </listitem>
