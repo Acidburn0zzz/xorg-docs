@@ -92,42 +92,37 @@ __datadir__/doc or on the X.Org Foundation website at
 .UE .
 .PP
 The number of programs that use \fIX\fP is quite large.
-Programs provided in the core X.Org Foundation distribution include:
+Sample programs provided by the X.Org Foundation include:
 a terminal emulator, \fIxterm\fP;
 a window manager, \fItwm\fP;
+a compositing manager, \fIxcompmgr\fP;
 a display manager, \fIxdm\fP;
 a console redirect program, \fIxconsole\fP;
-a mail interface, \fIxmh\fP;
-a bitmap editor, \fIbitmap\fP;
+utilities for managing input and output devices, \fIxinput\fP and \fIxrandr\fP;
 resource listing/manipulation tools, \fIappres\fP, \fIeditres\fP;
 access control programs, \fIxauth\fP, \fIxhost\fP, and \fIiceauth\fP;
-user preference setting programs, \fIxrdb\fP, \fIxcmsdb\fP,
+user preference setting programs, \fItransset\fP, \fIxrdb\fP, \fIxcmsdb\fP,
 \fIxset\fP, \fIxsetroot\fP, \fIxstdcmap\fP, and \fIxmodmap\fP;
 clocks, \fIxclock\fP and \fIoclock\fP;
-a font displayer, \fIxfd\fP;
-utilities for listing information about fonts, windows, and displays,
-\fIxlsfonts\fP, \fIxwininfo\fP, \fIxlsclients\fP,
-\fIxdpyinfo\fP, \fIxlsatoms\fP, and \fIxprop\fP;
+font display utilities, \fIxfd\fP and \fIxfontsel\fP;
+utilities for listing information about displays, extensions, and resources,
+\fIxdpyinfo\fP, \fIxdriinfo\fP, \fIxvinfo\fP, \fIxwininfo\fP, \fIxlsclients\fP,
+\fIxprop\fP, \fIxlsatoms\fP, \fIxlsclients\fP, and \fIxlsfonts\fP;
 screen image manipulation utilities, \fIxwd\fP, \fIxwud\fP, and \fIxmag\fP;
 a performance measurement utility, \fIx11perf\fP;
 a font compiler, \fIbdftopcf\fP;
-a font server and related utilities, \fIxfs\fP, \fIfsinfo\fP, \fIfslsfonts\fP, \fIfstobdf\fP;
+a font server and related utilities, \fIxfs\fP, \fIxfsinfo\fP, \fIfslsfonts\fP, \fIfstobdf\fP;
 a display server and related utilities, \fIXserver\fP, \fIrgb\fP, \fImkfontdir\fP;
 a clipboard manager, \fIxclipboard\fP;
 keyboard description compiler and related utilities, \fIxkbcomp\fP, \fIsetxkbmap\fP
 \fIxkbprint\fP, \fIxkbbell\fP, \fIxkbevd\fP, \fIxkbvleds\fP, and \fIxkbwatch\fP;
 a utility to terminate clients, \fIxkill\fP;
-a firewall security proxy, \fIxfwp\fP;
-a proxy manager to control them, \fIproxymngr\fP;
-a utility to find proxies, \fIxfindproxy\fP;
-web browser plug-ins, \fIlibxrx.so\fP and \fIlibxrxnest.so\fP;
-an RX MIME-type helper program, \fIxrx\fP;
 and a utility to cause part or all of the screen to be redrawn, \fIxrefresh\fP.
 .PP
 Many other utilities, window managers, games, toolkits, etc. are included
-as user-contributed software in the X.Org Foundation distribution, or are
+as packages in many operating system distributions, or are
 available on the Internet.
-See your site administrator for details.
+See your site administrator or distro package manager for details.
 .SH "STARTING UP"
 .PP
 There are two main ways of getting the X server and an initial set of
@@ -376,12 +371,12 @@ to explicitly draw the window's region on the screen with the pointer, for
 example).
 .PP
 Since window managers are regular (albeit complex) client programs,
-a variety of different user interfaces can be built.  The X.Org Foundation distribution
-comes with a window manager named \fItwm\fP which supports overlapping windows,
+a variety of different user interfaces can be built.  The X.Org Foundation
+provides a window manager named \fItwm\fP which supports overlapping windows,
 popup menus, point-and-click or click-to-type input models, title bars, nice
 icons (and an icon manager for those who don't like separate icon windows).
 .PP
-See the user-contributed software in the X.Org Foundation distribution for other
+See your distro package manager for other
 popular window managers.
 .SH "FONT NAMES"
 Collections of characters for displaying text and symbols in X are known as
@@ -1218,19 +1213,16 @@ the appropriate instance name can be placed before the asterisk:
 .BR bdftopcf (__appmansuffix__),
 .BR bitmap (__appmansuffix__),
 .BR editres (__appmansuffix__),
-.BR fsinfo (__appmansuffix__),
 .BR fslsfonts (__appmansuffix__),
 .BR fstobdf (__appmansuffix__),
 .BR iceauth (__appmansuffix__),
-.BR imake (__appmansuffix__),
-.BR makedepend (__appmansuffix__),
 .BR mkfontdir (__appmansuffix__),
+.BR mkfontscale (__appmansuffix__),
 .BR oclock (__appmansuffix__),
-.BR proxymngr (__appmansuffix__),
 .BR rgb (__appmansuffix__),
 .BR resize (__appmansuffix__),
-.BR rstart (__appmansuffix__),
 .BR smproxy (__appmansuffix__),
+.BR transset (__appmansuffix__),
 .BR twm (__appmansuffix__),
 .BR x11perf (__appmansuffix__),
 .BR x11perfcomp (__appmansuffix__),
@@ -1238,13 +1230,16 @@ the appropriate instance name can be placed before the asterisk:
 .BR xclipboard (__appmansuffix__),
 .BR xclock (__appmansuffix__),
 .BR xcmsdb (__appmansuffix__),
+.BR xcompmgr (__appmansuffix__),
 .BR xconsole (__appmansuffix__),
 .BR xdm (__appmansuffix__),
 .BR xdpyinfo (__appmansuffix__),
+.BR xdriinfo (__appmansuffix__),
+.BR xev (__appmansuffix__),
 .BR xfd (__appmansuffix__),
-.BR xfindproxy (__appmansuffix__),
+.BR xfontsel (__appmansuffix__),
 .BR xfs (__appmansuffix__),
-.BR xfwp (__appmansuffix__),
+.BR xfsinfo (__appmansuffix__),
 .BR xhost (__appmansuffix__),
 .BR xinit (__appmansuffix__),
 .BR xkbbell (__appmansuffix__),
@@ -1259,17 +1254,19 @@ the appropriate instance name can be placed before the asterisk:
 .BR xlsclients (__appmansuffix__),
 .BR xlsfonts (__appmansuffix__),
 .BR xmag (__appmansuffix__),
-.BR xmh (__appmansuffix__),
 .BR xmodmap (__appmansuffix__),
 .BR xprop (__appmansuffix__),
+.BR xrandr (__appmansuffix__),
 .BR xrdb (__appmansuffix__),
 .BR xrefresh (__appmansuffix__),
-.BR xrx (__appmansuffix__),
+.BR xrestop (__appmansuffix__),
+.BR xscope (__appmansuffix__),
 .BR xset (__appmansuffix__),
 .BR xsetroot (__appmansuffix__),
 .BR xsm (__appmansuffix__),
 .BR xstdcmap (__appmansuffix__),
 .BR xterm (__appmansuffix__),
+.BR xvinfo (__appmansuffix__),
 .BR xwd (__appmansuffix__),
 .BR xwininfo (__appmansuffix__),
 .BR xwud (__appmansuffix__).
