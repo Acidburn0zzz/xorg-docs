@@ -76,6 +76,20 @@ the \fIXlib - C Language X Interface\fP manual,
 the \fIX Window System Protocol\fP specification,
 the \fIX Toolkit Intrinsics - C Language Interface\fP manual,
 and various toolkit documents.
+.\" Use .UR macro from groff's man(7) if available, otherwise just
+.\" display URL as plain text for other processors.
+.if !d UR \{
+.de UR
+.RI < \\$1 >
+..
+.de UE
+.RI \\$1
+.. \}
+.\"
+Those manuals, specifications, & documents may be found in
+__datadir__/doc or on the X.Org Foundation website at
+.UR "http://www.x.org/releases/current/doc/"
+.UE .
 .PP
 The number of programs that use \fIX\fP is quite large.
 Programs provided in the core X.Org Foundation distribution include:
@@ -1269,10 +1283,17 @@ the appropriate instance name can be placed before the asterisk:
 .BR Xvfb (__appmansuffix__),
 .BR Xvnc (__appmansuffix__),
 .BR XWin (__appmansuffix__).
+.PP
 .\" specifications
 .I "Xlib \- C Language X Interface\fR,\fP"
 and
 .I "X Toolkit Intrinsics \- C Language Interface"
+.PP
+Those specifications, and additional specifications & documentation for the
+X Window System may also be found in __datadir__/doc or on the X.Org Foundation
+website at
+.UR "http://www.x.org/releases/current/doc/"
+.UE .
 .SH TRADEMARKS
 .PP
 X Window System is a trademark of The Open Group.
