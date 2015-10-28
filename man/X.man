@@ -1,4 +1,4 @@
-.\" t
+'\" t
 .\"
 .\" Copyright (c) 1994, 2004  The Open Group
 .\" Copyright \(co 2000  The XFree86 Project, Inc.
@@ -165,15 +165,34 @@ form:
 .RS
 \fIhostname:displaynumber.screennumber\fP
 .RE
+or
+.RS
+\fIprotocol/hostname:displaynumber.screennumber\fP
+.RE
 .sp
 This information is used by the application to determine how it should
 connect to the server and which screen it should use by default
 (on displays with multiple monitors):
 .TP 8
+.I protocol
+The \fIprotocol\fP specifies the protocol to use for communication.
+Exactly which protocols are supported is platform dependent, but most
+commonly supported ones are:
+.TS
+l l.
+tcp     TCP over IPv4 or IPv6
+inet    TCP over IPv4 only
+inet6   TCP over IPv6 only
+unix    UNIX Domain Sockets (same host only)
+local   Platform preferred local connection method
+.TE
+If the protocol is not specified, Xlib uses whatever it believes is the
+most efficient transport.
+.TP 8
 .I hostname
 The \fIhostname\fP specifies the name of the machine to which the display is
-physically connected.  If the hostname is not given, the most efficient way of
-communicating to a server on the same machine will be used.
+physically connected.  If the hostname is not given, a connection to a server
+on the same machine will be used.
 .TP 8
 .I displaynumber
 The phrase "display" is usually used to refer to a collection of monitors that
