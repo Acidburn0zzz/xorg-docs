@@ -260,6 +260,55 @@ addresses, and IPv6 addresses are all allowed.  For example:
 \fIx.org:0\fP, \fIexpo:0\fP, \fI[::1]:0\fP,
 \fI198.112.45.11:0\fP, \fIbigmachine:1\fP, and \fIhydra:0.1\fP.
 .PP
+.SH "LOCAL CONNECTIONS"
+For operating systems that support local connections other than Unix
+Domain sockets (SVR3 and SVR4), there is a compiled-in list specifying
+the order in which local connections should be attempted.  This list
+can be overridden by the
+.I XLOCAL
+environment variable described below.  If the display name indicates a
+best-choice connection should be made (e.g.
+.BR :0.0 ),
+each connection mechanism is tried until a connection succeeds or no
+more mechanisms are available.
+.PP
+The
+.I XLOCAL
+environment variable should contain a list of one more
+more of the following:
+.PP
+.RS 8
+.nf
+NAMED
+PTS
+SCO
+UNIX
+.fi
+.RE
+.PP
+which represent SVR4 Named Streams pipe, Old-style USL Streams pipe,
+SCO XSight Streams pipe, and Unix domain sockets, respectively.  You can
+select a single mechanism (e.g.
+.IR XLOCAL=NAMED ),
+or an ordered list (e.g. \fIXLOCAL="NAMED:PTS:SCO"\fP).
+This variable overrides the compiled-in defaults.  For SVR4 it is
+recommended that
+.I NAMED
+be the first preference connection.  The default setting is
+platform-dependent.
+.PP
+To globally override the compiled-in defaults, you should define (and
+export if using
+.B sh
+or
+.BR ksh )
+.I XLOCAL
+globally.  If you use startx(1) or xinit(1), the definition should be
+at the top of your
+.I .xinitrc
+file.  If you use xdm(1), the definitions should be early on in the
+.I __projectroot__/lib/X11/xdm/Xsession
+script.
 .SH "ACCESS CONTROL"
 An X server can use several types of access control.  Mechanisms provided
 in Release 7 are:
