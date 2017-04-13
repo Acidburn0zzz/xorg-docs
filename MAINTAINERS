@@ -502,7 +502,7 @@ Solaris (x86 & sparc)
 P:	Alan Coopersmith
 M:	alan.coopersmith@oracle.com
 L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org & http://solaris-x11.java.net/
+W:	http://wiki.x.org & https://github.com/oracle/solaris-xorg
 S:	Maintained
 
 USL (UnixWare 7.1.x, OpenServer 6)
