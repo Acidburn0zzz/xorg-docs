@@ -501,8 +501,10 @@ S:	Unmaintained (libraries/apps) ; Obsolete/Removed (Xorg server)
 Solaris (x86 & sparc)
 P:	Alan Coopersmith
 M:	alan.coopersmith@oracle.com
+P:	Niveditha Rau
+M:	niveditha.rau@oracle.com
 L:	xorg-devel@lists.x.org
-W:	http://wiki.x.org & https://github.com/oracle/solaris-xorg
+W:	https://github.com/oracle/solaris-userland/tree/master/components/x11
 S:	Maintained
 
 USL (UnixWare 7.1.x, OpenServer 6)
