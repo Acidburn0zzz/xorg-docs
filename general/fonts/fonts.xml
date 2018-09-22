@@ -135,6 +135,7 @@ $ su -c fc-cache
 <para>
 Fontconfig's behaviour is controlled by a set of configuration
 files: a standard configuration file, <quote><filename>/etc/fonts/fonts.conf</filename></quote>,
+the files in a standard configuration directory, <quote><filename>/etc/fonts/conf.d/</filename></quote>,
 a host-specific configuration file, <quote><filename>/etc/fonts/local.conf</filename></quote>,
 and a user-specific file called <quote><filename>.fonts.conf</filename></quote> in the user's
 home directory (this can be overridden with the
