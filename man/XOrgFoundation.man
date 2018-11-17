@@ -48,7 +48,7 @@ to the X Window System were assigned to The Open Group (then known as the
 Open Software Foundation).
 .PP
 .SH "ADDRESSES"
-The X.Org Foundation's web site is http://www.x.org/
+The X.Org Foundation's web site is https://www.x.org/
 .PP
 The X.Org Foundation's public ftp site is ftp://ftp.x.org/
 .PP

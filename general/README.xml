@@ -10,7 +10,7 @@
 
 <title>README for X11R&relvers;</title>
 
-<corpauthor><ulink url="http://www.x.org/wiki/XorgFoundation">
+<corpauthor><ulink url="https://www.x.org/wiki/XorgFoundation">
 The X.Org Foundation
 </ulink></corpauthor>
 
@@ -111,7 +111,7 @@ in the X.Org Foundation is free to all participants. Applications for
 Membership are now being accepted, and active participants in the
 further development of the X Window Technology are invited to complete a
 <ulink
-url="http://www.x.org/wiki/Membership"
+url="https://www.x.org/wiki/Membership"
 >membership application</ulink>.  The X11R&relvers; release has been
 produced by the many contributors to the X.Org community and members of
 the X.Org Foundation and includes code from the X Consortium, the Open
@@ -178,11 +178,11 @@ Attributions are included with documentation accompanying binaries.
 Most of these licenses are based on the MIT, X Consortium, or BSD
 (original and revised) licenses.  All of them are consistent with the
 <ulink
-url="http://www.opensource.org/docs/definition.php"
+url="https://www.opensource.org/docs/definition.php"
 >Open Source Definition</ulink
 >, and most are
 consistent with the Free Software Foundation's <ulink
-url="http://www.fsf.org/philosophy/free-sw.html"
+url="https://www.fsf.org/philosophy/free-sw.html"
 >Free Software Definition</ulink
 >.
 </para>
@@ -197,7 +197,7 @@ If you find any omissions in that document, please contact us with details at
 While the current licenses are all open source licenses, the
 X.Org Foundation is attempting, with time, to bring as much as
 possible of the code's licenses in the distribution into compliance with the
-<ulink url="http://www.debian.org/social_contract#guidelines"
+<ulink url="https://www.debian.org/social_contract#guidelines"
 >Debian Free Software Guidelines</ulink>.
 </para>
 
@@ -208,7 +208,7 @@ possible of the code's licenses in the distribution into compliance with the
 
 <para>
 The documentation for this release can be found online at the <ulink
-url="http://www.x.org/">X.Org web site</ulink>.
+url="https://www.x.org/">X.Org web site</ulink>.
 </para>
 
 <para>
@@ -218,7 +218,7 @@ Document</olink>.
 </para>
 
 <para>
-Additional information may be available at the <ulink url="http://wiki.x.org/"
+Additional information may be available at the <ulink url="https://wiki.x.org/"
 >X.Org Foundation Wiki</ulink>.
 </para>
 
@@ -229,10 +229,10 @@ Additional information may be available at the <ulink url="http://wiki.x.org/"
 
 <para>
 Current information about the X.Org Foundation public mailing lists is
-available on <ulink url="http://www.x.org/wiki/XorgMailingLists">the X.Org
+available on <ulink url="https://www.x.org/wiki/XorgMailingLists">the X.Org
 mailing list page</ulink> and related desktop
 technology mailing lists can be found on <ulink
-url="http://freedesktop.org/mailman/listinfo">Freedesktop.org's mailing list
+url="https://freedesktop.org/mailman/listinfo/">Freedesktop.org's mailing list
 page</ulink>.
 </para>
 
@@ -260,7 +260,7 @@ SubmittingPatches</ulink> page of the X.Org wiki.
 <!--
 <![ %snapshot; [
 <para>
-X11R&relvers; can be found from the <ulink url="http://wiki.x.org">X.Org
+X11R&relvers; can be found from the <ulink url="https://wiki.x.org">X.Org
 Foundation wiki</ulink>, and at mirrors of this server.
 </para>
 ]]>
@@ -270,7 +270,7 @@ Foundation wiki</ulink>, and at mirrors of this server.
 <para>
 Information about X11R&relvers; can be found from the
 <ulink
-url="http://wiki.x.org"
+url="https://wiki.x.org"
 >X.Org Foundation wiki</ulink>, and at
 mirrors of this server.
 </para>
@@ -292,7 +292,7 @@ list of the tarballs.
 
 <para>
 For information on how to build the modular tree packages see the <ulink
-url="http://wiki.x.org/wiki/ModularDevelopersGuide"
+url="https://wiki.x.org/wiki/ModularDevelopersGuide"
 >Modular Developer's Guide</ulink
 >.  This guide also
 contains information for developers who want to help improve the modular

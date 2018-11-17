@@ -12,7 +12,7 @@
     <title>Release Notes for X11R&relvers;</title>
 
     <corpauthor>
-      <ulink url="http://www.x.org/wiki/XorgFoundation">
+      <ulink url="https://www.x.org/wiki/XorgFoundation">
 	The X.Org Foundation
       </ulink>
     </corpauthor>
@@ -71,7 +71,7 @@
     <para>
       Once their window system build is established, most builders watch for
       announcements of individual module updates on the <ulink
-	url="http://lists.x.org/mailman/listinfo/xorg-announce"
+	url="https://lists.x.org/mailman/listinfo/xorg-announce"
 	>xorg-announce mailing list</ulink> and update to those as needed.
       The X.Org Foundation currently releases the X Window System
       katamari releases approximately once a year, but many modules,
@@ -81,7 +81,7 @@
 
     <para>
       For help with how to build and develop in the modular tree see the
-      <ulink url="http://wiki.x.org/wiki/ModularDevelopersGuide">Modular
+      <ulink url="https://wiki.x.org/wiki/ModularDevelopersGuide">Modular
 	Developer's Guide</ulink> in the X.Org wiki.
     </para>
 
@@ -91,7 +91,7 @@
 <ulink url="https://gitlab.freedesktop.org/xorg">the gitlab.freedesktop.org code management system</ulink>.
       More details on patch submission and review process are available on the
       <ulink
-       url="http://www.x.org/wiki/Development/Documentation/SubmittingPatches">
+       url="https://www.x.org/wiki/Development/Documentation/SubmittingPatches">
 	SubmittingPatches</ulink> page of the X.Org wiki.
     </para>
 
@@ -183,7 +183,7 @@ The next section describes what is new in the latest version
 	    hase been added.  On most systems these documents will be
 	    installed under <filename>/usr/share/doc/</filename>.  They
 	    are also posted on the X.Org website at
-	    <ulink url="http://www.x.org/releases/X11R7.7/" />.
+	    <ulink url="https://www.x.org/releases/X11R7.7/" />.
 	  </para>
         </listitem>
 
@@ -793,9 +793,9 @@ The next section describes what is new in the latest version
         Direct rendered OpenGL&reg; support is provided for several
         hardware platforms by the Direct Rendering Infrastructure (DRI).
         Further information about DRI can be found at the <ulink
-        url="http://dri.sf.net/">DRI Project's web site</ulink>.  The 3D
+        url="https://dri.freedesktop.org/">DRI Project's web site</ulink>.  The 3D
         core rendering component is provided by <ulink
-        url="http://www.mesa3d.org">Mesa</ulink>.
+        url="https://www.mesa3d.org">Mesa</ulink>.
         </para>
 
         <para>
@@ -886,7 +886,7 @@ The next section describes what is new in the latest version
             X server in this release be sure to also ensure xkeyboard-config
             is a safe version.   More details about this issue may be found
             in <ulink
-url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
+url="https://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
             >advisories for CVE-2012-0064</ulink>.
           </para>
         </warning>
@@ -1098,7 +1098,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	  <listitem>
 	    <para>
 	      Enables or disables use of the <ulink
-	        url="http://xmlgraphics.apache.org/fop/"
+	        url="https://xmlgraphics.apache.org/fop/"
 	      >Apache <command>fop</command></ulink> command to translate
 	      DocBook XML to PostScript and PDF formats.
 	    </para>
@@ -1235,7 +1235,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	  <listitem>
 	    <para>
 	      Xorg server 1.4 started using the <ulink
-	      url="http://www.freedesktop.org/wiki/Software/hal">HAL
+	      url="https://www.freedesktop.org/wiki/Software/hal">HAL
 	      framework</ulink> to discover connected input devices,
 	      receive notification of hotplug events for them, and to
 	      retrieve configuration parameters for them. The HAL
@@ -1746,7 +1746,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 	<member>Zhigang Gong</member>
 	<member>Zou Nan hai</member>
       </simplelist>
-      and the members of <ulink url="http://translationproject.org/">the
+      and the members of <ulink url="https://translationproject.org/">the
       Translation Project</ulink>.
     </para>
 
@@ -2200,12 +2200,12 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 
     <para>
     This product includes software developed by The XFree86 Project, Inc
-    (<ulink url="http://www.xfree86.org/"></ulink>) and its contributors.
+    (<ulink url="https://www.xfree86.org/"></ulink>) and its contributors.
     </para>
 
     <para>
     This product includes software that is based in part on the work of the
-    FreeType Team (<ulink url="http://www.freetype.org/"></ulink>).
+    FreeType Team (<ulink url="https://www.freetype.org/"></ulink>).
     </para>
 
     <para>
@@ -2219,7 +2219,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
 
     <para>
     This product includes software developed by the NetBSD Foundation, Inc.
-      (<ulink url="http://www.netbsd.org/"></ulink>) and its contributors.
+      (<ulink url="https://www.netbsd.org/"></ulink>) and its contributors.
     </para>
 
     <para>

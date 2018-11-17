@@ -88,7 +88,7 @@ and various toolkit documents.
 .\"
 Those manuals, specifications, & documents may be found in
 __datadir__/doc or on the X.Org Foundation website at
-.UR "http://www.x.org/releases/current/doc/"
+.UR "https://www.x.org/releases/current/doc/"
 .UE .
 .PP
 The number of programs that use \fIX\fP is quite large.
