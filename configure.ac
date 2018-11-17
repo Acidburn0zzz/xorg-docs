@@ -24,7 +24,7 @@ dnl  Process this file with autoconf to create configure.
 AC_PREREQ([2.60])
 AC_INIT([xorg-docs],
         [1.7.1],
-        [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
+        [https://gitlab.freedesktop.org/xorg/doc/xorg-docs/issues],
         [xorg-docs])
 AC_CONFIG_SRCDIR([Makefile.am])
 
