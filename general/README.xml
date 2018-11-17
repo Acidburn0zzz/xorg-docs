@@ -243,13 +243,12 @@ page</ulink>.
 
 <para>
 If you have any new work or enhancements/bug fixes for existing work,
-please send them as git format patches to
-<email>xorg-devel@lists.freedesktop.org</email> or to our
-<ulink url="https://bugs.freedesktop.org/">bug tracking system</ulink>
-using the xorg component.  This will help ensure that they are included
+please submit them via
+<ulink url="https://gitlab.freedesktop.org/xorg">the gitlab.freedesktop.org code management system</ulink>.
+This will help ensure that they are included
 in future releases.   More details on patch submission and review
 process are available on the
-<ulink url="http://www.x.org/wiki/Development/Documentation/SubmittingPatches">
+<ulink url="https://www.x.org/wiki/Development/Documentation/SubmittingPatches">
 SubmittingPatches</ulink> page of the X.Org wiki.
 </para>
 
@@ -309,7 +308,7 @@ build system and modular code base.
 The X source code for this and all releases/snapshots as well as
 development versions can also be accessed via the Freedesktop.org git
 repository.  It's also possible to browse the <ulink
-url="http://cgit.freedesktop.org/xorg/"
+url="https://gitlab.freedesktop.org/xorg/"
 >freedesktop git repository</ulink
 >.
 </para>
@@ -327,8 +326,8 @@ To check out the latest development version, don't specify any tag.
 
 <para>
 Bugs should be reported to freedesktop.org's <ulink
-url="https://bugs.freedesktop.org/">bug tracking system</ulink>
-using the xorg component.  Before
+url="https://gitlab.freedesktop.org/xorg/">code management system</ulink>.
+Before
 reporting bugs, please check the server log file, which can be found at
 <filename>/var/log/Xorg.0.log</filename> on most platforms.  If you can't
 resolve the problem yourself, send the entire log file with your bug report but

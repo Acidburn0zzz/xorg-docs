@@ -86,11 +86,9 @@
     </para>
 
     <para>
-      We encourage you to report bugs using
-      freedesktop.org's <ulink url="https://bugs.freedesktop.org/">
-	bug tracking system</ulink> using the xorg product, and to
-      submit bug fixes and enhancements to
-      <email>xorg-devel@lists.x.org</email>.
+      We encourage you to report bugs, and to
+      submit bug fixes and enhancements via
+<ulink url="https://gitlab.freedesktop.org/xorg">the gitlab.freedesktop.org code management system</ulink>.
       More details on patch submission and review process are available on the
       <ulink
        url="http://www.x.org/wiki/Development/Documentation/SubmittingPatches">
@@ -1030,8 +1028,8 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
         turn these selected warnings into errors by adding
         <option>--disable-selective-werror</option> to the configure command
         for the affected module.   If that is necessary for any X.Org modules,
-        please report a bug in the xorg product on
-        <ulink url="https://bugs.freedesktop.org/" />.
+        please report a bug in the project for that module on
+        <ulink url="https://gitlab.freedesktop.org/xorg" />.
       </para>
 
       <para>
@@ -1346,7 +1344,7 @@ url="http://who-t.blogspot.com/2012/01/xkb-breaking-grabs-cve-2012-0064.html"
       This section lists the credits for the X11R&relvers; release.
       For a more detailed breakdown, refer to the ChangeLog file in
       the source tree for each module, the history in <ulink
-	url="http://cgit.freedesktop.org/xorg/">the xorg product in
+	url="https://gitlab.freedesktop.org/xorg">the xorg projects in
 	freedesktop.org's git repositories</ulink> or the
       '<userinput>git log</userinput>' information for individual source files.
     </para>

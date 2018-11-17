@@ -165,8 +165,7 @@ Xqueue is <emphasis remap="bf">NOT</emphasis> supported under Solaris.
 
 <para>
 Bug reports should be reported at
-<ulink url="http://bugs.freedesktop.org/"></ulink> using the
-xorg product or sent to <email>xorg@lists.freedesktop.org</email>.
+<ulink url="https://gitlab.freedesktop.org/xorg" />.
 </para>
 
 </sect1>

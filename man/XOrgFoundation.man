@@ -52,6 +52,6 @@ The X.Org Foundation's web site is http://www.x.org/
 .PP
 The X.Org Foundation's public ftp site is ftp://ftp.x.org/
 .PP
-Information about the X.Org Foundation git repository is on the
-X.Org web site at http://www.x.org/wiki/Development/git
+The X.Org Foundation's public source repositories are at
+https://gitlab.freedesktop.org/xorg
 .fi
