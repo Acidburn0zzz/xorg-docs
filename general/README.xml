@@ -103,8 +103,10 @@ related documentation.
 
 <para>
 The X.Org Foundation X releases are produced by the X.Org Foundation.
-The X.Org Foundation has been formed as a Delaware corporation organized
-to operate as a scientific charity under IRS code 501(c)(3) chartered
+The X.Org Foundation is a member project of
+<ulink url="https://spi-inc.org/">Software in the Public Interest (SPI)</ulink>,
+which operates as a scientific charity under IRS code 501(c)(3).
+The X.Org Foundation is chartered
 to develop and execute effective strategies which provide world-wide
 stewardship of the X Window System technology and standards. Membership
 in the X.Org Foundation is free to all participants. Applications for
