@@ -52,7 +52,7 @@ issues, fixes for driver bugs, and fixes that improve stability.
 <![ %minorrel [
 -->
 <para>
-X11R&relvers; is the &whichfullrel; release in the X11R&majorvers; series.
+X11R&relvers; was the &whichfullrel; release in the X11R&majorvers; series.
 </para>
 <!--
 ]]>
@@ -284,11 +284,11 @@ mirrors of this server.
 <title>X11R&relvers;</title>
 
 <para>
-This is the &whichfullrel; release of the new modular source code tree.  The
-source code has been split into nine logical modules: app, data, doc,
+X11R&relvers; was the &whichfullrel; release of the modular source code tree.
+The source code has been split into nine logical modules: app, data, doc,
 driver, font, lib. proto, util and xserver.  Each of these modules
 contain one or more packages that can be configured, built and installed
-separately.  Please see an X11R&relvers; release site for a complete
+separately.  Please see an X.Org release site for a complete
 list of the tarballs.
 </para>
 
