@@ -116,11 +116,11 @@ W:	https://gitlab.freedesktop.org/xorg/app/xconsole
 S:	Maintained
 
 xdm
-P:	Alan Coopersmith
-M:	alan.coopersmith@oracle.com
+P:	?
+M:	xorg-devel@lists.x.org
 L:	xorg-devel@lists.x.org
 W:	https://gitlab.freedesktop.org/xorg/app/xdm
-S:	Maintained
+S:	Unmaintained
 
 xedit
 P:	Paulo César Pereira de Andrade
