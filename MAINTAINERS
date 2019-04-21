@@ -264,6 +264,12 @@ XprintAppUtil, XprintUtil
 S:	Obsolete
 
 Xt
+P:	Thomas E. dickey
+M:	dickey@his.com
+L:	xorg-devel@lists.x.org
+W:	https://gitlab.freedesktop.org/xorg/lib/libxt
+S:	Maintained
+
 Xtst
 Xv
 XvMC
