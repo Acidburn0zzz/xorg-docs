@@ -53,7 +53,6 @@ AC_CONFIG_FILES([Makefile
 		 specs/Makefile
 		 specs/CTEXT/Makefile
 		 specs/ICCCM/Makefile
-		 specs/Xext/Makefile
 		 specs/XLFD/Makefile
 		 specs/Xserver/Makefile])
 AC_OUTPUT
