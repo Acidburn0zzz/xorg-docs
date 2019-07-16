@@ -206,7 +206,6 @@ WindowsWM
 XRes
 XScrnSaver
 Xau
-Xaw
 S:	Unmaintained
 
 X11, Xcomposite, Xcursor, Xdamage, Xfixes, Xrandr, Xrender
@@ -263,7 +262,7 @@ S:	maintained solely for binary compatibilty for software like Motif
 XprintAppUtil, XprintUtil
 S:	Obsolete
 
-Xt
+Xt, Xaw, twm
 P:	Thomas E. Dickey
 M:	dickey@his.com
 L:	xorg-devel@lists.x.org
